@@ -1,0 +1,54 @@
+format_version: '7'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: other
+app:
+  envs:
+    - PORT: 3000
+workflows:
+  up-dev:
+    steps:
+      - script@1.1.5:
+          title: Start dev server
+          inputs:
+            - content: |
+                #!/bin/bash
+                set -ex
+                yarn dev
+  up:
+    steps:
+      - script@1.1.5:
+          title: Start server
+          inputs:
+            - content: |
+                #!/bin/bash
+                set -ex
+                yarn start
+  build:
+    steps:
+      - script@1.1.5:
+          title: Build app
+          inputs:
+            - content: |
+                #!/bin/bash
+                set -ex
+                yarn build
+  setup:
+    steps:
+      - script@1.1.5:
+          title: Setup
+          inputs:
+            - content: |
+                #!/bin/bash
+                set -ex
+                npm i -g yarn
+                yarn
+  test:
+    steps:
+      - script@1.1.5:
+          title: Test
+          inputs:
+            - content: |
+                #!/bin/bash
+                set -ex
+
+                yarn test
