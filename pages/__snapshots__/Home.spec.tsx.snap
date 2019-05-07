@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Fragment>
+  <_default>
+    Bitrise Ship Add-on frontend
+  </_default>
+  <Counter />
+</Fragment>
+`;

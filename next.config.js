@@ -21,6 +21,11 @@ module.exports = compose(
       config.resolve.alias[`@/${dir}`] = path.join(__dirname, dir);
     });
 
+    config.module.rules.push({
+      test: /\.(test|spec).(js|ts)x?$/,
+      loader: 'ignore-loader'
+    });
+
     return config;
   }
 });

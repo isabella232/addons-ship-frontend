@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter renders correctly 1`] = `
+<Fragment>
+  <p>
+    Current count: 
+    0
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Increment
+  </button>
+</Fragment>
+`;
+
+exports[`Counter updates the counter 1`] = `
+<Fragment>
+  <p>
+    Current count: 
+    1
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Increment
+  </button>
+</Fragment>
+`;
