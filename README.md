@@ -1,5 +1,7 @@
 # Bitrise Ship Add-on Frontend
 
+[![Build Status](https://app.bitrise.io/app/3839b7b2de912762/status.svg?token=fk8X65Y-xDTcksuubWiwFw&branch=master)](https://app.bitrise.io/app/3839b7b2de912762)
+
 ## Setup
 
 `bitrise run setup`
