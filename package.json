@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "next -p $PORT",
     "build": "next build",
-    "start": "next start",
-    "test": "jest"
+    "start": "next start -p $PORT",
+    "test": "jest",
+    "heroku-postbuild": "yarn run build"
   },
   "keywords": [],
   "author": "",
