@@ -759,6 +759,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@bitrise/beam@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@bitrise/beam/-/beam-0.1.6.tgz#4cbd827ba056ac0058a91603b5bff47ae04e892f"
+  integrity sha512-/Z8WxJ/Q3OBiGUoMDi5AJrVrEX0yn/xgJ1S2CmrqMEFMmsYpftceDHuWKJHe1YIifYfXVtHVh73dTHZWDO2YSg==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.3.tgz#099139eaec7ebf07a27c1786a3ff64f39464d2ef"
