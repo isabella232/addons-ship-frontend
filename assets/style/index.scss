@@ -1,4 +1,10 @@
+@import './dimensions.scss';
+
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  margin-top: $beam-height;
 }
