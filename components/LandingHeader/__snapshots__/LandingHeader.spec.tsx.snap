@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingHeader renders correctly 1`] = `
+<div
+  className="titleWrapper"
+>
+  <InlineSVG
+    baseURL=""
+    cacheGetRequests={false}
+    className="icon"
+    onLoad={[Function]}
+    src="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+    supportTest={[Function]}
+    uniquifyIDs={true}
+    wrapper={[Function]}
+  />
+  <h1
+    className="title"
+  >
+    My app
+  </h1>
+</div>
+`;
