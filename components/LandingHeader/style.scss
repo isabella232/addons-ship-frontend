@@ -1,21 +1,37 @@
+@import '../../assets/style/mixins';
 @import '../../assets/style/dimensions';
 @import '../../assets/style/colors';
 
 .titleWrapper {
   display: flex;
+  align-items: center;
   padding: 4 * $grid-size;
   background-image: url(/static/header-bg.svg);
   background-size: cover;
 
+  .icon {
+    margin-right: $grid-size;
+
+    svg {
+      fill: white;
+    }
+  }
+
   .title {
+    min-width: 0;
+    color: $white;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
     // TODO: replace with element from UI library
-    margin-left: 4 * $grid-size;
     line-height: 1.5;
     font-size: 34px;
     letter-spacing: 0.2px;
     font-weight: 700;
     font-style: normal;
     font-stretch: normal;
-    color: $white;
+  }
+
+  @include width-above-screen-small {
+    padding-left: 8 * $grid-size;
   }
 }

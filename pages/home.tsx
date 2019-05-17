@@ -6,7 +6,7 @@ import LandingHeader from '@/components/LandingHeader';
 
 export default () => (
   <Fragment>
-    <LandingHeader iconUrl="https://www.bitrise.io/assets/svg/logo-bitrise.svg">My app</LandingHeader>
+    <LandingHeader iconUrl="/static/icon-flutter.svg">My app</LandingHeader>
     <Title>Bitrise Ship Add-on frontend</Title>
     <Counter />
   </Fragment>

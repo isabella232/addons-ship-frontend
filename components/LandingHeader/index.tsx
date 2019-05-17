@@ -1,16 +1,16 @@
 import { ReactNode } from 'react';
 
 import css from './style.scss';
+import SVG from 'react-inlinesvg';
 
-interface TitleProps {
+interface LandingHeaderProps {
   iconUrl: string;
   children: ReactNode;
 }
 
-export default ({ iconUrl, children }: TitleProps) => {
-  return (
-    <div className={css.titleWrapper}>
-      <h1 className={css.title}>{children}</h1>
-    </div>
-  );
-};
+export default ({ iconUrl, children }: LandingHeaderProps) => (
+  <div className={css.titleWrapper}>
+    <SVG src={iconUrl} className={css.icon} />
+    <h1 className={css.title}>{children}</h1>
+  </div>
+);
