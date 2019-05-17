@@ -5,7 +5,8 @@
 .titleWrapper {
   display: flex;
   align-items: center;
-  padding: 4 * $grid-size;
+  height: 9 * $grid-size;
+  padding: 2 * $grid-size 4 * $grid-size;
   background-image: url(/static/header-bg.svg);
   background-size: cover;
 
@@ -19,9 +20,8 @@
 
   .title {
     min-width: 0;
-    color: $white;
-    text-overflow: ellipsis;
     word-wrap: break-word;
+    color: $white;
     // TODO: replace with element from UI library
     line-height: 1.5;
     font-size: 34px;
