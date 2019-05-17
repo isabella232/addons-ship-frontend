@@ -2,6 +2,11 @@
 
 exports[`renders correctly 1`] = `
 <Fragment>
+  <_default
+    iconUrl="/static/icon-flutter.svg"
+  >
+    My app
+  </_default>
   <_default>
     Bitrise Ship Add-on frontend
   </_default>
