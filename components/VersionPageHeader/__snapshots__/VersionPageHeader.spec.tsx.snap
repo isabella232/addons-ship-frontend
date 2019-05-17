@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VersionPageHeader renders correctly 1`] = `
+<div
+  className="versionPageHeader"
+>
+  <a
+    className="appName"
+    href="/"
+  >
+    My app
+  </a>
+  <div
+    className="versionNameWrapper"
+  >
+    <InlineSVG
+      baseURL=""
+      cacheGetRequests={false}
+      className="versionIcon"
+      onLoad={[Function]}
+      src="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+      supportTest={[Function]}
+      uniquifyIDs={true}
+      wrapper={[Function]}
+    />
+    <h2
+      className="versionName"
+    >
+      My app version 1.0
+    </h2>
+  </div>
+</div>
+`;
