@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LandingHeader renders correctly 1`] = `
+exports[`Header renders correctly 1`] = `
 <div
   className="titleWrapper"
 >

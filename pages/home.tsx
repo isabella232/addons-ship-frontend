@@ -2,11 +2,12 @@ import { Fragment } from 'react';
 
 import Title from '@/components/Title';
 import Counter from '@/components/Counter';
-import LandingHeader from '@/components/LandingHeader';
+import Header from '@/components/Header';
+import VersionPageHeader from '@/components/VersionPageHeader';
 
 export default () => (
   <Fragment>
-    <LandingHeader iconUrl="/static/icon-flutter.svg">My app</LandingHeader>
+    <Header iconUrl="/static/icon-flutter.svg">My app</Header>
     <Title>Bitrise Ship Add-on frontend</Title>
     <Counter />
   </Fragment>
