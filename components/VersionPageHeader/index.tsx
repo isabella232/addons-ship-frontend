@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 import css from './style.scss';
-import SVG from 'react-inlinesvg';
+import SVG from 'react-svg';
 
 interface VersionPageHeaderProps {
   appName: string;
