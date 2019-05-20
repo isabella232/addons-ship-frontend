@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`VersionPageHeader renders correctly 1`] = `
+exports[`Breadcrumbs renders correctly 1`] = `
 <div
-  className="versionPageHeader"
+  className="breadcrumbs"
 >
   <a
     className="appName"
@@ -11,7 +11,7 @@ exports[`VersionPageHeader renders correctly 1`] = `
     My app
   </a>
   <div
-    className="versionNameWrapper"
+    className="breadcrumbs"
   >
     <InlineSVG
       baseURL=""

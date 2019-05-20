@@ -3,14 +3,14 @@ import { ReactNode } from 'react';
 import css from './style.scss';
 import SVG from 'react-svg';
 
-interface VersionPageHeaderProps {
+interface BreadcrumbsProps {
   appName: string;
   versionIconUrl: string;
   children: ReactNode;
 }
 
-export default ({ appName, versionIconUrl, children }: VersionPageHeaderProps) => (
-  <div className={css.versionPageHeader}>
+export default ({ appName, versionIconUrl, children }: BreadcrumbsProps) => (
+  <div className={css.breadcrumbs}>
     <a href="/" className={css.appName}>
       {appName}
     </a>
