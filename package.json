@@ -10,7 +10,14 @@
     "test": "jest",
     "heroku-postbuild": "yarn run build",
     "build-server": "tsc server.ts",
-    "server-dev": "ts-node-dev --respawn --transpileOnly ./server.ts"
+    "server-dev": "ts-node-dev --respawn --transpileOnly ./server.ts",
+    "server-watch": "nodemon"
+  },
+  "nodemonConfig": {
+    "exec": "yarn server-dev",
+    "watch": [
+      "server.ts"
+    ]
   },
   "keywords": [],
   "author": "",
