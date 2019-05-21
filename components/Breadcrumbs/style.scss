@@ -1,71 +1,64 @@
-@import '~@/assets/style/mixins';
 @import '~@/assets/style/dimensions';
 @import '~@/assets/style/times';
 @import '~@/assets/style/colors';
 
 .breadcrumbs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 9 * $grid-size;
-  padding: 2 * $grid-size 4 * $grid-size;
-  background-image: url(/static/header-bg.svg);
-  background-size: cover;
+  .breadcrumbLinks {
+    display: flex;
 
-  .appName {
-    min-width: 0;
-    word-wrap: break-word;
-    color: $white;
-    text-decoration: none;
-    // TODO: replace with element from UI library
-    line-height: 1.5;
-    letter-spacing: normal;
-    font-style: normal;
-    font-stretch: normal;
-    font-size: 19px;
-    font-weight: 500;
-    opacity: 0.8;
-    transition: opacity $medium-hovertime;
+    .link {
+      min-width: 0;
+      word-wrap: break-word;
+      color: $white;
+      text-decoration: none;
+      // TODO: replace with element from UI library
+      line-height: 1.5;
+      letter-spacing: normal;
+      font-style: normal;
+      font-stretch: normal;
+      font-size: 19px;
+      font-weight: 500;
+      opacity: 0.8;
+      transition: opacity $medium-hovertime;
 
-    &:before {
-      content: '«  ';
-      white-space: pre;
-    }
+      &:before {
+        content: '« ';
+        white-space: pre;
+      }
 
-    &:hover,
-    &:focus {
-      opacity: 1;
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+
+      &:not(:first-child) {
+        margin-left: $grid-size;
+      }
     }
   }
 
-  .versionNameWrapper {
+  .nameWrapper {
     display: flex;
     align-items: center;
 
-    .versionIcon {
+    .iconUrl {
       margin-right: $grid-size;
 
       svg {
         display: block;
-        fill: white;
+        fill: $white;
       }
     }
-    .versionName {
+
+    .name {
       min-width: 0;
       word-wrap: break-word;
       color: $white;
       // TODO: replace with element from UI library
       line-height: 1.5;
       letter-spacing: normal;
-      font-weight: 500;
       font-style: normal;
       font-stretch: normal;
-      font-size: 25px;
-      font-weight: 700;
     }
-  }
-
-  @include width-above-screen-small {
-    padding-left: 8 * $grid-size;
   }
 }
