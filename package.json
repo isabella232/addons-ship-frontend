@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "next -p $PORT",
-    "build": "next build",
-    "start": "next start -p $PORT",
+    "build": "next build && yarn build-server",
+    "start": "NODE_ENV=production node .next/server/server.js",
     "test": "jest",
     "heroku-postbuild": "yarn run build",
-    "build-server": "tsc server.ts",
+    "build-server": "tsc --outDir .next/server/ server.ts",
     "server-dev": "ts-node-dev --respawn --transpileOnly ./server.ts",
     "server-watch": "nodemon"
   },
