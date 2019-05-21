@@ -1,6 +1,7 @@
 import css from './style.scss';
 import SVG from 'react-svg';
 import { ReactNode } from 'react';
+import Link from 'next/link';
 
 interface BreadcrumbsProps {
   links: { name: string; url: string }[];
@@ -12,9 +13,9 @@ export default ({ links, iconUrl, children }: BreadcrumbsProps) => (
   <div className={css.breadcrumbs}>
     <div className={css.breadcrumbLinks}>
       {links.map((link, index) => (
-        <a key={index} href={link.url} className={css.link}>
-          {link.name}
-        </a>
+        <Link key={index} href={link.url}>
+          <a className={css.link}>{link.name}</a>
+        </Link>
       ))}
     </div>
     <div className={css.nameWrapper}>

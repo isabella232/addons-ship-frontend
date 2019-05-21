@@ -7,13 +7,26 @@ exports[`Breadcrumbs renders correctly 1`] = `
   <div
     className="breadcrumbLinks"
   >
-    <a
-      className="link"
+    <Link
       href="/"
       key="0"
     >
-      My app
-    </a>
+      <a
+        className="link"
+      >
+        Dashboard
+      </a>
+    </Link>
+    <Link
+      href="/my-app/"
+      key="1"
+    >
+      <a
+        className="link"
+      >
+        My app
+      </a>
+    </Link>
   </div>
   <div
     className="nameWrapper"
