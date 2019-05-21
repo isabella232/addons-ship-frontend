@@ -5,7 +5,7 @@ import Header from '.';
 
 describe('Header', () => {
   it('renders correctly', () => {
-    const tree = toJSON(shallow(<Header iconUrl='https://www.bitrise.io/assets/svg/logo-bitrise.svg'>My app</Header>));
+    const tree = toJSON(shallow(<Header>My app</Header>));
     expect(tree).toMatchSnapshot();
   });
 });
