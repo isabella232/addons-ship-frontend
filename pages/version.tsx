@@ -1,7 +1,10 @@
 import { Component } from 'react';
-import { NextContext } from 'next';
+import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
 
-import { VersionPageQuery } from '@/models';
+import { VersionPageQuery, PageContext } from '@/models';
+import { RootState } from '@/store';
+import { fetchAppVersion } from '@/ducks/appVersion';
 
 interface VersionPageProps extends VersionPageQuery {}
 
@@ -10,7 +13,9 @@ type VersionPageState = {};
 class VersionPage extends Component<VersionPageProps, VersionPageState> {
   state: VersionPageState = {};
 
-  static getInitialProps({ query: { appSlug, versionId, isPublic } }: NextContext) {
+  static async getInitialProps({ query: { appSlug, versionId, isPublic }, store }: PageContext) {
+    await store.dispatch(fetchAppVersion(appSlug as string, versionId as string) as any);
+
     return { appSlug, versionId, isPublic };
   }
 
@@ -30,4 +35,12 @@ class VersionPage extends Component<VersionPageProps, VersionPageState> {
   }
 }
 
-export default VersionPage;
+const mapStateToProps = ({ appVersion }: RootState) => ({ appVersion });
+const mapDispatchToProps = (_dispatch: Dispatch) => ({
+  fetchAppVersion
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(VersionPage);
