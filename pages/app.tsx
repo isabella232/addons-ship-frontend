@@ -7,6 +7,7 @@ import { NextDocumentContext } from 'next/document';
 
 import { AppPageQuery } from '@/models';
 import AppSummary from '@/components/AppSummary';
+import SectionHeading from '@/components/SectionHeading';
 
 interface AppPageProps extends AppPageQuery {}
 
@@ -37,6 +38,7 @@ class AppPage extends Component<AppPageProps, AppPageState> {
           iconUrl="/static/icon-flutter.svg"
           platformIconUrl="/static/icon-apple.svg"
         />
+        <SectionHeading>Version History</SectionHeading>
       </Fragment>
     );
   }
