@@ -1,21 +1,31 @@
-import { Component, Fragment } from 'react';
-import { Dispatch, Store } from 'redux';
-import { connect } from 'react-redux';
+import { Component } from 'react';
+import { NextContext } from 'next';
 
-import { NextDocumentContext } from 'next/document';
+import { VersionPageQuery } from '@/models';
 
-type VersionPageProps = {};
+interface VersionPageProps extends VersionPageQuery {}
 
 type VersionPageState = {};
 
 class VersionPage extends Component<VersionPageProps, VersionPageState> {
   state: VersionPageState = {};
 
+  static getInitialProps({ query: { appSlug, versionId, isPublic } }: NextContext) {
+    return { appSlug, versionId, isPublic };
+  }
+
   render() {
-    const {} = this.props;
+    const { appSlug, versionId, isPublic } = this.props;
 
     return (
-      <h1>Welcome to Ship Add-on's version page!</h1>
+      <div>
+        <h1>Welcome to Ship Add-on's version page!</h1>
+        <ul>
+          <li>appSlug: {appSlug}</li>
+          <li>versionId: {versionId}</li>
+          <li>isPublic: {isPublic ? 'yes' : 'no'}</li>
+        </ul>
+      </div>
     );
   }
 }

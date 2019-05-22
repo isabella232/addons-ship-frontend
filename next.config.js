@@ -17,7 +17,7 @@ module.exports = compose(
   },
   webpack(config, _options) {
     // Setup webpack aliases for absolute imports, eg. `@/components/Title`
-    ['assets', 'components', 'ducks'].forEach(dir => {
+    ['assets', 'components', 'ducks', 'models'].forEach(dir => {
       config.resolve.alias[`@/${dir}`] = path.join(__dirname, dir);
     });
 
