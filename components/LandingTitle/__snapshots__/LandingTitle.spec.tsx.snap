@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingTitle renders correctly 1`] = `
+<div
+  className="landingTitle"
+>
+  <ReactSVG
+    afterInjection={[Function]}
+    beforeInjection={[Function]}
+    className="icon"
+    evalScripts="never"
+    fallback={null}
+    loading={null}
+    renumerateIRIElements={true}
+    src="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+    wrapper="div"
+  />
+  <h1
+    className="title"
+  >
+    My app
+  </h1>
+</div>
+`;

@@ -1,0 +1,15 @@
+@import '~@/assets/style/mixins';
+@import '~@/assets/style/dimensions';
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 9 * $grid-size;
+  padding: 2 * $grid-size 4 * $grid-size;
+  background-image: url(/static/header-bg.svg);
+  background-size: cover;
+
+  @include width-above-screen-small {
+    padding-left: 8 * $grid-size;
+  }
+}
