@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppSummary renders correctly 1`] = `
+<Link>
+  <a
+    className="appSummary"
+  >
+    <div
+      className="colorBar"
+    />
+    <div
+      className="body"
+    >
+      <div
+        className="iconWrapper"
+      >
+        <div
+          className="icon"
+        >
+          <ReactSVG
+            afterInjection={[Function]}
+            beforeInjection={[Function]}
+            evalScripts="never"
+            fallback={null}
+            loading={null}
+            renumerateIRIElements={true}
+            src="/static/icon-flutter.svg"
+            wrapper="div"
+          />
+        </div>
+        <div
+          className="note"
+        >
+          Updated on January 29, 2008
+        </div>
+      </div>
+      <div
+        className="titleWrapper"
+      >
+        <ReactSVG
+          afterInjection={[Function]}
+          beforeInjection={[Function]}
+          evalScripts="never"
+          fallback={null}
+          loading={null}
+          renumerateIRIElements={true}
+          src="/static/icon-apple.svg"
+          wrapper="div"
+        />
+        <div
+          className="title"
+        >
+          My app v1.1.0 (28)
+        </div>
+      </div>
+      <div
+        className="description"
+      >
+        This is a short description about my app. It is a good app. End of description.
+      </div>
+    </div>
+  </a>
+</Link>
+`;

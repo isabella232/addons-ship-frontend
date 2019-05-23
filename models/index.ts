@@ -3,3 +3,7 @@ export type VersionPageQuery = {
   versionId: string;
   isPublic?: string;
 };
+
+export type AppPageQuery = {
+  appSlug: string;
+};
