@@ -1,25 +1,39 @@
 const path = require('path');
 
 const withTypescript = require('@zeit/next-typescript');
+const withCSS = require('@zeit/next-css');
+const withTM = require('next-transpile-modules');
 const withSass = require('@zeit/next-sass');
 
 // Taken from https://github.com/reduxjs/redux/blob/master/src/compose.js
-const compose = (...funcs) => funcs.reduce((a, b) => (...args) => a(b(...args)));
+const compose = (...funcs) => funcs.reverse().reduce((a, b) => (...args) => a(b(...args)));
 
 module.exports = compose(
+  withTypescript,
   withSass,
-  withTypescript
+  config =>
+    withCSS({
+      ...config,
+      // Fix for Bitkit stlying, disable modules for CSS
+      cssLoaderOptions: { modules: false }
+    }),
+  withTM
 )({
   cssModules: true,
   cssLoaderOptions: {
+    modules: true,
     importLoaders: 1,
     localIdentName: '[local]___[hash:base64:5]'
   },
+  transpileModules: ['@bitrise/bitkit'],
   webpack(config, _options) {
     // Setup webpack aliases for absolute imports, eg. `@/components/Title`
     ['assets', 'components', 'ducks', 'models', 'services'].forEach(dir => {
       config.resolve.alias[`@/${dir}`] = path.join(__dirname, dir);
     });
+
+    // Use ESNext version of Bitkit
+    config.resolve.alias['@bitrise/bitkit'] = path.join(__dirname, 'node_modules/@bitrise/bitkit/lib/esn');
 
     config.module.rules.push({
       test: /\.(test|spec).(js|ts)x?$/,
