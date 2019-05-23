@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<div
+  className="footer"
+>
+  <ReactSVG
+    afterInjection={[Function]}
+    beforeInjection={[Function]}
+    className="icon"
+    evalScripts="never"
+    fallback={null}
+    loading={null}
+    renumerateIRIElements={true}
+    src="/static/icon-bitrise-notext.svg"
+    wrapper="div"
+  />
+  <div
+    className="text"
+  >
+    Ship
+  </div>
+  <div
+    className="text"
+  >
+    An official Bitrise add-on
+  </div>
+</div>
+`;

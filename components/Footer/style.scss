@@ -1,0 +1,27 @@
+@import '~@/assets/style/dimensions';
+@import '~@/assets/style/colors';
+
+.footer {
+  text-align: center;
+
+  .icon {
+    display: block;
+    margin-bottom: $grid-size;
+
+    svg {
+      fill: $dark-blue-grey;
+    }
+  }
+
+  .text {
+    color: $dark-blue-grey;
+    // TODO: replace with element from UI library
+    line-height: 2 * $grid-size;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+}
