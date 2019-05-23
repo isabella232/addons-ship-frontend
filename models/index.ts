@@ -24,6 +24,15 @@ export type AppVersion = {
   size: number;
   supportedDeviceTypes: string[];
   distributionType: string;
+  iconUrl: string;
+  appName: string;
+  promotionalText: string;
+  keywords: string;
+  reviewNotes: string;
+  supportUrl: string;
+  marketingUrl: string;
+  scheme: string;
+  configuration: string;
 };
 
 export interface PageContext extends NextContext {

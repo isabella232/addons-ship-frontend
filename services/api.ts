@@ -25,9 +25,18 @@ class APIService {
         package_name: 'com.package.name',
         certificate_expires: '2018-09-22T12:42:31Z',
         bundle_id: 'bundle-id',
-        size: 45670,
+        size: 4567034,
         supported_device_types: ['iphone', 'ipad'],
-        distribution_type: 'development'
+        distribution_type: 'development',
+        icon_url: 'http://placekitten.com/160/160',
+        app_name: 'Standup Timer',
+        promotional_text: 'Promotional Text',
+        keywords: 'Keywords',
+        review_notes: 'Review Notes',
+        support_url: 'https://bitrise.io/support',
+        marketing_url: 'https://bitrise.io/marketing',
+        scheme: 'piramid',
+        configuration: 'canary'
       }
     };
 
@@ -49,7 +58,16 @@ class APIService {
       bundleId: data.bundle_id,
       size: data.size,
       supportedDeviceTypes: data.supported_device_types,
-      distributionType: data.distribution_type
+      distributionType: data.distribution_type,
+      iconUrl: data.icon_url,
+      appName: data.app_name,
+      promotionalText: data.promotional_text,
+      keywords: data.keywords,
+      reviewNotes: data.review_notes,
+      supportUrl: data.support_url,
+      marketingUrl: data.marketing_url,
+      scheme: data.scheme,
+      configuration: data.configuration
     };
   }
 }
