@@ -2,10 +2,10 @@ import { Dispatch, combineReducers } from 'redux';
 import { createAction, createReducer } from 'deox';
 
 import api from '@/services/api';
+import { actionTypeCreator } from '@/utils';
 import { AppVersion } from '@/models';
 
-// TODO create generator thunk, move to @/utils & test
-const a = (actionType: TemplateStringsArray) => `APP_VERSION_${actionType}`;
+const $ = actionTypeCreator('APP_VERSION');
 
 const _fetchAppVersion = (appSlug: string, versionId: string) => async (dispatch: Dispatch) => {
   dispatch(fetchAppVersion.next());
@@ -20,9 +20,9 @@ const _fetchAppVersion = (appSlug: string, versionId: string) => async (dispatch
 };
 
 export const fetchAppVersion = Object.assign(_fetchAppVersion, {
-  next: createAction(a`GET_NEXT`),
-  complete: createAction(a`_GET_COMPLETE`, resolve => (appVersion: AppVersion) => resolve(appVersion)),
-  error: createAction(a`GET_ERROR`, resolve => (error: Error) => resolve(error))
+  next: createAction($`GET_NEXT`),
+  complete: createAction($`GET_COMPLETE`, resolve => (appVersion: AppVersion) => resolve(appVersion)),
+  error: createAction($`GET_ERROR`, resolve => (error: Error) => resolve(error))
 });
 
 const defaultState = null as AppVersionState;

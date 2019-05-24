@@ -8,6 +8,7 @@
     "dev": "yarn build:server && node dist/server.js",
     "dev:watch": "nodemon",
     "test": "jest",
+    "test:watch": "jest --watch",
     "heroku-postbuild": "yarn run build",
     "build": "next build && yarn build:server",
     "build:server": "tsc -p build.tsconfig.json"
