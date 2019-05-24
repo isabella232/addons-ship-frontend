@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`AppVersion renders the details tab correctly 1`] = `
 <Base
   paddingVertical="x10"
 >
@@ -8,21 +8,51 @@ exports[`renders correctly 1`] = `
     maxWidth={960}
   >
     <Tabs
-      gap="x16"
+      gap="x10"
     >
       <Tab
-        active={true}
+        active={false}
       >
-        Details
+        <Link
+          href="some/path/details"
+        >
+          <a>
+            Details
+          </a>
+        </Link>
       </Tab>
-      <Tab>
-        Devices
+      <Tab
+        active={false}
+      >
+        <Link
+          href="some/path/devices"
+        >
+          <a>
+            Devices
+          </a>
+        </Link>
       </Tab>
-      <Tab>
-        Test
+      <Tab
+        active={false}
+      >
+        <Link
+          href="some/path/test"
+        >
+          <a>
+            Test
+          </a>
+        </Link>
       </Tab>
-      <Tab>
-        Activity
+      <Tab
+        active={false}
+      >
+        <Link
+          href="some/path/activity"
+        >
+          <a>
+            Activity
+          </a>
+        </Link>
       </Tab>
     </Tabs>
   </Base>
@@ -31,436 +61,79 @@ exports[`renders correctly 1`] = `
     direction="horizontal"
     size="0.125rem"
   />
-  <Flex
+  <Base
     maxWidth={960}
-    paddingVertical="x6"
   >
-    <Card
-      margin="x10"
+    <h1 />
+  </Base>
+</Base>
+`;
+
+exports[`AppVersion renders the devices tab correctly 1`] = `
+<Base
+  paddingVertical="x10"
+>
+  <Base
+    maxWidth={960}
+  >
+    <Tabs
+      gap="x10"
     >
-      <CardContent
-        backgroundColor="blue-1"
-        padding="x3"
+      <Tab
+        active={false}
       >
-        Some notification
-      </CardContent>
-    </Card>
-    <Flex
-      direction="horizontal"
-    >
-      <Flex
-        alignChildrenHorizontal="start"
-      >
-        <Base
-          maxWidth={660}
+        <Link
+          href="some/path/details"
         >
-          <form>
-            <Flex
-              direction="horizontal"
-              margin="x16"
-            >
-              <Image
-                borderRadius="x2"
-                src="http://placekitten.com/160/160"
-              />
-              <Flex
-                alignChildrenVertical="middle"
-                direction="vertical"
-                paddingHorizontal="x6"
-              >
-                <Flex
-                  alignChildren="middle"
-                  direction="horizontal"
-                >
-                  <Icon
-                    color="grape-4"
-                    name="PlatformsApple"
-                    size="1.5rem"
-                  />
-                  <Text
-                    color="grape-4"
-                    letterSpacing="x2"
-                    paddingHorizontal="x2"
-                    size="x6"
-                    weight="bold"
-                  >
-                    Standup Timer
-                  </Text>
-                </Flex>
-                <Text
-                  color="grape-4"
-                  letterSpacing="x2"
-                  margin="x2"
-                  size="x5"
-                  weight="bold"
-                >
-                  v
-                  1.0.3
-                   (
-                  32
-                  )
-                </Text>
-                <Text
-                  color="gray-6"
-                  letterSpacing="x1"
-                  size="x4"
-                  weight="medium"
-                >
-                  Updated on 
-                  September 22, 2018
-                </Text>
-              </Flex>
-            </Flex>
-            <Flex
-              alignChildrenHorizontal="between"
-              alignChildrenVertical="middle"
-              direction="horizontal"
-            >
-              <InputLabel>
-                Description
-              </InputLabel>
-              <Text
-                align="end"
-                color="gray-7"
-                size="x2"
-                weight="medium"
-              >
-                1235
-              </Text>
-            </Flex>
-            <TextArea
-              defaultValue="Some semi-long description"
-            />
-            <Divider
-              color="gray-2"
-              direction="horizontal"
-              margin="x4"
-              size="0.125rem"
-            />
-            <Flex
-              alignChildrenHorizontal="between"
-              alignChildrenVertical="middle"
-              direction="horizontal"
-            >
-              <InputLabel>
-                What's new
-              </InputLabel>
-              <Text
-                align="end"
-                color="gray-7"
-                size="x2"
-                weight="medium"
-              >
-                1235
-              </Text>
-            </Flex>
-            <TextArea
-              defaultValue="Some longer whats-new"
-            />
-            <Divider
-              color="gray-2"
-              direction="horizontal"
-              margin="x4"
-              size="0.125rem"
-            />
-            <Flex
-              alignChildrenHorizontal="between"
-              alignChildrenVertical="middle"
-              direction="horizontal"
-            >
-              <InputLabel>
-                Promotional Text
-              </InputLabel>
-              <Text
-                align="end"
-                color="gray-7"
-                size="x2"
-                weight="medium"
-              >
-                1235
-              </Text>
-            </Flex>
-            <TextArea
-              defaultValue="Promotional Text"
-            />
-            <Divider
-              color="gray-2"
-              direction="horizontal"
-              margin="x4"
-              size="0.125rem"
-            />
-            <Flex
-              alignChildrenHorizontal="between"
-              alignChildrenVertical="middle"
-              direction="horizontal"
-            >
-              <InputLabel>
-                Keywords
-              </InputLabel>
-              <Text
-                align="end"
-                color="gray-7"
-                size="x2"
-                weight="medium"
-              >
-                1235
-              </Text>
-            </Flex>
-            <TextArea
-              defaultValue="Keywords"
-            />
-            <Divider
-              color="gray-2"
-              direction="horizontal"
-              margin="x4"
-              size="0.125rem"
-            />
-            <Flex
-              alignChildrenHorizontal="between"
-              alignChildrenVertical="middle"
-              direction="horizontal"
-            >
-              <InputLabel>
-                Review Notes
-              </InputLabel>
-              <Text
-                align="end"
-                color="gray-7"
-                size="x2"
-                weight="medium"
-              >
-                1235
-              </Text>
-            </Flex>
-            <TextArea
-              defaultValue="Review Notes"
-            />
-            <Divider
-              color="gray-2"
-              direction="horizontal"
-              margin="x4"
-              size="0.125rem"
-            />
-            <Flex
-              alignChildrenVertical="middle"
-              direction="horizontal"
-            >
-              <InputLabel>
-                Distribution Type: 
-                development
-              </InputLabel>
-              <Tooltip
-                title="This is the tooltip"
-              >
-                <Component />
-              </Tooltip>
-            </Flex>
-            <Text
-              color="gray-7"
-              size="x3"
-              weight="medium"
-            >
-              The app was signed with a Development Provisioning Profile which means that it
-               
-              <Text
-                weight="bold"
-              >
-                can only be installed on devices which are included in the Provisioning Profile
-              </Text>
-            </Text>
-            <Divider
-              color="gray-2"
-              direction="horizontal"
-              margin="x4"
-              size="0.125rem"
-            />
-            <Flex
-              direction="horizontal"
-              gap="x6"
-              grow={true}
-            >
-              <Flex
-                grow={true}
-              >
-                <InputLabel>
-                  Support URL
-                </InputLabel>
-                <InputContainer>
-                  <Input
-                    value="https://bitrise.io/support"
-                  />
-                </InputContainer>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-                <InputLabel>
-                  App Title
-                </InputLabel>
-                <Text
-                  size="x3"
-                >
-                  Standup Timer
-                </Text>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-                <InputLabel>
-                  Version
-                </InputLabel>
-                <Text
-                  size="x3"
-                >
-                  v
-                  1.0.3
-                </Text>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-                <InputLabel>
-                  Certificate Expires
-                </InputLabel>
-                <Text
-                  size="x3"
-                >
-                  Sep 22
-                </Text>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-                <InputLabel>
-                  Minimum OS
-                </InputLabel>
-                <Text
-                  size="x3"
-                >
-                  10.2
-                </Text>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-                <InputLabel>
-                  Scheme
-                </InputLabel>
-                <Text
-                  size="x3"
-                >
-                  piramid
-                </Text>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-              </Flex>
-              <Flex
-                grow={true}
-              >
-                <InputLabel>
-                  Marketing URL
-                </InputLabel>
-                <InputContainer>
-                  <Input
-                    value="https://bitrise.io/marketing"
-                  />
-                </InputContainer>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-                <InputLabel>
-                  Bundle ID
-                </InputLabel>
-                <Text
-                  size="x3"
-                >
-                  bundle-id
-                </Text>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-                <InputLabel>
-                  Build Number
-                </InputLabel>
-                <Text
-                  size="x3"
-                >
-                  32
-                </Text>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-                <InputLabel>
-                  Size
-                </InputLabel>
-                <Text
-                  size="x3"
-                >
-                  4.57 MB
-                </Text>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-                <InputLabel>
-                  Supported Device Types
-                </InputLabel>
-                <Text
-                  size="x3"
-                >
-                  iphone, ipad
-                </Text>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-                <InputLabel>
-                  Configuration
-                </InputLabel>
-                <Text
-                  size="x3"
-                >
-                  canary
-                </Text>
-                <Divider
-                  color="gray-2"
-                  direction="horizontal"
-                  margin="x4"
-                  size="0.125rem"
-                />
-              </Flex>
-            </Flex>
-          </form>
-        </Base>
-      </Flex>
-    </Flex>
-  </Flex>
+          <a>
+            Details
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={true}
+      >
+        <Link
+          href="some/path/devices"
+        >
+          <a>
+            Devices
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={false}
+      >
+        <Link
+          href="some/path/test"
+        >
+          <a>
+            Test
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={false}
+      >
+        <Link
+          href="some/path/activity"
+        >
+          <a>
+            Activity
+          </a>
+        </Link>
+      </Tab>
+    </Tabs>
+  </Base>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    size="0.125rem"
+  />
+  <Base
+    maxWidth={960}
+  >
+    <ConnectFunction />
+  </Base>
 </Base>
 `;

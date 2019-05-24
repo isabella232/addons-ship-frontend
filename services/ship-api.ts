@@ -1,12 +1,9 @@
-import fetch, { Request, RequestInit, Response } from 'node-fetch';
+import fetch from 'node-fetch';
+
 import { AppVersion } from '@/models';
+import { Fetch, APIConfig } from '@/models/services';
 
-export type Fetch = (url: string | Request, init?: RequestInit) => Promise<Response>;
-export type APIConfig = {
-  url: string;
-};
-
-class APIService {
+class ShipAPIService {
   constructor(private fetch: Fetch, private config: APIConfig) {}
 
   async getAppVersion(appSlug: string, versionId: string): Promise<AppVersion> {
@@ -72,6 +69,6 @@ class APIService {
   }
 }
 
-export default new APIService(fetch, {
+export default new ShipAPIService(fetch, {
   url: 'todo: get from config'
 });
