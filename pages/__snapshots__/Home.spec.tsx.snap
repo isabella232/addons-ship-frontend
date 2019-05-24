@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<Fragment>
+<Base
+  paddingVertical="x12"
+>
   <_default>
     <_default
       iconUrl="/static/icon-flutter.svg"
@@ -9,9 +11,11 @@ exports[`renders correctly 1`] = `
       My app
     </_default>
   </_default>
-  <_default>
+  <Text
+    color="grape-3"
+    size="x5"
+  >
     Bitrise Ship Add-on frontend
-  </_default>
-  <Counter />
-</Fragment>
+  </Text>
+</Base>
 `;

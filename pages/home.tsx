@@ -1,15 +1,15 @@
-import { Fragment } from 'react';
-import Title from '@/components/Title';
-import Counter from '@/components/Counter';
 import Header from '@/components/Header';
 import LandingTitle from '@/components/LandingTitle';
 
+import { Base, Text } from '@bitrise/bitkit';
+
 export default () => (
-  <Fragment>
+  <Base paddingVertical="x12">
     <Header>
       <LandingTitle iconUrl="/static/icon-flutter.svg">My app</LandingTitle>
     </Header>
-    <Title>Bitrise Ship Add-on frontend</Title>
-    <Counter />
-  </Fragment>
+    <Text size="x5" color="grape-3">
+      Bitrise Ship Add-on frontend
+    </Text>
+  </Base>
 );
