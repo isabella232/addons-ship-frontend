@@ -28,7 +28,7 @@ export default ({ appVersion, showTooltips }: Props) => {
   const iconName: TypeName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   return (
-    <Flex maxWidth={960} paddingVertical="x6">
+    <Base paddingVertical="x6">
       <Card margin="x10">
         <CardContent padding="x3" backgroundColor="blue-1">
           Some notification
@@ -207,6 +207,6 @@ export default ({ appVersion, showTooltips }: Props) => {
           </Base>
         </Flex>
       </Flex>
-    </Flex>
+    </Base>
   );
 };

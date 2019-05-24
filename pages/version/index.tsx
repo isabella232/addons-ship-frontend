@@ -11,6 +11,7 @@ import { fetchAppVersion } from '@/ducks/appVersion';
 
 import Details from './details';
 import Devices from './devices';
+import { fetchTestDevices } from '@/ducks/testDevices';
 
 interface VersionPageProps extends AppVersionPageQuery {
   appVersion: AppVersion;
@@ -34,8 +35,13 @@ export class VersionPage extends Component<VersionPageProps, VersionPageState> {
       selectedTab = AppVersionPageTabs[0]
     } = (query as unknown) as AppVersionPageQuery;
 
-    if (selectedTab === 'details') {
-      await store.dispatch(fetchAppVersion(appSlug, versionId) as any);
+    switch (selectedTab) {
+      case 'details':
+        await store.dispatch(fetchAppVersion(appSlug, versionId) as any);
+        break;
+      case 'devices':
+        await store.dispatch(fetchTestDevices(appSlug) as any);
+        break;
     }
 
     const pagePath = req.path.replace(new RegExp(`/${selectedTab}$`), '');
@@ -78,7 +84,7 @@ export class VersionPage extends Component<VersionPageProps, VersionPageState> {
           </Tabs>
         </Base>
         <Divider color="gray-2" direction="horizontal" />
-        {this.tabContent()}
+        <Base maxWidth={960}>{this.tabContent()}</Base>
       </Base>
     );
   }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`AppVersion renders the details tab correctly 1`] = `
 <Base
   paddingVertical="x10"
 >
@@ -61,6 +61,79 @@ exports[`renders correctly 1`] = `
     direction="horizontal"
     size="0.125rem"
   />
-  <h1 />
+  <Base
+    maxWidth={960}
+  >
+    <h1 />
+  </Base>
+</Base>
+`;
+
+exports[`AppVersion renders the devices tab correctly 1`] = `
+<Base
+  paddingVertical="x10"
+>
+  <Base
+    maxWidth={960}
+  >
+    <Tabs
+      gap="x10"
+    >
+      <Tab
+        active={false}
+      >
+        <Link
+          href="some/path/details"
+        >
+          <a>
+            Details
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={true}
+      >
+        <Link
+          href="some/path/devices"
+        >
+          <a>
+            Devices
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={false}
+      >
+        <Link
+          href="some/path/test"
+        >
+          <a>
+            Test
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={false}
+      >
+        <Link
+          href="some/path/activity"
+        >
+          <a>
+            Activity
+          </a>
+        </Link>
+      </Tab>
+    </Tabs>
+  </Base>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    size="0.125rem"
+  />
+  <Base
+    maxWidth={960}
+  >
+    <ConnectFunction />
+  </Base>
 </Base>
 `;

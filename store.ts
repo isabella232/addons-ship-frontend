@@ -4,10 +4,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import chatReducer from '@/ducks/chat';
 import { appVersion } from '@/ducks/appVersion';
+import { testDevices } from '@/ducks/testDevices';
 
 const rootReducer = combineReducers({
   chat: chatReducer,
-  appVersion
+  appVersion,
+  testDevices
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
