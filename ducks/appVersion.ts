@@ -1,7 +1,7 @@
 import { Dispatch, combineReducers } from 'redux';
 import { createAction, createReducer } from 'deox';
 
-import api from '@/services/api';
+import api from '@/services/ship-api';
 import { actionTypeCreator } from '@/utils';
 import { AppVersion } from '@/models';
 
