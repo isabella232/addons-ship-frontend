@@ -8,7 +8,7 @@ const mockAppVersion: AppVersion = {
   id: 123,
   version: '1.0.3',
   platform: 'ios',
-  buildNumber: '32',
+  buildNumber: 32,
   buildSlug: '13245ads',
   lastUpdate: new Date('2018-09-22T12:42:31Z'),
   description: 'Some semi-long description',

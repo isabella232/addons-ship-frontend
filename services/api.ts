@@ -46,7 +46,7 @@ class APIService {
       id: data.id,
       version: data.version,
       platform: data.platform,
-      buildNumber: data.build_number,
+      buildNumber: parseInt(data.build_number, 10),
       buildSlug: data.build_slug,
       lastUpdate: new Date(data.last_update),
       description: data.description,
