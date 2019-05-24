@@ -1,4 +1,4 @@
-import { Dispatch, combineReducers } from 'redux';
+import { Dispatch } from 'redux';
 import { createAction, createReducer } from 'deox';
 
 import api from '@/services/api';

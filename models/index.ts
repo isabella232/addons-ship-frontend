@@ -1,10 +1,17 @@
 import { NextContext } from 'next';
 import { Store } from 'redux';
+import { Request } from 'express';
 
-export type VersionPageQuery = {
+export type AppVersionProps = {
   appSlug: string;
   versionId: string;
+};
+
+export const AppVersionPageTabs = ['details', 'devices', 'test', 'activity'];
+
+export type AppVersionPageQuery = AppVersionProps & {
   isPublic?: string;
+  selectedTab?: typeof AppVersionPageTabs[number];
 };
 
 export type AppVersion = {
@@ -38,4 +45,5 @@ export type AppVersion = {
 export interface PageContext extends NextContext {
   store: Store;
   isServer: boolean;
+  req: Request;
 }

@@ -1,6 +1,6 @@
 import * as next from 'next';
 import * as express from 'express';
-import { VersionPageQuery } from './models';
+import { AppVersionPageQuery, AppVersionProps } from './models';
 
 const port = parseInt(<string>process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -12,14 +12,17 @@ app.prepare().then(() => {
 
   server.get('/', (req, res) => app.render(req, res, '/', req.params));
 
-  server.get('/apps/:appSlug', (req, res) => app.render(req, res, '/app', req.params));
+  const appPath = '/apps/:appSlug';
+  server.get(appPath, (req, res) => app.render(req, res, '/app', req.params));
 
-  server.get('/apps/:appSlug/versions/:versionId', (req, res) =>
-    app.render(req, res, '/version', <VersionPageQuery>req.params)
+  const appVersionPath = `${appPath}/versions/:versionId`;
+
+  server.get(`${appVersionPath}/public`, (req, res) =>
+    app.render(req, res, '/version', { ...req.params, isPublic: 'public' } as AppVersionPageQuery)
   );
 
-  server.get('/apps/:appSlug/versions/:versionId/public', (req, res) =>
-    app.render(req, res, '/version', <VersionPageQuery>{ ...req.params, isPublic: 'public' })
+  server.get(`${appVersionPath}/:selectedTab?`, (req, res) =>
+    app.render(req, res, '/version', req.params as AppVersionPageQuery)
   );
 
   server.get('*', (req, res) => handle(req, res));
