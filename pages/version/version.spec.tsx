@@ -5,6 +5,10 @@ import { mockAppVersion } from '@/mocks';
 import { VersionPage } from './';
 
 it('renders correctly', () => {
-  const tree = toJSON(shallow(<VersionPage appVersion={mockAppVersion} appSlug="some-app" versionId="a-version-id" />));
+  const tree = toJSON(
+    shallow(
+      <VersionPage appVersion={mockAppVersion} appSlug="some-app" versionId="a-version-id" pagePath="some/path" />
+    )
+  );
   expect(tree).toMatchSnapshot();
 });
