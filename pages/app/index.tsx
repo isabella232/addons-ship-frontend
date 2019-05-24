@@ -1,19 +1,22 @@
 import { Component, Fragment } from 'react';
-import { Dispatch, Store } from 'redux';
+import { Store } from 'redux';
 import { connect } from 'react-redux';
-
-import { NextContext } from 'next';
+import formatDate from 'date-fns/format';
 import { NextDocumentContext } from 'next/document';
 
 import css from './style.scss';
 
-import { AppPageQuery } from '@/models';
+import { AppPageQuery, PageContext, AppVersionList } from '@/models';
 import AppSummary from '@/components/AppSummary';
 import SectionHeading from '@/components/SectionHeading';
 import VersionListPageItem from '@/components/VersionListPageItem';
 import Footer from '@/components/Footer';
+import { RootState } from '@/store';
+import { fetchAppVersionList } from '@/ducks/appVersionList';
 
-interface AppPageProps extends AppPageQuery {}
+interface AppPageProps extends AppPageQuery {
+  appVersionList: AppVersionList;
+}
 
 type AppPageState = {};
 
@@ -25,46 +28,45 @@ interface Context extends NextDocumentContext {
 class AppPage extends Component<AppPageProps, AppPageState> {
   state: AppPageState = {};
 
-  static getInitialProps({ query: { appSlug } }: NextContext) {
+  static async getInitialProps({ query: { appSlug }, store }: PageContext) {
+    await store.dispatch(fetchAppVersionList(appSlug as string) as any);
+
     return { appSlug };
   }
 
   render() {
-    const { appSlug } = this.props;
+    const { appVersionList } = this.props;
+    const latestAppVersion = appVersionList[0].apps[0];
 
     return (
       <div className={css.appPageWrapper}>
         <div className={css.appPage}>
           <div className={css.appSummaryWrapper}>
             <AppSummary
-              detailsPagePath="/v1-1-0/details"
-              title="My app v1.1.0 (28)"
-              description="This is a short description about my app. It is a good app. End of description."
-              note="Updated on January 29, 2008"
-              iconUrl="/static/icon-flutter.svg"
+              detailsPagePath={`/${latestAppVersion.id}/details`}
+              title={`${latestAppVersion.appName} v${latestAppVersion.version} (${latestAppVersion.buildNumber})`}
+              description={latestAppVersion.description}
+              note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
+              iconUrl={latestAppVersion.iconUrl}
               platformIconUrl="/static/icon-apple.svg"
             />
           </div>
           <SectionHeading>Version History</SectionHeading>
-          {Array(3)
-            .fill(null)
-            .map((_number, i) => (
-              <Fragment key={i}>
-                <div className={css.majorVersionHeading}>v.{i}</div>
-                {Array(4)
-                  .fill(null)
-                  .map((_number, j) => (
-                    <VersionListPageItem
-                      key={`${i}-${j}`}
-                      detailsPagePath={`/v${i}-${j}-0/details`}
-                      platformIconUrl="/static/icon-apple.svg"
-                      title={`My app v${i}.${j}.0 (28)`}
-                      description={`This is a short description about my ${j}. app. It is a good app. End of description.`}
-                      note={`Updated on January ${j}, 2008`}
-                    />
-                  ))}
-              </Fragment>
-            ))}
+          {appVersionList.map((appVersionListItem, i) => (
+            <Fragment key={i}>
+              <div className={css.majorVersionHeading}>v.{appVersionListItem.version}</div>
+              {appVersionListItem.apps.map((appVersion, j) => (
+                <VersionListPageItem
+                  key={`${i}-${j}`}
+                  detailsPagePath={`/${appVersion.id}/details`}
+                  platformIconUrl="/static/icon-apple.svg"
+                  title={`${appVersion.appName} (${appVersion.buildNumber})`}
+                  description={appVersion.description}
+                  note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}`}
+                />
+              ))}
+            </Fragment>
+          ))}
         </div>
         <div className={css.footerWrapper}>
           <Footer />
@@ -74,4 +76,6 @@ class AppPage extends Component<AppPageProps, AppPageState> {
   }
 }
 
-export default AppPage;
+const mapStateToProps = ({ appVersionList }: RootState) => ({ appVersionList });
+
+export default connect(mapStateToProps)(AppPage as any);

@@ -11,6 +11,11 @@ export type AppPageQuery = {
   appSlug: string;
 };
 
+export type AppVersionList = {
+  version: string;
+  apps: AppVersion[]
+}[];
+
 export type AppVersion = {
   id: number;
   version: string;
