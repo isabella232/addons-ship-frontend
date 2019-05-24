@@ -24,8 +24,8 @@ app.prepare().then(() => {
 
   server.get('*', (req, res) => handle(req, res));
 
-  server.listen(port, (err: Error) => {
+  server.listen(port, <{ (): void }>((err: Error) => {
     if (err) throw err;
     console.log(`> Ready on http://localhost:${port}`);
-  });
+  }));
 });

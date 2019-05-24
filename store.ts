@@ -3,10 +3,14 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import chatReducer from '@/ducks/chat';
+import { appVersion } from '@/ducks/appVersion';
 
 const rootReducer = combineReducers({
-  chat: chatReducer
+  chat: chatReducer,
+  appVersion
 });
+
+export type RootState = ReturnType<typeof rootReducer>;
 
 /**
  * @param {object} initialState
