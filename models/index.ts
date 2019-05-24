@@ -18,7 +18,7 @@ export type AppVersion = {
   id: number;
   version: string;
   platform: string;
-  buildNumber: string;
+  buildNumber: number;
   buildSlug: string;
   lastUpdate: Date;
   description: string;
