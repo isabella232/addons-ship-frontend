@@ -9,6 +9,7 @@
     "dev:watch": "nodemon",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "heroku-postbuild": "yarn run build",
     "build": "next build && yarn build:server",
     "build:server": "tsc -p build.tsconfig.json"
