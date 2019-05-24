@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node dist/server.js",
     "dev": "yarn build:server && node dist/server.js",
     "dev:watch": "nodemon",
     "test": "jest",
