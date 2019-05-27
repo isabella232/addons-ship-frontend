@@ -2,7 +2,6 @@ jest.mock('node-fetch');
 
 import fetch from 'node-fetch';
 import api from './bitrise-api';
-import { mockTestDevices } from '@/mocks';
 
 describe('Bitrise API service', () => {
   it('fetches test devices for an app', async () => {
@@ -11,6 +10,6 @@ describe('Bitrise API service', () => {
 
     // expect(fetch).toHaveBeenCalledWith(`/v0.1/apps/${appSlug}/test-devices`);
 
-    expect(testDevices).toEqual(mockTestDevices);
+    expect(testDevices).toMatchSnapshot();
   });
 });
