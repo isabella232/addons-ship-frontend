@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`appVersion should update the state 1`] = `
+Array [
+  Object {
+    "type": "TEST_DEVICES_GET_NEXT",
+  },
+  Object {
+    "type": "TEST_DEVICES_GET_COMPLETE",
+  },
+]
+`;
