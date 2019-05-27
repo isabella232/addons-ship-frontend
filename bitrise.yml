@@ -57,4 +57,4 @@ workflows:
                 #!/bin/bash
                 set -ex
 
-                yarn test
+                yarn test:coverage
