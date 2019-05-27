@@ -9,7 +9,7 @@ type Props = {
   testDevices: TestDevice[];
 };
 
-export class AppVersionDetails extends Component<Props> {
+export class AppVersionDevices extends Component<Props> {
   render() {
     const { testDevices } = this.props;
 
@@ -23,4 +23,4 @@ export class AppVersionDetails extends Component<Props> {
 
 const mapStateToProps = ({ testDevices }: RootState) => ({ testDevices });
 
-export default connect(mapStateToProps)(AppVersionDetails as any);
+export default connect(mapStateToProps)(AppVersionDevices as any);

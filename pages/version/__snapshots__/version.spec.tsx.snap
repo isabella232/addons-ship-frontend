@@ -11,7 +11,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
       gap="x10"
     >
       <Tab
-        active={false}
+        active={true}
       >
         <Link
           href="some/path/details"
@@ -64,7 +64,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
   <Base
     maxWidth={960}
   >
-    <h1 />
+    <ConnectFunction />
   </Base>
 </Base>
 `;

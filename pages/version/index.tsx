@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import Link from 'next/link';
 import { Base, Tabs, Tab, Divider } from '@bitrise/bitkit';
@@ -23,6 +22,10 @@ type VersionPageState = {
 };
 
 export class VersionPage extends Component<VersionPageProps, VersionPageState> {
+  static defaultProps = {
+    selectedTab: 'details'
+  };
+
   state: VersionPageState = {
     showTooltips: false
   };
@@ -91,11 +94,4 @@ export class VersionPage extends Component<VersionPageProps, VersionPageState> {
 }
 
 const mapStateToProps = ({ appVersion }: RootState) => ({ appVersion });
-const mapDispatchToProps = (_dispatch: Dispatch) => ({
-  fetchAppVersion
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(VersionPage as any);
+export default connect(mapStateToProps)(VersionPage as any);

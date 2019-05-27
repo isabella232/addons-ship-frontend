@@ -139,7 +139,7 @@ export default ({ appVersion, showTooltips }: Props) => {
                 <Flex grow>
                   <InputLabel>Support URL</InputLabel>
                   <InputContainer>
-                    <Input value={appVersion.supportUrl} />
+                    <Input defaultValue={appVersion.supportUrl} />
                   </InputContainer>
 
                   <Divider color="gray-2" direction="horizontal" margin="x4" />
@@ -172,7 +172,7 @@ export default ({ appVersion, showTooltips }: Props) => {
                 <Flex grow>
                   <InputLabel>Marketing URL</InputLabel>
                   <InputContainer>
-                    <Input value={appVersion.marketingUrl} />
+                    <Input defaultValue={appVersion.marketingUrl} />
                   </InputContainer>
 
                   <Divider color="gray-2" direction="horizontal" margin="x4" />
