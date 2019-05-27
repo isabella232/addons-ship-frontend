@@ -1,4 +1,5 @@
 import { AppVersion } from '@/models';
+import { TestDevice } from '@/models/test-device';
 
 export const mockAppVersion: AppVersion = {
   id: 123,
@@ -27,3 +28,9 @@ export const mockAppVersion: AppVersion = {
   scheme: 'piramid',
   configuration: 'canary'
 };
+
+export const mockTestDevices: TestDevice[] = [
+  { deviceId: 'some-device-id-01', deviceType: 'ios', owner: 'test-user-1' },
+  { deviceId: 'some-device-id-02', deviceType: 'android', owner: 'test-user-1' },
+  { deviceId: 'some-device-id-03', deviceType: 'ios', owner: 'test-user-2' }
+];

@@ -2,13 +2,13 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import chatReducer from '@/ducks/chat';
 import { appVersion } from '@/ducks/appVersion';
+import { testDevices } from '@/ducks/testDevices';
 import { appVersionList } from '@/ducks/appVersionList';
 
 const rootReducer = combineReducers({
-  chat: chatReducer,
   appVersion,
+  testDevices,
   appVersionList
 });
 
