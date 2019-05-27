@@ -1,8 +1,6 @@
 import { Component, Fragment } from 'react';
-import { Store } from 'redux';
 import { connect } from 'react-redux';
 import formatDate from 'date-fns/format';
-import { NextDocumentContext } from 'next/document';
 
 import css from './style.scss';
 
@@ -19,11 +17,6 @@ interface AppPageProps extends AppPageQuery {
 }
 
 type AppPageState = {};
-
-interface Context extends NextDocumentContext {
-  store: Store;
-  isServer: boolean;
-}
 
 class AppPage extends Component<AppPageProps, AppPageState> {
   state: AppPageState = {};
