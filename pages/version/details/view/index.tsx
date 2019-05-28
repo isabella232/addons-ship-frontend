@@ -1,5 +1,5 @@
-import formatDate from 'date-fns/format';
-import prettyBytes from 'pretty-bytes';
+import formatDate from "date-fns/format";
+import prettyBytes from "pretty-bytes";
 import {
   Base,
   Divider,
@@ -14,10 +14,11 @@ import {
   Input,
   InputContainer,
   InputLabel
-} from '@bitrise/bitkit';
-import { TypeName } from '@bitrise/bitkit/Icon/tsx';
+} from "@bitrise/bitkit";
+import { TypeName } from "@bitrise/bitkit/Icon/tsx";
 
-import { AppVersion } from '@/models';
+import { AppVersion } from "@/models";
+import Sidebar from "./sidebar";
 
 type Props = {
   appVersion: AppVersion;
@@ -25,7 +26,8 @@ type Props = {
 };
 
 export default ({ appVersion, showTooltips }: Props) => {
-  const iconName: TypeName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
+  const iconName: TypeName =
+    appVersion.platform === "ios" ? "PlatformsApple" : "PlatformsAndroid";
 
   return (
     <Base paddingVertical="x6">
@@ -41,23 +43,49 @@ export default ({ appVersion, showTooltips }: Props) => {
               <Flex direction="horizontal" margin="x16">
                 <Image src={appVersion.iconUrl} borderRadius="x2" />
 
-                <Flex direction="vertical" alignChildrenVertical="middle" paddingHorizontal="x6">
+                <Flex
+                  direction="vertical"
+                  alignChildrenVertical="middle"
+                  paddingHorizontal="x6"
+                >
                   <Flex direction="horizontal" alignChildren="middle">
                     <Icon color="grape-4" name={iconName} size="1.5rem" />
-                    <Text letterSpacing="x2" size="x6" weight="bold" color="grape-4" paddingHorizontal="x2">
+                    <Text
+                      letterSpacing="x2"
+                      size="x6"
+                      weight="bold"
+                      color="grape-4"
+                      paddingHorizontal="x2"
+                    >
                       {appVersion.appName}
                     </Text>
                   </Flex>
-                  <Text letterSpacing="x2" size="x5" weight="bold" color="grape-4" margin="x2">
+                  <Text
+                    letterSpacing="x2"
+                    size="x5"
+                    weight="bold"
+                    color="grape-4"
+                    margin="x2"
+                  >
                     v{appVersion.version} ({appVersion.buildNumber})
                   </Text>
-                  <Text letterSpacing="x1" size="x4" weight="medium" color="gray-6">
-                    Updated on {formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}
+                  <Text
+                    letterSpacing="x1"
+                    size="x4"
+                    weight="medium"
+                    color="gray-6"
+                  >
+                    Updated on{" "}
+                    {formatDate(appVersion.lastUpdate, "MMMM D, YYYY")}
                   </Text>
                 </Flex>
               </Flex>
 
-              <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
+              <Flex
+                direction="horizontal"
+                alignChildrenHorizontal="between"
+                alignChildrenVertical="middle"
+              >
                 <InputLabel>Description</InputLabel>
                 <Text size="x2" weight="medium" color="gray-7" align="end">
                   1235
@@ -67,7 +95,11 @@ export default ({ appVersion, showTooltips }: Props) => {
 
               <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-              <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
+              <Flex
+                direction="horizontal"
+                alignChildrenHorizontal="between"
+                alignChildrenVertical="middle"
+              >
                 <InputLabel>What's new</InputLabel>
                 <Text size="x2" weight="medium" color="gray-7" align="end">
                   1235
@@ -77,7 +109,11 @@ export default ({ appVersion, showTooltips }: Props) => {
 
               <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-              <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
+              <Flex
+                direction="horizontal"
+                alignChildrenHorizontal="between"
+                alignChildrenVertical="middle"
+              >
                 <InputLabel>Promotional Text</InputLabel>
                 <Text size="x2" weight="medium" color="gray-7" align="end">
                   1235
@@ -87,7 +123,11 @@ export default ({ appVersion, showTooltips }: Props) => {
 
               <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-              <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
+              <Flex
+                direction="horizontal"
+                alignChildrenHorizontal="between"
+                alignChildrenVertical="middle"
+              >
                 <InputLabel>Keywords</InputLabel>
                 <Text size="x2" weight="medium" color="gray-7" align="end">
                   1235
@@ -97,7 +137,11 @@ export default ({ appVersion, showTooltips }: Props) => {
 
               <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-              <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
+              <Flex
+                direction="horizontal"
+                alignChildrenHorizontal="between"
+                alignChildrenVertical="middle"
+              >
                 <InputLabel>Review Notes</InputLabel>
                 <Text size="x2" weight="medium" color="gray-7" align="end">
                   1235
@@ -108,7 +152,9 @@ export default ({ appVersion, showTooltips }: Props) => {
               <Divider color="gray-2" direction="horizontal" margin="x4" />
 
               <Flex direction="horizontal" alignChildrenVertical="middle">
-                <InputLabel>Distribution Type: {appVersion.distributionType}</InputLabel>
+                <InputLabel>
+                  Distribution Type: {appVersion.distributionType}
+                </InputLabel>
                 {showTooltips && (
                   <Tooltip title="This is the tooltip">
                     {({ ref, ...rest }) => (
@@ -124,11 +170,13 @@ export default ({ appVersion, showTooltips }: Props) => {
                   </Tooltip>
                 )}
               </Flex>
-              {appVersion.distributionType === 'development' && (
+              {appVersion.distributionType === "development" && (
                 <Text size="x3" weight="medium" color="gray-7">
-                  The app was signed with a Development Provisioning Profile which means that it{' '}
+                  The app was signed with a Development Provisioning Profile
+                  which means that it{" "}
                   <Text weight="bold">
-                    can only be installed on devices which are included in the Provisioning Profile
+                    can only be installed on devices which are included in the
+                    Provisioning Profile
                   </Text>
                 </Text>
               )}
@@ -155,7 +203,9 @@ export default ({ appVersion, showTooltips }: Props) => {
                   <Divider color="gray-2" direction="horizontal" margin="x4" />
 
                   <InputLabel>Certificate Expires</InputLabel>
-                  <Text size="x3">{formatDate(appVersion.certificateExpires, 'MMM DD')}</Text>
+                  <Text size="x3">
+                    {formatDate(appVersion.certificateExpires, "MMM DD")}
+                  </Text>
 
                   <Divider color="gray-2" direction="horizontal" margin="x4" />
 
@@ -193,7 +243,9 @@ export default ({ appVersion, showTooltips }: Props) => {
                   <Divider color="gray-2" direction="horizontal" margin="x4" />
 
                   <InputLabel>Supported Device Types</InputLabel>
-                  <Text size="x3">{appVersion.supportedDeviceTypes.join(', ')}</Text>
+                  <Text size="x3">
+                    {appVersion.supportedDeviceTypes.join(", ")}
+                  </Text>
 
                   <Divider color="gray-2" direction="horizontal" margin="x4" />
 
@@ -206,6 +258,7 @@ export default ({ appVersion, showTooltips }: Props) => {
             </form>
           </Base>
         </Flex>
+        <Sidebar appVersion={appVersion} />
       </Flex>
     </Base>
   );
