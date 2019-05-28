@@ -51,7 +51,7 @@ export default ({ appVersion }: Props) => {
       <Flex
         direction="vertical"
         alignChildrenHorizontal="middle"
-        paddingVertical="x8"
+        paddingVertical="x10"
       >
         <QRCode value={appVersion.publicInstallPageURL} size={180} />
       </Flex>
