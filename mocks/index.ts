@@ -32,10 +32,6 @@ export const mockAppVersion: AppVersion = {
 
 export const mockTestDevices: TestDevice[] = [
   { deviceId: 'some-device-id-01', deviceType: 'ios', owner: 'test-user-1' },
-  {
-    deviceId: 'some-device-id-02',
-    deviceType: 'android',
-    owner: 'test-user-1'
-  },
+  { deviceId: 'some-device-id-02', deviceType: 'android', owner: 'test-user-1' },
   { deviceId: 'some-device-id-03', deviceType: 'ios', owner: 'test-user-2' }
 ];
