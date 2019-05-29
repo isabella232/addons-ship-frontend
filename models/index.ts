@@ -1,14 +1,14 @@
-import { NextContext } from "next";
-import { Store } from "redux";
-import { Request } from "express";
-import { string } from "prop-types";
+import { NextContext } from 'next';
+import { Store } from 'redux';
+import { Request } from 'express';
+import { string } from 'prop-types';
 
 export type AppVersionProps = {
   appSlug: string;
   versionId: string;
 };
 
-export const AppVersionPageTabs = ["details", "devices", "test", "activity"];
+export const AppVersionPageTabs = ['details', 'devices', 'test', 'activity'];
 
 export type AppVersionPageQuery = AppVersionProps & {
   isPublic?: string;
