@@ -5,6 +5,8 @@ import { AppVersion } from "@/models";
 import { Base, Flex, Text, Icon, Button, Link } from "@bitrise/bitkit";
 import { TypeName } from "@bitrise/bitkit/Icon/tsx";
 import QRCode from "qrcode.react";
+import Clipboard from "react-clipboard.js";
+import css from "./style.scss";
 
 type Props = {
   appVersion: AppVersion;
@@ -20,23 +22,29 @@ export default ({ appVersion }: Props) => {
         direction="horizontal"
         alignChildrenHorizontal="between"
         alignChildrenVertical="middle"
+        paddingVertical="x4"
       >
         <Flex>
           <Text weight="bold" size="x3">
             Public Install Page link
           </Text>
         </Flex>
-        <Button>
-          <Base padding="x1" backgroundColor="grape-1" borderRadius="x1">
-            <Icon name="Duplicate" color="grape-3" size="1.5rem" />
-          </Base>
-        </Button>
+        <Flex paddingHorizontal="x3">
+          <Clipboard
+            data-clipboard-text={appVersion.publicInstallPageURL}
+            className={css["clipboard-button"]}
+          >
+            <Base padding="x1" backgroundColor="grape-1" borderRadius="x1">
+              <Icon name="Duplicate" color="grape-3" size="1.5rem" />
+            </Base>
+          </Clipboard>
+        </Flex>
       </Flex>
       <Base
         backgroundColor="grape-1"
-        padding="x3"
+        paddingHorizontal="x4"
+        paddingVertical="x3"
         borderRadius="x1"
-        wordWrap="break-word"
       >
         <Text
           Component="a"
