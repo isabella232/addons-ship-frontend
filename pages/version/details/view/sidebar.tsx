@@ -1,20 +1,19 @@
-import { Component } from "react";
-import { connect } from "react-redux";
+import { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { AppVersion } from "@/models";
-import { Base, Flex, Text, Icon, Button, Link } from "@bitrise/bitkit";
-import { TypeName } from "@bitrise/bitkit/Icon/tsx";
-import QRCode from "qrcode.react";
-import Clipboard from "react-clipboard.js";
-import css from "./style.scss";
+import { AppVersion } from '@/models';
+import { Base, Flex, Text, Icon, Button, Link } from '@bitrise/bitkit';
+import { TypeName } from '@bitrise/bitkit/Icon/tsx';
+import QRCode from 'qrcode.react';
+import Clipboard from 'react-clipboard.js';
+import css from './style.scss';
 
 type Props = {
   appVersion: AppVersion;
 };
 
 export default ({ appVersion }: Props) => {
-  const iconName: TypeName =
-    appVersion.platform === "ios" ? "PlatformsApple" : "PlatformsAndroid";
+  const iconName: TypeName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   return (
     <Base maxWidth={250}>
@@ -30,46 +29,30 @@ export default ({ appVersion }: Props) => {
           </Text>
         </Flex>
         <Flex paddingHorizontal="x3">
-          <Clipboard
-            data-clipboard-text={appVersion.publicInstallPageURL}
-            className={css["clipboard-button"]}
-          >
+          <Clipboard data-clipboard-text={appVersion.publicInstallPageURL} className={css['clipboard-button']}>
             <Base padding="x1" backgroundColor="grape-1" borderRadius="x1">
               <Icon name="Duplicate" color="grape-3" size="1.5rem" />
             </Base>
           </Clipboard>
         </Flex>
       </Flex>
-      <Base
-        backgroundColor="grape-1"
-        paddingHorizontal="x4"
-        paddingVertical="x3"
-        borderRadius="x1"
-      >
+      <Base backgroundColor="grape-1" paddingHorizontal="x4" paddingVertical="x3" borderRadius="x1">
         <Text
           Component="a"
           href={appVersion.publicInstallPageURL}
           breakOn="word"
           color="grape-3"
           weight="medium"
-          className={css["public-instal-page-link"]}
+          className={css['public-instal-page-link']}
         >
           {appVersion.publicInstallPageURL}
         </Text>
       </Base>
-      <Flex
-        direction="vertical"
-        alignChildrenHorizontal="middle"
-        paddingVertical="x10"
-      >
+      <Flex direction="vertical" alignChildrenHorizontal="middle" paddingVertical="x10">
         <QRCode value={appVersion.publicInstallPageURL} size={180} />
       </Flex>
       <Flex direction="vertical" alignChildrenHorizontal="middle">
-        <Flex
-          direction="horizontal"
-          alignChildrenVertical="middle"
-          paddingHorizontal="x6"
-        >
+        <Flex direction="horizontal" alignChildrenVertical="middle" paddingHorizontal="x6">
           <Base paddingHorizontal="x2">
             <Icon color="grape-4" name="Mobile" />
           </Base>

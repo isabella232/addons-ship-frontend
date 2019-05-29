@@ -1,9 +1,9 @@
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 
-import { AppVersion } from "@/models";
-import { Fetch, APIConfig } from "@/models/services";
-import { mockAppVersion } from "@/mocks";
-import { snakifyKeys, camelizeKeys } from "@/utils";
+import { AppVersion } from '@/models';
+import { Fetch, APIConfig } from '@/models/services';
+import { mockAppVersion } from '@/mocks';
+import { snakifyKeys, camelizeKeys } from '@/utils';
 
 class ShipAPIService {
   constructor(private fetch: Fetch, private config: APIConfig) {}
@@ -22,5 +22,5 @@ class ShipAPIService {
 }
 
 export default new ShipAPIService(fetch, {
-  url: "todo: get from config"
+  url: 'todo: get from config'
 });
