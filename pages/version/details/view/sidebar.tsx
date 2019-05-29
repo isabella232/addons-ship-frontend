@@ -52,6 +52,7 @@ export default ({ appVersion }: Props) => {
           breakOn="word"
           color="grape-3"
           weight="medium"
+          className={css["public-instal-page-link"]}
         >
           {appVersion.publicInstallPageURL}
         </Text>
