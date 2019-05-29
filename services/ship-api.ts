@@ -14,9 +14,11 @@ class ShipAPIService {
     };
 
     const { data } = resp;
+    const publicInstallPageURL = data.public_install_page_url;
+    data.public_install_page_url = undefined;
     return {
       ...camelizeKeys(data),
-      publicInstallPageURL: data.public_install_page_url
+      publicInstallPageURL
     };
   }
 }
