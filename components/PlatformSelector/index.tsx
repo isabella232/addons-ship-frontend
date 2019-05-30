@@ -11,8 +11,7 @@ interface PlatformSelectorProps {
 }
 
 export default ({ platform, onClick }: PlatformSelectorProps) => {
-  const activeColor = (iosStyle: TypeColors, androidStyle: TypeColors) =>
-    platform === 'ios' ? iosStyle : androidStyle;
+  const color = (iosStyle: TypeColors, androidStyle: TypeColors) => (platform === 'ios' ? iosStyle : androidStyle);
   return (
     <Flex alignChildren="middle" direction="horizontal">
       <Flex
@@ -28,7 +27,7 @@ export default ({ platform, onClick }: PlatformSelectorProps) => {
           paddingVertical="x3"
           onClick={() => onClick('ios')}
         >
-          <Icon name="PlatformsApple" color={activeColor('white', 'grape-3')} />
+          <Icon name="PlatformsApple" color={color('white', 'grape-3')} />
         </Base>
         <Base
           className={cx(css.Base, { [css.selected]: platform === 'android' })}
@@ -36,7 +35,7 @@ export default ({ platform, onClick }: PlatformSelectorProps) => {
           paddingVertical="x3"
           onClick={() => onClick('android')}
         >
-          <Icon name="PlatformsAndroid" color={platform === 'android' ? 'white' : 'grape-3'} />
+          <Icon name="PlatformsAndroid" color={color('grape-3', 'white')} />
         </Base>
       </Flex>
     </Flex>

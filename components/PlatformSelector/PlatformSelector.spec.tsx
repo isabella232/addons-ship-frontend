@@ -8,4 +8,14 @@ describe('PlatformSelector', () => {
     const tree = toJSON(shallow(<PlatformSelector platform="ios" onClick={() => {}} />));
     expect(tree).toMatchSnapshot();
   });
+
+  it('calls onclick with the right param', () => {
+    const mockCallback = jest.fn();
+    const tree = shallow(<PlatformSelector platform="android" onClick={mockCallback} />);
+    tree
+      .find('Base')
+      .first()
+      .simulate('click');
+    expect(mockCallback).toHaveBeenCalledWith('ios');
+  });
 });
