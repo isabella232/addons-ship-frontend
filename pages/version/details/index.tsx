@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { AppVersion } from '@/models';
 import { RootState } from '@/store';
-import View from './view/index';
+import View from './view';
 
 type Props = {
   appVersion: AppVersion;
