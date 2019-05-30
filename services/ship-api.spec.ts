@@ -8,7 +8,7 @@ describe('Ship API service', () => {
   it('fetches test devices for an app', async () => {
     const appSlug = 'an-app-slug';
     const versionId = 'a-version-id';
-    let appVersion = await api.getAppVersion(appSlug, versionId);
+    const appVersion = await api.getAppVersion(appSlug, versionId);
 
     // expect(fetch).toHaveBeenCalledWith(`/apps/${appSlug}/versions/${versionId}`);
 
