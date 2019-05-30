@@ -18,6 +18,7 @@ import {
 import { TypeName } from '@bitrise/bitkit/Icon/tsx';
 
 import { AppVersion } from '@/models';
+import Sidebar from './sidebar';
 
 type Props = {
   appVersion: AppVersion;
@@ -206,6 +207,7 @@ export default ({ appVersion, showTooltips }: Props) => {
             </form>
           </Base>
         </Flex>
+        <Sidebar publicInstallPageURL={appVersion.publicInstallPageURL} />
       </Flex>
     </Base>
   );
