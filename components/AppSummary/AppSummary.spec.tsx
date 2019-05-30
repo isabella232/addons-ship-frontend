@@ -13,6 +13,7 @@ describe('AppSummary', () => {
           note="Updated on January 29, 2008"
           iconUrl="/static/icon-flutter.svg"
           platformIconUrl="/static/icon-apple.svg"
+          detailsPagePath="/details"
         />
       )
     );

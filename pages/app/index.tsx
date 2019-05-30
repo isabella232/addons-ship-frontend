@@ -29,7 +29,7 @@ class AppPage extends Component<AppPageProps, AppPageState> {
 
   render() {
     const { appVersionList } = this.props;
-    const latestAppVersion = appVersionList[0].apps[0];
+    const latestAppVersion = appVersionList[0].appVersions[0];
 
     return (
       <div className={css.appPageWrapper}>
@@ -48,7 +48,7 @@ class AppPage extends Component<AppPageProps, AppPageState> {
           {appVersionList.map((appVersionListItem, i) => (
             <Fragment key={i}>
               <div className={css.majorVersionHeading}>v.{appVersionListItem.version}</div>
-              {appVersionListItem.apps.map((appVersion, j) => (
+              {appVersionListItem.appVersions.map((appVersion, j) => (
                 <VersionListPageItem
                   key={`${i}-${j}`}
                   detailsPagePath={`/${appVersion.id}/details`}

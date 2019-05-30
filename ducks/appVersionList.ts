@@ -5,7 +5,7 @@ import api from '@/services/ship-api';
 import { actionTypeCreator } from '@/utils';
 import { AppVersionList } from '@/models';
 
-const $ = actionTypeCreator('APP_VERSION');
+const $ = actionTypeCreator('APP_VERSION_LIST');
 
 const _fetchAppVersionList = (appSlug: string) => async (dispatch: Dispatch) => {
   dispatch(fetchAppVersionList.next());
