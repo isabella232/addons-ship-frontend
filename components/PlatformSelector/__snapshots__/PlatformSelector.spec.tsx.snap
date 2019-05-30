@@ -7,7 +7,7 @@ exports[`PlatformSelector renders correctly 1`] = `
 >
   <Flex
     alignChildren="middle"
-    backgroundColor="grape-1"
+    backgroundColor="white"
     borderRadius="x2"
     className="platform"
     direction="horizontal"
@@ -19,7 +19,6 @@ exports[`PlatformSelector renders correctly 1`] = `
       paddingVertical="x3"
     >
       <Icon
-        color="white"
         name="PlatformsApple"
         size="1.5rem"
       />
@@ -31,7 +30,6 @@ exports[`PlatformSelector renders correctly 1`] = `
       paddingVertical="x3"
     >
       <Icon
-        color="grape-3"
         name="PlatformsAndroid"
         size="1.5rem"
       />
