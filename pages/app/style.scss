@@ -1,0 +1,35 @@
+@import '~@/assets/style/mixins';
+@import '~@/assets/style/dimensions';
+@import '~@/assets/style/colors';
+
+.appPageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7 * $grid-size 7 * $grid-size 18 * $grid-size;
+
+  .appPage {
+    width: 100%;
+    max-width: 120 * $grid-size;
+
+    .appSummaryWrapper {
+      margin-bottom: 6 * $grid-size;
+    }
+
+    .majorVersionHeading {
+      margin-top: 2 * $grid-size;
+      color: $warm-grey;
+      // TODO: replace with element from UI library
+      line-height: 3 * $grid-size;
+      letter-spacing: normal;
+      font-size: 19px;
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+    }
+  }
+
+  .footerWrapper {
+    margin-top: 15 * $grid-size;
+  }
+}

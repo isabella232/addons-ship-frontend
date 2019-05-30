@@ -1,6 +1,6 @@
 import * as next from 'next';
 import * as express from 'express';
-import { AppVersionPageQuery, AppVersionProps } from './models';
+import { AppVersionPageQuery } from './models';
 
 const port = parseInt(<string>process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';

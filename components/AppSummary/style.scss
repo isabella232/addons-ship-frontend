@@ -1,0 +1,96 @@
+@import '~@/assets/style/mixins';
+@import '~@/assets/style/dimensions';
+@import '~@/assets/style/colors';
+
+.appSummary {
+  $hover-border-width: 1px;
+
+  display: block;
+  border: $hover-border-width solid $white-three;
+  border-radius: 2 * $grid-size;
+  overflow: hidden;
+  background-color: $white;
+  text-decoration: none;
+  // TODO: replace with element from UI library
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
+
+  &:hover, &:focus {
+    border-color: $warm-grey;
+  }
+
+  .colorBar {
+    height: 10 * $grid-size - $hover-border-width;
+    background-color: $warm-grey;
+  }
+
+  .body {
+    padding: 4 * $grid-size 4 * $grid-size - $hover-border-width;
+
+    .iconWrapper {
+      display: flex;
+      align-items: flex-end;
+      margin-top: -10 * $grid-size;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include size(12 * $grid-size);
+        border-radius: 2 * $grid-size;
+        background-color: $warm-grey;
+
+        svg {
+          display: block;
+        }
+      }
+
+      .note {
+        margin-left: 2 * $grid-size;
+        margin-bottom: $grid-size;
+        color: $warm-grey;
+        // TODO: replace with element from UI library
+        line-height: 1.5;
+        letter-spacing: normal;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        font-size: 16px;
+      }
+    }
+
+    .titleWrapper {
+      display: flex;
+      align-items: center;
+      margin-top: 2 * $grid-size;
+
+      svg {
+        display: block;
+        fill: $dark-blue-grey;
+      }
+
+      .title {
+        margin-left: $grid-size;
+        color: $dark-blue-grey;
+        // TODO: replace with element from UI library
+        line-height: 1.5;
+        letter-spacing: normal;
+        font-style: normal;
+        font-stretch: normal;
+        font-size: 25px;
+        font-weight: 700;
+      }
+    }
+
+    .description {
+      margin-top: $grid-size;
+      color: $dark-blue-grey;
+      // TODO: replace with element from UI library
+      line-height: 1.5;
+      letter-spacing: normal;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      font-size: 16px;
+    }
+  }
+}

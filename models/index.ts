@@ -14,6 +14,15 @@ export type AppVersionPageQuery = AppVersionProps & {
   selectedTab?: typeof AppVersionPageTabs[number];
 };
 
+export type AppPageQuery = {
+  appSlug: string;
+};
+
+export type AppVersionList = Array<{
+  version: string;
+  appVersions: AppVersion[];
+}>;
+
 export type AppVersion = {
   id: number;
   version: string;

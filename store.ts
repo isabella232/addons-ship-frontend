@@ -4,10 +4,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { appVersion } from '@/ducks/appVersion';
 import { testDevices } from '@/ducks/testDevices';
+import { appVersionList } from '@/ducks/appVersionList';
 
 const rootReducer = combineReducers({
   appVersion,
-  testDevices
+  testDevices,
+  appVersionList
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
