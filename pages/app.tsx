@@ -1,12 +1,16 @@
-import { Component, Fragment } from 'react';
-import { Dispatch, Store } from 'redux';
-import { connect } from 'react-redux';
-
+import { Component } from 'react';
+import { Store } from 'redux';
 import { NextDocumentContext } from 'next/document';
+import { Base } from '@bitrise/bitkit';
+
+import PlatformSelector from '@/components/PlatformSelector';
+import { Platform } from '@/models';
 
 type AppPageProps = {};
 
-type AppPageState = {};
+type AppPageState = {
+  platform: Platform;
+};
 
 interface Context extends NextDocumentContext {
   store: Store;
@@ -14,13 +18,18 @@ interface Context extends NextDocumentContext {
 }
 
 class AppPage extends Component<AppPageProps, AppPageState> {
-  state: AppPageState = {};
+  state: AppPageState = {
+    platform: 'ios'
+  };
 
   render() {
     const {} = this.props;
+    const { platform } = this.state;
 
     return (
-      <h1>Welcome to Ship Add-on's app page!</h1>
+      <Base paddingVertical="x12">
+        <PlatformSelector platform={platform} onClick={platform => this.setState({ platform })} />
+      </Base>
     );
   }
 }

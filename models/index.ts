@@ -48,3 +48,5 @@ export interface PageContext extends NextContext {
   isServer: boolean;
   req: Request;
 }
+
+export type Platform = 'ios' | 'android';

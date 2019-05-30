@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlatformSelector renders correctly 1`] = `
+<Flex
+  alignChildren="middle"
+  direction="horizontal"
+>
+  <Flex
+    alignChildren="middle"
+    backgroundColor="white"
+    borderRadius="x2"
+    className="platform"
+    direction="horizontal"
+  >
+    <Base
+      className="Base selected"
+      onClick={[Function]}
+      paddingHorizontal="x6"
+      paddingVertical="x3"
+    >
+      <Icon
+        name="PlatformsApple"
+        size="1.5rem"
+      />
+    </Base>
+    <Base
+      className="Base"
+      onClick={[Function]}
+      paddingHorizontal="x6"
+      paddingVertical="x3"
+    >
+      <Icon
+        name="PlatformsAndroid"
+        size="1.5rem"
+      />
+    </Base>
+  </Flex>
+</Flex>
+`;
