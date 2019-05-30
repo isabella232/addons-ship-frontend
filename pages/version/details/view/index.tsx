@@ -207,7 +207,7 @@ export default ({ appVersion, showTooltips }: Props) => {
             </form>
           </Base>
         </Flex>
-        <Sidebar appVersion={appVersion} />
+        <Sidebar publicInstallPageURL={appVersion.publicInstallPageURL} />
       </Flex>
     </Base>
   );

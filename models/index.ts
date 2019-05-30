@@ -1,7 +1,6 @@
 import { NextContext } from 'next';
 import { Store } from 'redux';
 import { Request } from 'express';
-import { string } from 'prop-types';
 
 export type AppVersionProps = {
   appSlug: string;
