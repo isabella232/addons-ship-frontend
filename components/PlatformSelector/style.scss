@@ -1,0 +1,20 @@
+@import '~@/assets/style/mixins';
+@import '~@/assets/style/colors';
+
+.platform {
+  border: 1px solid var(--color-eggplant);
+
+  .Base {
+    cursor: pointer;
+
+    &:first-child {
+      @include border-left-radius(8px);
+    }
+    &:last-child {
+      @include border-right-radius(8px);
+    }
+    &.selected {
+      background-color: var(--color-grape--3);
+    }
+  }
+}
