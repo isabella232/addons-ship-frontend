@@ -2459,39 +2459,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
               </Base>
             </Flex>
             <_default
-              appVersion={
-                Object {
-                  "appName": "Standup Timer",
-                  "buildNumber": 32,
-                  "buildSlug": "13245ads",
-                  "bundleId": "bundle-id",
-                  "certificateExpires": 2018-09-22T12:42:31.000Z,
-                  "configuration": "canary",
-                  "description": "Some semi-long description",
-                  "distributionType": "development",
-                  "iconUrl": "http://placekitten.com/160/160",
-                  "id": 123,
-                  "keywords": "Keywords",
-                  "lastUpdate": 2018-09-22T12:42:31.000Z,
-                  "marketingUrl": "https://bitrise.io/marketing",
-                  "minimumOs": "10.2",
-                  "minimumSdk": "dunno",
-                  "packageName": "com.package.name",
-                  "platform": "ios",
-                  "promotionalText": "Promotional Text",
-                  "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
-                  "reviewNotes": "Review Notes",
-                  "scheme": "piramid",
-                  "size": 4567034,
-                  "supportUrl": "https://bitrise.io/support",
-                  "supportedDeviceTypes": Array [
-                    "iphone",
-                    "ipad",
-                  ],
-                  "version": "1.0.3",
-                  "whatsNew": "Some longer whats-new",
-                }
-              }
+              publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
             >
               <Base
                 maxWidth={250}
@@ -2528,12 +2496,16 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                           }
                         }
                       >
-                        <Flex>
+                        <Text
+                          size="x3"
+                          weight="bold"
+                        >
                           <Base
-                            className="Flex"
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
                           >
                             <div
-                              className="Base Flex"
+                              className="Base Text Text--size-x3 Text--weight-bold"
                               style={
                                 Object {
                                   "height": undefined,
@@ -2543,16 +2515,44 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                 }
                               }
                             >
-                              <Text
-                                size="x3"
-                                weight="bold"
+                              Public Install Page link
+                            </div>
+                          </Base>
+                        </Text>
+                        <Base
+                          paddingHorizontal="x3"
+                        >
+                          <div
+                            className="Base Base--padding-horizontal-x3"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <ClipboardButton
+                              className="clipboard-button"
+                              data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                              onClick={[Function]}
+                            >
+                              <button
+                                className="clipboard-button"
+                                data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                onClick={[Function]}
+                                style={Object {}}
+                                title=""
+                                type="button"
                               >
                                 <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
+                                  backgroundColor="grape-1"
+                                  borderRadius="x1"
+                                  padding="x1"
                                 >
                                   <div
-                                    className="Base Text Text--size-x3 Text--weight-bold"
+                                    className="Base Base--background-color-grape-1 Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1"
                                     style={
                                       Object {
                                         "height": undefined,
@@ -2562,111 +2562,56 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       }
                                     }
                                   >
-                                    Public Install Page link
-                                  </div>
-                                </Base>
-                              </Text>
-                            </div>
-                          </Base>
-                        </Flex>
-                        <Flex
-                          paddingHorizontal="x3"
-                        >
-                          <Base
-                            className="Flex"
-                            paddingHorizontal="x3"
-                          >
-                            <div
-                              className="Base Base--padding-horizontal-x3 Flex"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              <ClipboardButton
-                                className="clipboard-button"
-                                data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                onClick={[Function]}
-                              >
-                                <button
-                                  className="clipboard-button"
-                                  data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                  onClick={[Function]}
-                                  style={Object {}}
-                                  title=""
-                                  type="button"
-                                >
-                                  <Base
-                                    backgroundColor="grape-1"
-                                    borderRadius="x1"
-                                    padding="x1"
-                                  >
-                                    <div
-                                      className="Base Base--background-color-grape-1 Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "width": undefined,
-                                        }
-                                      }
+                                    <Icon
+                                      color="grape-3"
+                                      name="Duplicate"
+                                      size="1.5rem"
                                     >
-                                      <Icon
+                                      <Base
+                                        Component="svg"
+                                        className="Icon"
                                         color="grape-3"
-                                        name="Duplicate"
-                                        size="1.5rem"
+                                        height="1.5rem"
+                                        viewBox="0 0 24 24"
+                                        width="1.5rem"
                                       >
-                                        <Base
-                                          Component="svg"
-                                          className="Icon"
-                                          color="grape-3"
-                                          height="1.5rem"
-                                          viewBox="0 0 24 24"
-                                          width="1.5rem"
-                                        >
-                                          <svg
-                                            className="Base Base--color-grape-3 Icon"
-                                            style={
-                                              Object {
-                                                "height": "1.5rem",
-                                                "maxHeight": undefined,
-                                                "maxWidth": undefined,
-                                                "width": "1.5rem",
-                                              }
+                                        <svg
+                                          className="Base Base--color-grape-3 Icon"
+                                          style={
+                                            Object {
+                                              "height": "1.5rem",
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "width": "1.5rem",
                                             }
-                                            viewBox="0 0 24 24"
+                                          }
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <Component
+                                            height="100%"
+                                            width="100%"
                                           >
-                                            <Component
+                                            <svg
                                               height="100%"
+                                              viewBox="0 0 24 24"
                                               width="100%"
                                             >
-                                              <svg
-                                                height="100%"
-                                                viewBox="0 0 24 24"
-                                                width="100%"
-                                              >
-                                                <path
-                                                  d="M18 18v1a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3h1V5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-1zm-2 0H9a3 3 0 0 1-3-3V8H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1zM9 4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H9z"
-                                                  fill="currentColor"
-                                                  fillRule="evenodd"
-                                                />
-                                              </svg>
-                                            </Component>
-                                          </svg>
-                                        </Base>
-                                      </Icon>
-                                    </div>
-                                  </Base>
-                                </button>
-                              </ClipboardButton>
-                            </div>
-                          </Base>
-                        </Flex>
+                                              <path
+                                                d="M18 18v1a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3h1V5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-1zm-2 0H9a3 3 0 0 1-3-3V8H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1zM9 4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H9z"
+                                                fill="currentColor"
+                                                fillRule="evenodd"
+                                              />
+                                            </svg>
+                                          </Component>
+                                        </svg>
+                                      </Base>
+                                    </Icon>
+                                  </div>
+                                </Base>
+                              </button>
+                            </ClipboardButton>
+                          </div>
+                        </Base>
                       </div>
                     </Base>
                   </Flex>
@@ -2773,13 +2718,12 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                   </Flex>
                   <Flex
                     alignChildrenHorizontal="middle"
-                    direction="vertical"
                   >
                     <Base
-                      className="Flex Flex--align-horz-middle Flex--vertical"
+                      className="Flex Flex--align-horz-middle"
                     >
                       <div
-                        className="Base Flex Flex--align-horz-middle Flex--vertical"
+                        className="Base Flex Flex--align-horz-middle"
                         style={
                           Object {
                             "height": undefined,
@@ -2875,47 +2819,33 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                   </Icon>
                                 </div>
                               </Base>
-                              <Base
+                              <Text
+                                color="gray-7"
                                 paddingHorizontal="x1"
+                                size="x2"
+                                weight="medium"
                               >
-                                <div
-                                  className="Base Base--padding-horizontal-x1"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
+                                <Base
+                                  Component="div"
+                                  className="Text Text--size-x2 Text--weight-medium"
+                                  color="gray-7"
+                                  paddingHorizontal="x1"
                                 >
-                                  <Text
-                                    color="gray-7"
-                                    size="x2"
-                                    weight="medium"
+                                  <div
+                                    className="Base Base--color-gray-7 Base--padding-horizontal-x1 Text Text--size-x2 Text--weight-medium"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
                                   >
-                                    <Base
-                                      Component="div"
-                                      className="Text Text--size-x2 Text--weight-medium"
-                                      color="gray-7"
-                                    >
-                                      <div
-                                        className="Base Base--color-gray-7 Text Text--size-x2 Text--weight-medium"
-                                        style={
-                                          Object {
-                                            "height": undefined,
-                                            "maxHeight": undefined,
-                                            "maxWidth": undefined,
-                                            "width": undefined,
-                                          }
-                                        }
-                                      >
-                                        Scan this code to reach Public Install Page
-                                      </div>
-                                    </Base>
-                                  </Text>
-                                </div>
-                              </Base>
+                                    Scan this code to reach Public Install Page
+                                  </div>
+                                </Base>
+                              </Text>
                             </div>
                           </Base>
                         </Flex>
