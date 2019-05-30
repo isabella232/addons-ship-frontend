@@ -27,7 +27,8 @@ export const mockAppVersions: AppVersion[] = [
     supportUrl: 'https://bitrise.io/support',
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
-    configuration: 'canary'
+    configuration: 'canary',
+    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
     id: 123,
@@ -54,7 +55,8 @@ export const mockAppVersions: AppVersion[] = [
     supportUrl: 'https://bitrise.io/support',
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
-    configuration: 'canary'
+    configuration: 'canary',
+    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
     id: 123,
@@ -81,7 +83,8 @@ export const mockAppVersions: AppVersion[] = [
     supportUrl: 'https://bitrise.io/support',
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
-    configuration: 'canary'
+    configuration: 'canary',
+    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
     id: 123,
@@ -108,7 +111,8 @@ export const mockAppVersions: AppVersion[] = [
     supportUrl: 'https://bitrise.io/support',
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
-    configuration: 'canary'
+    configuration: 'canary',
+    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
     id: 123,
@@ -135,7 +139,8 @@ export const mockAppVersions: AppVersion[] = [
     supportUrl: 'https://bitrise.io/support',
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
-    configuration: 'canary'
+    configuration: 'canary',
+    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   }
 ];
 

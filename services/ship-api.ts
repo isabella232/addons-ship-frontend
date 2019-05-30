@@ -12,12 +12,16 @@ class ShipAPIService {
 
   async getAppVersion(appSlug: string, versionId: string): Promise<AppVersion> {
     const resp = await {
-      data: snakifyKeys(mockAppVersion)
+      data: snakifyKeys<any>(mockAppVersion)
     };
 
     const { data } = resp;
-
-    return camelizeKeys(data);
+    const publicInstallPageURL = data.public_install_page_url;
+    data.public_install_page_url = undefined;
+    return {
+      ...camelizeKeys(data),
+      publicInstallPageURL
+    };
   }
 
   async getAppVersionList(appSlug: string): Promise<AppVersionList> {

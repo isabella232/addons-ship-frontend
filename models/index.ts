@@ -49,6 +49,7 @@ export type AppVersion = {
   marketingUrl: string;
   scheme: string;
   configuration: string;
+  publicInstallPageURL: string;
 };
 
 export interface PageContext extends NextContext {
@@ -56,3 +57,5 @@ export interface PageContext extends NextContext {
   isServer: boolean;
   req: Request;
 }
+
+export type Platform = 'ios' | 'android';

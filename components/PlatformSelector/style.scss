@@ -1,0 +1,38 @@
+@import '~@/assets/style/mixins';
+@import '~@/assets/style/colors';
+
+.platform {
+  border: 1px solid var(--color-eggplant);
+
+  .Base {
+    cursor: pointer;
+
+    &:first-child {
+      @include border-left-radius(6px);
+    }
+    &:last-child {
+      @include border-right-radius(6px);
+    }
+    &:not(.selected) {
+      &:hover {
+        background-color: var(--color-grape--1);
+
+        svg {
+          color: var(--color-grape--3);
+        }
+      }
+
+      svg {
+        color: var(--color-eggplant);
+      }
+    }
+
+    &.selected {
+      background-color: var(--color-grape--3);
+
+      svg {
+        color: var(--color-white);
+      }
+    }
+  }
+}
