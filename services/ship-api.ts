@@ -32,7 +32,7 @@ class ShipAPIService {
     const { data } = resp;
 
     return map(groupBy(data, 'version'), (apps, version) => ({
-      apps: apps.map(camelizeKeys),
+      appVersions: apps.map(camelizeKeys),
       version
     })) as AppVersionList;
   }

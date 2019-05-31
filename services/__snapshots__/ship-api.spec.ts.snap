@@ -3,7 +3,7 @@
 exports[`Ship API service fetches a list of version for an app 1`] = `
 Array [
   Object {
-    "apps": Array [
+    "appVersions": Array [
       Object {
         "appName": "Standup Timer",
         "buildNumber": 32,
@@ -101,7 +101,7 @@ Array [
     "version": "1.0.3",
   },
   Object {
-    "apps": Array [
+    "appVersions": Array [
       Object {
         "appName": "Standup Timer",
         "buildNumber": 29,
