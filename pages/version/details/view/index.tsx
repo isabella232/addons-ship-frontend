@@ -15,7 +15,7 @@ import {
   InputContainer,
   InputLabel
 } from '@bitrise/bitkit';
-import { TypeName } from '@bitrise/bitkit/Icon/tsx';
+import { TypeIconName } from '@bitrise/bitkit/Icon/tsx';
 
 import { AppVersion } from '@/models';
 import Sidebar from './sidebar';
@@ -26,7 +26,7 @@ type Props = {
 };
 
 export default ({ appVersion, showTooltips }: Props) => {
-  const iconName: TypeName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
+  const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   return (
     <Base paddingVertical="x6">

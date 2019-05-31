@@ -535,7 +535,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                           color="gray-2"
                           direction="horizontal"
                           margin="x4"
-                          size="0.125rem"
+                          width="0.125rem"
                         >
                           <Base
                             Component="hr"
@@ -673,7 +673,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                           color="gray-2"
                           direction="horizontal"
                           margin="x4"
-                          size="0.125rem"
+                          width="0.125rem"
                         >
                           <Base
                             Component="hr"
@@ -811,7 +811,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                           color="gray-2"
                           direction="horizontal"
                           margin="x4"
-                          size="0.125rem"
+                          width="0.125rem"
                         >
                           <Base
                             Component="hr"
@@ -949,7 +949,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                           color="gray-2"
                           direction="horizontal"
                           margin="x4"
-                          size="0.125rem"
+                          width="0.125rem"
                         >
                           <Base
                             Component="hr"
@@ -1087,7 +1087,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                           color="gray-2"
                           direction="horizontal"
                           margin="x4"
-                          size="0.125rem"
+                          width="0.125rem"
                         >
                           <Base
                             Component="hr"
@@ -1314,7 +1314,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                           color="gray-2"
                           direction="horizontal"
                           margin="x4"
-                          size="0.125rem"
+                          width="0.125rem"
                         >
                           <Base
                             Component="hr"
@@ -1464,7 +1464,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"
@@ -1546,7 +1546,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"
@@ -1629,7 +1629,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"
@@ -1711,7 +1711,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"
@@ -1793,7 +1793,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"
@@ -1875,7 +1875,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"
@@ -2009,7 +2009,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"
@@ -2091,7 +2091,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"
@@ -2173,7 +2173,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"
@@ -2255,7 +2255,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"
@@ -2337,7 +2337,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"
@@ -2419,7 +2419,7 @@ exports[`AppDetailsView renders the details view correctly 1`] = `
                                       color="gray-2"
                                       direction="horizontal"
                                       margin="x4"
-                                      size="0.125rem"
+                                      width="0.125rem"
                                     >
                                       <Base
                                         Component="hr"

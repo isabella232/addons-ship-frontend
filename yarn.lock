@@ -764,10 +764,10 @@
   resolved "https://registry.yarnpkg.com/@bitrise/beam/-/beam-0.1.6.tgz#4cbd827ba056ac0058a91603b5bff47ae04e892f"
   integrity sha512-/Z8WxJ/Q3OBiGUoMDi5AJrVrEX0yn/xgJ1S2CmrqMEFMmsYpftceDHuWKJHe1YIifYfXVtHVh73dTHZWDO2YSg==
 
-"@bitrise/bitkit@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@bitrise/bitkit/-/bitkit-0.0.2.tgz#e6c1cef1d61ac21afb89248634c063a75afd78c0"
-  integrity sha512-YfuxbxnNEqnUnGdFjORZnf5Vb6msbrfjM3WhzMAcu1x5JwyTgUpO9lHrHPXY21rD/X/KVUtRS1XBKR138Fs6cQ==
+"@bitrise/bitkit@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@bitrise/bitkit/-/bitkit-0.0.3.tgz#3720de50ec91b32ec1d2c4d06498f13ba6db4ebc"
+  integrity sha512-2eo/KtEZ+pNZMW11qrgwn/a2NK2QcxRAcFfwxn0rQFhg+wb0es4z4YfrrJLFQpN5CQUyWvUzlmLJzQyJ6HIM+A==
   dependencies:
     classnames "^2.2.6"
     luxon "^1.12.1"
