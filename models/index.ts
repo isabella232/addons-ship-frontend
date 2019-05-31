@@ -25,6 +25,7 @@ export type AppVersionList = Array<{
 
 export type AppVersion = {
   id: number;
+  appSlug: string;
   version: string;
   platform: string;
   buildNumber: number;

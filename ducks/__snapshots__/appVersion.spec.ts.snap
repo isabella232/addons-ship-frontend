@@ -1,12 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`appVersion should update the state 1`] = `
+exports[`appVersion fetchAppVersion can't fetch an app version 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_GET_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_GET_ERROR",
+  },
+]
+`;
+
+exports[`appVersion fetchAppVersion fetches an app version 1`] = `
 Array [
   Object {
     "type": "APP_VERSION_GET_NEXT",
   },
   Object {
     "type": "APP_VERSION_GET_COMPLETE",
+  },
+]
+`;
+
+exports[`appVersion updateAppVersion can't update an app version 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_UPDATE_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_GET_ERROR",
+  },
+]
+`;
+
+exports[`appVersion updateAppVersion updates an app version 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_UPDATE_NEXT",
+  },
+  Object {
+    "type": "APP_VERSION_UPDATE_COMPLETE",
   },
 ]
 `;
