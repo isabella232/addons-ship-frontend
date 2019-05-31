@@ -8,7 +8,6 @@ import {
   Text,
   Icon,
   Image,
-  Card,
   Notification,
   Tooltip,
   Input,
@@ -18,18 +17,25 @@ import {
 import { TypeIconName } from '@bitrise/bitkit/Icon/tsx';
 
 import { AppVersion } from '@/models';
-import Sidebar from './sidebar';
 import { mediaQuery } from '@/utils/media';
+
+import Sidebar from './sidebar';
 
 type Props = {
   appVersion: AppVersion;
   showTooltips: boolean;
+  onSave?: () => void;
+  onChange?: (key: string, newValue: string) => void;
 };
 
-export default ({ appVersion, showTooltips }: Props) => {
+export default ({ appVersion, showTooltips, onSave, onChange }: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   const [isDesktop] = mediaQuery('60rem');
+
+  const onFormChange = ({ target: { name, value } }: any) => {
+    onChange && onChange(name, value);
+  };
 
   return (
     <Base>
@@ -42,7 +48,7 @@ export default ({ appVersion, showTooltips }: Props) => {
       </Flex>
       <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'}>
         <Flex maxWidth={660} margin="x0" paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
-          <form>
+          <form onChange={onFormChange}>
             <Flex direction="horizontal" margin="x16">
               <Image src={appVersion.iconUrl} borderRadius="x2" />
 
@@ -68,7 +74,7 @@ export default ({ appVersion, showTooltips }: Props) => {
                 1235
               </Text>
             </Flex>
-            <Textarea defaultValue={appVersion.description} />
+            <Textarea name="description" defaultValue={appVersion.description} />
 
             <Divider color="gray-2" direction="horizontal" margin="x4" />
 
@@ -78,7 +84,7 @@ export default ({ appVersion, showTooltips }: Props) => {
                 1235
               </Text>
             </Flex>
-            <Textarea defaultValue={appVersion.whatsNew} />
+            <Textarea name="whatsNew" defaultValue={appVersion.whatsNew} />
 
             <Divider color="gray-2" direction="horizontal" margin="x4" />
 
@@ -88,7 +94,7 @@ export default ({ appVersion, showTooltips }: Props) => {
                 1235
               </Text>
             </Flex>
-            <Textarea defaultValue={appVersion.promotionalText} />
+            <Textarea name="promotionalText" defaultValue={appVersion.promotionalText} />
 
             <Divider color="gray-2" direction="horizontal" margin="x4" />
 
@@ -98,7 +104,7 @@ export default ({ appVersion, showTooltips }: Props) => {
                 1235
               </Text>
             </Flex>
-            <Textarea defaultValue={appVersion.keywords} />
+            <Textarea name="keywords" defaultValue={appVersion.keywords} />
 
             <Divider color="gray-2" direction="horizontal" margin="x4" />
 
@@ -108,7 +114,7 @@ export default ({ appVersion, showTooltips }: Props) => {
                 1235
               </Text>
             </Flex>
-            <Textarea defaultValue={appVersion.reviewNotes} />
+            <Textarea name="reviewNotes" defaultValue={appVersion.reviewNotes} />
 
             <Divider color="gray-2" direction="horizontal" margin="x4" />
 
@@ -137,7 +143,7 @@ export default ({ appVersion, showTooltips }: Props) => {
               <Flex grow>
                 <InputLabel>Support URL</InputLabel>
                 <InputContainer>
-                  <Input defaultValue={appVersion.supportUrl} />
+                  <Input name="supportUrl" defaultValue={appVersion.supportUrl} />
                 </InputContainer>
 
                 <Divider color="gray-2" direction="horizontal" margin="x4" />
@@ -170,7 +176,7 @@ export default ({ appVersion, showTooltips }: Props) => {
               <Flex grow>
                 <InputLabel>Marketing URL</InputLabel>
                 <InputContainer>
-                  <Input defaultValue={appVersion.marketingUrl} />
+                  <Input name="marketingUrl" defaultValue={appVersion.marketingUrl} />
                 </InputContainer>
 
                 <Divider color="gray-2" direction="horizontal" margin="x4" />
@@ -204,7 +210,7 @@ export default ({ appVersion, showTooltips }: Props) => {
           </form>
         </Flex>
 
-        {isDesktop && <Sidebar publicInstallPageURL={appVersion.publicInstallPageURL} />}
+        {isDesktop && <Sidebar publicInstallPageURL={appVersion.publicInstallPageURL} onSave={onSave} />}
       </Flex>
     </Base>
   );
