@@ -7,12 +7,20 @@ import { mockAppVersion } from '@/mocks';
 import { AppVersion } from '@/models';
 import api from '@/services/ship-api';
 
-import { fetchAppVersion, updateAppVersion } from './appVersion';
+import { appVersion, fetchAppVersion, updateAppVersion } from './appVersion';
 
 describe('appVersion', () => {
   let mockStore: MockStoreCreator;
   beforeEach(() => {
     mockStore = configureMockStore([thunk]);
+  });
+
+  describe('reducer', () => {
+    it('loads an app version', () => {
+      const state = appVersion(undefined, fetchAppVersion.complete(mockAppVersion));
+
+      expect(state).toMatchSnapshot();
+    });
   });
 
   describe('fetchAppVersion', () => {
