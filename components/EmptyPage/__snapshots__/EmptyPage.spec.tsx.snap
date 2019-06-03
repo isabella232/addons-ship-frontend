@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyPage renders correctly 1`] = `
+<Base
+  className="emptyPage"
+  paddingVertical="x16"
+>
+  <Flex
+    alignChildrenVertical="middle"
+    className="textContainer"
+    direction="vertical"
+  >
+    <Text
+      align="middle"
+      size="x4"
+      weight="bold"
+    >
+      First, you need to build an IPA/APK
+    </Text>
+  </Flex>
+</Base>
+`;
