@@ -6,7 +6,7 @@
   $hover-border-width: 1px;
 
   display: block;
-  border: $hover-border-width solid $white-three;
+  border: $hover-border-width solid $gray-2;
   border-radius: 2 * $grid-size;
   overflow: hidden;
   background-color: $white;
@@ -15,12 +15,12 @@
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
 
   &:hover, &:focus {
-    border-color: $warm-grey;
+    border-color: $gray-6;
   }
 
   .colorBar {
     height: 10 * $grid-size - $hover-border-width;
-    background-color: $warm-grey;
+    background-color: $gray-6;
   }
 
   .body {
@@ -37,7 +37,7 @@
         justify-content: center;
         @include size(12 * $grid-size);
         border-radius: 2 * $grid-size;
-        background-color: $warm-grey;
+        background-color: $gray-6;
 
         svg {
           display: block;
@@ -47,7 +47,7 @@
       .note {
         margin-left: 2 * $grid-size;
         margin-bottom: $grid-size;
-        color: $warm-grey;
+        color: $gray-6;
         // TODO: replace with element from UI library
         line-height: 1.5;
         letter-spacing: normal;
@@ -65,12 +65,12 @@
 
       svg {
         display: block;
-        fill: $dark-blue-grey;
+        fill: $grape-5;
       }
 
       .title {
         margin-left: $grid-size;
-        color: $dark-blue-grey;
+        color: $grape-5;
         // TODO: replace with element from UI library
         line-height: 1.5;
         letter-spacing: normal;
@@ -83,7 +83,7 @@
 
     .description {
       margin-top: $grid-size;
-      color: $dark-blue-grey;
+      color: $grape-5;
       // TODO: replace with element from UI library
       line-height: 1.5;
       letter-spacing: normal;

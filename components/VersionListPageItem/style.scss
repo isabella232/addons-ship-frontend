@@ -25,14 +25,14 @@
 
         svg {
           display: block;
-          fill: $dark-blue-grey;
+          fill: $grape-5;
           transition: fill $medium-hovertime;
         }
       }
 
       .title {
         flex-grow: 1;
-        color: $dark-blue-grey;
+        color: $grape-5;
         transition: color $medium-hovertime;
         // TODO: replace with element from UI library
         line-height: 1.5;
@@ -71,7 +71,7 @@
 
       .description {
         flex-grow: 1;
-        color: $dark-blue-grey;
+        color: $grape-5;
         transition: color $medium-hovertime;
         // TODO: replace with element from UI library
         font-size: 16px;
@@ -100,7 +100,7 @@
             margin-left: $grid-size;
 
             .text {
-              color: $violet-blue;
+              color: $grape-3;
               // TODO: replace with element from UI library
               font-size: 13px;
               line-height: 2 * $grid-size;
@@ -116,7 +116,7 @@
               svg {
                 display: block;
                 @include size(2 * $grid-size);
-                fill: $violet-blue;
+                fill: $grape-3;
               }
             }
           }
@@ -132,7 +132,7 @@
           margin-top: $grid-size;
 
           .text {
-            color: $dark-blue-grey;
+            color: $grape-5;
             // TODO: replace with element from UI library
             font-size: 13px;
             line-height: 2 * $grid-size;
@@ -149,7 +149,7 @@
               display: block;
               @include size(2 * $grid-size);
               transform: rotate(180deg);
-              fill: $dark-blue-grey;
+              fill: $grape-5;
             }
           }
         }
@@ -158,38 +158,38 @@
 
     &:hover,
     &:focus {
-      background-color: $white-two;
+      background-color: $gray-1;
 
       .topWrapper {
         .platformIcon {
           svg {
-            fill: $violet-blue;
+            fill: $grape-3;
           }
         }
 
         .title {
-          color: $violet-blue;
+          color: $grape-3;
         }
 
         .note {
-          color: $violet-blue;
+          color: $grape-3;
         }
       }
 
       .descriptionWrapper {
         .description {
-          color: $violet-blue;
+          color: $grape-3;
         }
 
         &.isOpen {
           .showLess {
             .text {
-              color: $violet-blue;
+              color: $grape-3;
             }
 
             .arrow {
               svg {
-                fill: $violet-blue;
+                fill: $grape-3;
               }
             }
           }
