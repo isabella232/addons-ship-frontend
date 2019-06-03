@@ -1,12 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`appVersion should update the state 1`] = `
+exports[`appVersion fetchAppVersion can't fetch an app version 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_GET_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_GET_ERROR",
+  },
+]
+`;
+
+exports[`appVersion fetchAppVersion fetches an app version 1`] = `
 Array [
   Object {
     "type": "APP_VERSION_GET_NEXT",
   },
   Object {
     "type": "APP_VERSION_GET_COMPLETE",
+  },
+]
+`;
+
+exports[`appVersion reducer loads an app version 1`] = `
+Object {
+  "appName": "Standup Timer",
+  "appSlug": "app-slug-123",
+  "buildNumber": 32,
+  "buildSlug": "13245ads",
+  "bundleId": "bundle-id",
+  "certificateExpires": 2018-09-22T12:42:31.000Z,
+  "configuration": "canary",
+  "description": "Some semi-long description",
+  "distributionType": "development",
+  "iconUrl": "http://placekitten.com/160/160",
+  "id": 123,
+  "keywords": "Keywords",
+  "lastUpdate": 2018-09-22T12:42:31.000Z,
+  "marketingUrl": "https://bitrise.io/marketing",
+  "minimumOs": "10.2",
+  "minimumSdk": "dunno",
+  "packageName": "com.package.name",
+  "platform": "ios",
+  "promotionalText": "Promotional Text",
+  "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+  "reviewNotes": "Review Notes",
+  "scheme": "piramid",
+  "size": 4567034,
+  "supportUrl": "https://bitrise.io/support",
+  "supportedDeviceTypes": Array [
+    "iphone",
+    "ipad",
+  ],
+  "version": "1.0.3",
+  "whatsNew": "Some longer whats-new",
+}
+`;
+
+exports[`appVersion updateAppVersion can't update an app version 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_UPDATE_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_GET_ERROR",
+  },
+]
+`;
+
+exports[`appVersion updateAppVersion updates an app version 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_UPDATE_NEXT",
+  },
+  Object {
+    "type": "APP_VERSION_UPDATE_COMPLETE",
   },
 ]
 `;
