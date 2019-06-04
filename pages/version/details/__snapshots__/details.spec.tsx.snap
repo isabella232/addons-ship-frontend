@@ -6120,16 +6120,16 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                
                               <Link
                                 color="grape-3"
-                                href="https://app.bitrise.io/build/13245ads#artifacts"
+                                href="https://app.bitrise.io/build/13245ads#?tab=artifacts"
                               >
                                 <Base
                                   Component="a"
                                   className="Link Link--color-grape-3 Link--clickable"
-                                  href="https://app.bitrise.io/build/13245ads#artifacts"
+                                  href="https://app.bitrise.io/build/13245ads#?tab=artifacts"
                                 >
                                   <a
                                     className="Base Link Link--color-grape-3 Link--clickable"
-                                    href="https://app.bitrise.io/build/13245ads#artifacts"
+                                    href="https://app.bitrise.io/build/13245ads#?tab=artifacts"
                                     style={
                                       Object {
                                         "height": undefined,
