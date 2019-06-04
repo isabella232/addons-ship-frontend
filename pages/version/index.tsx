@@ -17,17 +17,9 @@ interface VersionPageProps extends AppVersionPageQuery {
   pagePath: string;
 }
 
-type VersionPageState = {
-  showTooltips: boolean;
-};
-
-export class VersionPage extends Component<VersionPageProps, VersionPageState> {
+export class VersionPage extends Component<VersionPageProps> {
   static defaultProps = {
     selectedTab: 'details'
-  };
-
-  state: VersionPageState = {
-    showTooltips: false
   };
 
   static async getInitialProps({ query, store, req }: PageContext) {
