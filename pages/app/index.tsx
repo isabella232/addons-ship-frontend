@@ -1,12 +1,12 @@
 import { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import formatDate from 'date-fns/format';
+import { Text, Divider } from '@bitrise/bitkit';
 
 import css from './style.scss';
 
 import { AppPageQuery, PageContext, AppVersionList } from '@/models';
 import AppSummary from '@/components/AppSummary';
-import SectionHeading from '@/components/SectionHeading';
 import VersionListPageItem from '@/components/VersionListPageItem';
 import Footer from '@/components/Footer';
 import { RootState } from '@/store';
@@ -44,7 +44,10 @@ class AppPage extends Component<AppPageProps, AppPageState> {
               platformIconUrl="/static/icon-apple.svg"
             />
           </div>
-          <SectionHeading>Version History</SectionHeading>
+          <Text letterSpacing="x1" size="x5" weight="bold">
+            Version History
+          </Text>
+          <Divider color="gray-2" direction="horizontal" margin="x2" />
           {appVersionList.map((appVersionListItem, i) => (
             <Fragment key={i}>
               <div className={css.majorVersionHeading}>v.{appVersionListItem.version}</div>
