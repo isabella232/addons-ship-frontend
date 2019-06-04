@@ -3,7 +3,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@bitrise/bitkit": ["./node_modules/@bitrise/bitkit/lib/esn"],
       "@bitrise/bitkit/*": ["./node_modules/@bitrise/bitkit/lib/esn/*"]
     },
     "allowJs": true,
