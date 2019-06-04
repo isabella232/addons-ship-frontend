@@ -42,7 +42,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
 />
 `;
 
-exports[`AppVersionDetailsView renders the details view correctly for desktop 1`] = `
+exports[`AppVersionDetailsView when viewed on desktop renders the details view correctly 1`] = `
 <_default
   appVersion={
     Object {
@@ -2594,6 +2594,7 @@ exports[`AppVersionDetailsView renders the details view correctly for desktop 1`
               </Base>
             </Flex>
             <_default
+              buildSlug="13245ads"
               publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
             >
               <Base
@@ -3210,7 +3211,2969 @@ exports[`AppVersionDetailsView renders the details view correctly for desktop 1`
 </_default>
 `;
 
-exports[`AppVersionDetailsView renders the details view correctly for mobile 1`] = `
+exports[`AppVersionDetailsView when viewed on desktop when public install page is not enabled renders the details view with disabled sidebar 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "bundleId": "bundle-id",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "configuration": "canary",
+      "description": "Some semi-long description",
+      "distributionType": "development",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "keywords": "Keywords",
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumOs": "10.2",
+      "minimumSdk": "dunno",
+      "packageName": "com.package.name",
+      "platform": "ios",
+      "promotionalText": "Promotional Text",
+      "publicInstallPageURL": undefined,
+      "reviewNotes": "Review Notes",
+      "scheme": "piramid",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "iphone",
+        "ipad",
+      ],
+      "version": "1.0.3",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  showTooltips={true}
+>
+  <Base>
+    <div
+      className="Base"
+      style={
+        Object {
+          "height": undefined,
+          "maxHeight": undefined,
+          "maxWidth": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <Flex
+        alignChildren="middle"
+        direction="vertical"
+        paddingVertical="x6"
+      >
+        <Base
+          className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--vertical"
+          paddingVertical="x6"
+        >
+          <div
+            className="Base Base--padding-vertical-x6 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--vertical"
+            style={
+              Object {
+                "height": undefined,
+                "maxHeight": undefined,
+                "maxWidth": undefined,
+                "width": undefined,
+              }
+            }
+          >
+            <Flex
+              maxWidth="100%"
+            >
+              <Base
+                className="Flex"
+                maxWidth="100%"
+              >
+                <div
+                  className="Base Base--max-width Flex"
+                  style={
+                    Object {
+                      "height": undefined,
+                      "maxHeight": undefined,
+                      "maxWidth": "100%",
+                      "width": undefined,
+                    }
+                  }
+                >
+                  <Notification
+                    margin="x2"
+                    type="progress"
+                  >
+                    <Flex
+                      alignChildrenVertical="middle"
+                      className="Notification Notification--type-progress"
+                      direction="horizontal"
+                      gap="x2"
+                      margin="x2"
+                      padding="x3"
+                    >
+                      <Base
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-progress"
+                        margin="x2"
+                        padding="x3"
+                      >
+                        <div
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-progress"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <Flex>
+                            <Base
+                              className="Flex"
+                            >
+                              <div
+                                className="Base Flex"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <ProgressSpinner
+                                  size="1.5rem"
+                                >
+                                  <Base
+                                    Component="svg"
+                                    className="ProgressSpinner"
+                                    height="1.5rem"
+                                    viewBox="0 0 24 24"
+                                    width="1.5rem"
+                                  >
+                                    <svg
+                                      className="Base ProgressSpinner"
+                                      style={
+                                        Object {
+                                          "height": "1.5rem",
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": "1.5rem",
+                                        }
+                                      }
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <circle
+                                        cx={12}
+                                        cy={12}
+                                        fill="transparent"
+                                        r={8}
+                                        stroke="currentColor"
+                                        strokeDasharray={50.26548245743669}
+                                        strokeWidth="2px"
+                                        transform="rotate(-90 12 12)"
+                                      >
+                                        <animate
+                                          attributeName="stroke-dashoffset"
+                                          calcMode="spline"
+                                          dur="2000ms"
+                                          fill="freeze"
+                                          keySplines="0.4 0 0.2 1"
+                                          repeatCount="indefinite"
+                                          values="150.79644737231007;50.26548245743669"
+                                        />
+                                        <animateTransform
+                                          attributeName="transform"
+                                          calcMode="spline"
+                                          dur="2000ms"
+                                          fill="freeze"
+                                          keySplines="0.4 0 0.2 1"
+                                          repeatCount="indefinite"
+                                          type="rotate"
+                                          values="-90 12 12;270 12 12"
+                                        />
+                                      </circle>
+                                    </svg>
+                                  </Base>
+                                </ProgressSpinner>
+                              </div>
+                            </Base>
+                          </Flex>
+                          <Flex
+                            grow={true}
+                            initial="none"
+                          >
+                            <Base
+                              className="Flex Flex--initial-none Flex--grow"
+                            >
+                              <div
+                                className="Base Flex Flex--initial-none Flex--grow"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                Publishing to App Store Connect is in progress.
+                              </div>
+                            </Base>
+                          </Flex>
+                        </div>
+                      </Base>
+                    </Flex>
+                  </Notification>
+                </div>
+              </Base>
+            </Flex>
+          </div>
+        </Base>
+      </Flex>
+      <Flex
+        alignChildrenHorizontal="start"
+        direction="horizontal"
+      >
+        <Base
+          className="Flex Flex--align-horz-start Flex--horizontal"
+        >
+          <div
+            className="Base Flex Flex--align-horz-start Flex--horizontal"
+            style={
+              Object {
+                "height": undefined,
+                "maxHeight": undefined,
+                "maxWidth": undefined,
+                "width": undefined,
+              }
+            }
+          >
+            <Flex
+              margin="x0"
+              maxWidth={660}
+              paddingHorizontal="x0"
+            >
+              <Base
+                className="Flex"
+                margin="x0"
+                maxWidth={660}
+                paddingHorizontal="x0"
+              >
+                <div
+                  className="Base Base--margin-x0 Base--max-width Base--padding-horizontal-x0 Flex"
+                  style={
+                    Object {
+                      "height": undefined,
+                      "maxHeight": undefined,
+                      "maxWidth": 660,
+                      "width": undefined,
+                    }
+                  }
+                >
+                  <form
+                    onChange={[Function]}
+                  >
+                    <Flex
+                      direction="horizontal"
+                      margin="x16"
+                    >
+                      <Base
+                        className="Flex Flex--horizontal"
+                        margin="x16"
+                      >
+                        <div
+                          className="Base Base--margin-x16 Flex Flex--horizontal"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <Image
+                            borderRadius="x2"
+                            src="http://placekitten.com/160/160"
+                          >
+                            <Base
+                              Component="img"
+                              borderRadius="x2"
+                              className="Image"
+                              src="http://placekitten.com/160/160"
+                            >
+                              <img
+                                className="Base Base--border-radius-x2 Image"
+                                src="http://placekitten.com/160/160"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              />
+                            </Base>
+                          </Image>
+                          <Flex
+                            alignChildrenVertical="middle"
+                            direction="vertical"
+                            paddingHorizontal="x6"
+                          >
+                            <Base
+                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              paddingHorizontal="x6"
+                            >
+                              <div
+                                className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--vertical"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <Flex
+                                  alignChildren="middle"
+                                  direction="horizontal"
+                                >
+                                  <Base
+                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Icon
+                                        color="grape-4"
+                                        name="PlatformsApple"
+                                        size="1.5rem"
+                                      >
+                                        <Base
+                                          Component="svg"
+                                          className="Icon"
+                                          color="grape-4"
+                                          height="1.5rem"
+                                          viewBox="0 0 24 24"
+                                          width="1.5rem"
+                                        >
+                                          <svg
+                                            className="Base Base--color-grape-4 Icon"
+                                            style={
+                                              Object {
+                                                "height": "1.5rem",
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "width": "1.5rem",
+                                              }
+                                            }
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <Component
+                                              height="100%"
+                                              width="100%"
+                                            >
+                                              <svg
+                                                height="100%"
+                                                viewBox="0 0 24 24"
+                                                width="100%"
+                                              >
+                                                <defs>
+                                                  <path
+                                                    d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
+                                                    id="icons-platforms-apple_svg__a"
+                                                  />
+                                                </defs>
+                                                <use
+                                                  fill="currentColor"
+                                                  fillRule="evenodd"
+                                                  xlinkHref="#icons-platforms-apple_svg__a"
+                                                />
+                                              </svg>
+                                            </Component>
+                                          </svg>
+                                        </Base>
+                                      </Icon>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        paddingHorizontal="x2"
+                                        size="x6"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h3"
+                                          className="Text Text--letter-spacing-x2 Text--size-x6 Text--weight-bold"
+                                          color="grape-4"
+                                          paddingHorizontal="x2"
+                                        >
+                                          <h3
+                                            className="Base Base--color-grape-4 Base--padding-horizontal-x2 Text Text--letter-spacing-x2 Text--size-x6 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer
+                                          </h3>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
+                                <Text
+                                  color="grape-4"
+                                  letterSpacing="x2"
+                                  margin="x2"
+                                  size="x5"
+                                  weight="bold"
+                                >
+                                  <Base
+                                    Component="h4"
+                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    color="grape-4"
+                                    margin="x2"
+                                  >
+                                    <h4
+                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      v
+                                      1.0.3
+                                       (
+                                      32
+                                      )
+                                    </h4>
+                                  </Base>
+                                </Text>
+                                <Text
+                                  color="gray-6"
+                                  letterSpacing="x1"
+                                  size="x4"
+                                  weight="medium"
+                                >
+                                  <Base
+                                    Component="h5"
+                                    className="Text Text--letter-spacing-x1 Text--size-x4 Text--weight-medium"
+                                    color="gray-6"
+                                  >
+                                    <h5
+                                      className="Base Base--color-gray-6 Text Text--letter-spacing-x1 Text--size-x4 Text--weight-medium"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      Updated on 
+                                      September 22, 2018
+                                    </h5>
+                                  </Base>
+                                </Text>
+                              </div>
+                            </Base>
+                          </Flex>
+                        </div>
+                      </Base>
+                    </Flex>
+                    <Flex
+                      alignChildrenHorizontal="between"
+                      alignChildrenVertical="middle"
+                      direction="horizontal"
+                    >
+                      <Base
+                        className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      >
+                        <div
+                          className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <InputLabel>
+                            <Text
+                              color="grape-4"
+                              margin="x1"
+                              size="x3"
+                              weight="bold"
+                            >
+                              <Base
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
+                                color="grape-4"
+                                margin="x1"
+                              >
+                                <div
+                                  className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Description
+                                </div>
+                              </Base>
+                            </Text>
+                          </InputLabel>
+                          <Text
+                            align="end"
+                            color="gray-7"
+                            size="x2"
+                            weight="medium"
+                          >
+                            <Base
+                              Component="div"
+                              className="Text Text--align-end Text--size-x2 Text--weight-medium"
+                              color="gray-7"
+                            >
+                              <div
+                                className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                1235
+                              </div>
+                            </Base>
+                          </Text>
+                        </div>
+                      </Base>
+                    </Flex>
+                    <TextArea
+                      defaultValue="Some semi-long description"
+                      name="description"
+                    >
+                      <Flex
+                        Component="textarea"
+                        className="TextArea"
+                        defaultValue="Some semi-long description"
+                        name="description"
+                        padding="x4"
+                      >
+                        <Base
+                          Component="textarea"
+                          className="Flex TextArea"
+                          defaultValue="Some semi-long description"
+                          name="description"
+                          padding="x4"
+                        >
+                          <textarea
+                            className="Base Base--padding-horizontal-x4 Base--padding-vertical-x4 Flex TextArea"
+                            defaultValue="Some semi-long description"
+                            name="description"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          />
+                        </Base>
+                      </Flex>
+                    </TextArea>
+                    <Divider
+                      color="gray-2"
+                      direction="horizontal"
+                      margin="x4"
+                      width="0.125rem"
+                    >
+                      <Base
+                        Component="hr"
+                        className="Divider"
+                        color="gray-2"
+                        margin="x4"
+                        style={
+                          Object {
+                            "borderTopWidth": "0.125rem",
+                          }
+                        }
+                      >
+                        <hr
+                          className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                          style={
+                            Object {
+                              "borderTopWidth": "0.125rem",
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        />
+                      </Base>
+                    </Divider>
+                    <Flex
+                      alignChildrenHorizontal="between"
+                      alignChildrenVertical="middle"
+                      direction="horizontal"
+                    >
+                      <Base
+                        className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      >
+                        <div
+                          className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <InputLabel>
+                            <Text
+                              color="grape-4"
+                              margin="x1"
+                              size="x3"
+                              weight="bold"
+                            >
+                              <Base
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
+                                color="grape-4"
+                                margin="x1"
+                              >
+                                <div
+                                  className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  What's new
+                                </div>
+                              </Base>
+                            </Text>
+                          </InputLabel>
+                          <Text
+                            align="end"
+                            color="gray-7"
+                            size="x2"
+                            weight="medium"
+                          >
+                            <Base
+                              Component="div"
+                              className="Text Text--align-end Text--size-x2 Text--weight-medium"
+                              color="gray-7"
+                            >
+                              <div
+                                className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                1235
+                              </div>
+                            </Base>
+                          </Text>
+                        </div>
+                      </Base>
+                    </Flex>
+                    <TextArea
+                      defaultValue="Some longer whats-new"
+                      name="whatsNew"
+                    >
+                      <Flex
+                        Component="textarea"
+                        className="TextArea"
+                        defaultValue="Some longer whats-new"
+                        name="whatsNew"
+                        padding="x4"
+                      >
+                        <Base
+                          Component="textarea"
+                          className="Flex TextArea"
+                          defaultValue="Some longer whats-new"
+                          name="whatsNew"
+                          padding="x4"
+                        >
+                          <textarea
+                            className="Base Base--padding-horizontal-x4 Base--padding-vertical-x4 Flex TextArea"
+                            defaultValue="Some longer whats-new"
+                            name="whatsNew"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          />
+                        </Base>
+                      </Flex>
+                    </TextArea>
+                    <Divider
+                      color="gray-2"
+                      direction="horizontal"
+                      margin="x4"
+                      width="0.125rem"
+                    >
+                      <Base
+                        Component="hr"
+                        className="Divider"
+                        color="gray-2"
+                        margin="x4"
+                        style={
+                          Object {
+                            "borderTopWidth": "0.125rem",
+                          }
+                        }
+                      >
+                        <hr
+                          className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                          style={
+                            Object {
+                              "borderTopWidth": "0.125rem",
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        />
+                      </Base>
+                    </Divider>
+                    <Flex
+                      alignChildrenHorizontal="between"
+                      alignChildrenVertical="middle"
+                      direction="horizontal"
+                    >
+                      <Base
+                        className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      >
+                        <div
+                          className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <InputLabel>
+                            <Text
+                              color="grape-4"
+                              margin="x1"
+                              size="x3"
+                              weight="bold"
+                            >
+                              <Base
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
+                                color="grape-4"
+                                margin="x1"
+                              >
+                                <div
+                                  className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Promotional Text
+                                </div>
+                              </Base>
+                            </Text>
+                          </InputLabel>
+                          <Text
+                            align="end"
+                            color="gray-7"
+                            size="x2"
+                            weight="medium"
+                          >
+                            <Base
+                              Component="div"
+                              className="Text Text--align-end Text--size-x2 Text--weight-medium"
+                              color="gray-7"
+                            >
+                              <div
+                                className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                1235
+                              </div>
+                            </Base>
+                          </Text>
+                        </div>
+                      </Base>
+                    </Flex>
+                    <TextArea
+                      defaultValue="Promotional Text"
+                      name="promotionalText"
+                    >
+                      <Flex
+                        Component="textarea"
+                        className="TextArea"
+                        defaultValue="Promotional Text"
+                        name="promotionalText"
+                        padding="x4"
+                      >
+                        <Base
+                          Component="textarea"
+                          className="Flex TextArea"
+                          defaultValue="Promotional Text"
+                          name="promotionalText"
+                          padding="x4"
+                        >
+                          <textarea
+                            className="Base Base--padding-horizontal-x4 Base--padding-vertical-x4 Flex TextArea"
+                            defaultValue="Promotional Text"
+                            name="promotionalText"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          />
+                        </Base>
+                      </Flex>
+                    </TextArea>
+                    <Divider
+                      color="gray-2"
+                      direction="horizontal"
+                      margin="x4"
+                      width="0.125rem"
+                    >
+                      <Base
+                        Component="hr"
+                        className="Divider"
+                        color="gray-2"
+                        margin="x4"
+                        style={
+                          Object {
+                            "borderTopWidth": "0.125rem",
+                          }
+                        }
+                      >
+                        <hr
+                          className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                          style={
+                            Object {
+                              "borderTopWidth": "0.125rem",
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        />
+                      </Base>
+                    </Divider>
+                    <Flex
+                      alignChildrenHorizontal="between"
+                      alignChildrenVertical="middle"
+                      direction="horizontal"
+                    >
+                      <Base
+                        className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      >
+                        <div
+                          className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <InputLabel>
+                            <Text
+                              color="grape-4"
+                              margin="x1"
+                              size="x3"
+                              weight="bold"
+                            >
+                              <Base
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
+                                color="grape-4"
+                                margin="x1"
+                              >
+                                <div
+                                  className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Keywords
+                                </div>
+                              </Base>
+                            </Text>
+                          </InputLabel>
+                          <Text
+                            align="end"
+                            color="gray-7"
+                            size="x2"
+                            weight="medium"
+                          >
+                            <Base
+                              Component="div"
+                              className="Text Text--align-end Text--size-x2 Text--weight-medium"
+                              color="gray-7"
+                            >
+                              <div
+                                className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                1235
+                              </div>
+                            </Base>
+                          </Text>
+                        </div>
+                      </Base>
+                    </Flex>
+                    <TextArea
+                      defaultValue="Keywords"
+                      name="keywords"
+                    >
+                      <Flex
+                        Component="textarea"
+                        className="TextArea"
+                        defaultValue="Keywords"
+                        name="keywords"
+                        padding="x4"
+                      >
+                        <Base
+                          Component="textarea"
+                          className="Flex TextArea"
+                          defaultValue="Keywords"
+                          name="keywords"
+                          padding="x4"
+                        >
+                          <textarea
+                            className="Base Base--padding-horizontal-x4 Base--padding-vertical-x4 Flex TextArea"
+                            defaultValue="Keywords"
+                            name="keywords"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          />
+                        </Base>
+                      </Flex>
+                    </TextArea>
+                    <Divider
+                      color="gray-2"
+                      direction="horizontal"
+                      margin="x4"
+                      width="0.125rem"
+                    >
+                      <Base
+                        Component="hr"
+                        className="Divider"
+                        color="gray-2"
+                        margin="x4"
+                        style={
+                          Object {
+                            "borderTopWidth": "0.125rem",
+                          }
+                        }
+                      >
+                        <hr
+                          className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                          style={
+                            Object {
+                              "borderTopWidth": "0.125rem",
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        />
+                      </Base>
+                    </Divider>
+                    <Flex
+                      alignChildrenHorizontal="between"
+                      alignChildrenVertical="middle"
+                      direction="horizontal"
+                    >
+                      <Base
+                        className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      >
+                        <div
+                          className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <InputLabel>
+                            <Text
+                              color="grape-4"
+                              margin="x1"
+                              size="x3"
+                              weight="bold"
+                            >
+                              <Base
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
+                                color="grape-4"
+                                margin="x1"
+                              >
+                                <div
+                                  className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Review Notes
+                                </div>
+                              </Base>
+                            </Text>
+                          </InputLabel>
+                          <Text
+                            align="end"
+                            color="gray-7"
+                            size="x2"
+                            weight="medium"
+                          >
+                            <Base
+                              Component="div"
+                              className="Text Text--align-end Text--size-x2 Text--weight-medium"
+                              color="gray-7"
+                            >
+                              <div
+                                className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                1235
+                              </div>
+                            </Base>
+                          </Text>
+                        </div>
+                      </Base>
+                    </Flex>
+                    <TextArea
+                      defaultValue="Review Notes"
+                      name="reviewNotes"
+                    >
+                      <Flex
+                        Component="textarea"
+                        className="TextArea"
+                        defaultValue="Review Notes"
+                        name="reviewNotes"
+                        padding="x4"
+                      >
+                        <Base
+                          Component="textarea"
+                          className="Flex TextArea"
+                          defaultValue="Review Notes"
+                          name="reviewNotes"
+                          padding="x4"
+                        >
+                          <textarea
+                            className="Base Base--padding-horizontal-x4 Base--padding-vertical-x4 Flex TextArea"
+                            defaultValue="Review Notes"
+                            name="reviewNotes"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          />
+                        </Base>
+                      </Flex>
+                    </TextArea>
+                    <Divider
+                      color="gray-2"
+                      direction="horizontal"
+                      margin="x4"
+                      width="0.125rem"
+                    >
+                      <Base
+                        Component="hr"
+                        className="Divider"
+                        color="gray-2"
+                        margin="x4"
+                        style={
+                          Object {
+                            "borderTopWidth": "0.125rem",
+                          }
+                        }
+                      >
+                        <hr
+                          className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                          style={
+                            Object {
+                              "borderTopWidth": "0.125rem",
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        />
+                      </Base>
+                    </Divider>
+                    <Flex
+                      alignChildrenVertical="middle"
+                      direction="horizontal"
+                    >
+                      <Base
+                        className="Flex Flex--align-vert-middle Flex--horizontal"
+                      >
+                        <div
+                          className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <InputLabel>
+                            <Text
+                              color="grape-4"
+                              margin="x1"
+                              size="x3"
+                              weight="bold"
+                            >
+                              <Base
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
+                                color="grape-4"
+                                margin="x1"
+                              >
+                                <div
+                                  className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Distribution Type: 
+                                  development
+                                </div>
+                              </Base>
+                            </Text>
+                          </InputLabel>
+                          <Tooltip
+                            title="This is the tooltip"
+                          >
+                            <PlacementManager>
+                              <Manager>
+                                <Placement
+                                  backgroundColor="black"
+                                  borderRadius="x1"
+                                  color="gray-1"
+                                  placement="top"
+                                  visible={false}
+                                >
+                                  <PlacementPopper
+                                    backgroundColor="black"
+                                    borderRadius="x1"
+                                    closeElement={null}
+                                    color="gray-1"
+                                    flip={true}
+                                    isInsideModal={false}
+                                    placement="top"
+                                    visible={false}
+                                  />
+                                </Placement>
+                                <PlacementReference>
+                                  <Reference
+                                    innerRef={[Function]}
+                                  >
+                                    <InnerReference
+                                      innerRef={[Function]}
+                                      setReferenceNode={[Function]}
+                                    >
+                                      <Icon
+                                        color="grape-3"
+                                        innerRef={[Function]}
+                                        name="Coffee"
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                        paddingHorizontal="x1"
+                                        size="1.5rem"
+                                      >
+                                        <Base
+                                          Component="svg"
+                                          className="Icon"
+                                          color="grape-3"
+                                          height="1.5rem"
+                                          innerRef={[Function]}
+                                          onMouseEnter={[Function]}
+                                          onMouseLeave={[Function]}
+                                          paddingHorizontal="x1"
+                                          viewBox="0 0 24 24"
+                                          width="1.5rem"
+                                        >
+                                          <svg
+                                            className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
+                                            onMouseEnter={[Function]}
+                                            onMouseLeave={[Function]}
+                                            style={
+                                              Object {
+                                                "height": "1.5rem",
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "width": "1.5rem",
+                                              }
+                                            }
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <Component
+                                              height="100%"
+                                              width="100%"
+                                            >
+                                              <svg
+                                                height="100%"
+                                                viewBox="0 0 24 24"
+                                                width="100%"
+                                              >
+                                                <defs>
+                                                  <path
+                                                    d="M4 20h16c1.1 0 2-.9 2-2H2c0 1.1.9 2 2 2zM20 4H6v10c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-4 8v2H8V6h8v6zm4-2h-2V6h2v4z"
+                                                    id="icons-coffee_svg__a"
+                                                  />
+                                                </defs>
+                                                <use
+                                                  fill="currentColor"
+                                                  fillRule="evenodd"
+                                                  xlinkHref="#icons-coffee_svg__a"
+                                                />
+                                              </svg>
+                                            </Component>
+                                          </svg>
+                                        </Base>
+                                      </Icon>
+                                    </InnerReference>
+                                  </Reference>
+                                </PlacementReference>
+                              </Manager>
+                            </PlacementManager>
+                          </Tooltip>
+                        </div>
+                      </Base>
+                    </Flex>
+                    <Text
+                      color="gray-7"
+                      size="x3"
+                      weight="medium"
+                    >
+                      <Base
+                        Component="div"
+                        className="Text Text--size-x3 Text--weight-medium"
+                        color="gray-7"
+                      >
+                        <div
+                          className="Base Base--color-gray-7 Text Text--size-x3 Text--weight-medium"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          The app was signed with a Development Provisioning Profile which means that it
+                           
+                          <Text
+                            weight="bold"
+                          >
+                            <Base
+                              Component="div"
+                              className="Text Text--weight-bold"
+                            >
+                              <div
+                                className="Base Text Text--weight-bold"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                can only be installed on devices which are included in the Provisioning Profile
+                              </div>
+                            </Base>
+                          </Text>
+                        </div>
+                      </Base>
+                    </Text>
+                    <Divider
+                      color="gray-2"
+                      direction="horizontal"
+                      margin="x4"
+                      width="0.125rem"
+                    >
+                      <Base
+                        Component="hr"
+                        className="Divider"
+                        color="gray-2"
+                        margin="x4"
+                        style={
+                          Object {
+                            "borderTopWidth": "0.125rem",
+                          }
+                        }
+                      >
+                        <hr
+                          className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                          style={
+                            Object {
+                              "borderTopWidth": "0.125rem",
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        />
+                      </Base>
+                    </Divider>
+                    <Flex
+                      direction="horizontal"
+                      gap="x6"
+                      grow={true}
+                    >
+                      <Base
+                        className="Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                      >
+                        <div
+                          className="Base Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <Flex
+                            grow={true}
+                          >
+                            <Base
+                              className="Flex Flex--grow"
+                            >
+                              <div
+                                className="Base Flex Flex--grow"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Support URL
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <InputContainer>
+                                  <Flex
+                                    Component="label"
+                                    className="Input__container"
+                                    direction="horizontal"
+                                  >
+                                    <Base
+                                      Component="label"
+                                      className="Flex Flex--horizontal Input__container"
+                                    >
+                                      <label
+                                        className="Base Flex Flex--horizontal Input__container"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        <Input
+                                          defaultValue="https://bitrise.io/support"
+                                          name="supportUrl"
+                                        >
+                                          <Flex
+                                            Component="input"
+                                            className="Input"
+                                            defaultValue="https://bitrise.io/support"
+                                            grow={true}
+                                            name="supportUrl"
+                                          >
+                                            <Base
+                                              Component="input"
+                                              className="Flex Flex--grow Input"
+                                              defaultValue="https://bitrise.io/support"
+                                              name="supportUrl"
+                                            >
+                                              <input
+                                                className="Base Flex Flex--grow Input"
+                                                defaultValue="https://bitrise.io/support"
+                                                name="supportUrl"
+                                                style={
+                                                  Object {
+                                                    "height": undefined,
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "width": undefined,
+                                                  }
+                                                }
+                                              />
+                                            </Base>
+                                          </Flex>
+                                        </Input>
+                                      </label>
+                                    </Base>
+                                  </Flex>
+                                </InputContainer>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        App Title
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <Text
+                                  size="x3"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--size-x3"
+                                  >
+                                    <div
+                                      className="Base Text Text--size-x3"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      Standup Timer
+                                    </div>
+                                  </Base>
+                                </Text>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Version
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <Text
+                                  size="x3"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--size-x3"
+                                  >
+                                    <div
+                                      className="Base Text Text--size-x3"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      v
+                                      1.0.3
+                                    </div>
+                                  </Base>
+                                </Text>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Certificate Expires
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <Text
+                                  size="x3"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--size-x3"
+                                  >
+                                    <div
+                                      className="Base Text Text--size-x3"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      Sep 22
+                                    </div>
+                                  </Base>
+                                </Text>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Minimum OS
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <Text
+                                  size="x3"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--size-x3"
+                                  >
+                                    <div
+                                      className="Base Text Text--size-x3"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      10.2
+                                    </div>
+                                  </Base>
+                                </Text>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Scheme
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <Text
+                                  size="x3"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--size-x3"
+                                  >
+                                    <div
+                                      className="Base Text Text--size-x3"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      piramid
+                                    </div>
+                                  </Base>
+                                </Text>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                              </div>
+                            </Base>
+                          </Flex>
+                          <Flex
+                            grow={true}
+                          >
+                            <Base
+                              className="Flex Flex--grow"
+                            >
+                              <div
+                                className="Base Flex Flex--grow"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Marketing URL
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <InputContainer>
+                                  <Flex
+                                    Component="label"
+                                    className="Input__container"
+                                    direction="horizontal"
+                                  >
+                                    <Base
+                                      Component="label"
+                                      className="Flex Flex--horizontal Input__container"
+                                    >
+                                      <label
+                                        className="Base Flex Flex--horizontal Input__container"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        <Input
+                                          defaultValue="https://bitrise.io/marketing"
+                                          name="marketingUrl"
+                                        >
+                                          <Flex
+                                            Component="input"
+                                            className="Input"
+                                            defaultValue="https://bitrise.io/marketing"
+                                            grow={true}
+                                            name="marketingUrl"
+                                          >
+                                            <Base
+                                              Component="input"
+                                              className="Flex Flex--grow Input"
+                                              defaultValue="https://bitrise.io/marketing"
+                                              name="marketingUrl"
+                                            >
+                                              <input
+                                                className="Base Flex Flex--grow Input"
+                                                defaultValue="https://bitrise.io/marketing"
+                                                name="marketingUrl"
+                                                style={
+                                                  Object {
+                                                    "height": undefined,
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "width": undefined,
+                                                  }
+                                                }
+                                              />
+                                            </Base>
+                                          </Flex>
+                                        </Input>
+                                      </label>
+                                    </Base>
+                                  </Flex>
+                                </InputContainer>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Bundle ID
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <Text
+                                  size="x3"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--size-x3"
+                                  >
+                                    <div
+                                      className="Base Text Text--size-x3"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      bundle-id
+                                    </div>
+                                  </Base>
+                                </Text>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Build Number
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <Text
+                                  size="x3"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--size-x3"
+                                  >
+                                    <div
+                                      className="Base Text Text--size-x3"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      32
+                                    </div>
+                                  </Base>
+                                </Text>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Size
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <Text
+                                  size="x3"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--size-x3"
+                                  >
+                                    <div
+                                      className="Base Text Text--size-x3"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      4.57 MB
+                                    </div>
+                                  </Base>
+                                </Text>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Supported Device Types
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <Text
+                                  size="x3"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--size-x3"
+                                  >
+                                    <div
+                                      className="Base Text Text--size-x3"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      iphone, ipad
+                                    </div>
+                                  </Base>
+                                </Text>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                                <InputLabel>
+                                  <Text
+                                    color="grape-4"
+                                    margin="x1"
+                                    size="x3"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--size-x3 Text--weight-bold"
+                                      color="grape-4"
+                                      margin="x1"
+                                    >
+                                      <div
+                                        className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Configuration
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </InputLabel>
+                                <Text
+                                  size="x3"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--size-x3"
+                                  >
+                                    <div
+                                      className="Base Text Text--size-x3"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      canary
+                                    </div>
+                                  </Base>
+                                </Text>
+                                <Divider
+                                  color="gray-2"
+                                  direction="horizontal"
+                                  margin="x4"
+                                  width="0.125rem"
+                                >
+                                  <Base
+                                    Component="hr"
+                                    className="Divider"
+                                    color="gray-2"
+                                    margin="x4"
+                                    style={
+                                      Object {
+                                        "borderTopWidth": "0.125rem",
+                                      }
+                                    }
+                                  >
+                                    <hr
+                                      className="Base Base--color-gray-2 Base--margin-x4 Divider"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Divider>
+                              </div>
+                            </Base>
+                          </Flex>
+                        </div>
+                      </Base>
+                    </Flex>
+                  </form>
+                </div>
+              </Base>
+            </Flex>
+            <_default
+              buildSlug="13245ads"
+            >
+              <Base
+                maxWidth="16rem"
+              >
+                <div
+                  className="Base Base--max-width"
+                  style={
+                    Object {
+                      "height": undefined,
+                      "maxHeight": undefined,
+                      "maxWidth": "16rem",
+                      "width": undefined,
+                    }
+                  }
+                >
+                  <Base>
+                    <div
+                      className="Base"
+                      style={
+                        Object {
+                          "height": undefined,
+                          "maxHeight": undefined,
+                          "maxWidth": undefined,
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      <Button
+                        fullWidth={true}
+                        level="primary"
+                        margin="x4"
+                        size="medium"
+                      >
+                        <Flex
+                          Component="button"
+                          alignChildren="middle"
+                          className="Button Button--level-primary Button--size-medium Button--full-width"
+                          direction="horizontal"
+                          gap="x2"
+                          margin="x4"
+                        >
+                          <Base
+                            Component="button"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                            margin="x4"
+                          >
+                            <button
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              <Icon
+                                name="Bug"
+                                size="1.5rem"
+                              >
+                                <Base
+                                  Component="svg"
+                                  className="Icon"
+                                  height="1.5rem"
+                                  viewBox="0 0 24 24"
+                                  width="1.5rem"
+                                >
+                                  <svg
+                                    className="Base Icon"
+                                    style={
+                                      Object {
+                                        "height": "1.5rem",
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "width": "1.5rem",
+                                      }
+                                    }
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <Component
+                                      height="100%"
+                                      width="100%"
+                                    >
+                                      <svg
+                                        height="100%"
+                                        viewBox="0 0 24 24"
+                                        width="100%"
+                                      >
+                                        <defs>
+                                          <path
+                                            d="M16.455 17.365l-3.06 3.061a1.967 1.967 0 0 1-2.779-.001l-3.06-3.062L6 18.918V21H4v-2.08c0-.53.211-1.04.586-1.415l1.921-1.92a1.955 1.955 0 0 1-.002-.084V15h-2.5v-2h2.5v-.466L4.59 10.62a2 2 0 0 1-.586-1.414V7h2v2.205l.728.728a5.504 5.504 0 0 1 1.638-2.56l-.78-.78a2 2 0 0 1-.586-1.414V3h2v2.179l1.143 1.143A5.488 5.488 0 0 1 12.005 6a5.49 5.49 0 0 1 1.857.321l1.143-1.141V3h2v2.18a2 2 0 0 1-.586 1.415l-.779.777a5.503 5.503 0 0 1 1.638 2.56l.727-.727V7h2v2.205a2 2 0 0 1-.586 1.414l-1.914 1.913V13h2.5v2h-2.5v.5c0 .028 0 .057-.002.085l1.92 1.919c.374.375.585.884.585 1.415v2.08h-2v-2.08l-1.553-1.554zm-.95-4.865h-2.5v5.487l2.5-2.501V12.5zm-4.5 0h-2.5v2.985l2.5 2.5V12.5zm1-4.5a3.503 3.503 0 0 0-3.355 2.5h6.71A3.502 3.502 0 0 0 12.005 8z"
+                                            id="icons-bug_svg__a"
+                                          />
+                                        </defs>
+                                        <use
+                                          fill="currentColor"
+                                          fillRule="evenodd"
+                                          xlinkHref="#icons-bug_svg__a"
+                                        />
+                                      </svg>
+                                    </Component>
+                                  </svg>
+                                </Base>
+                              </Icon>
+                              <Text>
+                                <Base
+                                  Component="div"
+                                  className="Text"
+                                >
+                                  <div
+                                    className="Base Text"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    Save
+                                  </div>
+                                </Base>
+                              </Text>
+                            </button>
+                          </Base>
+                        </Flex>
+                      </Button>
+                      <Button
+                        fullWidth={true}
+                        level="secondary"
+                        margin="x4"
+                        size="medium"
+                      >
+                        <Flex
+                          Component="button"
+                          alignChildren="middle"
+                          className="Button Button--level-secondary Button--size-medium Button--full-width"
+                          direction="horizontal"
+                          gap="x2"
+                          margin="x4"
+                        >
+                          <Base
+                            Component="button"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                            margin="x4"
+                          >
+                            <button
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              <Icon
+                                name="Deployment"
+                                size="1.5rem"
+                              >
+                                <Base
+                                  Component="svg"
+                                  className="Icon"
+                                  height="1.5rem"
+                                  viewBox="0 0 24 24"
+                                  width="1.5rem"
+                                >
+                                  <svg
+                                    className="Base Icon"
+                                    style={
+                                      Object {
+                                        "height": "1.5rem",
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "width": "1.5rem",
+                                      }
+                                    }
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <Component
+                                      height="100%"
+                                      width="100%"
+                                    >
+                                      <svg
+                                        height="100%"
+                                        viewBox="0 0 24 24"
+                                        width="100%"
+                                      >
+                                        <path
+                                          d="M13.67 19.27l-3.366 3.368-1.698-1.697 1.253-3.799-2.545-2.545-3.799 1.252-1.697-1.697 3.367-3.367.135-.135a1 1 0 0 1 1.414 0l1.015 1.015c1.43-2.433 4.037-5.792 4.682-6.428 2.454-2.42 8.32-2.457 8.782-1.994.463.463.44 6.348-1.994 8.782-.64.64-3.77 3.478-6.2 4.91l.786.786a1 1 0 0 1 0 1.415l-.134.134zm-2.12-3.804c.584-.303 1.325-.785 2.163-1.405 1.505-1.112 3.346-2.704 4.092-3.45.714-.714 1.27-2.2 1.516-3.989.077-.56.118-1.118.125-1.609-.49.007-1.044.05-1.602.127-1.789.248-3.283.805-4.01 1.521-.441.436-2.028 2.488-3.204 4.212a28.106 28.106 0 0 0-1.414 2.259l.205.205 2.129 2.129zm-4.654.397l1.697 1.697-2.525 2.525c-.39.39-.955.389-1.695-.002-.391-.74-.392-1.305-.002-1.695l2.525-2.525zM15.85 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                                          fill="currentColor"
+                                          fillRule="evenodd"
+                                        />
+                                      </svg>
+                                    </Component>
+                                  </svg>
+                                </Base>
+                              </Icon>
+                              <Text>
+                                <Base
+                                  Component="div"
+                                  className="Text"
+                                >
+                                  <div
+                                    className="Base Text"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    Publish
+                                  </div>
+                                </Base>
+                              </Text>
+                            </button>
+                          </Base>
+                        </Flex>
+                      </Button>
+                    </div>
+                  </Base>
+                  <Flex
+                    alignChildrenHorizontal="middle"
+                    backgroundColor="gray-1"
+                    borderColor="gray-3"
+                    borderRadius="x2"
+                    borderWidth="x2"
+                    className="shareDisabled"
+                    direction="vertical"
+                    gap="x4"
+                    margin="x10"
+                    padding="x6"
+                  >
+                    <Base
+                      backgroundColor="gray-1"
+                      borderColor="gray-3"
+                      borderRadius="x2"
+                      borderWidth="x2"
+                      className="Flex Flex--align-horz-middle Flex--vertical Flex--gap-x4 shareDisabled"
+                      margin="x10"
+                      padding="x6"
+                    >
+                      <div
+                        className="Base Base--background-color-gray-1 Base--border-radius-x2 Base--border-color-gray-3 Base--border-width-x2 Base--margin-x10 Base--padding-horizontal-x6 Base--padding-vertical-x6 Flex Flex--align-horz-middle Flex--vertical Flex--gap-x4 shareDisabled"
+                        style={
+                          Object {
+                            "height": undefined,
+                            "maxHeight": undefined,
+                            "maxWidth": undefined,
+                            "width": undefined,
+                          }
+                        }
+                      >
+                        <Icon
+                          name="Chain"
+                          size="2rem"
+                        >
+                          <Base
+                            Component="svg"
+                            className="Icon"
+                            height="2rem"
+                            viewBox="0 0 24 24"
+                            width="2rem"
+                          >
+                            <svg
+                              className="Base Icon"
+                              style={
+                                Object {
+                                  "height": "2rem",
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "width": "2rem",
+                                }
+                              }
+                              viewBox="0 0 24 24"
+                            >
+                              <Component
+                                height="100%"
+                                width="100%"
+                              >
+                                <svg
+                                  height="100%"
+                                  viewBox="0 0 24 24"
+                                  width="100%"
+                                >
+                                  <defs>
+                                    <path
+                                      d="M7 13v2h-.5C4 15 2 13 2 10.5S4 6 6.5 6h5C14 6 16 8 16 10.5S14 15 11.5 15H11v-2h.5c1.4 0 2.5-1.1 2.5-2.5S12.9 8 11.5 8h-5C5.1 8 4 9.1 4 10.5S5.1 13 6.5 13H7zm10-2V9h.5C20 9 22 11 22 13.5S20 18 17.5 18h-5C10 18 8 16 8 13.5S10 9 12.5 9v2c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5h5c1.4 0 2.5-1.1 2.5-2.5S18.9 11 17.5 11H17z"
+                                      id="icons-chain_svg__a"
+                                    />
+                                  </defs>
+                                  <use
+                                    fill="currentColor"
+                                    fillRule="evenodd"
+                                    xlinkHref="#icons-chain_svg__a"
+                                  />
+                                </svg>
+                              </Component>
+                            </svg>
+                          </Base>
+                        </Icon>
+                        <Text
+                          size="x4"
+                          weight="bold"
+                        >
+                          <Base
+                            Component="h5"
+                            className="Text Text--size-x4 Text--weight-bold"
+                          >
+                            <h5
+                              className="Base Text Text--size-x4 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Share disabled
+                            </h5>
+                          </Base>
+                        </Text>
+                        <Text
+                          align="middle"
+                          color="gray-7"
+                          size="x3"
+                          weight="medium"
+                        >
+                          <Base
+                            Component="div"
+                            className="Text Text--align-middle Text--size-x3 Text--weight-medium"
+                            color="gray-7"
+                          >
+                            <div
+                              className="Base Base--color-gray-7 Text Text--align-middle Text--size-x3 Text--weight-medium"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              You can enable sharing via Public Install Page at the build’s
+                               
+                              <Link
+                                color="grape-3"
+                                href="https://app.bitrise.io/build/13245ads#artifacts"
+                              >
+                                <Base
+                                  Component="a"
+                                  className="Link Link--color-grape-3 Link--clickable"
+                                  href="https://app.bitrise.io/build/13245ads#artifacts"
+                                >
+                                  <a
+                                    className="Base Link Link--color-grape-3 Link--clickable"
+                                    href="https://app.bitrise.io/build/13245ads#artifacts"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    Apps & Artifacts tab
+                                  </a>
+                                </Base>
+                              </Link>
+                              .
+                            </div>
+                          </Base>
+                        </Text>
+                        <ReactSVG
+                          afterInjection={[Function]}
+                          beforeInjection={[Function]}
+                          evalScripts="never"
+                          fallback={null}
+                          loading={null}
+                          renumerateIRIElements={true}
+                          src="/static/purr-request-head.svg"
+                          wrapper="div"
+                        >
+                          <div />
+                        </ReactSVG>
+                      </div>
+                    </Base>
+                  </Flex>
+                </div>
+              </Base>
+            </_default>
+          </div>
+        </Base>
+      </Flex>
+    </div>
+  </Base>
+</_default>
+`;
+
+exports[`AppVersionDetailsView when viewed on mobile renders the details view correctly 1`] = `
 <_default
   appVersion={
     Object {

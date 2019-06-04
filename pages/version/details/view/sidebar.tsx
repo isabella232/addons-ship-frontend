@@ -3,9 +3,10 @@ import Clipboard from 'react-clipboard.js';
 import { Base, Flex, Text, Icon, Button, Link } from '@bitrise/bitkit';
 import css from './style.scss';
 import SVG from 'react-svg';
+import { Fragment } from 'react';
 
 type Props = {
-  publicInstallPageURL: string;
+  publicInstallPageURL?: string;
   onSave?: () => void;
   buildSlug: string;
 };
@@ -23,7 +24,7 @@ export default ({ publicInstallPageURL, onSave, buildSlug }: Props) => (
       </Button>
     </Base>
     {publicInstallPageURL ? (
-      <Base>
+      <Fragment>
         <Flex
           direction="horizontal"
           alignChildrenHorizontal="between"
@@ -66,7 +67,7 @@ export default ({ publicInstallPageURL, onSave, buildSlug }: Props) => (
             </Text>
           </Flex>
         </Flex>
-      </Base>
+      </Fragment>
     ) : (
       <Flex
         direction="vertical"

@@ -50,7 +50,7 @@ export type AppVersion = {
   marketingUrl: string;
   scheme: string;
   configuration: string;
-  publicInstallPageURL: string;
+  publicInstallPageURL?: string;
 };
 
 export interface PageContext extends NextContext {
