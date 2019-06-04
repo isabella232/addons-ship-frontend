@@ -18,17 +18,31 @@ import { TypeIconName } from '@bitrise/bitkit/Icon/tsx';
 
 import { AppVersion } from '@/models';
 import { mediaQuery } from '@/utils/media';
+import Dropzone from '@/components/Dropzone';
 
 import Sidebar from './sidebar';
 
 type Props = {
   appVersion: AppVersion;
   showTooltips: boolean;
+  selectedDeviceIdForScreenshots: string;
+  screenshots?: File[];
+  onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
+  removeScreenshot: (deviceId: string, screenshot: File) => void;
   onSave?: () => void;
   onChange?: (key: string, newValue: string) => void;
 };
 
-export default ({ appVersion, showTooltips, onSave, onChange }: Props) => {
+export default ({
+  appVersion,
+  showTooltips,
+  screenshots,
+  selectedDeviceIdForScreenshots: deviceId,
+  onScreenshotAdded,
+  removeScreenshot,
+  onSave,
+  onChange
+}: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   const [isDesktop] = mediaQuery('60rem');
@@ -76,7 +90,15 @@ export default ({ appVersion, showTooltips, onSave, onChange }: Props) => {
             </Flex>
             <Textarea name="description" defaultValue={appVersion.description} />
 
-            <Divider color="gray-2" direction="horizontal" margin="x4" />
+            <Flex direction="horizontal">
+              <InputLabel>Screenshots</InputLabel>
+              <Icon name="Support" color="grape-3" />
+            </Flex>
+            <Dropzone
+              files={screenshots}
+              onFilesAdded={files => onScreenshotAdded(deviceId, files)}
+              removeFile={file => removeScreenshot(deviceId, file)}
+            />
 
             <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
               <InputLabel>What's new</InputLabel>
