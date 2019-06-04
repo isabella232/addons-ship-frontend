@@ -87,7 +87,7 @@ export default ({ publicInstallPageURL, onSave, buildSlug }: Props) => (
         </Text>
         <Text align="middle" weight="medium" size="x3" color="gray-7">
           You can enable sharing via Public Install Page at the build’s{' '}
-          <Link href={`https://app.bitrise.io/build/${buildSlug}#artifacts`} color="grape-3">
+          <Link href={`https://app.bitrise.io/build/${buildSlug}#?tab=artifacts`} color="grape-3">
             Apps & Artifacts tab
           </Link>
           .
