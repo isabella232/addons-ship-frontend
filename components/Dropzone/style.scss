@@ -1,0 +1,29 @@
+@import '~@/assets/style/colors';
+
+$grid: 4px;
+
+.dropzone {
+  border: 2px dashed $grape-3;
+
+  &Active {
+    border-style: solid;
+    background: $grape-1;
+  }
+}
+
+.scrollable {
+  overflow-x: scroll;
+}
+
+.removeIcon {
+  position: absolute;
+  top: $grid * 3;
+  right: $grid * 6;
+  background: $gray-3;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background: $grape-3;
+  }
+}

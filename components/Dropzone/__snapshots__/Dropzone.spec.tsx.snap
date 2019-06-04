@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropzone renders correctly with files 1`] = `
+<Card
+  elevation="x1"
+  padding="x3"
+>
+  <input
+    accept="image/*"
+    autoComplete="off"
+    multiple={true}
+    onChange={[Function]}
+    onClick={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+    tabIndex={-1}
+    type="file"
+  />
+  <Base
+    backgroundColor="gray-1"
+    padding="x3"
+  >
+    <Flex
+      className="scrollable"
+      direction="horizontal"
+      height={400}
+    >
+      <div
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragEnter={[Function]}
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "width": "48px",
+          }
+        }
+        tabIndex={0}
+      >
+        <Flex
+          alignChildren="middle"
+          borderRadius="x1"
+          className="dropzone"
+          direction="vertical"
+          width={48}
+        >
+          <Icon
+            color="grape-3"
+            name="PlusAdd"
+            size="1.5rem"
+          />
+        </Flex>
+      </div>
+      <Base
+        container={true}
+        key="file.png"
+        paddingHorizontal="x3"
+      >
+        <div
+          className="removeIcon"
+          onClick={[Function]}
+        >
+          <Icon
+            color="white"
+            name="CloseSmall"
+            size="1.5rem"
+          />
+        </div>
+        <img
+          style={
+            Object {
+              "height": "100%",
+            }
+          }
+        />
+      </Base>
+    </Flex>
+  </Base>
+</Card>
+`;
+
+exports[`Dropzone renders correctly without files 1`] = `
+<Card
+  elevation="x1"
+  padding="x3"
+>
+  <input
+    accept="image/*"
+    autoComplete="off"
+    multiple={true}
+    onChange={[Function]}
+    onClick={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+    tabIndex={-1}
+    type="file"
+  />
+  <Base
+    backgroundColor="gray-1"
+    padding="x3"
+  >
+    <Flex
+      className="scrollable"
+      direction="horizontal"
+      height={400}
+    >
+      <div
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragEnter={[Function]}
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "width": "100%",
+          }
+        }
+        tabIndex={0}
+      >
+        <Flex
+          alignChildren="middle"
+          borderRadius="x1"
+          className="dropzone"
+          direction="vertical"
+          width="100%"
+        >
+          <Text
+            align="middle"
+            color="gray-7"
+            size="x5"
+            weight="medium"
+          >
+            Drag & Drop 
+            <br />
+            or
+          </Text>
+          <Flex
+            alignChildrenVertical="middle"
+            direction="horizontal"
+          >
+            <Icon
+              color="grape-3"
+              name="PlusAdd"
+              paddingHorizontal="x1"
+              size="1.5rem"
+            />
+            <Text
+              align="middle"
+              color="grape-3"
+              size="x3"
+              weight="medium"
+            >
+              Browse Files
+            </Text>
+          </Flex>
+        </Flex>
+      </div>
+    </Flex>
+  </Base>
+</Card>
+`;
