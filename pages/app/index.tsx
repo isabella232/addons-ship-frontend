@@ -1,7 +1,7 @@
 import { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import formatDate from 'date-fns/format';
-import { Text, Divider } from '@bitrise/bitkit';
+import { Text, Divider, Flex, Dropdown, Base } from '@bitrise/bitkit';
 
 import css from './style.scss';
 
@@ -16,15 +16,46 @@ interface AppPageProps extends AppPageQuery {
   appVersionList: AppVersionList;
 }
 
-type AppPageState = {};
+type AppPageState = {
+  selectedVersionSortingOption: any;
+};
 
 class AppPage extends Component<AppPageProps, AppPageState> {
-  state: AppPageState = {};
+  state: AppPageState = {
+    selectedVersionSortingOption: null
+  };
+
+  versionSortingOptions = [
+    {
+      text: 'Latest Build',
+      value: 'latest-build'
+    },
+    {
+      text: 'Latest version',
+      value: 'latest-version'
+    }
+  ];
+
+  componentDidMount() {
+    this.setState({
+      selectedVersionSortingOption: this.versionSortingOptions.find(
+        versionSortingOption => versionSortingOption.value === 'latest-build'
+      )
+    });
+  }
 
   static async getInitialProps({ query: { appSlug }, store }: PageContext) {
     await store.dispatch(fetchAppVersionList(appSlug as string) as any);
 
     return { appSlug };
+  }
+
+  versionSortOptionWithValueSelected(value: string) {
+    this.setState({
+      selectedVersionSortingOption: this.versionSortingOptions.find(
+        versionSortingOption => versionSortingOption.value === value
+      )
+    });
   }
 
   render() {
@@ -44,10 +75,29 @@ class AppPage extends Component<AppPageProps, AppPageState> {
               platformIconUrl="/static/icon-apple.svg"
             />
           </div>
-          <Text letterSpacing="x1" size="x5" weight="bold">
-            Version History
-          </Text>
-          <Divider color="gray-2" direction="horizontal" margin="x2" />
+          <Flex direction="horizontal" alignChildrenVertical="end" gap="x2">
+            <Flex grow shrink>
+              <Text letterSpacing="x1" size="x5" weight="bold">
+                Version History
+              </Text>
+              <Divider color="gray-2" direction="horizontal" margin="x2" />
+            </Flex>
+            {this.state.selectedVersionSortingOption && (
+              <Dropdown
+                width={168}
+                elevation="x1"
+                fullWidth={false}
+                onChange={versionSortingOptionValue =>
+                  this.versionSortOptionWithValueSelected(versionSortingOptionValue)
+                }
+                options={this.versionSortingOptions}
+                selected={this.state.selectedVersionSortingOption.value}
+              >
+                {this.state.selectedVersionSortingOption.text}
+              </Dropdown>
+            )}
+          </Flex>
+
           {appVersionList.map((appVersionListItem, i) => (
             <Fragment key={i}>
               <div className={css.majorVersionHeading}>v.{appVersionListItem.version}</div>
