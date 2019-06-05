@@ -1,0 +1,53 @@
+@import '~@/assets/style/colors';
+
+$grid: 4px;
+
+.container {
+  position: relative;
+  margin-top: 2 * $grid;
+  margin-bottom: 3 * $grid;
+  overflow-x: hidden;
+}
+
+.list {
+  width: 9999px;
+}
+
+.item {
+  padding: 2 * $grid;
+  border-radius: $grid;
+  cursor: pointer;
+
+  &:hover {
+    background: $grape-1;
+    color: $grape-3;
+  }
+
+  &Selected::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: $aqua-3;
+  }
+
+  &Hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.dropdown {
+  padding: $grid;
+  border-radius: $grid;
+  cursor: pointer;
+
+  &:hover {
+    background: $grape-1;
+    color: $grape-3;
+  }
+}
+
+:global(.Placement) {
+  margin: 3 * $grid 0;
+}
