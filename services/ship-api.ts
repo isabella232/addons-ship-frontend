@@ -20,8 +20,16 @@ class ShipAPIService {
     data.public_install_page_url = undefined;
     return {
       ...camelizeKeys(data),
+      appSlug,
       publicInstallPageURL
     };
+  }
+
+  async updateAppVersion(appVersion: AppVersion): Promise<AppVersion> {
+    // const {appSlug, id: versionId } = appVersion;
+    // const url = `${rootUrl}/apps/${appSlug}/versions/${versionId}`;
+
+    return await appVersion;
   }
 
   async getAppVersionList(appSlug: string): Promise<AppVersionList> {

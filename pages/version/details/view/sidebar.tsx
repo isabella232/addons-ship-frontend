@@ -5,10 +5,21 @@ import css from './style.scss';
 
 type Props = {
   publicInstallPageURL: string;
+  onSave?: () => void;
 };
 
-export default ({ publicInstallPageURL }: Props) => (
-  <Base maxWidth={250}>
+export default ({ publicInstallPageURL, onSave }: Props) => (
+  <Base maxWidth="16rem">
+    <Base>
+      <Button level="primary" fullWidth margin="x4" onClick={onSave}>
+        <Icon name="Bug" />
+        <Text>Save</Text>
+      </Button>
+      <Button level="secondary" fullWidth margin="x4">
+        <Icon name="Deployment" />
+        <Text>Publish</Text>
+      </Button>
+    </Base>
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle" paddingVertical="x4">
       <Text weight="bold" size="x3">
         Public Install Page link

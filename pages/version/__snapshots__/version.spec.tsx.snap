@@ -59,7 +59,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
   <Divider
     color="gray-2"
     direction="horizontal"
-    size="0.125rem"
+    width="0.125rem"
   />
   <Base
     maxWidth={960}
@@ -128,7 +128,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
   <Divider
     color="gray-2"
     direction="horizontal"
-    size="0.125rem"
+    width="0.125rem"
   />
   <Base
     maxWidth={960}

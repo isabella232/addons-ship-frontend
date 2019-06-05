@@ -1,12 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`appVersion should update the state 1`] = `
+exports[`appVersion fetchTestDevices can't fetch test devices 1`] = `
+Array [
+  Object {
+    "type": "TEST_DEVICES_GET_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "TEST_DEVICES_GET_ERROR",
+  },
+]
+`;
+
+exports[`appVersion fetchTestDevices fetches test devices 1`] = `
 Array [
   Object {
     "type": "TEST_DEVICES_GET_NEXT",
   },
   Object {
     "type": "TEST_DEVICES_GET_COMPLETE",
+  },
+]
+`;
+
+exports[`appVersion reducer loads devices 1`] = `
+Array [
+  Object {
+    "deviceId": "some-device-id-01",
+    "deviceType": "ios",
+    "owner": "test-user-1",
+  },
+  Object {
+    "deviceId": "some-device-id-02",
+    "deviceType": "android",
+    "owner": "test-user-1",
+  },
+  Object {
+    "deviceId": "some-device-id-03",
+    "deviceType": "ios",
+    "owner": "test-user-2",
   },
 ]
 `;
