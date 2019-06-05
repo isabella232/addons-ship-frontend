@@ -19,9 +19,9 @@ import { TypeIconName } from '@bitrise/bitkit/Icon/tsx';
 import { AppVersion } from '@/models';
 import { mediaQuery } from '@/utils/media';
 import Dropzone from '@/components/Dropzone';
+import SmallTabs from '@/components/SmallTabs';
 
 import Sidebar from './sidebar';
-import SmallTabs from '@/components/SmallTabs';
 
 type Props = {
   appVersion: AppVersion;

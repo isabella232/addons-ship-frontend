@@ -27,7 +27,7 @@ export default ({ publicInstallPageURL, onSave }: Props) => (
       <Base paddingHorizontal="x3">
         <Clipboard data-clipboard-text={publicInstallPageURL} className={css['clipboard-button']}>
           <Base padding="x1" className={css['icon-container']} borderRadius="x1">
-            <Icon name="Duplicate" size="1.5rem" />
+            <Icon name="Duplicate" size="1.5rem" color="grape-3" />
           </Base>
         </Clipboard>
       </Base>
