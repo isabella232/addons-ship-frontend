@@ -1,6 +1,7 @@
 import { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import formatDate from 'date-fns/format';
+import { Flex, Base, Text } from '@bitrise/bitkit';
 
 import css from './style.scss';
 
@@ -34,14 +35,12 @@ class AppPage extends Component<AppPageProps, AppPageState> {
     const emptyPage = true;
 
     return (
-      <div className={css.appPageWrapper}>
+      <Flex direction="vertical" className={css.wrapper}>
         {emptyPage ? (
-          <div className={css.appPage}>
-            <EmptyPage />
-          </div>
+          <EmptyPage />
         ) : (
-          <div className={css.appPage}>
-            <div className={css.appSummaryWrapper}>
+          <Flex direction="vertical" alignChildrenHorizontal="middle" padding="x16">
+            <Base width="100%">
               <AppSummary
                 detailsPagePath={`/${latestAppVersion.id}/details`}
                 title={`${latestAppVersion.appName} v${latestAppVersion.version} (${latestAppVersion.buildNumber})`}
@@ -50,29 +49,33 @@ class AppPage extends Component<AppPageProps, AppPageState> {
                 iconUrl={latestAppVersion.iconUrl}
                 platformIconUrl="/static/icon-apple.svg"
               />
-            </div>
-            <SectionHeading>Version History</SectionHeading>
-            {appVersionList.map((appVersionListItem, i) => (
-              <Fragment key={i}>
-                <div className={css.majorVersionHeading}>v.{appVersionListItem.version}</div>
-                {appVersionListItem.appVersions.map((appVersion, j) => (
-                  <VersionListPageItem
-                    key={`${i}-${j}`}
-                    detailsPagePath={`/${appVersion.id}/details`}
-                    platformIconUrl="/static/icon-apple.svg"
-                    title={`${appVersion.appName} (${appVersion.buildNumber})`}
-                    description={appVersion.description}
-                    note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}`}
-                  />
+              <Base className={css.sectionHeadingWrapper}>
+                <SectionHeading>Version History</SectionHeading>
+                {appVersionList.map((appVersionListItem, i) => (
+                  <Fragment key={i}>
+                    <Text className={css.majorVersionHeading} size="x4" weight="bold" color="gray-6">
+                      v.{appVersionListItem.version}
+                    </Text>
+                    {appVersionListItem.appVersions.map((appVersion, j) => (
+                      <VersionListPageItem
+                        key={`${i}-${j}`}
+                        detailsPagePath={`/${appVersion.id}/details`}
+                        platformIconUrl="/static/icon-apple.svg"
+                        title={`${appVersion.appName} (${appVersion.buildNumber})`}
+                        description={appVersion.description}
+                        note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}`}
+                      />
+                    ))}
+                  </Fragment>
                 ))}
-              </Fragment>
-            ))}
-          </div>
+              </Base>
+            </Base>
+          </Flex>
         )}
-        <div className={css.footerWrapper}>
+        <Base paddingVertical="x6">
           <Footer />
-        </div>
-      </div>
+        </Base>
+      </Flex>
     );
   }
 }
