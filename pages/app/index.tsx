@@ -1,18 +1,12 @@
-import { Component, Fragment } from 'react';
+import { Component } from 'react';
 import { connect } from 'react-redux';
-import formatDate from 'date-fns/format';
-import { Flex, Base, Text, Divider, Dropdown } from '@bitrise/bitkit';
-
-import css from './style.scss';
 
 import { AppPageQuery, PageContext, AppVersionList } from '@/models';
-import AppSummary from '@/components/AppSummary';
-import VersionListPageItem from '@/components/VersionListPageItem';
-import Footer from '@/components/Footer';
 import { RootState } from '@/store';
 import { fetchAppVersionList } from '@/ducks/appVersionList';
-import EmptyPage from '@/components/EmptyPage';
 import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
+
+import View from './view';
 
 interface AppPageProps extends AppPageQuery {
   appVersionsByVersion: {
@@ -30,12 +24,12 @@ interface AppPageProps extends AppPageQuery {
 }
 
 type AppPageState = {
-  selectedVersionSortingOption: any;
+  selectedVersionSortingOptionValue: string | null;
 };
 
 class AppPage extends Component<AppPageProps, AppPageState> {
   state: AppPageState = {
-    selectedVersionSortingOption: null
+    selectedVersionSortingOptionValue: null
   };
 
   versionSortingOptions = [
@@ -51,9 +45,7 @@ class AppPage extends Component<AppPageProps, AppPageState> {
 
   componentDidMount() {
     this.setState({
-      selectedVersionSortingOption: this.versionSortingOptions.find(
-        versionSortingOption => versionSortingOption.value === 'latest-build'
-      )
+      selectedVersionSortingOptionValue: 'latest-build'
     });
   }
 
@@ -63,93 +55,32 @@ class AppPage extends Component<AppPageProps, AppPageState> {
     return { appSlug };
   }
 
-  versionSortOptionWithValueSelected(value: string) {
+  versionSortOptionWithValueSelected = (value: string) => {
     this.setState({
-      selectedVersionSortingOption: this.versionSortingOptions.find(
-        versionSortingOption => versionSortingOption.value === value
-      )
+      selectedVersionSortingOptionValue: value
     });
-  }
+  };
 
   render() {
     const groupedAppVersionList =
-      this.state.selectedVersionSortingOption && this.state.selectedVersionSortingOption.value === 'latest-version'
+      this.state.selectedVersionSortingOptionValue && this.state.selectedVersionSortingOptionValue === 'latest-version'
         ? this.props.appVersionsByVersion
         : this.props.appVersionsByBuildNumber;
     const latestAppVersion = groupedAppVersionList[0].appVersions[0];
     const emptyPage = false;
 
-    return (
-      <Flex direction="vertical" className={css.wrapper}>
-        {emptyPage ? (
-          <EmptyPage />
-        ) : (
-          <Flex direction="vertical" alignChildrenHorizontal="middle" padding="x16">
-            <Base width="100%">
-              <AppSummary
-                detailsPagePath={`/${latestAppVersion.id}/details`}
-                title={`${latestAppVersion.appName} v${latestAppVersion.version} (${latestAppVersion.buildNumber})`}
-                description={latestAppVersion.description}
-                note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
-                iconUrl={latestAppVersion.iconUrl}
-                platformIconUrl="/static/icon-apple.svg"
-              />
-              <Base className={css.sectionHeadingWrapper}>
-                <Flex direction="horizontal" alignChildrenVertical="end" gap="x2">
-                  <Flex grow shrink>
-                    <Text letterSpacing="x1" size="x5" weight="bold">
-                      Version History
-                    </Text>
-                    <Divider color="gray-2" direction="horizontal" margin="x2" />
-                  </Flex>
-                  {this.state.selectedVersionSortingOption && (
-                    <Dropdown
-                      width={168}
-                      elevation="x1"
-                      fullWidth={false}
-                      onChange={versionSortingOptionValue =>
-                        this.versionSortOptionWithValueSelected(versionSortingOptionValue)
-                      }
-                      options={this.versionSortingOptions}
-                      selected={this.state.selectedVersionSortingOption.value}
-                    >
-                      {this.state.selectedVersionSortingOption.text}
-                    </Dropdown>
-                  )}
-                </Flex>
+    const viewProps = {
+      emptyPage,
+      latestAppVersion,
+      versionSortingOptions: this.versionSortingOptions,
+      versionSortOptionWithValueSelected: this.versionSortOptionWithValueSelected,
+      selectedVersionSortingOption: this.versionSortingOptions.find(
+        (versionSortingOption: any) => versionSortingOption.value === this.state.selectedVersionSortingOptionValue
+      ),
+      groupedAppVersionList
+    };
 
-                {groupedAppVersionList &&
-                  groupedAppVersionList.map((appVersionListItem, i) => (
-                    <Fragment key={i}>
-                      {this.state.selectedVersionSortingOption &&
-                      this.state.selectedVersionSortingOption.value === 'latest-version' ? (
-                        <Text className={css.majorVersionHeading} size="x4" weight="bold" color="gray-6">
-                          v.{appVersionListItem.groupName}
-                        </Text>
-                      ) : (
-                        ''
-                      )}
-                      {appVersionListItem.appVersions.map((appVersion, j) => (
-                        <VersionListPageItem
-                          key={`${i}-${j}`}
-                          detailsPagePath={`/${appVersion.id}/details`}
-                          platformIconUrl="/static/icon-apple.svg"
-                          title={`${appVersion.appName} (${appVersion.buildNumber})`}
-                          description={appVersion.description}
-                          note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}`}
-                        />
-                      ))}
-                    </Fragment>
-                  ))}
-              </Base>
-            </Base>
-          </Flex>
-        )}
-        <Base paddingVertical="x6">
-          <Footer />
-        </Base>
-      </Flex>
-    );
+    return <View {...viewProps} />;
   }
 }
 
