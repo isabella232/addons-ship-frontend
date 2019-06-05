@@ -3833,18 +3833,20 @@ exports[`AppVersionDetailsView renders the details view correctly for desktop 1`
                                     }
                                   >
                                     <Icon
+                                      color="grape-3"
                                       name="Duplicate"
                                       size="1.5rem"
                                     >
                                       <Base
                                         Component="svg"
                                         className="Icon"
+                                        color="grape-3"
                                         height="1.5rem"
                                         viewBox="0 0 24 24"
                                         width="1.5rem"
                                       >
                                         <svg
-                                          className="Base Icon"
+                                          className="Base Base--color-grape-3 Icon"
                                           style={
                                             Object {
                                               "height": "1.5rem",
