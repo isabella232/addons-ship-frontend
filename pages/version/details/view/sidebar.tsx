@@ -1,9 +1,9 @@
 import QRCode from 'qrcode.react';
 import Clipboard from 'react-clipboard.js';
 import { Base, Flex, Text, Icon, Button, Link } from '@bitrise/bitkit';
-import css from './style.scss';
 import SVG from 'react-svg';
-import { Fragment } from 'react';
+import css from './style.scss';
+import { Fragment, Component } from 'react';
 
 type Props = {
   publicInstallPageURL?: string;
@@ -87,9 +87,14 @@ export default ({ publicInstallPageURL, onSave, buildSlug }: Props) => (
         </Text>
         <Text align="middle" weight="medium" size="x3" color="gray-7">
           You can enable sharing via Public Install Page at the build’s{' '}
-          <Link href={`https://app.bitrise.io/build/${buildSlug}#?tab=artifacts`} color="grape-3">
+          <Base
+            Component="a"
+            color="grape-3"
+            href={`https://app.bitrise.io/build/${buildSlug}#?tab=artifacts`}
+            target="_blank"
+          >
             Apps & Artifacts tab
-          </Link>
+          </Base>
           .
         </Text>
         <SVG src={'/static/purr-request-head.svg'} />

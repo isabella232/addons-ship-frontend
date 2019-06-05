@@ -6118,31 +6118,28 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                             >
                               You can enable sharing via Public Install Page at the build’s
                                
-                              <Link
+                              <Base
+                                Component="a"
                                 color="grape-3"
                                 href="https://app.bitrise.io/build/13245ads#?tab=artifacts"
+                                target="_blank"
                               >
-                                <Base
-                                  Component="a"
-                                  className="Link Link--color-grape-3 Link--clickable"
+                                <a
+                                  className="Base Base--color-grape-3"
                                   href="https://app.bitrise.io/build/13245ads#?tab=artifacts"
-                                >
-                                  <a
-                                    className="Base Link Link--color-grape-3 Link--clickable"
-                                    href="https://app.bitrise.io/build/13245ads#?tab=artifacts"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "width": undefined,
-                                      }
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
                                     }
-                                  >
-                                    Apps & Artifacts tab
-                                  </a>
-                                </Base>
-                              </Link>
+                                  }
+                                  target="_blank"
+                                >
+                                  Apps & Artifacts tab
+                                </a>
+                              </Base>
                               .
                             </div>
                           </Base>
