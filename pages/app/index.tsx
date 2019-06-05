@@ -12,9 +12,21 @@ import Footer from '@/components/Footer';
 import { RootState } from '@/store';
 import { fetchAppVersionList } from '@/ducks/appVersionList';
 import EmptyPage from '@/components/EmptyPage';
+import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
 
 interface AppPageProps extends AppPageQuery {
-  appVersionList: AppVersionList;
+  appVersionsByVersion: {
+    groupName: string;
+    appVersions: AppVersionList;
+  }[];
+  appVersionsByBuildNumber: {
+    groupName: string;
+    appVersions: AppVersionList;
+  }[];
+  groupedAppVersionList: {
+    groupName: string;
+    appVersions: AppVersionList;
+  }[];
 }
 
 type AppPageState = {
@@ -60,9 +72,12 @@ class AppPage extends Component<AppPageProps, AppPageState> {
   }
 
   render() {
-    const { appVersionList } = this.props;
-    const latestAppVersion = appVersionList[0].appVersions[0];
-    const emptyPage = true;
+    const groupedAppVersionList =
+      this.state.selectedVersionSortingOption && this.state.selectedVersionSortingOption.value === 'latest-version'
+        ? this.props.appVersionsByVersion
+        : this.props.appVersionsByBuildNumber;
+    const latestAppVersion = groupedAppVersionList[0].appVersions[0];
+    const emptyPage = false;
 
     return (
       <Flex direction="vertical" className={css.wrapper}>
@@ -103,23 +118,29 @@ class AppPage extends Component<AppPageProps, AppPageState> {
                   )}
                 </Flex>
 
-                {appVersionList.map((appVersionListItem, i) => (
-                  <Fragment key={i}>
-                    <Text className={css.majorVersionHeading} size="x4" weight="bold" color="gray-6">
-                      v.{appVersionListItem.version}
-                    </Text>
-                    {appVersionListItem.appVersions.map((appVersion, j) => (
-                      <VersionListPageItem
-                        key={`${i}-${j}`}
-                        detailsPagePath={`/${appVersion.id}/details`}
-                        platformIconUrl="/static/icon-apple.svg"
-                        title={`${appVersion.appName} (${appVersion.buildNumber})`}
-                        description={appVersion.description}
-                        note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}`}
-                      />
-                    ))}
-                  </Fragment>
-                ))}
+                {groupedAppVersionList &&
+                  groupedAppVersionList.map((appVersionListItem, i) => (
+                    <Fragment key={i}>
+                      {this.state.selectedVersionSortingOption &&
+                      this.state.selectedVersionSortingOption.value === 'latest-version' ? (
+                        <Text className={css.majorVersionHeading} size="x4" weight="bold" color="gray-6">
+                          v.{appVersionListItem.groupName}
+                        </Text>
+                      ) : (
+                        ''
+                      )}
+                      {appVersionListItem.appVersions.map((appVersion, j) => (
+                        <VersionListPageItem
+                          key={`${i}-${j}`}
+                          detailsPagePath={`/${appVersion.id}/details`}
+                          platformIconUrl="/static/icon-apple.svg"
+                          title={`${appVersion.appName} (${appVersion.buildNumber})`}
+                          description={appVersion.description}
+                          note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}`}
+                        />
+                      ))}
+                    </Fragment>
+                  ))}
               </Base>
             </Base>
           </Flex>
@@ -132,6 +153,9 @@ class AppPage extends Component<AppPageProps, AppPageState> {
   }
 }
 
-const mapStateToProps = ({ appVersionList }: RootState) => ({ appVersionList });
+const mapStateToProps = (rootState: RootState) => ({
+  appVersionsByVersion: getAppVersionsByVersion(rootState),
+  appVersionsByBuildNumber: getAppVersionsByBuildNumber(rootState)
+});
 
 export default connect(mapStateToProps)(AppPage as any);

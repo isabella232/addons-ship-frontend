@@ -1,6 +1,4 @@
 import fetch from 'node-fetch';
-import groupBy from 'lodash/groupBy';
-import map from 'lodash/map';
 
 import { AppVersion, AppVersionList } from '@/models';
 import { Fetch, APIConfig } from '@/models/services';
@@ -39,10 +37,7 @@ class ShipAPIService {
 
     const { data } = resp;
 
-    return map(groupBy(data, 'version'), (appVersions, version) => ({
-      appVersions: appVersions.map(camelizeKeys),
-      version
-    })) as AppVersionList;
+    return data.map(camelizeKeys) as AppVersionList;
   }
 }
 
