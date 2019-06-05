@@ -12,9 +12,12 @@ type Props = {
 };
 
 export default ({ onFilesAdded, removeFile, files = [] }: Props) => {
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    onFilesAdded(acceptedFiles);
-  }, []);
+  const onDrop = useCallback(
+    (acceptedFiles: File[]) => {
+      onFilesAdded(acceptedFiles);
+    },
+    [onFilesAdded, removeFile, files]
+  );
 
   const thumbs = files.map(file => (
     <Base paddingHorizontal="x3" key={file.name} container>

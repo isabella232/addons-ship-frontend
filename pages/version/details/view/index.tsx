@@ -21,14 +21,20 @@ import { mediaQuery } from '@/utils/media';
 import Dropzone from '@/components/Dropzone';
 
 import Sidebar from './sidebar';
+import SmallTabs from '@/components/SmallTabs';
 
 type Props = {
   appVersion: AppVersion;
   showTooltips: boolean;
   selectedDeviceIdForScreenshots: string;
+  availableDevices: Array<{
+    key: string;
+    value: string;
+  }>;
   screenshots?: File[];
   onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
   removeScreenshot: (deviceId: string, screenshot: File) => void;
+  onDeviceSelected: (key: string) => void;
   onSave?: () => void;
   onChange?: (key: string, newValue: string) => void;
 };
@@ -38,10 +44,12 @@ export default ({
   showTooltips,
   screenshots,
   selectedDeviceIdForScreenshots: deviceId,
+  availableDevices,
   onScreenshotAdded,
   removeScreenshot,
   onSave,
-  onChange
+  onChange,
+  onDeviceSelected
 }: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
@@ -90,15 +98,19 @@ export default ({
             </Flex>
             <Textarea name="description" defaultValue={appVersion.description} />
 
-            <Flex direction="horizontal">
-              <InputLabel>Screenshots</InputLabel>
-              <Icon name="Support" color="grape-3" />
-            </Flex>
-            <Dropzone
-              files={screenshots}
-              onFilesAdded={files => onScreenshotAdded(deviceId, files)}
-              removeFile={file => removeScreenshot(deviceId, file)}
-            />
+            <Base paddingVertical="x4">
+              <Flex direction="horizontal">
+                <InputLabel>Screenshots</InputLabel>
+                <Icon name="Support" color="grape-3" />
+              </Flex>
+
+              <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />
+              <Dropzone
+                files={screenshots}
+                onFilesAdded={files => onScreenshotAdded(deviceId, files)}
+                removeFile={file => removeScreenshot(deviceId, file)}
+              />
+            </Base>
 
             <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
               <InputLabel>What's new</InputLabel>

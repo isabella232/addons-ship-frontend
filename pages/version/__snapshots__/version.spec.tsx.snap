@@ -64,7 +64,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
   <Base
     maxWidth={960}
   >
-    <ConnectFunction />
+    <Connect(AppVersionDetails) />
   </Base>
 </Base>
 `;
@@ -133,7 +133,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
   <Base
     maxWidth={960}
   >
-    <ConnectFunction />
+    <Connect(AppVersionDevices) />
   </Base>
 </Base>
 `;

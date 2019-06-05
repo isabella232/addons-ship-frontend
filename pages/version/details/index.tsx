@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import get from 'lodash/get';
+import map from 'lodash/map';
 import update from 'lodash/update';
 
 import { AppVersion } from '@/models';
@@ -14,7 +14,7 @@ type Props = {
   updateAppVersion: (appVersion: AppVersion) => Promise<void>;
 };
 
-type State = {
+export type State = {
   showTooltips: boolean;
   updatedAppVersion: AppVersion | null;
   screenshotList: { [deviceId: string]: DeviceScreenshots };
@@ -31,14 +31,41 @@ export class AppVersionDetails extends Component<Props, State> {
     showTooltips: false,
     updatedAppVersion: null,
     screenshotList: {
-      iphone6: {
+      iphone65: {
         deviceName: 'iPhone 6.5”'
       },
-      iphone5: {
+      iphone58: {
         deviceName: 'iPhone 5.8”'
+      },
+      iphone55: {
+        deviceName: 'iPhone 5.5”'
+      },
+      iphone47: {
+        deviceName: 'iPhone 4.7”'
+      },
+      iphone4: {
+        deviceName: 'iPhone 4”'
+      },
+      ipad: {
+        deviceName: 'iPad'
+      },
+      ipadpro: {
+        deviceName: 'iPad Pro'
+      },
+      ipadpro105: {
+        deviceName: 'iPad Pro 10.5”'
+      },
+      ipadpro129: {
+        deviceName: 'iPad Pro 12.9”'
+      },
+      applewatch: {
+        deviceName: 'Apple Watch'
+      },
+      applewatch4: {
+        deviceName: 'Apple Watch 4'
       }
     },
-    selectedDeviceIdForScreenshots: 'iphone6'
+    selectedDeviceIdForScreenshots: 'iphone65'
   };
 
   componentDidMount() {
@@ -81,6 +108,10 @@ export class AppVersionDetails extends Component<Props, State> {
     this.setState({ screenshotList });
   };
 
+  onDeviceSelected = (deviceId: string) => {
+    this.setState({ selectedDeviceIdForScreenshots: deviceId });
+  };
+
   render() {
     const { appVersion } = this.props;
     const { showTooltips, selectedDeviceIdForScreenshots, screenshotList } = this.state;
@@ -91,9 +122,11 @@ export class AppVersionDetails extends Component<Props, State> {
       onChange: this.onChange,
       onSave: this.onSave,
       onScreenshotAdded: this.onScreenshotAdded,
+      availableDevices: map(screenshotList, ({ deviceName: value }, key) => ({ key, value })),
       selectedDeviceIdForScreenshots,
       screenshots: screenshotList[selectedDeviceIdForScreenshots].screenshots,
-      removeScreenshot: this.removeScreenshot
+      removeScreenshot: this.removeScreenshot,
+      onDeviceSelected: this.onDeviceSelected
     };
 
     return <View {...viewProps} />;
