@@ -1,5 +1,15 @@
 .clipboard-button {
   border: none;
+
+  .icon-container {
+    svg {
+      color: var(--color-grape--3);
+    }
+    &:hover {
+      background-color: var(--color-grape--1);
+      cursor: pointer;
+    }
+  }
 }
 
 .public-instal-page-link {

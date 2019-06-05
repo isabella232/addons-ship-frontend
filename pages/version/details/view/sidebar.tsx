@@ -1,6 +1,6 @@
 import QRCode from 'qrcode.react';
 import Clipboard from 'react-clipboard.js';
-import { Base, Flex, Text, Icon, Button, Link } from '@bitrise/bitkit';
+import { Base, Flex, Text, Icon, Button } from '@bitrise/bitkit';
 import css from './style.scss';
 
 type Props = {
@@ -26,8 +26,8 @@ export default ({ publicInstallPageURL, onSave }: Props) => (
       </Text>
       <Base paddingHorizontal="x3">
         <Clipboard data-clipboard-text={publicInstallPageURL} className={css['clipboard-button']}>
-          <Base padding="x1" backgroundColor="grape-1" borderRadius="x1">
-            <Icon name="Duplicate" color="grape-3" size="1.5rem" />
+          <Base padding="x1" className={css['icon-container']} borderRadius="x1">
+            <Icon name="Duplicate" size="1.5rem" />
           </Base>
         </Clipboard>
       </Base>
