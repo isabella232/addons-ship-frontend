@@ -728,3 +728,1299 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
   }
 />
 `;
+
+exports[`AppPageView when page has apps renders page with apps 1`] = `
+<_default
+  emptyPage={false}
+  groupedAppVersionList={
+    Array [
+      Object {
+        "appVersions": Array [
+          Object {
+            "appName": "Standup Timer",
+            "appSlug": "app-slug-123",
+            "buildNumber": 32,
+            "buildSlug": "13245ads",
+            "bundleId": "bundle-id",
+            "certificateExpires": 2018-09-22T12:42:31.000Z,
+            "configuration": "canary",
+            "description": "Some semi-long description",
+            "distributionType": "development",
+            "iconUrl": "http://placekitten.com/160/160",
+            "id": 123,
+            "keywords": "Keywords",
+            "lastUpdate": 2018-09-22T12:42:31.000Z,
+            "marketingUrl": "https://bitrise.io/marketing",
+            "minimumOs": "10.2",
+            "minimumSdk": "dunno",
+            "packageName": "com.package.name",
+            "platform": "ios",
+            "promotionalText": "Promotional Text",
+            "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+            "reviewNotes": "Review Notes",
+            "scheme": "piramid",
+            "size": 4567034,
+            "supportUrl": "https://bitrise.io/support",
+            "supportedDeviceTypes": Array [
+              "iphone",
+              "ipad",
+            ],
+            "version": "1.0.3",
+            "whatsNew": "Some longer whats-new",
+          },
+          Object {
+            "appName": "Standup Timer",
+            "appSlug": "app-slug-456",
+            "buildNumber": 31,
+            "buildSlug": "13245ads",
+            "bundleId": "bundle-id",
+            "certificateExpires": 2018-09-21T12:42:31.000Z,
+            "configuration": "canary",
+            "description": "Some semi-long description",
+            "distributionType": "development",
+            "iconUrl": "http://placekitten.com/160/160",
+            "id": 456,
+            "keywords": "Keywords",
+            "lastUpdate": 2018-09-22T12:42:31.000Z,
+            "marketingUrl": "https://bitrise.io/marketing",
+            "minimumOs": "10.2",
+            "minimumSdk": "dunno",
+            "packageName": "com.package.name",
+            "platform": "ios",
+            "promotionalText": "Promotional Text",
+            "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+            "reviewNotes": "Review Notes",
+            "scheme": "piramid",
+            "size": 4567034,
+            "supportUrl": "https://bitrise.io/support",
+            "supportedDeviceTypes": Array [
+              "iphone",
+              "ipad",
+            ],
+            "version": "1.0.3",
+            "whatsNew": "Some longer whats-new",
+          },
+          Object {
+            "appName": "Standup Timer",
+            "appSlug": "app-slug-789",
+            "buildNumber": 30,
+            "buildSlug": "13245ads",
+            "bundleId": "bundle-id",
+            "certificateExpires": 2018-09-20T12:42:31.000Z,
+            "configuration": "canary",
+            "description": "Some semi-long description",
+            "distributionType": "development",
+            "iconUrl": "http://placekitten.com/160/160",
+            "id": 789,
+            "keywords": "Keywords",
+            "lastUpdate": 2018-09-22T12:42:31.000Z,
+            "marketingUrl": "https://bitrise.io/marketing",
+            "minimumOs": "10.2",
+            "minimumSdk": "dunno",
+            "packageName": "com.package.name",
+            "platform": "ios",
+            "promotionalText": "Promotional Text",
+            "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+            "reviewNotes": "Review Notes",
+            "scheme": "piramid",
+            "size": 4567034,
+            "supportUrl": "https://bitrise.io/support",
+            "supportedDeviceTypes": Array [
+              "iphone",
+              "ipad",
+            ],
+            "version": "1.0.3",
+            "whatsNew": "Some longer whats-new",
+          },
+          Object {
+            "appName": "Standup Timer",
+            "appSlug": "app-slug-135",
+            "buildNumber": 29,
+            "buildSlug": "13245ads",
+            "bundleId": "bundle-id",
+            "certificateExpires": 2018-09-29T12:42:31.000Z,
+            "configuration": "canary",
+            "description": "Some semi-long description",
+            "distributionType": "development",
+            "iconUrl": "http://placekitten.com/160/160",
+            "id": 135,
+            "keywords": "Keywords",
+            "lastUpdate": 2018-09-22T12:42:31.000Z,
+            "marketingUrl": "https://bitrise.io/marketing",
+            "minimumOs": "10.2",
+            "minimumSdk": "dunno",
+            "packageName": "com.package.name",
+            "platform": "ios",
+            "promotionalText": "Promotional Text",
+            "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+            "reviewNotes": "Review Notes",
+            "scheme": "piramid",
+            "size": 4567034,
+            "supportUrl": "https://bitrise.io/support",
+            "supportedDeviceTypes": Array [
+              "iphone",
+              "ipad",
+            ],
+            "version": "1.0.2",
+            "whatsNew": "Some longer whats-new",
+          },
+          Object {
+            "appName": "Standup Timer",
+            "appSlug": "app-slug-246",
+            "buildNumber": 28,
+            "buildSlug": "13245ads",
+            "bundleId": "bundle-id",
+            "certificateExpires": Date { NaN },
+            "configuration": "canary",
+            "description": "Some semi-long description",
+            "distributionType": "development",
+            "iconUrl": "http://placekitten.com/160/160",
+            "id": 246,
+            "keywords": "Keywords",
+            "lastUpdate": 2018-09-22T12:42:31.000Z,
+            "marketingUrl": "https://bitrise.io/marketing",
+            "minimumOs": "10.2",
+            "minimumSdk": "dunno",
+            "packageName": "com.package.name",
+            "platform": "ios",
+            "promotionalText": "Promotional Text",
+            "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+            "reviewNotes": "Review Notes",
+            "scheme": "piramid",
+            "size": 4567034,
+            "supportUrl": "https://bitrise.io/support",
+            "supportedDeviceTypes": Array [
+              "iphone",
+              "ipad",
+            ],
+            "version": "1.0.2",
+            "whatsNew": "Some longer whats-new",
+          },
+        ],
+        "groupName": "group 1",
+      },
+    ]
+  }
+  latestAppVersion={
+    Object {
+      "appName": "My app",
+      "buildNumber": 22,
+      "description": "This is the description of my app",
+      "iconUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
+      "id": 1,
+      "lastUpdate": 2019-06-06T13:28:03.384Z,
+      "version": "1.0.0",
+    }
+  }
+  selectedVersionSortingOption={
+    Object {
+      "text": "Option 1",
+      "value": "option-1",
+    }
+  }
+  versionSortOptionWithValueSelected={[Function]}
+  versionSortingOptions={
+    Array [
+      Object {
+        "text": "Option 1",
+        "value": "option-1",
+      },
+      Object {
+        "text": "Option 2",
+        "value": "option-2",
+      },
+    ]
+  }
+>
+  <Flex
+    className="wrapper"
+    direction="vertical"
+  >
+    <Base
+      className="Flex Flex--vertical wrapper"
+    >
+      <div
+        className="Base Flex Flex--vertical wrapper"
+        style={
+          Object {
+            "height": undefined,
+            "maxHeight": undefined,
+            "maxWidth": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        <Flex
+          alignChildrenHorizontal="middle"
+          direction="vertical"
+          padding="x16"
+        >
+          <Base
+            className="Flex Flex--align-horz-middle Flex--vertical"
+            padding="x16"
+          >
+            <div
+              className="Base Base--padding-horizontal-x16 Base--padding-vertical-x16 Flex Flex--align-horz-middle Flex--vertical"
+              style={
+                Object {
+                  "height": undefined,
+                  "maxHeight": undefined,
+                  "maxWidth": undefined,
+                  "width": undefined,
+                }
+              }
+            >
+              <Base
+                width="100%"
+              >
+                <div
+                  className="Base"
+                  style={
+                    Object {
+                      "height": undefined,
+                      "maxHeight": undefined,
+                      "maxWidth": undefined,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <_default
+                    description="This is the description of my app"
+                    detailsPagePath="/1/details"
+                    iconUrl="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+                    note="Updated on June 6, 2019"
+                    platformIconUrl="/static/icon-apple.svg"
+                    title="My app v1.0.0 (22)"
+                  >
+                    <Link
+                      href="/1/details"
+                    >
+                      <a
+                        className="appSummary"
+                        href="/1/details"
+                        onClick={[Function]}
+                      >
+                        <div
+                          className="colorBar"
+                        />
+                        <div
+                          className="body"
+                        >
+                          <div
+                            className="iconWrapper"
+                          >
+                            <div
+                              className="icon"
+                            >
+                              <ReactSVG
+                                afterInjection={[Function]}
+                                beforeInjection={[Function]}
+                                evalScripts="never"
+                                fallback={null}
+                                loading={null}
+                                renumerateIRIElements={true}
+                                src="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+                                wrapper="div"
+                              >
+                                <div />
+                              </ReactSVG>
+                            </div>
+                            <div
+                              className="note"
+                            >
+                              Updated on June 6, 2019
+                            </div>
+                          </div>
+                          <div
+                            className="titleWrapper"
+                          >
+                            <ReactSVG
+                              afterInjection={[Function]}
+                              beforeInjection={[Function]}
+                              evalScripts="never"
+                              fallback={null}
+                              loading={null}
+                              renumerateIRIElements={true}
+                              src="/static/icon-apple.svg"
+                              wrapper="div"
+                            >
+                              <div />
+                            </ReactSVG>
+                            <div
+                              className="title"
+                            >
+                              My app v1.0.0 (22)
+                            </div>
+                          </div>
+                          <div
+                            className="description"
+                          >
+                            This is the description of my app
+                          </div>
+                        </div>
+                      </a>
+                    </Link>
+                  </_default>
+                  <Base
+                    className="sectionHeadingWrapper"
+                  >
+                    <div
+                      className="Base sectionHeadingWrapper"
+                      style={
+                        Object {
+                          "height": undefined,
+                          "maxHeight": undefined,
+                          "maxWidth": undefined,
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      <Flex
+                        alignChildrenVertical="end"
+                        direction="horizontal"
+                        gap="x2"
+                      >
+                        <Base
+                          className="Flex Flex--align-vert-end Flex--horizontal Flex--gap-x2"
+                        >
+                          <div
+                            className="Base Flex Flex--align-vert-end Flex--horizontal Flex--gap-x2"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <Flex
+                              grow={true}
+                              shrink={true}
+                            >
+                              <Base
+                                className="Flex Flex--grow Flex--shrink"
+                              >
+                                <div
+                                  className="Base Flex Flex--grow Flex--shrink"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Text
+                                    letterSpacing="x1"
+                                    size="x5"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="h4"
+                                      className="Text Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
+                                    >
+                                      <h4
+                                        className="Base Text Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Version History
+                                      </h4>
+                                    </Base>
+                                  </Text>
+                                  <Divider
+                                    color="gray-2"
+                                    direction="horizontal"
+                                    margin="x2"
+                                    width="0.125rem"
+                                  >
+                                    <Base
+                                      Component="hr"
+                                      className="Divider"
+                                      color="gray-2"
+                                      margin="x2"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                        }
+                                      }
+                                    >
+                                      <hr
+                                        className="Base Base--color-gray-2 Base--margin-x2 Divider"
+                                        style={
+                                          Object {
+                                            "borderTopWidth": "0.125rem",
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      />
+                                    </Base>
+                                  </Divider>
+                                </div>
+                              </Base>
+                            </Flex>
+                            <Dropdown
+                              elevation="x1"
+                              fullWidth={false}
+                              onChange={[Function]}
+                              options={
+                                Array [
+                                  Object {
+                                    "text": "Option 1",
+                                    "value": "option-1",
+                                  },
+                                  Object {
+                                    "text": "Option 2",
+                                    "value": "option-2",
+                                  },
+                                ]
+                              }
+                              selected="option-1"
+                              width={168}
+                            >
+                              <PlacementManager>
+                                <Manager>
+                                  <PlacementReference>
+                                    <Reference
+                                      innerRef={[Function]}
+                                    >
+                                      <InnerReference
+                                        innerRef={[Function]}
+                                        setReferenceNode={[Function]}
+                                      >
+                                        <DropdownButton
+                                          alignChildrenHorizontal="start"
+                                          elevation="x1"
+                                          fullWidth={false}
+                                          innerRef={[Function]}
+                                          onClick={[Function]}
+                                          width={168}
+                                        >
+                                          <Button
+                                            alignChildrenHorizontal="start"
+                                            elevation="x1"
+                                            fullWidth={true}
+                                            gap="x4"
+                                            innerRef={[Function]}
+                                            level="secondary"
+                                            onClick={[Function]}
+                                            size="medium"
+                                            width={168}
+                                          >
+                                            <Flex
+                                              Component="button"
+                                              alignChildren="middle"
+                                              alignChildrenHorizontal="start"
+                                              className="Button Button--level-secondary Button--size-medium Button--full-width"
+                                              direction="horizontal"
+                                              elevation="x1"
+                                              gap="x2"
+                                              innerRef={[Function]}
+                                              onClick={[Function]}
+                                              width={168}
+                                            >
+                                              <Base
+                                                Component="button"
+                                                className="Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                                                elevation="x1"
+                                                innerRef={[Function]}
+                                                onClick={[Function]}
+                                                width={168}
+                                              >
+                                                <button
+                                                  className="Base Base--elevation-x1 Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                                                  onClick={[Function]}
+                                                  style={
+                                                    Object {
+                                                      "height": undefined,
+                                                      "maxHeight": undefined,
+                                                      "maxWidth": undefined,
+                                                      "width": 168,
+                                                    }
+                                                  }
+                                                >
+                                                  <Flex
+                                                    alignChildrenVertical="middle"
+                                                    direction="horizontal"
+                                                    gap="x2"
+                                                    grow={true}
+                                                  >
+                                                    <Base
+                                                      className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Flex--grow"
+                                                    >
+                                                      <div
+                                                        className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Flex--grow"
+                                                        style={
+                                                          Object {
+                                                            "height": undefined,
+                                                            "maxHeight": undefined,
+                                                            "maxWidth": undefined,
+                                                            "width": undefined,
+                                                          }
+                                                        }
+                                                      >
+                                                        Option 1
+                                                      </div>
+                                                    </Base>
+                                                  </Flex>
+                                                  <Flex>
+                                                    <Base
+                                                      className="Flex"
+                                                    >
+                                                      <div
+                                                        className="Base Flex"
+                                                        style={
+                                                          Object {
+                                                            "height": undefined,
+                                                            "maxHeight": undefined,
+                                                            "maxWidth": undefined,
+                                                            "width": undefined,
+                                                          }
+                                                        }
+                                                      >
+                                                        <Icon
+                                                          name="ChevronDown"
+                                                          size="1.5rem"
+                                                        >
+                                                          <Base
+                                                            Component="svg"
+                                                            className="Icon"
+                                                            height="1.5rem"
+                                                            viewBox="0 0 24 24"
+                                                            width="1.5rem"
+                                                          >
+                                                            <svg
+                                                              className="Base Icon"
+                                                              style={
+                                                                Object {
+                                                                  "height": "1.5rem",
+                                                                  "maxHeight": undefined,
+                                                                  "maxWidth": undefined,
+                                                                  "width": "1.5rem",
+                                                                }
+                                                              }
+                                                              viewBox="0 0 24 24"
+                                                            >
+                                                              <Component
+                                                                height="100%"
+                                                                width="100%"
+                                                              >
+                                                                <svg
+                                                                  height="100%"
+                                                                  viewBox="0 0 24 24"
+                                                                  width="100%"
+                                                                >
+                                                                  <defs>
+                                                                    <path
+                                                                      d="M16.25 9l1.414 1.414-5.657 5.657-5.657-5.657L7.764 9l4.243 4.243z"
+                                                                      id="icons-chevron-down_svg__a"
+                                                                    />
+                                                                  </defs>
+                                                                  <use
+                                                                    fill="currentColor"
+                                                                    fillRule="evenodd"
+                                                                    xlinkHref="#icons-chevron-down_svg__a"
+                                                                  />
+                                                                </svg>
+                                                              </Component>
+                                                            </svg>
+                                                          </Base>
+                                                        </Icon>
+                                                      </div>
+                                                    </Base>
+                                                  </Flex>
+                                                </button>
+                                              </Base>
+                                            </Flex>
+                                          </Button>
+                                        </DropdownButton>
+                                      </InnerReference>
+                                    </Reference>
+                                  </PlacementReference>
+                                  <Placement
+                                    onClose={[Function]}
+                                    visible={false}
+                                  >
+                                    <PlacementPopper
+                                      backgroundColor="white"
+                                      borderRadius="x2"
+                                      closeElement={null}
+                                      flip={true}
+                                      isInsideModal={false}
+                                      onClose={[Function]}
+                                      visible={false}
+                                    />
+                                  </Placement>
+                                </Manager>
+                              </PlacementManager>
+                            </Dropdown>
+                          </div>
+                        </Base>
+                      </Flex>
+                      <VersionListPageItem
+                        description="Some semi-long description"
+                        detailsPagePath="/123/details"
+                        key="0-0"
+                        note="Updated on September 22, 2018"
+                        platformIconUrl="/static/icon-apple.svg"
+                        title="Standup Timer (32)"
+                      >
+                        <div
+                          className="versionListPageItem"
+                        >
+                          <div
+                            className="versionListPageItemInner"
+                          >
+                            <Link
+                              href="/123/details"
+                            >
+                              <a
+                                className="topWrapper"
+                                href="/123/details"
+                                onClick={[Function]}
+                              >
+                                <ReactSVG
+                                  afterInjection={[Function]}
+                                  beforeInjection={[Function]}
+                                  className="platformIcon"
+                                  evalScripts="never"
+                                  fallback={null}
+                                  loading={null}
+                                  renumerateIRIElements={true}
+                                  src="/static/icon-apple.svg"
+                                  wrapper="div"
+                                >
+                                  <div
+                                    className="platformIcon"
+                                  />
+                                </ReactSVG>
+                                <div
+                                  className="title"
+                                >
+                                  Standup Timer (32)
+                                </div>
+                                <div
+                                  className="note"
+                                >
+                                  Updated on September 22, 2018
+                                </div>
+                              </a>
+                            </Link>
+                            <button
+                              className="descriptionWrapper"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="description"
+                              >
+                                Some semi-long description
+                              </div>
+                              <div
+                                className="showMore"
+                              >
+                                <div
+                                  className="text"
+                                >
+                                  Show more
+                                </div>
+                                <ReactSVG
+                                  afterInjection={[Function]}
+                                  beforeInjection={[Function]}
+                                  className="arrow"
+                                  evalScripts="never"
+                                  fallback={null}
+                                  loading={null}
+                                  renumerateIRIElements={true}
+                                  src="/static/arrow-down.svg"
+                                  wrapper="div"
+                                >
+                                  <div
+                                    className="arrow"
+                                  />
+                                </ReactSVG>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </VersionListPageItem>
+                      <VersionListPageItem
+                        description="Some semi-long description"
+                        detailsPagePath="/456/details"
+                        key="0-1"
+                        note="Updated on September 22, 2018"
+                        platformIconUrl="/static/icon-apple.svg"
+                        title="Standup Timer (31)"
+                      >
+                        <div
+                          className="versionListPageItem"
+                        >
+                          <div
+                            className="versionListPageItemInner"
+                          >
+                            <Link
+                              href="/456/details"
+                            >
+                              <a
+                                className="topWrapper"
+                                href="/456/details"
+                                onClick={[Function]}
+                              >
+                                <ReactSVG
+                                  afterInjection={[Function]}
+                                  beforeInjection={[Function]}
+                                  className="platformIcon"
+                                  evalScripts="never"
+                                  fallback={null}
+                                  loading={null}
+                                  renumerateIRIElements={true}
+                                  src="/static/icon-apple.svg"
+                                  wrapper="div"
+                                >
+                                  <div
+                                    className="platformIcon"
+                                  />
+                                </ReactSVG>
+                                <div
+                                  className="title"
+                                >
+                                  Standup Timer (31)
+                                </div>
+                                <div
+                                  className="note"
+                                >
+                                  Updated on September 22, 2018
+                                </div>
+                              </a>
+                            </Link>
+                            <button
+                              className="descriptionWrapper"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="description"
+                              >
+                                Some semi-long description
+                              </div>
+                              <div
+                                className="showMore"
+                              >
+                                <div
+                                  className="text"
+                                >
+                                  Show more
+                                </div>
+                                <ReactSVG
+                                  afterInjection={[Function]}
+                                  beforeInjection={[Function]}
+                                  className="arrow"
+                                  evalScripts="never"
+                                  fallback={null}
+                                  loading={null}
+                                  renumerateIRIElements={true}
+                                  src="/static/arrow-down.svg"
+                                  wrapper="div"
+                                >
+                                  <div
+                                    className="arrow"
+                                  />
+                                </ReactSVG>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </VersionListPageItem>
+                      <VersionListPageItem
+                        description="Some semi-long description"
+                        detailsPagePath="/789/details"
+                        key="0-2"
+                        note="Updated on September 22, 2018"
+                        platformIconUrl="/static/icon-apple.svg"
+                        title="Standup Timer (30)"
+                      >
+                        <div
+                          className="versionListPageItem"
+                        >
+                          <div
+                            className="versionListPageItemInner"
+                          >
+                            <Link
+                              href="/789/details"
+                            >
+                              <a
+                                className="topWrapper"
+                                href="/789/details"
+                                onClick={[Function]}
+                              >
+                                <ReactSVG
+                                  afterInjection={[Function]}
+                                  beforeInjection={[Function]}
+                                  className="platformIcon"
+                                  evalScripts="never"
+                                  fallback={null}
+                                  loading={null}
+                                  renumerateIRIElements={true}
+                                  src="/static/icon-apple.svg"
+                                  wrapper="div"
+                                >
+                                  <div
+                                    className="platformIcon"
+                                  />
+                                </ReactSVG>
+                                <div
+                                  className="title"
+                                >
+                                  Standup Timer (30)
+                                </div>
+                                <div
+                                  className="note"
+                                >
+                                  Updated on September 22, 2018
+                                </div>
+                              </a>
+                            </Link>
+                            <button
+                              className="descriptionWrapper"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="description"
+                              >
+                                Some semi-long description
+                              </div>
+                              <div
+                                className="showMore"
+                              >
+                                <div
+                                  className="text"
+                                >
+                                  Show more
+                                </div>
+                                <ReactSVG
+                                  afterInjection={[Function]}
+                                  beforeInjection={[Function]}
+                                  className="arrow"
+                                  evalScripts="never"
+                                  fallback={null}
+                                  loading={null}
+                                  renumerateIRIElements={true}
+                                  src="/static/arrow-down.svg"
+                                  wrapper="div"
+                                >
+                                  <div
+                                    className="arrow"
+                                  />
+                                </ReactSVG>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </VersionListPageItem>
+                      <VersionListPageItem
+                        description="Some semi-long description"
+                        detailsPagePath="/135/details"
+                        key="0-3"
+                        note="Updated on September 22, 2018"
+                        platformIconUrl="/static/icon-apple.svg"
+                        title="Standup Timer (29)"
+                      >
+                        <div
+                          className="versionListPageItem"
+                        >
+                          <div
+                            className="versionListPageItemInner"
+                          >
+                            <Link
+                              href="/135/details"
+                            >
+                              <a
+                                className="topWrapper"
+                                href="/135/details"
+                                onClick={[Function]}
+                              >
+                                <ReactSVG
+                                  afterInjection={[Function]}
+                                  beforeInjection={[Function]}
+                                  className="platformIcon"
+                                  evalScripts="never"
+                                  fallback={null}
+                                  loading={null}
+                                  renumerateIRIElements={true}
+                                  src="/static/icon-apple.svg"
+                                  wrapper="div"
+                                >
+                                  <div
+                                    className="platformIcon"
+                                  />
+                                </ReactSVG>
+                                <div
+                                  className="title"
+                                >
+                                  Standup Timer (29)
+                                </div>
+                                <div
+                                  className="note"
+                                >
+                                  Updated on September 22, 2018
+                                </div>
+                              </a>
+                            </Link>
+                            <button
+                              className="descriptionWrapper"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="description"
+                              >
+                                Some semi-long description
+                              </div>
+                              <div
+                                className="showMore"
+                              >
+                                <div
+                                  className="text"
+                                >
+                                  Show more
+                                </div>
+                                <ReactSVG
+                                  afterInjection={[Function]}
+                                  beforeInjection={[Function]}
+                                  className="arrow"
+                                  evalScripts="never"
+                                  fallback={null}
+                                  loading={null}
+                                  renumerateIRIElements={true}
+                                  src="/static/arrow-down.svg"
+                                  wrapper="div"
+                                >
+                                  <div
+                                    className="arrow"
+                                  />
+                                </ReactSVG>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </VersionListPageItem>
+                      <VersionListPageItem
+                        description="Some semi-long description"
+                        detailsPagePath="/246/details"
+                        key="0-4"
+                        note="Updated on September 22, 2018"
+                        platformIconUrl="/static/icon-apple.svg"
+                        title="Standup Timer (28)"
+                      >
+                        <div
+                          className="versionListPageItem"
+                        >
+                          <div
+                            className="versionListPageItemInner"
+                          >
+                            <Link
+                              href="/246/details"
+                            >
+                              <a
+                                className="topWrapper"
+                                href="/246/details"
+                                onClick={[Function]}
+                              >
+                                <ReactSVG
+                                  afterInjection={[Function]}
+                                  beforeInjection={[Function]}
+                                  className="platformIcon"
+                                  evalScripts="never"
+                                  fallback={null}
+                                  loading={null}
+                                  renumerateIRIElements={true}
+                                  src="/static/icon-apple.svg"
+                                  wrapper="div"
+                                >
+                                  <div
+                                    className="platformIcon"
+                                  />
+                                </ReactSVG>
+                                <div
+                                  className="title"
+                                >
+                                  Standup Timer (28)
+                                </div>
+                                <div
+                                  className="note"
+                                >
+                                  Updated on September 22, 2018
+                                </div>
+                              </a>
+                            </Link>
+                            <button
+                              className="descriptionWrapper"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="description"
+                              >
+                                Some semi-long description
+                              </div>
+                              <div
+                                className="showMore"
+                              >
+                                <div
+                                  className="text"
+                                >
+                                  Show more
+                                </div>
+                                <ReactSVG
+                                  afterInjection={[Function]}
+                                  beforeInjection={[Function]}
+                                  className="arrow"
+                                  evalScripts="never"
+                                  fallback={null}
+                                  loading={null}
+                                  renumerateIRIElements={true}
+                                  src="/static/arrow-down.svg"
+                                  wrapper="div"
+                                >
+                                  <div
+                                    className="arrow"
+                                  />
+                                </ReactSVG>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </VersionListPageItem>
+                    </div>
+                  </Base>
+                </div>
+              </Base>
+            </div>
+          </Base>
+        </Flex>
+        <Base
+          paddingVertical="x6"
+        >
+          <div
+            className="Base Base--padding-vertical-x6"
+            style={
+              Object {
+                "height": undefined,
+                "maxHeight": undefined,
+                "maxWidth": undefined,
+                "width": undefined,
+              }
+            }
+          >
+            <_default>
+              <div
+                className="footer"
+              >
+                <ReactSVG
+                  afterInjection={[Function]}
+                  beforeInjection={[Function]}
+                  className="icon"
+                  evalScripts="never"
+                  fallback={null}
+                  loading={null}
+                  renumerateIRIElements={true}
+                  src="/static/icon-bitrise-notext.svg"
+                  wrapper="div"
+                >
+                  <div
+                    className="icon"
+                  />
+                </ReactSVG>
+                <div
+                  className="text"
+                >
+                  Ship
+                </div>
+                <div
+                  className="text"
+                >
+                  An official Bitrise add-on
+                </div>
+              </div>
+            </_default>
+          </div>
+        </Base>
+      </div>
+    </Base>
+  </Flex>
+</_default>
+`;
+
+exports[`AppPageView when page is empty renders empty page 1`] = `
+<_default
+  emptyPage={true}
+  groupedAppVersionList={Array []}
+  latestAppVersion={null}
+  selectedVersionSortingOption={
+    Object {
+      "text": "Option 1",
+      "value": "option-1",
+    }
+  }
+  versionSortOptionWithValueSelected={[Function]}
+  versionSortingOptions={
+    Array [
+      Object {
+        "text": "Option 1",
+        "value": "option-1",
+      },
+      Object {
+        "text": "Option 2",
+        "value": "option-2",
+      },
+    ]
+  }
+>
+  <Flex
+    className="wrapper"
+    direction="vertical"
+  >
+    <Base
+      className="Flex Flex--vertical wrapper"
+    >
+      <div
+        className="Base Flex Flex--vertical wrapper"
+        style={
+          Object {
+            "height": undefined,
+            "maxHeight": undefined,
+            "maxWidth": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        <_default>
+          <Flex
+            className="emptyPage"
+            grow={true}
+            paddingVertical="x16"
+          >
+            <Base
+              className="Flex Flex--grow emptyPage"
+              paddingVertical="x16"
+            >
+              <div
+                className="Base Base--padding-vertical-x16 Flex Flex--grow emptyPage"
+                style={
+                  Object {
+                    "height": undefined,
+                    "maxHeight": undefined,
+                    "maxWidth": undefined,
+                    "width": undefined,
+                  }
+                }
+              >
+                <Flex
+                  alignChildrenVertical="middle"
+                  className="textContainer"
+                  direction="vertical"
+                >
+                  <Base
+                    className="Flex Flex--align-vert-middle Flex--vertical textContainer"
+                  >
+                    <div
+                      className="Base Flex Flex--align-vert-middle Flex--vertical textContainer"
+                      style={
+                        Object {
+                          "height": undefined,
+                          "maxHeight": undefined,
+                          "maxWidth": undefined,
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      <Text
+                        align="middle"
+                        size="x4"
+                        weight="bold"
+                      >
+                        <Base
+                          Component="h5"
+                          className="Text Text--align-middle Text--size-x4 Text--weight-bold"
+                        >
+                          <h5
+                            className="Base Text Text--align-middle Text--size-x4 Text--weight-bold"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            First, you need to build an IPA/APK
+                          </h5>
+                        </Base>
+                      </Text>
+                    </div>
+                  </Base>
+                </Flex>
+              </div>
+            </Base>
+          </Flex>
+        </_default>
+        <Base
+          paddingVertical="x6"
+        >
+          <div
+            className="Base Base--padding-vertical-x6"
+            style={
+              Object {
+                "height": undefined,
+                "maxHeight": undefined,
+                "maxWidth": undefined,
+                "width": undefined,
+              }
+            }
+          >
+            <_default>
+              <div
+                className="footer"
+              >
+                <ReactSVG
+                  afterInjection={[Function]}
+                  beforeInjection={[Function]}
+                  className="icon"
+                  evalScripts="never"
+                  fallback={null}
+                  loading={null}
+                  renumerateIRIElements={true}
+                  src="/static/icon-bitrise-notext.svg"
+                  wrapper="div"
+                >
+                  <div
+                    className="icon"
+                  />
+                </ReactSVG>
+                <div
+                  className="text"
+                >
+                  Ship
+                </div>
+                <div
+                  className="text"
+                >
+                  An official Bitrise add-on
+                </div>
+              </div>
+            </_default>
+          </div>
+        </Base>
+      </div>
+    </Base>
+  </Flex>
+</_default>
+`;

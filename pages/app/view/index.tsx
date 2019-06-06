@@ -10,7 +10,7 @@ import { Fragment } from 'react';
 
 type Props = {
   emptyPage: boolean;
-  latestAppVersion: AppVersion;
+  latestAppVersion: AppVersion | null;
   versionSortingOptions: Array<{
     text: string;
     value: string;
@@ -41,14 +41,18 @@ export default ({
       ) : (
         <Flex direction="vertical" alignChildrenHorizontal="middle" padding="x16">
           <Base width="100%">
-            <AppSummary
-              detailsPagePath={`/${latestAppVersion.id}/details`}
-              title={`${latestAppVersion.appName} v${latestAppVersion.version} (${latestAppVersion.buildNumber})`}
-              description={latestAppVersion.description}
-              note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
-              iconUrl={latestAppVersion.iconUrl}
-              platformIconUrl="/static/icon-apple.svg"
-            />
+            {latestAppVersion ? (
+              <AppSummary
+                detailsPagePath={`/${latestAppVersion.id}/details`}
+                title={`${latestAppVersion.appName} v${latestAppVersion.version} (${latestAppVersion.buildNumber})`}
+                description={latestAppVersion.description}
+                note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
+                iconUrl={latestAppVersion.iconUrl}
+                platformIconUrl="/static/icon-apple.svg"
+              />
+            ) : (
+              ''
+            )}
             <Base className={css.sectionHeadingWrapper}>
               <Flex direction="horizontal" alignChildrenVertical="end" gap="x2">
                 <Flex grow shrink>
