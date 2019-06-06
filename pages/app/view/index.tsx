@@ -11,19 +11,19 @@ import { Fragment } from 'react';
 type Props = {
   emptyPage: boolean;
   latestAppVersion: AppVersion;
-  versionSortingOptions: {
+  versionSortingOptions: Array<{
     text: string;
     value: string;
-  }[];
+  }>;
   versionSortOptionWithValueSelected: any;
   selectedVersionSortingOption?: {
     text: string;
     value: string;
   };
-  groupedAppVersionList: {
+  groupedAppVersionList: Array<{
     groupName: string;
     appVersions: AppVersionList;
-  }[];
+  }>;
 };
 
 export default ({

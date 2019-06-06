@@ -8,26 +8,22 @@ import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/se
 
 import View from './view';
 
-interface AppPageProps extends AppPageQuery {
-  appVersionsByVersion: {
+export interface AppPageProps extends AppPageQuery {
+  appVersionsByVersion: Array<{
     groupName: string;
     appVersions: AppVersionList;
-  }[];
-  appVersionsByBuildNumber: {
+  }>;
+  appVersionsByBuildNumber: Array<{
     groupName: string;
     appVersions: AppVersionList;
-  }[];
-  groupedAppVersionList: {
-    groupName: string;
-    appVersions: AppVersionList;
-  }[];
+  }>;
 }
 
 type AppPageState = {
   selectedVersionSortingOptionValue: string | null;
 };
 
-class AppPage extends Component<AppPageProps, AppPageState> {
+export class AppPage extends Component<AppPageProps, AppPageState> {
   state: AppPageState = {
     selectedVersionSortingOptionValue: null
   };
