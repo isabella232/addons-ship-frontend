@@ -1,9 +1,9 @@
+import { Base, Flex, Text, Icon, Button } from '@bitrise/bitkit';
+import { Fragment } from 'react';
 import QRCode from 'qrcode.react';
-import Clipboard from 'react-clipboard.js';
-import { Base, Flex, Text, Icon, Button, Link } from '@bitrise/bitkit';
 import SVG from 'react-svg';
+import Clipboard from 'react-clipboard.js';
 import css from './style.scss';
-import { Fragment, Component } from 'react';
 
 type Props = {
   publicInstallPageURL?: string;
