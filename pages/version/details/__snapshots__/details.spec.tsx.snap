@@ -2894,12 +2894,12 @@ exports[`AppVersionDetailsView renders the details view correctly for desktop 1`
                                 type="button"
                               >
                                 <Base
-                                  backgroundColor="grape-1"
                                   borderRadius="x1"
+                                  className="icon-container"
                                   padding="x1"
                                 >
                                   <div
-                                    className="Base Base--background-color-grape-1 Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1"
+                                    className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
                                     style={
                                       Object {
                                         "height": undefined,
@@ -2910,20 +2910,18 @@ exports[`AppVersionDetailsView renders the details view correctly for desktop 1`
                                     }
                                   >
                                     <Icon
-                                      color="grape-3"
                                       name="Duplicate"
                                       size="1.5rem"
                                     >
                                       <Base
                                         Component="svg"
                                         className="Icon"
-                                        color="grape-3"
                                         height="1.5rem"
                                         viewBox="0 0 24 24"
                                         width="1.5rem"
                                       >
                                         <svg
-                                          className="Base Base--color-grape-3 Icon"
+                                          className="Base Icon"
                                           style={
                                             Object {
                                               "height": "1.5rem",
