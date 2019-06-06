@@ -4,13 +4,12 @@ jest.mock('@/ducks/appVersionList');
 import { shallow, mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
-import { mockAppVersions } from '@/mocks';
+import { mockAppVersions, mockAppVersion } from '@/mocks';
 import { fetchAppVersionList } from '@/ducks/appVersionList';
 import { AppPage, AppPageProps } from './';
 import AppView from './view';
 import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
 import { AppVersion } from '@/models';
-import { appVersion } from '@/ducks/appVersion';
 import { mediaQuery } from '@/utils/media';
 
 describe('AppPageView', () => {
@@ -59,13 +58,13 @@ describe('AppPageView', () => {
           emptyPage={false}
           latestAppVersion={
             {
-              id: 1,
-              appName: 'My app',
-              version: '1.0.0',
-              buildNumber: 22,
-              description: 'This is the description of my app',
-              lastUpdate: new Date(),
-              iconUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg'
+              id: mockAppVersion.id,
+              appName: mockAppVersion.appName,
+              version: mockAppVersion.version,
+              buildNumber: mockAppVersion.buildNumber,
+              description: mockAppVersion.description,
+              lastUpdate: mockAppVersion.lastUpdate,
+              iconUrl: mockAppVersion.iconUrl
             } as AppVersion
           }
           versionSortingOptions={[
@@ -83,10 +82,12 @@ describe('AppPageView', () => {
             text: 'Option 1',
             value: 'option-1'
           }}
-          groupedAppVersionList={[{
-            groupName: 'group 1',
-            appVersions: mockAppVersions
-          }]}
+          groupedAppVersionList={[
+            {
+              groupName: 'group 1',
+              appVersions: mockAppVersions
+            }
+          ]}
         />
       );
     });

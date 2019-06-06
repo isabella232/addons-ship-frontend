@@ -903,13 +903,13 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
   }
   latestAppVersion={
     Object {
-      "appName": "My app",
-      "buildNumber": 22,
-      "description": "This is the description of my app",
-      "iconUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-      "id": 1,
-      "lastUpdate": 2019-06-06T13:28:03.384Z,
-      "version": "1.0.0",
+      "appName": "Standup Timer",
+      "buildNumber": 32,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "version": "1.0.3",
     }
   }
   selectedVersionSortingOption={
@@ -985,19 +985,19 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                   }
                 >
                   <_default
-                    description="This is the description of my app"
-                    detailsPagePath="/1/details"
-                    iconUrl="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-                    note="Updated on June 6, 2019"
+                    description="Some semi-long description"
+                    detailsPagePath="/123/details"
+                    iconUrl="http://placekitten.com/160/160"
+                    note="Updated on September 22, 2018"
                     platformIconUrl="/static/icon-apple.svg"
-                    title="My app v1.0.0 (22)"
+                    title="Standup Timer v1.0.3 (32)"
                   >
                     <Link
-                      href="/1/details"
+                      href="/123/details"
                     >
                       <a
                         className="appSummary"
-                        href="/1/details"
+                        href="/123/details"
                         onClick={[Function]}
                       >
                         <div
@@ -1019,7 +1019,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                 fallback={null}
                                 loading={null}
                                 renumerateIRIElements={true}
-                                src="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+                                src="http://placekitten.com/160/160"
                                 wrapper="div"
                               >
                                 <div />
@@ -1028,7 +1028,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             <div
                               className="note"
                             >
-                              Updated on June 6, 2019
+                              Updated on September 22, 2018
                             </div>
                           </div>
                           <div
@@ -1049,13 +1049,13 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             <div
                               className="title"
                             >
-                              My app v1.0.0 (22)
+                              Standup Timer v1.0.3 (32)
                             </div>
                           </div>
                           <div
                             className="description"
                           >
-                            This is the description of my app
+                            Some semi-long description
                           </div>
                         </div>
                       </a>
