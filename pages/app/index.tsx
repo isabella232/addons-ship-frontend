@@ -30,9 +30,9 @@ class AppPage extends Component<AppPageProps, AppPageState> {
   }
 
   render() {
-    const { appVersionList } = this.props;
+    const { appVersionList, appSlug } = this.props;
     const latestAppVersion = appVersionList[0].appVersions[0];
-    const emptyPage = true;
+    const emptyPage = appSlug === 'empty';
 
     return (
       <Flex direction="vertical" className={css.wrapper}>

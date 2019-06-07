@@ -3834,20 +3834,18 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                     }
                                   >
                                     <Icon
-                                      color="grape-3"
                                       name="Duplicate"
                                       size="1.5rem"
                                     >
                                       <Base
                                         Component="svg"
                                         className="Icon"
-                                        color="grape-3"
                                         height="1.5rem"
                                         viewBox="0 0 24 24"
                                         width="1.5rem"
                                       >
                                         <svg
-                                          className="Base Base--color-grape-3 Icon"
+                                          className="Base Icon"
                                           style={
                                             Object {
                                               "height": "1.5rem",
@@ -4170,6 +4168,30 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
       "whatsNew": "Some longer whats-new",
     }
   }
+  availableDevices={
+    Array [
+      Object {
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+    ]
+  }
+  onDeviceSelected={[MockFunction]}
+  onScreenshotAdded={[MockFunction]}
+  removeScreenshot={[MockFunction]}
+  selectedDeviceIdForScreenshots="x"
   showTooltips={true}
 >
   <Base>
@@ -4736,37 +4758,840 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                         </Base>
                       </Flex>
                     </TextArea>
-                    <Divider
-                      color="gray-2"
-                      direction="horizontal"
-                      margin="x4"
-                      width="0.125rem"
+                    <Base
+                      paddingVertical="x4"
                     >
-                      <Base
-                        Component="hr"
-                        className="Divider"
-                        color="gray-2"
-                        margin="x4"
+                      <div
+                        className="Base Base--padding-vertical-x4"
                         style={
                           Object {
-                            "borderTopWidth": "0.125rem",
+                            "height": undefined,
+                            "maxHeight": undefined,
+                            "maxWidth": undefined,
+                            "width": undefined,
                           }
                         }
                       >
-                        <hr
-                          className="Base Base--color-gray-2 Base--margin-x4 Divider"
-                          style={
-                            Object {
-                              "borderTopWidth": "0.125rem",
-                              "height": undefined,
-                              "maxHeight": undefined,
-                              "maxWidth": undefined,
-                              "width": undefined,
-                            }
+                        <Flex
+                          direction="horizontal"
+                        >
+                          <Base
+                            className="Flex Flex--horizontal"
+                          >
+                            <div
+                              className="Base Flex Flex--horizontal"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              <InputLabel>
+                                <Text
+                                  color="grape-4"
+                                  margin="x1"
+                                  size="x3"
+                                  weight="bold"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--size-x3 Text--weight-bold"
+                                    color="grape-4"
+                                    margin="x1"
+                                  >
+                                    <div
+                                      className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      Screenshots
+                                    </div>
+                                  </Base>
+                                </Text>
+                              </InputLabel>
+                              <Icon
+                                color="grape-3"
+                                name="Support"
+                                size="1.5rem"
+                              >
+                                <Base
+                                  Component="svg"
+                                  className="Icon"
+                                  color="grape-3"
+                                  height="1.5rem"
+                                  viewBox="0 0 24 24"
+                                  width="1.5rem"
+                                >
+                                  <svg
+                                    className="Base Base--color-grape-3 Icon"
+                                    style={
+                                      Object {
+                                        "height": "1.5rem",
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "width": "1.5rem",
+                                      }
+                                    }
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <Component
+                                      height="100%"
+                                      width="100%"
+                                    >
+                                      <svg
+                                        height="100%"
+                                        viewBox="0 0 24 24"
+                                        width="100%"
+                                      >
+                                        <defs>
+                                          <path
+                                            d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 2C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm-1.2-8.5c0-2 2.3-2 2.3-3.4 0-.6-.5-1-1.2-1-1.3-.1-1.7 1-1.7 1l-1.7-.8S9.2 7 11.9 7c2 0 3.3 1.3 3.3 2.8 0 2.6-2.5 2.6-2.5 4.3h-1.8s-.1-.3-.1-.6zm-.2 2.5c0-.6.5-1 1.1-1 .6 0 1.1.5 1.1 1 0 .6-.5 1-1.1 1-.6 0-1.1-.5-1.1-1z"
+                                            id="icons-support_svg__a"
+                                          />
+                                        </defs>
+                                        <use
+                                          fill="currentColor"
+                                          fillRule="evenodd"
+                                          xlinkHref="#icons-support_svg__a"
+                                        />
+                                      </svg>
+                                    </Component>
+                                  </svg>
+                                </Base>
+                              </Icon>
+                            </div>
+                          </Base>
+                        </Flex>
+                        <_default
+                          items={
+                            Array [
+                              Object {
+                                "key": "iphone65",
+                                "value": "iPhone 6.5”",
+                              },
+                              Object {
+                                "key": "iphone58",
+                                "value": "iPhone 5.8”",
+                              },
+                              Object {
+                                "key": "iphone55",
+                                "value": "iPhone 5.5”",
+                              },
+                              Object {
+                                "key": "iphone47",
+                                "value": "iPhone 4.7”",
+                              },
+                            ]
                           }
-                        />
-                      </Base>
-                    </Divider>
+                          onSelect={[MockFunction]}
+                          selected="x"
+                        >
+                          <Flex
+                            alignChildrenVertical="middle"
+                            className="container"
+                            direction="horizontal"
+                            innerRef={
+                              Object {
+                                "current": <div
+                                  class="Base Flex Flex--align-vert-middle Flex--horizontal container"
+                                >
+                                  <div
+                                    class="Base Flex Flex--horizontal"
+                                    style="flex: 1; overflow: hidden;"
+                                  >
+                                    <div
+                                      class="Base Flex Flex--horizontal list"
+                                    >
+                                      <div
+                                        class="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                      >
+                                        <span>
+                                          iPhone 6.5”
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                      >
+                                        <span>
+                                          iPhone 5.8”
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                      >
+                                        <span>
+                                          iPhone 5.5”
+                                        </span>
+                                      </div>
+                                      <div
+                                        class="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                      >
+                                        <span>
+                                          iPhone 4.7”
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dropdown"
+                                  >
+                                    <svg
+                                      class="Base Icon"
+                                      style="height: 1.5rem; width: 1.5rem;"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <svg
+                                        height="100%"
+                                        viewBox="0 0 24 24"
+                                        width="100%"
+                                      >
+                                        <defs>
+                                          <path
+                                            d="M16.25 9l1.414 1.414-5.657 5.657-5.657-5.657L7.764 9l4.243 4.243z"
+                                            id="icons-chevron-down_svg__a"
+                                          />
+                                        </defs>
+                                        <use
+                                          fill="currentColor"
+                                          fill-rule="evenodd"
+                                          xlink:href="#icons-chevron-down_svg__a"
+                                        />
+                                      </svg>
+                                    </svg>
+                                  </div>
+                                </div>,
+                              }
+                            }
+                          >
+                            <Base
+                              className="Flex Flex--align-vert-middle Flex--horizontal container"
+                              innerRef={
+                                Object {
+                                  "current": <div
+                                    class="Base Flex Flex--align-vert-middle Flex--horizontal container"
+                                  >
+                                    <div
+                                      class="Base Flex Flex--horizontal"
+                                      style="flex: 1; overflow: hidden;"
+                                    >
+                                      <div
+                                        class="Base Flex Flex--horizontal list"
+                                      >
+                                        <div
+                                          class="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                        >
+                                          <span>
+                                            iPhone 6.5”
+                                          </span>
+                                        </div>
+                                        <div
+                                          class="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                        >
+                                          <span>
+                                            iPhone 5.8”
+                                          </span>
+                                        </div>
+                                        <div
+                                          class="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                        >
+                                          <span>
+                                            iPhone 5.5”
+                                          </span>
+                                        </div>
+                                        <div
+                                          class="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                        >
+                                          <span>
+                                            iPhone 4.7”
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="dropdown"
+                                    >
+                                      <svg
+                                        class="Base Icon"
+                                        style="height: 1.5rem; width: 1.5rem;"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <svg
+                                          height="100%"
+                                          viewBox="0 0 24 24"
+                                          width="100%"
+                                        >
+                                          <defs>
+                                            <path
+                                              d="M16.25 9l1.414 1.414-5.657 5.657-5.657-5.657L7.764 9l4.243 4.243z"
+                                              id="icons-chevron-down_svg__a"
+                                            />
+                                          </defs>
+                                          <use
+                                            fill="currentColor"
+                                            fill-rule="evenodd"
+                                            xlink:href="#icons-chevron-down_svg__a"
+                                          />
+                                        </svg>
+                                      </svg>
+                                    </div>
+                                  </div>,
+                                }
+                              }
+                            >
+                              <div
+                                className="Base Flex Flex--align-vert-middle Flex--horizontal container"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <Flex
+                                  direction="horizontal"
+                                  style={
+                                    Object {
+                                      "flex": 1,
+                                      "overflow": "hidden",
+                                    }
+                                  }
+                                >
+                                  <Base
+                                    className="Flex Flex--horizontal"
+                                    style={
+                                      Object {
+                                        "flex": 1,
+                                        "overflow": "hidden",
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="Base Flex Flex--horizontal"
+                                      style={
+                                        Object {
+                                          "flex": 1,
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "overflow": "hidden",
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Flex
+                                        className="list"
+                                        direction="horizontal"
+                                      >
+                                        <Base
+                                          className="Flex Flex--horizontal list"
+                                        >
+                                          <div
+                                            className="Base Flex Flex--horizontal list"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            <Text
+                                              className="item itemHidden"
+                                              color="grape-4"
+                                              key="iphone65"
+                                              onClick={[Function]}
+                                              size="x3"
+                                              weight="medium"
+                                            >
+                                              <Base
+                                                Component="div"
+                                                className="item itemHidden Text Text--size-x3 Text--weight-medium"
+                                                color="grape-4"
+                                                onClick={[Function]}
+                                              >
+                                                <div
+                                                  className="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                                  onClick={[Function]}
+                                                  style={
+                                                    Object {
+                                                      "height": undefined,
+                                                      "maxHeight": undefined,
+                                                      "maxWidth": undefined,
+                                                      "width": undefined,
+                                                    }
+                                                  }
+                                                >
+                                                  <span>
+                                                    iPhone 6.5”
+                                                  </span>
+                                                </div>
+                                              </Base>
+                                            </Text>
+                                            <Text
+                                              className="item itemHidden"
+                                              color="grape-4"
+                                              key="iphone58"
+                                              onClick={[Function]}
+                                              size="x3"
+                                              weight="medium"
+                                            >
+                                              <Base
+                                                Component="div"
+                                                className="item itemHidden Text Text--size-x3 Text--weight-medium"
+                                                color="grape-4"
+                                                onClick={[Function]}
+                                              >
+                                                <div
+                                                  className="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                                  onClick={[Function]}
+                                                  style={
+                                                    Object {
+                                                      "height": undefined,
+                                                      "maxHeight": undefined,
+                                                      "maxWidth": undefined,
+                                                      "width": undefined,
+                                                    }
+                                                  }
+                                                >
+                                                  <span>
+                                                    iPhone 5.8”
+                                                  </span>
+                                                </div>
+                                              </Base>
+                                            </Text>
+                                            <Text
+                                              className="item itemHidden"
+                                              color="grape-4"
+                                              key="iphone55"
+                                              onClick={[Function]}
+                                              size="x3"
+                                              weight="medium"
+                                            >
+                                              <Base
+                                                Component="div"
+                                                className="item itemHidden Text Text--size-x3 Text--weight-medium"
+                                                color="grape-4"
+                                                onClick={[Function]}
+                                              >
+                                                <div
+                                                  className="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                                  onClick={[Function]}
+                                                  style={
+                                                    Object {
+                                                      "height": undefined,
+                                                      "maxHeight": undefined,
+                                                      "maxWidth": undefined,
+                                                      "width": undefined,
+                                                    }
+                                                  }
+                                                >
+                                                  <span>
+                                                    iPhone 5.5”
+                                                  </span>
+                                                </div>
+                                              </Base>
+                                            </Text>
+                                            <Text
+                                              className="item itemHidden"
+                                              color="grape-4"
+                                              key="iphone47"
+                                              onClick={[Function]}
+                                              size="x3"
+                                              weight="medium"
+                                            >
+                                              <Base
+                                                Component="div"
+                                                className="item itemHidden Text Text--size-x3 Text--weight-medium"
+                                                color="grape-4"
+                                                onClick={[Function]}
+                                              >
+                                                <div
+                                                  className="Base Base--color-grape-4 item itemHidden Text Text--size-x3 Text--weight-medium"
+                                                  onClick={[Function]}
+                                                  style={
+                                                    Object {
+                                                      "height": undefined,
+                                                      "maxHeight": undefined,
+                                                      "maxWidth": undefined,
+                                                      "width": undefined,
+                                                    }
+                                                  }
+                                                >
+                                                  <span>
+                                                    iPhone 4.7”
+                                                  </span>
+                                                </div>
+                                              </Base>
+                                            </Text>
+                                          </div>
+                                        </Base>
+                                      </Flex>
+                                    </div>
+                                  </Base>
+                                </Flex>
+                                <PlacementManager>
+                                  <Manager>
+                                    <PlacementReference>
+                                      <Reference
+                                        innerRef={[Function]}
+                                      >
+                                        <InnerReference
+                                          innerRef={[Function]}
+                                          setReferenceNode={[Function]}
+                                        >
+                                          <div
+                                            className="dropdown"
+                                            onClick={[Function]}
+                                          >
+                                            <Icon
+                                              name="ChevronDown"
+                                              size="1.5rem"
+                                            >
+                                              <Base
+                                                Component="svg"
+                                                className="Icon"
+                                                height="1.5rem"
+                                                viewBox="0 0 24 24"
+                                                width="1.5rem"
+                                              >
+                                                <svg
+                                                  className="Base Icon"
+                                                  style={
+                                                    Object {
+                                                      "height": "1.5rem",
+                                                      "maxHeight": undefined,
+                                                      "maxWidth": undefined,
+                                                      "width": "1.5rem",
+                                                    }
+                                                  }
+                                                  viewBox="0 0 24 24"
+                                                >
+                                                  <Component
+                                                    height="100%"
+                                                    width="100%"
+                                                  >
+                                                    <svg
+                                                      height="100%"
+                                                      viewBox="0 0 24 24"
+                                                      width="100%"
+                                                    >
+                                                      <defs>
+                                                        <path
+                                                          d="M16.25 9l1.414 1.414-5.657 5.657-5.657-5.657L7.764 9l4.243 4.243z"
+                                                          id="icons-chevron-down_svg__a"
+                                                        />
+                                                      </defs>
+                                                      <use
+                                                        fill="currentColor"
+                                                        fillRule="evenodd"
+                                                        xlinkHref="#icons-chevron-down_svg__a"
+                                                      />
+                                                    </svg>
+                                                  </Component>
+                                                </svg>
+                                              </Base>
+                                            </Icon>
+                                          </div>
+                                        </InnerReference>
+                                      </Reference>
+                                    </PlacementReference>
+                                    <Placement
+                                      onClose={[Function]}
+                                      placement="bottom-end"
+                                      visible={false}
+                                    >
+                                      <PlacementPopper
+                                        backgroundColor="white"
+                                        borderRadius="x2"
+                                        closeElement={null}
+                                        flip={true}
+                                        isInsideModal={false}
+                                        onClose={[Function]}
+                                        placement="bottom-end"
+                                        visible={false}
+                                      />
+                                    </Placement>
+                                  </Manager>
+                                </PlacementManager>
+                              </div>
+                            </Base>
+                          </Flex>
+                        </_default>
+                        <_default
+                          onFilesAdded={[Function]}
+                          removeFile={[Function]}
+                        >
+                          <Card
+                            elevation="x1"
+                            padding="x3"
+                          >
+                            <Flex
+                              borderRadius="x2"
+                              className="Card"
+                              elevation="x1"
+                              padding="x3"
+                            >
+                              <Base
+                                borderRadius="x2"
+                                className="Flex Card"
+                                elevation="x1"
+                                padding="x3"
+                              >
+                                <div
+                                  className="Base Base--border-radius-x2 Base--elevation-x1 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Card"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <input
+                                    accept="image/*"
+                                    autoComplete="off"
+                                    multiple={true}
+                                    onChange={[Function]}
+                                    onClick={[Function]}
+                                    style={
+                                      Object {
+                                        "display": "none",
+                                      }
+                                    }
+                                    tabIndex={-1}
+                                    type="file"
+                                  />
+                                  <Base
+                                    backgroundColor="gray-1"
+                                    padding="x3"
+                                  >
+                                    <div
+                                      className="Base Base--background-color-gray-1 Base--padding-horizontal-x3 Base--padding-vertical-x3"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Flex
+                                        className="scrollable"
+                                        direction="horizontal"
+                                        height={400}
+                                      >
+                                        <Base
+                                          className="Flex Flex--horizontal scrollable"
+                                          height={400}
+                                        >
+                                          <div
+                                            className="Base Flex Flex--horizontal scrollable"
+                                            style={
+                                              Object {
+                                                "height": 400,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            <div
+                                              onBlur={[Function]}
+                                              onClick={[Function]}
+                                              onDragEnter={[Function]}
+                                              onDragLeave={[Function]}
+                                              onDragOver={[Function]}
+                                              onDrop={[Function]}
+                                              onFocus={[Function]}
+                                              onKeyDown={[Function]}
+                                              style={
+                                                Object {
+                                                  "display": "flex",
+                                                  "width": "100%",
+                                                }
+                                              }
+                                              tabIndex={0}
+                                            >
+                                              <Flex
+                                                alignChildren="middle"
+                                                borderRadius="x1"
+                                                className="dropzone"
+                                                direction="vertical"
+                                                width="100%"
+                                              >
+                                                <Base
+                                                  borderRadius="x1"
+                                                  className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--vertical dropzone"
+                                                  width="100%"
+                                                >
+                                                  <div
+                                                    className="Base Base--border-radius-x1 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--vertical dropzone"
+                                                    style={
+                                                      Object {
+                                                        "height": undefined,
+                                                        "maxHeight": undefined,
+                                                        "maxWidth": undefined,
+                                                        "width": "100%",
+                                                      }
+                                                    }
+                                                  >
+                                                    <Text
+                                                      align="middle"
+                                                      color="gray-7"
+                                                      size="x5"
+                                                      weight="medium"
+                                                    >
+                                                      <Base
+                                                        Component="h4"
+                                                        className="Text Text--align-middle Text--size-x5 Text--weight-medium"
+                                                        color="gray-7"
+                                                      >
+                                                        <h4
+                                                          className="Base Base--color-gray-7 Text Text--align-middle Text--size-x5 Text--weight-medium"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        >
+                                                          Drag & Drop 
+                                                          <br />
+                                                          or
+                                                        </h4>
+                                                      </Base>
+                                                    </Text>
+                                                    <Flex
+                                                      alignChildrenVertical="middle"
+                                                      direction="horizontal"
+                                                    >
+                                                      <Base
+                                                        className="Flex Flex--align-vert-middle Flex--horizontal"
+                                                      >
+                                                        <div
+                                                          className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        >
+                                                          <Icon
+                                                            color="grape-3"
+                                                            name="PlusAdd"
+                                                            paddingHorizontal="x1"
+                                                            size="1.5rem"
+                                                          >
+                                                            <Base
+                                                              Component="svg"
+                                                              className="Icon"
+                                                              color="grape-3"
+                                                              height="1.5rem"
+                                                              paddingHorizontal="x1"
+                                                              viewBox="0 0 24 24"
+                                                              width="1.5rem"
+                                                            >
+                                                              <svg
+                                                                className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
+                                                                style={
+                                                                  Object {
+                                                                    "height": "1.5rem",
+                                                                    "maxHeight": undefined,
+                                                                    "maxWidth": undefined,
+                                                                    "width": "1.5rem",
+                                                                  }
+                                                                }
+                                                                viewBox="0 0 24 24"
+                                                              >
+                                                                <Component
+                                                                  height="100%"
+                                                                  width="100%"
+                                                                >
+                                                                  <svg
+                                                                    height="100%"
+                                                                    viewBox="0 0 24 24"
+                                                                    width="100%"
+                                                                  >
+                                                                    <defs>
+                                                                      <path
+                                                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm1-13h-2v4H7v2h4v4h2v-4h4v-2h-4V7z"
+                                                                        id="icons-plus-add_svg__a"
+                                                                      />
+                                                                    </defs>
+                                                                    <use
+                                                                      fill="currentColor"
+                                                                      fillRule="evenodd"
+                                                                      xlinkHref="#icons-plus-add_svg__a"
+                                                                    />
+                                                                  </svg>
+                                                                </Component>
+                                                              </svg>
+                                                            </Base>
+                                                          </Icon>
+                                                          <Text
+                                                            align="middle"
+                                                            color="grape-3"
+                                                            size="x3"
+                                                            weight="medium"
+                                                          >
+                                                            <Base
+                                                              Component="div"
+                                                              className="Text Text--align-middle Text--size-x3 Text--weight-medium"
+                                                              color="grape-3"
+                                                            >
+                                                              <div
+                                                                className="Base Base--color-grape-3 Text Text--align-middle Text--size-x3 Text--weight-medium"
+                                                                style={
+                                                                  Object {
+                                                                    "height": undefined,
+                                                                    "maxHeight": undefined,
+                                                                    "maxWidth": undefined,
+                                                                    "width": undefined,
+                                                                  }
+                                                                }
+                                                              >
+                                                                Browse Files
+                                                              </div>
+                                                            </Base>
+                                                          </Text>
+                                                        </div>
+                                                      </Base>
+                                                    </Flex>
+                                                  </div>
+                                                </Base>
+                                              </Flex>
+                                            </div>
+                                          </div>
+                                        </Base>
+                                      </Flex>
+                                    </div>
+                                  </Base>
+                                </div>
+                              </Base>
+                            </Flex>
+                          </Card>
+                        </_default>
+                      </div>
+                    </Base>
                     <Flex
                       alignChildrenHorizontal="between"
                       alignChildrenVertical="middle"
