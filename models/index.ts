@@ -18,11 +18,6 @@ export type AppPageQuery = {
   appSlug: string;
 };
 
-export type AppVersionList = Array<{
-  version: string;
-  appVersions: AppVersion[];
-}>;
-
 export type AppVersion = {
   id: number;
   appSlug: string;

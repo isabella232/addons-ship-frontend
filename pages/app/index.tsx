@@ -1,27 +1,50 @@
-import { Component, Fragment } from 'react';
+import { Component } from 'react';
 import { connect } from 'react-redux';
-import formatDate from 'date-fns/format';
-import { Flex, Base, Text } from '@bitrise/bitkit';
+import find from 'lodash/find';
 
-import css from './style.scss';
-
-import { AppPageQuery, PageContext, AppVersionList } from '@/models';
-import AppSummary from '@/components/AppSummary';
-import SectionHeading from '@/components/SectionHeading';
-import VersionListPageItem from '@/components/VersionListPageItem';
-import Footer from '@/components/Footer';
+import { AppPageQuery, PageContext, AppVersion } from '@/models';
 import { RootState } from '@/store';
 import { fetchAppVersionList } from '@/ducks/appVersionList';
-import EmptyPage from '@/components/EmptyPage';
+import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
 
-interface AppPageProps extends AppPageQuery {
-  appVersionList: AppVersionList;
+import View from './view';
+
+export interface AppPageProps extends AppPageQuery {
+  appVersionsByVersion: Array<{
+    groupName: string;
+    appVersions: AppVersion[];
+  }>;
+  appVersionsByBuildNumber: Array<{
+    groupName: string;
+    appVersions: AppVersion[];
+  }>;
 }
 
-type AppPageState = {};
+type AppPageState = {
+  selectedVersionSortingOptionValue: string | null;
+};
 
-class AppPage extends Component<AppPageProps, AppPageState> {
-  state: AppPageState = {};
+export class AppPage extends Component<AppPageProps, AppPageState> {
+  state: AppPageState = {
+    selectedVersionSortingOptionValue: null
+  };
+
+  versionSortingOptions = [
+    {
+      text: 'Latest Build',
+      value: 'latest-build'
+    },
+    {
+      text: 'Latest version',
+      value: 'latest-version'
+    }
+  ];
+
+  componentDidMount() {
+    this.setState({
+      selectedVersionSortingOptionValue: 'latest-build'
+    });
+  }
 
   static async getInitialProps({ query: { appSlug }, store }: PageContext) {
     await store.dispatch(fetchAppVersionList(appSlug as string) as any);
@@ -29,57 +52,44 @@ class AppPage extends Component<AppPageProps, AppPageState> {
     return { appSlug };
   }
 
+  versionSortOptionWithValueSelected = (value: string) => {
+    this.setState({
+      selectedVersionSortingOptionValue: value
+    });
+  };
+
   render() {
-    const { appVersionList, appSlug } = this.props;
-    const latestAppVersion = appVersionList[0].appVersions[0];
+    const { appVersionsByVersion, appVersionsByBuildNumber, appSlug } = this.props;
+    const { selectedVersionSortingOptionValue } = this.state;
+
+    const groupedAppVersionList =
+      selectedVersionSortingOptionValue && selectedVersionSortingOptionValue === 'latest-version'
+        ? appVersionsByVersion
+        : appVersionsByBuildNumber;
+    const {
+      appVersions: [latestAppVersion]
+    } = groupedAppVersionList[0];
+
     const emptyPage = appSlug === 'empty';
 
-    return (
-      <Flex direction="vertical" className={css.wrapper}>
-        {emptyPage ? (
-          <EmptyPage />
-        ) : (
-          <Flex direction="vertical" alignChildrenHorizontal="middle" padding="x16">
-            <Base width="100%">
-              <AppSummary
-                detailsPagePath={`/${latestAppVersion.id}/details`}
-                title={`${latestAppVersion.appName} v${latestAppVersion.version} (${latestAppVersion.buildNumber})`}
-                description={latestAppVersion.description}
-                note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
-                iconUrl={latestAppVersion.iconUrl}
-                platformIconUrl="/static/icon-apple.svg"
-              />
-              <Base className={css.sectionHeadingWrapper}>
-                <SectionHeading>Version History</SectionHeading>
-                {appVersionList.map((appVersionListItem, i) => (
-                  <Fragment key={i}>
-                    <Text className={css.majorVersionHeading} size="x4" weight="bold" color="gray-6">
-                      v.{appVersionListItem.version}
-                    </Text>
-                    {appVersionListItem.appVersions.map((appVersion, j) => (
-                      <VersionListPageItem
-                        key={`${i}-${j}`}
-                        detailsPagePath={`/${appVersion.id}/details`}
-                        platformIconUrl="/static/icon-apple.svg"
-                        title={`${appVersion.appName} (${appVersion.buildNumber})`}
-                        description={appVersion.description}
-                        note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}`}
-                      />
-                    ))}
-                  </Fragment>
-                ))}
-              </Base>
-            </Base>
-          </Flex>
-        )}
-        <Base paddingVertical="x6">
-          <Footer />
-        </Base>
-      </Flex>
-    );
+    const viewProps = {
+      emptyPage,
+      latestAppVersion,
+      versionSortingOptions: this.versionSortingOptions,
+      versionSortOptionWithValueSelected: this.versionSortOptionWithValueSelected,
+      selectedVersionSortingOption: find(this.versionSortingOptions, {
+        value: selectedVersionSortingOptionValue as string
+      }),
+      groupedAppVersionList
+    };
+
+    return <View {...viewProps} />;
   }
 }
 
-const mapStateToProps = ({ appVersionList }: RootState) => ({ appVersionList });
+const mapStateToProps = (rootState: RootState) => ({
+  appVersionsByVersion: getAppVersionsByVersion(rootState),
+  appVersionsByBuildNumber: getAppVersionsByBuildNumber(rootState)
+});
 
 export default connect(mapStateToProps)(AppPage as any);
