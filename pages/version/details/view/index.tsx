@@ -99,9 +99,11 @@ export default ({
             <Textarea name="description" defaultValue={appVersion.description} />
 
             <Base paddingVertical="x4">
-              <Flex direction="horizontal">
-                <InputLabel>Screenshots</InputLabel>
-                <Icon name="Support" color="grape-3" />
+              <Flex direction="horizontal" alignChildrenVertical="middle">
+                <Text color="grape-4" size="x3" weight="bold">
+                  Screenshots
+                </Text>
+                <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
               </Flex>
 
               <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />
@@ -244,7 +246,13 @@ export default ({
           </form>
         </Flex>
 
-        {isDesktop && <Sidebar publicInstallPageURL={appVersion.publicInstallPageURL} onSave={onSave} buildSlug={appVersion.buildSlug} />}
+        {isDesktop && (
+          <Sidebar
+            publicInstallPageURL={appVersion.publicInstallPageURL}
+            onSave={onSave}
+            buildSlug={appVersion.buildSlug}
+          />
+        )}
       </Flex>
     </Base>
   );
