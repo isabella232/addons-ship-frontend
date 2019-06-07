@@ -24,7 +24,7 @@ export default ({ onFilesAdded, removeFile, files = [] }: Props) => {
       <div className={css.removeIcon} onClick={() => removeFile(file)}>
         <Icon name="CloseSmall" color="white" />
       </div>
-      <img src={URL.createObjectURL(file)} style={{ height: '100%' }} />
+      <Base Component="img" src={URL.createObjectURL(file)} className={css.thumbnail} />
     </Base>
   ));
 
