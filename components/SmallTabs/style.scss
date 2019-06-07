@@ -50,4 +50,5 @@ $grid: 4px;
 
 :global(.Placement) {
   margin: 3 * $grid 0;
+  transition: none;
 }
