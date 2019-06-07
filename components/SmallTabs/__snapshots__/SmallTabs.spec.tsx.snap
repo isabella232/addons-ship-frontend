@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SmallTabs renders correctly 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  className="container"
+  direction="horizontal"
+  innerRef={
+    Object {
+      "current": Object {
+        "getBoundingClientRect": [MockFunction],
+      },
+    }
+  }
+>
+  <Flex
+    direction="horizontal"
+    style={
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <Flex
+      className="list"
+      direction="horizontal"
+    >
+      <Text
+        className="item itemSelected itemHidden"
+        color="grape-4"
+        key="item-1"
+        onClick={[Function]}
+        size="x3"
+        weight="medium"
+      >
+        <span>
+          Item 1
+        </span>
+      </Text>
+      <Text
+        className="item itemHidden"
+        color="grape-4"
+        key="item-2"
+        onClick={[Function]}
+        size="x3"
+        weight="medium"
+      >
+        <span>
+          Item 2
+        </span>
+      </Text>
+    </Flex>
+  </Flex>
+</Flex>
+`;
+
+exports[`SmallTabs shows a dropdown if any menu item is not visible 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  className="container"
+  direction="horizontal"
+  innerRef={
+    Object {
+      "current": Object {
+        "getBoundingClientRect": [MockFunction],
+      },
+    }
+  }
+>
+  <Flex
+    direction="horizontal"
+    style={
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <Flex
+      className="list"
+      direction="horizontal"
+    >
+      <Text
+        className="item itemSelected itemHidden"
+        color="grape-4"
+        key="item-1"
+        onClick={[Function]}
+        size="x3"
+        weight="medium"
+      >
+        <span>
+          Item 1
+        </span>
+      </Text>
+      <Text
+        className="item itemHidden"
+        color="grape-4"
+        key="item-2"
+        onClick={[Function]}
+        size="x3"
+        weight="medium"
+      >
+        <span>
+          Item 2
+        </span>
+      </Text>
+    </Flex>
+  </Flex>
+  <PlacementManager>
+    <PlacementReference>
+      <Component />
+    </PlacementReference>
+    <Placement
+      onClose={[Function]}
+      placement="bottom-end"
+      visible={false}
+    >
+      <Component />
+    </Placement>
+  </PlacementManager>
+</Flex>
+`;

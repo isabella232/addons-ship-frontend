@@ -6,17 +6,17 @@
 
   .icon {
     display: block;
-    margin-bottom: $grid-size;
+    margin-bottom: 2 * $grid;
 
     svg {
-      fill: $dark-blue-grey;
+      fill: $grape-5;
     }
   }
 
   .text {
-    color: $dark-blue-grey;
+    color: $grape-5;
     // TODO: replace with element from UI library
-    line-height: 2 * $grid-size;
+    line-height: 4 * $grid;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;

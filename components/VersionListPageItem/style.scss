@@ -4,35 +4,35 @@
 @import '~@/assets/style/times';
 
 .versionListPageItem {
-  @include padding-y($grid-size / 2);
-  border-bottom: 1px solid $greyish;
+  @include padding-y($grid);
+  border-bottom: 1px solid $gray-2;
 
   .versionListPageItemInner {
-    border-radius: $grid-size;
+    border-radius: 2 * $grid;
     background-color: white;
     transition: background-color $medium-hovertime;
 
     .topWrapper {
       display: flex;
       align-items: center;
-      padding-top: 2 * $grid-size;
-      padding-bottom: $grid-size;
-      @include padding-x(2 * $grid-size);
+      padding-top: 4 * $grid;
+      padding-bottom: 2 * $grid;
+      @include padding-x(4 * $grid);
       text-decoration: none;
 
       .platformIcon {
-        margin-right: $grid-size;
+        margin-right: 2 * $grid;
 
         svg {
           display: block;
-          fill: $dark-blue-grey;
+          fill: $grape-5;
           transition: fill $medium-hovertime;
         }
       }
 
       .title {
         flex-grow: 1;
-        color: $dark-blue-grey;
+        color: $grape-5;
         transition: color $medium-hovertime;
         // TODO: replace with element from UI library
         line-height: 1.5;
@@ -44,7 +44,7 @@
       }
 
       .note {
-        color: $warm-grey;
+        color: $gray-6;
         transition: color $medium-hovertime;
         // TODO: replace with element from UI library
         font-size: 16px;
@@ -61,9 +61,9 @@
       align-items: center;
       width: 100%;
       border: none;
-      padding-top: $grid-size;
-      padding-bottom: 2 * $grid-size;
-      @include padding-x(2 * $grid-size);
+      padding-top: 2 * $grid;
+      padding-bottom: 4 * $grid;
+      @include padding-x(4 * $grid);
       text-align: left;
       font-family: inherit;
       background-color: transparent;
@@ -71,7 +71,7 @@
 
       .description {
         flex-grow: 1;
-        color: $dark-blue-grey;
+        color: $grape-5;
         transition: color $medium-hovertime;
         // TODO: replace with element from UI library
         font-size: 16px;
@@ -97,13 +97,13 @@
             flex-shrink: 0;
             display: flex;
             align-items: center;
-            margin-left: $grid-size;
+            margin-left: 2 * $grid;
 
             .text {
-              color: $violet-blue;
+              color: $grape-3;
               // TODO: replace with element from UI library
               font-size: 13px;
-              line-height: 2 * $grid-size;
+              line-height: 4 * $grid;
               letter-spacing: normal;
               font-weight: 500;
               font-style: normal;
@@ -115,8 +115,8 @@
 
               svg {
                 display: block;
-                @include size(2 * $grid-size);
-                fill: $violet-blue;
+                @include size(4 * $grid);
+                fill: $grape-3;
               }
             }
           }
@@ -129,13 +129,13 @@
         .showLess {
           display: flex;
           align-items: center;
-          margin-top: $grid-size;
+          margin-top: 2 * $grid;
 
           .text {
-            color: $dark-blue-grey;
+            color: $grape-5;
             // TODO: replace with element from UI library
             font-size: 13px;
-            line-height: 2 * $grid-size;
+            line-height: 4 * $grid;
             letter-spacing: normal;
             font-weight: 500;
             font-style: normal;
@@ -147,9 +147,9 @@
 
             svg {
               display: block;
-              @include size(2 * $grid-size);
+              @include size(4 * $grid);
               transform: rotate(180deg);
-              fill: $dark-blue-grey;
+              fill: $grape-5;
             }
           }
         }
@@ -158,38 +158,38 @@
 
     &:hover,
     &:focus {
-      background-color: $white-two;
+      background-color: $gray-1;
 
       .topWrapper {
         .platformIcon {
           svg {
-            fill: $violet-blue;
+            fill: $grape-3;
           }
         }
 
         .title {
-          color: $violet-blue;
+          color: $grape-3;
         }
 
         .note {
-          color: $violet-blue;
+          color: $grape-3;
         }
       }
 
       .descriptionWrapper {
         .description {
-          color: $violet-blue;
+          color: $grape-3;
         }
 
         &.isOpen {
           .showLess {
             .text {
-              color: $violet-blue;
+              color: $grape-3;
             }
 
             .arrow {
               svg {
-                fill: $violet-blue;
+                fill: $grape-3;
               }
             }
           }

@@ -1,0 +1,46 @@
+@import '~@/assets/style/colors';
+@import '~@/assets/style/dimensions';
+
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 2px dashed $grape-3;
+  cursor: pointer;
+  outline: none;
+  border-radius: $grid;
+
+  &Active,
+  &:focus {
+    border-style: solid;
+    background: $grape-1;
+  }
+
+  &HasFiles {
+    width: 48px;
+    flex-shrink: 0;
+  }
+}
+
+.scrollable {
+  overflow-x: scroll;
+}
+
+.removeIcon {
+  position: absolute;
+  top: $grid * 3;
+  right: $grid * 6;
+  background: $gray-3;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background: $grape-3;
+  }
+}
+
+.thumbnail {
+  height: 100%;
+  display: block;
+}

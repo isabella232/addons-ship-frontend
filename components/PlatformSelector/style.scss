@@ -2,7 +2,7 @@
 @import '~@/assets/style/colors';
 
 .platform {
-  border: 1px solid var(--color-eggplant);
+  border: 1px solid $eggplant;
 
   .Base {
     cursor: pointer;
@@ -15,23 +15,23 @@
     }
     &:not(.selected) {
       &:hover {
-        background-color: var(--color-grape--1);
+        background-color: $grape-1;
 
         svg {
-          color: var(--color-grape--3);
+          color: $grape-3;
         }
       }
 
       svg {
-        color: var(--color-eggplant);
+        color: $eggplant;
       }
     }
 
     &.selected {
-      background-color: var(--color-grape--3);
+      background-color: $grape-3;
 
       svg {
-        color: var(--color-white);
+        color: $white;
       }
     }
   }

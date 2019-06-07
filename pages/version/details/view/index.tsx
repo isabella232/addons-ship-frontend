@@ -18,17 +18,39 @@ import { TypeIconName } from '@bitrise/bitkit/Icon/tsx';
 
 import { AppVersion } from '@/models';
 import { mediaQuery } from '@/utils/media';
+import Dropzone from '@/components/Dropzone';
+import SmallTabs from '@/components/SmallTabs';
 
 import Sidebar from './sidebar';
 
 type Props = {
   appVersion: AppVersion;
   showTooltips: boolean;
+  selectedDeviceIdForScreenshots: string;
+  availableDevices: Array<{
+    key: string;
+    value: string;
+  }>;
+  screenshots?: File[];
+  onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
+  removeScreenshot: (deviceId: string, screenshot: File) => void;
+  onDeviceSelected: (key: string) => void;
   onSave?: () => void;
   onChange?: (key: string, newValue: string) => void;
 };
 
-export default ({ appVersion, showTooltips, onSave, onChange }: Props) => {
+export default ({
+  appVersion,
+  showTooltips,
+  screenshots,
+  selectedDeviceIdForScreenshots: deviceId,
+  availableDevices,
+  onScreenshotAdded,
+  removeScreenshot,
+  onSave,
+  onChange,
+  onDeviceSelected
+}: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   const [isDesktop] = mediaQuery('60rem');
@@ -76,7 +98,21 @@ export default ({ appVersion, showTooltips, onSave, onChange }: Props) => {
             </Flex>
             <Textarea name="description" defaultValue={appVersion.description} />
 
-            <Divider color="gray-2" direction="horizontal" margin="x4" />
+            <Base paddingVertical="x4">
+              <Flex direction="horizontal" alignChildrenVertical="middle">
+                <Text color="grape-4" size="x3" weight="bold">
+                  Screenshots
+                </Text>
+                <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
+              </Flex>
+
+              <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />
+              <Dropzone
+                files={screenshots}
+                onFilesAdded={files => onScreenshotAdded(deviceId, files)}
+                removeFile={file => removeScreenshot(deviceId, file)}
+              />
+            </Base>
 
             <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
               <InputLabel>What's new</InputLabel>
@@ -210,7 +246,13 @@ export default ({ appVersion, showTooltips, onSave, onChange }: Props) => {
           </form>
         </Flex>
 
-        {isDesktop && <Sidebar publicInstallPageURL={appVersion.publicInstallPageURL} onSave={onSave} buildSlug={appVersion.buildSlug} />}
+        {isDesktop && (
+          <Sidebar
+            publicInstallPageURL={appVersion.publicInstallPageURL}
+            onSave={onSave}
+            buildSlug={appVersion.buildSlug}
+          />
+        )}
       </Flex>
     </Base>
   );

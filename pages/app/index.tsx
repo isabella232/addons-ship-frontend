@@ -59,7 +59,7 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
   };
 
   render() {
-    const { appVersionsByVersion, appVersionsByBuildNumber } = this.props;
+    const { appVersionsByVersion, appVersionsByBuildNumber, appSlug } = this.props;
     const { selectedVersionSortingOptionValue } = this.state;
 
     const groupedAppVersionList =
@@ -69,7 +69,8 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
     const {
       appVersions: [latestAppVersion]
     } = groupedAppVersionList[0];
-    const emptyPage = false;
+
+    const emptyPage = appSlug === 'empty';
 
     const viewProps = {
       emptyPage,
