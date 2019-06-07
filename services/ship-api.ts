@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-import { AppVersion, AppVersionList } from '@/models';
+import { AppVersion } from '@/models';
 import { Fetch, APIConfig } from '@/models/services';
 import { mockAppVersion, mockAppVersions } from '@/mocks';
 import { snakifyKeys, camelizeKeys } from '@/utils';
@@ -30,14 +30,14 @@ class ShipAPIService {
     return await appVersion;
   }
 
-  async getAppVersionList(appSlug: string): Promise<AppVersionList> {
+  async getAppVersionList(appSlug: string): Promise<AppVersion[]> {
     const resp = await {
       data: mockAppVersions.map(snakifyKeys)
     };
 
     const { data } = resp;
 
-    return data.map(camelizeKeys) as AppVersionList;
+    return data.map(camelizeKeys) as AppVersion[];
   }
 }
 

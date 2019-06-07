@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import find from 'lodash/find';
 
-import { AppPageQuery, PageContext, AppVersionList } from '@/models';
+import { AppPageQuery, PageContext, AppVersion } from '@/models';
 import { RootState } from '@/store';
 import { fetchAppVersionList } from '@/ducks/appVersionList';
 import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
@@ -11,11 +12,11 @@ import View from './view';
 export interface AppPageProps extends AppPageQuery {
   appVersionsByVersion: Array<{
     groupName: string;
-    appVersions: AppVersionList;
+    appVersions: AppVersion[];
   }>;
   appVersionsByBuildNumber: Array<{
     groupName: string;
-    appVersions: AppVersionList;
+    appVersions: AppVersion[];
   }>;
 }
 
@@ -58,11 +59,16 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
   };
 
   render() {
+    const { appVersionsByVersion, appVersionsByBuildNumber } = this.props;
+    const { selectedVersionSortingOptionValue } = this.state;
+
     const groupedAppVersionList =
-      this.state.selectedVersionSortingOptionValue && this.state.selectedVersionSortingOptionValue === 'latest-version'
-        ? this.props.appVersionsByVersion
-        : this.props.appVersionsByBuildNumber;
-    const latestAppVersion = groupedAppVersionList[0].appVersions[0];
+      selectedVersionSortingOptionValue && selectedVersionSortingOptionValue === 'latest-version'
+        ? appVersionsByVersion
+        : appVersionsByBuildNumber;
+    const {
+      appVersions: [latestAppVersion]
+    } = groupedAppVersionList[0];
     const emptyPage = false;
 
     const viewProps = {
@@ -70,9 +76,9 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
       latestAppVersion,
       versionSortingOptions: this.versionSortingOptions,
       versionSortOptionWithValueSelected: this.versionSortOptionWithValueSelected,
-      selectedVersionSortingOption: this.versionSortingOptions.find(
-        (versionSortingOption: any) => versionSortingOption.value === this.state.selectedVersionSortingOptionValue
-      ),
+      selectedVersionSortingOption: find(this.versionSortingOptions, {
+        value: selectedVersionSortingOptionValue as string
+      }),
       groupedAppVersionList
     };
 

@@ -3,7 +3,7 @@ import { createAction, createReducer } from 'deox';
 
 import api from '@/services/ship-api';
 import { actionTypeCreator } from '@/utils';
-import { AppVersionList } from '@/models';
+import { AppVersion } from '@/models';
 
 const $ = actionTypeCreator('APP_VERSION_LIST');
 
@@ -21,13 +21,13 @@ const _fetchAppVersionList = (appSlug: string) => async (dispatch: Dispatch) => 
 
 export const fetchAppVersionList = Object.assign(_fetchAppVersionList, {
   next: createAction($`GET_NEXT`),
-  complete: createAction($`GET_COMPLETE`, resolve => (appVersionList: AppVersionList) => resolve(appVersionList)),
+  complete: createAction($`GET_COMPLETE`, resolve => (appVersionList: AppVersion[]) => resolve(appVersionList)),
   error: createAction($`GET_ERROR`, resolve => (error: Error) => resolve(error))
 });
 
 const defaultState = null as AppVersionListState;
 
-export type AppVersionListState = null | AppVersionList;
+export type AppVersionListState = null | AppVersion[];
 export const appVersionList = createReducer(defaultState, handleAction => [
   handleAction(fetchAppVersionList.complete, (_, { payload }) => payload)
 ]);
