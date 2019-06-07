@@ -3,7 +3,7 @@ jest.mock('@/utils/media');
 import { shallow, mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
-import { mockAppVersion } from '@/mocks';
+import { mockAppVersion, mockAppVersionWithoutPublicPage } from '@/mocks';
 import { mediaQuery } from '@/utils/media';
 
 import DetailsView from './view';
@@ -25,17 +25,34 @@ describe('AppVersionDetailsView', () => {
     removeScreenshot: jest.fn(),
     onDeviceSelected: jest.fn()
   };
-  it('renders the details view correctly for desktop', () => {
-    (mediaQuery as jest.Mock).mockReturnValue([true]);
 
-    const tree = toJSON(mount(<DetailsView {...defaultProps} />));
-    expect(tree).toMatchSnapshot();
+  describe('when viewed on desktop', () => {
+    beforeAll(() => {
+      (mediaQuery as jest.Mock).mockReturnValue([true]);
+    });
+
+    it('renders the details view correctly', () => {
+      const tree = toJSON(mount(<DetailsView {...defaultProps} />));
+      expect(tree).toMatchSnapshot();
+    });
+
+    describe('when public install page is not enabled', () => {
+      it('renders the details view with disabled sidebar', () => {
+        const tree = toJSON(mount(<DetailsView {...defaultProps} appVersion={mockAppVersionWithoutPublicPage} />));
+        expect(tree).toMatchSnapshot();
+      });
+    });
   });
 
-  it('renders the details view correctly for mobile', () => {
-    (mediaQuery as jest.Mock).mockReturnValue([false]);
-    const tree = toJSON(mount(<DetailsView {...defaultProps} />));
-    expect(tree).toMatchSnapshot();
+  describe('when viewed on mobile', () => {
+    beforeAll(() => {
+      (mediaQuery as jest.Mock).mockReturnValue([false]);
+    });
+
+    it('renders the details view correctly', () => {
+      const tree = toJSON(mount(<DetailsView {...defaultProps} />));
+      expect(tree).toMatchSnapshot();
+    });
   });
 });
 
