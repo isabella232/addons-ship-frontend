@@ -779,13 +779,14 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                         }
                       >
                         <Flex
+                          alignChildrenVertical="middle"
                           direction="horizontal"
                         >
                           <Base
-                            className="Flex Flex--horizontal"
+                            className="Flex Flex--align-vert-middle Flex--horizontal"
                           >
                             <div
-                              className="Base Flex Flex--horizontal"
+                              className="Base Flex Flex--align-vert-middle Flex--horizontal"
                               style={
                                 Object {
                                   "height": undefined,
@@ -795,56 +796,54 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 }
                               }
                             >
-                              <InputLabel>
-                                <Text
+                              <Text
+                                color="grape-4"
+                                size="x3"
+                                weight="bold"
+                              >
+                                <Base
+                                  Component="div"
+                                  className="Text Text--size-x3 Text--weight-bold"
                                   color="grape-4"
-                                  margin="x1"
-                                  size="x3"
-                                  weight="bold"
                                 >
-                                  <Base
-                                    Component="div"
-                                    className="Text Text--size-x3 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x1"
-                                  >
-                                    <div
-                                      className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "width": undefined,
-                                        }
+                                  <div
+                                    className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "width": undefined,
                                       }
-                                    >
-                                      Screenshots
-                                    </div>
-                                  </Base>
-                                </Text>
-                              </InputLabel>
+                                    }
+                                  >
+                                    Screenshots
+                                  </div>
+                                </Base>
+                              </Text>
                               <Icon
                                 color="grape-3"
                                 name="Support"
-                                size="1.5rem"
+                                paddingHorizontal="x1"
+                                size="2rem"
                               >
                                 <Base
                                   Component="svg"
                                   className="Icon"
                                   color="grape-3"
-                                  height="1.5rem"
+                                  height="2rem"
+                                  paddingHorizontal="x1"
                                   viewBox="0 0 24 24"
-                                  width="1.5rem"
+                                  width="2rem"
                                 >
                                   <svg
-                                    className="Base Base--color-grape-3 Icon"
+                                    className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
                                     style={
                                       Object {
-                                        "height": "1.5rem",
+                                        "height": "2rem",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
-                                        "width": "1.5rem",
+                                        "width": "2rem",
                                       }
                                     }
                                     viewBox="0 0 24 24"
@@ -1416,6 +1415,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                             }
                                           >
                                             <div
+                                              className="dropzone"
                                               onBlur={[Function]}
                                               onClick={[Function]}
                                               onDragEnter={[Function]}
@@ -1424,34 +1424,23 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                               onDrop={[Function]}
                                               onFocus={[Function]}
                                               onKeyDown={[Function]}
-                                              style={
-                                                Object {
-                                                  "display": "flex",
-                                                  "width": "100%",
-                                                }
-                                              }
                                               tabIndex={0}
                                             >
                                               <Flex
-                                                alignChildren="middle"
-                                                borderRadius="x1"
-                                                className="dropzone"
+                                                alignChildrenHorizontal="middle"
                                                 direction="vertical"
-                                                width="100%"
                                               >
                                                 <Base
-                                                  borderRadius="x1"
-                                                  className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--vertical dropzone"
-                                                  width="100%"
+                                                  className="Flex Flex--align-horz-middle Flex--vertical"
                                                 >
                                                   <div
-                                                    className="Base Base--border-radius-x1 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--vertical dropzone"
+                                                    className="Base Flex Flex--align-horz-middle Flex--vertical"
                                                     style={
                                                       Object {
                                                         "height": undefined,
                                                         "maxHeight": undefined,
                                                         "maxWidth": undefined,
-                                                        "width": "100%",
+                                                        "width": undefined,
                                                       }
                                                     }
                                                   >
@@ -4773,13 +4762,14 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                         }
                       >
                         <Flex
+                          alignChildrenVertical="middle"
                           direction="horizontal"
                         >
                           <Base
-                            className="Flex Flex--horizontal"
+                            className="Flex Flex--align-vert-middle Flex--horizontal"
                           >
                             <div
-                              className="Base Flex Flex--horizontal"
+                              className="Base Flex Flex--align-vert-middle Flex--horizontal"
                               style={
                                 Object {
                                   "height": undefined,
@@ -4789,56 +4779,54 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 }
                               }
                             >
-                              <InputLabel>
-                                <Text
+                              <Text
+                                color="grape-4"
+                                size="x3"
+                                weight="bold"
+                              >
+                                <Base
+                                  Component="div"
+                                  className="Text Text--size-x3 Text--weight-bold"
                                   color="grape-4"
-                                  margin="x1"
-                                  size="x3"
-                                  weight="bold"
                                 >
-                                  <Base
-                                    Component="div"
-                                    className="Text Text--size-x3 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x1"
-                                  >
-                                    <div
-                                      className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "width": undefined,
-                                        }
+                                  <div
+                                    className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "width": undefined,
                                       }
-                                    >
-                                      Screenshots
-                                    </div>
-                                  </Base>
-                                </Text>
-                              </InputLabel>
+                                    }
+                                  >
+                                    Screenshots
+                                  </div>
+                                </Base>
+                              </Text>
                               <Icon
                                 color="grape-3"
                                 name="Support"
-                                size="1.5rem"
+                                paddingHorizontal="x1"
+                                size="2rem"
                               >
                                 <Base
                                   Component="svg"
                                   className="Icon"
                                   color="grape-3"
-                                  height="1.5rem"
+                                  height="2rem"
+                                  paddingHorizontal="x1"
                                   viewBox="0 0 24 24"
-                                  width="1.5rem"
+                                  width="2rem"
                                 >
                                   <svg
-                                    className="Base Base--color-grape-3 Icon"
+                                    className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
                                     style={
                                       Object {
-                                        "height": "1.5rem",
+                                        "height": "2rem",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
-                                        "width": "1.5rem",
+                                        "width": "2rem",
                                       }
                                     }
                                     viewBox="0 0 24 24"
@@ -5410,6 +5398,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                             }
                                           >
                                             <div
+                                              className="dropzone"
                                               onBlur={[Function]}
                                               onClick={[Function]}
                                               onDragEnter={[Function]}
@@ -5418,34 +5407,23 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                               onDrop={[Function]}
                                               onFocus={[Function]}
                                               onKeyDown={[Function]}
-                                              style={
-                                                Object {
-                                                  "display": "flex",
-                                                  "width": "100%",
-                                                }
-                                              }
                                               tabIndex={0}
                                             >
                                               <Flex
-                                                alignChildren="middle"
-                                                borderRadius="x1"
-                                                className="dropzone"
+                                                alignChildrenHorizontal="middle"
                                                 direction="vertical"
-                                                width="100%"
                                               >
                                                 <Base
-                                                  borderRadius="x1"
-                                                  className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--vertical dropzone"
-                                                  width="100%"
+                                                  className="Flex Flex--align-horz-middle Flex--vertical"
                                                 >
                                                   <div
-                                                    className="Base Base--border-radius-x1 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--vertical dropzone"
+                                                    className="Base Flex Flex--align-horz-middle Flex--vertical"
                                                     style={
                                                       Object {
                                                         "height": undefined,
                                                         "maxHeight": undefined,
                                                         "maxWidth": undefined,
-                                                        "width": "100%",
+                                                        "width": undefined,
                                                       }
                                                     }
                                                   >
@@ -8559,13 +8537,14 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                         }
                       >
                         <Flex
+                          alignChildrenVertical="middle"
                           direction="horizontal"
                         >
                           <Base
-                            className="Flex Flex--horizontal"
+                            className="Flex Flex--align-vert-middle Flex--horizontal"
                           >
                             <div
-                              className="Base Flex Flex--horizontal"
+                              className="Base Flex Flex--align-vert-middle Flex--horizontal"
                               style={
                                 Object {
                                   "height": undefined,
@@ -8575,56 +8554,54 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 }
                               }
                             >
-                              <InputLabel>
-                                <Text
+                              <Text
+                                color="grape-4"
+                                size="x3"
+                                weight="bold"
+                              >
+                                <Base
+                                  Component="div"
+                                  className="Text Text--size-x3 Text--weight-bold"
                                   color="grape-4"
-                                  margin="x1"
-                                  size="x3"
-                                  weight="bold"
                                 >
-                                  <Base
-                                    Component="div"
-                                    className="Text Text--size-x3 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x1"
-                                  >
-                                    <div
-                                      className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "width": undefined,
-                                        }
+                                  <div
+                                    className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "width": undefined,
                                       }
-                                    >
-                                      Screenshots
-                                    </div>
-                                  </Base>
-                                </Text>
-                              </InputLabel>
+                                    }
+                                  >
+                                    Screenshots
+                                  </div>
+                                </Base>
+                              </Text>
                               <Icon
                                 color="grape-3"
                                 name="Support"
-                                size="1.5rem"
+                                paddingHorizontal="x1"
+                                size="2rem"
                               >
                                 <Base
                                   Component="svg"
                                   className="Icon"
                                   color="grape-3"
-                                  height="1.5rem"
+                                  height="2rem"
+                                  paddingHorizontal="x1"
                                   viewBox="0 0 24 24"
-                                  width="1.5rem"
+                                  width="2rem"
                                 >
                                   <svg
-                                    className="Base Base--color-grape-3 Icon"
+                                    className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
                                     style={
                                       Object {
-                                        "height": "1.5rem",
+                                        "height": "2rem",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
-                                        "width": "1.5rem",
+                                        "width": "2rem",
                                       }
                                     }
                                     viewBox="0 0 24 24"
@@ -9196,6 +9173,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                             }
                                           >
                                             <div
+                                              className="dropzone"
                                               onBlur={[Function]}
                                               onClick={[Function]}
                                               onDragEnter={[Function]}
@@ -9204,34 +9182,23 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                               onDrop={[Function]}
                                               onFocus={[Function]}
                                               onKeyDown={[Function]}
-                                              style={
-                                                Object {
-                                                  "display": "flex",
-                                                  "width": "100%",
-                                                }
-                                              }
                                               tabIndex={0}
                                             >
                                               <Flex
-                                                alignChildren="middle"
-                                                borderRadius="x1"
-                                                className="dropzone"
+                                                alignChildrenHorizontal="middle"
                                                 direction="vertical"
-                                                width="100%"
                                               >
                                                 <Base
-                                                  borderRadius="x1"
-                                                  className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--vertical dropzone"
-                                                  width="100%"
+                                                  className="Flex Flex--align-horz-middle Flex--vertical"
                                                 >
                                                   <div
-                                                    className="Base Base--border-radius-x1 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--vertical dropzone"
+                                                    className="Base Flex Flex--align-horz-middle Flex--vertical"
                                                     style={
                                                       Object {
                                                         "height": undefined,
                                                         "maxHeight": undefined,
                                                         "maxWidth": undefined,
-                                                        "width": "100%",
+                                                        "width": undefined,
                                                       }
                                                     }
                                                   >

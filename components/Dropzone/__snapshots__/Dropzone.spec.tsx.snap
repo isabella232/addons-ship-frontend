@@ -29,6 +29,7 @@ exports[`Dropzone renders correctly with files 1`] = `
       height={400}
     >
       <div
+        className="dropzone dropzoneHasFiles"
         onBlur={[Function]}
         onClick={[Function]}
         onDragEnter={[Function]}
@@ -37,27 +38,13 @@ exports[`Dropzone renders correctly with files 1`] = `
         onDrop={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
-        style={
-          Object {
-            "display": "flex",
-            "width": "48px",
-          }
-        }
         tabIndex={0}
       >
-        <Flex
-          alignChildren="middle"
-          borderRadius="x1"
-          className="dropzone"
-          direction="vertical"
-          width={48}
-        >
-          <Icon
-            color="grape-3"
-            name="PlusAdd"
-            size="1.5rem"
-          />
-        </Flex>
+        <Icon
+          color="grape-3"
+          name="PlusAdd"
+          size="1.5rem"
+        />
       </div>
       <Base
         container={true}
@@ -74,12 +61,9 @@ exports[`Dropzone renders correctly with files 1`] = `
             size="1.5rem"
           />
         </div>
-        <img
-          style={
-            Object {
-              "height": "100%",
-            }
-          }
+        <Base
+          Component="img"
+          className="thumbnail"
         />
       </Base>
     </Flex>
@@ -116,6 +100,7 @@ exports[`Dropzone renders correctly without files 1`] = `
       height={400}
     >
       <div
+        className="dropzone"
         onBlur={[Function]}
         onClick={[Function]}
         onDragEnter={[Function]}
@@ -124,20 +109,11 @@ exports[`Dropzone renders correctly without files 1`] = `
         onDrop={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
-        style={
-          Object {
-            "display": "flex",
-            "width": "100%",
-          }
-        }
         tabIndex={0}
       >
         <Flex
-          alignChildren="middle"
-          borderRadius="x1"
-          className="dropzone"
+          alignChildrenHorizontal="middle"
           direction="vertical"
-          width="100%"
         >
           <Text
             align="middle"
