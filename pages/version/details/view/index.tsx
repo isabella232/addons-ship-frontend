@@ -210,7 +210,7 @@ export default ({ appVersion, showTooltips, onSave, onChange }: Props) => {
           </form>
         </Flex>
 
-        {isDesktop && <Sidebar publicInstallPageURL={appVersion.publicInstallPageURL} onSave={onSave} />}
+        {isDesktop && <Sidebar publicInstallPageURL={appVersion.publicInstallPageURL} onSave={onSave} buildSlug={appVersion.buildSlug} />}
       </Flex>
     </Base>
   );
