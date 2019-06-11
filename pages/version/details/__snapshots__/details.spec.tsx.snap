@@ -708,10 +708,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           },
                         ]
                       }
+                      deviceId="x"
                       onDeviceSelected={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
                       removeScreenshot={[MockFunction]}
-                      selectedDeviceIdForScreenshots="x"
                       showTooltips={true}
                     >
                       <Flex
@@ -4753,10 +4753,10 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           },
                         ]
                       }
+                      deviceId="x"
                       onDeviceSelected={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
                       removeScreenshot={[MockFunction]}
-                      selectedDeviceIdForScreenshots="x"
                       showTooltips={true}
                     >
                       <Flex
@@ -8590,10 +8590,10 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           },
                         ]
                       }
+                      deviceId="x"
                       onDeviceSelected={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
                       removeScreenshot={[MockFunction]}
-                      selectedDeviceIdForScreenshots="x"
                       showTooltips={true}
                     >
                       <Flex

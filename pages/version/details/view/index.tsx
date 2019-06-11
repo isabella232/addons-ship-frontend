@@ -76,7 +76,7 @@ export default ({
               <FormIos
                 appVersion={appVersion}
                 availableDevices={availableDevices}
-                selectedDeviceIdForScreenshots={deviceId}
+                deviceId={deviceId}
                 screenshots={screenshots}
                 showTooltips={showTooltips}
                 onScreenshotAdded={onScreenshotAdded}

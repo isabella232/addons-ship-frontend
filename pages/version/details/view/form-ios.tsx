@@ -24,7 +24,7 @@ type Props = {
     key: string;
     value: string;
   }>;
-  selectedDeviceIdForScreenshots: string;
+  deviceId: string;
   screenshots?: File[];
   showTooltips: boolean;
   onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
@@ -35,7 +35,7 @@ type Props = {
 export default ({
   appVersion,
   availableDevices,
-  selectedDeviceIdForScreenshots,
+  deviceId,
   screenshots,
   showTooltips,
   onScreenshotAdded,
@@ -59,11 +59,11 @@ export default ({
         <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
       </Flex>
 
-      <SmallTabs items={availableDevices} selected={selectedDeviceIdForScreenshots} onSelect={onDeviceSelected} />
+      <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />
       <Dropzone
         files={screenshots}
-        onFilesAdded={files => onScreenshotAdded(selectedDeviceIdForScreenshots, files)}
-        removeFile={file => removeScreenshot(selectedDeviceIdForScreenshots, file)}
+        onFilesAdded={files => onScreenshotAdded(deviceId, files)}
+        removeFile={file => removeScreenshot(deviceId, file)}
       />
     </Base>
 
