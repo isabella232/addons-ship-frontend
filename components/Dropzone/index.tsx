@@ -4,14 +4,16 @@ import { Card, Base, Flex, Text, Icon } from '@bitrise/bitkit';
 import cx from 'classnames';
 
 import css from './style.scss';
+import _ from 'lodash';
 
 type Props = {
   onFilesAdded: (files: File[]) => void;
   removeFile: (file: File) => void;
   files?: File[];
+  isMultiple?: boolean;
 };
 
-export default ({ onFilesAdded, removeFile, files = [] }: Props) => {
+export default ({ onFilesAdded, removeFile, files = [], isMultiple = true }: Props) => {
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
       onFilesAdded(acceptedFiles);
@@ -28,9 +30,15 @@ export default ({ onFilesAdded, removeFile, files = [] }: Props) => {
     </Base>
   ));
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: 'image/*' });
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: 'image/*',
+    multiple: isMultiple
+  });
 
   const hasFiles = files.length > 0;
+
+  console.log(files);
 
   return (
     <Card elevation="x1" padding="x3">

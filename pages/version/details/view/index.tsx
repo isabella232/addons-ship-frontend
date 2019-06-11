@@ -6,6 +6,8 @@ import { mediaQuery } from '@/utils/media';
 
 import Sidebar from './sidebar';
 import FormIos from './form-ios';
+import FormAndroid from './form-android';
+import { TypeIconName } from '@bitrise/bitkit/lib/esm/Icon/tsx';
 
 type Props = {
   appVersion: AppVersion;
@@ -18,6 +20,9 @@ type Props = {
   screenshots?: File[];
   onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
   removeScreenshot: (deviceId: string, screenshot: File) => void;
+  featureGraphic?: File;
+  onFeatureGraphicAdded: (featureGraphic: File) => void;
+  removeFeatureGraphic: () => void;
   onDeviceSelected: (key: string) => void;
   onSave?: () => void;
   onChange?: (key: string, newValue: string) => void;
@@ -31,10 +36,15 @@ export default ({
   availableDevices,
   onScreenshotAdded,
   removeScreenshot,
+  featureGraphic,
+  onFeatureGraphicAdded,
+  removeFeatureGraphic,
   onSave,
   onChange,
   onDeviceSelected
 }: Props) => {
+  const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
+
   const [isDesktop] = mediaQuery('60rem');
 
   const onFormChange = ({ target: { name, value } }: any) => {
@@ -58,7 +68,7 @@ export default ({
 
               <Flex direction="vertical" alignChildrenVertical="middle" paddingHorizontal="x6">
                 <Flex direction="horizontal" alignChildren="middle">
-                  <Icon color="grape-4" name="PlatformsApple" size="1.5rem" />
+                  <Icon color="grape-4" name={iconName} size="1.5rem" />
                   <Text letterSpacing="x2" size="x6" weight="bold" color="grape-4" paddingHorizontal="x2">
                     {appVersion.appName}
                   </Text>
@@ -81,6 +91,21 @@ export default ({
                 showTooltips={showTooltips}
                 onScreenshotAdded={onScreenshotAdded}
                 removeScreenshot={removeScreenshot}
+                onDeviceSelected={onDeviceSelected}
+              />
+            )}
+
+            {appVersion.platform === 'android' && (
+              <FormAndroid
+                appVersion={appVersion}
+                availableDevices={availableDevices}
+                deviceId={deviceId}
+                screenshots={screenshots}
+                onScreenshotAdded={onScreenshotAdded}
+                removeScreenshot={removeScreenshot}
+                featureGraphic={featureGraphic}
+                onFeatureGraphicAdded={onFeatureGraphicAdded}
+                removeFeatureGraphic={removeFeatureGraphic}
                 onDeviceSelected={onDeviceSelected}
               />
             )}

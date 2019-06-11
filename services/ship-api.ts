@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 import { AppVersion } from '@/models';
 import { Fetch, APIConfig } from '@/models/services';
-import { mockAppVersion, mockAppVersions } from '@/mocks';
+import { mockAndroidAppVersion, mockAppVersions } from '@/mocks';
 import { snakifyKeys, camelizeKeys } from '@/utils';
 
 class ShipAPIService {
@@ -10,7 +10,7 @@ class ShipAPIService {
 
   async getAppVersion(appSlug: string, versionId: string): Promise<AppVersion> {
     const resp = await {
-      data: snakifyKeys<any>(mockAppVersion)
+      data: snakifyKeys<any>(mockAndroidAppVersion)
     };
 
     const { data } = resp;
