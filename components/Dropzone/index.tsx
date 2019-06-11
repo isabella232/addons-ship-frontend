@@ -43,27 +43,29 @@ export default ({ onFilesAdded, removeFile, files = [], isMultiple = true }: Pro
       <input {...getInputProps()} />
       <Base backgroundColor="gray-1" padding="x3">
         <Flex direction="horizontal" height={400} className={css.scrollable}>
-          <div
-            className={cx(css.dropzone, { [css.dropzoneActive]: isDragActive, [css.dropzoneHasFiles]: hasFiles })}
-            {...getRootProps()}
-          >
-            {hasFiles ? (
-              <Icon name="PlusAdd" color="grape-3" />
-            ) : (
-              <Flex direction="vertical" alignChildrenHorizontal="middle">
-                <Text size="x5" color="gray-7" align="middle" weight="medium">
-                  Drag & Drop <br />
-                  or
-                </Text>
-                <Flex direction="horizontal" alignChildrenVertical="middle">
-                  <Icon name="PlusAdd" color="grape-3" paddingHorizontal="x1" />
-                  <Text size="x3" color="grape-3" align="middle" weight="medium">
-                    Browse Files
+          {(!hasFiles || isMultiple) && (
+            <div
+              className={cx(css.dropzone, { [css.dropzoneActive]: isDragActive, [css.dropzoneHasFiles]: hasFiles })}
+              {...getRootProps()}
+            >
+              {hasFiles ? (
+                <Icon name="PlusAdd" color="grape-3" />
+              ) : (
+                <Flex direction="vertical" alignChildrenHorizontal="middle">
+                  <Text size="x5" color="gray-7" align="middle" weight="medium">
+                    Drag & Drop <br />
+                    or
                   </Text>
+                  <Flex direction="horizontal" alignChildrenVertical="middle">
+                    <Icon name="PlusAdd" color="grape-3" paddingHorizontal="x1" />
+                    <Text size="x3" color="grape-3" align="middle" weight="medium">
+                      Browse Files
+                    </Text>
+                  </Flex>
                 </Flex>
-              </Flex>
-            )}
-          </div>
+              )}
+            </div>
+          )}
           {thumbs}
         </Flex>
       </Base>
