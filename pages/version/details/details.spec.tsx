@@ -3,7 +3,7 @@ jest.mock('@/utils/media');
 import { shallow, mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
-import { mockAppVersion, mockAppVersionWithoutPublicPage } from '@/mocks';
+import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion } from '@/mocks';
 import { mediaQuery } from '@/utils/media';
 
 import DetailsView from './view';
@@ -23,7 +23,9 @@ describe('AppVersionDetailsView', () => {
     ],
     onScreenshotAdded: jest.fn(),
     removeScreenshot: jest.fn(),
-    onDeviceSelected: jest.fn()
+    onDeviceSelected: jest.fn(),
+    onFeatureGraphicAdded: jest.fn(),
+    removeFeatureGraphic: jest.fn()
   };
 
   describe('when viewed on desktop', () => {
@@ -53,6 +55,12 @@ describe('AppVersionDetailsView', () => {
       const tree = toJSON(mount(<DetailsView {...defaultProps} />));
       expect(tree).toMatchSnapshot();
     });
+  });
+
+  describe('when an Android app version is viewed', () => {
+    (mediaQuery as jest.Mock).mockReturnValue([true]);
+    const tree = toJSON(mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} />));
+    expect(tree).toMatchSnapshot();
   });
 });
 
@@ -115,6 +123,28 @@ describe('AppVersionDetails', () => {
     expect(wrap.state('screenshotList')).toMatchSnapshot();
   });
 
+  it('appends a feature graphic for Android apps', async () => {
+    // This test logs a false positive error regarding act(...)
+    console.error = () => {};
+
+    (global as any).URL.createObjectURL = jest.fn();
+    const wrap = mount(<AppVersionDetails {...defaultProps} appVersion={mockAndroidAppVersion} />);
+
+    const files = [new File([], 'file.png')];
+
+    await wrap
+      .find(Dropzone)
+      .last()
+      .find('input[type="file"]')
+      .simulate('change', {
+        preventDefault: () => {},
+        persist: () => {},
+        target: { files }
+      });
+
+    expect(wrap.state('featureGraphic')).toMatchSnapshot();
+  });
+
   describe('Component methods', () => {
     const wrap = shallow(<AppVersionDetails {...defaultProps} />);
     const deviceId = 'iphone65',
@@ -127,8 +157,10 @@ describe('AppVersionDetails', () => {
     [otherDeviceId]: { deviceName: 'iPhone 6.5”', screenshots: [screenshot]},
   };
 
+    const featureGraphic = new File([], 'image.png');
+
     beforeEach(() => {
-      wrap.setState({ screenshotList, selectedDeviceIdForScreenshots: deviceId });
+      wrap.setState({ screenshotList, selectedDeviceIdForScreenshots: deviceId, featureGraphic });
     });
 
     it('removes a screenshot', () => {
@@ -137,6 +169,14 @@ describe('AppVersionDetails', () => {
       (wrap.instance() as AppVersionDetails).removeScreenshot(deviceId, screenshot);
 
       expect((wrap.state() as State).screenshotList.iphone65.screenshots).toHaveLength(0);
+    });
+
+    it('removes feature graphic', () => {
+      expect((wrap.state() as State).featureGraphic).not.toBeUndefined();
+
+      (wrap.instance() as AppVersionDetails).removeFeatureGraphic();
+
+      expect((wrap.state() as State).featureGraphic).toBeUndefined();
     });
 
     it('onDeviceSelected', () => {
