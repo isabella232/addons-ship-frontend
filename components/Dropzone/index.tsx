@@ -38,8 +38,6 @@ export default ({ onFilesAdded, removeFile, files = [], isMultiple = true }: Pro
 
   const hasFiles = files.length > 0;
 
-  console.log(files);
-
   return (
     <Card elevation="x1" padding="x3">
       <input {...getInputProps()} />
