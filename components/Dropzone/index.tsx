@@ -4,7 +4,6 @@ import { Card, Base, Flex, Text, Icon } from '@bitrise/bitkit';
 import cx from 'classnames';
 
 import css from './style.scss';
-import _ from 'lodash';
 
 type Props = {
   onFilesAdded: (files: File[]) => void;

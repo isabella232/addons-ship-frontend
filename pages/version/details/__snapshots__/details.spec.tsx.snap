@@ -576,6 +576,7 @@ exports[` 1`] = `
                       onScreenshotAdded={[MockFunction]}
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
+                      showTooltips={true}
                     >
                       <Flex
                         alignChildrenHorizontal="between"
@@ -4405,7 +4406,9 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                       }
                       deviceId="x"
                       onDeviceSelected={[MockFunction]}
+                      onFeatureGraphicAdded={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
+                      removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
                       showTooltips={true}
                     >
@@ -8452,7 +8455,9 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                       }
                       deviceId="x"
                       onDeviceSelected={[MockFunction]}
+                      onFeatureGraphicAdded={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
+                      removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
                       showTooltips={true}
                     >
@@ -12291,7 +12296,9 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                       }
                       deviceId="x"
                       onDeviceSelected={[MockFunction]}
+                      onFeatureGraphicAdded={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
+                      removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
                       showTooltips={true}
                     >

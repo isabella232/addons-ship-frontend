@@ -94,7 +94,7 @@ export default ({
       <Dropzone
         files={featureGraphic && [featureGraphic]}
         onFilesAdded={([file]) => onFeatureGraphicAdded(file)}
-        removeFile={_file => removeFeatureGraphic()}
+        removeFile={() => removeFeatureGraphic()}
         isMultiple={false}
       />
     </Base>
