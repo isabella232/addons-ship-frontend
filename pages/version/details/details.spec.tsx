@@ -5,10 +5,10 @@ import toJSON from 'enzyme-to-json';
 
 import { mockAppVersion, mockAppVersionWithoutPublicPage } from '@/mocks';
 import { mediaQuery } from '@/utils/media';
+import Dropzone from '@/components/Dropzone';
 
 import DetailsView from './view';
 import { AppVersionDetails, State } from './';
-import Dropzone from '@/components/Dropzone';
 
 describe('AppVersionDetailsView', () => {
   const defaultProps = {
@@ -59,7 +59,8 @@ describe('AppVersionDetailsView', () => {
 describe('AppVersionDetails', () => {
   const defaultProps = {
     appVersion: mockAppVersion,
-    updateAppVersion: jest.fn()
+    updateAppVersion: jest.fn() as any,
+    uploadScreenshots: jest.fn() as any
   };
 
   it('renders correctly', () => {
@@ -70,8 +71,15 @@ describe('AppVersionDetails', () => {
 
   it('triggers a save', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
-    const mockUpdateAppVersion = jest.fn();
-    const tree = mount(<AppVersionDetails {...defaultProps} updateAppVersion={mockUpdateAppVersion} />);
+    const mockUpdateAppVersion = jest.fn() as any;
+    const mockUploadScreenshots = jest.fn() as any;
+    const tree = mount(
+      <AppVersionDetails
+        {...defaultProps}
+        updateAppVersion={mockUpdateAppVersion}
+        uploadScreenshots={mockUploadScreenshots}
+      />
+    );
 
     tree
       .find('button')
@@ -79,6 +87,7 @@ describe('AppVersionDetails', () => {
       .simulate('click');
 
     expect(mockUpdateAppVersion).toHaveBeenCalled();
+    expect(mockUploadScreenshots).toHaveBeenCalled();
   });
 
   it('triggers a state update when a form item is modified', () => {
@@ -121,13 +130,14 @@ describe('AppVersionDetails', () => {
       otherDeviceId = 'other-iphone65',
       screenshot = new File([], 'image.png');
 
-    // prettier-ignore
-    const screenshotList = {
-    [deviceId]: { deviceName: 'iPhone 6.5”', screenshots: [screenshot]},
-    [otherDeviceId]: { deviceName: 'iPhone 6.5”', screenshots: [screenshot]},
-  };
-
     beforeEach(() => {
+      // prettier-ignore
+      const screenshotList = {
+        [deviceId]: { deviceName: 'iPhone 6.5”', screenshots: [screenshot]},
+        [otherDeviceId]: { deviceName: 'iPhone 5.8”', screenshots: [new File([], 'image2.jpg')]},
+        'device-without-screenshots': { deviceName: 'whatever', screenshots: null }
+      };
+
       wrap.setState({ screenshotList, selectedDeviceIdForScreenshots: deviceId });
     });
 
@@ -139,10 +149,15 @@ describe('AppVersionDetails', () => {
       expect((wrap.state() as State).screenshotList.iphone65.screenshots).toHaveLength(0);
     });
 
-    it('onDeviceSelected', () => {
+    test('onDeviceSelected', () => {
       (wrap.instance() as AppVersionDetails).onDeviceSelected(otherDeviceId);
 
       expect(wrap.state('selectedDeviceIdForScreenshots')).toBe(otherDeviceId);
+    });
+
+    test('getUploadableScreenshots', () => {
+      const uploadableScreenshots = (wrap.instance() as AppVersionDetails).getUploadableScreenshots();
+      expect(uploadableScreenshots).toMatchSnapshot();
     });
   });
 });

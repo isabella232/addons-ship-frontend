@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AppVersionDetails Component methods getUploadableScreenshots 1`] = `
+Array [
+  Array [
+    Object {
+      "deviceType": "iPhone 6.5”",
+      "filename": "image.png",
+      "filesize": 0,
+      "screenSize": "iPhone 6.5”",
+    },
+    Object {
+      "deviceType": "iPhone 5.8”",
+      "filename": "image2.jpg",
+      "filesize": 0,
+      "screenSize": "iPhone 5.8”",
+    },
+  ],
+  Array [
+    File {},
+    File {},
+  ],
+]
+`;
+
 exports[`AppVersionDetails appends a screenshot 1`] = `
 Object {
   "applewatch": Object {
