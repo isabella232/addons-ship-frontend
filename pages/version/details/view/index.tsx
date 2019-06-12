@@ -30,18 +30,9 @@ type Props = {
 
 export default ({
   appVersion,
-  // showTooltips,
-  // screenshots,
   selectedDeviceIdForScreenshots: deviceId,
-  // availableDevices,
-  // onScreenshotAdded,
-  // removeScreenshot,
-  // featureGraphic,
-  // onFeatureGraphicAdded,
-  // removeFeatureGraphic,
   onSave,
   onChange,
-  // onDeviceSelected
   ...props
 }: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
