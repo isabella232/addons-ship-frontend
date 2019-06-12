@@ -180,6 +180,33 @@ export const mockAppVersionWithoutPublicPage = {
   publicInstallPageURL: undefined
 };
 
+export const mockAndroidAppVersion = {
+  id: 123,
+  appSlug: 'app-slug-123',
+  version: '1.0.3',
+  platform: 'android',
+  buildNumber: 32,
+  buildSlug: '13245ads',
+  lastUpdate: new Date('2018-09-22T12:42:31Z'),
+  shortDescription: 'Some short description',
+  description: 'Some semi-long description',
+  whatsNew: 'Some longer whats-new',
+  versionCode: '165161631',
+  minimumSdk: '26',
+  packageName: 'com.package.name',
+  certificateExpires: new Date('2018-09-22T12:42:31Z'),
+  size: 4567034,
+  supportedDeviceTypes: ['phone', 'tablet', 'android-tv', 'wear-os'],
+  iconUrl: 'http://placekitten.com/160/160',
+  appName: 'Standup Timer',
+  supportUrl: 'https://bitrise.io/support',
+  marketingUrl: 'https://bitrise.io/marketing',
+  module: 'Celeste-config',
+  variant: 'Fennek',
+  buildType: 'Celeste-config',
+  publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
+}
+
 export const mockTestDevices: TestDevice[] = [
   { deviceId: 'some-device-id-01', deviceType: 'ios', owner: 'test-user-1' },
   { deviceId: 'some-device-id-02', deviceType: 'android', owner: 'test-user-1' },
