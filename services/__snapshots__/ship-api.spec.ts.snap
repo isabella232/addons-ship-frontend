@@ -200,3 +200,12 @@ Object {
   "whatsNew": "Some longer whats-new",
 }
 `;
+
+exports[`Ship API service uploadScreenshots calls the api 1`] = `
+Array [
+  Object {
+    "filename": "some-file.png",
+    "uploadUrl": "http://some.url?token=123",
+  },
+]
+`;

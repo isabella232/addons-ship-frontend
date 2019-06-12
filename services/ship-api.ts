@@ -1,12 +1,14 @@
 import fetch from 'node-fetch';
 
+import { shipApiConfig } from '@/config';
 import { AppVersion } from '@/models';
-import { Fetch, APIConfig } from '@/models/services';
+import { APIConfig } from '@/models/services';
 import { mockAppVersion, mockAppVersions } from '@/mocks';
 import { snakifyKeys, camelizeKeys } from '@/utils';
+import { Uploadable } from '@/models/uploadable';
 
-class ShipAPIService {
-  constructor(private fetch: Fetch, private config: APIConfig) {}
+export class ShipAPIService {
+  constructor(private config: APIConfig) {}
 
   async getAppVersion(appSlug: string, versionId: string): Promise<AppVersion> {
     const resp = await {
@@ -39,8 +41,35 @@ class ShipAPIService {
 
     return data.map(camelizeKeys) as AppVersion[];
   }
+
+  async uploadScreenshots(appSlug: string, versionId: string, screenshots: Uploadable[]): Promise<Uploadable[]> {
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots`;
+
+    const body = JSON.stringify({
+      screenshots: screenshots.map(snakifyKeys)
+    });
+
+    const { data } = await fetch(url, {
+      method: 'post',
+      headers: {
+        Authorization: 'test-api-token-1' // todo
+      },
+      body
+    }).then(res => res.json());
+
+    return data.map(camelizeKeys);
+  }
+
+  async uploadedScreenshots(appSlug: string, versionId: string) {
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/uploaded`;
+
+    await fetch(url, {
+      method: 'patch',
+      headers: {
+        Authorization: 'test-api-token-1' // todo
+      }
+    });
+  }
 }
 
-export default new ShipAPIService(fetch, {
-  url: 'todo: get from config'
-});
+export default new ShipAPIService(shipApiConfig);
