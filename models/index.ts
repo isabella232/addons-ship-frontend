@@ -26,25 +26,30 @@ export type AppVersion = {
   buildNumber: number;
   buildSlug: string;
   lastUpdate: Date;
+  shortDescription?: string;
   description: string;
   whatsNew: string;
-  minimumOs: string;
-  minimumSdk: string;
-  packageName: string;
+  versionCode?: string,
+  minimumOs?: string;
+  minimumSdk?: string;
+  packageName?: string;
   certificateExpires: Date;
-  bundleId: string;
+  bundleId?: string;
   size: number;
   supportedDeviceTypes: string[];
-  distributionType: string;
+  distributionType?: string;
   iconUrl: string;
   appName: string;
-  promotionalText: string;
-  keywords: string;
-  reviewNotes: string;
-  supportUrl: string;
-  marketingUrl: string;
-  scheme: string;
-  configuration: string;
+  promotionalText?: string;
+  keywords?: string;
+  reviewNotes?: string;
+  supportUrl?: string;
+  marketingUrl?: string;
+  scheme?: string;
+  configuration?: string;
+  module?: string,
+  variant?: string,
+  buildType?: string,
   publicInstallPageURL?: string;
 };
 

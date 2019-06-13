@@ -21,6 +21,7 @@ export type State = {
   showTooltips: boolean;
   updatedAppVersion: AppVersion | null;
   screenshotList: { [deviceId: string]: DeviceScreenshots };
+  featureGraphic?: File;
   selectedDeviceIdForScreenshots: string;
 };
 
@@ -68,6 +69,7 @@ export class AppVersionDetails extends Component<Props, State> {
         deviceName: 'Apple Watch 4'
       }
     },
+    featureGraphic: undefined,
     selectedDeviceIdForScreenshots: 'iphone65'
   };
 
@@ -143,13 +145,21 @@ export class AppVersionDetails extends Component<Props, State> {
     this.setState({ screenshotList });
   };
 
+  onFeatureGraphicAdded = (newFeatureGraphic: File) => {
+    this.setState({ featureGraphic: newFeatureGraphic });
+  };
+
+  removeFeatureGraphic = () => {
+    this.setState({ featureGraphic: undefined });
+  };
+
   onDeviceSelected = (deviceId: string) => {
     this.setState({ selectedDeviceIdForScreenshots: deviceId });
   };
 
   render() {
     const { appVersion } = this.props;
-    const { showTooltips, selectedDeviceIdForScreenshots, screenshotList } = this.state;
+    const { showTooltips, selectedDeviceIdForScreenshots, screenshotList, featureGraphic } = this.state;
 
     const viewProps = {
       appVersion,
@@ -161,6 +171,9 @@ export class AppVersionDetails extends Component<Props, State> {
       selectedDeviceIdForScreenshots,
       screenshots: screenshotList[selectedDeviceIdForScreenshots].screenshots,
       removeScreenshot: this.removeScreenshot,
+      featureGraphic: featureGraphic,
+      onFeatureGraphicAdded: this.onFeatureGraphicAdded,
+      removeFeatureGraphic: this.removeFeatureGraphic,
       onDeviceSelected: this.onDeviceSelected
     };
 

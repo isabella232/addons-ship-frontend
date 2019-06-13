@@ -3,16 +3,16 @@ import fetch from 'node-fetch';
 import { shipApiConfig } from '@/config';
 import { AppVersion } from '@/models';
 import { APIConfig } from '@/models/services';
-import { mockAppVersion, mockAppVersions } from '@/mocks';
-import { snakifyKeys, camelizeKeys } from '@/utils';
+import { mockAndroidAppVersion, mockAppVersions } from '@/mocks';
 import { Uploadable } from '@/models/uploadable';
+import { snakifyKeys, camelizeKeys } from '@/utils';
 
 export class ShipAPIService {
   constructor(private config: APIConfig) {}
 
   async getAppVersion(appSlug: string, versionId: string): Promise<AppVersion> {
     const resp = await {
-      data: snakifyKeys<any>(mockAppVersion)
+      data: snakifyKeys<any>(mockAndroidAppVersion)
     };
 
     const { data } = resp;
