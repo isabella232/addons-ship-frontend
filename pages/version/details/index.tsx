@@ -2,16 +2,19 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import map from 'lodash/map';
 import update from 'lodash/update';
+import filter from 'lodash/filter';
 
 import { AppVersion } from '@/models';
 import { RootState } from '@/store';
-import { updateAppVersion } from '@/ducks/appVersion';
+import { updateAppVersion, uploadScreenshots } from '@/ducks/appVersion';
 
 import View from './view';
+import { Uploadable } from '@/models/uploadable';
 
 type Props = {
   appVersion: AppVersion;
-  updateAppVersion: (appVersion: AppVersion) => Promise<void>;
+  updateAppVersion: typeof updateAppVersion;
+  uploadScreenshots: typeof uploadScreenshots;
 };
 
 export type State = {
@@ -77,6 +80,8 @@ export class AppVersionDetails extends Component<Props, State> {
   }
 
   onChange = (key: string, newValue: string) => {
+    if (!key) return;
+
     const { appVersion } = this.props;
 
     const updatedAppVersion = {
@@ -87,11 +92,41 @@ export class AppVersionDetails extends Component<Props, State> {
     this.setState({ updatedAppVersion });
   };
 
+  getUploadableScreenshots = (): [Uploadable[], File[]] => {
+    const { screenshotList } = this.state;
+
+    const uploadables: Uploadable[] = [],
+      files: File[] = [];
+
+    filter(screenshotList, 'screenshots').forEach(({ deviceName, screenshots }) => {
+      uploadables.push(
+        ...(screenshots as File[]).map(s => ({
+          filename: s.name,
+          filesize: s.size,
+          deviceType: deviceName,
+          screenSize: deviceName
+        }))
+      );
+
+      files.push(...(screenshots as File[]));
+    });
+
+    return [uploadables, files];
+  };
+
   onSave = () => {
-    const { updateAppVersion } = this.props;
+    const {
+      appVersion: { appSlug, id },
+      updateAppVersion,
+      uploadScreenshots
+    } = this.props;
     const { updatedAppVersion } = this.state;
 
     updateAppVersion(updatedAppVersion as AppVersion);
+
+    const [uploadable, files] = this.getUploadableScreenshots();
+
+    uploadScreenshots(appSlug, id.toString(), uploadable, files);
   };
 
   onScreenshotAdded = (deviceId: string, newScreenshots: File[]) => {
@@ -148,7 +183,8 @@ export class AppVersionDetails extends Component<Props, State> {
 
 const mapStateToProps = ({ appVersion }: RootState) => ({ appVersion });
 const mapDispatchToProps = {
-  updateAppVersion
+  updateAppVersion,
+  uploadScreenshots
 };
 
 export default connect(

@@ -80,3 +80,26 @@ Array [
   },
 ]
 `;
+
+exports[`appVersion uploadScreenshots can't upload screenshots 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_UPLOAD_SCREENSHOTS_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_UPLOAD_SCREENSHOTS_ERROR",
+  },
+]
+`;
+
+exports[`appVersion uploadScreenshots uploads screenshots 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_UPLOAD_SCREENSHOTS_NEXT",
+  },
+  Object {
+    "type": "APP_VERSION_UPLOAD_SCREENSHOTS_COMPLETE",
+  },
+]
+`;

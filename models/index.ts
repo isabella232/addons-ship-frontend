@@ -19,7 +19,7 @@ export type AppPageQuery = {
 };
 
 export type AppVersion = {
-  id: number;
+  id: number | string;
   appSlug: string;
   version: string;
   platform: string;

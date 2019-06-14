@@ -1,6 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Ship API service fetches a list of version for an app 1`] = `
+exports[`appVersionList fetchAppVersionList can't fetch an app version 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_LIST_GET_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_LIST_GET_ERROR",
+  },
+]
+`;
+
+exports[`appVersionList fetchAppVersionList fetches an app version 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_LIST_GET_NEXT",
+  },
+  Object {
+    "type": "APP_VERSION_LIST_GET_COMPLETE",
+  },
+]
+`;
+
+exports[`appVersionList reducer loads an app version 1`] = `
 Array [
   Object {
     "appName": "Standup Timer",
@@ -22,7 +45,7 @@ Array [
     "packageName": "com.package.name",
     "platform": "ios",
     "promotionalText": "Promotional Text",
-    "publicInstallPageUrl": "https://bitrise.io/app/8b334705d8e78276",
+    "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
     "reviewNotes": "Review Notes",
     "scheme": "piramid",
     "size": 4567034,
@@ -54,7 +77,7 @@ Array [
     "packageName": "com.package.name",
     "platform": "ios",
     "promotionalText": "Promotional Text",
-    "publicInstallPageUrl": "https://bitrise.io/app/8b334705d8e78276",
+    "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
     "reviewNotes": "Review Notes",
     "scheme": "piramid",
     "size": 4567034,
@@ -86,7 +109,7 @@ Array [
     "packageName": "com.package.name",
     "platform": "ios",
     "promotionalText": "Promotional Text",
-    "publicInstallPageUrl": "https://bitrise.io/app/8b334705d8e78276",
+    "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
     "reviewNotes": "Review Notes",
     "scheme": "piramid",
     "size": 4567034,
@@ -118,7 +141,7 @@ Array [
     "packageName": "com.package.name",
     "platform": "ios",
     "promotionalText": "Promotional Text",
-    "publicInstallPageUrl": "https://bitrise.io/app/8b334705d8e78276",
+    "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
     "reviewNotes": "Review Notes",
     "scheme": "piramid",
     "size": 4567034,
@@ -150,7 +173,7 @@ Array [
     "packageName": "com.package.name",
     "platform": "ios",
     "promotionalText": "Promotional Text",
-    "publicInstallPageUrl": "https://bitrise.io/app/8b334705d8e78276",
+    "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
     "reviewNotes": "Review Notes",
     "scheme": "piramid",
     "size": 4567034,
@@ -161,50 +184,6 @@ Array [
     ],
     "version": "1.0.2",
     "whatsNew": "Some longer whats-new",
-  },
-]
-`;
-
-exports[`Ship API service fetches a version for an app 1`] = `
-Object {
-  "appName": "Standup Timer",
-  "appSlug": "an-app-slug",
-  "buildNumber": 32,
-  "buildSlug": "13245ads",
-  "buildType": "Celeste-config",
-  "certificateExpires": 2018-09-22T12:42:31.000Z,
-  "description": "Some semi-long description",
-  "iconUrl": "http://placekitten.com/160/160",
-  "id": 123,
-  "lastUpdate": 2018-09-22T12:42:31.000Z,
-  "marketingUrl": "https://bitrise.io/marketing",
-  "minimumSdk": "26",
-  "module": "Celeste-config",
-  "packageName": "com.package.name",
-  "platform": "android",
-  "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
-  "publicInstallPageUrl": undefined,
-  "shortDescription": "Some short description",
-  "size": 4567034,
-  "supportUrl": "https://bitrise.io/support",
-  "supportedDeviceTypes": Array [
-    "phone",
-    "tablet",
-    "android-tv",
-    "wear-os",
-  ],
-  "variant": "Fennek",
-  "version": "1.0.3",
-  "versionCode": "165161631",
-  "whatsNew": "Some longer whats-new",
-}
-`;
-
-exports[`Ship API service uploadScreenshots calls the api 1`] = `
-Array [
-  Object {
-    "filename": "some-file.png",
-    "uploadUrl": "http://some.url?token=123",
   },
 ]
 `;
