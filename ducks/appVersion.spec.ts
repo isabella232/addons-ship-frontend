@@ -77,15 +77,17 @@ describe('appVersion', () => {
 
     it('uploads screenshots', async () => {
       const filename = 'a-file.jpg',
+        bits = 'whatever',
         uploadUrl = 'http://some.url?token';
       (api.uploadScreenshots as jest.Mock).mockResolvedValueOnce([
         {
           filename,
+          filesize: bits.length,
           uploadUrl
         }
       ]);
 
-      const file = new File([], filename);
+      const file = new File([bits], filename);
       await store.dispatch(uploadScreenshots('app-slug', 'version-id', [], [file]) as any);
 
       expect(api.uploadScreenshots).toHaveBeenCalledWith('app-slug', 'version-id', []);

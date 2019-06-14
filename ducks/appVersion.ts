@@ -57,8 +57,8 @@ const _uploadScreenshots = (appSlug: string, versionId: string, screenshots: Upl
 
     // Upload images to S3
     await Promise.all(
-      withPresignedUrl.map(({ filename, uploadUrl }) => {
-        const file = files.find(({ name }) => name === filename);
+      withPresignedUrl.map(({ filename, filesize, uploadUrl }) => {
+        const file = files.find(({ name, size }) => name === filename && size === filesize);
 
         return uploadFileToS3(file, uploadUrl);
       })
