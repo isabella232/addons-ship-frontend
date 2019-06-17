@@ -157,6 +157,10 @@ export class AppVersionDetails extends Component<Props, State> {
     this.setState({ selectedDeviceIdForScreenshots: deviceId });
   };
 
+  enableInstall = () => {
+    return true;
+  };
+
   render() {
     const { appVersion } = this.props;
     const { showTooltips, selectedDeviceIdForScreenshots, screenshotList, featureGraphic } = this.state;
@@ -174,7 +178,8 @@ export class AppVersionDetails extends Component<Props, State> {
       featureGraphic: featureGraphic,
       onFeatureGraphicAdded: this.onFeatureGraphicAdded,
       removeFeatureGraphic: this.removeFeatureGraphic,
-      onDeviceSelected: this.onDeviceSelected
+      onDeviceSelected: this.onDeviceSelected,
+      enableInstall: this.enableInstall()
     };
 
     return <View {...viewProps} />;

@@ -1,5 +1,5 @@
 import formatDate from 'date-fns/format';
-import { Base, Flex, Text, Icon, Image, Notification } from '@bitrise/bitkit';
+import { Base, Flex, Text, Icon, Image, Notification, Button } from '@bitrise/bitkit';
 import { TypeIconName } from '@bitrise/bitkit/lib/esm/Icon/tsx';
 
 import { AppVersion } from '@/models';
@@ -26,15 +26,10 @@ type Props = {
   onDeviceSelected: (key: string) => void;
   onSave?: () => void;
   onChange?: (key: string, newValue: string) => void;
+  enableInstall: boolean;
 };
 
-export default ({
-  appVersion,
-  selectedDeviceIdForScreenshots: deviceId,
-  onSave,
-  onChange,
-  ...props
-}: Props) => {
+export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, onChange, enableInstall, ...props }: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   const [isDesktop] = mediaQuery('60rem');
@@ -55,7 +50,7 @@ export default ({
       <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'}>
         <Flex maxWidth={660} margin="x0" paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
           <form onChange={onFormChange}>
-            <Flex direction="horizontal" margin="x16">
+            <Flex direction="horizontal" margin="x4">
               <Image src={appVersion.iconUrl} borderRadius="x2" />
 
               <Flex direction="vertical" alignChildrenVertical="middle" paddingHorizontal="x6">
@@ -72,6 +67,16 @@ export default ({
                   Updated on {formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}
                 </Text>
               </Flex>
+            </Flex>
+            <Flex direction="horizontal" alignChildren="start" gap="x4" margin="x8">
+              <Button level="primary" onClick={onSave}>
+                <Icon name="Bug" />
+                <Text>Save</Text>
+              </Button>
+              <Button level="secondary" disabled={!enableInstall}>
+                <Icon name="Download" />
+                <Text>Install</Text>
+              </Button>
             </Flex>
             {appVersion.platform === 'ios' && <FormIos appVersion={appVersion} deviceId={deviceId} {...props} />}
             {appVersion.platform === 'android' && (
