@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import map from 'lodash/map';
 import update from 'lodash/update';
 import filter from 'lodash/filter';
+import * as compareVersions from 'compare-versions';
+import { isAndroid, isIOS, osVersion, mobileModel } from 'react-device-detect';
 
 import { AppVersion } from '@/models';
 import { RootState } from '@/store';
@@ -157,7 +159,24 @@ export class AppVersionDetails extends Component<Props, State> {
     this.setState({ selectedDeviceIdForScreenshots: deviceId });
   };
 
-  enableInstall = () => {
+  shouldEnableInstall = () => {
+    const { appVersion } = this.props;
+    if (!appVersion.publicInstallPageURL) {
+      return false;
+    }
+
+    if ((appVersion.platform === 'android' && isAndroid === false) || (appVersion.platform === 'ios' && isIOS === false)) {
+      return false;
+    }
+
+    if (compareVersions(appVersion.version, osVersion) < 0) {
+      return false;
+    }
+
+    if (!appVersion.supportedDeviceTypes.includes(mobileModel)) {
+      return false;
+    }
+
     return true;
   };
 
@@ -179,7 +198,7 @@ export class AppVersionDetails extends Component<Props, State> {
       onFeatureGraphicAdded: this.onFeatureGraphicAdded,
       removeFeatureGraphic: this.removeFeatureGraphic,
       onDeviceSelected: this.onDeviceSelected,
-      enableInstall: this.enableInstall()
+      shouldEnableInstall: this.shouldEnableInstall()
     };
 
     return <View {...viewProps} />;

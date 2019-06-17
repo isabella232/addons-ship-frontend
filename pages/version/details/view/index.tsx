@@ -26,10 +26,10 @@ type Props = {
   onDeviceSelected: (key: string) => void;
   onSave?: () => void;
   onChange?: (key: string, newValue: string) => void;
-  enableInstall: boolean;
+  shouldEnableInstall: boolean;
 };
 
-export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, onChange, enableInstall, ...props }: Props) => {
+export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, onChange, shouldEnableInstall, ...props }: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   const [isDesktop] = mediaQuery('60rem');
@@ -73,7 +73,7 @@ export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, 
                 <Icon name="Bug" />
                 <Text>Save</Text>
               </Button>
-              <Button level="secondary" disabled={!enableInstall}>
+              <Button level="secondary" disabled={!shouldEnableInstall}>
                 <Icon name="Download" />
                 <Text>Install</Text>
               </Button>
