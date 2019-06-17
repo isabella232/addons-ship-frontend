@@ -25,7 +25,8 @@ describe('AppVersionDetailsView', () => {
     removeScreenshot: jest.fn(),
     onDeviceSelected: jest.fn(),
     onFeatureGraphicAdded: jest.fn(),
-    removeFeatureGraphic: jest.fn()
+    removeFeatureGraphic: jest.fn(),
+    shouldEnableInstall: true
   };
 
   describe('when viewed on desktop', () => {
