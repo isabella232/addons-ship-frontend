@@ -78,6 +78,64 @@ describe('AppVersionDetails', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('disables install button when there is no public install page', () => {
+    const props = {
+      appVersion: mockAppVersionWithoutPublicPage,
+      updateAppVersion: jest.fn() as any,
+      uploadScreenshots: jest.fn() as any
+    };
+    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    expect(tree).toMatchSnapshot();
+  });
+
+  xit('disables install button when device is from different platform', () => {
+    jest.doMock('react-device-detect', () => ({ isAndroid: false }));
+
+    const props = {
+      appVersion: mockAndroidAppVersion,
+      updateAppVersion: jest.fn() as any,
+      uploadScreenshots: jest.fn() as any
+    };
+    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    expect(tree).toMatchSnapshot();
+  });
+
+  xit('disables install button when device is from a lower version', () => {
+    jest.doMock('react-device-detect', () => ({ isAndroid: true, osVersion: '1.0.2' }));
+
+    const props = {
+      appVersion: mockAndroidAppVersion,
+      updateAppVersion: jest.fn() as any,
+      uploadScreenshots: jest.fn() as any
+    };
+    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    expect(tree).toMatchSnapshot();
+  });
+
+  xit('disables install button when device is not supported', () => {
+    jest.doMock('react-device-detect', () => ({ isAndroid: true, osVersion: '1.0.3', mobileModel: 'iphone' }));
+
+    const props = {
+      appVersion: mockAndroidAppVersion,
+      updateAppVersion: jest.fn() as any,
+      uploadScreenshots: jest.fn() as any
+    };
+    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    expect(tree).toMatchSnapshot();
+  });
+
+  xit('enables install button when there is public install page, device is same platform, same version, supported', () => {
+    jest.doMock('react-device-detect', () => ({ isAndroid: true, osVersion: '1.0.3', mobileModel: 'phone' }));
+
+    const props = {
+      appVersion: mockAndroidAppVersion,
+      updateAppVersion: jest.fn() as any,
+      uploadScreenshots: jest.fn() as any
+    };
+    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    expect(tree).toMatchSnapshot();
+  });
+
   it('triggers a save', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
     const mockUpdateAppVersion = jest.fn() as any;
