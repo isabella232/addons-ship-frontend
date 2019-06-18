@@ -8,10 +8,15 @@ export type AppVersionProps = {
 };
 
 export const AppVersionPageTabs = ['details', 'devices', 'test', 'activity'];
+export const AppSettingsPageTabs = ['general'];
 
 export type AppVersionPageQuery = AppVersionProps & {
   isPublic?: string;
   selectedTab?: typeof AppVersionPageTabs[number];
+};
+
+export type AppSettingsPageQuery = AppVersionProps & {
+  selectedTab?: typeof AppSettingsPageTabs[number];
 };
 
 export type AppPageQuery = {
