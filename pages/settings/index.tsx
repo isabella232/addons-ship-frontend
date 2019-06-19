@@ -8,24 +8,33 @@ import { AppSettingsPageQuery, PageContext, AppSettingsPageTabs } from '@/models
 import { RootState } from '@/store';
 
 import General from './general';
+import { fetchAppVersion } from '@/ducks/appVersion';
 
 interface SettingsPageProps extends AppSettingsPageQuery {
   pagePath: string;
 }
 
-export class VersionPage extends Component<SettingsPageProps> {
+export class SettingsPage extends Component<SettingsPageProps> {
   static defaultProps = {
     selectedTab: 'general'
   };
 
-  static async getInitialProps({ query, req }: PageContext) {
+  static async getInitialProps({ query, store, req }: PageContext) {
     const {
+      appSlug,
+      versionId,
       selectedTab = AppSettingsPageTabs[0]
     } = (query as unknown) as AppSettingsPageQuery;
 
+    switch (selectedTab) {
+      case 'general':
+        await store.dispatch(fetchAppVersion(appSlug, versionId) as any);
+        break;
+    }
+
     const pagePath = req.path.replace(new RegExp(`/${selectedTab}$`), '');
 
-    return { selectedTab, pagePath };
+    return { appSlug, versionId, selectedTab, pagePath };
   }
 
   tabContent = () => {
@@ -33,7 +42,7 @@ export class VersionPage extends Component<SettingsPageProps> {
 
     switch (selectedTab) {
       case 'general':
-        return <General />;
+        return <General/>;
       default:
         return <h1>{selectedTab}</h1>;
     }
@@ -65,4 +74,4 @@ export class VersionPage extends Component<SettingsPageProps> {
 }
 
 const mapStateToProps = ({ appVersion }: RootState) => ({ appVersion });
-export default connect(mapStateToProps)(VersionPage as any);
+export default connect(mapStateToProps)(SettingsPage as any);
