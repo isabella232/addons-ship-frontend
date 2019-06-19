@@ -9,6 +9,7 @@ export type AppVersionProps = {
 
 export const AppVersionPageTabs = ['details', 'devices', 'test', 'activity'];
 export const AppSettingsPageTabs = ['general'];
+export const MaximumNumberOfCertificates = 30;
 
 export type AppVersionPageQuery = AppVersionProps & {
   isPublic?: string;
@@ -57,6 +58,22 @@ export type AppVersion = {
   buildType?: string,
   publicInstallPageURL?: string;
 };
+
+export type ProvProfile = {
+  name: string;
+}
+
+export type Certificate = {
+  name: string;
+}
+
+export type KeystoreFile = {
+  name: string;
+}
+
+export type ServiceAccountJsonFile = {
+  name: string;
+}
 
 export interface PageContext extends NextContext {
   store: Store;
