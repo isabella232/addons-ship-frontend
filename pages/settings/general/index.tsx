@@ -29,8 +29,12 @@ type GeneralState = {
 
 export class General extends Component<GeneralProps> {
   state: GeneralState = {
-    showTooltips: true
+    showTooltips: false
   };
+
+  componentDidMount() {
+    this.setState({ showTooltips: true });
+  }
 
   render() {
     return (
@@ -296,8 +300,12 @@ export class General extends Component<GeneralProps> {
         </Base>
 
         <Flex margin="x12" direction="horizontal" alignChildrenHorizontal="end" gap="x4">
-          <Button level="secondary" width="8rem">Cancel</Button>
-          <Button level="primary" width="8rem">Save</Button>
+          <Button level="secondary" width="8rem">
+            Cancel
+          </Button>
+          <Button level="primary" width="8rem">
+            Save
+          </Button>
         </Flex>
       </Base>
     );
