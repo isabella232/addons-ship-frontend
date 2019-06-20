@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import map from 'lodash/map';
 import update from 'lodash/update';
 import filter from 'lodash/filter';
-import * as compareVersions from 'compare-versions';
-import { isAndroid, isIOS, osVersion, mobileModel } from 'react-device-detect';
+import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
 
 import { AppVersion } from '@/models';
 import { RootState } from '@/store';
@@ -165,15 +164,16 @@ export class AppVersionDetails extends Component<Props, State> {
       return false;
     }
 
-    if ((appVersion.platform === 'android' && isAndroid === false) || (appVersion.platform === 'ios' && isIOS === false)) {
+    if ((appVersion.platform === 'android' && isAndroid() === false) || (appVersion.platform === 'ios' && isIOS() === false)) {
       return false;
     }
 
-    if (compareVersions(appVersion.version, osVersion) < 0) {
+    console.log(compareVersions);
+    if (compareVersions(appVersion.version, osVersion()) < 0) {
       return false;
     }
 
-    if (!appVersion.supportedDeviceTypes.includes(mobileModel)) {
+    if (!appVersion.supportedDeviceTypes.includes(mobileModel())) {
       return false;
     }
 

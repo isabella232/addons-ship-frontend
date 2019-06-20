@@ -1,10 +1,12 @@
 jest.mock('@/utils/media');
+jest.mock('@/utils/device');
 
 import { shallow, mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
 import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion } from '@/mocks';
 import { mediaQuery } from '@/utils/media';
+import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
 import Dropzone from '@/components/Dropzone';
 
 import DetailsView from './view';
@@ -28,6 +30,10 @@ describe('AppVersionDetailsView', () => {
     removeFeatureGraphic: jest.fn(),
     shouldEnableInstall: true
   };
+
+  beforeAll(() => {
+    (compareVersions as jest.Mock).mockReturnValue(0);
+  });
 
   describe('when viewed on desktop', () => {
     beforeAll(() => {
@@ -88,8 +94,8 @@ describe('AppVersionDetails', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  xit('disables install button when device is from different platform', () => {
-    jest.doMock('react-device-detect', () => ({ isAndroid: false }));
+  it('disables install button when device is from different platform', () => {
+    (isAndroid as jest.Mock).mockReturnValue(false);
 
     const props = {
       appVersion: mockAndroidAppVersion,
@@ -100,8 +106,9 @@ describe('AppVersionDetails', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  xit('disables install button when device is from a lower version', () => {
-    jest.doMock('react-device-detect', () => ({ isAndroid: true, osVersion: '1.0.2' }));
+  it('disables install button when device is from a lower version', () => {
+    (isAndroid as jest.Mock).mockReturnValue(true);
+    (osVersion as jest.Mock).mockReturnValue('1.0.2');
 
     const props = {
       appVersion: mockAndroidAppVersion,
@@ -112,8 +119,10 @@ describe('AppVersionDetails', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  xit('disables install button when device is not supported', () => {
-    jest.doMock('react-device-detect', () => ({ isAndroid: true, osVersion: '1.0.3', mobileModel: 'iphone' }));
+  it('disables install button when device is not supported', () => {
+    (isAndroid as jest.Mock).mockReturnValue(true);
+    (osVersion as jest.Mock).mockReturnValue('1.0.3');
+    (mobileModel as jest.Mock).mockReturnValue('iphone');
 
     const props = {
       appVersion: mockAndroidAppVersion,
@@ -124,8 +133,24 @@ describe('AppVersionDetails', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  xit('enables install button when there is public install page, device is same platform, same version, supported', () => {
-    jest.doMock('react-device-detect', () => ({ isAndroid: true, osVersion: '1.0.3', mobileModel: 'phone' }));
+  it('enables install button when there is public install page, device is same platform, same version, supported', () => {
+    (isAndroid as jest.Mock).mockReturnValue(true);
+    (osVersion as jest.Mock).mockReturnValue('1.0.3');
+    (mobileModel as jest.Mock).mockReturnValue('phone');
+
+    const props = {
+      appVersion: mockAndroidAppVersion,
+      updateAppVersion: jest.fn() as any,
+      uploadScreenshots: jest.fn() as any
+    };
+    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('enables install button when there is public install page, device is same platform, newer version, supported', () => {
+    (isAndroid as jest.Mock).mockReturnValue(true);
+    (osVersion as jest.Mock).mockReturnValue('1.0.4');
+    (mobileModel as jest.Mock).mockReturnValue('phone');
 
     const props = {
       appVersion: mockAndroidAppVersion,
