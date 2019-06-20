@@ -164,7 +164,7 @@ export class AppVersionDetails extends Component<Props, State> {
       return false;
     }
 
-    if ((appVersion.platform === 'android' && isAndroid() === false) || (appVersion.platform === 'ios' && isIOS() === false)) {
+    if ((appVersion.platform === 'android' && !isAndroid()) || (appVersion.platform === 'ios' && !isIOS())) {
       return false;
     }
 

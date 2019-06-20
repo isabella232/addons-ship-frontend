@@ -85,24 +85,14 @@ describe('AppVersionDetails', () => {
   });
 
   it('disables install button when there is no public install page', () => {
-    const props = {
-      appVersion: mockAppVersionWithoutPublicPage,
-      updateAppVersion: jest.fn() as any,
-      uploadScreenshots: jest.fn() as any
-    };
-    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    const tree = toJSON(shallow(<AppVersionDetails {...defaultProps} appVersion={mockAppVersionWithoutPublicPage} />));
     expect(tree).toMatchSnapshot();
   });
 
   it('disables install button when device is from different platform', () => {
     (isAndroid as jest.Mock).mockReturnValue(false);
 
-    const props = {
-      appVersion: mockAndroidAppVersion,
-      updateAppVersion: jest.fn() as any,
-      uploadScreenshots: jest.fn() as any
-    };
-    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    const tree = toJSON(shallow(<AppVersionDetails {...defaultProps} appVersion={mockAndroidAppVersion} />));
     expect(tree).toMatchSnapshot();
   });
 
@@ -110,12 +100,7 @@ describe('AppVersionDetails', () => {
     (isAndroid as jest.Mock).mockReturnValue(true);
     (osVersion as jest.Mock).mockReturnValue('1.0.2');
 
-    const props = {
-      appVersion: mockAndroidAppVersion,
-      updateAppVersion: jest.fn() as any,
-      uploadScreenshots: jest.fn() as any
-    };
-    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    const tree = toJSON(shallow(<AppVersionDetails {...defaultProps} appVersion={mockAndroidAppVersion} />));
     expect(tree).toMatchSnapshot();
   });
 
@@ -124,12 +109,7 @@ describe('AppVersionDetails', () => {
     (osVersion as jest.Mock).mockReturnValue('1.0.3');
     (mobileModel as jest.Mock).mockReturnValue('iphone');
 
-    const props = {
-      appVersion: mockAndroidAppVersion,
-      updateAppVersion: jest.fn() as any,
-      uploadScreenshots: jest.fn() as any
-    };
-    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    const tree = toJSON(shallow(<AppVersionDetails {...defaultProps} appVersion={mockAndroidAppVersion} />));
     expect(tree).toMatchSnapshot();
   });
 
@@ -138,12 +118,7 @@ describe('AppVersionDetails', () => {
     (osVersion as jest.Mock).mockReturnValue('1.0.3');
     (mobileModel as jest.Mock).mockReturnValue('phone');
 
-    const props = {
-      appVersion: mockAndroidAppVersion,
-      updateAppVersion: jest.fn() as any,
-      uploadScreenshots: jest.fn() as any
-    };
-    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    const tree = toJSON(shallow(<AppVersionDetails {...defaultProps} appVersion={mockAndroidAppVersion} />));
     expect(tree).toMatchSnapshot();
   });
 
@@ -152,12 +127,7 @@ describe('AppVersionDetails', () => {
     (osVersion as jest.Mock).mockReturnValue('1.0.4');
     (mobileModel as jest.Mock).mockReturnValue('phone');
 
-    const props = {
-      appVersion: mockAndroidAppVersion,
-      updateAppVersion: jest.fn() as any,
-      uploadScreenshots: jest.fn() as any
-    };
-    const tree = toJSON(shallow(<AppVersionDetails {...props} />));
+    const tree = toJSON(shallow(<AppVersionDetails {...defaultProps} appVersion={mockAndroidAppVersion} />));
     expect(tree).toMatchSnapshot();
   });
 
