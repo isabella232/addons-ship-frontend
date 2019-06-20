@@ -61,6 +61,7 @@ exports[` 1`] = `
   removeFeatureGraphic={[MockFunction]}
   removeScreenshot={[MockFunction]}
   selectedDeviceIdForScreenshots="x"
+  shouldEnableInstall={true}
   showTooltips={true}
 >
   <Base>
@@ -291,14 +292,14 @@ exports[` 1`] = `
                   >
                     <Flex
                       direction="horizontal"
-                      margin="x16"
+                      margin="x4"
                     >
                       <Base
                         className="Flex Flex--horizontal"
-                        margin="x16"
+                        margin="x4"
                       >
                         <div
-                          className="Base Base--margin-x16 Flex Flex--horizontal"
+                          className="Base Base--margin-x4 Flex Flex--horizontal"
                           style={
                             Object {
                               "height": undefined,
@@ -513,6 +514,230 @@ exports[` 1`] = `
                               </div>
                             </Base>
                           </Flex>
+                        </div>
+                      </Base>
+                    </Flex>
+                    <Flex
+                      alignChildren="start"
+                      direction="horizontal"
+                      gap="x4"
+                      margin="x8"
+                    >
+                      <Base
+                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                        margin="x8"
+                      >
+                        <div
+                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <Button
+                            level="primary"
+                            size="medium"
+                          >
+                            <Flex
+                              Component="button"
+                              alignChildren="middle"
+                              className="Button Button--level-primary Button--size-medium"
+                              direction="horizontal"
+                              gap="x2"
+                            >
+                              <Base
+                                Component="button"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                              >
+                                <button
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Icon
+                                    name="Bug"
+                                    size="1.5rem"
+                                  >
+                                    <Base
+                                      Component="svg"
+                                      className="Icon"
+                                      height="1.5rem"
+                                      viewBox="0 0 24 24"
+                                      width="1.5rem"
+                                    >
+                                      <svg
+                                        className="Base Icon"
+                                        style={
+                                          Object {
+                                            "height": "1.5rem",
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": "1.5rem",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Component
+                                          height="100%"
+                                          width="100%"
+                                        >
+                                          <svg
+                                            height="100%"
+                                            viewBox="0 0 24 24"
+                                            width="100%"
+                                          >
+                                            <defs>
+                                              <path
+                                                d="M16.455 17.365l-3.06 3.061a1.967 1.967 0 0 1-2.779-.001l-3.06-3.062L6 18.918V21H4v-2.08c0-.53.211-1.04.586-1.415l1.921-1.92a1.955 1.955 0 0 1-.002-.084V15h-2.5v-2h2.5v-.466L4.59 10.62a2 2 0 0 1-.586-1.414V7h2v2.205l.728.728a5.504 5.504 0 0 1 1.638-2.56l-.78-.78a2 2 0 0 1-.586-1.414V3h2v2.179l1.143 1.143A5.488 5.488 0 0 1 12.005 6a5.49 5.49 0 0 1 1.857.321l1.143-1.141V3h2v2.18a2 2 0 0 1-.586 1.415l-.779.777a5.503 5.503 0 0 1 1.638 2.56l.727-.727V7h2v2.205a2 2 0 0 1-.586 1.414l-1.914 1.913V13h2.5v2h-2.5v.5c0 .028 0 .057-.002.085l1.92 1.919c.374.375.585.884.585 1.415v2.08h-2v-2.08l-1.553-1.554zm-.95-4.865h-2.5v5.487l2.5-2.501V12.5zm-4.5 0h-2.5v2.985l2.5 2.5V12.5zm1-4.5a3.503 3.503 0 0 0-3.355 2.5h6.71A3.502 3.502 0 0 0 12.005 8z"
+                                                id="icons-bug_svg__a"
+                                              />
+                                            </defs>
+                                            <use
+                                              fill="currentColor"
+                                              fillRule="evenodd"
+                                              xlinkHref="#icons-bug_svg__a"
+                                            />
+                                          </svg>
+                                        </Component>
+                                      </svg>
+                                    </Base>
+                                  </Icon>
+                                  <Text>
+                                    <Base
+                                      Component="div"
+                                      className="Text"
+                                    >
+                                      <div
+                                        className="Base Text"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Save
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </button>
+                              </Base>
+                            </Flex>
+                          </Button>
+                          <Button
+                            disabled={false}
+                            level="secondary"
+                            size="medium"
+                          >
+                            <Flex
+                              Component="button"
+                              alignChildren="middle"
+                              className="Button Button--level-secondary Button--size-medium"
+                              direction="horizontal"
+                              disabled={false}
+                              gap="x2"
+                            >
+                              <Base
+                                Component="button"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                disabled={false}
+                              >
+                                <button
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                  disabled={false}
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Icon
+                                    name="Download"
+                                    size="1.5rem"
+                                  >
+                                    <Base
+                                      Component="svg"
+                                      className="Icon"
+                                      height="1.5rem"
+                                      viewBox="0 0 24 24"
+                                      width="1.5rem"
+                                    >
+                                      <svg
+                                        className="Base Icon"
+                                        style={
+                                          Object {
+                                            "height": "1.5rem",
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": "1.5rem",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Component
+                                          height="100%"
+                                          width="100%"
+                                        >
+                                          <svg
+                                            height="100%"
+                                            viewBox="0 0 24 24"
+                                            width="100%"
+                                          >
+                                            <defs>
+                                              <path
+                                                d="M17 10.9l-1.4-1.4-2.6 2.6V4h-2v8L8.5 9.5l-1.4 1.4 5 5 4.9-5zM6 18h12v2H6v-2z"
+                                                id="icons-download_svg__a"
+                                              />
+                                            </defs>
+                                            <use
+                                              fill="currentColor"
+                                              fillRule="evenodd"
+                                              xlinkHref="#icons-download_svg__a"
+                                            />
+                                          </svg>
+                                        </Component>
+                                      </svg>
+                                    </Base>
+                                  </Icon>
+                                  <Text>
+                                    <Base
+                                      Component="div"
+                                      className="Text"
+                                    >
+                                      <div
+                                        className="Base Text"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Install
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </button>
+                              </Base>
+                            </Flex>
+                          </Button>
                         </div>
                       </Base>
                     </Flex>
@@ -3759,6 +3984,583 @@ Object {
 }
 `;
 
+exports[`AppVersionDetails disables install button when device is from a lower version 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "buildType": "Celeste-config",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumSdk": "26",
+      "module": "Celeste-config",
+      "packageName": "com.package.name",
+      "platform": "android",
+      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "shortDescription": "Some short description",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "phone",
+        "tablet",
+        "android-tv",
+        "wear-os",
+      ],
+      "variant": "Fennek",
+      "version": "1.0.3",
+      "versionCode": "165161631",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  shouldEnableInstall={false}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetails disables install button when device is from different platform 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "buildType": "Celeste-config",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumSdk": "26",
+      "module": "Celeste-config",
+      "packageName": "com.package.name",
+      "platform": "android",
+      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "shortDescription": "Some short description",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "phone",
+        "tablet",
+        "android-tv",
+        "wear-os",
+      ],
+      "variant": "Fennek",
+      "version": "1.0.3",
+      "versionCode": "165161631",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  shouldEnableInstall={false}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetails disables install button when device is not supported 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "buildType": "Celeste-config",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumSdk": "26",
+      "module": "Celeste-config",
+      "packageName": "com.package.name",
+      "platform": "android",
+      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "shortDescription": "Some short description",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "phone",
+        "tablet",
+        "android-tv",
+        "wear-os",
+      ],
+      "variant": "Fennek",
+      "version": "1.0.3",
+      "versionCode": "165161631",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  shouldEnableInstall={false}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetails disables install button when there is no public install page 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "bundleId": "bundle-id",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "configuration": "canary",
+      "description": "Some semi-long description",
+      "distributionType": "development",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "keywords": "Keywords",
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumOs": "10.2",
+      "minimumSdk": "dunno",
+      "packageName": "com.package.name",
+      "platform": "ios",
+      "promotionalText": "Promotional Text",
+      "publicInstallPageURL": undefined,
+      "reviewNotes": "Review Notes",
+      "scheme": "piramid",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "iphone",
+        "ipad",
+      ],
+      "version": "1.0.3",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  shouldEnableInstall={false}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetails enables install button when there is public install page, device is same platform, newer version, supported 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "buildType": "Celeste-config",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumSdk": "26",
+      "module": "Celeste-config",
+      "packageName": "com.package.name",
+      "platform": "android",
+      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "shortDescription": "Some short description",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "phone",
+        "tablet",
+        "android-tv",
+        "wear-os",
+      ],
+      "variant": "Fennek",
+      "version": "1.0.3",
+      "versionCode": "165161631",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  shouldEnableInstall={true}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetails enables install button when there is public install page, device is same platform, same version, supported 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "buildType": "Celeste-config",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumSdk": "26",
+      "module": "Celeste-config",
+      "packageName": "com.package.name",
+      "platform": "android",
+      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "shortDescription": "Some short description",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "phone",
+        "tablet",
+        "android-tv",
+        "wear-os",
+      ],
+      "variant": "Fennek",
+      "version": "1.0.3",
+      "versionCode": "165161631",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  shouldEnableInstall={true}
+  showTooltips={true}
+/>
+`;
+
 exports[`AppVersionDetails renders correctly 1`] = `
 <_default
   appVersion={
@@ -3851,6 +4653,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
   selectedDeviceIdForScreenshots="iphone65"
+  shouldEnableInstall={false}
   showTooltips={true}
 />
 `;
@@ -3917,6 +4720,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
   removeFeatureGraphic={[MockFunction]}
   removeScreenshot={[MockFunction]}
   selectedDeviceIdForScreenshots="x"
+  shouldEnableInstall={true}
   showTooltips={true}
 >
   <Base>
@@ -4147,14 +4951,14 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                   >
                     <Flex
                       direction="horizontal"
-                      margin="x16"
+                      margin="x4"
                     >
                       <Base
                         className="Flex Flex--horizontal"
-                        margin="x16"
+                        margin="x4"
                       >
                         <div
-                          className="Base Base--margin-x16 Flex Flex--horizontal"
+                          className="Base Base--margin-x4 Flex Flex--horizontal"
                           style={
                             Object {
                               "height": undefined,
@@ -4369,6 +5173,230 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                               </div>
                             </Base>
                           </Flex>
+                        </div>
+                      </Base>
+                    </Flex>
+                    <Flex
+                      alignChildren="start"
+                      direction="horizontal"
+                      gap="x4"
+                      margin="x8"
+                    >
+                      <Base
+                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                        margin="x8"
+                      >
+                        <div
+                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <Button
+                            level="primary"
+                            size="medium"
+                          >
+                            <Flex
+                              Component="button"
+                              alignChildren="middle"
+                              className="Button Button--level-primary Button--size-medium"
+                              direction="horizontal"
+                              gap="x2"
+                            >
+                              <Base
+                                Component="button"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                              >
+                                <button
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Icon
+                                    name="Bug"
+                                    size="1.5rem"
+                                  >
+                                    <Base
+                                      Component="svg"
+                                      className="Icon"
+                                      height="1.5rem"
+                                      viewBox="0 0 24 24"
+                                      width="1.5rem"
+                                    >
+                                      <svg
+                                        className="Base Icon"
+                                        style={
+                                          Object {
+                                            "height": "1.5rem",
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": "1.5rem",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Component
+                                          height="100%"
+                                          width="100%"
+                                        >
+                                          <svg
+                                            height="100%"
+                                            viewBox="0 0 24 24"
+                                            width="100%"
+                                          >
+                                            <defs>
+                                              <path
+                                                d="M16.455 17.365l-3.06 3.061a1.967 1.967 0 0 1-2.779-.001l-3.06-3.062L6 18.918V21H4v-2.08c0-.53.211-1.04.586-1.415l1.921-1.92a1.955 1.955 0 0 1-.002-.084V15h-2.5v-2h2.5v-.466L4.59 10.62a2 2 0 0 1-.586-1.414V7h2v2.205l.728.728a5.504 5.504 0 0 1 1.638-2.56l-.78-.78a2 2 0 0 1-.586-1.414V3h2v2.179l1.143 1.143A5.488 5.488 0 0 1 12.005 6a5.49 5.49 0 0 1 1.857.321l1.143-1.141V3h2v2.18a2 2 0 0 1-.586 1.415l-.779.777a5.503 5.503 0 0 1 1.638 2.56l.727-.727V7h2v2.205a2 2 0 0 1-.586 1.414l-1.914 1.913V13h2.5v2h-2.5v.5c0 .028 0 .057-.002.085l1.92 1.919c.374.375.585.884.585 1.415v2.08h-2v-2.08l-1.553-1.554zm-.95-4.865h-2.5v5.487l2.5-2.501V12.5zm-4.5 0h-2.5v2.985l2.5 2.5V12.5zm1-4.5a3.503 3.503 0 0 0-3.355 2.5h6.71A3.502 3.502 0 0 0 12.005 8z"
+                                                id="icons-bug_svg__a"
+                                              />
+                                            </defs>
+                                            <use
+                                              fill="currentColor"
+                                              fillRule="evenodd"
+                                              xlinkHref="#icons-bug_svg__a"
+                                            />
+                                          </svg>
+                                        </Component>
+                                      </svg>
+                                    </Base>
+                                  </Icon>
+                                  <Text>
+                                    <Base
+                                      Component="div"
+                                      className="Text"
+                                    >
+                                      <div
+                                        className="Base Text"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Save
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </button>
+                              </Base>
+                            </Flex>
+                          </Button>
+                          <Button
+                            disabled={false}
+                            level="secondary"
+                            size="medium"
+                          >
+                            <Flex
+                              Component="button"
+                              alignChildren="middle"
+                              className="Button Button--level-secondary Button--size-medium"
+                              direction="horizontal"
+                              disabled={false}
+                              gap="x2"
+                            >
+                              <Base
+                                Component="button"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                disabled={false}
+                              >
+                                <button
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                  disabled={false}
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Icon
+                                    name="Download"
+                                    size="1.5rem"
+                                  >
+                                    <Base
+                                      Component="svg"
+                                      className="Icon"
+                                      height="1.5rem"
+                                      viewBox="0 0 24 24"
+                                      width="1.5rem"
+                                    >
+                                      <svg
+                                        className="Base Icon"
+                                        style={
+                                          Object {
+                                            "height": "1.5rem",
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": "1.5rem",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Component
+                                          height="100%"
+                                          width="100%"
+                                        >
+                                          <svg
+                                            height="100%"
+                                            viewBox="0 0 24 24"
+                                            width="100%"
+                                          >
+                                            <defs>
+                                              <path
+                                                d="M17 10.9l-1.4-1.4-2.6 2.6V4h-2v8L8.5 9.5l-1.4 1.4 5 5 4.9-5zM6 18h12v2H6v-2z"
+                                                id="icons-download_svg__a"
+                                              />
+                                            </defs>
+                                            <use
+                                              fill="currentColor"
+                                              fillRule="evenodd"
+                                              xlinkHref="#icons-download_svg__a"
+                                            />
+                                          </svg>
+                                        </Component>
+                                      </svg>
+                                    </Base>
+                                  </Icon>
+                                  <Text>
+                                    <Base
+                                      Component="div"
+                                      className="Text"
+                                    >
+                                      <div
+                                        className="Base Text"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Install
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </button>
+                              </Base>
+                            </Flex>
+                          </Button>
                         </div>
                       </Base>
                     </Flex>
@@ -7966,6 +8994,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
   removeFeatureGraphic={[MockFunction]}
   removeScreenshot={[MockFunction]}
   selectedDeviceIdForScreenshots="x"
+  shouldEnableInstall={true}
   showTooltips={true}
 >
   <Base>
@@ -8196,14 +9225,14 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                   >
                     <Flex
                       direction="horizontal"
-                      margin="x16"
+                      margin="x4"
                     >
                       <Base
                         className="Flex Flex--horizontal"
-                        margin="x16"
+                        margin="x4"
                       >
                         <div
-                          className="Base Base--margin-x16 Flex Flex--horizontal"
+                          className="Base Base--margin-x4 Flex Flex--horizontal"
                           style={
                             Object {
                               "height": undefined,
@@ -8418,6 +9447,230 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                               </div>
                             </Base>
                           </Flex>
+                        </div>
+                      </Base>
+                    </Flex>
+                    <Flex
+                      alignChildren="start"
+                      direction="horizontal"
+                      gap="x4"
+                      margin="x8"
+                    >
+                      <Base
+                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                        margin="x8"
+                      >
+                        <div
+                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <Button
+                            level="primary"
+                            size="medium"
+                          >
+                            <Flex
+                              Component="button"
+                              alignChildren="middle"
+                              className="Button Button--level-primary Button--size-medium"
+                              direction="horizontal"
+                              gap="x2"
+                            >
+                              <Base
+                                Component="button"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                              >
+                                <button
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Icon
+                                    name="Bug"
+                                    size="1.5rem"
+                                  >
+                                    <Base
+                                      Component="svg"
+                                      className="Icon"
+                                      height="1.5rem"
+                                      viewBox="0 0 24 24"
+                                      width="1.5rem"
+                                    >
+                                      <svg
+                                        className="Base Icon"
+                                        style={
+                                          Object {
+                                            "height": "1.5rem",
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": "1.5rem",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Component
+                                          height="100%"
+                                          width="100%"
+                                        >
+                                          <svg
+                                            height="100%"
+                                            viewBox="0 0 24 24"
+                                            width="100%"
+                                          >
+                                            <defs>
+                                              <path
+                                                d="M16.455 17.365l-3.06 3.061a1.967 1.967 0 0 1-2.779-.001l-3.06-3.062L6 18.918V21H4v-2.08c0-.53.211-1.04.586-1.415l1.921-1.92a1.955 1.955 0 0 1-.002-.084V15h-2.5v-2h2.5v-.466L4.59 10.62a2 2 0 0 1-.586-1.414V7h2v2.205l.728.728a5.504 5.504 0 0 1 1.638-2.56l-.78-.78a2 2 0 0 1-.586-1.414V3h2v2.179l1.143 1.143A5.488 5.488 0 0 1 12.005 6a5.49 5.49 0 0 1 1.857.321l1.143-1.141V3h2v2.18a2 2 0 0 1-.586 1.415l-.779.777a5.503 5.503 0 0 1 1.638 2.56l.727-.727V7h2v2.205a2 2 0 0 1-.586 1.414l-1.914 1.913V13h2.5v2h-2.5v.5c0 .028 0 .057-.002.085l1.92 1.919c.374.375.585.884.585 1.415v2.08h-2v-2.08l-1.553-1.554zm-.95-4.865h-2.5v5.487l2.5-2.501V12.5zm-4.5 0h-2.5v2.985l2.5 2.5V12.5zm1-4.5a3.503 3.503 0 0 0-3.355 2.5h6.71A3.502 3.502 0 0 0 12.005 8z"
+                                                id="icons-bug_svg__a"
+                                              />
+                                            </defs>
+                                            <use
+                                              fill="currentColor"
+                                              fillRule="evenodd"
+                                              xlinkHref="#icons-bug_svg__a"
+                                            />
+                                          </svg>
+                                        </Component>
+                                      </svg>
+                                    </Base>
+                                  </Icon>
+                                  <Text>
+                                    <Base
+                                      Component="div"
+                                      className="Text"
+                                    >
+                                      <div
+                                        className="Base Text"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Save
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </button>
+                              </Base>
+                            </Flex>
+                          </Button>
+                          <Button
+                            disabled={false}
+                            level="secondary"
+                            size="medium"
+                          >
+                            <Flex
+                              Component="button"
+                              alignChildren="middle"
+                              className="Button Button--level-secondary Button--size-medium"
+                              direction="horizontal"
+                              disabled={false}
+                              gap="x2"
+                            >
+                              <Base
+                                Component="button"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                disabled={false}
+                              >
+                                <button
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                  disabled={false}
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Icon
+                                    name="Download"
+                                    size="1.5rem"
+                                  >
+                                    <Base
+                                      Component="svg"
+                                      className="Icon"
+                                      height="1.5rem"
+                                      viewBox="0 0 24 24"
+                                      width="1.5rem"
+                                    >
+                                      <svg
+                                        className="Base Icon"
+                                        style={
+                                          Object {
+                                            "height": "1.5rem",
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": "1.5rem",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Component
+                                          height="100%"
+                                          width="100%"
+                                        >
+                                          <svg
+                                            height="100%"
+                                            viewBox="0 0 24 24"
+                                            width="100%"
+                                          >
+                                            <defs>
+                                              <path
+                                                d="M17 10.9l-1.4-1.4-2.6 2.6V4h-2v8L8.5 9.5l-1.4 1.4 5 5 4.9-5zM6 18h12v2H6v-2z"
+                                                id="icons-download_svg__a"
+                                              />
+                                            </defs>
+                                            <use
+                                              fill="currentColor"
+                                              fillRule="evenodd"
+                                              xlinkHref="#icons-download_svg__a"
+                                            />
+                                          </svg>
+                                        </Component>
+                                      </svg>
+                                    </Base>
+                                  </Icon>
+                                  <Text>
+                                    <Base
+                                      Component="div"
+                                      className="Text"
+                                    >
+                                      <div
+                                        className="Base Text"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Install
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </button>
+                              </Base>
+                            </Flex>
+                          </Button>
                         </div>
                       </Base>
                     </Flex>
@@ -11807,6 +13060,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
   removeFeatureGraphic={[MockFunction]}
   removeScreenshot={[MockFunction]}
   selectedDeviceIdForScreenshots="x"
+  shouldEnableInstall={true}
   showTooltips={true}
 >
   <Base>
@@ -12037,14 +13291,14 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                   >
                     <Flex
                       direction="horizontal"
-                      margin="x16"
+                      margin="x4"
                     >
                       <Base
                         className="Flex Flex--horizontal"
-                        margin="x16"
+                        margin="x4"
                       >
                         <div
-                          className="Base Base--margin-x16 Flex Flex--horizontal"
+                          className="Base Base--margin-x4 Flex Flex--horizontal"
                           style={
                             Object {
                               "height": undefined,
@@ -12259,6 +13513,230 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                               </div>
                             </Base>
                           </Flex>
+                        </div>
+                      </Base>
+                    </Flex>
+                    <Flex
+                      alignChildren="start"
+                      direction="horizontal"
+                      gap="x4"
+                      margin="x8"
+                    >
+                      <Base
+                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                        margin="x8"
+                      >
+                        <div
+                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <Button
+                            level="primary"
+                            size="medium"
+                          >
+                            <Flex
+                              Component="button"
+                              alignChildren="middle"
+                              className="Button Button--level-primary Button--size-medium"
+                              direction="horizontal"
+                              gap="x2"
+                            >
+                              <Base
+                                Component="button"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                              >
+                                <button
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Icon
+                                    name="Bug"
+                                    size="1.5rem"
+                                  >
+                                    <Base
+                                      Component="svg"
+                                      className="Icon"
+                                      height="1.5rem"
+                                      viewBox="0 0 24 24"
+                                      width="1.5rem"
+                                    >
+                                      <svg
+                                        className="Base Icon"
+                                        style={
+                                          Object {
+                                            "height": "1.5rem",
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": "1.5rem",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Component
+                                          height="100%"
+                                          width="100%"
+                                        >
+                                          <svg
+                                            height="100%"
+                                            viewBox="0 0 24 24"
+                                            width="100%"
+                                          >
+                                            <defs>
+                                              <path
+                                                d="M16.455 17.365l-3.06 3.061a1.967 1.967 0 0 1-2.779-.001l-3.06-3.062L6 18.918V21H4v-2.08c0-.53.211-1.04.586-1.415l1.921-1.92a1.955 1.955 0 0 1-.002-.084V15h-2.5v-2h2.5v-.466L4.59 10.62a2 2 0 0 1-.586-1.414V7h2v2.205l.728.728a5.504 5.504 0 0 1 1.638-2.56l-.78-.78a2 2 0 0 1-.586-1.414V3h2v2.179l1.143 1.143A5.488 5.488 0 0 1 12.005 6a5.49 5.49 0 0 1 1.857.321l1.143-1.141V3h2v2.18a2 2 0 0 1-.586 1.415l-.779.777a5.503 5.503 0 0 1 1.638 2.56l.727-.727V7h2v2.205a2 2 0 0 1-.586 1.414l-1.914 1.913V13h2.5v2h-2.5v.5c0 .028 0 .057-.002.085l1.92 1.919c.374.375.585.884.585 1.415v2.08h-2v-2.08l-1.553-1.554zm-.95-4.865h-2.5v5.487l2.5-2.501V12.5zm-4.5 0h-2.5v2.985l2.5 2.5V12.5zm1-4.5a3.503 3.503 0 0 0-3.355 2.5h6.71A3.502 3.502 0 0 0 12.005 8z"
+                                                id="icons-bug_svg__a"
+                                              />
+                                            </defs>
+                                            <use
+                                              fill="currentColor"
+                                              fillRule="evenodd"
+                                              xlinkHref="#icons-bug_svg__a"
+                                            />
+                                          </svg>
+                                        </Component>
+                                      </svg>
+                                    </Base>
+                                  </Icon>
+                                  <Text>
+                                    <Base
+                                      Component="div"
+                                      className="Text"
+                                    >
+                                      <div
+                                        className="Base Text"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Save
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </button>
+                              </Base>
+                            </Flex>
+                          </Button>
+                          <Button
+                            disabled={false}
+                            level="secondary"
+                            size="medium"
+                          >
+                            <Flex
+                              Component="button"
+                              alignChildren="middle"
+                              className="Button Button--level-secondary Button--size-medium"
+                              direction="horizontal"
+                              disabled={false}
+                              gap="x2"
+                            >
+                              <Base
+                                Component="button"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                disabled={false}
+                              >
+                                <button
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                  disabled={false}
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Icon
+                                    name="Download"
+                                    size="1.5rem"
+                                  >
+                                    <Base
+                                      Component="svg"
+                                      className="Icon"
+                                      height="1.5rem"
+                                      viewBox="0 0 24 24"
+                                      width="1.5rem"
+                                    >
+                                      <svg
+                                        className="Base Icon"
+                                        style={
+                                          Object {
+                                            "height": "1.5rem",
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": "1.5rem",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Component
+                                          height="100%"
+                                          width="100%"
+                                        >
+                                          <svg
+                                            height="100%"
+                                            viewBox="0 0 24 24"
+                                            width="100%"
+                                          >
+                                            <defs>
+                                              <path
+                                                d="M17 10.9l-1.4-1.4-2.6 2.6V4h-2v8L8.5 9.5l-1.4 1.4 5 5 4.9-5zM6 18h12v2H6v-2z"
+                                                id="icons-download_svg__a"
+                                              />
+                                            </defs>
+                                            <use
+                                              fill="currentColor"
+                                              fillRule="evenodd"
+                                              xlinkHref="#icons-download_svg__a"
+                                            />
+                                          </svg>
+                                        </Component>
+                                      </svg>
+                                    </Base>
+                                  </Icon>
+                                  <Text>
+                                    <Base
+                                      Component="div"
+                                      className="Text"
+                                    >
+                                      <div
+                                        className="Base Text"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Install
+                                      </div>
+                                    </Base>
+                                  </Text>
+                                </button>
+                              </Base>
+                            </Flex>
+                          </Button>
                         </div>
                       </Base>
                     </Flex>
