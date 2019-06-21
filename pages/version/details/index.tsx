@@ -168,7 +168,6 @@ export class AppVersionDetails extends Component<Props, State> {
       return false;
     }
 
-    console.log(compareVersions);
     if (compareVersions(appVersion.version, osVersion()) < 0) {
       return false;
     }
