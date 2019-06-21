@@ -9,7 +9,7 @@ export class ShipAPIService {
   constructor(private config: APIConfig) {}
 
   private token: string | null = null;
-  setToken(token: string) {
+  setToken(token: string | null) {
     this.token = token;
   }
 
@@ -23,7 +23,7 @@ export class ShipAPIService {
 
     const { data } = await get(url, this.token).then(res => res.json());
 
-    return data.map(camelizeKeys) as AppVersion[];
+    return data.map((version: any) => ({ appSlug, ...camelizeKeys(version) })) as AppVersion[];
   }
 
   // GET /apps/{app-slug}/versions/{version-id}

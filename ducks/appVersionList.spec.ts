@@ -10,9 +10,10 @@ import api from '@/services/ship-api';
 import { fetchAppVersionList, appVersionList } from './appVersionList';
 
 describe('appVersionList', () => {
-  let mockStore: MockStoreCreator;
+  let mockStore: MockStoreCreator, store: MockStoreEnhanced;
   beforeEach(() => {
     mockStore = configureMockStore([thunk]);
+    store = mockStore({ auth: { token: 'most-tokenish' } });
   });
 
   describe('reducer', () => {
@@ -24,12 +25,6 @@ describe('appVersionList', () => {
   });
 
   describe('fetchAppVersionList', () => {
-    let store: MockStoreEnhanced;
-
-    beforeEach(() => {
-      store = mockStore();
-    });
-
     it('fetches an app version', async () => {
       await store.dispatch(fetchAppVersionList('app-slug') as any);
 

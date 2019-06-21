@@ -4,11 +4,17 @@ import { createAction, createReducer } from 'deox';
 import api from '@/services/ship-api';
 import { actionTypeCreator } from '@/utils';
 import { AppVersion } from '@/models';
+import { RootState } from '@/store';
 
 const $ = actionTypeCreator('APP_VERSION_LIST');
 
-const _fetchAppVersionList = (appSlug: string) => async (dispatch: Dispatch) => {
+const _fetchAppVersionList = (appSlug: string) => async (dispatch: Dispatch, getState: () => RootState) => {
   dispatch(fetchAppVersionList.next());
+
+  const {
+    auth: { token }
+  } = getState();
+  api.setToken(token);
 
   try {
     const appVersionList = await api.getAppVersionList(appSlug);

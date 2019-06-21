@@ -26,10 +26,10 @@ interface AppContext extends NextAppContext {
 
 class ShipApp extends App<ShipAppProps> {
   static async getInitialProps({ Component, ctx }: AppContext) {
-    const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
-
     const { 'auth-token': token } = nookies.get(ctx);
-    await ctx.store.dispatch(setToken(token));
+    await ctx.store.dispatch(setToken(token || 'test-api-token-1'));
+
+    const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
 
     return { pageProps, appSlug: 'my-super-app', appName: 'My Super App' };
   }
