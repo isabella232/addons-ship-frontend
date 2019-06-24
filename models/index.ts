@@ -35,7 +35,7 @@ export type AppVersion = {
   shortDescription?: string;
   description: string;
   whatsNew: string;
-  versionCode?: string,
+  versionCode?: string;
   minimumOs?: string;
   minimumSdk?: string;
   packageName?: string;
@@ -53,27 +53,59 @@ export type AppVersion = {
   marketingUrl?: string;
   scheme?: string;
   configuration?: string;
-  module?: string,
-  variant?: string,
-  buildType?: string,
+  module?: string;
+  variant?: string;
+  buildType?: string;
   publicInstallPageURL?: string;
 };
 
-export type ProvProfile = {
+export class ProvProfile {
   name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
 }
 
-export type Certificate = {
+export class Certificate {
   name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
 }
 
-export type KeystoreFile = {
+export class KeystoreFile {
   name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
 }
 
-export type ServiceAccountJsonFile = {
+export class ServiceAccountJsonFile {
   name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
 }
+
+export type IosSettings = {
+  artifactExposingWorkflows: string;
+  appleDeveloperAccountEmail: string;
+  appSku: string;
+  appSpecificPassword: string;
+  selectedProvProfile: any;
+  selectedCertificate: any;
+};
+
+export type AndroidSettings = {
+  artifactExposingWorkflows: string;
+  track: string;
+  selectedKeystoreFile: any;
+  selectedServiceAccountJsonFile: any;
+};
 
 export interface PageContext extends NextContext {
   store: Store;

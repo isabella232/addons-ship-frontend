@@ -14,7 +14,15 @@ import {
   Button
 } from '@bitrise/bitkit';
 
-import { AppVersion, ProvProfile, Certificate, KeystoreFile, ServiceAccountJsonFile } from '@/models';
+import {
+  AppVersion,
+  ProvProfile,
+  Certificate,
+  KeystoreFile,
+  ServiceAccountJsonFile,
+  IosSettings,
+  AndroidSettings
+} from '@/models';
 import { mediaQuery } from '@/utils/media';
 
 type Props = {
@@ -25,20 +33,19 @@ type Props = {
   certificates: Certificate[];
   keystoreFiles: KeystoreFile[];
   serviceAccountJsonFiles: ServiceAccountJsonFile[];
-  iosSettings: {
-    artifactExposingWorkflows: string;
-    appleDeveloperAccountEmail: string;
-    appSku: string;
-    appSpecificPassword: string;
-    selectedProvProfile: any;
-    selectedCertificate: any;
-  };
-  androidSettings: {
-    artifactExposingWorkflows: string;
-    track: string;
-    selectedKeystoreFile: any;
-    selectedServiceAccountJsonFile: any;
-  };
+  iosSettings: IosSettings;
+  androidSettings: AndroidSettings;
+  onSettingsPropertyChange: (
+    settings: 'iosSettings' | 'androidSettings',
+    settingsProperty: string,
+    value: string
+  ) => void;
+  onSelectedFileChange: (
+    type: 'ProvProfile' | 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
+    file: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
+  ) => void;
+  onCancel: () => void;
+  onSave: () => void;
 };
 
 export default ({
@@ -49,7 +56,11 @@ export default ({
   keystoreFiles,
   serviceAccountJsonFiles,
   iosSettings,
-  androidSettings
+  androidSettings,
+  onSettingsPropertyChange,
+  onSelectedFileChange,
+  onCancel,
+  onSave
 }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
 
@@ -78,13 +89,23 @@ export default ({
                 )}
               </Flex>
               <InputContainer>
-                <Input name="artifactExposingWorkflows" defaultValue={iosSettings.artifactExposingWorkflows} />
+                <Input
+                  name="artifactExposingWorkflows"
+                  onChange={(event: any) =>
+                    onSettingsPropertyChange('iosSettings', 'artifactExposingWorkflows', event.target.value)
+                  }
+                  value={iosSettings.artifactExposingWorkflows}
+                />
               </InputContainer>
             </Flex>
             <Flex>
               <InputLabel margin="x1">App SKU</InputLabel>
               <InputContainer>
-                <Input name="appSku" defaultValue={iosSettings.appSku} />
+                <Input
+                  name="appSku"
+                  onChange={(event: any) => onSettingsPropertyChange('iosSettings', 'appSku', event.target.value)}
+                  value={iosSettings.appSku}
+                />
               </InputContainer>
             </Flex>
           </Grid>
@@ -94,13 +115,25 @@ export default ({
             <Flex>
               <InputLabel margin="x1">Apple Developer Account Email</InputLabel>
               <InputContainer>
-                <Input name="appleDeveloperAccountEmail" defaultValue={iosSettings.appleDeveloperAccountEmail} />
+                <Input
+                  name="appleDeveloperAccountEmail"
+                  onChange={(event: any) =>
+                    onSettingsPropertyChange('iosSettings', 'appleDeveloperAccountEmail', event.target.value)
+                  }
+                  value={iosSettings.appleDeveloperAccountEmail}
+                />
               </InputContainer>
             </Flex>
             <Flex>
               <InputLabel margin="x1">App Specific Password</InputLabel>
               <InputContainer>
-                <Input name="appSpecificPassword" defaultValue={iosSettings.appSpecificPassword} />
+                <Input
+                  name="appSpecificPassword"
+                  onChange={(event: any) =>
+                    onSettingsPropertyChange('iosSettings', 'appSpecificPassword', event.target.value)
+                  }
+                  value={iosSettings.appSpecificPassword}
+                />
               </InputContainer>
             </Flex>
           </Grid>
@@ -127,9 +160,12 @@ export default ({
             </Link>
           </Flex>
           <Divider color="gray-2" direction="horizontal" margin="x2" />
-          {provProfiles.map((provProfile, index) => (
+          {provProfiles.map((provProfile: ProvProfile, index) => (
             <Base key={index}>
-              <RadioButton defaultChecked={provProfile === iosSettings.selectedProvProfile}>
+              <RadioButton
+                checked={provProfile === iosSettings.selectedProvProfile}
+                onChange={() => onSelectedFileChange('ProvProfile', provProfile)}
+              >
                 <Flex
                   direction="horizontal"
                   alignChildrenHorizontal="between"
@@ -152,9 +188,12 @@ export default ({
             Code Signing Identity ({certificates.length}/{maximumNumberOfCertificates})
           </Text>
           <Divider color="gray-2" direction="horizontal" margin="x2" />
-          {certificates.map((certificate, index) => (
+          {certificates.map((certificate: Certificate, index) => (
             <Base key={index}>
-              <RadioButton defaultChecked={certificate === iosSettings.selectedCertificate}>
+              <RadioButton
+                checked={certificate === iosSettings.selectedCertificate}
+                onChange={() => onSelectedFileChange('Certificate', certificate)}
+              >
                 <Flex
                   direction="horizontal"
                   alignChildrenHorizontal="between"
@@ -196,13 +235,23 @@ export default ({
                 )}
               </Flex>
               <InputContainer>
-                <Input name="artifactExposingWorkflows" defaultValue={androidSettings.artifactExposingWorkflows} />
+                <Input
+                  name="artifactExposingWorkflows"
+                  onChange={(event: any) =>
+                    onSettingsPropertyChange('androidSettings', 'artifactExposingWorkflows', event.target.value)
+                  }
+                  value={androidSettings.artifactExposingWorkflows}
+                />
               </InputContainer>
             </Flex>
             <Flex>
               <InputLabel margin="x1">Track</InputLabel>
               <InputContainer>
-                <Input name="track" defaultValue={androidSettings.track} />
+                <Input
+                  name="track"
+                  onChange={(event: any) => onSettingsPropertyChange('androidSettings', 'track', event.target.value)}
+                  value={androidSettings.track}
+                />
               </InputContainer>
             </Flex>
           </Grid>
@@ -229,9 +278,12 @@ export default ({
             </Link>
           </Flex>
           <Divider color="gray-2" direction="horizontal" margin="x2" />
-          {keystoreFiles.map((keystoreFile, index) => (
+          {keystoreFiles.map((keystoreFile: KeystoreFile, index) => (
             <Base key={index}>
-              <RadioButton defaultChecked={keystoreFile === androidSettings.selectedKeystoreFile}>
+              <RadioButton
+                checked={keystoreFile === androidSettings.selectedKeystoreFile}
+                onChange={() => onSelectedFileChange('KeystoreFile', keystoreFile)}
+              >
                 <Flex
                   direction="horizontal"
                   alignChildrenHorizontal="between"
@@ -254,9 +306,12 @@ export default ({
             Android Service Account JSON File
           </Text>
           <Divider color="gray-2" direction="horizontal" margin="x2" />
-          {serviceAccountJsonFiles.map((serviceAccountJsonFile, index) => (
+          {serviceAccountJsonFiles.map((serviceAccountJsonFile: ServiceAccountJsonFile, index) => (
             <Base key={index}>
-              <RadioButton defaultChecked={serviceAccountJsonFile === androidSettings.selectedServiceAccountJsonFile}>
+              <RadioButton
+                checked={serviceAccountJsonFile === androidSettings.selectedServiceAccountJsonFile}
+                onChange={() => onSelectedFileChange('ServiceAccountJsonFile', serviceAccountJsonFile)}
+              >
                 <Flex
                   direction="horizontal"
                   alignChildrenHorizontal="between"
@@ -276,10 +331,10 @@ export default ({
       </Base>
 
       <Flex margin="x12" direction="horizontal" alignChildrenHorizontal="end" gap="x4">
-        <Button level="secondary" width="8rem">
+        <Button level="secondary" width="8rem" onClick={onCancel}>
           Cancel
         </Button>
-        <Button level="primary" width="8rem">
+        <Button level="primary" width="8rem" onClick={onSave}>
           Save
         </Button>
       </Flex>

@@ -2,72 +2,161 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { RootState } from '@/store';
-import { MaximumNumberOfCertificates, AppVersion, ProvProfile, Certificate, KeystoreFile, ServiceAccountJsonFile } from '@/models';
+import {
+  MaximumNumberOfCertificates,
+  AppVersion,
+  ProvProfile,
+  Certificate,
+  KeystoreFile,
+  ServiceAccountJsonFile,
+  IosSettings,
+  AndroidSettings
+} from '@/models';
 
 import View from './view';
 
 type Props = {
   appVersion: AppVersion;
+};
+
+type State = {
+  showTooltips: boolean;
+  iosSettings: IosSettings;
+  savedIosSettings: IosSettings;
+  androidSettings: AndroidSettings;
+  savedAndroidSettings: AndroidSettings;
   provProfiles: ProvProfile[];
   certificates: Certificate[];
   keystoreFiles: KeystoreFile[];
   serviceAccountJsonFiles: ServiceAccountJsonFile[];
 };
 
-type State = {
-  showTooltips: boolean;
-  iosSettings: {
-    artifactExposingWorkflows: string;
-    appleDeveloperAccountEmail: string;
-    appSku: string;
-    appSpecificPassword: string;
-    selectedProvProfile: any;
-    selectedCertificate: any;
-  };
-  androidSettings: {
-    artifactExposingWorkflows: string;
-    track: string;
-    selectedKeystoreFile: any;
-    selectedServiceAccountJsonFile: any;
-  };
-};
-
 export class General extends Component<Props> {
-  static defaultProps = {
-    provProfiles: [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }],
-    certificates: [
-      { name: 'iPhone Developer: John Doe (ABCD12345678)' },
-      { name: 'iPhone Developer: John Doe (ABCD12345678)' }
-    ],
-    keystoreFiles: [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }],
-    serviceAccountJsonFiles: [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }]
-  };
-
   state: State = {
     showTooltips: false,
     iosSettings: {
-      artifactExposingWorkflows: 'All',
-      appleDeveloperAccountEmail: 'Fill',
-      appSku: 'Fill',
-      appSpecificPassword: 'Fill',
-      selectedProvProfile: this.props.provProfiles[0],
-      selectedCertificate: this.props.certificates[1]
+      artifactExposingWorkflows: '',
+      appleDeveloperAccountEmail: '',
+      appSku: '',
+      appSpecificPassword: '',
+      selectedProvProfile: null,
+      selectedCertificate: null
+    },
+    savedIosSettings: {
+      artifactExposingWorkflows: '',
+      appleDeveloperAccountEmail: '',
+      appSku: '',
+      appSpecificPassword: '',
+      selectedProvProfile: null,
+      selectedCertificate: null
     },
     androidSettings: {
-      artifactExposingWorkflows: 'All',
-      track: 'Release',
-      selectedKeystoreFile: this.props.keystoreFiles[0],
-      selectedServiceAccountJsonFile: this.props.serviceAccountJsonFiles[1]
-    }
+      artifactExposingWorkflows: '',
+      track: '',
+      selectedKeystoreFile: null,
+      selectedServiceAccountJsonFile: null
+    },
+    savedAndroidSettings: {
+      artifactExposingWorkflows: '',
+      track: '',
+      selectedKeystoreFile: null,
+      selectedServiceAccountJsonFile: null
+    },
+    provProfiles: [],
+    certificates: [],
+    keystoreFiles: [],
+    serviceAccountJsonFiles: []
   };
 
   componentDidMount() {
-    this.setState({ showTooltips: true });
+    const provProfiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
+    const certificates = [
+      { name: 'iPhone Developer: John Doe (ABCD12345678)' },
+      { name: 'iPhone Developer: John Doe (ABCD12345678)' }
+    ];
+    const keystoreFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
+    const serviceAccountJsonFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
+
+    this.setState({
+      showTooltips: true,
+      provProfiles: provProfiles,
+      certificates: certificates,
+      keystoreFiles: keystoreFiles,
+      serviceAccountJsonFiles: serviceAccountJsonFiles
+    });
+
+    this.setState({
+      iosSettings: {
+        artifactExposingWorkflows: 'All',
+        appleDeveloperAccountEmail: 'Fill',
+        appSku: 'Fill',
+        appSpecificPassword: 'Fill',
+        selectedProvProfile: provProfiles[0],
+        selectedCertificate: certificates[1]
+      },
+      savedIosSettings: {
+        artifactExposingWorkflows: 'All',
+        appleDeveloperAccountEmail: 'Fill',
+        appSku: 'Fill',
+        appSpecificPassword: 'Fill',
+        selectedProvProfile: provProfiles[0],
+        selectedCertificate: certificates[1]
+      },
+      androidSettings: {
+        artifactExposingWorkflows: 'All',
+        track: 'Release',
+        selectedKeystoreFile: keystoreFiles[0],
+        selectedServiceAccountJsonFile: serviceAccountJsonFiles[1]
+      },
+      savedAndroidSettings: {
+        artifactExposingWorkflows: 'All',
+        track: 'Release',
+        selectedKeystoreFile: keystoreFiles[0],
+        selectedServiceAccountJsonFile: serviceAccountJsonFiles[1]
+      }
+    });
   }
 
+  onSettingsPropertyChange = (settings: 'iosSettings' | 'androidSettings', settingsProperty: string, value: string) => {
+    let updatedSettings = {};
+    updatedSettings[settings] = { ...this.state[settings] };
+    updatedSettings[settings][settingsProperty] = value;
+    this.setState(updatedSettings);
+  };
+
+  onSelectedFileChange = (
+    type: 'ProvProfile' | 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
+    file: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
+  ) => {
+    if (type === 'ProvProfile') {
+      this.setState({ iosSettings: { ...this.state.iosSettings, selectedProvProfile: file } });
+    } else if (type === 'Certificate') {
+      this.setState({ iosSettings: { ...this.state.iosSettings, selectedCertificate: file } });
+    } else if (type === 'KeystoreFile') {
+      this.setState({ androidSettings: { ...this.state.androidSettings, selectedKeystoreFile: file } });
+    } else if (type === 'ServiceAccountJsonFile') {
+      this.setState({ androidSettings: { ...this.state.androidSettings, selectedServiceAccountJsonFile: file } });
+    }
+  };
+
+  onCancel = () => {
+    this.setState({ iosSettings: this.state.savedIosSettings });
+    this.setState({ androidSettings: this.state.savedAndroidSettings });
+  };
+
+  onSave = () => {};
+
   render() {
-    const { appVersion, provProfiles, certificates, keystoreFiles, serviceAccountJsonFiles } = this.props;
-    const { showTooltips, iosSettings, androidSettings } = this.state;
+    const { appVersion } = this.props;
+    const {
+      showTooltips,
+      iosSettings,
+      androidSettings,
+      provProfiles,
+      certificates,
+      keystoreFiles,
+      serviceAccountJsonFiles
+    } = this.state;
 
     const viewProps = {
       maximumNumberOfCertificates: MaximumNumberOfCertificates,
@@ -78,7 +167,11 @@ export class General extends Component<Props> {
       keystoreFiles,
       serviceAccountJsonFiles,
       iosSettings,
-      androidSettings
+      androidSettings,
+      onSettingsPropertyChange: this.onSettingsPropertyChange,
+      onSelectedFileChange: this.onSelectedFileChange,
+      onCancel: this.onCancel,
+      onSave: this.onSave
     };
 
     return <View {...viewProps} />;
