@@ -1370,7 +1370,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       </Flex>
                       <VersionListPageItem
                         description="Some semi-long description"
-                        detailsPagePath="/123/details"
+                        detailsPagePath="/apps/app-slug-123/versions/123/details"
                         key="0-0"
                         note="Updated on September 22, 2018"
                         platformIconUrl="/static/icon-apple.svg"
@@ -1383,11 +1383,11 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             className="versionListPageItemInner"
                           >
                             <Link
-                              href="/123/details"
+                              href="/apps/app-slug-123/versions/123/details"
                             >
                               <a
                                 className="topWrapper"
-                                href="/123/details"
+                                href="/apps/app-slug-123/versions/123/details"
                                 onClick={[Function]}
                               >
                                 <ReactSVG
@@ -1456,7 +1456,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       </VersionListPageItem>
                       <VersionListPageItem
                         description="Some semi-long description"
-                        detailsPagePath="/456/details"
+                        detailsPagePath="/apps/app-slug-456/versions/456/details"
                         key="0-1"
                         note="Updated on September 22, 2018"
                         platformIconUrl="/static/icon-apple.svg"
@@ -1469,11 +1469,11 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             className="versionListPageItemInner"
                           >
                             <Link
-                              href="/456/details"
+                              href="/apps/app-slug-456/versions/456/details"
                             >
                               <a
                                 className="topWrapper"
-                                href="/456/details"
+                                href="/apps/app-slug-456/versions/456/details"
                                 onClick={[Function]}
                               >
                                 <ReactSVG
@@ -1542,7 +1542,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       </VersionListPageItem>
                       <VersionListPageItem
                         description="Some semi-long description"
-                        detailsPagePath="/789/details"
+                        detailsPagePath="/apps/app-slug-789/versions/789/details"
                         key="0-2"
                         note="Updated on September 22, 2018"
                         platformIconUrl="/static/icon-apple.svg"
@@ -1555,11 +1555,11 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             className="versionListPageItemInner"
                           >
                             <Link
-                              href="/789/details"
+                              href="/apps/app-slug-789/versions/789/details"
                             >
                               <a
                                 className="topWrapper"
-                                href="/789/details"
+                                href="/apps/app-slug-789/versions/789/details"
                                 onClick={[Function]}
                               >
                                 <ReactSVG
@@ -1628,7 +1628,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       </VersionListPageItem>
                       <VersionListPageItem
                         description="Some semi-long description"
-                        detailsPagePath="/135/details"
+                        detailsPagePath="/apps/app-slug-135/versions/135/details"
                         key="0-3"
                         note="Updated on September 22, 2018"
                         platformIconUrl="/static/icon-apple.svg"
@@ -1641,11 +1641,11 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             className="versionListPageItemInner"
                           >
                             <Link
-                              href="/135/details"
+                              href="/apps/app-slug-135/versions/135/details"
                             >
                               <a
                                 className="topWrapper"
-                                href="/135/details"
+                                href="/apps/app-slug-135/versions/135/details"
                                 onClick={[Function]}
                               >
                                 <ReactSVG
@@ -1714,7 +1714,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       </VersionListPageItem>
                       <VersionListPageItem
                         description="Some semi-long description"
-                        detailsPagePath="/246/details"
+                        detailsPagePath="/apps/app-slug-246/versions/246/details"
                         key="0-4"
                         note="Updated on September 22, 2018"
                         platformIconUrl="/static/icon-apple.svg"
@@ -1727,11 +1727,11 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             className="versionListPageItemInner"
                           >
                             <Link
-                              href="/246/details"
+                              href="/apps/app-slug-246/versions/246/details"
                             >
                               <a
                                 className="topWrapper"
-                                href="/246/details"
+                                href="/apps/app-slug-246/versions/246/details"
                                 onClick={[Function]}
                               >
                                 <ReactSVG

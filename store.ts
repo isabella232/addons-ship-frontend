@@ -5,11 +5,13 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { appVersion } from '@/ducks/appVersion';
 import { testDevices } from '@/ducks/testDevices';
 import { appVersionList } from '@/ducks/appVersionList';
+import auth from '@/ducks/auth';
 
 const rootReducer = combineReducers({
   appVersion,
   testDevices,
-  appVersionList
+  appVersionList,
+  auth
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

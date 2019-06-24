@@ -6,10 +6,19 @@ import { actionTypeCreator } from '@/utils';
 import { uploadFileToS3 } from '@/utils/file';
 import { AppVersion } from '@/models';
 import { Uploadable } from '@/models/uploadable';
+import { RootState } from '@/store';
 
 const $ = actionTypeCreator('APP_VERSION');
 
-const _fetchAppVersion = (appSlug: string, versionId: string) => async (dispatch: Dispatch) => {
+const _fetchAppVersion = (appSlug: string, versionId: string) => async (
+  dispatch: Dispatch,
+  getState: () => RootState
+) => {
+  const {
+    auth: { token }
+  } = getState();
+
+  api.setToken(token);
   dispatch(fetchAppVersion.next());
 
   try {
@@ -27,7 +36,13 @@ export const fetchAppVersion = Object.assign(_fetchAppVersion, {
   error: createAction($`GET_ERROR`, resolve => (error: Error) => resolve(error))
 });
 
-const _updateAppVersion = (appVersion: AppVersion) => async (dispatch: Dispatch) => {
+const _updateAppVersion = (appVersion: AppVersion) => async (dispatch: Dispatch, getState: () => RootState) => {
+  const {
+    auth: { token }
+  } = getState();
+
+  api.setToken(token);
+
   dispatch(updateAppVersion.next());
 
   try {
@@ -47,8 +62,15 @@ export const updateAppVersion = Object.assign(_updateAppVersion, {
 
 // Upload screenshots
 const _uploadScreenshots = (appSlug: string, versionId: string, screenshots: Uploadable[], files: File[]) => async (
-  dispatch: Dispatch
+  dispatch: Dispatch,
+  getState: () => RootState
 ) => {
+  const {
+    auth: { token }
+  } = getState();
+
+  api.setToken(token);
+
   dispatch(uploadScreenshots.next());
 
   try {

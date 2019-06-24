@@ -12,9 +12,10 @@ import { appVersion, fetchAppVersion, updateAppVersion, uploadScreenshots } from
 import { uploadFileToS3 } from '@/utils/file';
 
 describe('appVersion', () => {
-  let mockStore: MockStoreCreator;
+  let mockStore: MockStoreCreator, store: MockStoreEnhanced;
   beforeEach(() => {
     mockStore = configureMockStore([thunk]);
+    store = mockStore({ auth: { token: 'some-token' } });
   });
 
   describe('reducer', () => {
@@ -26,12 +27,6 @@ describe('appVersion', () => {
   });
 
   describe('fetchAppVersion', () => {
-    let store: MockStoreEnhanced;
-
-    beforeEach(() => {
-      store = mockStore();
-    });
-
     it('fetches an app version', async () => {
       await store.dispatch(fetchAppVersion('app-slug', 'version-id') as any);
 
@@ -47,12 +42,7 @@ describe('appVersion', () => {
   });
 
   describe('updateAppVersion', () => {
-    let store: MockStoreEnhanced;
     const updatedAppVersion: AppVersion = { ...mockAppVersion, description: 'Some different description' };
-
-    beforeEach(() => {
-      store = mockStore();
-    });
 
     it('updates an app version', async () => {
       await store.dispatch(updateAppVersion(updatedAppVersion) as any);
@@ -69,12 +59,6 @@ describe('appVersion', () => {
   });
 
   describe('uploadScreenshots', () => {
-    let store: MockStoreEnhanced;
-
-    beforeEach(() => {
-      store = mockStore();
-    });
-
     it('uploads screenshots', async () => {
       const filename = 'a-file.jpg',
         bits = 'whatever',
