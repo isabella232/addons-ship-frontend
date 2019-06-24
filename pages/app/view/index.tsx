@@ -83,7 +83,7 @@ export default ({
                   {appVersionListItem.appVersions.map((appVersion, j) => (
                     <VersionListPageItem
                       key={`${i}-${j}`}
-                      detailsPagePath={`/${appVersion.id}/details`}
+                      detailsPagePath={`/apps/${appVersion.appSlug}/versions/${appVersion.id}/details`}
                       platformIconUrl="/static/icon-apple.svg"
                       title={`${appVersion.appName} (${appVersion.buildNumber})`}
                       description={appVersion.description}
