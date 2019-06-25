@@ -107,6 +107,15 @@ export type AndroidSettings = {
   selectedServiceAccountJsonFile: any;
 };
 
+export type Settings = {
+  iosSettings?: IosSettings;
+  androidSettings?: AndroidSettings;
+  provProfiles?: ProvProfile[];
+  certificates?: Certificate[];
+  keystoreFiles?: KeystoreFile[];
+  serviceAccountJsonFiles?: ServiceAccountJsonFile[];
+}
+
 export interface PageContext extends NextContext {
   store: Store;
   isServer: boolean;

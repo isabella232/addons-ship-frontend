@@ -9,6 +9,7 @@ import { RootState } from '@/store';
 
 import General from './general';
 import { fetchAppVersion } from '@/ducks/appVersion';
+import { fetchSettings } from '@/ducks/settings';
 
 interface SettingsPageProps extends AppSettingsPageQuery {
   pagePath: string;
@@ -20,15 +21,14 @@ export class SettingsPage extends Component<SettingsPageProps> {
   };
 
   static async getInitialProps({ query, store, req }: PageContext) {
-    const {
-      appSlug,
-      versionId,
-      selectedTab = AppSettingsPageTabs[0]
-    } = (query as unknown) as AppSettingsPageQuery;
+    const { appSlug, versionId, selectedTab = AppSettingsPageTabs[0] } = (query as unknown) as AppSettingsPageQuery;
 
     switch (selectedTab) {
       case 'general':
-        await store.dispatch(fetchAppVersion(appSlug, versionId) as any);
+        await Promise.all([
+          store.dispatch(fetchAppVersion(appSlug, versionId) as any),
+          store.dispatch(fetchSettings(appSlug) as any)
+        ]);
         break;
     }
 
@@ -42,7 +42,7 @@ export class SettingsPage extends Component<SettingsPageProps> {
 
     switch (selectedTab) {
       case 'general':
-        return <General/>;
+        return <General />;
       default:
         return <h1>{selectedTab}</h1>;
     }
@@ -62,9 +62,7 @@ export class SettingsPage extends Component<SettingsPageProps> {
     return (
       <Base paddingVertical="x10">
         <Base maxWidth={960}>
-          <Tabs gap="x10">
-            {tab('general')}
-          </Tabs>
+          <Tabs gap="x10">{tab('general')}</Tabs>
         </Base>
         <Divider color="gray-2" direction="horizontal" />
         <Base maxWidth={960}>{this.tabContent()}</Base>

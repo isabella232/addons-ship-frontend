@@ -4,6 +4,8 @@ import { APIConfig } from '@/models/services';
 import { Uploadable } from '@/models/uploadable';
 import { snakifyKeys, camelizeKeys } from '@/utils';
 import { patch, post, get, put } from '@/utils/request';
+import { mockSettings } from '@/mocks';
+import { Settings } from '@/models';
 
 export class ShipAPIService {
   constructor(private config: APIConfig) {}
@@ -84,6 +86,18 @@ export class ShipAPIService {
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/uploaded`;
 
     return patch(url, this.token);
+  }
+
+  async getSettings(appSlug: string): Promise<Settings> {
+    return mockSettings;
+  }
+
+  async updateSettings(settings: Settings): Promise<void> {
+    if (this.token === null) {
+      throw new Error('Token not set');
+    }
+
+    return await new Promise(resolve => setTimeout(resolve, 500)).then(() => alert('Settings saved!'));
   }
 }
 

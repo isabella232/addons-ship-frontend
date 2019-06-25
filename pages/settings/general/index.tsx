@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import { get, isEqual } from 'lodash';
 
 import { RootState } from '@/store';
 import {
@@ -10,25 +11,23 @@ import {
   KeystoreFile,
   ServiceAccountJsonFile,
   IosSettings,
-  AndroidSettings
+  AndroidSettings,
+  Settings
 } from '@/models';
 
 import View from './view';
+import { updateSettings } from '@/ducks/settings';
 
 type Props = {
   appVersion: AppVersion;
+  settings: Settings;
+  updateSettings: typeof updateSettings;
 };
 
 type State = {
   showTooltips: boolean;
   iosSettings: IosSettings;
-  savedIosSettings: IosSettings;
   androidSettings: AndroidSettings;
-  savedAndroidSettings: AndroidSettings;
-  provProfiles: ProvProfile[];
-  certificates: Certificate[];
-  keystoreFiles: KeystoreFile[];
-  serviceAccountJsonFiles: ServiceAccountJsonFile[];
 };
 
 export class General extends Component<Props> {
@@ -42,77 +41,54 @@ export class General extends Component<Props> {
       selectedProvProfile: null,
       selectedCertificate: null
     },
-    savedIosSettings: {
-      artifactExposingWorkflows: '',
-      appleDeveloperAccountEmail: '',
-      appSku: '',
-      appSpecificPassword: '',
-      selectedProvProfile: null,
-      selectedCertificate: null
-    },
     androidSettings: {
       artifactExposingWorkflows: '',
       track: '',
       selectedKeystoreFile: null,
       selectedServiceAccountJsonFile: null
-    },
-    savedAndroidSettings: {
-      artifactExposingWorkflows: '',
-      track: '',
-      selectedKeystoreFile: null,
-      selectedServiceAccountJsonFile: null
-    },
-    provProfiles: [],
-    certificates: [],
-    keystoreFiles: [],
-    serviceAccountJsonFiles: []
+    }
   };
 
   componentDidMount() {
-    const provProfiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
-    const certificates = [
-      { name: 'iPhone Developer: John Doe (ABCD12345678)' },
-      { name: 'iPhone Developer: John Doe (ABCD12345678)' }
-    ];
-    const keystoreFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
-    const serviceAccountJsonFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
-
     this.setState({
-      showTooltips: true,
-      provProfiles: provProfiles,
-      certificates: certificates,
-      keystoreFiles: keystoreFiles,
-      serviceAccountJsonFiles: serviceAccountJsonFiles
+      showTooltips: true
     });
+
+    this.configureSettingsFromProps();
+  }
+
+  configureSettingsFromProps() {
+    const selectedProvProfile = get(this.props.settings, 'provProfiles', []).find(provProfile =>
+      isEqual(get(this.props, 'settings.iosSettings.selectedProvProfile', undefined), provProfile)
+    );
+    const selectedCertificate = get(this.props.settings, 'certificates', []).find(certificate =>
+      isEqual(get(this.props, 'settings.iosSettings.selectedCertificate', undefined), certificate)
+    );
+    const selectedKeystoreFile = get(this.props.settings, 'keystoreFiles', []).find(keystoreFile =>
+      isEqual(get(this.props, 'settings.androidSettings.selectedKeystoreFile', undefined), keystoreFile)
+    );
+    const selectedServiceAccountJsonFile = get(this.props.settings, 'serviceAccountJsonFiles', []).find(
+      serviceAccountJsonFile =>
+        isEqual(
+          get(this.props, 'settings.androidSettings.selectedServiceAccountJsonFile', undefined),
+          serviceAccountJsonFile
+        )
+    );
 
     this.setState({
       iosSettings: {
-        artifactExposingWorkflows: 'All',
-        appleDeveloperAccountEmail: 'Fill',
-        appSku: 'Fill',
-        appSpecificPassword: 'Fill',
-        selectedProvProfile: provProfiles[0],
-        selectedCertificate: certificates[1]
-      },
-      savedIosSettings: {
-        artifactExposingWorkflows: 'All',
-        appleDeveloperAccountEmail: 'Fill',
-        appSku: 'Fill',
-        appSpecificPassword: 'Fill',
-        selectedProvProfile: provProfiles[0],
-        selectedCertificate: certificates[1]
+        artifactExposingWorkflows: get(this.props, 'settings.iosSettings.artifactExposingWorkflows', undefined),
+        appleDeveloperAccountEmail: get(this.props, 'settings.iosSettings.appleDeveloperAccountEmail', undefined),
+        appSku: get(this.props, 'settings.iosSettings.appSku', undefined),
+        appSpecificPassword: get(this.props, 'settings.iosSettings.appSpecificPassword', undefined),
+        selectedProvProfile: selectedProvProfile,
+        selectedCertificate: selectedCertificate
       },
       androidSettings: {
-        artifactExposingWorkflows: 'All',
-        track: 'Release',
-        selectedKeystoreFile: keystoreFiles[0],
-        selectedServiceAccountJsonFile: serviceAccountJsonFiles[1]
-      },
-      savedAndroidSettings: {
-        artifactExposingWorkflows: 'All',
-        track: 'Release',
-        selectedKeystoreFile: keystoreFiles[0],
-        selectedServiceAccountJsonFile: serviceAccountJsonFiles[1]
+        artifactExposingWorkflows: get(this.props, 'settings.androidSettings.artifactExposingWorkflows', undefined),
+        track: get(this.props, 'settings.androidSettings.track', undefined),
+        selectedKeystoreFile: selectedKeystoreFile,
+        selectedServiceAccountJsonFile: selectedServiceAccountJsonFile
       }
     });
   }
@@ -140,23 +116,30 @@ export class General extends Component<Props> {
   };
 
   onCancel = () => {
-    this.setState({ iosSettings: this.state.savedIosSettings });
-    this.setState({ androidSettings: this.state.savedAndroidSettings });
+    this.configureSettingsFromProps();
   };
 
-  onSave = () => {};
+  onSave = () => {
+    const { updateSettings } = this.props;
+    const { provProfiles, certificates, keystoreFiles, serviceAccountJsonFiles } = this.props.settings;
+    const { iosSettings, androidSettings } = this.state;
 
-  render() {
-    const { appVersion } = this.props;
-    const {
-      showTooltips,
+    updateSettings({
       iosSettings,
       androidSettings,
       provProfiles,
       certificates,
       keystoreFiles,
       serviceAccountJsonFiles
-    } = this.state;
+    } as Settings);
+  };
+
+  render() {
+    const {
+      appVersion,
+      settings: { provProfiles, certificates, keystoreFiles, serviceAccountJsonFiles }
+    } = this.props;
+    const { showTooltips, iosSettings, androidSettings } = this.state;
 
     const viewProps = {
       maximumNumberOfCertificates: MaximumNumberOfCertificates,
@@ -178,6 +161,12 @@ export class General extends Component<Props> {
   }
 }
 
-const mapStateToProps = ({ appVersion }: RootState) => ({ appVersion });
+const mapStateToProps = ({ appVersion, settings }: RootState) => ({ appVersion, settings });
+const mapDispatchToProps = {
+  updateSettings
+};
 
-export default connect(mapStateToProps)(General as any);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(General as any);
