@@ -24,7 +24,7 @@ type Props = {
   updateSettings: typeof updateSettings;
 };
 
-type State = {
+export type State = {
   showTooltips: boolean;
   iosSettings: IosSettings;
   androidSettings: AndroidSettings;
