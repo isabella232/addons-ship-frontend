@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings renders the general tab correctly 1`] = `
+<Base
+  paddingVertical="x10"
+>
+  <Base
+    maxWidth={960}
+  >
+    <Tabs
+      gap="x10"
+    >
+      <Tab
+        active={true}
+      >
+        <Link
+          href="some/path/general"
+        >
+          <a>
+            General
+          </a>
+        </Link>
+      </Tab>
+    </Tabs>
+  </Base>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    width="0.125rem"
+  />
+  <Base
+    maxWidth={960}
+  >
+    <Connect(General) />
+  </Base>
+</Base>
+`;
