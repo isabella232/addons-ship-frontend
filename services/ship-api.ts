@@ -89,6 +89,10 @@ export class ShipAPIService {
   }
 
   async getSettings(appSlug: string): Promise<Settings> {
+    if (this.token === null) {
+      throw new Error('Token not set');
+    }
+
     return mockSettings;
   }
 
@@ -97,7 +101,7 @@ export class ShipAPIService {
       throw new Error('Token not set');
     }
 
-    return await new Promise(resolve => setTimeout(resolve, 500)).then(() => alert('Settings saved!'));
+    return await new Promise(resolve => setTimeout(resolve, 500)).then(() => {});
   }
 }
 
