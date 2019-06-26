@@ -30,7 +30,15 @@ type Props = {
   shouldEnableInstall: boolean;
 };
 
-export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, onChange, shouldEnableInstall, ...props }: Props) => {
+export default ({
+  appVersion,
+  selectedDeviceIdForScreenshots: deviceId,
+  onSave,
+  onChange,
+  shouldEnableInstall,
+  availableDevices,
+  ...props
+}: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   const [isDesktop] = mediaQuery('60rem');
@@ -79,9 +87,23 @@ export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, 
                 <Text>Install</Text>
               </Button>
             </Flex>
-            {appVersion.platform === 'ios' && <FormIos appVersion={appVersion} deviceId={deviceId} {...props} />}
+            {appVersion.platform === 'ios' && (
+              <FormIos
+                appVersion={appVersion}
+                deviceId={deviceId}
+                deviceName={availableDevices.find(device => device.key === deviceId).value}
+                availableDevices={availableDevices}
+                {...props}
+              />
+            )}
             {appVersion.platform === 'android' && (
-              <FormAndroid appVersion={appVersion} deviceId={deviceId} {...props} />
+              <FormAndroid
+                appVersion={appVersion}
+                deviceId={deviceId}
+                deviceName={availableDevices.find(device => device.key === deviceId).value}
+                availableDevices={availableDevices}
+                {...props}
+              />
             )}
           </form>
         </Flex>

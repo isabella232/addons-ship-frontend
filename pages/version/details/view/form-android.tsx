@@ -15,6 +15,7 @@ type Props = {
     isMarked: boolean;
   }>;
   deviceId: string;
+  deviceName: string;
   screenshots?: File[];
   onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
   removeScreenshot: (deviceId: string, screenshot: File) => void;
@@ -28,6 +29,7 @@ export default ({
   appVersion,
   availableDevices,
   deviceId,
+  deviceName,
   screenshots,
   onScreenshotAdded,
   removeScreenshot,
@@ -76,6 +78,7 @@ export default ({
         files={screenshots}
         onFilesAdded={files => onScreenshotAdded(deviceId, files)}
         removeFile={file => removeScreenshot(deviceId, file)}
+        instructionsBeginning={`Drag & Drop for ${deviceName}`}
       />
     </Base>
 

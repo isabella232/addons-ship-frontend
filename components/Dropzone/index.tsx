@@ -10,9 +10,18 @@ type Props = {
   removeFile: (file: File) => void;
   files?: File[];
   isMultiple?: boolean;
+  instructionsBeginning?: string;
+  instructionsAction?: string;
 };
 
-export default ({ onFilesAdded, removeFile, files = [], isMultiple = true }: Props) => {
+export default ({
+  onFilesAdded,
+  removeFile,
+  files = [],
+  isMultiple = true,
+  instructionsBeginning = 'Drag & Drop',
+  instructionsAction = 'Browse Files'
+}: Props) => {
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
       onFilesAdded(acceptedFiles);
@@ -52,13 +61,13 @@ export default ({ onFilesAdded, removeFile, files = [], isMultiple = true }: Pro
               ) : (
                 <Flex direction="vertical" alignChildrenHorizontal="middle">
                   <Text size="x5" color="gray-7" align="middle" weight="medium">
-                    Drag & Drop <br />
+                    {instructionsBeginning} <br />
                     or
                   </Text>
                   <Flex direction="horizontal" alignChildrenVertical="middle">
                     <Icon name="PlusAdd" color="grape-3" paddingHorizontal="x1" />
                     <Text size="x3" color="grape-3" align="middle" weight="medium">
-                      Browse Files
+                      {instructionsAction}
                     </Text>
                   </Flex>
                 </Flex>
