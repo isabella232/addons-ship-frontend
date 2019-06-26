@@ -17,6 +17,7 @@ type Props = {
   items: Array<{
     key: string;
     value: string;
+    isMarked: boolean;
   }>;
   selected: string;
   onSelect: (key: string) => void;
@@ -40,10 +41,10 @@ export default ({ items: originalItems, selected, onSelect }: Props) => {
     const { right: containerRight } = (container as any).current.getBoundingClientRect();
 
     setItems(items =>
-      items.map(item => {
+      items.map((item, index) => {
         const { right } = (item.ref as any).current.getBoundingClientRect();
 
-        return { ...item, isVisible: containerRight - dropdownButtonWidth > right };
+        return { ...item, ...originalItems[index], isVisible: containerRight - dropdownButtonWidth > right };
       })
     );
 
@@ -54,10 +55,14 @@ export default ({ items: originalItems, selected, onSelect }: Props) => {
     <Flex direction="horizontal" className={css.container} innerRef={container} alignChildrenVertical="middle">
       <Flex direction="horizontal" style={{ flex: 1, overflow: 'hidden' }}>
         <Flex direction="horizontal" className={css.list}>
-          {items.map(({ key, value, ref, isVisible }) => (
+          {items.map(({ key, value, isMarked, ref, isVisible }) => (
             <Text
               key={key}
-              className={cx(css.item, { [css.itemSelected]: key === selected, [css.itemHidden]: !isVisible })}
+              className={cx(css.item, {
+                [css.itemSelected]: key === selected,
+                [css.itemHidden]: !isVisible,
+                [css.itemMarked]: isMarked
+              })}
               weight="medium"
               size="x3"
               color="grape-4"

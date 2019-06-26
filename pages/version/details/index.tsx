@@ -189,7 +189,11 @@ export class AppVersionDetails extends Component<Props, State> {
       onChange: this.onChange,
       onSave: this.onSave,
       onScreenshotAdded: this.onScreenshotAdded,
-      availableDevices: map(screenshotList, ({ deviceName: value }, key) => ({ key, value })),
+      availableDevices: map(screenshotList, ({ deviceName: value }, key) => ({
+        key,
+        value,
+        isMarked: !!screenshotList[key].screenshots && screenshotList[key].screenshots.length > 0
+      })),
       selectedDeviceIdForScreenshots,
       screenshots: screenshotList[selectedDeviceIdForScreenshots].screenshots,
       removeScreenshot: this.removeScreenshot,

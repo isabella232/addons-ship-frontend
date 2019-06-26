@@ -16,6 +16,7 @@ type Props = {
   availableDevices: Array<{
     key: string;
     value: string;
+    isMarked: boolean;
   }>;
   screenshots?: File[];
   onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;

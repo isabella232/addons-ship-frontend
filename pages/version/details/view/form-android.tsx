@@ -12,6 +12,7 @@ type Props = {
   availableDevices: Array<{
     key: string;
     value: string;
+    isMarked: boolean;
   }>;
   deviceId: string;
   screenshots?: File[];
