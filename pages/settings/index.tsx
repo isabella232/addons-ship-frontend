@@ -5,10 +5,8 @@ import { Base, Tabs, Tab, Divider } from '@bitrise/bitkit';
 import startCase from 'lodash/startCase';
 
 import { AppSettingsPageQuery, PageContext, AppSettingsPageTabs } from '@/models';
-import { RootState } from '@/store';
 
 import General from './general';
-import { fetchAppVersion } from '@/ducks/appVersion';
 import { fetchSettings } from '@/ducks/settings';
 
 interface SettingsPageProps extends AppSettingsPageQuery {
@@ -21,20 +19,17 @@ export class SettingsPage extends Component<SettingsPageProps> {
   };
 
   static async getInitialProps({ query, store, req }: PageContext) {
-    const { appSlug, versionId, selectedTab = AppSettingsPageTabs[0] } = (query as unknown) as AppSettingsPageQuery;
+    const { appSlug, selectedTab = AppSettingsPageTabs[0] } = (query as unknown) as AppSettingsPageQuery;
 
     switch (selectedTab) {
       case 'general':
-        await Promise.all([
-          store.dispatch(fetchAppVersion(appSlug, versionId) as any),
-          store.dispatch(fetchSettings(appSlug) as any)
-        ]);
+        await store.dispatch(fetchSettings(appSlug) as any);
         break;
     }
 
     const pagePath = req.path.replace(new RegExp(`/${selectedTab}$`), '');
 
-    return { appSlug, versionId, selectedTab, pagePath };
+    return { appSlug, selectedTab, pagePath };
   }
 
   tabContent = () => {
@@ -71,5 +66,4 @@ export class SettingsPage extends Component<SettingsPageProps> {
   }
 }
 
-const mapStateToProps = ({ appVersion }: RootState) => ({ appVersion });
-export default connect(mapStateToProps)(SettingsPage as any);
+export default SettingsPage;

@@ -35,3 +35,41 @@ exports[`Settings renders the general tab correctly 1`] = `
   </Base>
 </Base>
 `;
+
+exports[`Settings renders the specified tab correctly 1`] = `
+<Base
+  paddingVertical="x10"
+>
+  <Base
+    maxWidth={960}
+  >
+    <Tabs
+      gap="x10"
+    >
+      <Tab
+        active={false}
+      >
+        <Link
+          href="some/path/general"
+        >
+          <a>
+            General
+          </a>
+        </Link>
+      </Tab>
+    </Tabs>
+  </Base>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    width="0.125rem"
+  />
+  <Base
+    maxWidth={960}
+  >
+    <h1>
+      other
+    </h1>
+  </Base>
+</Base>
+`;

@@ -8,7 +8,12 @@ import { SettingsPage } from './';
 
 describe('Settings', () => {
   it('renders the general tab correctly', () => {
-    const tree = toJSON(shallow(<SettingsPage appSlug="some-app" versionId="a-version-id" pagePath="some/path" />));
+    const tree = toJSON(shallow(<SettingsPage appSlug="some-app" pagePath="some/path" />));
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders the specified tab correctly', () => {
+    const tree = toJSON(shallow(<SettingsPage appSlug="some-app" pagePath="some/path" selectedTab="other"/>));
     expect(tree).toMatchSnapshot();
   });
 

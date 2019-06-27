@@ -15,7 +15,6 @@ import {
 } from '@bitrise/bitkit';
 
 import {
-  AppVersion,
   ProvProfile,
   Certificate,
   KeystoreFile,
@@ -28,7 +27,6 @@ import { Fragment } from 'react';
 
 type Props = {
   maximumNumberOfCertificates: number;
-  appVersion: AppVersion;
   showTooltips: boolean;
   provProfiles?: ProvProfile[];
   certificates?: Certificate[];

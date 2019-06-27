@@ -155,7 +155,7 @@ describe('Ship API service', () => {
   });
 
   describe('updateSettings', () => {
-    testTokenNotSet(() => api.getSettings('slug'));
+    testTokenNotSet(() => api.updateSettings({}));
 
     it('updates settings for an app', async () => {
       api.setToken('very-token');

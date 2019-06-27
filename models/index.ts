@@ -16,7 +16,8 @@ export type AppVersionPageQuery = AppVersionProps & {
   selectedTab?: typeof AppVersionPageTabs[number];
 };
 
-export type AppSettingsPageQuery = AppVersionProps & {
+export type AppSettingsPageQuery = {
+  appSlug: string;
   selectedTab?: typeof AppSettingsPageTabs[number];
 };
 
@@ -59,36 +60,20 @@ export type AppVersion = {
   publicInstallPageURL?: string;
 };
 
-export class ProvProfile {
+export type ProvProfile = {
   name: string;
-
-  constructor(name: string) {
-    this.name = name;
-  }
 }
 
-export class Certificate {
+export type Certificate = {
   name: string;
-
-  constructor(name: string) {
-    this.name = name;
-  }
 }
 
-export class KeystoreFile {
+export type KeystoreFile = {
   name: string;
-
-  constructor(name: string) {
-    this.name = name;
-  }
 }
 
-export class ServiceAccountJsonFile {
+export type ServiceAccountJsonFile = {
   name: string;
-
-  constructor(name: string) {
-    this.name = name;
-  }
 }
 
 export type IosSettings = {

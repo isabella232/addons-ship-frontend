@@ -8,7 +8,13 @@ import { Settings } from '@/models';
 
 const $ = actionTypeCreator('SETTINGS');
 
-const _fetchSettings = (appSlug: string) => async (dispatch: Dispatch) => {
+const _fetchSettings = (appSlug: string) => async (dispatch: Dispatch, getState: () => RootState) => {
+  const {
+    auth: { token }
+  } = getState();
+
+  api.setToken(token);
+
   dispatch(fetchSettings.next());
 
   try {

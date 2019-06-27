@@ -1,6 +1,6 @@
 import * as next from 'next';
 import * as express from 'express';
-import { AppVersionPageQuery } from './models';
+import { AppVersionPageQuery, AppSettingsPageQuery } from './models';
 
 const port = parseInt(<string>process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -23,6 +23,10 @@ app.prepare().then(() => {
 
   server.get(`${appVersionPath}/:selectedTab?`, (req, res) =>
     app.render(req, res, '/version', req.params as AppVersionPageQuery)
+  );
+
+  server.get(`${appPath}/settings/:selectedTab?`, (req, res) =>
+    app.render(req, res, '/settings', req.params as AppSettingsPageQuery)
   );
 
   server.get('*', (req, res) => handle(req, res));
