@@ -1,4 +1,4 @@
-import { AppVersion } from '@/models';
+import { AppVersion, Settings } from '@/models';
 import { TestDevice } from '@/models/test-device';
 
 export const mockAppVersions: AppVersion[] = [
@@ -205,10 +205,39 @@ export const mockAndroidAppVersion = {
   variant: 'Fennek',
   buildType: 'Celeste-config',
   publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
-}
+};
 
 export const mockTestDevices: TestDevice[] = [
   { deviceId: 'some-device-id-01', deviceType: 'ios', owner: 'test-user-1' },
   { deviceId: 'some-device-id-02', deviceType: 'android', owner: 'test-user-1' },
   { deviceId: 'some-device-id-03', deviceType: 'ios', owner: 'test-user-2' }
 ];
+
+const provProfiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
+const certificates = [
+  { name: 'iPhone Developer: John Doe (ABCD1234)' },
+  { name: 'iPhone Developer: John Doe (ABCD5678)' }
+];
+const keystoreFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
+const serviceAccountJsonFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
+
+export const mockSettings: Settings = {
+  iosSettings: {
+    artifactExposingWorkflows: 'All',
+    appleDeveloperAccountEmail: 'Fill',
+    appSku: 'Fill',
+    appSpecificPassword: 'Fill',
+    selectedProvProfile: provProfiles[0],
+    selectedCertificate: certificates[1]
+  },
+  androidSettings: {
+    artifactExposingWorkflows: 'All',
+    track: 'Release',
+    selectedKeystoreFile: keystoreFiles[0],
+    selectedServiceAccountJsonFile: serviceAccountJsonFiles[1]
+  },
+  provProfiles: provProfiles,
+  certificates: certificates,
+  keystoreFiles: keystoreFiles,
+  serviceAccountJsonFiles: serviceAccountJsonFiles
+};
