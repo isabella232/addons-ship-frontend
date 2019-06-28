@@ -16,6 +16,7 @@ type Props = {
   availableDevices: Array<{
     key: string;
     value: string;
+    isMarked: boolean;
   }>;
   screenshots?: File[];
   onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
@@ -29,7 +30,15 @@ type Props = {
   shouldEnableInstall: boolean;
 };
 
-export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, onChange, shouldEnableInstall, ...props }: Props) => {
+export default ({
+  appVersion,
+  selectedDeviceIdForScreenshots: deviceId,
+  onSave,
+  onChange,
+  shouldEnableInstall,
+  availableDevices,
+  ...props
+}: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   const [isDesktop] = mediaQuery('60rem');
@@ -41,14 +50,14 @@ export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, 
   return (
     <Base>
       <Flex direction="vertical" alignChildren="middle" paddingVertical="x6">
-        <Flex maxWidth={isDesktop ? '100%' : 660}>
+        <Flex maxWidth={isDesktop ? '100%' : 688}>
           <Notification margin="x2" type="progress">
             Publishing to App Store Connect is in progress.
           </Notification>
         </Flex>
       </Flex>
-      <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'}>
-        <Flex maxWidth={660} margin="x0" paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
+      <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'} gap="x4">
+        <Flex maxWidth={688}>
           <form onChange={onFormChange}>
             <Flex direction="horizontal" margin="x4">
               <Image src={appVersion.iconUrl} borderRadius="x2" />
@@ -78,9 +87,23 @@ export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, 
                 <Text>Install</Text>
               </Button>
             </Flex>
-            {appVersion.platform === 'ios' && <FormIos appVersion={appVersion} deviceId={deviceId} {...props} />}
+            {appVersion.platform === 'ios' && (
+              <FormIos
+                appVersion={appVersion}
+                deviceId={deviceId}
+                deviceName={availableDevices.find(device => device.key === deviceId).value}
+                availableDevices={availableDevices}
+                {...props}
+              />
+            )}
             {appVersion.platform === 'android' && (
-              <FormAndroid appVersion={appVersion} deviceId={deviceId} {...props} />
+              <FormAndroid
+                appVersion={appVersion}
+                deviceId={deviceId}
+                deviceName={availableDevices.find(device => device.key === deviceId).value}
+                availableDevices={availableDevices}
+                {...props}
+              />
             )}
           </form>
         </Flex>

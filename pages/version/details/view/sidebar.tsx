@@ -30,11 +30,12 @@ export default ({ publicInstallPageURL, onSave, buildSlug }: Props) => (
           alignChildrenHorizontal="between"
           alignChildrenVertical="middle"
           paddingVertical="x4"
+          gap="x3"
         >
           <Text weight="bold" size="x3">
             Public Install Page link
           </Text>
-          <Base paddingHorizontal="x3">
+          <Base>
             <Clipboard data-clipboard-text={publicInstallPageURL} className={css['clipboard-button']}>
               <Base padding="x1" className={css['icon-container']} borderRadius="x1">
                 <Icon name="Duplicate" size="1.5rem" />

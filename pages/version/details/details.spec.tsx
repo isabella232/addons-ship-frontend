@@ -16,12 +16,12 @@ describe('AppVersionDetailsView', () => {
   const defaultProps = {
     appVersion: mockAppVersion,
     showTooltips: true,
-    selectedDeviceIdForScreenshots: 'x',
+    selectedDeviceIdForScreenshots: 'iphone65',
     availableDevices: [
-      { key: 'iphone65', value: 'iPhone 6.5”' },
-      { key: 'iphone58', value: 'iPhone 5.8”' },
-      { key: 'iphone55', value: 'iPhone 5.5”' },
-      { key: 'iphone47', value: 'iPhone 4.7”' }
+      { key: 'iphone65', value: 'iPhone 6.5”', isMarked: false },
+      { key: 'iphone58', value: 'iPhone 5.8”', isMarked: false },
+      { key: 'iphone55', value: 'iPhone 5.5”', isMarked: false },
+      { key: 'iphone47', value: 'iPhone 4.7”', isMarked: false }
     ],
     onScreenshotAdded: jest.fn(),
     removeScreenshot: jest.fn(),
