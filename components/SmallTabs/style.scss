@@ -16,11 +16,12 @@
   padding: 2 * $grid;
   border-radius: $grid;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  color: $grape-3;
+  opacity: 0.8;
+  transition: opacity 0.2s;
 
-  &:hover {
-    background: $grape-1;
-    color: $grape-3;
+  &Selected, &:hover {
+    opacity: 1;
   }
 
   &Selected::after {
