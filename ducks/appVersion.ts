@@ -100,6 +100,14 @@ export const uploadScreenshots = Object.assign(_uploadScreenshots, {
   error: createAction($`UPLOAD_SCREENSHOTS_ERROR`, resolve => (error: Error) => resolve(error))
 });
 
+export const publishAppVersion = async (appVersion: AppVersion) => {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 500);
+  });
+};
+
 const defaultState = null as AppVersionState;
 
 export type AppVersionState = null | AppVersion;

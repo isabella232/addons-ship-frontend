@@ -7,7 +7,7 @@ import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/uti
 
 import { AppVersion } from '@/models';
 import { RootState } from '@/store';
-import { updateAppVersion, uploadScreenshots } from '@/ducks/appVersion';
+import { updateAppVersion, uploadScreenshots, publishAppVersion, appVersion } from '@/ducks/appVersion';
 
 import View from './view';
 import { Uploadable } from '@/models/uploadable';
@@ -25,6 +25,7 @@ export type State = {
   screenshotList: { [deviceId: string]: DeviceScreenshots };
   featureGraphic?: File;
   selectedDeviceIdForScreenshots: string;
+  publishInProgress: boolean;
 };
 
 type DeviceScreenshots = {
@@ -72,7 +73,8 @@ export class AppVersionDetails extends Component<Props, State> {
       }
     },
     featureGraphic: undefined,
-    selectedDeviceIdForScreenshots: 'iphone65'
+    selectedDeviceIdForScreenshots: 'iphone65',
+    publishInProgress: false
   };
 
   componentDidMount() {
@@ -131,7 +133,12 @@ export class AppVersionDetails extends Component<Props, State> {
     uploadScreenshots(appSlug, id.toString(), uploadable, files);
   };
 
-  onPublish = () => {};
+  onPublish = () => {
+    const { appVersion } = this.props;
+
+    this.setState({ publishInProgress: true });
+    publishAppVersion(appVersion).then(() => this.setState({ publishInProgress: false }));
+  };
 
   onScreenshotAdded = (deviceId: string, newScreenshots: File[]) => {
     const screenshotList = update({ ...this.state.screenshotList }, `${deviceId}.screenshots`, (screenshots = []) =>
@@ -183,16 +190,18 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   readyForPublish = () => {
-    return false;
-  };
-
-  publishInProgress = () => {
-    return false;
+    return true;
   };
 
   render() {
     const { appVersion } = this.props;
-    const { showTooltips, selectedDeviceIdForScreenshots, screenshotList, featureGraphic } = this.state;
+    const {
+      showTooltips,
+      selectedDeviceIdForScreenshots,
+      screenshotList,
+      featureGraphic,
+      publishInProgress
+    } = this.state;
 
     const viewProps = {
       appVersion,
@@ -215,7 +224,7 @@ export class AppVersionDetails extends Component<Props, State> {
       onDeviceSelected: this.onDeviceSelected,
       shouldEnableInstall: this.shouldEnableInstall(),
       readyForPublish: this.readyForPublish(),
-      publishInProgress: this.publishInProgress(),
+      publishInProgress,
       publishTarget:
         (appVersion.platform === 'ios' && 'App Store Connect') ||
         (appVersion.platform === 'android' && 'Google Play Store') ||
