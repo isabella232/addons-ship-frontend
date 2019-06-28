@@ -6,7 +6,7 @@ import update from 'lodash/update';
 import filter from 'lodash/filter';
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
 
-import { AppVersion, Settings } from '@/models';
+import { AppVersion, Settings, IosSettings, AndroidSettings } from '@/models';
 import { RootState } from '@/store';
 import { updateAppVersion, uploadScreenshots, publishAppVersion, appVersion } from '@/ducks/appVersion';
 import { fetchSettings } from '@/ducks/settings';
@@ -194,9 +194,12 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   readyForPublish = () => {
-    const { settings } = this.props;
+    const { appVersion, settings } = this.props;
 
-    return settingService.isComplete(settings);
+    return settingService.isComplete(appVersion, settings as {
+      iosSettings: IosSettings;
+      androidSettings: AndroidSettings;
+    });
   };
 
   render() {

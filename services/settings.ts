@@ -1,10 +1,34 @@
-import { Settings } from '@/models';
+import { AppVersion, Settings, IosSettings, AndroidSettings } from '@/models';
 
 class SettingsService {
   constructor() {}
 
-  isComplete = (settings: Settings) => {
-    return !!settings;
+  isComplete = (
+    appVersion: AppVersion,
+    { iosSettings, androidSettings }: { iosSettings: IosSettings; androidSettings: AndroidSettings }
+  ) => {
+    switch (appVersion.platform) {
+      case 'ios': {
+        return (
+          iosSettings.artifactExposingWorkflows &&
+          iosSettings.appleDeveloperAccountEmail &&
+          iosSettings.appSku &&
+          iosSettings.appSpecificPassword &&
+          iosSettings.selectedProvProfile &&
+          iosSettings.selectedCertificate
+        );
+      }
+      case 'android': {
+        return (
+          androidSettings.artifactExposingWorkflows &&
+          androidSettings.track &&
+          androidSettings.selectedKeystoreFile &&
+          androidSettings.selectedServiceAccountJsonFile
+        );
+      }
+    }
+
+    return false;
   };
 }
 
