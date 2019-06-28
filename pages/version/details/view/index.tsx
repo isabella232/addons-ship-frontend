@@ -50,14 +50,14 @@ export default ({
   return (
     <Base>
       <Flex direction="vertical" alignChildren="middle" paddingVertical="x6">
-        <Flex maxWidth={isDesktop ? '100%' : 660}>
+        <Flex maxWidth={isDesktop ? '100%' : 688}>
           <Notification margin="x2" type="progress">
             Publishing to App Store Connect is in progress.
           </Notification>
         </Flex>
       </Flex>
-      <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'}>
-        <Flex maxWidth={660} margin="x0" paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
+      <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'} gap="x4">
+        <Flex maxWidth={688}>
           <form onChange={onFormChange}>
             <Flex direction="horizontal" margin="x4">
               <Image src={appVersion.iconUrl} borderRadius="x2" />
