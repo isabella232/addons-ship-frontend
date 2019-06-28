@@ -1,20 +1,23 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import map from 'lodash/map';
+import { get } from 'lodash';
 import update from 'lodash/update';
 import filter from 'lodash/filter';
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
 
-import { AppVersion } from '@/models';
+import { AppVersion, Settings } from '@/models';
 import { RootState } from '@/store';
 import { updateAppVersion, uploadScreenshots, publishAppVersion, appVersion } from '@/ducks/appVersion';
+import { fetchSettings } from '@/ducks/settings';
+import settingService from '@/services/settings';
 
 import View from './view';
 import { Uploadable } from '@/models/uploadable';
-import { get } from 'lodash';
 
 type Props = {
   appVersion: AppVersion;
+  settings: Settings;
   updateAppVersion: typeof updateAppVersion;
   uploadScreenshots: typeof uploadScreenshots;
 };
@@ -25,6 +28,7 @@ export type State = {
   screenshotList: { [deviceId: string]: DeviceScreenshots };
   featureGraphic?: File;
   selectedDeviceIdForScreenshots: string;
+  readyForPublish?: boolean;
   publishInProgress: boolean;
 };
 
@@ -190,7 +194,9 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   readyForPublish = () => {
-    return true;
+    const { settings } = this.props;
+
+    return settingService.isComplete(settings);
   };
 
   render() {
@@ -236,7 +242,7 @@ export class AppVersionDetails extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ appVersion }: RootState) => ({ appVersion });
+const mapStateToProps = ({ appVersion, settings }: RootState) => ({ appVersion, settings });
 const mapDispatchToProps = {
   updateAppVersion,
   uploadScreenshots
