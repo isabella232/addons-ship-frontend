@@ -30,7 +30,7 @@ export default ({
   );
 
   const thumbs = files.map(file => (
-    <Base paddingHorizontal="x3" key={file.name} container>
+    <Base paddingHorizontal="x3" key={file.name} container className={css.thumbnailContainer}>
       <div className={css.removeIcon} onClick={() => removeFile(file)}>
         <Icon name="CloseSmall" color="white" />
       </div>
