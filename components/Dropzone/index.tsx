@@ -47,7 +47,7 @@ export default ({
   const hasFiles = files.length > 0;
 
   return (
-    <Card elevation="x1" padding="x3">
+    <Card padding="x3">
       <input {...getInputProps()} />
       <Base backgroundColor="gray-1" padding="x3">
         <Flex direction="horizontal" height={384} className={css.scrollableWrapper}>
