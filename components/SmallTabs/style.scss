@@ -16,6 +16,7 @@
   padding: 2 * $grid;
   border-radius: $grid;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 
   &:hover {
     background: $grape-1;
@@ -51,6 +52,7 @@
   padding: $grid;
   border-radius: $grid;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 
   &:hover {
     background: $grape-1;
