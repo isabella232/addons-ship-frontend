@@ -4,7 +4,7 @@ jest.mock('@/utils/device');
 import { shallow, mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
-import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion } from '@/mocks';
+import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion, mockSettings } from '@/mocks';
 import { mediaQuery } from '@/utils/media';
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
 import Dropzone from '@/components/Dropzone';
@@ -28,7 +28,11 @@ describe('AppVersionDetailsView', () => {
     onDeviceSelected: jest.fn(),
     onFeatureGraphicAdded: jest.fn(),
     removeFeatureGraphic: jest.fn(),
-    shouldEnableInstall: true
+    shouldEnableInstall: true,
+    readyForPublish: true,
+    publishInProgress: false,
+    publishTarget: 'App Store Connect',
+    settingsPath: '/path'
   };
 
   beforeAll(() => {
@@ -74,6 +78,7 @@ describe('AppVersionDetailsView', () => {
 describe('AppVersionDetails', () => {
   const defaultProps = {
     appVersion: mockAppVersion,
+    settings: mockSettings,
     updateAppVersion: jest.fn() as any,
     uploadScreenshots: jest.fn() as any
   };
