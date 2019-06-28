@@ -130,6 +130,8 @@ export class AppVersionDetails extends Component<Props, State> {
     uploadScreenshots(appSlug, id.toString(), uploadable, files);
   };
 
+  onPublish = () => {};
+
   onScreenshotAdded = (deviceId: string, newScreenshots: File[]) => {
     const screenshotList = update({ ...this.state.screenshotList }, `${deviceId}.screenshots`, (screenshots = []) =>
       screenshots.concat(newScreenshots)
@@ -196,6 +198,7 @@ export class AppVersionDetails extends Component<Props, State> {
       showTooltips,
       onChange: this.onChange,
       onSave: this.onSave,
+      onPublish: this.onPublish,
       onScreenshotAdded: this.onScreenshotAdded,
       availableDevices: map(screenshotList, ({ deviceName: value }, key) => ({
         key,

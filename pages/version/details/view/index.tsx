@@ -26,6 +26,7 @@ type Props = {
   removeFeatureGraphic: () => void;
   onDeviceSelected: (key: string) => void;
   onSave?: () => void;
+  onPublish?: () => void;
   onChange?: (key: string, newValue: string) => void;
   shouldEnableInstall: boolean;
   readyForPublish: boolean;
@@ -38,6 +39,7 @@ export default ({
   appVersion,
   selectedDeviceIdForScreenshots: deviceId,
   onSave,
+  onPublish,
   onChange,
   shouldEnableInstall,
   readyForPublish,
@@ -131,6 +133,7 @@ export default ({
             publicInstallPageURL={appVersion.publicInstallPageURL}
             shouldEnablePublish={readyForPublish && !publishInProgress}
             onSave={onSave}
+            onPublish={onPublish}
             buildSlug={appVersion.buildSlug}
           />
         )}
