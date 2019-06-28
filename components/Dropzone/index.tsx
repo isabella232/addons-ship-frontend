@@ -48,7 +48,7 @@ export default ({
 
   return (
     <Card>
-      <Base backgroundColor="gray-1" className={css.dropzoneCard} padding="x3">
+      <Base backgroundColor="gray-1" className={css.dropzoneCardInner} padding="x3">
         <input {...getInputProps()} />
         <Flex direction="horizontal" height={384} className={css.scrollableWrapper}>
           <Flex direction="horizontal" height={400} className={css.scrollable}>
