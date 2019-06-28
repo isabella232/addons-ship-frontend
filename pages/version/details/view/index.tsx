@@ -9,15 +9,17 @@ import Sidebar from './sidebar';
 import FormIos from './form-ios';
 import FormAndroid from './form-android';
 
+type DeviceInfo = {
+  key: string;
+  value: string;
+  isMarked: boolean;
+};
+
 type Props = {
   appVersion: AppVersion;
   showTooltips: boolean;
   selectedDeviceIdForScreenshots: string;
-  availableDevices: Array<{
-    key: string;
-    value: string;
-    isMarked: boolean;
-  }>;
+  availableDevices: DeviceInfo[];
   screenshots?: File[];
   onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
   removeScreenshot: (deviceId: string, screenshot: File) => void;
@@ -56,6 +58,8 @@ export default ({
   const onFormChange = ({ target: { name, value } }: any) => {
     onChange && onChange(name, value);
   };
+
+  const deviceInfo = availableDevices.find(device => device.key === deviceId) as DeviceInfo;
 
   return (
     <Base>
@@ -111,7 +115,7 @@ export default ({
               <FormIos
                 appVersion={appVersion}
                 deviceId={deviceId}
-                deviceName={availableDevices.find(device => device.key === deviceId).value}
+                deviceName={deviceInfo.value}
                 availableDevices={availableDevices}
                 {...props}
               />
@@ -120,7 +124,7 @@ export default ({
               <FormAndroid
                 appVersion={appVersion}
                 deviceId={deviceId}
-                deviceName={availableDevices.find(device => device.key === deviceId).value}
+                deviceName={deviceInfo.value}
                 availableDevices={availableDevices}
                 {...props}
               />

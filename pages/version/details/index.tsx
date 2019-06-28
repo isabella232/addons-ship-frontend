@@ -11,6 +11,7 @@ import { updateAppVersion, uploadScreenshots } from '@/ducks/appVersion';
 
 import View from './view';
 import { Uploadable } from '@/models/uploadable';
+import { get } from 'lodash';
 
 type Props = {
   appVersion: AppVersion;
@@ -203,7 +204,7 @@ export class AppVersionDetails extends Component<Props, State> {
       availableDevices: map(screenshotList, ({ deviceName: value }, key) => ({
         key,
         value,
-        isMarked: screenshotList[key] && screenshotList[key].screenshots && screenshotList[key].screenshots.length > 0
+        isMarked: ((get(get(screenshotList, key), 'screenshots') || []).length > 0) as boolean
       })),
       selectedDeviceIdForScreenshots,
       screenshots: screenshotList[selectedDeviceIdForScreenshots].screenshots,
