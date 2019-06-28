@@ -23,8 +23,23 @@
   }
 }
 
+$dropzone-height: 100 * $grid;
+
+.scrollableWrapper {
+  height: $dropzone-height;
+  overflow: hidden;
+}
+
 .scrollable {
+  width: 100%;
+  height: $dropzone-height + 100;
   overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.scrollableInner {
+  min-width: 100%;
+  height: $dropzone-height;
 }
 
 .removeIcon {
