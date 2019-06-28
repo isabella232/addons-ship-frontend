@@ -28,6 +28,10 @@ type Props = {
   onSave?: () => void;
   onChange?: (key: string, newValue: string) => void;
   shouldEnableInstall: boolean;
+  readyForPublish: boolean;
+  publishInProgress: boolean;
+  publishTarget: string;
+  settingsPath: string;
 };
 
 export default ({
@@ -36,6 +40,10 @@ export default ({
   onSave,
   onChange,
   shouldEnableInstall,
+  readyForPublish,
+  publishInProgress,
+  publishTarget,
+  settingsPath,
   availableDevices,
   ...props
 }: Props) => {
@@ -51,9 +59,19 @@ export default ({
     <Base>
       <Flex direction="vertical" alignChildren="middle" paddingVertical="x6">
         <Flex maxWidth={isDesktop ? '100%' : 688}>
-          <Notification margin="x2" type="progress">
-            Publishing to App Store Connect is in progress.
-          </Notification>
+          {publishInProgress ? (
+            <Notification margin="x2" type="progress">
+              Publishing to {publishTarget} is in progress.
+            </Notification>
+          ) : readyForPublish ? (
+            <Notification margin="x2" type="inform" icon="Deployment">
+              App is ready for publishing to {publishTarget}.
+            </Notification>
+          ) : (
+            <Notification margin="x2" type="alert" icon="Warning">
+              You need to setup publishing at the <a href={settingsPath}>Settings page.</a>
+            </Notification>
+          )}
         </Flex>
       </Flex>
       <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'} gap="x4">
@@ -111,6 +129,7 @@ export default ({
         {isDesktop && (
           <Sidebar
             publicInstallPageURL={appVersion.publicInstallPageURL}
+            shouldEnablePublish={readyForPublish && !publishInProgress}
             onSave={onSave}
             buildSlug={appVersion.buildSlug}
           />

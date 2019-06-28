@@ -179,6 +179,14 @@ export class AppVersionDetails extends Component<Props, State> {
     return true;
   };
 
+  readyForPublish = () => {
+    return false;
+  };
+
+  publishInProgress = () => {
+    return false;
+  };
+
   render() {
     const { appVersion } = this.props;
     const { showTooltips, selectedDeviceIdForScreenshots, screenshotList, featureGraphic } = this.state;
@@ -201,7 +209,14 @@ export class AppVersionDetails extends Component<Props, State> {
       onFeatureGraphicAdded: this.onFeatureGraphicAdded,
       removeFeatureGraphic: this.removeFeatureGraphic,
       onDeviceSelected: this.onDeviceSelected,
-      shouldEnableInstall: this.shouldEnableInstall()
+      shouldEnableInstall: this.shouldEnableInstall(),
+      readyForPublish: this.readyForPublish(),
+      publishInProgress: this.publishInProgress(),
+      publishTarget:
+        (appVersion.platform === 'ios' && 'App Store Connect') ||
+        (appVersion.platform === 'android' && 'Google Play Store') ||
+        'production',
+      settingsPath: `/apps/${appVersion.appSlug}/settings`
     };
 
     return <View {...viewProps} />;
