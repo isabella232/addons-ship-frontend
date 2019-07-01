@@ -1,4 +1,5 @@
 jest.mock('@/ducks/appVersion');
+jest.mock('@/ducks/settings');
 jest.mock('@/ducks/testDevices');
 
 import { shallow } from 'enzyme';
@@ -6,6 +7,7 @@ import toJSON from 'enzyme-to-json';
 
 import { mockAppVersion } from '@/mocks';
 import { fetchAppVersion } from '@/ducks/appVersion';
+import { fetchSettings } from '@/ducks/settings';
 import { fetchTestDevices } from '@/ducks/testDevices';
 import { VersionPage } from './';
 
@@ -37,10 +39,11 @@ describe('AppVersion', () => {
   describe('dispatches the proper actions', () => {
     const req = { path: 'some/path' };
 
-    it('dispatches fetchAppVersion', async () => {
+    it('dispatches fetchAppVersion and fetchSettings', async () => {
       await VersionPage.getInitialProps({ query: {}, req, store: { dispatch: jest.fn() } } as any);
 
       expect(fetchAppVersion).toHaveBeenCalled();
+      expect(fetchSettings).toHaveBeenCalled();
     });
 
     it('dispatches fetchTestDevices', async () => {
