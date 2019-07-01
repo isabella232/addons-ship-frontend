@@ -1,6 +1,866 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
+exports[`AppVersionDetails Component methods getUploadableScreenshots 1`] = `
+Array [
+  Array [
+    Object {
+      "deviceType": "iPhone 6.5”",
+      "filename": "image.png",
+      "filesize": 0,
+      "screenSize": "iPhone 6.5”",
+    },
+    Object {
+      "deviceType": "iPhone 5.8”",
+      "filename": "image2.jpg",
+      "filesize": 0,
+      "screenSize": "iPhone 5.8”",
+    },
+  ],
+  Array [
+    File {},
+    File {},
+  ],
+]
+`;
+
+exports[`AppVersionDetails appends a feature graphic for Android apps 1`] = `
+File {
+  "path": "file.png",
+  "type": "image/png",
+}
+`;
+
+exports[`AppVersionDetails appends a screenshot 1`] = `
+Object {
+  "applewatch": Object {
+    "deviceName": "Apple Watch",
+  },
+  "applewatch4": Object {
+    "deviceName": "Apple Watch 4",
+  },
+  "ipad": Object {
+    "deviceName": "iPad",
+  },
+  "ipadpro": Object {
+    "deviceName": "iPad Pro",
+  },
+  "ipadpro105": Object {
+    "deviceName": "iPad Pro 10.5”",
+  },
+  "ipadpro129": Object {
+    "deviceName": "iPad Pro 12.9”",
+  },
+  "iphone4": Object {
+    "deviceName": "iPhone 4”",
+  },
+  "iphone47": Object {
+    "deviceName": "iPhone 4.7”",
+  },
+  "iphone55": Object {
+    "deviceName": "iPhone 5.5”",
+  },
+  "iphone58": Object {
+    "deviceName": "iPhone 5.8”",
+  },
+  "iphone65": Object {
+    "deviceName": "iPhone 6.5”",
+    "screenshots": Array [
+      File {
+        "path": "file.png",
+        "type": "image/png",
+      },
+    ],
+  },
+}
+`;
+
+exports[`AppVersionDetails disables install button when device is from a lower version 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "buildType": "Celeste-config",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumSdk": "26",
+      "module": "Celeste-config",
+      "packageName": "com.package.name",
+      "platform": "android",
+      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "shortDescription": "Some short description",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "phone",
+        "tablet",
+        "android-tv",
+        "wear-os",
+      ],
+      "variant": "Fennek",
+      "version": "1.0.3",
+      "versionCode": "165161631",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "isMarked": false,
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onPublish={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  publishInProgress={false}
+  publishTarget="Google Play Store"
+  readyForPublish={true}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  settingsPath="/apps/app-slug-123/settings"
+  shouldEnableInstall={false}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetails disables install button when device is from different platform 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "buildType": "Celeste-config",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumSdk": "26",
+      "module": "Celeste-config",
+      "packageName": "com.package.name",
+      "platform": "android",
+      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "shortDescription": "Some short description",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "phone",
+        "tablet",
+        "android-tv",
+        "wear-os",
+      ],
+      "variant": "Fennek",
+      "version": "1.0.3",
+      "versionCode": "165161631",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "isMarked": false,
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onPublish={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  publishInProgress={false}
+  publishTarget="Google Play Store"
+  readyForPublish={true}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  settingsPath="/apps/app-slug-123/settings"
+  shouldEnableInstall={false}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetails disables install button when device is not supported 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "buildType": "Celeste-config",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumSdk": "26",
+      "module": "Celeste-config",
+      "packageName": "com.package.name",
+      "platform": "android",
+      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "shortDescription": "Some short description",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "phone",
+        "tablet",
+        "android-tv",
+        "wear-os",
+      ],
+      "variant": "Fennek",
+      "version": "1.0.3",
+      "versionCode": "165161631",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "isMarked": false,
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onPublish={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  publishInProgress={false}
+  publishTarget="Google Play Store"
+  readyForPublish={true}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  settingsPath="/apps/app-slug-123/settings"
+  shouldEnableInstall={false}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetails disables install button when there is no public install page 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "bundleId": "bundle-id",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "configuration": "canary",
+      "description": "Some semi-long description",
+      "distributionType": "development",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "keywords": "Keywords",
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumOs": "10.2",
+      "minimumSdk": "dunno",
+      "packageName": "com.package.name",
+      "platform": "ios",
+      "promotionalText": "Promotional Text",
+      "publicInstallPageURL": undefined,
+      "reviewNotes": "Review Notes",
+      "scheme": "piramid",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "iphone",
+        "ipad",
+      ],
+      "version": "1.0.3",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "isMarked": false,
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onPublish={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  publishInProgress={false}
+  publishTarget="App Store Connect"
+  readyForPublish={true}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  settingsPath="/apps/app-slug-123/settings"
+  shouldEnableInstall={false}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetails enables install button when there is public install page, device is same platform, newer version, supported 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "buildType": "Celeste-config",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumSdk": "26",
+      "module": "Celeste-config",
+      "packageName": "com.package.name",
+      "platform": "android",
+      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "shortDescription": "Some short description",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "phone",
+        "tablet",
+        "android-tv",
+        "wear-os",
+      ],
+      "variant": "Fennek",
+      "version": "1.0.3",
+      "versionCode": "165161631",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "isMarked": false,
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onPublish={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  publishInProgress={false}
+  publishTarget="Google Play Store"
+  readyForPublish={true}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  settingsPath="/apps/app-slug-123/settings"
+  shouldEnableInstall={true}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetails enables install button when there is public install page, device is same platform, same version, supported 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "buildType": "Celeste-config",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumSdk": "26",
+      "module": "Celeste-config",
+      "packageName": "com.package.name",
+      "platform": "android",
+      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "shortDescription": "Some short description",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "phone",
+        "tablet",
+        "android-tv",
+        "wear-os",
+      ],
+      "variant": "Fennek",
+      "version": "1.0.3",
+      "versionCode": "165161631",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "isMarked": false,
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onPublish={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  publishInProgress={false}
+  publishTarget="Google Play Store"
+  readyForPublish={true}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  settingsPath="/apps/app-slug-123/settings"
+  shouldEnableInstall={true}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetails renders correctly 1`] = `
+<_default
+  appVersion={
+    Object {
+      "appName": "Standup Timer",
+      "appSlug": "app-slug-123",
+      "buildNumber": 32,
+      "buildSlug": "13245ads",
+      "bundleId": "bundle-id",
+      "certificateExpires": 2018-09-22T12:42:31.000Z,
+      "configuration": "canary",
+      "description": "Some semi-long description",
+      "distributionType": "development",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": 123,
+      "keywords": "Keywords",
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "marketingUrl": "https://bitrise.io/marketing",
+      "minimumOs": "10.2",
+      "minimumSdk": "dunno",
+      "packageName": "com.package.name",
+      "platform": "ios",
+      "promotionalText": "Promotional Text",
+      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "reviewNotes": "Review Notes",
+      "scheme": "piramid",
+      "size": 4567034,
+      "supportUrl": "https://bitrise.io/support",
+      "supportedDeviceTypes": Array [
+        "iphone",
+        "ipad",
+      ],
+      "version": "1.0.3",
+      "whatsNew": "Some longer whats-new",
+    }
+  }
+  availableDevices={
+    Array [
+      Object {
+        "isMarked": false,
+        "key": "iphone65",
+        "value": "iPhone 6.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone58",
+        "value": "iPhone 5.8”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone55",
+        "value": "iPhone 5.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone47",
+        "value": "iPhone 4.7”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "iphone4",
+        "value": "iPhone 4”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipad",
+        "value": "iPad",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro",
+        "value": "iPad Pro",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro105",
+        "value": "iPad Pro 10.5”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "ipadpro129",
+        "value": "iPad Pro 12.9”",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch",
+        "value": "Apple Watch",
+      },
+      Object {
+        "isMarked": false,
+        "key": "applewatch4",
+        "value": "Apple Watch 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  onDeviceSelected={[Function]}
+  onFeatureGraphicAdded={[Function]}
+  onPublish={[Function]}
+  onSave={[Function]}
+  onScreenshotAdded={[Function]}
+  publishInProgress={false}
+  publishTarget="App Store Connect"
+  readyForPublish={true}
+  removeFeatureGraphic={[Function]}
+  removeScreenshot={[Function]}
+  selectedDeviceIdForScreenshots="iphone65"
+  settingsPath="/apps/app-slug-123/settings"
+  shouldEnableInstall={false}
+  showTooltips={true}
+/>
+`;
+
+exports[`AppVersionDetailsView when an Android app version is viewed renders with Android version correctly 1`] = `
 <_default
   appVersion={
     Object {
@@ -63,7 +923,7 @@ exports[` 1`] = `
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
   publishInProgress={false}
-  publishTarget="App Store Connect"
+  publishTarget="Google Play Store"
   readyForPublish={true}
   removeFeatureGraphic={[MockFunction]}
   removeScreenshot={[MockFunction]}
@@ -230,7 +1090,7 @@ exports[` 1`] = `
                                 }
                               >
                                 App is ready for publishing to 
-                                App Store Connect
+                                Google Play Store
                                 .
                               </div>
                             </Base>
@@ -3999,866 +4859,6 @@ exports[` 1`] = `
     </div>
   </Base>
 </_default>
-`;
-
-exports[`AppVersionDetails Component methods getUploadableScreenshots 1`] = `
-Array [
-  Array [
-    Object {
-      "deviceType": "iPhone 6.5”",
-      "filename": "image.png",
-      "filesize": 0,
-      "screenSize": "iPhone 6.5”",
-    },
-    Object {
-      "deviceType": "iPhone 5.8”",
-      "filename": "image2.jpg",
-      "filesize": 0,
-      "screenSize": "iPhone 5.8”",
-    },
-  ],
-  Array [
-    File {},
-    File {},
-  ],
-]
-`;
-
-exports[`AppVersionDetails appends a feature graphic for Android apps 1`] = `
-File {
-  "path": "file.png",
-  "type": "image/png",
-}
-`;
-
-exports[`AppVersionDetails appends a screenshot 1`] = `
-Object {
-  "applewatch": Object {
-    "deviceName": "Apple Watch",
-  },
-  "applewatch4": Object {
-    "deviceName": "Apple Watch 4",
-  },
-  "ipad": Object {
-    "deviceName": "iPad",
-  },
-  "ipadpro": Object {
-    "deviceName": "iPad Pro",
-  },
-  "ipadpro105": Object {
-    "deviceName": "iPad Pro 10.5”",
-  },
-  "ipadpro129": Object {
-    "deviceName": "iPad Pro 12.9”",
-  },
-  "iphone4": Object {
-    "deviceName": "iPhone 4”",
-  },
-  "iphone47": Object {
-    "deviceName": "iPhone 4.7”",
-  },
-  "iphone55": Object {
-    "deviceName": "iPhone 5.5”",
-  },
-  "iphone58": Object {
-    "deviceName": "iPhone 5.8”",
-  },
-  "iphone65": Object {
-    "deviceName": "iPhone 6.5”",
-    "screenshots": Array [
-      File {
-        "path": "file.png",
-        "type": "image/png",
-      },
-    ],
-  },
-}
-`;
-
-exports[`AppVersionDetails disables install button when device is from a lower version 1`] = `
-<_default
-  appVersion={
-    Object {
-      "appName": "Standup Timer",
-      "appSlug": "app-slug-123",
-      "buildNumber": 32,
-      "buildSlug": "13245ads",
-      "buildType": "Celeste-config",
-      "certificateExpires": 2018-09-22T12:42:31.000Z,
-      "description": "Some semi-long description",
-      "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
-      "lastUpdate": 2018-09-22T12:42:31.000Z,
-      "marketingUrl": "https://bitrise.io/marketing",
-      "minimumSdk": "26",
-      "module": "Celeste-config",
-      "packageName": "com.package.name",
-      "platform": "android",
-      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
-      "shortDescription": "Some short description",
-      "size": 4567034,
-      "supportUrl": "https://bitrise.io/support",
-      "supportedDeviceTypes": Array [
-        "phone",
-        "tablet",
-        "android-tv",
-        "wear-os",
-      ],
-      "variant": "Fennek",
-      "version": "1.0.3",
-      "versionCode": "165161631",
-      "whatsNew": "Some longer whats-new",
-    }
-  }
-  availableDevices={
-    Array [
-      Object {
-        "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
-      },
-    ]
-  }
-  onChange={[Function]}
-  onDeviceSelected={[Function]}
-  onFeatureGraphicAdded={[Function]}
-  onPublish={[Function]}
-  onSave={[Function]}
-  onScreenshotAdded={[Function]}
-  publishInProgress={false}
-  publishTarget="Google Play Store"
-  readyForPublish={true}
-  removeFeatureGraphic={[Function]}
-  removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
-  settingsPath="/apps/app-slug-123/settings"
-  shouldEnableInstall={false}
-  showTooltips={true}
-/>
-`;
-
-exports[`AppVersionDetails disables install button when device is from different platform 1`] = `
-<_default
-  appVersion={
-    Object {
-      "appName": "Standup Timer",
-      "appSlug": "app-slug-123",
-      "buildNumber": 32,
-      "buildSlug": "13245ads",
-      "buildType": "Celeste-config",
-      "certificateExpires": 2018-09-22T12:42:31.000Z,
-      "description": "Some semi-long description",
-      "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
-      "lastUpdate": 2018-09-22T12:42:31.000Z,
-      "marketingUrl": "https://bitrise.io/marketing",
-      "minimumSdk": "26",
-      "module": "Celeste-config",
-      "packageName": "com.package.name",
-      "platform": "android",
-      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
-      "shortDescription": "Some short description",
-      "size": 4567034,
-      "supportUrl": "https://bitrise.io/support",
-      "supportedDeviceTypes": Array [
-        "phone",
-        "tablet",
-        "android-tv",
-        "wear-os",
-      ],
-      "variant": "Fennek",
-      "version": "1.0.3",
-      "versionCode": "165161631",
-      "whatsNew": "Some longer whats-new",
-    }
-  }
-  availableDevices={
-    Array [
-      Object {
-        "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
-      },
-    ]
-  }
-  onChange={[Function]}
-  onDeviceSelected={[Function]}
-  onFeatureGraphicAdded={[Function]}
-  onPublish={[Function]}
-  onSave={[Function]}
-  onScreenshotAdded={[Function]}
-  publishInProgress={false}
-  publishTarget="Google Play Store"
-  readyForPublish={true}
-  removeFeatureGraphic={[Function]}
-  removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
-  settingsPath="/apps/app-slug-123/settings"
-  shouldEnableInstall={false}
-  showTooltips={true}
-/>
-`;
-
-exports[`AppVersionDetails disables install button when device is not supported 1`] = `
-<_default
-  appVersion={
-    Object {
-      "appName": "Standup Timer",
-      "appSlug": "app-slug-123",
-      "buildNumber": 32,
-      "buildSlug": "13245ads",
-      "buildType": "Celeste-config",
-      "certificateExpires": 2018-09-22T12:42:31.000Z,
-      "description": "Some semi-long description",
-      "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
-      "lastUpdate": 2018-09-22T12:42:31.000Z,
-      "marketingUrl": "https://bitrise.io/marketing",
-      "minimumSdk": "26",
-      "module": "Celeste-config",
-      "packageName": "com.package.name",
-      "platform": "android",
-      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
-      "shortDescription": "Some short description",
-      "size": 4567034,
-      "supportUrl": "https://bitrise.io/support",
-      "supportedDeviceTypes": Array [
-        "phone",
-        "tablet",
-        "android-tv",
-        "wear-os",
-      ],
-      "variant": "Fennek",
-      "version": "1.0.3",
-      "versionCode": "165161631",
-      "whatsNew": "Some longer whats-new",
-    }
-  }
-  availableDevices={
-    Array [
-      Object {
-        "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
-      },
-    ]
-  }
-  onChange={[Function]}
-  onDeviceSelected={[Function]}
-  onFeatureGraphicAdded={[Function]}
-  onPublish={[Function]}
-  onSave={[Function]}
-  onScreenshotAdded={[Function]}
-  publishInProgress={false}
-  publishTarget="Google Play Store"
-  readyForPublish={true}
-  removeFeatureGraphic={[Function]}
-  removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
-  settingsPath="/apps/app-slug-123/settings"
-  shouldEnableInstall={false}
-  showTooltips={true}
-/>
-`;
-
-exports[`AppVersionDetails disables install button when there is no public install page 1`] = `
-<_default
-  appVersion={
-    Object {
-      "appName": "Standup Timer",
-      "appSlug": "app-slug-123",
-      "buildNumber": 32,
-      "buildSlug": "13245ads",
-      "bundleId": "bundle-id",
-      "certificateExpires": 2018-09-22T12:42:31.000Z,
-      "configuration": "canary",
-      "description": "Some semi-long description",
-      "distributionType": "development",
-      "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
-      "keywords": "Keywords",
-      "lastUpdate": 2018-09-22T12:42:31.000Z,
-      "marketingUrl": "https://bitrise.io/marketing",
-      "minimumOs": "10.2",
-      "minimumSdk": "dunno",
-      "packageName": "com.package.name",
-      "platform": "ios",
-      "promotionalText": "Promotional Text",
-      "publicInstallPageURL": undefined,
-      "reviewNotes": "Review Notes",
-      "scheme": "piramid",
-      "size": 4567034,
-      "supportUrl": "https://bitrise.io/support",
-      "supportedDeviceTypes": Array [
-        "iphone",
-        "ipad",
-      ],
-      "version": "1.0.3",
-      "whatsNew": "Some longer whats-new",
-    }
-  }
-  availableDevices={
-    Array [
-      Object {
-        "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
-      },
-    ]
-  }
-  onChange={[Function]}
-  onDeviceSelected={[Function]}
-  onFeatureGraphicAdded={[Function]}
-  onPublish={[Function]}
-  onSave={[Function]}
-  onScreenshotAdded={[Function]}
-  publishInProgress={false}
-  publishTarget="App Store Connect"
-  readyForPublish={true}
-  removeFeatureGraphic={[Function]}
-  removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
-  settingsPath="/apps/app-slug-123/settings"
-  shouldEnableInstall={false}
-  showTooltips={true}
-/>
-`;
-
-exports[`AppVersionDetails enables install button when there is public install page, device is same platform, newer version, supported 1`] = `
-<_default
-  appVersion={
-    Object {
-      "appName": "Standup Timer",
-      "appSlug": "app-slug-123",
-      "buildNumber": 32,
-      "buildSlug": "13245ads",
-      "buildType": "Celeste-config",
-      "certificateExpires": 2018-09-22T12:42:31.000Z,
-      "description": "Some semi-long description",
-      "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
-      "lastUpdate": 2018-09-22T12:42:31.000Z,
-      "marketingUrl": "https://bitrise.io/marketing",
-      "minimumSdk": "26",
-      "module": "Celeste-config",
-      "packageName": "com.package.name",
-      "platform": "android",
-      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
-      "shortDescription": "Some short description",
-      "size": 4567034,
-      "supportUrl": "https://bitrise.io/support",
-      "supportedDeviceTypes": Array [
-        "phone",
-        "tablet",
-        "android-tv",
-        "wear-os",
-      ],
-      "variant": "Fennek",
-      "version": "1.0.3",
-      "versionCode": "165161631",
-      "whatsNew": "Some longer whats-new",
-    }
-  }
-  availableDevices={
-    Array [
-      Object {
-        "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
-      },
-    ]
-  }
-  onChange={[Function]}
-  onDeviceSelected={[Function]}
-  onFeatureGraphicAdded={[Function]}
-  onPublish={[Function]}
-  onSave={[Function]}
-  onScreenshotAdded={[Function]}
-  publishInProgress={false}
-  publishTarget="Google Play Store"
-  readyForPublish={true}
-  removeFeatureGraphic={[Function]}
-  removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
-  settingsPath="/apps/app-slug-123/settings"
-  shouldEnableInstall={true}
-  showTooltips={true}
-/>
-`;
-
-exports[`AppVersionDetails enables install button when there is public install page, device is same platform, same version, supported 1`] = `
-<_default
-  appVersion={
-    Object {
-      "appName": "Standup Timer",
-      "appSlug": "app-slug-123",
-      "buildNumber": 32,
-      "buildSlug": "13245ads",
-      "buildType": "Celeste-config",
-      "certificateExpires": 2018-09-22T12:42:31.000Z,
-      "description": "Some semi-long description",
-      "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
-      "lastUpdate": 2018-09-22T12:42:31.000Z,
-      "marketingUrl": "https://bitrise.io/marketing",
-      "minimumSdk": "26",
-      "module": "Celeste-config",
-      "packageName": "com.package.name",
-      "platform": "android",
-      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
-      "shortDescription": "Some short description",
-      "size": 4567034,
-      "supportUrl": "https://bitrise.io/support",
-      "supportedDeviceTypes": Array [
-        "phone",
-        "tablet",
-        "android-tv",
-        "wear-os",
-      ],
-      "variant": "Fennek",
-      "version": "1.0.3",
-      "versionCode": "165161631",
-      "whatsNew": "Some longer whats-new",
-    }
-  }
-  availableDevices={
-    Array [
-      Object {
-        "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
-      },
-    ]
-  }
-  onChange={[Function]}
-  onDeviceSelected={[Function]}
-  onFeatureGraphicAdded={[Function]}
-  onPublish={[Function]}
-  onSave={[Function]}
-  onScreenshotAdded={[Function]}
-  publishInProgress={false}
-  publishTarget="Google Play Store"
-  readyForPublish={true}
-  removeFeatureGraphic={[Function]}
-  removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
-  settingsPath="/apps/app-slug-123/settings"
-  shouldEnableInstall={true}
-  showTooltips={true}
-/>
-`;
-
-exports[`AppVersionDetails renders correctly 1`] = `
-<_default
-  appVersion={
-    Object {
-      "appName": "Standup Timer",
-      "appSlug": "app-slug-123",
-      "buildNumber": 32,
-      "buildSlug": "13245ads",
-      "bundleId": "bundle-id",
-      "certificateExpires": 2018-09-22T12:42:31.000Z,
-      "configuration": "canary",
-      "description": "Some semi-long description",
-      "distributionType": "development",
-      "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
-      "keywords": "Keywords",
-      "lastUpdate": 2018-09-22T12:42:31.000Z,
-      "marketingUrl": "https://bitrise.io/marketing",
-      "minimumOs": "10.2",
-      "minimumSdk": "dunno",
-      "packageName": "com.package.name",
-      "platform": "ios",
-      "promotionalText": "Promotional Text",
-      "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
-      "reviewNotes": "Review Notes",
-      "scheme": "piramid",
-      "size": 4567034,
-      "supportUrl": "https://bitrise.io/support",
-      "supportedDeviceTypes": Array [
-        "iphone",
-        "ipad",
-      ],
-      "version": "1.0.3",
-      "whatsNew": "Some longer whats-new",
-    }
-  }
-  availableDevices={
-    Array [
-      Object {
-        "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
-      },
-    ]
-  }
-  onChange={[Function]}
-  onDeviceSelected={[Function]}
-  onFeatureGraphicAdded={[Function]}
-  onPublish={[Function]}
-  onSave={[Function]}
-  onScreenshotAdded={[Function]}
-  publishInProgress={false}
-  publishTarget="App Store Connect"
-  readyForPublish={true}
-  removeFeatureGraphic={[Function]}
-  removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
-  settingsPath="/apps/app-slug-123/settings"
-  shouldEnableInstall={false}
-  showTooltips={true}
-/>
 `;
 
 exports[`AppVersionDetailsView when viewed on desktop renders the details view correctly 1`] = `

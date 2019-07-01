@@ -69,13 +69,6 @@ describe('AppVersionDetailsView', () => {
         expect(tree).toMatchSnapshot();
       });
     });
-
-    describe('when publish target is Google Play Store', () => {
-      it('renders the details view publish target set to Google Play Store', () => {
-        const tree = toJSON(mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} publishTarget='Google Play Store' />));
-        expect(tree).toMatchSnapshot();
-      });
-    });
   });
 
   describe('when viewed on mobile', () => {
@@ -90,9 +83,11 @@ describe('AppVersionDetailsView', () => {
   });
 
   describe('when an Android app version is viewed', () => {
-    (mediaQuery as jest.Mock).mockReturnValue([true]);
-    const tree = toJSON(mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} />));
-    expect(tree).toMatchSnapshot();
+    it('renders with Android version correctly', () => {
+      (mediaQuery as jest.Mock).mockReturnValue([true]);
+      const tree = toJSON(mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} publishTarget="Google Play Store" />));
+      expect(tree).toMatchSnapshot();
+    });
   });
 });
 
