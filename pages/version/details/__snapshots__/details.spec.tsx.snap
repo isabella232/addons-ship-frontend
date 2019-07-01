@@ -4177,11 +4177,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
   onScreenshotAdded={[Function]}
   publishInProgress={false}
   publishTarget="Google Play Store"
-  readyForPublish={
-    Object {
-      "name": "abcdefghijkl12345671566",
-    }
-  }
+  readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
   selectedDeviceIdForScreenshots="iphone65"
@@ -4293,11 +4289,7 @@ exports[`AppVersionDetails disables install button when device is from different
   onScreenshotAdded={[Function]}
   publishInProgress={false}
   publishTarget="Google Play Store"
-  readyForPublish={
-    Object {
-      "name": "abcdefghijkl12345671566",
-    }
-  }
+  readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
   selectedDeviceIdForScreenshots="iphone65"
@@ -4409,11 +4401,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
   onScreenshotAdded={[Function]}
   publishInProgress={false}
   publishTarget="Google Play Store"
-  readyForPublish={
-    Object {
-      "name": "abcdefghijkl12345671566",
-    }
-  }
+  readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
   selectedDeviceIdForScreenshots="iphone65"
@@ -4526,11 +4514,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
   onScreenshotAdded={[Function]}
   publishInProgress={false}
   publishTarget="App Store Connect"
-  readyForPublish={
-    Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    }
-  }
+  readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
   selectedDeviceIdForScreenshots="iphone65"
@@ -4642,11 +4626,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   onScreenshotAdded={[Function]}
   publishInProgress={false}
   publishTarget="Google Play Store"
-  readyForPublish={
-    Object {
-      "name": "abcdefghijkl12345671566",
-    }
-  }
+  readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
   selectedDeviceIdForScreenshots="iphone65"
@@ -4758,11 +4738,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   onScreenshotAdded={[Function]}
   publishInProgress={false}
   publishTarget="Google Play Store"
-  readyForPublish={
-    Object {
-      "name": "abcdefghijkl12345671566",
-    }
-  }
+  readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
   selectedDeviceIdForScreenshots="iphone65"
@@ -4875,11 +4851,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
   onScreenshotAdded={[Function]}
   publishInProgress={false}
   publishTarget="App Store Connect"
-  readyForPublish={
-    Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    }
-  }
+  readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
   selectedDeviceIdForScreenshots="iphone65"

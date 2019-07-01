@@ -1,6 +1,6 @@
-import { AppVersion, Settings, IosSettings, AndroidSettings } from '@/models';
+import { AppVersion, IosSettings, AndroidSettings } from '@/models';
 
-class SettingsService {
+export class SettingsService {
   constructor() {}
 
   isComplete = (
@@ -9,7 +9,7 @@ class SettingsService {
   ) => {
     switch (appVersion.platform) {
       case 'ios': {
-        return (
+        return !!(
           iosSettings.artifactExposingWorkflows &&
           iosSettings.appleDeveloperAccountEmail &&
           iosSettings.appSku &&
@@ -19,7 +19,7 @@ class SettingsService {
         );
       }
       case 'android': {
-        return (
+        return !!(
           androidSettings.artifactExposingWorkflows &&
           androidSettings.track &&
           androidSettings.selectedKeystoreFile &&
