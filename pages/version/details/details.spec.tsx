@@ -1,12 +1,14 @@
 jest.mock('@/utils/media');
 jest.mock('@/utils/device');
+jest.mock('@/ducks/appVersion');
 
 import { shallow, mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
 import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion, mockSettings } from '@/mocks';
 import { mediaQuery } from '@/utils/media';
-import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
+import { isAndroid, osVersion, mobileModel, compareVersions } from '@/utils/device';
+import { publishAppVersion } from '@/ducks/appVersion';
 import Dropzone from '@/components/Dropzone';
 
 import DetailsView from './view';
@@ -171,6 +173,39 @@ describe('AppVersionDetails', () => {
 
   it('triggers a save', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
+    const mockUpdateAppVersion = jest.fn() as any;
+    const mockUploadScreenshots = jest.fn() as any;
+    const tree = mount(
+      <AppVersionDetails
+        {...defaultProps}
+        updateAppVersion={mockUpdateAppVersion}
+        uploadScreenshots={mockUploadScreenshots}
+      />
+    );
+
+    tree
+      .find('button')
+      .first()
+      .simulate('click');
+
+    expect(mockUpdateAppVersion).toHaveBeenCalled();
+    expect(mockUploadScreenshots).toHaveBeenCalled();
+  });
+
+  describe('when publish is selected', () => {
+    it('triggers publish, updates then resets state', async () => {
+      (mediaQuery as jest.Mock).mockReturnValue([true]);
+      const wrap = shallow(<AppVersionDetails {...defaultProps} />);
+      const onPublish = (wrap.instance() as AppVersionDetails).onPublish();
+
+      expect(publishAppVersion).toHaveBeenCalled();
+      expect(wrap.state('publishInProgress')).toBeTruthy();
+      await onPublish;
+      expect(wrap.state('publishInProgress')).toBeFalsy();
+    });
+  });
+
+  it('triggers a publish when it has been', () => {
     const mockUpdateAppVersion = jest.fn() as any;
     const mockUploadScreenshots = jest.fn() as any;
     const tree = mount(

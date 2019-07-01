@@ -137,11 +137,12 @@ export class AppVersionDetails extends Component<Props, State> {
     uploadScreenshots(appSlug, id.toString(), uploadable, files);
   };
 
-  onPublish = () => {
+  onPublish = async () => {
     const { appVersion } = this.props;
 
     this.setState({ publishInProgress: true });
-    publishAppVersion(appVersion).then(() => this.setState({ publishInProgress: false }));
+    await publishAppVersion(appVersion);
+    this.setState({ publishInProgress: false });
   };
 
   onScreenshotAdded = (deviceId: string, newScreenshots: File[]) => {
