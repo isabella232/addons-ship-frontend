@@ -69,6 +69,21 @@ describe('AppVersionDetailsView', () => {
         expect(tree).toMatchSnapshot();
       });
     });
+
+    describe('when Publish button is selected', () => {
+      it('calls publish method', () => {
+        const mockPublish = jest.fn() as any;
+        const tree = mount(<DetailsView {...defaultProps} onPublish={mockPublish} />);
+
+        tree
+          .find('button')
+          .findWhere(button => button.text() === 'Publish')
+          .first()
+          .simulate('click');
+
+        expect(mockPublish).toHaveBeenCalled();
+      });
+    });
   });
 
   describe('when viewed on mobile', () => {
@@ -85,7 +100,9 @@ describe('AppVersionDetailsView', () => {
   describe('when an Android app version is viewed', () => {
     it('renders with Android version correctly', () => {
       (mediaQuery as jest.Mock).mockReturnValue([true]);
-      const tree = toJSON(mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} publishTarget="Google Play Store" />));
+      const tree = toJSON(
+        mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} publishTarget="Google Play Store" />)
+      );
       expect(tree).toMatchSnapshot();
     });
   });
