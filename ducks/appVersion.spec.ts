@@ -8,7 +8,7 @@ import { mockAppVersion } from '@/mocks';
 import { AppVersion } from '@/models';
 import api from '@/services/ship-api';
 
-import { appVersion, fetchAppVersion, updateAppVersion, uploadScreenshots } from './appVersion';
+import { appVersion, fetchAppVersion, updateAppVersion, uploadScreenshots, publishAppVersion } from './appVersion';
 import { uploadFileToS3 } from '@/utils/file';
 
 describe('appVersion', () => {
@@ -85,6 +85,12 @@ describe('appVersion', () => {
       await store.dispatch(uploadScreenshots('app-slug', 'version-id', [], []) as any);
 
       expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  describe('publishAppVersion', () => {
+    it('publishes without issues', async () => {
+      await publishAppVersion(mockAppVersion);
     });
   });
 });
