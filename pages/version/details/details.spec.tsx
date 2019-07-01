@@ -55,6 +55,27 @@ describe('AppVersionDetailsView', () => {
         expect(tree).toMatchSnapshot();
       });
     });
+
+    describe('when not ready for publish', () => {
+      it('renders the details view with warning, and the publish button disabled', () => {
+        const tree = toJSON(mount(<DetailsView {...defaultProps} readyForPublish={false} />));
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe('when publish is in progress', () => {
+      it('renders the details view with notification, and the publish button disabled', () => {
+        const tree = toJSON(mount(<DetailsView {...defaultProps} publishInProgress={true} />));
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe('when publish target is Google Play Store', () => {
+      it('renders the details view publish target set to Google Play Store', () => {
+        const tree = toJSON(mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} publishTarget='Google Play Store' />));
+        expect(tree).toMatchSnapshot();
+      });
+    });
   });
 
   describe('when viewed on mobile', () => {
