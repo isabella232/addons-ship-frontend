@@ -28,7 +28,7 @@ export class SettingsService {
       }
     }
 
-    return false;
+    return true;
   };
 }
 

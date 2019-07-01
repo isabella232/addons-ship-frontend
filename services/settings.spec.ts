@@ -83,4 +83,15 @@ describe('SettingsService', () => {
       }
     );
   });
+
+  describe('when app has unknown platform', () => {
+    it('returns true', () => {
+      expect(
+        settingsService.isComplete({...mockAppVersion, platform: 'unknown'}, mockSettings as {
+          iosSettings: IosSettings;
+          androidSettings: AndroidSettings;
+        })
+      ).toBeTruthy();
+    });
+  });
 });
