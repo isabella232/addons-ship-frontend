@@ -1,6 +1,7 @@
 jest.mock('@/utils/media');
 jest.mock('@/utils/device');
 jest.mock('@/ducks/appVersion');
+jest.mock('@/services/settings');
 
 import { shallow, mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
@@ -9,6 +10,7 @@ import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion,
 import { mediaQuery } from '@/utils/media';
 import { isAndroid, osVersion, mobileModel, compareVersions } from '@/utils/device';
 import { publishAppVersion } from '@/ducks/appVersion';
+import settingService from '@/services/settings';
 import Dropzone from '@/components/Dropzone';
 
 import DetailsView from './view';
@@ -39,6 +41,7 @@ describe('AppVersionDetailsView', () => {
 
   beforeAll(() => {
     (compareVersions as jest.Mock).mockReturnValue(0);
+    (settingService.isComplete as jest.Mock).mockReturnValue(true);
   });
 
   describe('when viewed on desktop', () => {
@@ -205,24 +208,20 @@ describe('AppVersionDetails', () => {
     });
   });
 
-  it('triggers a publish when it has been', () => {
-    const mockUpdateAppVersion = jest.fn() as any;
-    const mockUploadScreenshots = jest.fn() as any;
-    const tree = mount(
-      <AppVersionDetails
-        {...defaultProps}
-        updateAppVersion={mockUpdateAppVersion}
-        uploadScreenshots={mockUploadScreenshots}
-      />
-    );
+  describe('readyForPublish', () => {
+    describe('when settings are filled out', () => {
+      (settingService.isComplete as jest.Mock).mockReturnValue(true);
+      const wrap = shallow(<AppVersionDetails {...defaultProps} />);
 
-    tree
-      .find('button')
-      .first()
-      .simulate('click');
+      expect((wrap.instance() as AppVersionDetails).readyForPublish()).toBeTruthy();
+    });
 
-    expect(mockUpdateAppVersion).toHaveBeenCalled();
-    expect(mockUploadScreenshots).toHaveBeenCalled();
+    describe('when settings are incomplete', () => {
+      (settingService.isComplete as jest.Mock).mockReturnValue(false);
+      const wrap = shallow(<AppVersionDetails {...defaultProps} />);
+
+      expect((wrap.instance() as AppVersionDetails).readyForPublish()).toBeFalsy();
+    });
   });
 
   it('triggers a state update when a form item is modified', () => {
