@@ -34,7 +34,7 @@ describe('AppVersionDetailsView', () => {
     removeFeatureGraphic: jest.fn(),
     shouldEnableInstall: true,
     readyForPublish: true,
-    publishInProgress: false,
+    isPublishInProgress: false,
     publishTarget: 'App Store Connect',
     settingsPath: '/path'
   };
@@ -70,7 +70,7 @@ describe('AppVersionDetailsView', () => {
 
     describe('when publish is in progress', () => {
       it('renders the details view with notification, and the publish button disabled', () => {
-        const tree = toJSON(mount(<DetailsView {...defaultProps} publishInProgress={true} />));
+        const tree = toJSON(mount(<DetailsView {...defaultProps} isPublishInProgress={true} />));
         expect(tree).toMatchSnapshot();
       });
     });
@@ -202,9 +202,9 @@ describe('AppVersionDetails', () => {
       const onPublish = (wrap.instance() as AppVersionDetails).onPublish();
 
       expect(publishAppVersion).toHaveBeenCalled();
-      expect(wrap.state('publishInProgress')).toBeTruthy();
+      expect(wrap.state('isPublishInProgress')).toBeTruthy();
       await onPublish;
-      expect(wrap.state('publishInProgress')).toBeFalsy();
+      expect(wrap.state('isPublishInProgress')).toBeFalsy();
     });
   });
 

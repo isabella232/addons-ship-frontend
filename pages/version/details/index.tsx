@@ -8,8 +8,7 @@ import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/uti
 
 import { AppVersion, Settings, IosSettings, AndroidSettings } from '@/models';
 import { RootState } from '@/store';
-import { updateAppVersion, uploadScreenshots, publishAppVersion, appVersion } from '@/ducks/appVersion';
-import { fetchSettings } from '@/ducks/settings';
+import { updateAppVersion, uploadScreenshots, publishAppVersion } from '@/ducks/appVersion';
 import settingService from '@/services/settings';
 
 import View from './view';
@@ -17,9 +16,11 @@ import { Uploadable } from '@/models/uploadable';
 
 type Props = {
   appVersion: AppVersion;
+  isPublishInProgress: boolean;
   settings: Settings;
   updateAppVersion: typeof updateAppVersion;
   uploadScreenshots: typeof uploadScreenshots;
+  publishAppVersion: typeof publishAppVersion;
 };
 
 export type State = {
@@ -29,7 +30,6 @@ export type State = {
   featureGraphic?: File;
   selectedDeviceIdForScreenshots: string;
   readyForPublish?: boolean;
-  publishInProgress: boolean;
 };
 
 type DeviceScreenshots = {
@@ -77,8 +77,7 @@ export class AppVersionDetails extends Component<Props, State> {
       }
     },
     featureGraphic: undefined,
-    selectedDeviceIdForScreenshots: 'iphone65',
-    publishInProgress: false
+    selectedDeviceIdForScreenshots: 'iphone65'
   };
 
   componentDidMount() {
@@ -138,11 +137,9 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   onPublish = async () => {
-    const { appVersion } = this.props;
+    const { appVersion, publishAppVersion } = this.props;
 
-    this.setState({ publishInProgress: true });
     await publishAppVersion(appVersion);
-    this.setState({ publishInProgress: false });
   };
 
   onScreenshotAdded = (deviceId: string, newScreenshots: File[]) => {
@@ -175,6 +172,10 @@ export class AppVersionDetails extends Component<Props, State> {
 
   shouldEnableInstall = () => {
     const { appVersion } = this.props;
+    if (!appVersion) {
+      return false;
+    }
+
     if (!appVersion.publicInstallPageURL) {
       return false;
     }
@@ -204,14 +205,8 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   render() {
-    const { appVersion } = this.props;
-    const {
-      showTooltips,
-      selectedDeviceIdForScreenshots,
-      screenshotList,
-      featureGraphic,
-      publishInProgress
-    } = this.state;
+    const { appVersion, isPublishInProgress } = this.props;
+    const { showTooltips, selectedDeviceIdForScreenshots, screenshotList, featureGraphic } = this.state;
 
     const viewProps = {
       appVersion,
@@ -234,7 +229,7 @@ export class AppVersionDetails extends Component<Props, State> {
       onDeviceSelected: this.onDeviceSelected,
       shouldEnableInstall: this.shouldEnableInstall(),
       readyForPublish: this.readyForPublish(),
-      publishInProgress,
+      isPublishInProgress,
       publishTarget:
         (appVersion.platform === 'ios' && 'App Store Connect') ||
         (appVersion.platform === 'android' && 'Google Play Store') ||
@@ -246,10 +241,11 @@ export class AppVersionDetails extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ appVersion, settings }: RootState) => ({ appVersion, settings });
+const mapStateToProps = ({ appVersion: { appVersion, isPublishInProgress }, settings }: RootState) => ({ appVersion, isPublishInProgress, settings });
 const mapDispatchToProps = {
   updateAppVersion,
-  uploadScreenshots
+  uploadScreenshots,
+  publishAppVersion
 };
 
 export default connect(

@@ -32,7 +32,7 @@ type Props = {
   onChange?: (key: string, newValue: string) => void;
   shouldEnableInstall: boolean;
   readyForPublish: boolean;
-  publishInProgress: boolean;
+  isPublishInProgress: boolean;
   publishTarget: string;
   settingsPath: string;
 };
@@ -45,7 +45,7 @@ export default ({
   onChange,
   shouldEnableInstall,
   readyForPublish,
-  publishInProgress,
+  isPublishInProgress,
   publishTarget,
   settingsPath,
   availableDevices,
@@ -65,7 +65,7 @@ export default ({
     <Base>
       <Flex direction="vertical" alignChildren="middle" paddingVertical="x6">
         <Flex maxWidth={isDesktop ? '100%' : 688}>
-          {publishInProgress ? (
+          {isPublishInProgress ? (
             <Notification margin="x2" type="progress">
               Publishing to {publishTarget} is in progress.
             </Notification>
@@ -135,7 +135,7 @@ export default ({
         {isDesktop && (
           <Sidebar
             publicInstallPageURL={appVersion.publicInstallPageURL}
-            shouldEnablePublish={readyForPublish && !publishInProgress}
+            shouldEnablePublish={readyForPublish && !isPublishInProgress}
             onSave={onSave}
             onPublish={onPublish}
             buildSlug={appVersion.buildSlug}

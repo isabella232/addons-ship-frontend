@@ -77,6 +77,19 @@ export class ShipAPIService {
     return data.map(camelizeKeys);
   }
 
+  // POST /apps/{app-slug}/versions/{version-id}/publish
+  async publishAppVersion(appVersion: AppVersion): Promise<AppVersion> {
+    if (this.token === null) {
+      throw new Error('Token not set');
+    }
+
+    const { appSlug, id: versionId } = appVersion;
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/publish`;
+
+    const { data } = await post(url, this.token, undefined).then(res => res.json());
+    return await camelizeKeys(data);
+  }
+
   // PATCH /apps/{app-slug}/versions/{version-id}/screenshots/uploaded
   uploadedScreenshots(appSlug: string, versionId: string) {
     if (this.token === null) {
