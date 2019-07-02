@@ -1,12 +1,15 @@
 jest.mock('@/utils/media');
 jest.mock('@/utils/device');
+jest.mock('@/ducks/appVersion');
+jest.mock('@/services/settings');
 
 import { shallow, mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
-import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion } from '@/mocks';
+import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion, mockSettings } from '@/mocks';
 import { mediaQuery } from '@/utils/media';
-import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
+import { isAndroid, osVersion, mobileModel, compareVersions } from '@/utils/device';
+import settingService from '@/services/settings';
 import Dropzone from '@/components/Dropzone';
 
 import DetailsView from './view';
@@ -28,11 +31,16 @@ describe('AppVersionDetailsView', () => {
     onDeviceSelected: jest.fn(),
     onFeatureGraphicAdded: jest.fn(),
     removeFeatureGraphic: jest.fn(),
-    shouldEnableInstall: true
+    shouldEnableInstall: true,
+    readyForPublish: true,
+    isPublishInProgress: false,
+    publishTarget: 'App Store Connect',
+    settingsPath: '/path'
   };
 
   beforeAll(() => {
     (compareVersions as jest.Mock).mockReturnValue(0);
+    (settingService.isComplete as jest.Mock).mockReturnValue(true);
   });
 
   describe('when viewed on desktop', () => {
@@ -51,6 +59,35 @@ describe('AppVersionDetailsView', () => {
         expect(tree).toMatchSnapshot();
       });
     });
+
+    describe('when not ready for publish', () => {
+      it('renders the details view with warning, and the publish button disabled', () => {
+        const tree = toJSON(mount(<DetailsView {...defaultProps} readyForPublish={false} />));
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe('when publish is in progress', () => {
+      it('renders the details view with notification, and the publish button disabled', () => {
+        const tree = toJSON(mount(<DetailsView {...defaultProps} isPublishInProgress={true} />));
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe('when Publish button is selected', () => {
+      it('calls publish method', () => {
+        const mockPublish = jest.fn() as any;
+        const tree = mount(<DetailsView {...defaultProps} onPublish={mockPublish} />);
+
+        tree
+          .find('button')
+          .findWhere(button => button.text() === 'Publish')
+          .first()
+          .simulate('click');
+
+        expect(mockPublish).toHaveBeenCalled();
+      });
+    });
   });
 
   describe('when viewed on mobile', () => {
@@ -65,17 +102,24 @@ describe('AppVersionDetailsView', () => {
   });
 
   describe('when an Android app version is viewed', () => {
-    (mediaQuery as jest.Mock).mockReturnValue([true]);
-    const tree = toJSON(mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} />));
-    expect(tree).toMatchSnapshot();
+    it('renders with Android version correctly', () => {
+      (mediaQuery as jest.Mock).mockReturnValue([true]);
+      const tree = toJSON(
+        mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} publishTarget="Google Play Store" />)
+      );
+      expect(tree).toMatchSnapshot();
+    });
   });
 });
 
 describe('AppVersionDetails', () => {
   const defaultProps = {
     appVersion: mockAppVersion,
+    settings: mockSettings,
+    isPublishInProgress: false,
     updateAppVersion: jest.fn() as any,
-    uploadScreenshots: jest.fn() as any
+    uploadScreenshots: jest.fn() as any,
+    publishAppVersion: jest.fn() as any
   };
 
   it('renders correctly', () => {
@@ -150,6 +194,35 @@ describe('AppVersionDetails', () => {
 
     expect(mockUpdateAppVersion).toHaveBeenCalled();
     expect(mockUploadScreenshots).toHaveBeenCalled();
+  });
+
+  describe('when publish is selected', () => {
+    it('triggers publish, updates then resets state', async () => {
+      (mediaQuery as jest.Mock).mockReturnValue([true]);
+      const mockPublishAppVersion = jest.fn() as any;
+      const wrap = shallow(<AppVersionDetails {...defaultProps} publishAppVersion={mockPublishAppVersion} />);
+      const onPublish = (wrap.instance() as AppVersionDetails).onPublish();
+
+      await onPublish;
+
+      expect(mockPublishAppVersion).toHaveBeenCalled();
+    });
+  });
+
+  describe('readyForPublish', () => {
+    describe('when settings are filled out', () => {
+      (settingService.isComplete as jest.Mock).mockReturnValue(true);
+      const wrap = shallow(<AppVersionDetails {...defaultProps} />);
+
+      expect((wrap.instance() as AppVersionDetails).readyForPublish()).toBeTruthy();
+    });
+
+    describe('when settings are incomplete', () => {
+      (settingService.isComplete as jest.Mock).mockReturnValue(false);
+      const wrap = shallow(<AppVersionDetails {...defaultProps} />);
+
+      expect((wrap.instance() as AppVersionDetails).readyForPublish()).toBeFalsy();
+    });
   });
 
   it('triggers a state update when a form item is modified', () => {

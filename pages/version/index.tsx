@@ -7,6 +7,7 @@ import startCase from 'lodash/startCase';
 import { AppVersionPageQuery, PageContext, AppVersion, AppVersionPageTabs } from '@/models';
 import { RootState } from '@/store';
 import { fetchAppVersion } from '@/ducks/appVersion';
+import { fetchSettings } from '@/ducks/settings';
 
 import Details from './details';
 import Devices from './devices';
@@ -32,7 +33,10 @@ export class VersionPage extends Component<VersionPageProps> {
 
     switch (selectedTab) {
       case 'details':
-        await store.dispatch(fetchAppVersion(appSlug, versionId) as any);
+        await Promise.all([
+          store.dispatch(fetchAppVersion(appSlug, versionId) as any),
+          store.dispatch(fetchSettings(appSlug) as any)
+        ]);
         break;
       case 'devices':
         await store.dispatch(fetchTestDevices(appSlug) as any);
@@ -85,5 +89,5 @@ export class VersionPage extends Component<VersionPageProps> {
   }
 }
 
-const mapStateToProps = ({ appVersion }: RootState) => ({ appVersion });
+const mapStateToProps = ({ appVersion, settings }: RootState) => ({ appVersion, settings });
 export default connect(mapStateToProps)(VersionPage as any);

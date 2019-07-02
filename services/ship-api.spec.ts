@@ -166,4 +166,25 @@ describe('Ship API service', () => {
       expect(settings).toMatchSnapshot();
     });
   });
+
+  describe('publishAppVersion', () => {
+    testTokenNotSet(() => api.publishAppVersion(mockAppVersion));
+
+    it('publishes a version for an app', async () => {
+      (post as jest.Mock).mockResolvedValueOnce({
+        json: () => {}
+      });
+
+      const appSlug = 'an-app-slug',
+        id = 'a-version-id',
+        token = 'very-token',
+        buildNumber = 123;
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/versions/${id}/publish`;
+      await api.publishAppVersion({ appSlug, id, buildNumber } as any);
+      expect(post).toHaveBeenCalledWith(url, token, undefined);
+    });
+  });
 });

@@ -9,15 +9,17 @@ import Sidebar from './sidebar';
 import FormIos from './form-ios';
 import FormAndroid from './form-android';
 
+type DeviceInfo = {
+  key: string;
+  value: string;
+  isMarked: boolean;
+};
+
 type Props = {
   appVersion: AppVersion;
   showTooltips: boolean;
   selectedDeviceIdForScreenshots: string;
-  availableDevices: Array<{
-    key: string;
-    value: string;
-    isMarked: boolean;
-  }>;
+  availableDevices: DeviceInfo[];
   screenshots?: File[];
   onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
   removeScreenshot: (deviceId: string, screenshot: File) => void;
@@ -26,16 +28,53 @@ type Props = {
   removeFeatureGraphic: () => void;
   onDeviceSelected: (key: string) => void;
   onSave?: () => void;
+  onPublish?: () => void;
   onChange?: (key: string, newValue: string) => void;
   shouldEnableInstall: boolean;
+  readyForPublish: boolean;
+  isPublishInProgress: boolean;
+  publishTarget: string;
+  settingsPath: string;
+};
+
+const publishNotification = (
+  isPublishInProgress: boolean,
+  readyForPublish: boolean,
+  publishTarget: string,
+  settingsPath: string
+) => {
+  if (isPublishInProgress) {
+    return (
+      <Notification margin="x2" type="progress">
+        Publishing to {publishTarget} is in progress.
+      </Notification>
+    );
+  }
+
+  if (!readyForPublish) {
+    return <Notification margin="x2" type="alert" icon="Warning">
+      You need to setup publishing at the <a href={settingsPath}>Settings page.</a>
+    </Notification>;
+  }
+
+  return (
+    <Notification margin="x2" type="inform" icon="Deployment">
+      App is ready for publishing to {publishTarget}.
+    </Notification>
+  );
 };
 
 export default ({
   appVersion,
   selectedDeviceIdForScreenshots: deviceId,
   onSave,
+  onPublish,
   onChange,
   shouldEnableInstall,
+  readyForPublish,
+  isPublishInProgress,
+  publishTarget,
+  settingsPath,
   availableDevices,
   ...props
 }: Props) => {
@@ -47,13 +86,13 @@ export default ({
     onChange && onChange(name, value);
   };
 
+  const deviceInfo = availableDevices.find(device => device.key === deviceId) as DeviceInfo;
+
   return (
     <Base>
       <Flex direction="vertical" alignChildren="middle" paddingVertical="x6">
         <Flex maxWidth={isDesktop ? '100%' : 688}>
-          <Notification margin="x2" type="progress">
-            Publishing to App Store Connect is in progress.
-          </Notification>
+          {publishNotification(isPublishInProgress, readyForPublish, publishTarget, settingsPath)}
         </Flex>
       </Flex>
       <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'} gap="x4">
@@ -91,7 +130,7 @@ export default ({
               <FormIos
                 appVersion={appVersion}
                 deviceId={deviceId}
-                deviceName={availableDevices.find(device => device.key === deviceId).value}
+                deviceName={deviceInfo.value}
                 availableDevices={availableDevices}
                 {...props}
               />
@@ -100,7 +139,7 @@ export default ({
               <FormAndroid
                 appVersion={appVersion}
                 deviceId={deviceId}
-                deviceName={availableDevices.find(device => device.key === deviceId).value}
+                deviceName={deviceInfo.value}
                 availableDevices={availableDevices}
                 {...props}
               />
@@ -111,7 +150,9 @@ export default ({
         {isDesktop && (
           <Sidebar
             publicInstallPageURL={appVersion.publicInstallPageURL}
+            shouldEnablePublish={readyForPublish && !isPublishInProgress}
             onSave={onSave}
+            onPublish={onPublish}
             buildSlug={appVersion.buildSlug}
           />
         )}

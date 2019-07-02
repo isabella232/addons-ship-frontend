@@ -50,7 +50,7 @@ const _updateAppVersion = (appVersion: AppVersion) => async (dispatch: Dispatch,
 
     dispatch(updateAppVersion.complete(newAppVersion));
   } catch (error) {
-    dispatch(fetchAppVersion.error(error));
+    dispatch(updateAppVersion.error(error));
   }
 };
 
@@ -100,9 +100,44 @@ export const uploadScreenshots = Object.assign(_uploadScreenshots, {
   error: createAction($`UPLOAD_SCREENSHOTS_ERROR`, resolve => (error: Error) => resolve(error))
 });
 
-const defaultState = null as AppVersionState;
+const _publishAppVersion = (appVersion: AppVersion) => async (dispatch: Dispatch, getState: () => RootState) => {
+  const {
+    auth: { token }
+  } = getState();
 
-export type AppVersionState = null | AppVersion;
+  api.setToken(token);
+
+  dispatch(publishAppVersion.next());
+
+  try {
+    await api.publishAppVersion(appVersion);
+
+    dispatch(publishAppVersion.complete());
+  } catch (error) {
+    dispatch(publishAppVersion.error(error));
+  }
+};
+
+export const publishAppVersion = Object.assign(_publishAppVersion, {
+  next: createAction($`PUBLISH_NEXT`),
+  complete: createAction($`PUBLISH_COMPLETE`, resolve => () => resolve()),
+  error: createAction($`PUBLISH_ERROR`, resolve => (error: Error) => resolve(error))
+});
+
+const defaultState: AppVersionState = { appVersion: null, isPublishInProgress: false };
+
+export type AppVersionState = {
+  appVersion: AppVersion | null;
+  isPublishInProgress?: boolean;
+};
 export const appVersion = createReducer(defaultState, handleAction => [
-  handleAction([fetchAppVersion.complete, updateAppVersion.complete], (_, { payload }) => payload)
+  handleAction([fetchAppVersion.complete, updateAppVersion.complete], (state, { payload }) => ({
+    ...state,
+    appVersion: payload
+  })),
+  handleAction(publishAppVersion.next, state => ({ ...state, isPublishInProgress: true })),
+  handleAction([publishAppVersion.complete, publishAppVersion.error], state => ({
+    ...state,
+    isPublishInProgress: false
+  }))
 ]);

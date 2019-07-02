@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import { connect } from 'react-redux';
 import Link from 'next/link';
 import { Base, Tabs, Tab, Divider } from '@bitrise/bitkit';
 import startCase from 'lodash/startCase';

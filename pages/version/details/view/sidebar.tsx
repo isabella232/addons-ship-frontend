@@ -7,18 +7,20 @@ import css from './style.scss';
 
 type Props = {
   publicInstallPageURL?: string;
+  shouldEnablePublish: boolean;
   onSave?: () => void;
+  onPublish?: () => void;
   buildSlug: string;
 };
 
-export default ({ publicInstallPageURL, onSave, buildSlug }: Props) => (
+export default ({ publicInstallPageURL, shouldEnablePublish, onSave, onPublish, buildSlug }: Props) => (
   <Base maxWidth="16rem">
     <Base>
       <Button level="primary" fullWidth margin="x4" onClick={onSave}>
         <Icon name="Bug" />
         <Text>Save</Text>
       </Button>
-      <Button level="secondary" fullWidth margin="x4">
+      <Button level="secondary" fullWidth margin="x4" disabled={!shouldEnablePublish} onClick={onPublish}>
         <Icon name="Deployment" />
         <Text>Publish</Text>
       </Button>
