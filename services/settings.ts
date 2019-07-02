@@ -9,22 +9,22 @@ export class SettingsService {
   ) => {
     switch (appVersion.platform) {
       case 'ios': {
-        return !!(
-          iosSettings.artifactExposingWorkflows &&
-          iosSettings.appleDeveloperAccountEmail &&
-          iosSettings.appSku &&
-          iosSettings.appSpecificPassword &&
-          iosSettings.selectedProvProfile &&
-          iosSettings.selectedCertificate
-        );
+        return ![
+          'artifactExposingWorkflows',
+          'appleDeveloperAccountEmail',
+          'appSku',
+          'appSpecificPassword',
+          'selectedProvProfile',
+          'selectedCertificate'
+        ].find(key => !iosSettings[key]);
       }
       case 'android': {
-        return !!(
-          androidSettings.artifactExposingWorkflows &&
-          androidSettings.track &&
-          androidSettings.selectedKeystoreFile &&
-          androidSettings.selectedServiceAccountJsonFile
-        );
+        return ![
+          'artifactExposingWorkflows',
+          'track',
+          'selectedKeystoreFile',
+          'selectedServiceAccountJsonFile'
+        ].find(key => !androidSettings[key]);
       }
     }
 

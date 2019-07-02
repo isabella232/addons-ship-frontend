@@ -218,7 +218,7 @@ export class AppVersionDetails extends Component<Props, State> {
       availableDevices: map(screenshotList, ({ deviceName: value }, key) => ({
         key,
         value,
-        isMarked: ((get(get(screenshotList, key), 'screenshots') || []).length > 0) as boolean
+        isMarked: !!(get(screenshotList, `${key}.screenshots`, []) as DeviceScreenshots[]).length
       })),
       selectedDeviceIdForScreenshots,
       screenshots: screenshotList[selectedDeviceIdForScreenshots].screenshots,
@@ -241,7 +241,11 @@ export class AppVersionDetails extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ appVersion: { appVersion, isPublishInProgress }, settings }: RootState) => ({ appVersion, isPublishInProgress, settings });
+const mapStateToProps = ({ appVersion: { appVersion, isPublishInProgress }, settings }: RootState) => ({
+  appVersion,
+  isPublishInProgress,
+  settings
+});
 const mapDispatchToProps = {
   updateAppVersion,
   uploadScreenshots,

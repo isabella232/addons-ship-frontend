@@ -37,6 +37,33 @@ type Props = {
   settingsPath: string;
 };
 
+const publishNotification = (
+  isPublishInProgress: boolean,
+  readyForPublish: boolean,
+  publishTarget: string,
+  settingsPath: string
+) => {
+  if (isPublishInProgress) {
+    return (
+      <Notification margin="x2" type="progress">
+        Publishing to {publishTarget} is in progress.
+      </Notification>
+    );
+  }
+
+  if (!readyForPublish) {
+    <Notification margin="x2" type="alert" icon="Warning">
+      You need to setup publishing at the <a href={settingsPath}>Settings page.</a>
+    </Notification>;
+  }
+
+  return (
+    <Notification margin="x2" type="inform" icon="Deployment">
+      App is ready for publishing to {publishTarget}.
+    </Notification>
+  );
+};
+
 export default ({
   appVersion,
   selectedDeviceIdForScreenshots: deviceId,
@@ -65,19 +92,7 @@ export default ({
     <Base>
       <Flex direction="vertical" alignChildren="middle" paddingVertical="x6">
         <Flex maxWidth={isDesktop ? '100%' : 688}>
-          {isPublishInProgress ? (
-            <Notification margin="x2" type="progress">
-              Publishing to {publishTarget} is in progress.
-            </Notification>
-          ) : readyForPublish ? (
-            <Notification margin="x2" type="inform" icon="Deployment">
-              App is ready for publishing to {publishTarget}.
-            </Notification>
-          ) : (
-            <Notification margin="x2" type="alert" icon="Warning">
-              You need to setup publishing at the <a href={settingsPath}>Settings page.</a>
-            </Notification>
-          )}
+          {publishNotification(isPublishInProgress, readyForPublish, publishTarget, settingsPath)}
         </Flex>
       </Flex>
       <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'} gap="x4">

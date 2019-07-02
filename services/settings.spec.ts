@@ -1,9 +1,8 @@
 import { mockAppVersion, mockSettings, mockAndroidAppVersion } from '@/mocks';
 
 import settingsService from './settings';
-import { IosSettings, AndroidSettings, Settings } from '@/models';
+import { IosSettings, AndroidSettings } from '@/models';
 
-jest.mock('@/utils/media');
 jest.mock('@/utils/device');
 describe('SettingsService', () => {
   describe('isComplete', () => {
@@ -87,7 +86,7 @@ describe('SettingsService', () => {
   describe('when app has unknown platform', () => {
     it('returns true', () => {
       expect(
-        settingsService.isComplete({...mockAppVersion, platform: 'unknown'}, mockSettings as {
+        settingsService.isComplete({ ...mockAppVersion, platform: 'unknown' }, mockSettings as {
           iosSettings: IosSettings;
           androidSettings: AndroidSettings;
         })
