@@ -89,8 +89,17 @@ describe('appVersion', () => {
   });
 
   describe('publishAppVersion', () => {
-    it('publishes without issues', async () => {
-      await publishAppVersion(mockAppVersion);
+    it('publishes an app version', async () => {
+      await store.dispatch(publishAppVersion(mockAppVersion) as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it("can't publishe an app version", async () => {
+      (api.publishAppVersion as jest.Mock).mockRejectedValueOnce('api had some issue');
+      await store.dispatch(publishAppVersion(mockAppVersion) as any);
+
+      expect(store.getActions()).toMatchSnapshot();
     });
   });
 });

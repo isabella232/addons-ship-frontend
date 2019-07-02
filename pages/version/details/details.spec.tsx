@@ -9,7 +9,6 @@ import toJSON from 'enzyme-to-json';
 import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion, mockSettings } from '@/mocks';
 import { mediaQuery } from '@/utils/media';
 import { isAndroid, osVersion, mobileModel, compareVersions } from '@/utils/device';
-import { publishAppVersion } from '@/ducks/appVersion';
 import settingService from '@/services/settings';
 import Dropzone from '@/components/Dropzone';
 
@@ -117,8 +116,10 @@ describe('AppVersionDetails', () => {
   const defaultProps = {
     appVersion: mockAppVersion,
     settings: mockSettings,
+    isPublishInProgress: false,
     updateAppVersion: jest.fn() as any,
-    uploadScreenshots: jest.fn() as any
+    uploadScreenshots: jest.fn() as any,
+    publishAppVersion: jest.fn() as any
   };
 
   it('renders correctly', () => {
@@ -198,13 +199,13 @@ describe('AppVersionDetails', () => {
   describe('when publish is selected', () => {
     it('triggers publish, updates then resets state', async () => {
       (mediaQuery as jest.Mock).mockReturnValue([true]);
-      const wrap = shallow(<AppVersionDetails {...defaultProps} />);
+      const mockPublishAppVersion = jest.fn() as any;
+      const wrap = shallow(<AppVersionDetails {...defaultProps} publishAppVersion={mockPublishAppVersion} />);
       const onPublish = (wrap.instance() as AppVersionDetails).onPublish();
 
-      expect(publishAppVersion).toHaveBeenCalled();
-      expect(wrap.state('isPublishInProgress')).toBeTruthy();
       await onPublish;
-      expect(wrap.state('isPublishInProgress')).toBeFalsy();
+
+      expect(mockPublishAppVersion).toHaveBeenCalled();
     });
   });
 

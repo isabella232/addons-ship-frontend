@@ -86,8 +86,7 @@ export class ShipAPIService {
     const { appSlug, id: versionId } = appVersion;
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/publish`;
 
-    const { data } = await post(url, this.token, undefined).then(res => res.json());
-    return await camelizeKeys(data);
+    return await post(url, this.token, undefined).then(res => res.json());
   }
 
   // PATCH /apps/{app-slug}/versions/{version-id}/screenshots/uploaded

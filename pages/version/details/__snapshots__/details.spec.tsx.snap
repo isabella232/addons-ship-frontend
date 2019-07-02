@@ -168,13 +168,13 @@ exports[`AppVersionDetails disables install button when device is from a lower v
       },
     ]
   }
+  isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishInProgress={false}
   publishTarget="Google Play Store"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
@@ -280,13 +280,13 @@ exports[`AppVersionDetails disables install button when device is from different
       },
     ]
   }
+  isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishInProgress={false}
   publishTarget="Google Play Store"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
@@ -392,13 +392,13 @@ exports[`AppVersionDetails disables install button when device is not supported 
       },
     ]
   }
+  isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishInProgress={false}
   publishTarget="Google Play Store"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
@@ -505,13 +505,13 @@ exports[`AppVersionDetails disables install button when there is no public insta
       },
     ]
   }
+  isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishInProgress={false}
   publishTarget="App Store Connect"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
@@ -617,13 +617,13 @@ exports[`AppVersionDetails enables install button when there is public install p
       },
     ]
   }
+  isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishInProgress={false}
   publishTarget="Google Play Store"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
@@ -729,13 +729,13 @@ exports[`AppVersionDetails enables install button when there is public install p
       },
     ]
   }
+  isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishInProgress={false}
   publishTarget="Google Play Store"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
@@ -842,13 +842,13 @@ exports[`AppVersionDetails renders correctly 1`] = `
       },
     ]
   }
+  isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishInProgress={false}
   publishTarget="App Store Connect"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
@@ -919,10 +919,10 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
       },
     ]
   }
+  isPublishInProgress={false}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
-  publishInProgress={false}
   publishTarget="Google Play Store"
   readyForPublish={true}
   removeFeatureGraphic={[MockFunction]}
@@ -4921,10 +4921,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
       },
     ]
   }
+  isPublishInProgress={false}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
-  publishInProgress={false}
   publishTarget="App Store Connect"
   readyForPublish={true}
   removeFeatureGraphic={[MockFunction]}
@@ -9245,10 +9245,10 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
       },
     ]
   }
+  isPublishInProgress={false}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
-  publishInProgress={false}
   publishTarget="App Store Connect"
   readyForPublish={false}
   removeFeatureGraphic={[MockFunction]}
@@ -13578,10 +13578,10 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
       },
     ]
   }
+  isPublishInProgress={false}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
-  publishInProgress={false}
   publishTarget="App Store Connect"
   readyForPublish={true}
   removeFeatureGraphic={[MockFunction]}
@@ -17695,10 +17695,10 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
       },
     ]
   }
+  isPublishInProgress={true}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
-  publishInProgress={true}
   publishTarget="App Store Connect"
   readyForPublish={true}
   removeFeatureGraphic={[MockFunction]}
@@ -22031,10 +22031,10 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
       },
     ]
   }
+  isPublishInProgress={false}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
-  publishInProgress={false}
   publishTarget="App Store Connect"
   readyForPublish={true}
   removeFeatureGraphic={[MockFunction]}
