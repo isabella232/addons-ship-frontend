@@ -218,7 +218,7 @@ export class AppVersionDetails extends Component<Props, State> {
       availableDevices: map(screenshotList, ({ deviceName: value }, key) => ({
         key,
         value,
-        isMarked: !!(get(screenshotList, `${key}.screenshots`, []) as DeviceScreenshots[]).length
+        isMarked: !!(((get(screenshotList, `${key}.screenshots`) as unknown) || []) as any[]).length
       })),
       selectedDeviceIdForScreenshots,
       screenshots: screenshotList[selectedDeviceIdForScreenshots].screenshots,

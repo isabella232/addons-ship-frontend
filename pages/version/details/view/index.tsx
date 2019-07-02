@@ -52,7 +52,7 @@ const publishNotification = (
   }
 
   if (!readyForPublish) {
-    <Notification margin="x2" type="alert" icon="Warning">
+    return <Notification margin="x2" type="alert" icon="Warning">
       You need to setup publishing at the <a href={settingsPath}>Settings page.</a>
     </Notification>;
   }
