@@ -1,5 +1,6 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { createEpicMiddleware, combineEpics } from 'redux-observable';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import appVersion from '@/ducks/appVersion';
@@ -14,6 +15,10 @@ const rootReducer = combineReducers({
   auth
 });
 
+const rootEpics = combineEpics();
+
+const epicMiddleware = createEpicMiddleware();
+
 export type RootState = ReturnType<typeof rootReducer>;
 
 /**
@@ -25,5 +30,5 @@ export type RootState = ReturnType<typeof rootReducer>;
  * @param {string} options.storeKey This key will be used to preserve store in global namespace for safe HMR
  */
 export default (initialState: any, _options: any) => {
-  return createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk)));
+  return createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk, epicMiddleware)));
 };
