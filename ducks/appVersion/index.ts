@@ -5,13 +5,25 @@ import { AppVersion } from '@/models';
 import fetchAppVersion from './fetchAppVersion';
 import updateAppVersion from './updateAppVersion';
 import uploadScreenshots from './uploadScreenshots';
+import publishAppVersion from './publishAppVersion';
 import pollPublishStatus, { pollPublishStatusEpic } from './pollPublishStatus';
 
-export type AppVersionState = null | AppVersion;
+export type AppVersionState = {
+  appVersion: AppVersion | null;
+  isPublishInProgress?: boolean;
+};
 
-const defaultState = null as AppVersionState;
+const defaultState: AppVersionState = { appVersion: null, isPublishInProgress: false };
 
-export { fetchAppVersion, updateAppVersion, uploadScreenshots, pollPublishStatusEpic };
+export { fetchAppVersion, updateAppVersion, uploadScreenshots, publishAppVersion, pollPublishStatusEpic };
 export default createReducer(defaultState, handleAction => [
-  handleAction([fetchAppVersion.complete, updateAppVersion.complete], (_, { payload }) => payload)
+  handleAction([fetchAppVersion.complete, updateAppVersion.complete], (state, { payload }) => ({
+    ...state,
+    appVersion: payload
+  })),
+  handleAction(publishAppVersion.next, state => ({ ...state, isPublishInProgress: true })),
+  handleAction([publishAppVersion.complete, publishAppVersion.error], state => ({
+    ...state,
+    isPublishInProgress: false
+  }))
 ]);

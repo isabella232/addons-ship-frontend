@@ -4,6 +4,8 @@ import { APIConfig } from '@/models/services';
 import { Uploadable } from '@/models/uploadable';
 import { snakifyKeys, camelizeKeys } from '@/utils';
 import { patch, post, get, put } from '@/utils/request';
+import { mockSettings } from '@/mocks';
+import { Settings } from '@/models';
 
 export class ShipAPIService {
   constructor(private config: APIConfig) {}
@@ -75,6 +77,18 @@ export class ShipAPIService {
     return data.map(camelizeKeys);
   }
 
+  // POST /apps/{app-slug}/versions/{version-id}/publish
+  async publishAppVersion(appVersion: AppVersion): Promise<AppVersion> {
+    if (this.token === null) {
+      throw new Error('Token not set');
+    }
+
+    const { appSlug, id: versionId } = appVersion;
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/publish`;
+
+    return await post(url, this.token, undefined).then(res => res.json());
+  }
+
   // PATCH /apps/{app-slug}/versions/{version-id}/screenshots/uploaded
   uploadedScreenshots(appSlug: string, versionId: string) {
     if (this.token === null) {
@@ -84,6 +98,22 @@ export class ShipAPIService {
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/uploaded`;
 
     return patch(url, this.token);
+  }
+
+  async getSettings(appSlug: string): Promise<Settings> {
+    if (this.token === null) {
+      throw new Error('Token not set');
+    }
+
+    return mockSettings;
+  }
+
+  async updateSettings(settings: Settings): Promise<void> {
+    if (this.token === null) {
+      throw new Error('Token not set');
+    }
+
+    return await new Promise(resolve => setTimeout(resolve, 500)).then(() => {});
   }
 }
 

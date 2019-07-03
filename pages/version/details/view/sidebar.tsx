@@ -7,18 +7,20 @@ import css from './style.scss';
 
 type Props = {
   publicInstallPageURL?: string;
+  shouldEnablePublish: boolean;
   onSave?: () => void;
+  onPublish?: () => void;
   buildSlug: string;
 };
 
-export default ({ publicInstallPageURL, onSave, buildSlug }: Props) => (
+export default ({ publicInstallPageURL, shouldEnablePublish, onSave, onPublish, buildSlug }: Props) => (
   <Base maxWidth="16rem">
     <Base>
       <Button level="primary" fullWidth margin="x4" onClick={onSave}>
         <Icon name="Bug" />
         <Text>Save</Text>
       </Button>
-      <Button level="secondary" fullWidth margin="x4">
+      <Button level="secondary" fullWidth margin="x4" disabled={!shouldEnablePublish} onClick={onPublish}>
         <Icon name="Deployment" />
         <Text>Publish</Text>
       </Button>
@@ -30,11 +32,12 @@ export default ({ publicInstallPageURL, onSave, buildSlug }: Props) => (
           alignChildrenHorizontal="between"
           alignChildrenVertical="middle"
           paddingVertical="x4"
+          gap="x3"
         >
           <Text weight="bold" size="x3">
             Public Install Page link
           </Text>
-          <Base paddingHorizontal="x3">
+          <Base>
             <Clipboard data-clipboard-text={publicInstallPageURL} className={css['clipboard-button']}>
               <Base padding="x1" className={css['icon-container']} borderRadius="x1">
                 <Icon name="Duplicate" size="1.5rem" />

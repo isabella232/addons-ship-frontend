@@ -1,21 +1,26 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import map from 'lodash/map';
+import { get } from 'lodash';
 import update from 'lodash/update';
 import filter from 'lodash/filter';
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
 
-import { AppVersion } from '@/models';
+import { AppVersion, Settings, IosSettings, AndroidSettings } from '@/models';
 import { RootState } from '@/store';
-import { updateAppVersion, uploadScreenshots } from '@/ducks/appVersion';
+import { updateAppVersion, uploadScreenshots, publishAppVersion } from '@/ducks/appVersion';
+import settingService from '@/services/settings';
 
 import View from './view';
 import { Uploadable } from '@/models/uploadable';
 
 type Props = {
   appVersion: AppVersion;
+  isPublishInProgress: boolean;
+  settings: Settings;
   updateAppVersion: typeof updateAppVersion;
   uploadScreenshots: typeof uploadScreenshots;
+  publishAppVersion: typeof publishAppVersion;
 };
 
 export type State = {
@@ -24,6 +29,7 @@ export type State = {
   screenshotList: { [deviceId: string]: DeviceScreenshots };
   featureGraphic?: File;
   selectedDeviceIdForScreenshots: string;
+  readyForPublish?: boolean;
 };
 
 type DeviceScreenshots = {
@@ -130,6 +136,12 @@ export class AppVersionDetails extends Component<Props, State> {
     uploadScreenshots(appSlug, id.toString(), uploadable, files);
   };
 
+  onPublish = async () => {
+    const { appVersion, publishAppVersion } = this.props;
+
+    await publishAppVersion(appVersion);
+  };
+
   onScreenshotAdded = (deviceId: string, newScreenshots: File[]) => {
     const screenshotList = update({ ...this.state.screenshotList }, `${deviceId}.screenshots`, (screenshots = []) =>
       screenshots.concat(newScreenshots)
@@ -160,6 +172,10 @@ export class AppVersionDetails extends Component<Props, State> {
 
   shouldEnableInstall = () => {
     const { appVersion } = this.props;
+    if (!appVersion) {
+      return false;
+    }
+
     if (!appVersion.publicInstallPageURL) {
       return false;
     }
@@ -179,8 +195,17 @@ export class AppVersionDetails extends Component<Props, State> {
     return true;
   };
 
+  readyForPublish = () => {
+    const { appVersion, settings } = this.props;
+
+    return settingService.isComplete(appVersion, settings as {
+      iosSettings: IosSettings;
+      androidSettings: AndroidSettings;
+    });
+  };
+
   render() {
-    const { appVersion } = this.props;
+    const { appVersion, isPublishInProgress } = this.props;
     const { showTooltips, selectedDeviceIdForScreenshots, screenshotList, featureGraphic } = this.state;
 
     const viewProps = {
@@ -188,8 +213,13 @@ export class AppVersionDetails extends Component<Props, State> {
       showTooltips,
       onChange: this.onChange,
       onSave: this.onSave,
+      onPublish: this.onPublish,
       onScreenshotAdded: this.onScreenshotAdded,
-      availableDevices: map(screenshotList, ({ deviceName: value }, key) => ({ key, value })),
+      availableDevices: map(screenshotList, ({ deviceName: value }, key) => ({
+        key,
+        value,
+        isMarked: !!(((get(screenshotList, `${key}.screenshots`) as unknown) || []) as any[]).length
+      })),
       selectedDeviceIdForScreenshots,
       screenshots: screenshotList[selectedDeviceIdForScreenshots].screenshots,
       removeScreenshot: this.removeScreenshot,
@@ -197,17 +227,29 @@ export class AppVersionDetails extends Component<Props, State> {
       onFeatureGraphicAdded: this.onFeatureGraphicAdded,
       removeFeatureGraphic: this.removeFeatureGraphic,
       onDeviceSelected: this.onDeviceSelected,
-      shouldEnableInstall: this.shouldEnableInstall()
+      shouldEnableInstall: this.shouldEnableInstall(),
+      readyForPublish: this.readyForPublish(),
+      isPublishInProgress,
+      publishTarget:
+        (appVersion.platform === 'ios' && 'App Store Connect') ||
+        (appVersion.platform === 'android' && 'Google Play Store') ||
+        'production',
+      settingsPath: `/apps/${appVersion.appSlug}/settings`
     };
 
     return <View {...viewProps} />;
   }
 }
 
-const mapStateToProps = ({ appVersion }: RootState) => ({ appVersion });
+const mapStateToProps = ({ appVersion: { appVersion, isPublishInProgress }, settings }: RootState) => ({
+  appVersion,
+  isPublishInProgress,
+  settings
+});
 const mapDispatchToProps = {
   updateAppVersion,
-  uploadScreenshots
+  uploadScreenshots,
+  publishAppVersion
 };
 
 export default connect(

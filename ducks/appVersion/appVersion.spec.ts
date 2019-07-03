@@ -8,7 +8,7 @@ import { mockAppVersion } from '@/mocks';
 import { AppVersion } from '@/models';
 import api from '@/services/ship-api';
 
-import reducer, { fetchAppVersion, updateAppVersion, uploadScreenshots } from '.';
+import reducer, { fetchAppVersion, updateAppVersion, uploadScreenshots, publishAppVersion } from '.';
 import { uploadFileToS3 } from '@/utils/file';
 
 describe('appVersion', () => {
@@ -83,6 +83,21 @@ describe('appVersion', () => {
     it("can't upload screenshots", async () => {
       (api.uploadScreenshots as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(uploadScreenshots('app-slug', 'version-id', [], []) as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  describe('publishAppVersion', () => {
+    it('publishes an app version', async () => {
+      await store.dispatch(publishAppVersion(mockAppVersion) as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it("can't publishe an app version", async () => {
+      (api.publishAppVersion as jest.Mock).mockRejectedValueOnce('api had some issue');
+      await store.dispatch(publishAppVersion(mockAppVersion) as any);
 
       expect(store.getActions()).toMatchSnapshot();
     });

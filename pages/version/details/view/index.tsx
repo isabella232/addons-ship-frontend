@@ -9,14 +9,17 @@ import Sidebar from './sidebar';
 import FormIos from './form-ios';
 import FormAndroid from './form-android';
 
+type DeviceInfo = {
+  key: string;
+  value: string;
+  isMarked: boolean;
+};
+
 type Props = {
   appVersion: AppVersion;
   showTooltips: boolean;
   selectedDeviceIdForScreenshots: string;
-  availableDevices: Array<{
-    key: string;
-    value: string;
-  }>;
+  availableDevices: DeviceInfo[];
   screenshots?: File[];
   onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
   removeScreenshot: (deviceId: string, screenshot: File) => void;
@@ -25,11 +28,56 @@ type Props = {
   removeFeatureGraphic: () => void;
   onDeviceSelected: (key: string) => void;
   onSave?: () => void;
+  onPublish?: () => void;
   onChange?: (key: string, newValue: string) => void;
   shouldEnableInstall: boolean;
+  readyForPublish: boolean;
+  isPublishInProgress: boolean;
+  publishTarget: string;
+  settingsPath: string;
 };
 
-export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, onChange, shouldEnableInstall, ...props }: Props) => {
+const publishNotification = (
+  isPublishInProgress: boolean,
+  readyForPublish: boolean,
+  publishTarget: string,
+  settingsPath: string
+) => {
+  if (isPublishInProgress) {
+    return (
+      <Notification margin="x2" type="progress">
+        Publishing to {publishTarget} is in progress.
+      </Notification>
+    );
+  }
+
+  if (!readyForPublish) {
+    return <Notification margin="x2" type="alert" icon="Warning">
+      You need to setup publishing at the <a href={settingsPath}>Settings page.</a>
+    </Notification>;
+  }
+
+  return (
+    <Notification margin="x2" type="inform" icon="Deployment">
+      App is ready for publishing to {publishTarget}.
+    </Notification>
+  );
+};
+
+export default ({
+  appVersion,
+  selectedDeviceIdForScreenshots: deviceId,
+  onSave,
+  onPublish,
+  onChange,
+  shouldEnableInstall,
+  readyForPublish,
+  isPublishInProgress,
+  publishTarget,
+  settingsPath,
+  availableDevices,
+  ...props
+}: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   const [isDesktop] = mediaQuery('60rem');
@@ -38,17 +86,17 @@ export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, 
     onChange && onChange(name, value);
   };
 
+  const deviceInfo = availableDevices.find(device => device.key === deviceId) as DeviceInfo;
+
   return (
     <Base>
       <Flex direction="vertical" alignChildren="middle" paddingVertical="x6">
-        <Flex maxWidth={isDesktop ? '100%' : 660}>
-          <Notification margin="x2" type="progress">
-            Publishing to App Store Connect is in progress.
-          </Notification>
+        <Flex maxWidth={isDesktop ? '100%' : 688}>
+          {publishNotification(isPublishInProgress, readyForPublish, publishTarget, settingsPath)}
         </Flex>
       </Flex>
-      <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'}>
-        <Flex maxWidth={660} margin="x0" paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
+      <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'} gap="x4">
+        <Flex maxWidth={688}>
           <form onChange={onFormChange}>
             <Flex direction="horizontal" margin="x4">
               <Image src={appVersion.iconUrl} borderRadius="x2" />
@@ -78,9 +126,23 @@ export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, 
                 <Text>Install</Text>
               </Button>
             </Flex>
-            {appVersion.platform === 'ios' && <FormIos appVersion={appVersion} deviceId={deviceId} {...props} />}
+            {appVersion.platform === 'ios' && (
+              <FormIos
+                appVersion={appVersion}
+                deviceId={deviceId}
+                deviceName={deviceInfo.value}
+                availableDevices={availableDevices}
+                {...props}
+              />
+            )}
             {appVersion.platform === 'android' && (
-              <FormAndroid appVersion={appVersion} deviceId={deviceId} {...props} />
+              <FormAndroid
+                appVersion={appVersion}
+                deviceId={deviceId}
+                deviceName={deviceInfo.value}
+                availableDevices={availableDevices}
+                {...props}
+              />
             )}
           </form>
         </Flex>
@@ -88,7 +150,9 @@ export default ({ appVersion, selectedDeviceIdForScreenshots: deviceId, onSave, 
         {isDesktop && (
           <Sidebar
             publicInstallPageURL={appVersion.publicInstallPageURL}
+            shouldEnablePublish={readyForPublish && !isPublishInProgress}
             onSave={onSave}
+            onPublish={onPublish}
             buildSlug={appVersion.buildSlug}
           />
         )}

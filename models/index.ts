@@ -8,10 +8,17 @@ export type AppVersionProps = {
 };
 
 export const AppVersionPageTabs = ['details', 'devices', 'test', 'activity'];
+export const AppSettingsPageTabs = ['general'];
+export const MaximumNumberOfCertificates = 30;
 
 export type AppVersionPageQuery = AppVersionProps & {
   isPublic?: string;
   selectedTab?: typeof AppVersionPageTabs[number];
+};
+
+export type AppSettingsPageQuery = {
+  appSlug: string;
+  selectedTab?: typeof AppSettingsPageTabs[number];
 };
 
 export type AppPageQuery = {
@@ -29,7 +36,7 @@ export type AppVersion = {
   shortDescription?: string;
   description: string;
   whatsNew: string;
-  versionCode?: string,
+  versionCode?: string;
   minimumOs?: string;
   minimumSdk?: string;
   packageName?: string;
@@ -47,11 +54,52 @@ export type AppVersion = {
   marketingUrl?: string;
   scheme?: string;
   configuration?: string;
-  module?: string,
-  variant?: string,
-  buildType?: string,
+  module?: string;
+  variant?: string;
+  buildType?: string;
   publicInstallPageURL?: string;
 };
+
+export type ProvProfile = {
+  name: string;
+}
+
+export type Certificate = {
+  name: string;
+}
+
+export type KeystoreFile = {
+  name: string;
+}
+
+export type ServiceAccountJsonFile = {
+  name: string;
+}
+
+export type IosSettings = {
+  artifactExposingWorkflows: string;
+  appleDeveloperAccountEmail: string;
+  appSku: string;
+  appSpecificPassword: string;
+  selectedProvProfile: any;
+  selectedCertificate: any;
+};
+
+export type AndroidSettings = {
+  artifactExposingWorkflows: string;
+  track: string;
+  selectedKeystoreFile: any;
+  selectedServiceAccountJsonFile: any;
+};
+
+export type Settings = {
+  iosSettings?: IosSettings;
+  androidSettings?: AndroidSettings;
+  provProfiles?: ProvProfile[];
+  certificates?: Certificate[];
+  keystoreFiles?: KeystoreFile[];
+  serviceAccountJsonFiles?: ServiceAccountJsonFile[];
+}
 
 export interface PageContext extends NextContext {
   store: Store;

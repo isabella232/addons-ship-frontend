@@ -16,10 +16,12 @@
   padding: 2 * $grid;
   border-radius: $grid;
   cursor: pointer;
+  color: $grape-3;
+  opacity: 0.8;
+  transition: opacity 0.2s;
 
-  &:hover {
-    background: $grape-1;
-    color: $grape-3;
+  &Selected, &:hover {
+    opacity: 1;
   }
 
   &Selected::after {
@@ -34,12 +36,24 @@
     opacity: 0;
     pointer-events: none;
   }
+
+  &Marked:before {
+    content: '';
+    display: inline-block;
+    width: $grid;
+    height: $grid;
+    margin-right: $grid;
+    margin-bottom: $grid;
+    border-radius: $grid / 2;
+    background-color: $aqua-3;
+  }
 }
 
 .dropdown {
   padding: $grid;
   border-radius: $grid;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 
   &:hover {
     background: $grape-1;

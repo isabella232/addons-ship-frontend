@@ -4,7 +4,7 @@ import { Uploadable } from '@/models/uploadable';
 import { patch, post, get, put } from '@/utils/request';
 
 import { ShipAPIService } from './ship-api';
-import { mockAppVersion } from '@/mocks';
+import { mockAppVersion, mockSettings } from '@/mocks';
 
 describe('Ship API service', () => {
   const apiUrl = 'http://ship.api';
@@ -137,6 +137,54 @@ describe('Ship API service', () => {
 
       const url = `${apiUrl}/apps/${appSlug}/versions/${versionId}/screenshots/uploaded`;
       expect(patch).toHaveBeenLastCalledWith(url, token);
+    });
+  });
+
+  describe('getSettings', () => {
+    testTokenNotSet(() => api.getSettings('slug'));
+
+    it('fetches settings for an app', async () => {
+      const appSlug = 'an-app-slug';
+      api.setToken('very-token');
+      const settings = await api.getSettings(appSlug);
+
+      // expect(fetch).toHaveBeenCalledWith(`/v0.1/apps/${appSlug}/settings`);
+
+      expect(settings).toMatchSnapshot();
+    });
+  });
+
+  describe('updateSettings', () => {
+    testTokenNotSet(() => api.updateSettings({}));
+
+    it('updates settings for an app', async () => {
+      api.setToken('very-token');
+      const settings = await api.updateSettings(mockSettings);
+
+      // expect(fetch).toHaveBeenCalledWith(`/v0.1/apps/${appSlug}/settings`);
+
+      expect(settings).toMatchSnapshot();
+    });
+  });
+
+  describe('publishAppVersion', () => {
+    testTokenNotSet(() => api.publishAppVersion(mockAppVersion));
+
+    it('publishes a version for an app', async () => {
+      (post as jest.Mock).mockResolvedValueOnce({
+        json: () => {}
+      });
+
+      const appSlug = 'an-app-slug',
+        id = 'a-version-id',
+        token = 'very-token',
+        buildNumber = 123;
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/versions/${id}/publish`;
+      await api.publishAppVersion({ appSlug, id, buildNumber } as any);
+      expect(post).toHaveBeenCalledWith(url, token, undefined);
     });
   });
 });
