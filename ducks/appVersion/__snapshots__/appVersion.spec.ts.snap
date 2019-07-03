@@ -65,7 +65,7 @@ Array [
   },
   Object {
     "payload": "api had some issue",
-    "type": "APP_VERSION_GET_ERROR",
+    "type": "APP_VERSION_UPDATE_ERROR",
   },
 ]
 `;

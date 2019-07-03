@@ -8,7 +8,7 @@ import { mockAppVersion } from '@/mocks';
 import { AppVersion } from '@/models';
 import api from '@/services/ship-api';
 
-import { appVersion, fetchAppVersion, updateAppVersion, uploadScreenshots } from './appVersion';
+import reducer, { fetchAppVersion, updateAppVersion, uploadScreenshots } from '.';
 import { uploadFileToS3 } from '@/utils/file';
 
 describe('appVersion', () => {
@@ -20,7 +20,7 @@ describe('appVersion', () => {
 
   describe('reducer', () => {
     it('loads an app version', () => {
-      const state = appVersion(undefined, fetchAppVersion.complete(mockAppVersion));
+      const state = reducer(undefined, fetchAppVersion.complete(mockAppVersion));
 
       expect(state).toMatchSnapshot();
     });

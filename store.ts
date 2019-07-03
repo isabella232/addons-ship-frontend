@@ -2,7 +2,7 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { appVersion } from '@/ducks/appVersion';
+import appVersion from '@/ducks/appVersion';
 import { testDevices } from '@/ducks/testDevices';
 import { appVersionList } from '@/ducks/appVersionList';
 import auth from '@/ducks/auth';
