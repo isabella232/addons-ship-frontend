@@ -14,20 +14,13 @@ import {
   Button
 } from '@bitrise/bitkit';
 
-import {
-  ProvProfile,
-  Certificate,
-  KeystoreFile,
-  ServiceAccountJsonFile,
-  IosSettings,
-  AndroidSettings
-} from '@/models';
+import { ProvProfile, Certificate, KeystoreFile, ServiceAccountJsonFile, IosSettings, AndroidSettings } from '@/models';
 import { mediaQuery } from '@/utils/media';
 import { Fragment } from 'react';
 
 type Props = {
   maximumNumberOfCertificates: number;
-  showTooltips: boolean;
+  hasMounted: boolean;
   provProfiles?: ProvProfile[];
   certificates?: Certificate[];
   keystoreFiles?: KeystoreFile[];
@@ -49,7 +42,7 @@ type Props = {
 
 export default ({
   maximumNumberOfCertificates,
-  showTooltips,
+  hasMounted,
   provProfiles,
   certificates,
   keystoreFiles,
@@ -91,7 +84,7 @@ export default ({
                       margin="x1"
                     >
                       <InputLabel>Expose Artifacts From the Selected Workflow to Ship</InputLabel>
-                      {showTooltips && (
+                      {hasMounted && (
                         <Tooltip title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy">
                           {() => <Icon color="grape-3" name="Support" size="1.5rem" />}
                         </Tooltip>
@@ -264,7 +257,7 @@ export default ({
                       margin="x1"
                     >
                       <InputLabel>Expose Artifacts From the Selected Workflow to Ship</InputLabel>
-                      {showTooltips && (
+                      {hasMounted && (
                         <Tooltip title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy">
                           {() => <Icon color="grape-3" name="Support" size="1.5rem" />}
                         </Tooltip>

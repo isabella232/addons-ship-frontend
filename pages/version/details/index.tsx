@@ -24,7 +24,7 @@ type Props = {
 };
 
 export type State = {
-  showTooltips: boolean;
+  hasMounted: boolean;
   updatedAppVersion: AppVersion | null;
   screenshotList: { [deviceId: string]: DeviceScreenshots };
   featureGraphic?: File;
@@ -39,7 +39,7 @@ type DeviceScreenshots = {
 
 export class AppVersionDetails extends Component<Props, State> {
   state: State = {
-    showTooltips: false,
+    hasMounted: false,
     updatedAppVersion: null,
     screenshotList: {
       iphone65: {
@@ -83,7 +83,7 @@ export class AppVersionDetails extends Component<Props, State> {
   componentDidMount() {
     const { appVersion } = this.props;
 
-    this.setState({ showTooltips: true, updatedAppVersion: appVersion });
+    this.setState({ hasMounted: true, updatedAppVersion: appVersion });
   }
 
   onChange = (key: string, newValue: string) => {
@@ -206,11 +206,11 @@ export class AppVersionDetails extends Component<Props, State> {
 
   render() {
     const { appVersion, isPublishInProgress } = this.props;
-    const { showTooltips, selectedDeviceIdForScreenshots, screenshotList, featureGraphic } = this.state;
+    const { hasMounted, selectedDeviceIdForScreenshots, screenshotList, featureGraphic } = this.state;
 
     const viewProps = {
       appVersion,
-      showTooltips,
+      hasMounted,
       onChange: this.onChange,
       onSave: this.onSave,
       onPublish: this.onPublish,

@@ -21,7 +21,7 @@ describe('GeneralView', () => {
     certificates: mockSettings.certificates,
     keystoreFiles: mockSettings.keystoreFiles,
     serviceAccountJsonFiles: mockSettings.serviceAccountJsonFiles,
-    showTooltips: true,
+    hasMounted: true,
     onSettingsPropertyChange: jest.fn(),
     onSelectedFileChange: jest.fn(),
     onCancel: jest.fn(),

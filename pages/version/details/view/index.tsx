@@ -17,7 +17,7 @@ type DeviceInfo = {
 
 type Props = {
   appVersion: AppVersion;
-  showTooltips: boolean;
+  hasMounted: boolean;
   selectedDeviceIdForScreenshots: string;
   availableDevices: DeviceInfo[];
   screenshots?: File[];
@@ -52,9 +52,11 @@ const publishNotification = (
   }
 
   if (!readyForPublish) {
-    return <Notification margin="x2" type="alert" icon="Warning">
-      You need to setup publishing at the <a href={settingsPath}>Settings page.</a>
-    </Notification>;
+    return (
+      <Notification margin="x2" type="alert" icon="Warning">
+        You need to setup publishing at the <a href={settingsPath}>Settings page.</a>
+      </Notification>
+    );
   }
 
   return (
