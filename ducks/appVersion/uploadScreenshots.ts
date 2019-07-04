@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux';
 import { createAction } from 'deox';
 
-import api from '@/services/ship-api';
+import { ShipAPIService } from '@/services/ship-api';
 import { Uploadable } from '@/models/uploadable';
 import { RootState } from '@/store';
 import { uploadFileToS3 } from '@/utils/file';
@@ -9,19 +9,14 @@ import { uploadFileToS3 } from '@/utils/file';
 import { $ } from './common';
 const _uploadScreenshots = (appSlug: string, versionId: string, screenshots: Uploadable[], files: File[]) => async (
   dispatch: Dispatch,
-  getState: () => RootState
+  _getState: () => RootState,
+  { shipApi }: { shipApi: ShipAPIService }
 ) => {
-  const {
-    auth: { token }
-  } = getState();
-
-  api.setToken(token);
-
   dispatch(uploadScreenshots.next());
 
   try {
     // Get presigned Urls
-    const withPresignedUrl = await api.uploadScreenshots(appSlug, versionId, screenshots);
+    const withPresignedUrl = await shipApi.uploadScreenshots(appSlug, versionId, screenshots);
 
     // Upload images to S3
     await Promise.all(
@@ -33,7 +28,7 @@ const _uploadScreenshots = (appSlug: string, versionId: string, screenshots: Upl
     );
 
     // Mark screenshots as uploaded
-    await api.uploadedScreenshots(appSlug, versionId);
+    await shipApi.uploadedScreenshots(appSlug, versionId);
     dispatch(uploadScreenshots.complete());
   } catch (error) {
     dispatch(uploadScreenshots.error(error));

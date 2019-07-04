@@ -15,7 +15,14 @@ export type AppVersionState = {
 
 const defaultState: AppVersionState = { appVersion: null, isPublishInProgress: false };
 
-export { fetchAppVersion, updateAppVersion, uploadScreenshots, publishAppVersion, pollPublishStatusEpic };
+export {
+  fetchAppVersion,
+  updateAppVersion,
+  uploadScreenshots,
+  publishAppVersion,
+  pollPublishStatus,
+  pollPublishStatusEpic
+};
 export default createReducer(defaultState, handleAction => [
   handleAction([fetchAppVersion.complete, updateAppVersion.complete], (state, { payload }) => ({
     ...state,

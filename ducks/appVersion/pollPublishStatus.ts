@@ -1,6 +1,6 @@
 import { createAction, ActionType, ofType } from 'deox';
 import { Observable, interval } from 'rxjs';
-import { exhaustMap, map, takeUntil } from 'rxjs/operators';
+import { exhaustMap, map, takeUntil, take, merge } from 'rxjs/operators';
 
 import { RootState } from '@/store';
 
@@ -25,9 +25,11 @@ export type PollPublishStatusAction = ActionType<
 export const pollPublishStatusEpic = (action$: Observable<PollPublishStatusAction>, state$: Observable<RootState>) =>
   action$.pipe(
     ofType(pollPublishStatus.next),
+    merge(state$),
     exhaustMap(() =>
       interval(1000).pipe(
-        map(idx => pollPublishStatus.complete(`cica ${idx}`)),
+        map((idx, ...rest) => pollPublishStatus.complete({ idx, rest })),
+        take(5),
         takeUntil(action$.pipe(ofType(pollPublishStatus.cancel)))
       )
     )

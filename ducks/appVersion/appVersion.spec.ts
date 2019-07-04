@@ -14,13 +14,31 @@ import { uploadFileToS3 } from '@/utils/file';
 describe('appVersion', () => {
   let mockStore: MockStoreCreator, store: MockStoreEnhanced;
   beforeEach(() => {
-    mockStore = configureMockStore([thunk]);
-    store = mockStore({ auth: { token: 'some-token' } });
+    mockStore = configureMockStore([thunk.withExtraArgument({ shipApi: api })]);
+    store = mockStore();
   });
 
   describe('reducer', () => {
     it('loads an app version', () => {
       const state = reducer(undefined, fetchAppVersion.complete(mockAppVersion));
+
+      expect(state).toMatchSnapshot();
+    });
+
+    test('when publishing started', () => {
+      const state = reducer(undefined, publishAppVersion.next() as any);
+
+      expect(state).toMatchSnapshot();
+    });
+
+    test('when publishing is done', () => {
+      const state = reducer(undefined, publishAppVersion.complete() as any);
+
+      expect(state).toMatchSnapshot();
+    });
+
+    test('when publishing had an error', () => {
+      const state = reducer(undefined, publishAppVersion.complete() as any);
 
       expect(state).toMatchSnapshot();
     });

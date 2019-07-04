@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux';
 import { createAction } from 'deox';
 
-import api from '@/services/ship-api';
+import { ShipAPIService } from '@/services/ship-api';
 import { AppVersion } from '@/models';
 import { RootState } from '@/store';
 
@@ -9,17 +9,13 @@ import { $ } from './common';
 
 const _fetchAppVersion = (appSlug: string, versionId: string) => async (
   dispatch: Dispatch,
-  getState: () => RootState
+  _getState: () => RootState,
+  { shipApi }: { shipApi: ShipAPIService }
 ) => {
-  const {
-    auth: { token }
-  } = getState();
-
-  api.setToken(token);
   dispatch(fetchAppVersion.next());
 
   try {
-    const appVersion = await api.getAppVersion(appSlug, versionId);
+    const appVersion = await shipApi.getAppVersion(appSlug, versionId);
 
     dispatch(fetchAppVersion.complete(appVersion));
   } catch (error) {
