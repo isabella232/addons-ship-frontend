@@ -187,4 +187,36 @@ describe('Ship API service', () => {
       expect(post).toHaveBeenCalledWith(url, token, undefined);
     });
   });
+
+  describe('getAppVersionEvents', () => {
+    testTokenNotSet(() => api.getAppVersionEvents(mockAppVersion));
+
+    it('fetches the events for an app version', async () => {
+      (get as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: [
+            {
+              id: 'an-id',
+              status: 'in-progress',
+              text: 'some-string',
+              created_at: '2019-10-10',
+              updated_at: '2019-10-11',
+              log_download_url: 'http://log.url'
+            }
+          ]
+        })
+      });
+      const appSlug = 'an-app-slug',
+        id = 'a-version-id',
+        token = 'best-token';
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/versions/${id}/events`;
+      const resp = await api.getAppVersionEvents({ appSlug, id } as any);
+
+      expect(get).toHaveBeenCalledWith(url, token);
+      expect(resp).toMatchSnapshot();
+    });
+  });
 });
