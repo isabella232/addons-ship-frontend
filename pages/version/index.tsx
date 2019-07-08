@@ -7,11 +7,11 @@ import startCase from 'lodash/startCase';
 import { AppVersionPageQuery, PageContext, AppVersion, AppVersionPageTabs } from '@/models';
 import { RootState } from '@/store';
 import { fetchAppVersion } from '@/ducks/appVersion';
+import { fetchTestDevices } from '@/ducks/testDevices';
 import { fetchSettings } from '@/ducks/settings';
 
 import Details from './details';
 import Devices from './devices';
-import { fetchTestDevices } from '@/ducks/testDevices';
 
 interface VersionPageProps extends AppVersionPageQuery {
   appVersion: AppVersion;
@@ -23,7 +23,7 @@ export class VersionPage extends Component<VersionPageProps> {
     selectedTab: 'details'
   };
 
-  static async getInitialProps({ query, store, req }: PageContext) {
+  static async getInitialProps({ query, store, req, isServer }: PageContext) {
     const {
       appSlug,
       versionId,
@@ -31,19 +31,21 @@ export class VersionPage extends Component<VersionPageProps> {
       selectedTab = AppVersionPageTabs[0]
     } = (query as unknown) as AppVersionPageQuery;
 
+    const path = isServer ? req.path : location.pathname;
+    const pagePath = path.replace(new RegExp(`/(${AppVersionPageTabs.join('|')})?$`), '');
+
+    const promises = [store.dispatch(fetchAppVersion(appSlug, versionId) as any)];
+
     switch (selectedTab) {
       case 'details':
-        await Promise.all([
-          store.dispatch(fetchAppVersion(appSlug, versionId) as any),
-          store.dispatch(fetchSettings(appSlug) as any)
-        ]);
+        promises.push(store.dispatch(fetchSettings(appSlug) as any));
         break;
       case 'devices':
-        await store.dispatch(fetchTestDevices(appSlug) as any);
+        promises.push(store.dispatch(fetchTestDevices(appSlug) as any));
         break;
     }
 
-    const pagePath = req.path.replace(new RegExp(`/${selectedTab}$`), '');
+    await Promise.all(promises);
 
     return { appSlug, versionId, isPublic, selectedTab, pagePath };
   }
@@ -62,11 +64,15 @@ export class VersionPage extends Component<VersionPageProps> {
   };
 
   render() {
-    const { pagePath, selectedTab } = this.props;
+    const {
+      pagePath,
+      selectedTab,
+      appVersion: { appSlug, id }
+    } = this.props;
 
     const tab = (key: string) => (
       <Tab active={selectedTab === key}>
-        <Link href={`${pagePath}/${key}`}>
+        <Link as={`${pagePath}/${key}`} href={`/version?appSlug=${appSlug}&versionId=${id}&selectedTab=${key}`}>
           <a>{startCase(key)}</a>
         </Link>
       </Tab>
@@ -89,5 +95,9 @@ export class VersionPage extends Component<VersionPageProps> {
   }
 }
 
-const mapStateToProps = ({ appVersion, settings }: RootState) => ({ appVersion, settings });
+const mapStateToProps = ({ appVersion: { appVersion }, settings }: RootState) => ({
+  appVersion,
+  settings
+});
+
 export default connect(mapStateToProps)(VersionPage as any);
