@@ -62,19 +62,19 @@ export type AppVersion = {
 
 export type ProvProfile = {
   name: string;
-}
+};
 
 export type Certificate = {
   name: string;
-}
+};
 
 export type KeystoreFile = {
   name: string;
-}
+};
 
 export type ServiceAccountJsonFile = {
   name: string;
-}
+};
 
 export type IosSettings = {
   artifactExposingWorkflows: string;
@@ -99,7 +99,18 @@ export type Settings = {
   certificates?: Certificate[];
   keystoreFiles?: KeystoreFile[];
   serviceAccountJsonFiles?: ServiceAccountJsonFile[];
-}
+  projectType:
+    | 'xamarin'
+    | 'ios'
+    | 'osx'
+    | 'macos'
+    | 'android'
+    | 'cordova'
+    | 'ionic'
+    | 'react-native'
+    | 'flutter'
+    | 'other';
+};
 
 export interface PageContext extends NextContext {
   store: Store;
