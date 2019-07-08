@@ -80,6 +80,24 @@ Object {
     "version": "1.0.3",
     "whatsNew": "Some longer whats-new",
   },
+  "events": Array [],
+  "isPublishInProgress": false,
+}
+`;
+
+exports[`appVersion reducer when publish polling has results 1`] = `
+Object {
+  "appVersion": null,
+  "events": Array [
+    Object {
+      "createdAt": 2019-07-08T00:00:00.000Z,
+      "status": "in-progress",
+    },
+    Object {
+      "createdAt": 2019-07-09T00:00:00.000Z,
+      "status": "finished",
+    },
+  ],
   "isPublishInProgress": false,
 }
 `;
@@ -87,6 +105,7 @@ Object {
 exports[`appVersion reducer when publishing had an error 1`] = `
 Object {
   "appVersion": null,
+  "events": Array [],
   "isPublishInProgress": false,
 }
 `;
@@ -94,6 +113,7 @@ Object {
 exports[`appVersion reducer when publishing is done 1`] = `
 Object {
   "appVersion": null,
+  "events": Array [],
   "isPublishInProgress": false,
 }
 `;
@@ -101,6 +121,7 @@ Object {
 exports[`appVersion reducer when publishing started 1`] = `
 Object {
   "appVersion": null,
+  "events": Array [],
   "isPublishInProgress": true,
 }
 `;

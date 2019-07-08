@@ -60,21 +60,30 @@ export type AppVersion = {
   publicInstallPageURL?: string;
 };
 
+export type AppVersionEvent = {
+  id: string;
+  status: 'in-progress' | 'finished' | 'failed';
+  text: string;
+  createdAt: number | Date;
+  updatedAt: number | Date;
+  logDownloadUrl: string;
+};
+
 export type ProvProfile = {
   name: string;
-}
+};
 
 export type Certificate = {
   name: string;
-}
+};
 
 export type KeystoreFile = {
   name: string;
-}
+};
 
 export type ServiceAccountJsonFile = {
   name: string;
-}
+};
 
 export type IosSettings = {
   artifactExposingWorkflows: string;
@@ -99,7 +108,7 @@ export type Settings = {
   certificates?: Certificate[];
   keystoreFiles?: KeystoreFile[];
   serviceAccountJsonFiles?: ServiceAccountJsonFile[];
-}
+};
 
 export interface PageContext extends NextContext {
   store: Store;

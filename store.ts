@@ -3,11 +3,11 @@ import thunk from 'redux-thunk';
 import { createEpicMiddleware, combineEpics, Epic } from 'redux-observable';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import appVersion, { pollPublishStatusEpic } from '@/ducks/appVersion';
-import { testDevices } from '@/ducks/testDevices';
-import { settings } from '@/ducks/settings';
-import { appVersionList } from '@/ducks/appVersionList';
-import auth from '@/ducks/auth';
+import appVersion, { pollPublishStatusEpic, AppVersionState } from '@/ducks/appVersion';
+import { testDevices, TestDevicesState } from '@/ducks/testDevices';
+import { settings, SettingsState } from '@/ducks/settings';
+import { appVersionList, AppVersionListState } from '@/ducks/appVersionList';
+import auth, { AuthState } from '@/ducks/auth';
 import shipApi from '@/services/ship-api';
 
 const rootReducer = combineReducers({
@@ -20,7 +20,13 @@ const rootReducer = combineReducers({
 
 const rootEpic = combineEpics(pollPublishStatusEpic) as Epic<Action>;
 
-export type RootState = ReturnType<typeof rootReducer>;
+export type RootState = {
+  appVersion: AppVersionState;
+  testDevices: TestDevicesState;
+  settings: SettingsState;
+  appVersionList: AppVersionListState;
+  auth: AuthState;
+};
 
 /**
  * @param {object} initialState
@@ -31,7 +37,10 @@ export type RootState = ReturnType<typeof rootReducer>;
  * @param {string} options.storeKey This key will be used to preserve store in global namespace for safe HMR
  */
 export default (initialState: any, _options: any) => {
-  const epicMiddleware = createEpicMiddleware();
+  const epicMiddleware = createEpicMiddleware({
+    dependencies: { shipApi }
+  });
+
   const store = createStore(
     rootReducer,
     initialState,
