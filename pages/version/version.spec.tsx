@@ -9,7 +9,7 @@ import { mockAppVersion } from '@/mocks';
 import { fetchAppVersion } from '@/ducks/appVersion';
 import { fetchSettings } from '@/ducks/settings';
 import { fetchTestDevices } from '@/ducks/testDevices';
-import { VersionPage } from './';
+import { VersionPage } from '.';
 
 describe('AppVersion', () => {
   it('renders the details tab correctly', () => {
@@ -55,20 +55,40 @@ describe('AppVersion', () => {
     const req = { path: 'some/path' };
 
     it('dispatches fetchAppVersion and fetchSettings', async () => {
-      await VersionPage.getInitialProps({ query: {}, req, store: { dispatch: jest.fn() } } as any);
+      const props = await VersionPage.getInitialProps({
+        query: {},
+        req,
+        store: { dispatch: jest.fn() },
+        isServer: true
+      } as any);
 
       expect(fetchAppVersion).toHaveBeenCalled();
       expect(fetchSettings).toHaveBeenCalled();
+      expect(props).toMatchSnapshot();
     });
 
     it('dispatches fetchTestDevices', async () => {
-      await VersionPage.getInitialProps({
+      const props = await VersionPage.getInitialProps({
         query: { selectedTab: 'devices' },
         req,
-        store: { dispatch: jest.fn() }
+        store: { dispatch: jest.fn() },
+        isServer: true
       } as any);
 
       expect(fetchTestDevices).toHaveBeenCalled();
+      expect(props).toMatchSnapshot();
+    });
+
+    it('calculates path correctly on the client too', async () => {
+      window.history.pushState({}, '', '/such/path');
+
+      const props = await VersionPage.getInitialProps({
+        query: {},
+        store: { dispatch: jest.fn() },
+        isServer: false
+      } as any);
+
+      expect(props).toMatchSnapshot();
     });
   });
 });

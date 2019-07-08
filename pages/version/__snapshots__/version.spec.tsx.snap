@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AppVersion dispatches the proper actions calculates path correctly on the client too 1`] = `
+Object {
+  "appSlug": undefined,
+  "isPublic": undefined,
+  "pagePath": "/such/path",
+  "selectedTab": "details",
+  "versionId": undefined,
+}
+`;
+
+exports[`AppVersion dispatches the proper actions dispatches fetchAppVersion and fetchSettings 1`] = `
+Object {
+  "appSlug": undefined,
+  "isPublic": undefined,
+  "pagePath": "some/path",
+  "selectedTab": "details",
+  "versionId": undefined,
+}
+`;
+
+exports[`AppVersion dispatches the proper actions dispatches fetchTestDevices 1`] = `
+Object {
+  "appSlug": undefined,
+  "isPublic": undefined,
+  "pagePath": "some/path",
+  "selectedTab": "devices",
+  "versionId": undefined,
+}
+`;
+
 exports[`AppVersion renders the details tab correctly 1`] = `
 <Base
   paddingVertical="x10"

@@ -385,4 +385,16 @@ describe('AppVersionDetails', () => {
       expect(cancelPollPublishStatus).toHaveBeenCalled();
     });
   });
+
+  describe('componentWillUnmount', () => {
+    it('stops polling', () => {
+      const cancelPollPublishStatus = jest.fn() as any;
+      const wrapper = shallow(
+        <AppVersionDetails {...defaultProps} cancelPollPublishStatus={cancelPollPublishStatus} />
+      );
+
+      wrapper.unmount();
+      expect(cancelPollPublishStatus).toHaveBeenCalled();
+    });
+  });
 });
