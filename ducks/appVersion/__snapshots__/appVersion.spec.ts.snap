@@ -84,6 +84,27 @@ Object {
 }
 `;
 
+exports[`appVersion reducer when publishing had an error 1`] = `
+Object {
+  "appVersion": null,
+  "isPublishInProgress": false,
+}
+`;
+
+exports[`appVersion reducer when publishing is done 1`] = `
+Object {
+  "appVersion": null,
+  "isPublishInProgress": false,
+}
+`;
+
+exports[`appVersion reducer when publishing started 1`] = `
+Object {
+  "appVersion": null,
+  "isPublishInProgress": true,
+}
+`;
+
 exports[`appVersion updateAppVersion can't update an app version 1`] = `
 Array [
   Object {

@@ -23,14 +23,14 @@ type Props = {
 };
 
 export type State = {
-  showTooltips: boolean;
+  hasMounted: boolean;
   iosSettings: IosSettings;
   androidSettings: AndroidSettings;
 };
 
 export class General extends Component<Props> {
   state: State = {
-    showTooltips: false,
+    hasMounted: false,
     iosSettings: {
       artifactExposingWorkflows: '',
       appleDeveloperAccountEmail: '',
@@ -49,7 +49,7 @@ export class General extends Component<Props> {
 
   componentDidMount() {
     this.setState({
-      showTooltips: true
+      hasMounted: true
     });
 
     this.configureSettingsFromProps();
@@ -145,11 +145,11 @@ export class General extends Component<Props> {
     const {
       settings: { provProfiles, certificates, keystoreFiles, serviceAccountJsonFiles }
     } = this.props;
-    const { showTooltips, iosSettings, androidSettings } = this.state;
+    const { hasMounted, iosSettings, androidSettings } = this.state;
 
     const viewProps = {
       maximumNumberOfCertificates: MaximumNumberOfCertificates,
-      showTooltips,
+      hasMounted,
       provProfiles,
       certificates,
       keystoreFiles,

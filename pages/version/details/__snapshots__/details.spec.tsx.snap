@@ -168,6 +168,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -182,7 +183,6 @@ exports[`AppVersionDetails disables install button when device is from a lower v
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={false}
-  showTooltips={true}
 />
 `;
 
@@ -280,6 +280,7 @@ exports[`AppVersionDetails disables install button when device is from different
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -294,7 +295,6 @@ exports[`AppVersionDetails disables install button when device is from different
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={false}
-  showTooltips={true}
 />
 `;
 
@@ -392,6 +392,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -406,7 +407,6 @@ exports[`AppVersionDetails disables install button when device is not supported 
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={false}
-  showTooltips={true}
 />
 `;
 
@@ -505,6 +505,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -519,7 +520,6 @@ exports[`AppVersionDetails disables install button when there is no public insta
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={false}
-  showTooltips={true}
 />
 `;
 
@@ -617,6 +617,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -631,7 +632,6 @@ exports[`AppVersionDetails enables install button when there is public install p
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={true}
-  showTooltips={true}
 />
 `;
 
@@ -729,6 +729,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -743,7 +744,6 @@ exports[`AppVersionDetails enables install button when there is public install p
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={true}
-  showTooltips={true}
 />
 `;
 
@@ -842,6 +842,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -856,7 +857,6 @@ exports[`AppVersionDetails renders correctly 1`] = `
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={false}
-  showTooltips={true}
 />
 `;
 
@@ -919,6 +919,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -930,7 +931,6 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/path"
   shouldEnableInstall={true}
-  showTooltips={true}
 >
   <Base>
     <div
@@ -1656,12 +1656,12 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                       }
                       deviceId="iphone65"
                       deviceName="iPhone 6.5”"
+                      hasMounted={true}
                       onDeviceSelected={[MockFunction]}
                       onFeatureGraphicAdded={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
-                      showTooltips={true}
                     >
                       <Flex
                         alignChildrenHorizontal="between"
@@ -4921,6 +4921,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -4932,7 +4933,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/path"
   shouldEnableInstall={true}
-  showTooltips={true}
 >
   <Base>
     <div
@@ -5659,12 +5659,12 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                       }
                       deviceId="iphone65"
                       deviceName="iPhone 6.5”"
+                      hasMounted={true}
                       onDeviceSelected={[MockFunction]}
                       onFeatureGraphicAdded={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
-                      showTooltips={true}
                     >
                       <Flex
                         alignChildrenHorizontal="between"
@@ -9245,6 +9245,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -9256,7 +9257,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/path"
   shouldEnableInstall={true}
-  showTooltips={true}
 >
   <Base>
     <div
@@ -9992,12 +9992,12 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                       }
                       deviceId="iphone65"
                       deviceName="iPhone 6.5”"
+                      hasMounted={true}
                       onDeviceSelected={[MockFunction]}
                       onFeatureGraphicAdded={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
-                      showTooltips={true}
                     >
                       <Flex
                         alignChildrenHorizontal="between"
@@ -13578,6 +13578,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -13589,7 +13590,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/path"
   shouldEnableInstall={true}
-  showTooltips={true}
 >
   <Base>
     <div
@@ -14316,12 +14316,12 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                       }
                       deviceId="iphone65"
                       deviceName="iPhone 6.5”"
+                      hasMounted={true}
                       onDeviceSelected={[MockFunction]}
                       onFeatureGraphicAdded={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
-                      showTooltips={true}
                     >
                       <Flex
                         alignChildrenHorizontal="between"
@@ -17695,6 +17695,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={true}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -17706,7 +17707,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/path"
   shouldEnableInstall={true}
-  showTooltips={true}
 >
   <Base>
     <div
@@ -18445,12 +18445,12 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                       }
                       deviceId="iphone65"
                       deviceName="iPhone 6.5”"
+                      hasMounted={true}
                       onDeviceSelected={[MockFunction]}
                       onFeatureGraphicAdded={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
-                      showTooltips={true}
                     >
                       <Flex
                         alignChildrenHorizontal="between"
@@ -22031,6 +22031,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
       },
     ]
   }
+  hasMounted={true}
   isPublishInProgress={false}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -22042,7 +22043,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
   selectedDeviceIdForScreenshots="iphone65"
   settingsPath="/path"
   shouldEnableInstall={true}
-  showTooltips={true}
 >
   <Base>
     <div
@@ -22769,12 +22769,12 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                       }
                       deviceId="iphone65"
                       deviceName="iPhone 6.5”"
+                      hasMounted={true}
                       onDeviceSelected={[MockFunction]}
                       onFeatureGraphicAdded={[MockFunction]}
                       onScreenshotAdded={[MockFunction]}
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
-                      showTooltips={true}
                     >
                       <Flex
                         alignChildrenHorizontal="between"

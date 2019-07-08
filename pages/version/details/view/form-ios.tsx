@@ -1,18 +1,7 @@
 import { Fragment } from 'react';
 import formatDate from 'date-fns/format';
 import prettyBytes from 'pretty-bytes';
-import {
-  Base,
-  Flex,
-  Text,
-  Icon,
-  InputLabel,
-  Textarea,
-  Divider,
-  Tooltip,
-  InputContainer,
-  Input
-} from '@bitrise/bitkit';
+import { Base, Flex, Text, Icon, InputLabel, Textarea, Divider, Tooltip, InputContainer, Input } from '@bitrise/bitkit';
 
 import { AppVersion } from '@/models';
 import Dropzone from '@/components/Dropzone';
@@ -28,7 +17,7 @@ type Props = {
   deviceId: string;
   deviceName: string;
   screenshots?: File[];
-  showTooltips: boolean;
+  hasMounted: boolean;
   onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
   removeScreenshot: (deviceId: string, screenshot: File) => void;
   onDeviceSelected: (key: string) => void;
@@ -40,7 +29,7 @@ export default ({
   deviceId,
   deviceName,
   screenshots,
-  showTooltips,
+  hasMounted,
   onScreenshotAdded,
   removeScreenshot,
   onDeviceSelected
@@ -62,7 +51,7 @@ export default ({
         <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
       </Flex>
 
-      <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />
+      {hasMounted && <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />}
       <Dropzone
         files={screenshots}
         onFilesAdded={files => onScreenshotAdded(deviceId, files)}
@@ -113,7 +102,7 @@ export default ({
 
     <Flex direction="horizontal" alignChildrenVertical="middle">
       <InputLabel>Distribution Type: {appVersion.distributionType}</InputLabel>
-      {showTooltips && (
+      {hasMounted && (
         <Tooltip title="This is the tooltip">
           {({ ref, ...rest }) => (
             <Icon {...rest} paddingHorizontal="x1" innerRef={ref} color="grape-3" name="Coffee" size="1.5rem" />

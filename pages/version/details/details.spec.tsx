@@ -18,7 +18,7 @@ import { AppVersionDetails, State } from './';
 describe('AppVersionDetailsView', () => {
   const defaultProps = {
     appVersion: mockAppVersion,
-    showTooltips: true,
+    hasMounted: true,
     selectedDeviceIdForScreenshots: 'iphone65',
     availableDevices: [
       { key: 'iphone65', value: 'iPhone 6.5”', isMarked: false },

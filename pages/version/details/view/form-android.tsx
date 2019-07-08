@@ -23,6 +23,7 @@ type Props = {
   onFeatureGraphicAdded: (featureGraphic: File) => void;
   removeFeatureGraphic: () => void;
   onDeviceSelected: (key: string) => void;
+  hasMounted: boolean;
 };
 
 export default ({
@@ -36,7 +37,8 @@ export default ({
   featureGraphic,
   onFeatureGraphicAdded,
   removeFeatureGraphic,
-  onDeviceSelected
+  onDeviceSelected,
+  hasMounted
 }: Props) => (
   <Fragment>
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
@@ -73,7 +75,7 @@ export default ({
         <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
       </Flex>
 
-      <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />
+      {hasMounted && <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />}
       <Dropzone
         files={screenshots}
         onFilesAdded={files => onScreenshotAdded(deviceId, files)}

@@ -1,12 +1,14 @@
-import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { combineReducers, createStore, applyMiddleware, Action } from 'redux';
 import thunk from 'redux-thunk';
+import { createEpicMiddleware, combineEpics, Epic } from 'redux-observable';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { appVersion } from '@/ducks/appVersion';
+import appVersion, { pollPublishStatusEpic } from '@/ducks/appVersion';
 import { testDevices } from '@/ducks/testDevices';
 import { settings } from '@/ducks/settings';
 import { appVersionList } from '@/ducks/appVersionList';
 import auth from '@/ducks/auth';
+import shipApi from '@/services/ship-api';
 
 const rootReducer = combineReducers({
   appVersion,
@@ -15,6 +17,8 @@ const rootReducer = combineReducers({
   appVersionList,
   auth
 });
+
+const rootEpic = combineEpics(pollPublishStatusEpic) as Epic<Action>;
 
 export type RootState = ReturnType<typeof rootReducer>;
 
@@ -27,5 +31,14 @@ export type RootState = ReturnType<typeof rootReducer>;
  * @param {string} options.storeKey This key will be used to preserve store in global namespace for safe HMR
  */
 export default (initialState: any, _options: any) => {
-  return createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk)));
+  const epicMiddleware = createEpicMiddleware();
+  const store = createStore(
+    rootReducer,
+    initialState,
+    composeWithDevTools(applyMiddleware(thunk.withExtraArgument({ shipApi }), epicMiddleware))
+  );
+
+  epicMiddleware.run(rootEpic);
+
+  return store;
 };
