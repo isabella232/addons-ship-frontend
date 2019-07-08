@@ -36,6 +36,21 @@ describe('AppVersion', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('renders the other tabs correctly', () => {
+    const tree = toJSON(
+      shallow(
+        <VersionPage
+          appVersion={mockAppVersion}
+          appSlug="some-app"
+          versionId="a-version-id"
+          pagePath="some/path"
+          selectedTab="whateever"
+        />
+      )
+    );
+    expect(tree).toMatchSnapshot();
+  });
+
   describe('dispatches the proper actions', () => {
     const req = { path: 'some/path' };
 

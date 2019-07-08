@@ -4,7 +4,7 @@ jest.mock('@/ducks/appVersion');
 jest.mock('@/services/settings');
 
 import { shallow, mount } from 'enzyme';
-import toJSON from 'enzyme-to-json';
+import toJSON, { shallowToJson } from 'enzyme-to-json';
 
 import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion, mockSettings } from '@/mocks';
 import { mediaQuery } from '@/utils/media';
@@ -14,6 +14,7 @@ import Dropzone from '@/components/Dropzone';
 
 import DetailsView from './view';
 import { AppVersionDetails, State } from './';
+import { AppVersionEvent } from '@/models';
 
 describe('AppVersionDetailsView', () => {
   const defaultProps = {
@@ -35,7 +36,8 @@ describe('AppVersionDetailsView', () => {
     readyForPublish: true,
     isPublishInProgress: false,
     publishTarget: 'App Store Connect',
-    settingsPath: '/path'
+    settingsPath: '/path',
+    latestEventStatus: null
   };
 
   beforeAll(() => {
@@ -69,9 +71,23 @@ describe('AppVersionDetailsView', () => {
 
     describe('when publish is in progress', () => {
       it('renders the details view with notification, and the publish button disabled', () => {
-        const tree = toJSON(mount(<DetailsView {...defaultProps} isPublishInProgress={true} />));
+        const tree = toJSON(
+          mount(<DetailsView {...defaultProps} latestEventStatus={'in-progress'} isPublishInProgress />)
+        );
         expect(tree).toMatchSnapshot();
       });
+    });
+
+    test('when publish has finished successfully', () => {
+      const tree = shallowToJson(shallow(<DetailsView {...defaultProps} latestEventStatus={'finished'} />));
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    test('when publish has failed', () => {
+      const tree = shallowToJson(shallow(<DetailsView {...defaultProps} latestEventStatus={'failed'} />));
+
+      expect(tree).toMatchSnapshot();
     });
 
     describe('when Publish button is selected', () => {
@@ -119,7 +135,10 @@ describe('AppVersionDetails', () => {
     isPublishInProgress: false,
     updateAppVersion: jest.fn() as any,
     uploadScreenshots: jest.fn() as any,
-    publishAppVersion: jest.fn() as any
+    publishAppVersion: jest.fn() as any,
+    startPollPublishStatus: jest.fn() as any,
+    cancelPollPublishStatus: jest.fn() as any,
+    appVersionEvents: []
   };
 
   it('renders correctly', () => {
@@ -324,6 +343,46 @@ describe('AppVersionDetails', () => {
     test('getUploadableScreenshots', () => {
       const uploadableScreenshots = (wrap.instance() as AppVersionDetails).getUploadableScreenshots();
       expect(uploadableScreenshots).toMatchSnapshot();
+    });
+  });
+
+  it('starts polling events', () => {
+    const startPollPublishStatus = jest.fn() as any;
+    shallow(<AppVersionDetails {...defaultProps} startPollPublishStatus={startPollPublishStatus} />);
+
+    expect(startPollPublishStatus).toHaveBeenCalledWith(mockAppVersion);
+  });
+
+  describe('componentDidUpdate', () => {
+    it('sets the latest event', () => {
+      const cancelPollPublishStatus = jest.fn() as any;
+      const wrapper = shallow(
+        <AppVersionDetails {...defaultProps} cancelPollPublishStatus={cancelPollPublishStatus} />
+      );
+
+      const event = {
+        id: 'some-id',
+        status: 'in-progress'
+      } as AppVersionEvent;
+
+      wrapper.setProps({ appVersionEvents: [event] });
+
+      const { state } = wrapper.instance();
+
+      expect(state).toMatchSnapshot();
+      expect(cancelPollPublishStatus).not.toHaveBeenCalled();
+    });
+
+    it('stops polling', () => {
+      const cancelPollPublishStatus = jest.fn() as any;
+      const wrapper = shallow(
+        <AppVersionDetails {...defaultProps} cancelPollPublishStatus={cancelPollPublishStatus} />
+      );
+
+      const event = { status: 'finished' } as AppVersionEvent;
+
+      wrapper.setProps({ appVersionEvents: [event] });
+      expect(cancelPollPublishStatus).toHaveBeenCalled();
     });
   });
 });
