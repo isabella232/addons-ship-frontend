@@ -176,13 +176,13 @@ describe('General', () => {
       expect(wrapper.instance().state).toMatchSnapshot();
     });
 
-    it('sets the state correctly for ios', () => {
+    it('sets the state correctly for android', () => {
       const settings: Settings = { ...mockSettings, projectType: 'android' };
       const wrapper = shallow(<General {...defaultProps} settings={settings} />);
       expect(wrapper.instance().state).toMatchSnapshot();
     });
 
-    it('sets the state correctly for ios', () => {
+    it('sets the state correctly for other project types', () => {
       const settings: Settings = { ...mockSettings, projectType: 'other' };
       const wrapper = shallow(<General {...defaultProps} settings={settings} />);
       expect(wrapper.instance().state).toMatchSnapshot();

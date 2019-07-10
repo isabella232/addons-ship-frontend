@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`General configureSettingsFromProps sets the state correctly for android 1`] = `
+Object {
+  "androidSettings": Object {
+    "artifactExposingWorkflows": "All",
+    "selectedKeystoreFile": Object {
+      "name": "abcdefghijkl1234567",
+    },
+    "selectedServiceAccountJsonFile": Object {
+      "name": "abcdefghijkl12345671566",
+    },
+    "track": "Release",
+  },
+  "hasAndroidSettings": true,
+  "hasIosSettings": false,
+  "hasMounted": true,
+  "iosSettings": Object {
+    "appSku": "Fill",
+    "appSpecificPassword": "Fill",
+    "appleDeveloperAccountEmail": "Fill",
+    "artifactExposingWorkflows": "All",
+    "selectedCertificate": Object {
+      "name": "iPhone Developer: John Doe (ABCD5678)",
+    },
+    "selectedProvProfile": Object {
+      "name": "abcdefghijkl1234567",
+    },
+  },
+}
+`;
+
 exports[`General configureSettingsFromProps sets the state correctly for ios 1`] = `
 Object {
   "androidSettings": Object {
@@ -30,37 +60,7 @@ Object {
 }
 `;
 
-exports[`General configureSettingsFromProps sets the state correctly for ios 2`] = `
-Object {
-  "androidSettings": Object {
-    "artifactExposingWorkflows": "All",
-    "selectedKeystoreFile": Object {
-      "name": "abcdefghijkl1234567",
-    },
-    "selectedServiceAccountJsonFile": Object {
-      "name": "abcdefghijkl12345671566",
-    },
-    "track": "Release",
-  },
-  "hasAndroidSettings": true,
-  "hasIosSettings": false,
-  "hasMounted": true,
-  "iosSettings": Object {
-    "appSku": "Fill",
-    "appSpecificPassword": "Fill",
-    "appleDeveloperAccountEmail": "Fill",
-    "artifactExposingWorkflows": "All",
-    "selectedCertificate": Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-    "selectedProvProfile": Object {
-      "name": "abcdefghijkl1234567",
-    },
-  },
-}
-`;
-
-exports[`General configureSettingsFromProps sets the state correctly for ios 3`] = `
+exports[`General configureSettingsFromProps sets the state correctly for other project types 1`] = `
 Object {
   "androidSettings": Object {
     "artifactExposingWorkflows": "All",
