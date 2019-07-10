@@ -24,12 +24,16 @@ type Props = {
 
 export type State = {
   hasMounted: boolean;
+  hasIosSettings: boolean;
+  hasAndroidSettings: boolean;
   iosSettings: IosSettings;
   androidSettings: AndroidSettings;
 };
 
 export class General extends Component<Props> {
   state: State = {
+    hasIosSettings: false,
+    hasAndroidSettings: false,
     hasMounted: false,
     iosSettings: {
       artifactExposingWorkflows: '',
@@ -63,7 +67,8 @@ export class General extends Component<Props> {
       provProfiles,
       certificates,
       keystoreFiles,
-      serviceAccountJsonFiles
+      serviceAccountJsonFiles,
+      projectType
     } = settings;
     const selectedProvProfile = find(provProfiles, get(iosSettings, 'selectedProvProfile'));
     const selectedCertificate = find(certificates, get(iosSettings, 'selectedCertificate'));
@@ -73,7 +78,23 @@ export class General extends Component<Props> {
       get(androidSettings, 'selectedServiceAccountJsonFile')
     );
 
+    let hasIosSettings = false,
+      hasAndroidSettings = false;
+    switch (projectType) {
+      case 'ios':
+        hasIosSettings = true;
+        break;
+      case 'android':
+        hasAndroidSettings = true;
+        break;
+      default:
+        hasIosSettings = true;
+        hasAndroidSettings = true;
+    }
+
     this.setState({
+      hasIosSettings,
+      hasAndroidSettings,
       iosSettings: {
         artifactExposingWorkflows: get(iosSettings, 'artifactExposingWorkflows'),
         appleDeveloperAccountEmail: get(iosSettings, 'appleDeveloperAccountEmail'),
@@ -145,21 +166,18 @@ export class General extends Component<Props> {
     const {
       settings: { provProfiles, certificates, keystoreFiles, serviceAccountJsonFiles }
     } = this.props;
-    const { hasMounted, iosSettings, androidSettings } = this.state;
 
     const viewProps = {
       maximumNumberOfCertificates: MaximumNumberOfCertificates,
-      hasMounted,
       provProfiles,
       certificates,
       keystoreFiles,
       serviceAccountJsonFiles,
-      iosSettings,
-      androidSettings,
       onSettingsPropertyChange: this.onSettingsPropertyChange,
       onSelectedFileChange: this.onSelectedFileChange,
       onCancel: this.onCancel,
-      onSave: this.onSave
+      onSave: this.onSave,
+      ...this.state
     };
 
     return <View {...viewProps} />;

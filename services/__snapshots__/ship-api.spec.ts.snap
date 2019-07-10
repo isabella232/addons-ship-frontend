@@ -60,6 +60,7 @@ Object {
       "name": "abcdefghijkl12345671566",
     },
   ],
+  "projectType": "android",
   "provProfiles": Array [
     Object {
       "name": "abcdefghijkl1234567",

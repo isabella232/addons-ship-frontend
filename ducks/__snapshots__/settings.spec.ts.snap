@@ -63,6 +63,7 @@ Object {
       "name": "abcdefghijkl12345671566",
     },
   ],
+  "projectType": "other",
   "provProfiles": Array [
     Object {
       "name": "abcdefghijkl1234567",
@@ -139,6 +140,7 @@ Array [
           "name": "abcdefghijkl12345671566",
         },
       ],
+      "projectType": "other",
       "provProfiles": Array [
         Object {
           "name": "abcdefghijkl1234567",

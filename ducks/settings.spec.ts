@@ -6,15 +6,15 @@ import thunk from 'redux-thunk';
 
 import { mockSettings } from '@/mocks';
 import { Settings, IosSettings } from '@/models';
-import api from '@/services/ship-api';
+import shipApi from '@/services/ship-api';
 
 import { settings, fetchSettings, updateSettings } from './settings';
 
 describe('settings', () => {
   let mockStore: MockStoreCreator, store: MockStoreEnhanced;
   beforeEach(() => {
-    mockStore = configureMockStore([thunk]);
-    store = mockStore({ auth: { token: 'some-token' } });
+    mockStore = configureMockStore([thunk.withExtraArgument({ shipApi })]);
+    store = mockStore();
   });
 
   describe('reducer', () => {
@@ -27,13 +27,15 @@ describe('settings', () => {
 
   describe('fetchSettings', () => {
     it('fetches settings', async () => {
-      await store.dispatch(fetchSettings('app-slug') as any);
+      const appSlug = 'app-slug';
+      await store.dispatch(fetchSettings(appSlug) as any);
 
       expect(store.getActions()).toMatchSnapshot();
+      expect(shipApi.getSettings).toHaveBeenCalledWith(appSlug);
     });
 
     it("can't fetch settings", async () => {
-      (api.getSettings as jest.Mock).mockRejectedValueOnce('api had some issue');
+      (shipApi.getSettings as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(fetchSettings('app-slug') as any);
 
       expect(store.getActions()).toMatchSnapshot();
@@ -53,7 +55,7 @@ describe('settings', () => {
     });
 
     it("can't update settings", async () => {
-      (api.updateSettings as jest.Mock).mockRejectedValueOnce('api had some issue');
+      (shipApi.updateSettings as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(updateSettings(updatedSettings) as any);
 
       expect(store.getActions()).toMatchSnapshot();

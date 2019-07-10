@@ -38,6 +38,8 @@ type Props = {
   ) => void;
   onCancel: () => void;
   onSave: () => void;
+  hasIosSettings: boolean;
+  hasAndroidSettings: boolean;
 };
 
 export default ({
@@ -52,14 +54,16 @@ export default ({
   onSettingsPropertyChange,
   onSelectedFileChange,
   onCancel,
-  onSave
+  onSave,
+  hasIosSettings,
+  hasAndroidSettings
 }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
 
   return (
     <Base paddingVertical="x8" maxWidth={isDesktop ? '100%' : 660}>
       <Base paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
-        {iosSettings && (
+        {hasIosSettings && iosSettings && (
           <Fragment>
             <Base margin="x12">
               <Text size="x5" weight="bold">
@@ -232,7 +236,7 @@ export default ({
           </Fragment>
         )}
 
-        {androidSettings && (
+        {androidSettings && hasAndroidSettings && (
           <Fragment>
             <Base margin="x12">
               <Text size="x5" weight="bold">
