@@ -60,6 +60,15 @@ export type AppVersion = {
   publicInstallPageURL?: string;
 };
 
+export type AppVersionEvent = {
+  id: string;
+  status: 'in-progress' | 'finished' | 'failed';
+  text: string;
+  createdAt: number | Date;
+  updatedAt: number | Date;
+  logDownloadUrl: string;
+};
+
 export type ProvProfile = {
   name: string;
 };

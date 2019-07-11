@@ -2,7 +2,7 @@ import formatDate from 'date-fns/format';
 import { Base, Flex, Text, Icon, Image, Notification, Button } from '@bitrise/bitkit';
 import { TypeIconName } from '@bitrise/bitkit/lib/esm/Icon/tsx';
 
-import { AppVersion } from '@/models';
+import { AppVersion, AppVersionEvent } from '@/models';
 import { mediaQuery } from '@/utils/media';
 
 import Sidebar from './sidebar';
@@ -35,22 +35,15 @@ type Props = {
   isPublishInProgress: boolean;
   publishTarget: string;
   settingsPath: string;
+  latestEventStatus: AppVersionEvent['status'] | null;
 };
 
 const publishNotification = (
-  isPublishInProgress: boolean,
+  publishStatus: AppVersionEvent['status'] | null,
   readyForPublish: boolean,
   publishTarget: string,
   settingsPath: string
 ) => {
-  if (isPublishInProgress) {
-    return (
-      <Notification margin="x2" type="progress">
-        Publishing to {publishTarget} is in progress.
-      </Notification>
-    );
-  }
-
   if (!readyForPublish) {
     return (
       <Notification margin="x2" type="alert" icon="Warning">
@@ -59,11 +52,32 @@ const publishNotification = (
     );
   }
 
-  return (
-    <Notification margin="x2" type="inform" icon="Deployment">
-      App is ready for publishing to {publishTarget}.
-    </Notification>
-  );
+  switch (publishStatus) {
+    case 'in-progress':
+      return (
+        <Notification margin="x2" type="progress">
+          Publishing to {publishTarget} is in progress.
+        </Notification>
+      );
+    case 'finished':
+      return (
+        <Notification margin="x2" type="success">
+          Your app has been successfully published to {publishTarget}.
+        </Notification>
+      );
+    case 'failed':
+      return (
+        <Notification margin="x2" type="alert">
+          Failed to publish you app. See the error log on the Activity tab.
+        </Notification>
+      );
+    default:
+      return (
+        <Notification margin="x2" type="inform" icon="Deployment">
+          App is ready for publishing to {publishTarget}.
+        </Notification>
+      );
+  }
 };
 
 export default ({
@@ -78,6 +92,7 @@ export default ({
   publishTarget,
   settingsPath,
   availableDevices,
+  latestEventStatus,
   ...props
 }: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
@@ -94,7 +109,7 @@ export default ({
     <Base>
       <Flex direction="vertical" alignChildren="middle" paddingVertical="x6">
         <Flex maxWidth={isDesktop ? '100%' : 688}>
-          {publishNotification(isPublishInProgress, readyForPublish, publishTarget, settingsPath)}
+          {publishNotification(latestEventStatus, readyForPublish, publishTarget, settingsPath)}
         </Flex>
       </Flex>
       <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'} gap="x4">

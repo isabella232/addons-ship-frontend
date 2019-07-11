@@ -1,5 +1,8 @@
-import { map, groupBy } from 'lodash';
+import map from 'lodash/map';
+import groupBy from 'lodash/groupBy';
+
 import { RootState } from '@/store';
+import { AppVersionEvent } from '@/models';
 
 export const getAppVersionsByVersion = ({ appVersionList }: RootState) =>
   appVersionList
@@ -16,3 +19,6 @@ export const getAppVersionsByBuildNumber = ({ appVersionList }: RootState) =>
         groupName: buildNumber
       })).reverse()
     : null;
+
+export const orderedAppVersionEvents = (events: AppVersionEvent[]) =>
+  events.sort(({ createdAt: c1 }, { createdAt: c2 }) => c2 - c1);

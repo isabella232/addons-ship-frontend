@@ -1,26 +1,29 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import map from 'lodash/map';
-import { get } from 'lodash';
+import get from 'lodash/get';
 import update from 'lodash/update';
 import filter from 'lodash/filter';
-import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
 
-import { AppVersion, Settings, IosSettings, AndroidSettings } from '@/models';
+import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
+import { AppVersion, Settings, IosSettings, AndroidSettings, AppVersionEvent } from '@/models';
+import { Uploadable } from '@/models/uploadable';
 import { RootState } from '@/store';
-import { updateAppVersion, uploadScreenshots, publishAppVersion } from '@/ducks/appVersion';
+import { updateAppVersion, uploadScreenshots, publishAppVersion, pollPublishStatus } from '@/ducks/appVersion';
+import { orderedAppVersionEvents } from '@/ducks/selectors';
 import settingService from '@/services/settings';
 
 import View from './view';
-import { Uploadable } from '@/models/uploadable';
 
 type Props = {
   appVersion: AppVersion;
-  isPublishInProgress: boolean;
   settings: Settings;
+  appVersionEvents: AppVersionEvent[];
   updateAppVersion: typeof updateAppVersion;
   uploadScreenshots: typeof uploadScreenshots;
   publishAppVersion: typeof publishAppVersion;
+  startPollPublishStatus: typeof pollPublishStatus.start;
+  cancelPollPublishStatus: typeof pollPublishStatus.cancel;
 };
 
 export type State = {
@@ -30,6 +33,8 @@ export type State = {
   featureGraphic?: File;
   selectedDeviceIdForScreenshots: string;
   readyForPublish?: boolean;
+  latestEvent: AppVersionEvent | null;
+  isPublishInProgress: boolean;
 };
 
 type DeviceScreenshots = {
@@ -77,13 +82,40 @@ export class AppVersionDetails extends Component<Props, State> {
       }
     },
     featureGraphic: undefined,
-    selectedDeviceIdForScreenshots: 'iphone65'
+    selectedDeviceIdForScreenshots: 'iphone65',
+    latestEvent: null,
+    isPublishInProgress: false
   };
 
   componentDidMount() {
-    const { appVersion } = this.props;
+    const { appVersion, startPollPublishStatus } = this.props;
 
     this.setState({ hasMounted: true, updatedAppVersion: appVersion });
+    startPollPublishStatus(appVersion);
+  }
+
+  componentDidUpdate({ appVersionEvents: prevEvents }: Props) {
+    const { appVersionEvents: events, cancelPollPublishStatus } = this.props;
+
+    if (events.length && prevEvents.length !== events.length) {
+      const latestEvent = events[0];
+
+      if (latestEvent) {
+        const isPublishInProgress = latestEvent.status === 'in-progress';
+
+        this.setState({ latestEvent, isPublishInProgress });
+
+        if (!isPublishInProgress) {
+          cancelPollPublishStatus();
+        }
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    const { cancelPollPublishStatus } = this.props;
+
+    cancelPollPublishStatus();
   }
 
   onChange = (key: string, newValue: string) => {
@@ -205,8 +237,15 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   render() {
-    const { appVersion, isPublishInProgress } = this.props;
-    const { hasMounted, selectedDeviceIdForScreenshots, screenshotList, featureGraphic } = this.state;
+    const { appVersion } = this.props;
+    const {
+      hasMounted,
+      selectedDeviceIdForScreenshots,
+      screenshotList,
+      featureGraphic,
+      latestEvent,
+      isPublishInProgress
+    } = this.state;
 
     const viewProps = {
       appVersion,
@@ -234,22 +273,25 @@ export class AppVersionDetails extends Component<Props, State> {
         (appVersion.platform === 'ios' && 'App Store Connect') ||
         (appVersion.platform === 'android' && 'Google Play Store') ||
         'production',
-      settingsPath: `/apps/${appVersion.appSlug}/settings`
+      settingsPath: `/apps/${appVersion.appSlug}/settings`,
+      latestEventStatus: get(latestEvent, 'status', null)
     };
 
     return <View {...viewProps} />;
   }
 }
 
-const mapStateToProps = ({ appVersion: { appVersion, isPublishInProgress }, settings }: RootState) => ({
+const mapStateToProps = ({ appVersion: { appVersion, events }, settings }: RootState) => ({
   appVersion,
-  isPublishInProgress,
-  settings
+  settings,
+  appVersionEvents: orderedAppVersionEvents(events)
 });
 const mapDispatchToProps = {
   updateAppVersion,
   uploadScreenshots,
-  publishAppVersion
+  publishAppVersion,
+  startPollPublishStatus: pollPublishStatus.start,
+  cancelPollPublishStatus: pollPublishStatus.cancel
 };
 
 export default connect(

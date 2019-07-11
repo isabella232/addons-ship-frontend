@@ -74,6 +74,86 @@ Object {
 }
 `;
 
+exports[`AppVersionDetails componentDidUpdate sets the latest event 1`] = `
+Object {
+  "featureGraphic": undefined,
+  "hasMounted": true,
+  "isPublishInProgress": true,
+  "latestEvent": Object {
+    "id": "some-id",
+    "status": "in-progress",
+  },
+  "screenshotList": Object {
+    "applewatch": Object {
+      "deviceName": "Apple Watch",
+    },
+    "applewatch4": Object {
+      "deviceName": "Apple Watch 4",
+    },
+    "ipad": Object {
+      "deviceName": "iPad",
+    },
+    "ipadpro": Object {
+      "deviceName": "iPad Pro",
+    },
+    "ipadpro105": Object {
+      "deviceName": "iPad Pro 10.5”",
+    },
+    "ipadpro129": Object {
+      "deviceName": "iPad Pro 12.9”",
+    },
+    "iphone4": Object {
+      "deviceName": "iPhone 4”",
+    },
+    "iphone47": Object {
+      "deviceName": "iPhone 4.7”",
+    },
+    "iphone55": Object {
+      "deviceName": "iPhone 5.5”",
+    },
+    "iphone58": Object {
+      "deviceName": "iPhone 5.8”",
+    },
+    "iphone65": Object {
+      "deviceName": "iPhone 6.5”",
+    },
+  },
+  "selectedDeviceIdForScreenshots": "iphone65",
+  "updatedAppVersion": Object {
+    "appName": "Standup Timer",
+    "appSlug": "app-slug-123",
+    "buildNumber": 32,
+    "buildSlug": "13245ads",
+    "bundleId": "bundle-id",
+    "certificateExpires": 2018-09-22T12:42:31.000Z,
+    "configuration": "canary",
+    "description": "Some semi-long description",
+    "distributionType": "development",
+    "iconUrl": "http://placekitten.com/160/160",
+    "id": 123,
+    "keywords": "Keywords",
+    "lastUpdate": 2018-09-22T12:42:31.000Z,
+    "marketingUrl": "https://bitrise.io/marketing",
+    "minimumOs": "10.2",
+    "minimumSdk": "dunno",
+    "packageName": "com.package.name",
+    "platform": "ios",
+    "promotionalText": "Promotional Text",
+    "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+    "reviewNotes": "Review Notes",
+    "scheme": "piramid",
+    "size": 4567034,
+    "supportUrl": "https://bitrise.io/support",
+    "supportedDeviceTypes": Array [
+      "iphone",
+      "ipad",
+    ],
+    "version": "1.0.3",
+    "whatsNew": "Some longer whats-new",
+  },
+}
+`;
+
 exports[`AppVersionDetails disables install button when device is from a lower version 1`] = `
 <_default
   appVersion={
@@ -170,6 +250,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
@@ -282,6 +363,7 @@ exports[`AppVersionDetails disables install button when device is from different
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
@@ -394,6 +476,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
@@ -507,6 +590,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
@@ -619,6 +703,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
@@ -731,6 +816,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
@@ -844,6 +930,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
   onFeatureGraphicAdded={[Function]}
@@ -921,6 +1008,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
@@ -4923,6 +5011,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
@@ -9247,6 +9336,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
@@ -13580,6 +13670,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
@@ -17635,6 +17726,400 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
 </_default>
 `;
 
+exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`] = `
+<Base>
+  <Flex
+    alignChildren="middle"
+    direction="vertical"
+    paddingVertical="x6"
+  >
+    <Flex
+      maxWidth="100%"
+    >
+      <Notification
+        margin="x2"
+        type="alert"
+      >
+        Failed to publish you app. See the error log on the Activity tab.
+      </Notification>
+    </Flex>
+  </Flex>
+  <Flex
+    alignChildrenHorizontal="start"
+    direction="horizontal"
+    gap="x4"
+  >
+    <Flex
+      maxWidth={688}
+    >
+      <form
+        onChange={[Function]}
+      >
+        <Flex
+          direction="horizontal"
+          margin="x4"
+        >
+          <Image
+            borderRadius="x2"
+            src="http://placekitten.com/160/160"
+          />
+          <Flex
+            alignChildrenVertical="middle"
+            direction="vertical"
+            paddingHorizontal="x6"
+          >
+            <Flex
+              alignChildren="middle"
+              direction="horizontal"
+            >
+              <Icon
+                color="grape-4"
+                name="PlatformsApple"
+                size="1.5rem"
+              />
+              <Text
+                color="grape-4"
+                letterSpacing="x2"
+                paddingHorizontal="x2"
+                size="x6"
+                weight="bold"
+              >
+                Standup Timer
+              </Text>
+            </Flex>
+            <Text
+              color="grape-4"
+              letterSpacing="x2"
+              margin="x2"
+              size="x5"
+              weight="bold"
+            >
+              v
+              1.0.3
+               (
+              32
+              )
+            </Text>
+            <Text
+              color="gray-6"
+              letterSpacing="x1"
+              size="x4"
+              weight="medium"
+            >
+              Updated on 
+              September 22, 2018
+            </Text>
+          </Flex>
+        </Flex>
+        <Flex
+          alignChildren="start"
+          direction="horizontal"
+          gap="x4"
+          margin="x8"
+        >
+          <Button
+            level="primary"
+            size="medium"
+          >
+            <Icon
+              name="Bug"
+              size="1.5rem"
+            />
+            <Text>
+              Save
+            </Text>
+          </Button>
+          <Button
+            disabled={false}
+            level="secondary"
+            size="medium"
+          >
+            <Icon
+              name="Download"
+              size="1.5rem"
+            />
+            <Text>
+              Install
+            </Text>
+          </Button>
+        </Flex>
+        <_default
+          appVersion={
+            Object {
+              "appName": "Standup Timer",
+              "appSlug": "app-slug-123",
+              "buildNumber": 32,
+              "buildSlug": "13245ads",
+              "bundleId": "bundle-id",
+              "certificateExpires": 2018-09-22T12:42:31.000Z,
+              "configuration": "canary",
+              "description": "Some semi-long description",
+              "distributionType": "development",
+              "iconUrl": "http://placekitten.com/160/160",
+              "id": 123,
+              "keywords": "Keywords",
+              "lastUpdate": 2018-09-22T12:42:31.000Z,
+              "marketingUrl": "https://bitrise.io/marketing",
+              "minimumOs": "10.2",
+              "minimumSdk": "dunno",
+              "packageName": "com.package.name",
+              "platform": "ios",
+              "promotionalText": "Promotional Text",
+              "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+              "reviewNotes": "Review Notes",
+              "scheme": "piramid",
+              "size": 4567034,
+              "supportUrl": "https://bitrise.io/support",
+              "supportedDeviceTypes": Array [
+                "iphone",
+                "ipad",
+              ],
+              "version": "1.0.3",
+              "whatsNew": "Some longer whats-new",
+            }
+          }
+          availableDevices={
+            Array [
+              Object {
+                "isMarked": false,
+                "key": "iphone65",
+                "value": "iPhone 6.5”",
+              },
+              Object {
+                "isMarked": false,
+                "key": "iphone58",
+                "value": "iPhone 5.8”",
+              },
+              Object {
+                "isMarked": false,
+                "key": "iphone55",
+                "value": "iPhone 5.5”",
+              },
+              Object {
+                "isMarked": false,
+                "key": "iphone47",
+                "value": "iPhone 4.7”",
+              },
+            ]
+          }
+          deviceId="iphone65"
+          deviceName="iPhone 6.5”"
+          hasMounted={true}
+          onDeviceSelected={[MockFunction]}
+          onFeatureGraphicAdded={[MockFunction]}
+          onScreenshotAdded={[MockFunction]}
+          removeFeatureGraphic={[MockFunction]}
+          removeScreenshot={[MockFunction]}
+        />
+      </form>
+    </Flex>
+    <_default
+      buildSlug="13245ads"
+      publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
+      shouldEnablePublish={true}
+    />
+  </Flex>
+</Base>
+`;
+
+exports[`AppVersionDetailsView when viewed on desktop when publish has finished successfully 1`] = `
+<Base>
+  <Flex
+    alignChildren="middle"
+    direction="vertical"
+    paddingVertical="x6"
+  >
+    <Flex
+      maxWidth="100%"
+    >
+      <Notification
+        margin="x2"
+        type="success"
+      >
+        Your app has been successfully published to 
+        App Store Connect
+        .
+      </Notification>
+    </Flex>
+  </Flex>
+  <Flex
+    alignChildrenHorizontal="start"
+    direction="horizontal"
+    gap="x4"
+  >
+    <Flex
+      maxWidth={688}
+    >
+      <form
+        onChange={[Function]}
+      >
+        <Flex
+          direction="horizontal"
+          margin="x4"
+        >
+          <Image
+            borderRadius="x2"
+            src="http://placekitten.com/160/160"
+          />
+          <Flex
+            alignChildrenVertical="middle"
+            direction="vertical"
+            paddingHorizontal="x6"
+          >
+            <Flex
+              alignChildren="middle"
+              direction="horizontal"
+            >
+              <Icon
+                color="grape-4"
+                name="PlatformsApple"
+                size="1.5rem"
+              />
+              <Text
+                color="grape-4"
+                letterSpacing="x2"
+                paddingHorizontal="x2"
+                size="x6"
+                weight="bold"
+              >
+                Standup Timer
+              </Text>
+            </Flex>
+            <Text
+              color="grape-4"
+              letterSpacing="x2"
+              margin="x2"
+              size="x5"
+              weight="bold"
+            >
+              v
+              1.0.3
+               (
+              32
+              )
+            </Text>
+            <Text
+              color="gray-6"
+              letterSpacing="x1"
+              size="x4"
+              weight="medium"
+            >
+              Updated on 
+              September 22, 2018
+            </Text>
+          </Flex>
+        </Flex>
+        <Flex
+          alignChildren="start"
+          direction="horizontal"
+          gap="x4"
+          margin="x8"
+        >
+          <Button
+            level="primary"
+            size="medium"
+          >
+            <Icon
+              name="Bug"
+              size="1.5rem"
+            />
+            <Text>
+              Save
+            </Text>
+          </Button>
+          <Button
+            disabled={false}
+            level="secondary"
+            size="medium"
+          >
+            <Icon
+              name="Download"
+              size="1.5rem"
+            />
+            <Text>
+              Install
+            </Text>
+          </Button>
+        </Flex>
+        <_default
+          appVersion={
+            Object {
+              "appName": "Standup Timer",
+              "appSlug": "app-slug-123",
+              "buildNumber": 32,
+              "buildSlug": "13245ads",
+              "bundleId": "bundle-id",
+              "certificateExpires": 2018-09-22T12:42:31.000Z,
+              "configuration": "canary",
+              "description": "Some semi-long description",
+              "distributionType": "development",
+              "iconUrl": "http://placekitten.com/160/160",
+              "id": 123,
+              "keywords": "Keywords",
+              "lastUpdate": 2018-09-22T12:42:31.000Z,
+              "marketingUrl": "https://bitrise.io/marketing",
+              "minimumOs": "10.2",
+              "minimumSdk": "dunno",
+              "packageName": "com.package.name",
+              "platform": "ios",
+              "promotionalText": "Promotional Text",
+              "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+              "reviewNotes": "Review Notes",
+              "scheme": "piramid",
+              "size": 4567034,
+              "supportUrl": "https://bitrise.io/support",
+              "supportedDeviceTypes": Array [
+                "iphone",
+                "ipad",
+              ],
+              "version": "1.0.3",
+              "whatsNew": "Some longer whats-new",
+            }
+          }
+          availableDevices={
+            Array [
+              Object {
+                "isMarked": false,
+                "key": "iphone65",
+                "value": "iPhone 6.5”",
+              },
+              Object {
+                "isMarked": false,
+                "key": "iphone58",
+                "value": "iPhone 5.8”",
+              },
+              Object {
+                "isMarked": false,
+                "key": "iphone55",
+                "value": "iPhone 5.5”",
+              },
+              Object {
+                "isMarked": false,
+                "key": "iphone47",
+                "value": "iPhone 4.7”",
+              },
+            ]
+          }
+          deviceId="iphone65"
+          deviceName="iPhone 6.5”"
+          hasMounted={true}
+          onDeviceSelected={[MockFunction]}
+          onFeatureGraphicAdded={[MockFunction]}
+          onScreenshotAdded={[MockFunction]}
+          removeFeatureGraphic={[MockFunction]}
+          removeScreenshot={[MockFunction]}
+        />
+      </form>
+    </Flex>
+    <_default
+      buildSlug="13245ads"
+      publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
+      shouldEnablePublish={true}
+    />
+  </Flex>
+</Base>
+`;
+
 exports[`AppVersionDetailsView when viewed on desktop when publish is in progress renders the details view with notification, and the publish button disabled 1`] = `
 <_default
   appVersion={
@@ -17697,6 +18182,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
   }
   hasMounted={true}
   isPublishInProgress={true}
+  latestEventStatus="in-progress"
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
@@ -22033,6 +22519,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
   }
   hasMounted={true}
   isPublishInProgress={false}
+  latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}

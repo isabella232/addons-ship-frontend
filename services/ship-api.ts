@@ -1,5 +1,5 @@
 import { shipApiConfig } from '@/config';
-import { AppVersion } from '@/models';
+import { AppVersion, AppVersionEvent } from '@/models';
 import { APIConfig } from '@/models/services';
 import { Uploadable } from '@/models/uploadable';
 import { snakifyKeys, camelizeKeys } from '@/utils';
@@ -59,6 +59,22 @@ export class ShipAPIService {
 
     const { data } = await put(url, this.token, body).then(res => res.json());
     return await camelizeKeys(data);
+  }
+
+  async getAppVersionEvents({ appSlug, id: versionId }: AppVersion): Promise<AppVersionEvent[]> {
+    if (this.token === null) {
+      throw new Error('Token not set');
+    }
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/events`;
+
+    const { data } = await get(url, this.token).then(res => res.json());
+
+    return data.map(camelizeKeys).map(({ createdAt, updatedAt, ...event }: AppVersionEvent) => ({
+      ...event,
+      createdAt: new Date(createdAt),
+      updatedAt: new Date(updatedAt)
+    }));
   }
 
   // POST /apps/{app-slug}/versions/{version-id}/screenshots
