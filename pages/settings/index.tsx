@@ -4,9 +4,10 @@ import { Base, Tabs, Tab, Divider } from '@bitrise/bitkit';
 import startCase from 'lodash/startCase';
 
 import { AppSettingsPageQuery, PageContext, AppSettingsPageTabs } from '@/models';
+import { fetchSettings } from '@/ducks/settings';
 
 import General from './general';
-import { fetchSettings } from '@/ducks/settings';
+import Notifications from './notifications';
 
 interface SettingsPageProps extends AppSettingsPageQuery {
   pagePath: string;
@@ -37,6 +38,8 @@ export class SettingsPage extends Component<SettingsPageProps> {
     switch (selectedTab) {
       case 'general':
         return <General />;
+      case 'notifications':
+        return <Notifications />;
       default:
         return <h1>{selectedTab}</h1>;
     }
@@ -56,7 +59,10 @@ export class SettingsPage extends Component<SettingsPageProps> {
     return (
       <Base paddingVertical="x10">
         <Base maxWidth={960}>
-          <Tabs gap="x10">{tab('general')}</Tabs>
+          <Tabs gap="x10">
+            {tab('general')}
+            {tab('notifications')}
+          </Tabs>
         </Base>
         <Divider color="gray-2" direction="horizontal" />
         <Base maxWidth={960}>{this.tabContent()}</Base>

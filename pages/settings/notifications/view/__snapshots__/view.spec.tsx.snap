@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationSettings View renders correctly 1`] = `
+<Base
+  paddingVertical="x8"
+>
+  <Text
+    paddingVertical="x3"
+    size="x5"
+    weight="bold"
+  >
+    Email Notifications
+  </Text>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    width="0.125rem"
+  />
+  <Base
+    paddingVertical="x6"
+  >
+    <_default
+      onAddEmail={[MockFunction]}
+    />
+  </Base>
+</Base>
+`;

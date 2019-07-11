@@ -21,6 +21,17 @@ exports[`Settings renders the general tab correctly 1`] = `
           </a>
         </Link>
       </Tab>
+      <Tab
+        active={false}
+      >
+        <Link
+          href="some/path/notifications"
+        >
+          <a>
+            Notifications
+          </a>
+        </Link>
+      </Tab>
     </Tabs>
   </Base>
   <Divider
@@ -54,6 +65,17 @@ exports[`Settings renders the specified tab correctly 1`] = `
         >
           <a>
             General
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={false}
+      >
+        <Link
+          href="some/path/notifications"
+        >
+          <a>
+            Notifications
           </a>
         </Link>
       </Tab>
