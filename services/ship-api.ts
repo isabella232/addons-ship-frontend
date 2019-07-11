@@ -121,7 +121,13 @@ export class ShipAPIService {
       throw new Error('Token not set');
     }
 
-    return mockSettings;
+    const url = `${this.config.url}/apps/${appSlug}/settings`;
+
+    const {
+      data: { project_type: projectType }
+    } = await get(url, this.token).then(res => res.json());
+
+    return { ...mockSettings, projectType };
   }
 
   async updateSettings(settings: Settings): Promise<void> {

@@ -222,6 +222,7 @@ const keystoreFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl123
 const serviceAccountJsonFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
 
 export const mockSettings: Settings = {
+  projectType: 'other',
   iosSettings: {
     artifactExposingWorkflows: 'All',
     appleDeveloperAccountEmail: 'Fill',

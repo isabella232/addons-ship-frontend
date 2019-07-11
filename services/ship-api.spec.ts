@@ -144,11 +144,19 @@ describe('Ship API service', () => {
     testTokenNotSet(() => api.getSettings('slug'));
 
     it('fetches settings for an app', async () => {
-      const appSlug = 'an-app-slug';
-      api.setToken('very-token');
+      (get as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: { project_type: 'android' }
+        })
+      });
+
+      const appSlug = 'an-app-slug',
+        token = 'very-token';
+      api.setToken(token);
       const settings = await api.getSettings(appSlug);
 
-      // expect(fetch).toHaveBeenCalledWith(`/v0.1/apps/${appSlug}/settings`);
+      const url = `${apiUrl}/apps/${appSlug}/settings`;
+      expect(get).toHaveBeenCalledWith(url, token);
 
       expect(settings).toMatchSnapshot();
     });

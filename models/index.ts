@@ -108,6 +108,17 @@ export type Settings = {
   certificates?: Certificate[];
   keystoreFiles?: KeystoreFile[];
   serviceAccountJsonFiles?: ServiceAccountJsonFile[];
+  projectType:
+    | 'xamarin'
+    | 'ios'
+    | 'osx'
+    | 'macos'
+    | 'android'
+    | 'cordova'
+    | 'ionic'
+    | 'react-native'
+    | 'flutter'
+    | 'other';
 };
 
 export interface PageContext extends NextContext {
