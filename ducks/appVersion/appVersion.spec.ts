@@ -3,12 +3,21 @@ jest.mock('@/utils/file');
 
 import configureMockStore, { MockStoreCreator, MockStoreEnhanced } from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import { TestScheduler } from 'rxjs/testing';
+import { getType } from 'deox';
 
 import { mockAppVersion } from '@/mocks';
-import { AppVersion } from '@/models';
-import api from '@/services/ship-api';
+import { AppVersion, AppVersionEvent } from '@/models';
+import api, { ShipAPIService } from '@/services/ship-api';
 
-import reducer, { fetchAppVersion, updateAppVersion, uploadScreenshots, publishAppVersion } from '.';
+import reducer, {
+  fetchAppVersion,
+  updateAppVersion,
+  uploadScreenshots,
+  publishAppVersion,
+  pollPublishStatus,
+  pollPublishStatusEpic
+} from '.';
 import { uploadFileToS3 } from '@/utils/file';
 
 describe('appVersion', () => {
@@ -39,6 +48,18 @@ describe('appVersion', () => {
 
     test('when publishing had an error', () => {
       const state = reducer(undefined, publishAppVersion.complete() as any);
+
+      expect(state).toMatchSnapshot();
+    });
+
+    test('when publish polling has results', () => {
+      const state = reducer(
+        undefined,
+        pollPublishStatus.complete([
+          { status: 'in-progress', createdAt: new Date('2019-07-08') },
+          { status: 'finished', createdAt: new Date('2019-07-09') }
+        ] as AppVersionEvent[])
+      );
 
       expect(state).toMatchSnapshot();
     });
@@ -118,6 +139,46 @@ describe('appVersion', () => {
       await store.dispatch(publishAppVersion(mockAppVersion) as any);
 
       expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  describe('pollPublishStatus', () => {
+    const testScheduler = new TestScheduler((actual, expected) => expect(actual).toEqual(expected));
+
+    it('does not start polling for other actions', () => {
+      testScheduler.run(({ cold, expectObservable }) => {
+        const action$ = cold('a', { a: { type: 'SOME_OTHER_ACTION' } });
+
+        const output$ = pollPublishStatusEpic(action$ as any, null as any, {} as any);
+
+        expectObservable(output$).toBe('');
+      });
+    });
+
+    it('starts polling', () => {
+      testScheduler.run(({ cold, expectObservable }) => {
+        const action$ = cold('a 3s b', {
+          a: { type: getType(pollPublishStatus.start), payload: mockAppVersion },
+          b: pollPublishStatus.cancel
+        });
+
+        const expected = '1s b 999ms b 999ms b';
+        const values = {
+          a: { type: getType(pollPublishStatus.start) },
+          b: { type: getType(pollPublishStatus.complete), payload: ['event1', 'event2'] }
+        };
+
+        const dependencies = {
+          shipApi: ({
+            getAppVersionEvents: () =>
+              cold('a', {
+                a: ['event1', 'event2']
+              })
+          } as unknown) as ShipAPIService
+        };
+
+        expectObservable(pollPublishStatusEpic(action$, null as any, dependencies)).toBe(expected, values);
+      });
     });
   });
 });

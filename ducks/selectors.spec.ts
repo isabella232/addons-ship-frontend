@@ -1,7 +1,7 @@
-import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from './selectors';
+import { getAppVersionsByVersion, getAppVersionsByBuildNumber, orderedAppVersionEvents } from './selectors';
 import { RootState } from '@/store';
 import { mockAppVersions } from '@/mocks';
-import { AppVersion } from '@/models';
+import { AppVersion, AppVersionEvent } from '@/models';
 
 describe('getAppVersionsByVersion', () => {
   it('returns null', () => {
@@ -30,5 +30,17 @@ describe('getAppVersionsByBuildNumber', () => {
     }[];
 
     expect(groupedAppVersions).toMatchSnapshot();
+  });
+});
+
+describe('orderedAppVersionEvents', () => {
+  it('orders events in descending creation time', () => {
+    const events = ([
+      { createdAt: new Date('2019-07-08') },
+      { createdAt: new Date('2019-06-20') },
+      { createdAt: new Date('2019-08-01') }
+    ] as unknown) as AppVersionEvent[];
+
+    expect(orderedAppVersionEvents(events)).toMatchSnapshot();
   });
 });

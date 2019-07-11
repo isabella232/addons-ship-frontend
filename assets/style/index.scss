@@ -8,3 +8,9 @@
 body {
   margin-top: $beam-height;
 }
+
+:global {
+  .Button:disabled {
+    opacity: 0.5;
+  }
+}

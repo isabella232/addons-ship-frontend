@@ -1,6 +1,6 @@
 import { createReducer } from 'deox';
 
-import { AppVersion } from '@/models';
+import { AppVersion, AppVersionEvent } from '@/models';
 
 import fetchAppVersion from './fetchAppVersion';
 import updateAppVersion from './updateAppVersion';
@@ -11,9 +11,10 @@ import pollPublishStatus, { pollPublishStatusEpic } from './pollPublishStatus';
 export type AppVersionState = {
   appVersion: AppVersion | null;
   isPublishInProgress?: boolean;
+  events: AppVersionEvent[];
 };
 
-const defaultState: AppVersionState = { appVersion: null, isPublishInProgress: false };
+const defaultState: AppVersionState = { appVersion: null, isPublishInProgress: false, events: [] };
 
 export {
   fetchAppVersion,
@@ -32,5 +33,9 @@ export default createReducer(defaultState, handleAction => [
   handleAction([publishAppVersion.complete, publishAppVersion.error], state => ({
     ...state,
     isPublishInProgress: false
+  })),
+  handleAction(pollPublishStatus.complete, (state, { payload }) => ({
+    ...state,
+    events: payload
   }))
 ]);

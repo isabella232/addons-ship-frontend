@@ -16,7 +16,7 @@ export const setToken = Object.assign(_setToken, {
   set: createAction($`SET_TOKEN`, resolve => (token: string) => resolve(token))
 });
 
-type AuthState = {
+export type AuthState = {
   token: string | null;
 };
 
