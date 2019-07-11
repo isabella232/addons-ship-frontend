@@ -9,7 +9,15 @@ import { mediaQuery } from '@/utils/media';
 
 import GeneralView from './view';
 import { General } from './';
-import { ProvProfile, Certificate, KeystoreFile, ServiceAccountJsonFile, IosSettings, AndroidSettings } from '@/models';
+import {
+  ProvProfile,
+  Certificate,
+  KeystoreFile,
+  ServiceAccountJsonFile,
+  IosSettings,
+  AndroidSettings,
+  Settings
+} from '@/models';
 
 describe('GeneralView', () => {
   const defaultProps = {
@@ -21,11 +29,13 @@ describe('GeneralView', () => {
     certificates: mockSettings.certificates,
     keystoreFiles: mockSettings.keystoreFiles,
     serviceAccountJsonFiles: mockSettings.serviceAccountJsonFiles,
-    showTooltips: true,
+    hasMounted: true,
     onSettingsPropertyChange: jest.fn(),
     onSelectedFileChange: jest.fn(),
     onCancel: jest.fn(),
-    onSave: jest.fn()
+    onSave: jest.fn(),
+    hasIosSettings: true,
+    hasAndroidSettings: true
   };
 
   describe('when viewed on desktop', () => {
@@ -54,7 +64,13 @@ describe('GeneralView', () => {
     it('does not render iOS settings section', () => {
       const tree = toJSON(
         shallow(
-          <GeneralView {...defaultProps} iosSettings={undefined} provProfiles={undefined} certificates={undefined} />
+          <GeneralView
+            {...defaultProps}
+            iosSettings={undefined}
+            hasIosSettings={false}
+            provProfiles={undefined}
+            certificates={undefined}
+          />
         )
       );
       expect(tree).toMatchSnapshot();
@@ -68,6 +84,7 @@ describe('GeneralView', () => {
           <GeneralView
             {...defaultProps}
             androidSettings={undefined}
+            hasAndroidSettings={false}
             keystoreFiles={undefined}
             serviceAccountJsonFiles={undefined}
           />
@@ -150,6 +167,26 @@ describe('General', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
     const tree = toJSON(shallow(<General {...defaultProps} />));
     expect(tree).toMatchSnapshot();
+  });
+
+  describe('configureSettingsFromProps', () => {
+    it('sets the state correctly for ios', () => {
+      const settings: Settings = { ...mockSettings, projectType: 'ios' };
+      const wrapper = shallow(<General {...defaultProps} settings={settings} />);
+      expect(wrapper.instance().state).toMatchSnapshot();
+    });
+
+    it('sets the state correctly for android', () => {
+      const settings: Settings = { ...mockSettings, projectType: 'android' };
+      const wrapper = shallow(<General {...defaultProps} settings={settings} />);
+      expect(wrapper.instance().state).toMatchSnapshot();
+    });
+
+    it('sets the state correctly for other project types', () => {
+      const settings: Settings = { ...mockSettings, projectType: 'other' };
+      const wrapper = shallow(<General {...defaultProps} settings={settings} />);
+      expect(wrapper.instance().state).toMatchSnapshot();
+    });
   });
 
   it('triggers a save', () => {

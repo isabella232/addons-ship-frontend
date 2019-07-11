@@ -14,20 +14,13 @@ import {
   Button
 } from '@bitrise/bitkit';
 
-import {
-  ProvProfile,
-  Certificate,
-  KeystoreFile,
-  ServiceAccountJsonFile,
-  IosSettings,
-  AndroidSettings
-} from '@/models';
+import { ProvProfile, Certificate, KeystoreFile, ServiceAccountJsonFile, IosSettings, AndroidSettings } from '@/models';
 import { mediaQuery } from '@/utils/media';
 import { Fragment } from 'react';
 
 type Props = {
   maximumNumberOfCertificates: number;
-  showTooltips: boolean;
+  hasMounted: boolean;
   provProfiles?: ProvProfile[];
   certificates?: Certificate[];
   keystoreFiles?: KeystoreFile[];
@@ -45,11 +38,13 @@ type Props = {
   ) => void;
   onCancel: () => void;
   onSave: () => void;
+  hasIosSettings: boolean;
+  hasAndroidSettings: boolean;
 };
 
 export default ({
   maximumNumberOfCertificates,
-  showTooltips,
+  hasMounted,
   provProfiles,
   certificates,
   keystoreFiles,
@@ -59,14 +54,16 @@ export default ({
   onSettingsPropertyChange,
   onSelectedFileChange,
   onCancel,
-  onSave
+  onSave,
+  hasIosSettings,
+  hasAndroidSettings
 }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
 
   return (
     <Base paddingVertical="x8" maxWidth={isDesktop ? '100%' : 660}>
       <Base paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
-        {iosSettings && (
+        {hasIosSettings && iosSettings && (
           <Fragment>
             <Base margin="x12">
               <Text size="x5" weight="bold">
@@ -91,7 +88,7 @@ export default ({
                       margin="x1"
                     >
                       <InputLabel>Expose Artifacts From the Selected Workflow to Ship</InputLabel>
-                      {showTooltips && (
+                      {hasMounted && (
                         <Tooltip title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy">
                           {() => <Icon color="grape-3" name="Support" size="1.5rem" />}
                         </Tooltip>
@@ -239,7 +236,7 @@ export default ({
           </Fragment>
         )}
 
-        {androidSettings && (
+        {androidSettings && hasAndroidSettings && (
           <Fragment>
             <Base margin="x12">
               <Text size="x5" weight="bold">
@@ -264,7 +261,7 @@ export default ({
                       margin="x1"
                     >
                       <InputLabel>Expose Artifacts From the Selected Workflow to Ship</InputLabel>
-                      {showTooltips && (
+                      {hasMounted && (
                         <Tooltip title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy">
                           {() => <Icon color="grape-3" name="Support" size="1.5rem" />}
                         </Tooltip>

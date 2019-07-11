@@ -1,24 +1,22 @@
 import { Dispatch } from 'redux';
 import { createAction, createReducer } from 'deox';
 
-import api from '@/services/ship-api';
+import { ShipAPIService } from '@/services/ship-api';
 import { RootState } from '@/store';
 import { actionTypeCreator } from '@/utils';
 import { Settings } from '@/models';
 
 const $ = actionTypeCreator('SETTINGS');
 
-const _fetchSettings = (appSlug: string) => async (dispatch: Dispatch, getState: () => RootState) => {
-  const {
-    auth: { token }
-  } = getState();
-
-  api.setToken(token);
-
+const _fetchSettings = (appSlug: string) => async (
+  dispatch: Dispatch,
+  _getState: () => RootState,
+  { shipApi }: { shipApi: ShipAPIService }
+) => {
   dispatch(fetchSettings.next());
 
   try {
-    const settings = await api.getSettings(appSlug);
+    const settings = await shipApi.getSettings(appSlug);
 
     dispatch(fetchSettings.complete(settings));
   } catch (error) {
@@ -32,17 +30,15 @@ export const fetchSettings = Object.assign(_fetchSettings, {
   error: createAction($`GET_ERROR`, resolve => (error: Error) => resolve(error))
 });
 
-const _updateSettings = (settings: Settings) => async (dispatch: Dispatch, getState: () => RootState) => {
-  const {
-    auth: { token }
-  } = getState();
-
-  api.setToken(token);
-
+const _updateSettings = (settings: Settings) => async (
+  dispatch: Dispatch,
+  _getState: () => RootState,
+  { shipApi }: { shipApi: ShipAPIService }
+) => {
   dispatch(updateSettings.next());
 
   try {
-    await api.updateSettings(settings);
+    await shipApi.updateSettings(settings);
 
     dispatch(updateSettings.complete(settings));
   } catch (error) {
@@ -56,7 +52,9 @@ export const updateSettings = Object.assign(_updateSettings, {
   error: createAction($`UPDATE_ERROR`, resolve => (error: Error) => resolve(error))
 });
 
-const defaultState: SettingsState = {};
+const defaultState: SettingsState = {
+  projectType: 'other'
+};
 
 export type SettingsState = Settings;
 export const settings = createReducer(defaultState, handleAction => [
