@@ -54,7 +54,7 @@ describe('NotificationSettings', () => {
       false
     );
 
-    expect(wrapper.state('appContacts')).toMatchSnapshot();
+    expect(wrapper.state('updatedAppContacts')).toMatchSnapshot();
     expect(wrapper.state('hasModifications')).toBe(true);
   });
 
@@ -65,7 +65,7 @@ describe('NotificationSettings', () => {
 
     (wrapper.instance() as NotificationSettings).onDeleteContact(appContacts[0].email);
 
-    expect(wrapper.state('appContacts')).toMatchSnapshot();
+    expect(wrapper.state('updatedAppContacts')).toMatchSnapshot();
     expect(wrapper.state('hasModifications')).toBe(true);
   });
 
@@ -89,12 +89,12 @@ describe('NotificationSettings', () => {
       false
     );
 
-    expect(wrapper.state('appContacts')).toMatchSnapshot();
+    expect(wrapper.state('updatedAppContacts')).toMatchSnapshot();
     expect(wrapper.state('hasModifications')).toBe(true);
 
     (wrapper.instance() as NotificationSettings).onCancel();
 
-    expect(wrapper.state('appContacts')).toEqual(appContacts);
+    expect(wrapper.state('updatedAppContacts')).toEqual(appContacts);
     expect(wrapper.state('hasModifications')).toBe(false);
   });
 });

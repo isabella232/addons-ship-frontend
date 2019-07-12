@@ -12,13 +12,13 @@ type Props = {
 
 type State = {
   hasModifications: boolean;
-  appContacts: AppContact[];
+  updatedAppContacts: AppContact[];
 };
 
 export class NotificationSettings extends React.Component<Props, State> {
   state: State = {
     hasModifications: false,
-    appContacts: this.props.appContacts
+    updatedAppContacts: this.props.appContacts
   };
 
   onAddEmail = (email: string) => {
@@ -26,7 +26,7 @@ export class NotificationSettings extends React.Component<Props, State> {
   };
 
   onNotificationPreferenceChanged = (email: string, key: string, value: boolean) => {
-    const appContacts = this.state.appContacts.map(contact => {
+    const updatedAppContacts = this.state.updatedAppContacts.map(contact => {
       if (contact.email === email) {
         return {
           ...contact,
@@ -40,13 +40,13 @@ export class NotificationSettings extends React.Component<Props, State> {
       return contact;
     });
 
-    const hasModifications = !isEqual(appContacts, this.props.appContacts);
+    const hasModifications = !isEqual(updatedAppContacts, this.props.appContacts);
 
-    this.setState({ appContacts, hasModifications });
+    this.setState({ updatedAppContacts, hasModifications });
   };
 
   onDeleteContact = (email: string) => {
-    const appContacts = this.state.appContacts.map(contact => {
+    const updatedAppContacts = this.state.updatedAppContacts.map(contact => {
       if (contact.email === email) {
         return {
           ...contact,
@@ -57,7 +57,7 @@ export class NotificationSettings extends React.Component<Props, State> {
       return contact;
     });
 
-    this.setState({ appContacts, hasModifications: true });
+    this.setState({ updatedAppContacts, hasModifications: true });
   };
 
   onSave = () => {
@@ -67,14 +67,14 @@ export class NotificationSettings extends React.Component<Props, State> {
   onCancel = () => {
     const { appContacts } = this.props;
 
-    this.setState({ appContacts, hasModifications: false });
+    this.setState({ updatedAppContacts: appContacts, hasModifications: false });
   };
 
   render() {
-    const { appContacts, hasModifications } = this.state;
+    const { updatedAppContacts, hasModifications } = this.state;
 
     const props = {
-      appContacts,
+      appContacts: updatedAppContacts,
       onAddEmail: this.onAddEmail,
       onNotificationPreferenceChanged: this.onNotificationPreferenceChanged,
       onDeleteContact: this.onDeleteContact,
