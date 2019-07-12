@@ -5,7 +5,7 @@ import { Uploadable } from '@/models/uploadable';
 import { snakifyKeys, camelizeKeys } from '@/utils';
 import { patch, post, get, put } from '@/utils/request';
 import { mockSettings } from '@/mocks';
-import { Settings } from '@/models';
+import { Settings } from '@/models/settings';
 
 export class ShipAPIService {
   constructor(private config: APIConfig) {}

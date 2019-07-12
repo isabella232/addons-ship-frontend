@@ -20,11 +20,13 @@ describe('SmallTabs', () => {
   const items = [
     {
       key: 'item-1',
-      value: 'Item 1'
+      value: 'Item 1',
+      isMarked: false
     },
     {
       key: 'item-2',
-      value: 'Item 2'
+      value: 'Item 2',
+      isMarked: false
     }
   ];
 

@@ -14,7 +14,14 @@ import {
   Button
 } from '@bitrise/bitkit';
 
-import { ProvProfile, Certificate, KeystoreFile, ServiceAccountJsonFile, IosSettings, AndroidSettings } from '@/models';
+import {
+  ProvProfile,
+  Certificate,
+  KeystoreFile,
+  ServiceAccountJsonFile,
+  IosSettings,
+  AndroidSettings
+} from '@/models/settings';
 import { mediaQuery } from '@/utils/media';
 import { Fragment } from 'react';
 
