@@ -23,5 +23,13 @@ exports[`NotificationSettings View renders correctly 1`] = `
       onAddEmail={[MockFunction]}
     />
   </Base>
+  <Base
+    margin="x4"
+  >
+    <_default
+      appContacts={Array []}
+      onNotificationPreferenceChanged={[MockFunction]}
+    />
+  </Base>
 </Base>
 `;

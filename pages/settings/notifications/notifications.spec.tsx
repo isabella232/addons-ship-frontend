@@ -19,4 +19,39 @@ describe('NotificationSettings', () => {
 
     expect(spy).toHaveBeenCalledWith('onAddEmail', email);
   });
+
+  test('onNotificationPreferenceChanged', () => {
+    const appContacts = [
+      {
+        email: 'bit.bot@bitrise.io',
+        isConfirmed: true,
+        notificationPreferences: {
+          newVersion: true,
+          successfulPublish: true,
+          failedPublish: true
+        }
+      },
+      {
+        email: 'purr.request@bitrise.io',
+        isConfirmed: false,
+        notificationPreferences: {
+          newVersion: false,
+          successfulPublish: false,
+          failedPublish: true
+        }
+      }
+    ];
+
+    const wrapper = shallow(<NotificationSettings />);
+
+    wrapper.setState({ appContacts });
+
+    (wrapper.instance() as NotificationSettings).onNotificationPreferenceChanged(
+      appContacts[0].email,
+      'successfulPublish',
+      false
+    );
+
+    expect(wrapper.state('appContacts')).toMatchSnapshot();
+  });
 });

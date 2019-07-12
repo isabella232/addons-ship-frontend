@@ -5,7 +5,9 @@ import View, { Props } from '.';
 
 describe('NotificationSettings View', () => {
   const defaultProps: Props = {
-    onAddEmail: jest.fn()
+    onAddEmail: jest.fn(),
+    appContacts: [],
+    onNotificationPreferenceChanged: jest.fn()
   };
 
   it('renders correctly', () => {
