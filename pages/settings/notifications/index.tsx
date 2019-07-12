@@ -49,6 +49,12 @@ export class NotificationSettings extends React.Component<Props, State> {
     console.log('onSave');
   };
 
+  onCancel = () => {
+    const { appContacts } = this.props;
+
+    this.setState({ appContacts, hasModifications: false });
+  };
+
   render() {
     const { appContacts, hasModifications } = this.state;
 
@@ -56,7 +62,8 @@ export class NotificationSettings extends React.Component<Props, State> {
       onAddEmail: this.onAddEmail,
       onNotificationPreferenceChanged: this.onNotificationPreferenceChanged,
       appContacts,
-      onSave: hasModifications ? this.onSave : undefined
+      onSave: hasModifications ? this.onSave : undefined,
+      onCancel: this.onCancel
     };
 
     return <View {...props} />;

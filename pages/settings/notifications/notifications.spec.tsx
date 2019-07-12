@@ -44,28 +44,9 @@ describe('NotificationSettings', () => {
   });
 
   test('onNotificationPreferenceChanged', () => {
-    const appContacts = [
-      {
-        email: 'bit.bot@bitrise.io',
-        isConfirmed: true,
-        notificationPreferences: {
-          newVersion: true,
-          successfulPublish: true,
-          failedPublish: true
-        }
-      },
-      {
-        email: 'purr.request@bitrise.io',
-        isConfirmed: false,
-        notificationPreferences: {
-          newVersion: false,
-          successfulPublish: false,
-          failedPublish: true
-        }
-      }
-    ];
+    const { appContacts } = defaultProps;
 
-    const wrapper = shallow(<NotificationSettings appContacts={appContacts} />);
+    const wrapper = shallow(<NotificationSettings {...defaultProps} />);
 
     (wrapper.instance() as NotificationSettings).onNotificationPreferenceChanged(
       appContacts[0].email,
@@ -84,5 +65,25 @@ describe('NotificationSettings', () => {
     (wrapper.instance() as NotificationSettings).onSave();
 
     expect(spy).toHaveBeenCalledWith('onSave');
+  });
+
+  test('onCancel', () => {
+    const { appContacts } = defaultProps;
+
+    const wrapper = shallow(<NotificationSettings {...defaultProps} />);
+
+    (wrapper.instance() as NotificationSettings).onNotificationPreferenceChanged(
+      appContacts[0].email,
+      'successfulPublish',
+      false
+    );
+
+    expect(wrapper.state('appContacts')).toMatchSnapshot();
+    expect(wrapper.state('hasModifications')).toBe(true);
+
+    (wrapper.instance() as NotificationSettings).onCancel();
+
+    expect(wrapper.state('appContacts')).toEqual(appContacts);
+    expect(wrapper.state('hasModifications')).toBe(false);
   });
 });

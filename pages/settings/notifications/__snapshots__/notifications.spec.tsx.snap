@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`NotificationSettings onCancel 1`] = `
+Array [
+  Object {
+    "email": "bit.bot@bitrise.io",
+    "isConfirmed": true,
+    "notificationPreferences": Object {
+      "failedPublish": true,
+      "newVersion": true,
+      "successfulPublish": false,
+    },
+  },
+  Object {
+    "email": "purr.request@bitrise.io",
+    "isConfirmed": false,
+    "notificationPreferences": Object {
+      "failedPublish": true,
+      "newVersion": false,
+      "successfulPublish": false,
+    },
+  },
+]
+`;
+
 exports[`NotificationSettings onNotificationPreferenceChanged 1`] = `
 Array [
   Object {
@@ -48,6 +71,7 @@ exports[`NotificationSettings renders correctly 1`] = `
     ]
   }
   onAddEmail={[Function]}
+  onCancel={[Function]}
   onNotificationPreferenceChanged={[Function]}
 />
 `;
