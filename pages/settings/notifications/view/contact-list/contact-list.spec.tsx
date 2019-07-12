@@ -24,9 +24,20 @@ describe('NotificationSettings View ContactList', () => {
           successfulPublish: false,
           failedPublish: true
         }
+      },
+      {
+        email: 'ninja@bitrise.io',
+        isConfirmed: true,
+        isMarkedForDelete: true,
+        notificationPreferences: {
+          newVersion: false,
+          successfulPublish: false,
+          failedPublish: true
+        }
       }
     ],
-    onNotificationPreferenceChanged: jest.fn()
+    onNotificationPreferenceChanged: jest.fn(),
+    onDeleteContact: jest.fn()
   };
 
   it('renders correctly', () => {
@@ -53,7 +64,11 @@ describe('NotificationSettings View ContactList', () => {
 
     beforeEach(() => {
       wrapper = shallow(
-        <ContactList appContacts={appContacts} onNotificationPreferenceChanged={onNotificationPreferenceChanged} />
+        <ContactList
+          {...defaultProps}
+          appContacts={appContacts}
+          onNotificationPreferenceChanged={onNotificationPreferenceChanged}
+        />
       );
       onNotificationPreferenceChanged.mockReset();
     });
@@ -69,5 +84,19 @@ describe('NotificationSettings View ContactList', () => {
         expect(onNotificationPreferenceChanged).toHaveBeenCalledWith(appContacts[0].email, key, !current);
       });
     });
+  });
+
+  test('onDeleteContact', () => {
+    const onDeleteContact = jest.fn();
+    const wrapper = shallow(<ContactList {...defaultProps} onDeleteContact={onDeleteContact} />);
+
+    const { appContacts } = defaultProps;
+
+    wrapper
+      .find('.delete')
+      .at(1)
+      .simulate('click');
+
+    expect(onDeleteContact).toHaveBeenCalledWith(appContacts[1].email);
   });
 });

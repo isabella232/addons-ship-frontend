@@ -8,7 +8,14 @@ export interface Props extends AddNewProps, ListProps {
   onCancel: () => void;
 }
 
-export default ({ onAddEmail, appContacts, onNotificationPreferenceChanged, onSave, onCancel }: Props) => (
+export default ({
+  onAddEmail,
+  appContacts,
+  onNotificationPreferenceChanged,
+  onDeleteContact,
+  onSave,
+  onCancel
+}: Props) => (
   <Base paddingVertical="x8">
     <Text size="x5" weight="bold" paddingVertical="x3">
       Email Notifications
@@ -18,7 +25,11 @@ export default ({ onAddEmail, appContacts, onNotificationPreferenceChanged, onSa
       <AddNew onAddEmail={onAddEmail} />
     </Base>
     <Base margin="x4">
-      <List appContacts={appContacts} onNotificationPreferenceChanged={onNotificationPreferenceChanged} />
+      <List
+        appContacts={appContacts}
+        onNotificationPreferenceChanged={onNotificationPreferenceChanged}
+        onDeleteContact={onDeleteContact}
+      />
     </Base>
     <Flex margin="x12" direction="horizontal" alignChildrenHorizontal="end">
       <Buttons>

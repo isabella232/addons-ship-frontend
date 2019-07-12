@@ -17,9 +17,10 @@ import { AppContact } from '@/models/settings';
 export type Props = {
   appContacts: AppContact[];
   onNotificationPreferenceChanged: (email: string, key: string, value: boolean) => void;
+  onDeleteContact: (email: string) => void;
 };
 
-export default ({ appContacts, onNotificationPreferenceChanged }: Props) => (
+export default ({ appContacts, onNotificationPreferenceChanged, onDeleteContact }: Props) => (
   <Table type="flat">
     <TableHeader>
       <TableHeaderRow>
@@ -45,38 +46,44 @@ export default ({ appContacts, onNotificationPreferenceChanged }: Props) => (
     </TableHeader>
     <TableBody>
       {appContacts.map(
-        ({ email, isConfirmed, notificationPreferences: { newVersion, successfulPublish, failedPublish } }) => (
-          <TableRow key={email} className="roww">
-            <TableCell shrink>{email}</TableCell>
-            <TableCell align="middle">{isConfirmed ? 'Confirmed' : 'Pending'}</TableCell>
-            <TableCell shrink>
-              <Toggle
-                checked={newVersion}
-                onChange={() => onNotificationPreferenceChanged(email, 'newVersion', !newVersion)}
-                alignChildren="middle"
-              />
-            </TableCell>
-            <TableCell shrink>
-              <Toggle
-                checked={successfulPublish}
-                onChange={() => onNotificationPreferenceChanged(email, 'successfulPublish', !successfulPublish)}
-                alignChildren="middle"
-              />
-            </TableCell>
-            <TableCell shrink>
-              <Toggle
-                checked={failedPublish}
-                onChange={() => onNotificationPreferenceChanged(email, 'failedPublish', !failedPublish)}
-                alignChildren="middle"
-              />
-            </TableCell>
-            <TableCell shrink>
-              <Base padding="x1" className={css.delete} borderRadius="x1">
-                <Icon name="Trash" size="1.5rem" color="red-3" />
-              </Base>
-            </TableCell>
-          </TableRow>
-        )
+        ({
+          email,
+          isConfirmed,
+          isMarkedForDelete,
+          notificationPreferences: { newVersion, successfulPublish, failedPublish }
+        }) =>
+          !isMarkedForDelete && (
+            <TableRow key={email}>
+              <TableCell shrink>{email}</TableCell>
+              <TableCell align="middle">{isConfirmed ? 'Confirmed' : 'Pending'}</TableCell>
+              <TableCell shrink>
+                <Toggle
+                  checked={newVersion}
+                  onChange={() => onNotificationPreferenceChanged(email, 'newVersion', !newVersion)}
+                  alignChildren="middle"
+                />
+              </TableCell>
+              <TableCell shrink>
+                <Toggle
+                  checked={successfulPublish}
+                  onChange={() => onNotificationPreferenceChanged(email, 'successfulPublish', !successfulPublish)}
+                  alignChildren="middle"
+                />
+              </TableCell>
+              <TableCell shrink>
+                <Toggle
+                  checked={failedPublish}
+                  onChange={() => onNotificationPreferenceChanged(email, 'failedPublish', !failedPublish)}
+                  alignChildren="middle"
+                />
+              </TableCell>
+              <TableCell shrink>
+                <Base padding="x1" className={css.delete} borderRadius="x1" onClick={() => onDeleteContact(email)}>
+                  <Icon name="Trash" size="1.5rem" color="red-3" />
+                </Base>
+              </TableCell>
+            </TableRow>
+          )
       )}
     </TableBody>
   </Table>

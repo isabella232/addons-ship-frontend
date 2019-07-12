@@ -45,6 +45,21 @@ export class NotificationSettings extends React.Component<Props, State> {
     this.setState({ appContacts, hasModifications });
   };
 
+  onDeleteContact = (email: string) => {
+    const appContacts = this.state.appContacts.map(contact => {
+      if (contact.email === email) {
+        return {
+          ...contact,
+          isMarkedForDelete: true
+        };
+      }
+
+      return contact;
+    });
+
+    this.setState({ appContacts, hasModifications: true });
+  };
+
   onSave = () => {
     console.log('onSave');
   };
@@ -59,9 +74,10 @@ export class NotificationSettings extends React.Component<Props, State> {
     const { appContacts, hasModifications } = this.state;
 
     const props = {
+      appContacts,
       onAddEmail: this.onAddEmail,
       onNotificationPreferenceChanged: this.onNotificationPreferenceChanged,
-      appContacts,
+      onDeleteContact: this.onDeleteContact,
       onSave: hasModifications ? this.onSave : undefined,
       onCancel: this.onCancel
     };

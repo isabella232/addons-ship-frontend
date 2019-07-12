@@ -58,6 +58,17 @@ describe('NotificationSettings', () => {
     expect(wrapper.state('hasModifications')).toBe(true);
   });
 
+  test('onDeleteContact', () => {
+    const { appContacts } = defaultProps;
+
+    const wrapper = shallow(<NotificationSettings {...defaultProps} />);
+
+    (wrapper.instance() as NotificationSettings).onDeleteContact(appContacts[0].email);
+
+    expect(wrapper.state('appContacts')).toMatchSnapshot();
+    expect(wrapper.state('hasModifications')).toBe(true);
+  });
+
   test('onSave', () => {
     const spy = jest.spyOn(global.console, 'log');
     const wrapper = shallow(<NotificationSettings {...defaultProps} />);
