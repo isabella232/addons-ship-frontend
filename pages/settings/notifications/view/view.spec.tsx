@@ -15,4 +15,10 @@ describe('NotificationSettings View', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('has an enabled save button', () => {
+    const tree = shallowToJson(shallow(<View {...defaultProps} onSave={jest.fn()} />));
+
+    expect(tree).toMatchSnapshot();
+  });
 });

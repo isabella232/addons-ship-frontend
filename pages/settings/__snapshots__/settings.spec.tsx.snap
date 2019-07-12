@@ -89,7 +89,7 @@ exports[`Settings renders tabs correctly notifications 1`] = `
   <Base
     maxWidth={960}
   >
-    <NotificationSettings />
+    <Connect(NotificationSettings) />
   </Base>
 </Base>
 `;

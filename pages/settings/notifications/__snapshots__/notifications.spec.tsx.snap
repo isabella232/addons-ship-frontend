@@ -28,7 +28,7 @@ exports[`NotificationSettings renders correctly 1`] = `
   appContacts={
     Array [
       Object {
-        "email": "gergo.ovari@bitrise.io",
+        "email": "bit.bot@bitrise.io",
         "isConfirmed": true,
         "notificationPreferences": Object {
           "failedPublish": true,
@@ -37,20 +37,11 @@ exports[`NotificationSettings renders correctly 1`] = `
         },
       },
       Object {
-        "email": "jozsef.eros@bitrise.io",
+        "email": "purr.request@bitrise.io",
         "isConfirmed": false,
         "notificationPreferences": Object {
           "failedPublish": true,
           "newVersion": false,
-          "successfulPublish": true,
-        },
-      },
-      Object {
-        "email": "gergely.bekesi@bitrise.io",
-        "isConfirmed": true,
-        "notificationPreferences": Object {
-          "failedPublish": true,
-          "newVersion": true,
           "successfulPublish": false,
         },
       },

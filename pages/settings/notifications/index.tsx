@@ -1,44 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import isEqual from 'lodash/isEqual';
 
 import { AppContact } from '@/models/settings';
 
 import View from './view';
 
-type State = {
+type Props = {
   appContacts: AppContact[];
 };
 
-export default class NotificationSettings extends React.Component {
+type State = {
+  hasModifications: boolean;
+  appContacts: AppContact[];
+};
+
+export class NotificationSettings extends React.Component<Props, State> {
   state: State = {
-    appContacts: [
-      {
-        email: 'gergo.ovari@bitrise.io',
-        isConfirmed: true,
-        notificationPreferences: {
-          newVersion: true,
-          successfulPublish: true,
-          failedPublish: true
-        }
-      },
-      {
-        email: 'jozsef.eros@bitrise.io',
-        isConfirmed: false,
-        notificationPreferences: {
-          newVersion: false,
-          successfulPublish: true,
-          failedPublish: true
-        }
-      },
-      {
-        email: 'gergely.bekesi@bitrise.io',
-        isConfirmed: true,
-        notificationPreferences: {
-          newVersion: true,
-          successfulPublish: false,
-          failedPublish: true
-        }
-      }
-    ]
+    hasModifications: false,
+    appContacts: this.props.appContacts
   };
 
   onAddEmail = (email: string) => {
@@ -60,18 +40,57 @@ export default class NotificationSettings extends React.Component {
       return contact;
     });
 
-    this.setState({ appContacts });
+    const hasModifications = !isEqual(appContacts, this.props.appContacts);
+
+    this.setState({ appContacts, hasModifications });
+  };
+
+  onSave = () => {
+    console.log('onSave');
   };
 
   render() {
-    const { appContacts } = this.state;
+    const { appContacts, hasModifications } = this.state;
 
     const props = {
       onAddEmail: this.onAddEmail,
       onNotificationPreferenceChanged: this.onNotificationPreferenceChanged,
-      appContacts
+      appContacts,
+      onSave: hasModifications ? this.onSave : undefined
     };
 
     return <View {...props} />;
   }
 }
+
+export default connect(() => ({
+  appContacts: [
+    {
+      email: 'gergo.ovari@bitrise.io',
+      isConfirmed: true,
+      notificationPreferences: {
+        newVersion: true,
+        successfulPublish: true,
+        failedPublish: true
+      }
+    },
+    {
+      email: 'jozsef.eros@bitrise.io',
+      isConfirmed: false,
+      notificationPreferences: {
+        newVersion: false,
+        successfulPublish: true,
+        failedPublish: true
+      }
+    },
+    {
+      email: 'gergely.bekesi@bitrise.io',
+      isConfirmed: true,
+      notificationPreferences: {
+        newVersion: true,
+        successfulPublish: false,
+        failedPublish: true
+      }
+    }
+  ]
+}))(NotificationSettings);
