@@ -1,4 +1,5 @@
-import { AppVersion, IosSettings, AndroidSettings } from '@/models';
+import { AppVersion } from '@/models';
+import { IosSettings, AndroidSettings } from '@/models/settings';
 
 export class SettingsService {
   constructor() {}
@@ -19,12 +20,9 @@ export class SettingsService {
         ].find(key => !iosSettings[key]);
       }
       case 'android': {
-        return ![
-          'artifactExposingWorkflows',
-          'track',
-          'selectedKeystoreFile',
-          'selectedServiceAccountJsonFile'
-        ].find(key => !androidSettings[key]);
+        return !['artifactExposingWorkflows', 'track', 'selectedKeystoreFile', 'selectedServiceAccountJsonFile'].find(
+          key => !androidSettings[key]
+        );
       }
     }
 

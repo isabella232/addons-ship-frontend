@@ -1,0 +1,16 @@
+@import '~@/assets/style/colors';
+
+:global(.Table__row) {
+  .delete {
+    opacity: 0.5;
+  }
+
+  &:hover .delete {
+    opacity: 1;
+
+    &:hover {
+      background-color: $red-1;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationSettings View AddNew renders correctly 1`] = `
+<div
+  className="container"
+>
+  <InputLabel>
+    Add New
+  </InputLabel>
+  <InputContainer>
+    <InputContent>
+      <Input
+        onChange={[Function]}
+        placeholder="Email address"
+        value=""
+      />
+    </InputContent>
+    <InputContent
+      outside={true}
+    >
+      <Button
+        level="secondary"
+        onClick={[Function]}
+        size="medium"
+      >
+        Add
+      </Button>
+    </InputContent>
+  </InputContainer>
+</div>
+`;

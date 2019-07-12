@@ -1,0 +1,9 @@
+@import '~@/assets/style/dimensions';
+
+.container {
+  max-width: 26rem;
+  :global(.Input__content--outside .Button) {
+    margin: 0 $grid * -3;
+    border: none;
+  }
+}

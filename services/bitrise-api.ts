@@ -16,7 +16,7 @@ class BitriseAPIService {
 
     const { data } = resp;
 
-    return data.map(d => camelizeKeys<TestDevice>(d));
+    return data.map((device: any) => camelizeKeys<TestDevice>(device));
   }
 }
 

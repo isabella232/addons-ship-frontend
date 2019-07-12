@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationSettings View has an enabled save button 1`] = `
+<Base
+  paddingVertical="x8"
+>
+  <Text
+    paddingVertical="x3"
+    size="x5"
+    weight="bold"
+  >
+    Email Notifications
+  </Text>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    width="0.125rem"
+  />
+  <Base
+    paddingVertical="x6"
+  >
+    <_default
+      onAddEmail={[MockFunction]}
+    />
+  </Base>
+  <Base
+    margin="x4"
+  >
+    <_default
+      appContacts={Array []}
+      onNotificationPreferenceChanged={[MockFunction]}
+    />
+  </Base>
+  <Flex
+    alignChildrenHorizontal="end"
+    direction="horizontal"
+    margin="x12"
+  >
+    <Buttons>
+      <Button
+        level="secondary"
+        size="medium"
+      >
+        Cancel
+      </Button>
+      <Button
+        disabled={false}
+        level="primary"
+        onClick={[MockFunction]}
+        size="medium"
+      >
+        Save
+      </Button>
+    </Buttons>
+  </Flex>
+</Base>
+`;
+
+exports[`NotificationSettings View renders correctly 1`] = `
+<Base
+  paddingVertical="x8"
+>
+  <Text
+    paddingVertical="x3"
+    size="x5"
+    weight="bold"
+  >
+    Email Notifications
+  </Text>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    width="0.125rem"
+  />
+  <Base
+    paddingVertical="x6"
+  >
+    <_default
+      onAddEmail={[MockFunction]}
+    />
+  </Base>
+  <Base
+    margin="x4"
+  >
+    <_default
+      appContacts={Array []}
+      onNotificationPreferenceChanged={[MockFunction]}
+    />
+  </Base>
+  <Flex
+    alignChildrenHorizontal="end"
+    direction="horizontal"
+    margin="x12"
+  >
+    <Buttons>
+      <Button
+        level="secondary"
+        size="medium"
+      >
+        Cancel
+      </Button>
+      <Button
+        disabled={true}
+        level="primary"
+        size="medium"
+      >
+        Save
+      </Button>
+    </Buttons>
+  </Flex>
+</Base>
+`;
