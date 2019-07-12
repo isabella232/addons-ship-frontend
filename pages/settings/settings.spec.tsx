@@ -1,20 +1,21 @@
 jest.mock('@/ducks/settings');
 
 import { shallow } from 'enzyme';
-import toJSON from 'enzyme-to-json';
+import { shallowToJson } from 'enzyme-to-json';
 
 import { fetchSettings } from '@/ducks/settings';
+import { AppSettingsPageTabs } from '@/models/settings';
+
 import { SettingsPage } from './';
 
 describe('Settings', () => {
-  it('renders the general tab correctly', () => {
-    const tree = toJSON(shallow(<SettingsPage appSlug="some-app" pagePath="some/path" />));
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('renders the specified tab correctly', () => {
-    const tree = toJSON(shallow(<SettingsPage appSlug="some-app" pagePath="some/path" selectedTab="other"/>));
-    expect(tree).toMatchSnapshot();
+  describe('renders tabs correctly', () => {
+    [...AppSettingsPageTabs, 'other'].forEach(tab => {
+      test(tab, () => {
+        const tree = shallowToJson(shallow(<SettingsPage selectedTab={tab} appSlug="some-app" pagePath="some/path" />));
+        expect(tree).toMatchSnapshot();
+      });
+    });
   });
 
   describe('dispatches the proper actions', () => {

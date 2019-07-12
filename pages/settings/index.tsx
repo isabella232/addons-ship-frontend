@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { Base, Tabs, Tab, Divider } from '@bitrise/bitkit';
 import startCase from 'lodash/startCase';
 
-import { AppSettingsPageQuery, PageContext, AppSettingsPageTabs } from '@/models';
+import { PageContext } from '@/models';
+import { AppSettingsPageQuery, AppSettingsPageTabs } from '@/models/settings';
 import { fetchSettings } from '@/ducks/settings';
 
 import General from './general';
