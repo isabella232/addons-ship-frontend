@@ -184,7 +184,7 @@ export class General extends Component<Props> {
   }
 }
 
-const mapStateToProps = ({ settings }: RootState) => ({ settings });
+const mapStateToProps = ({ settings: { settings } }: RootState) => ({ settings });
 const mapDispatchToProps = {
   updateSettings
 };

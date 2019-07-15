@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`settings addAppContact adds a new contact 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_ADD_CONTACT_NEXT",
+  },
+  Object {
+    "type": "SETTINGS_ADD_CONTACT_COMPLETE",
+  },
+]
+`;
+
+exports[`settings addAppContact fails to add a new contact 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_ADD_CONTACT_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "SETTINGS_ADD_CONTACT_ERROR",
+  },
+]
+`;
+
 exports[`settings fetchSettings can't fetch settings 1`] = `
 Array [
   Object {
@@ -23,63 +46,88 @@ Array [
 ]
 `;
 
+exports[`settings reducer adds an app contact 1`] = `
+Object {
+  "appContacts": Array [
+    Object {
+      "email": "what@ev.er",
+      "isConfirmed": false,
+      "notificationPreferences": Object {
+        "failedPublish": false,
+        "newVersion": true,
+        "successfulPublish": true,
+      },
+    },
+    Object {
+      "email": "bit@bot",
+    },
+  ],
+  "settings": Object {
+    "projectType": "other",
+  },
+}
+`;
+
 exports[`settings reducer loads settings 1`] = `
 Object {
-  "androidSettings": Object {
-    "artifactExposingWorkflows": "All",
-    "selectedKeystoreFile": Object {
-      "name": "abcdefghijkl1234567",
+  "appContacts": Array [],
+  "settings": Object {
+    "androidSettings": Object {
+      "artifactExposingWorkflows": "All",
+      "selectedKeystoreFile": Object {
+        "name": "abcdefghijkl1234567",
+      },
+      "selectedServiceAccountJsonFile": Object {
+        "name": "abcdefghijkl12345671566",
+      },
+      "track": "Release",
     },
-    "selectedServiceAccountJsonFile": Object {
-      "name": "abcdefghijkl12345671566",
+    "certificates": Array [
+      Object {
+        "name": "iPhone Developer: John Doe (ABCD1234)",
+      },
+      Object {
+        "name": "iPhone Developer: John Doe (ABCD5678)",
+      },
+    ],
+    "iosSettings": Object {
+      "appSku": "Fill",
+      "appSpecificPassword": "Fill",
+      "appleDeveloperAccountEmail": "Fill",
+      "artifactExposingWorkflows": "All",
+      "selectedCertificate": Object {
+        "name": "iPhone Developer: John Doe (ABCD5678)",
+      },
+      "selectedProvProfile": Object {
+        "name": "abcdefghijkl1234567",
+      },
     },
-    "track": "Release",
+    "keystoreFiles": Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+      },
+    ],
+    "projectType": "other",
+    "provProfiles": Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+      },
+    ],
+    "serviceAccountJsonFiles": Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+      },
+    ],
   },
-  "certificates": Array [
-    Object {
-      "name": "iPhone Developer: John Doe (ABCD1234)",
-    },
-    Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-  ],
-  "iosSettings": Object {
-    "appSku": "Fill",
-    "appSpecificPassword": "Fill",
-    "appleDeveloperAccountEmail": "Fill",
-    "artifactExposingWorkflows": "All",
-    "selectedCertificate": Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-    "selectedProvProfile": Object {
-      "name": "abcdefghijkl1234567",
-    },
-  },
-  "keystoreFiles": Array [
-    Object {
-      "name": "abcdefghijkl1234567",
-    },
-    Object {
-      "name": "abcdefghijkl12345671566",
-    },
-  ],
-  "projectType": "other",
-  "provProfiles": Array [
-    Object {
-      "name": "abcdefghijkl1234567",
-    },
-    Object {
-      "name": "abcdefghijkl12345671566",
-    },
-  ],
-  "serviceAccountJsonFiles": Array [
-    Object {
-      "name": "abcdefghijkl1234567",
-    },
-    Object {
-      "name": "abcdefghijkl12345671566",
-    },
-  ],
 }
 `;
 
