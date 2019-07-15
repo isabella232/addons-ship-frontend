@@ -35,6 +35,17 @@ describe('NotificationSettings', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('componentDidUpdate', () => {
+    const { appContacts } = defaultProps;
+    const wrapper = shallow(<NotificationSettings {...defaultProps} />);
+
+    wrapper.setProps({ appContacts: [...appContacts, { email: ' doesnt@matt.er' }] });
+
+    const { state } = wrapper.instance();
+
+    expect(state).toMatchSnapshot();
+  });
+
   it('sets the email', () => {
     const { addAppContact, appSlug } = defaultProps,
       email = 'whatever@email.com';

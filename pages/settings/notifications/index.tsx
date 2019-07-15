@@ -25,6 +25,14 @@ export class NotificationSettings extends React.Component<Props, State> {
     updatedAppContacts: this.props.appContacts
   };
 
+  componentDidUpdate({ appContacts: prevAppContacts }: Props) {
+    const { appContacts } = this.props;
+
+    if (prevAppContacts.length !== appContacts.length) {
+      this.setState({ updatedAppContacts: appContacts, hasModifications: false });
+    }
+  }
+
   onAddEmail = (email: string) => {
     const { appSlug, addAppContact } = this.props;
 

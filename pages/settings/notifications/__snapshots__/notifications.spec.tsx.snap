@@ -1,5 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`NotificationSettings componentDidUpdate 1`] = `
+Object {
+  "hasModifications": false,
+  "updatedAppContacts": Array [
+    Object {
+      "email": "bit.bot@bitrise.io",
+      "isConfirmed": true,
+      "notificationPreferences": Object {
+        "failedPublish": true,
+        "newVersion": true,
+        "successfulPublish": true,
+      },
+    },
+    Object {
+      "email": "purr.request@bitrise.io",
+      "isConfirmed": false,
+      "notificationPreferences": Object {
+        "failedPublish": true,
+        "newVersion": false,
+        "successfulPublish": false,
+      },
+    },
+    Object {
+      "email": " doesnt@matt.er",
+    },
+  ],
+}
+`;
+
 exports[`NotificationSettings onCancel 1`] = `
 Array [
   Object {
