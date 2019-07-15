@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Ship API service addAppContact post a new app contact 1`] = `
+exports[`Ship API service addAppContact posts a new app contact 1`] = `
 Object {
   "email": "josh@bend.er",
   "isConfirmed": false,
   "notificationPreferences": Object {
-    "failed_publish": false,
-    "new_version": true,
-    "successful_publish": true,
+    "failedPublish": false,
+    "newVersion": true,
+    "successfulPublish": true,
   },
 }
 `;
@@ -103,6 +103,23 @@ Object {
     },
   ],
 }
+`;
+
+exports[`Ship API service listAppContacts lists all app contacts 1`] = `
+Array [
+  Object {
+    "email": "aaa",
+    "notificationPreferences": Object {
+      "newVersion": true,
+    },
+  },
+  Object {
+    "email": "bbb",
+  },
+  Object {
+    "email": "ccc",
+  },
+]
 `;
 
 exports[`Ship API service updateAppVersion updates a version for an app 1`] = `

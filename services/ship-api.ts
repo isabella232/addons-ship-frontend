@@ -2,7 +2,7 @@ import { shipApiConfig } from '@/config';
 import { AppVersion, AppVersionEvent } from '@/models';
 import { APIConfig } from '@/models/services';
 import { Uploadable } from '@/models/uploadable';
-import { snakifyKeys, camelizeKeys } from '@/utils';
+import { snakifyKeys, camelizeKeys, camelizeKeysDeep } from '@/utils';
 import { patch, post, get, put } from '@/utils/request';
 import { mockSettings } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
@@ -158,7 +158,18 @@ export class ShipAPIService {
       });
     const { data } = await post(url, this.token, body).then(res => res.json());
 
-    return camelizeKeys(data);
+    return camelizeKeysDeep(data);
+  }
+
+  async listAppContacts(appSlug: string): Promise<AppContact[]> {
+    if (this.token === null) {
+      throw new Error('Token not set');
+    }
+
+    const url = `${this.config.url}/apps/${appSlug}/contacts`;
+    const { data } = await get(url, this.token).then(res => res.json());
+
+    return data.map(camelizeKeysDeep);
   }
 }
 

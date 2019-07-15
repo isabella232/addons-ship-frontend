@@ -233,7 +233,7 @@ describe('Ship API service', () => {
   describe('addAppContact', () => {
     testTokenNotSet(() => api.addAppContact('app-slug', 'john@do.e'));
 
-    it('post a new app contact', async () => {
+    it('posts a new app contact', async () => {
       const token = 'best-token',
         appSlug = 'aplikashun',
         email = 'josh@bend.er';
@@ -257,6 +257,29 @@ describe('Ship API service', () => {
         token,
         `{"email":"${email}","notification_preferences":{"new_version":true,"failed_publish":true,"successful_publish":true}}`
       );
+      expect(resp).toMatchSnapshot();
+    });
+  });
+
+  describe('listAppContacts', () => {
+    testTokenNotSet(() => api.listAppContacts('app-slug'));
+
+    it('lists all app contacts', async () => {
+      const token = 'best-token',
+        appSlug = 'aplikashun';
+
+      (get as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: [{ email: 'aaa', notification_preferences: { new_version: true } }, { email: 'bbb' }, { email: 'ccc' }]
+        })
+      });
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/contacts`;
+      const resp = await api.listAppContacts(appSlug);
+
+      expect(get).toHaveBeenCalledWith(url, token);
       expect(resp).toMatchSnapshot();
     });
   });
