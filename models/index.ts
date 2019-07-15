@@ -8,17 +8,12 @@ export type AppVersionProps = {
 };
 
 export const AppVersionPageTabs = ['details', 'devices', 'test', 'activity'];
-export const AppSettingsPageTabs = ['general'];
+
 export const MaximumNumberOfCertificates = 30;
 
 export type AppVersionPageQuery = AppVersionProps & {
   isPublic?: string;
   selectedTab?: typeof AppVersionPageTabs[number];
-};
-
-export type AppSettingsPageQuery = {
-  appSlug: string;
-  selectedTab?: typeof AppSettingsPageTabs[number];
 };
 
 export type AppPageQuery = {
@@ -67,58 +62,6 @@ export type AppVersionEvent = {
   createdAt: number | Date;
   updatedAt: number | Date;
   logDownloadUrl: string;
-};
-
-export type ProvProfile = {
-  name: string;
-};
-
-export type Certificate = {
-  name: string;
-};
-
-export type KeystoreFile = {
-  name: string;
-};
-
-export type ServiceAccountJsonFile = {
-  name: string;
-};
-
-export type IosSettings = {
-  artifactExposingWorkflows: string;
-  appleDeveloperAccountEmail: string;
-  appSku: string;
-  appSpecificPassword: string;
-  selectedProvProfile: any;
-  selectedCertificate: any;
-};
-
-export type AndroidSettings = {
-  artifactExposingWorkflows: string;
-  track: string;
-  selectedKeystoreFile: any;
-  selectedServiceAccountJsonFile: any;
-};
-
-export type Settings = {
-  iosSettings?: IosSettings;
-  androidSettings?: AndroidSettings;
-  provProfiles?: ProvProfile[];
-  certificates?: Certificate[];
-  keystoreFiles?: KeystoreFile[];
-  serviceAccountJsonFiles?: ServiceAccountJsonFile[];
-  projectType:
-    | 'xamarin'
-    | 'ios'
-    | 'osx'
-    | 'macos'
-    | 'android'
-    | 'cordova'
-    | 'ionic'
-    | 'react-native'
-    | 'flutter'
-    | 'other';
 };
 
 export interface PageContext extends NextContext {

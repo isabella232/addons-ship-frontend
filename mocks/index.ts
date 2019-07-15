@@ -1,4 +1,5 @@
-import { AppVersion, Settings } from '@/models';
+import { AppVersion } from '@/models';
+import { Settings } from '@/models/settings';
 import { TestDevice } from '@/models/test-device';
 
 export const mockAppVersions: AppVersion[] = [

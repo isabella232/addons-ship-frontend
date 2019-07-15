@@ -17,7 +17,7 @@ import {
   IosSettings,
   AndroidSettings,
   Settings
-} from '@/models';
+} from '@/models/settings';
 
 describe('GeneralView', () => {
   const defaultProps = {
