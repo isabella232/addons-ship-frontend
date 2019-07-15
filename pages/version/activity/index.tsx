@@ -10,7 +10,7 @@ type Props = {
   appVersionEvents: AppVersionEvent[];
 };
 
-export class AppVersionActivity extends Component<Props> {
+export class Activity extends Component<Props> {
   render() {
     const { appVersionEvents } = this.props;
     const viewProps = {
@@ -25,4 +25,4 @@ const mapStateToProps = ({ appVersion: { events } }: RootState) => ({
   appVersionEvents: orderedAppVersionEvents(events)
 });
 
-export default connect(mapStateToProps)(AppVersionActivity as any);
+export default connect(mapStateToProps)(Activity as any);

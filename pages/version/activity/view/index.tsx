@@ -9,7 +9,7 @@ type Props = {
   appVersionEvents: AppVersionEvent[]
 };
 
-const activityItem = (status: string, message: string, buildLogUrl?: string, appVersionEvent) => {
+const activityItem = (status: string, message: string, buildLogUrl: string) => {
   let styleConfig = {
     iconName: 'Tick',
     iconColor: 'green-4',
@@ -32,7 +32,7 @@ const activityItem = (status: string, message: string, buildLogUrl?: string, app
           {message}
         </Text>
       </Flex>
-      {status === 'error' && (
+      {status === 'failed' && (
         <Link href={buildLogUrl}>
           <Button level="secondary" size="small">
             <Icon name="Download" color="grape-4" />
@@ -59,9 +59,9 @@ export default ({ appVersionEvents }: Props) => (
         <Divider color="gray-2" direction="horizontal" width="0.125rem" />
         <Flex direction="horizontal" gap="x4" paddingHorizontal="x3" paddingVertical="x4">
           <Text size="x3" color="gray-7" width="200px" shrink="0">
-            {formatDate(new Date(), 'YYYY MM DD hh:mm:ss')}
+            {formatDate(appVersionEvent.createdAt, 'YYYY MM DD hh:mm:ss')}
           </Text>
-          {activityItem(appVersionEvent.status, appVersionEvent.text, appVersionEvent.logDownloadUrl, appVersionEvent)}
+          {activityItem(appVersionEvent.status, appVersionEvent.text, appVersionEvent.logDownloadUrl)}
         </Flex>
       </Fragment>
     ))}

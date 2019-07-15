@@ -197,7 +197,7 @@ describe('Ship API service', () => {
   });
 
   describe('getAppVersionEvents', () => {
-    testTokenNotSet(() => api.getAppVersionEvents(mockAppVersion));
+    testTokenNotSet(() => api.getAppVersionEvents(mockAppVersion.appSlug, mockAppVersion.version));
 
     it('fetches the events for an app version', async () => {
       (get as jest.Mock).mockResolvedValueOnce({
@@ -206,7 +206,7 @@ describe('Ship API service', () => {
             {
               id: 'an-id',
               status: 'in-progress',
-              text: 'some-string',
+              event_text: 'some-string',
               created_at: '2019-10-10',
               updated_at: '2019-10-11',
               log_download_url: 'http://log.url'
@@ -221,7 +221,7 @@ describe('Ship API service', () => {
       api.setToken(token);
 
       const url = `${apiUrl}/apps/${appSlug}/versions/${id}/events`;
-      const resp = await api.getAppVersionEvents({ appSlug, id } as any);
+      const resp = await api.getAppVersionEvents(appSlug, id);
 
       expect(get).toHaveBeenCalledWith(url, token);
       expect(resp).toMatchSnapshot();

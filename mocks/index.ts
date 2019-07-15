@@ -1,4 +1,4 @@
-import { AppVersion } from '@/models';
+import { AppVersion, AppVersionEvent } from '@/models';
 import { Settings } from '@/models/settings';
 import { TestDevice } from '@/models/test-device';
 
@@ -243,3 +243,36 @@ export const mockSettings: Settings = {
   keystoreFiles: keystoreFiles,
   serviceAccountJsonFiles: serviceAccountJsonFiles
 };
+
+export const mockFinishedAppVersionEvent: AppVersionEvent = {
+  id: '1234',
+  status: 'finished',
+  text: 'Event finished successfully!',
+  createdAt: new Date('2018-09-20T12:42:31Z'),
+  updatedAt: new Date('2018-09-21T12:42:31Z'),
+  logDownloadUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg'
+};
+
+export const mockInProgressAppVersionEvent: AppVersionEvent = {
+  id: '1234',
+  status: 'in-progress',
+  text: 'Doing something...',
+  createdAt: new Date('2018-09-22T12:42:31Z'),
+  updatedAt: new Date('2018-09-25T12:42:31Z'),
+  logDownloadUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg'
+};
+
+export const mockFailedAppVersionEvent: AppVersionEvent = {
+  id: '1234',
+  status: 'failed',
+  text: 'An error occured.',
+  createdAt: new Date('2018-09-26T12:42:31Z'),
+  updatedAt: new Date('2018-09-27T12:42:31Z'),
+  logDownloadUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg'
+};
+
+export const mockAppVersionEvents: AppVersionEvent[] = [
+  mockFinishedAppVersionEvent,
+  mockInProgressAppVersionEvent,
+  mockFailedAppVersionEvent
+];
