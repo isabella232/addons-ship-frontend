@@ -13,6 +13,7 @@ import { fetchSettings } from '@/ducks/settings';
 import Details from './details';
 import Devices from './devices';
 import Activity from './activity';
+import { fetchAppVersionEvents } from '@/ducks/appVersionEvent';
 
 interface VersionPageProps extends AppVersionPageQuery {
   appVersion: AppVersion;
@@ -43,6 +44,9 @@ export class VersionPage extends Component<VersionPageProps> {
         break;
       case 'devices':
         promises.push(store.dispatch(fetchTestDevices(appSlug) as any));
+        break;
+      case 'activity':
+        promises.push(store.dispatch(fetchAppVersionEvents(appSlug, versionId) as any));
         break;
     }
 

@@ -61,7 +61,7 @@ export class ShipAPIService {
     return await camelizeKeys(data);
   }
 
-  async getAppVersionEvents({ appSlug, id: versionId }: AppVersion): Promise<AppVersionEvent[]> {
+  async getAppVersionEvents(appSlug: string, versionId: string): Promise<AppVersionEvent[]> {
     if (this.token === null) {
       throw new Error('Token not set');
     }
@@ -70,11 +70,15 @@ export class ShipAPIService {
 
     const { data } = await get(url, this.token).then(res => res.json());
 
-    return data.map(camelizeKeys).map(({ createdAt, updatedAt, ...event }: AppVersionEvent) => ({
-      ...event,
-      createdAt: new Date(createdAt),
-      updatedAt: new Date(updatedAt)
-    }));
+    return data.map(camelizeKeys).map(
+      ({ createdAt, updatedAt, eventText, ...event }: any) =>
+        ({
+          ...event,
+          text: eventText,
+          createdAt: new Date(createdAt),
+          updatedAt: new Date(updatedAt)
+        } as AppVersionEvent)
+    );
   }
 
   // POST /apps/{app-slug}/versions/{version-id}/screenshots

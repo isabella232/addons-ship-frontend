@@ -7,6 +7,7 @@ import updateAppVersion from './updateAppVersion';
 import uploadScreenshots from './uploadScreenshots';
 import publishAppVersion from './publishAppVersion';
 import pollPublishStatus, { pollPublishStatusEpic } from './pollPublishStatus';
+import { fetchAppVersionEvents } from '../appVersionEvent';
 
 export type AppVersionState = {
   appVersion: AppVersion | null;
@@ -35,6 +36,10 @@ export default createReducer(defaultState, handleAction => [
     isPublishInProgress: false
   })),
   handleAction(pollPublishStatus.complete, (state, { payload }) => ({
+    ...state,
+    events: payload
+  })),
+  handleAction(fetchAppVersionEvents.complete, (state, { payload }) => ({
     ...state,
     events: payload
   }))
