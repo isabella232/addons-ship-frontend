@@ -87,7 +87,7 @@ describe('settings', () => {
       await store.dispatch(addAppContact(appSlug, email) as any);
 
       expect(store.getActions()).toMatchSnapshot();
-      expect(shipApi.addAppContact).toHaveBeenCalledWith(appSlug, email);
+      expect(shipApi.addAppContact).toHaveBeenCalledWith(appSlug, email, undefined);
     });
 
     it('fails to add a new contact', async () => {

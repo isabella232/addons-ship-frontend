@@ -35,13 +35,13 @@ export class SettingsPage extends Component<SettingsPageProps> {
   }
 
   tabContent = () => {
-    const { selectedTab } = this.props;
+    const { selectedTab, appSlug } = this.props;
 
     switch (selectedTab) {
       case 'general':
         return <General />;
       case 'notifications':
-        return <Notifications />;
+        return <Notifications appSlug={appSlug} />;
       default:
         return <h1>{selectedTab}</h1>;
     }

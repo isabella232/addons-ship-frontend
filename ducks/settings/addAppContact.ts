@@ -7,15 +7,15 @@ import { ShipAPIService } from '@/services/ship-api';
 
 import { $ } from './common';
 
-const _addAppContact = (appSlug: string, email: string) => async (
-  dispatch: Dispatch,
-  _getState: () => RootState,
-  { shipApi }: { shipApi: ShipAPIService }
-) => {
+const _addAppContact = (
+  appSlug: string,
+  email: string,
+  notificationPreferences?: AppContact['notificationPreferences']
+) => async (dispatch: Dispatch, _getState: () => RootState, { shipApi }: { shipApi: ShipAPIService }) => {
   dispatch(addAppContact.next());
 
   try {
-    const appContact = await shipApi.addAppContact(appSlug, email);
+    const appContact = await shipApi.addAppContact(appSlug, email, notificationPreferences);
 
     dispatch(addAppContact.complete(appContact));
   } catch (error) {

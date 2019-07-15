@@ -5,6 +5,7 @@ import { NotificationSettings } from '.';
 
 describe('NotificationSettings', () => {
   const defaultProps = {
+    appSlug: 'some-app',
     appContacts: [
       {
         email: 'bit.bot@bitrise.io',
@@ -24,7 +25,8 @@ describe('NotificationSettings', () => {
           failedPublish: true
         }
       }
-    ]
+    ],
+    addAppContact: jest.fn() as any
   };
 
   it('renders correctly', () => {
@@ -34,13 +36,13 @@ describe('NotificationSettings', () => {
   });
 
   it('sets the email', () => {
-    const spy = jest.spyOn(global.console, 'log');
+    const { addAppContact, appSlug } = defaultProps,
+      email = 'whatever@email.com';
     const wrapper = shallow(<NotificationSettings {...defaultProps} />);
 
-    const email = 'whatever@email.com';
     (wrapper.instance() as NotificationSettings).onAddEmail(email);
 
-    expect(spy).toHaveBeenCalledWith('onAddEmail', email);
+    expect(addAppContact).toHaveBeenCalledWith(appSlug, email);
   });
 
   test('onNotificationPreferenceChanged', () => {

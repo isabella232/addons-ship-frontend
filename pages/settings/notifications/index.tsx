@@ -3,11 +3,15 @@ import { connect } from 'react-redux';
 import isEqual from 'lodash/isEqual';
 
 import { AppContact } from '@/models/settings';
+import { RootState } from '@/store';
+import { addAppContact } from '@/ducks/settings';
 
 import View from './view';
 
 type Props = {
+  appSlug: string;
   appContacts: AppContact[];
+  addAppContact: typeof addAppContact;
 };
 
 type State = {
@@ -22,7 +26,9 @@ export class NotificationSettings extends React.Component<Props, State> {
   };
 
   onAddEmail = (email: string) => {
-    console.log('onAddEmail', email);
+    const { appSlug, addAppContact } = this.props;
+
+    addAppContact(appSlug, email);
   };
 
   onNotificationPreferenceChanged = (email: string, key: string, value: boolean) => {
@@ -86,34 +92,11 @@ export class NotificationSettings extends React.Component<Props, State> {
   }
 }
 
-export default connect(() => ({
-  appContacts: [
-    {
-      email: 'gergo.ovari@bitrise.io',
-      isConfirmed: true,
-      notificationPreferences: {
-        newVersion: true,
-        successfulPublish: true,
-        failedPublish: true
-      }
-    },
-    {
-      email: 'jozsef.eros@bitrise.io',
-      isConfirmed: false,
-      notificationPreferences: {
-        newVersion: false,
-        successfulPublish: true,
-        failedPublish: true
-      }
-    },
-    {
-      email: 'gergely.bekesi@bitrise.io',
-      isConfirmed: true,
-      notificationPreferences: {
-        newVersion: true,
-        successfulPublish: false,
-        failedPublish: true
-      }
-    }
-  ]
-}))(NotificationSettings);
+const mapStateToProps = ({ settings: { appContacts } }: RootState) => ({ appContacts }),
+  mapDispatchToProps = { addAppContact };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+  // @ts-ignore
+)(NotificationSettings);

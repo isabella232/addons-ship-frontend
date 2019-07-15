@@ -138,13 +138,24 @@ export class ShipAPIService {
     return await new Promise(resolve => setTimeout(resolve, 500)).then(() => {});
   }
 
-  async addAppContact(appSlug: string, email: string): Promise<AppContact> {
+  async addAppContact(
+    appSlug: string,
+    email: string,
+    notificationPreferences: AppContact['notificationPreferences'] = {
+      newVersion: true,
+      failedPublish: true,
+      successfulPublish: true
+    }
+  ): Promise<AppContact> {
     if (this.token === null) {
       throw new Error('Token not set');
     }
 
     const url = `${this.config.url}/apps/${appSlug}/contacts`,
-      body = JSON.stringify({ email });
+      body = JSON.stringify({
+        email,
+        notification_preferences: snakifyKeys(notificationPreferences)
+      });
     const { data } = await post(url, this.token, body).then(res => res.json());
 
     return camelizeKeys(data);

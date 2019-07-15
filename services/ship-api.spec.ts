@@ -12,6 +12,7 @@ describe('Ship API service', () => {
   let api: ShipAPIService;
   beforeEach(() => {
     api = new ShipAPIService({ url: apiUrl });
+    ([patch, post, get, put] as jest.Mock[]).forEach(m => m.mockReset());
   });
 
   const testTokenNotSet = (fn: Function) => {
@@ -251,7 +252,11 @@ describe('Ship API service', () => {
       const url = `${apiUrl}/apps/${appSlug}/contacts`;
       const resp = await api.addAppContact(appSlug, email);
 
-      expect(post).toHaveBeenCalledWith(url, token, `{"email":"${email}"}`);
+      expect(post).toHaveBeenCalledWith(
+        url,
+        token,
+        `{"email":"${email}","notification_preferences":{"new_version":true,"failed_publish":true,"successful_publish":true}}`
+      );
       expect(resp).toMatchSnapshot();
     });
   });
