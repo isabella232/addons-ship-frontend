@@ -19,7 +19,7 @@ export class SettingsPage extends Component<SettingsPageProps> {
     selectedTab: 'general'
   };
 
-  static async getInitialProps({ query, store, req }: PageContext) {
+  static async getInitialProps({ query, store, req, isServer }: PageContext) {
     const { appSlug, selectedTab = AppSettingsPageTabs[0] } = (query as unknown) as AppSettingsPageQuery;
 
     switch (selectedTab) {
@@ -28,7 +28,8 @@ export class SettingsPage extends Component<SettingsPageProps> {
         break;
     }
 
-    const pagePath = req.path.replace(new RegExp(`/${selectedTab}$`), '');
+    const path = isServer ? req.path : location.pathname;
+    const pagePath = path.replace(new RegExp(`/(${AppSettingsPageTabs.join('|')})?$`), '');
 
     return { appSlug, selectedTab, pagePath };
   }
@@ -47,11 +48,11 @@ export class SettingsPage extends Component<SettingsPageProps> {
   };
 
   render() {
-    const { pagePath, selectedTab } = this.props;
+    const { pagePath, appSlug, selectedTab } = this.props;
 
     const tab = (key: string) => (
       <Tab active={selectedTab === key}>
-        <Link href={`${pagePath}/${key}`}>
+        <Link as={`${pagePath}/${key}`} href={`/settings?appSlug=${appSlug}&selectedTab=${key}`}>
           <a>{startCase(key)}</a>
         </Link>
       </Tab>
