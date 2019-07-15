@@ -35,6 +35,7 @@ type Props = {
   isPublishInProgress: boolean;
   publishTarget: string;
   settingsPath: string;
+  activityPath: string;
   latestEventStatus: AppVersionEvent['status'] | null;
 };
 
@@ -42,7 +43,8 @@ const publishNotification = (
   publishStatus: AppVersionEvent['status'] | null,
   readyForPublish: boolean,
   publishTarget: string,
-  settingsPath: string
+  settingsPath: string,
+  activityPath: string
 ) => {
   if (!readyForPublish) {
     return (
@@ -68,7 +70,7 @@ const publishNotification = (
     case 'failed':
       return (
         <Notification margin="x2" type="alert">
-          Failed to publish you app. See the error log on the Activity tab.
+          Publish has failed. See the error log at the <a href={activityPath}>Activity tab</a>.
         </Notification>
       );
     default:
@@ -91,6 +93,7 @@ export default ({
   isPublishInProgress,
   publishTarget,
   settingsPath,
+  activityPath,
   availableDevices,
   latestEventStatus,
   ...props
@@ -109,7 +112,7 @@ export default ({
     <Base>
       <Flex direction="vertical" alignChildren="middle" paddingVertical="x6">
         <Flex maxWidth={isDesktop ? '100%' : 688}>
-          {publishNotification(latestEventStatus, readyForPublish, publishTarget, settingsPath)}
+          {publishNotification(latestEventStatus, readyForPublish, publishTarget, settingsPath, activityPath)}
         </Flex>
       </Flex>
       <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'} gap="x4">

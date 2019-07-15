@@ -274,6 +274,7 @@ export class AppVersionDetails extends Component<Props, State> {
         (appVersion.platform === 'android' && 'Google Play Store') ||
         'production',
       settingsPath: `/apps/${appVersion.appSlug}/settings`,
+      activityPath: `/apps/${appVersion.appSlug}/versions/${appVersion.id}/activity`,
       latestEventStatus: get(latestEvent, 'status', null)
     };
 

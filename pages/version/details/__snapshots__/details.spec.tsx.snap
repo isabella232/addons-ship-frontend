@@ -156,6 +156,7 @@ Object {
 
 exports[`AppVersionDetails disables install button when device is from a lower version 1`] = `
 <_default
+  activityPath="/apps/app-slug-123/versions/123/activity"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -269,6 +270,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
 
 exports[`AppVersionDetails disables install button when device is from different platform 1`] = `
 <_default
+  activityPath="/apps/app-slug-123/versions/123/activity"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -382,6 +384,7 @@ exports[`AppVersionDetails disables install button when device is from different
 
 exports[`AppVersionDetails disables install button when device is not supported 1`] = `
 <_default
+  activityPath="/apps/app-slug-123/versions/123/activity"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -495,6 +498,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
 
 exports[`AppVersionDetails disables install button when there is no public install page 1`] = `
 <_default
+  activityPath="/apps/app-slug-123/versions/123/activity"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -609,6 +613,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
 
 exports[`AppVersionDetails enables install button when there is public install page, device is same platform, newer version, supported 1`] = `
 <_default
+  activityPath="/apps/app-slug-123/versions/123/activity"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -722,6 +727,7 @@ exports[`AppVersionDetails enables install button when there is public install p
 
 exports[`AppVersionDetails enables install button when there is public install page, device is same platform, same version, supported 1`] = `
 <_default
+  activityPath="/apps/app-slug-123/versions/123/activity"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -835,6 +841,7 @@ exports[`AppVersionDetails enables install button when there is public install p
 
 exports[`AppVersionDetails renders correctly 1`] = `
 <_default
+  activityPath="/apps/app-slug-123/versions/123/activity"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -949,6 +956,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
 
 exports[`AppVersionDetailsView when an Android app version is viewed renders with Android version correctly 1`] = `
 <_default
+  activityPath="/path"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -4951,6 +4959,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
 
 exports[`AppVersionDetailsView when viewed on desktop renders the details view correctly 1`] = `
 <_default
+  activityPath="/path"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -9276,6 +9285,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
 
 exports[`AppVersionDetailsView when viewed on desktop when not ready for publish renders the details view with warning, and the publish button disabled 1`] = `
 <_default
+  activityPath="/path"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -13610,6 +13620,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
 
 exports[`AppVersionDetailsView when viewed on desktop when public install page is not enabled renders the details view with disabled sidebar 1`] = `
 <_default
+  activityPath="/path"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -17740,7 +17751,13 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
         margin="x2"
         type="alert"
       >
-        Failed to publish you app. See the error log on the Activity tab.
+        Publish has failed. See the error log at the 
+        <a
+          href="/path"
+        >
+          Activity tab
+        </a>
+        .
       </Notification>
     </Flex>
   </Flex>
@@ -18122,6 +18139,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
 
 exports[`AppVersionDetailsView when viewed on desktop when publish is in progress renders the details view with notification, and the publish button disabled 1`] = `
 <_default
+  activityPath="/path"
   appVersion={
     Object {
       "appName": "Standup Timer",
@@ -22459,6 +22477,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
 
 exports[`AppVersionDetailsView when viewed on mobile renders the details view correctly 1`] = `
 <_default
+  activityPath="/path"
   appVersion={
     Object {
       "appName": "Standup Timer",
