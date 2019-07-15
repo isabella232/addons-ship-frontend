@@ -5,7 +5,7 @@ import { Uploadable } from '@/models/uploadable';
 import { snakifyKeys, camelizeKeys } from '@/utils';
 import { patch, post, get, put } from '@/utils/request';
 import { mockSettings } from '@/mocks';
-import { Settings } from '@/models/settings';
+import { Settings, AppContact } from '@/models/settings';
 
 export class ShipAPIService {
   constructor(private config: APIConfig) {}
@@ -136,6 +136,18 @@ export class ShipAPIService {
     }
 
     return await new Promise(resolve => setTimeout(resolve, 500)).then(() => {});
+  }
+
+  async addAppContact(appSlug: string, email: string): Promise<AppContact> {
+    if (this.token === null) {
+      throw new Error('Token not set');
+    }
+
+    const url = `${this.config.url}/apps/${appSlug}/contacts`,
+      body = JSON.stringify({ email });
+    const { data } = await post(url, this.token, body).then(res => res.json());
+
+    return camelizeKeys(data);
   }
 }
 

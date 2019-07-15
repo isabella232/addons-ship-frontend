@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Ship API service addAppContact post a new app contact 1`] = `
+Object {
+  "email": "josh@bend.er",
+  "isConfirmed": false,
+  "notificationPreferences": Object {
+    "failed_publish": false,
+    "new_version": true,
+    "successful_publish": true,
+  },
+}
+`;
+
 exports[`Ship API service getAppVersion fetches a version for an app 1`] = `
 Object {
   "appSlug": "an-app-slug",

@@ -2,9 +2,10 @@ jest.mock('@/utils/request');
 
 import { Uploadable } from '@/models/uploadable';
 import { patch, post, get, put } from '@/utils/request';
+import { mockAppVersion, mockSettings } from '@/mocks';
+import { Settings } from '@/models/settings';
 
 import { ShipAPIService } from './ship-api';
-import { mockAppVersion, mockSettings } from '@/mocks';
 
 describe('Ship API service', () => {
   const apiUrl = 'http://ship.api';
@@ -163,7 +164,7 @@ describe('Ship API service', () => {
   });
 
   describe('updateSettings', () => {
-    testTokenNotSet(() => api.updateSettings({}));
+    testTokenNotSet(() => api.updateSettings({} as Settings));
 
     it('updates settings for an app', async () => {
       api.setToken('very-token');
@@ -224,6 +225,33 @@ describe('Ship API service', () => {
       const resp = await api.getAppVersionEvents({ appSlug, id } as any);
 
       expect(get).toHaveBeenCalledWith(url, token);
+      expect(resp).toMatchSnapshot();
+    });
+  });
+
+  describe('addAppContact', () => {
+    testTokenNotSet(() => api.addAppContact('app-slug', 'john@do.e'));
+
+    it('post a new app contact', async () => {
+      const token = 'best-token',
+        appSlug = 'aplikashun',
+        email = 'josh@bend.er';
+      (post as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: {
+            email,
+            is_confirmed: false,
+            notification_preferences: { new_version: true, failed_publish: false, successful_publish: true }
+          }
+        })
+      });
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/contacts`;
+      const resp = await api.addAppContact(appSlug, email);
+
+      expect(post).toHaveBeenCalledWith(url, token, `{"email":"${email}"}`);
       expect(resp).toMatchSnapshot();
     });
   });
