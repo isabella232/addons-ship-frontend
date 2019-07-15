@@ -9,6 +9,9 @@ export const actionTypeCreator = (prefix: string) => (actionType: TemplateString
 export const camelizeKeys = <T>(input: Object): T =>
   (mapKeys(input, (_, key: string) => camelCase(key)) as unknown) as T;
 
+export const camelizeKeysDeep = <T>(input: Object): T =>
+  mapValues(camelizeKeys(input), (value: any) => (isObject(value) ? camelizeKeysDeep(value) : value)) as T;
+
 export const snakifyKeys = <T>(input: Object): T =>
   (mapKeys(input, (_, key: string) => snakeCase(key)) as unknown) as T;
 

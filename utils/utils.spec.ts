@@ -1,4 +1,4 @@
-import { actionTypeCreator, camelizeKeys, snakifyKeys, snakifyKeysDeep } from './';
+import { actionTypeCreator, camelizeKeys, snakifyKeys, snakifyKeysDeep, camelizeKeysDeep } from './';
 
 describe('actionTypeCreator', () => {
   it('returns a function', () => {
@@ -30,6 +30,34 @@ describe('camelizeKeys', () => {
     };
 
     expect(camelizeKeys(input)).toEqual(expected);
+  });
+});
+
+describe('camelizeKeysDeep', () => {
+  it('shallow converts keys to camelCase', () => {
+    const input = {
+      CONSTANT_CASE: 'aaa',
+      snake_case: 123,
+      PascalCase: 'bbb',
+      nes_ted: {
+        SOME_NICE: {
+          ParaMeter: 789
+        }
+      }
+    };
+
+    const expected = {
+      constantCase: 'aaa',
+      snakeCase: 123,
+      pascalCase: 'bbb',
+      nesTed: {
+        someNice: {
+          paraMeter: 789
+        }
+      }
+    };
+
+    expect(camelizeKeysDeep(input)).toEqual(expected);
   });
 });
 
