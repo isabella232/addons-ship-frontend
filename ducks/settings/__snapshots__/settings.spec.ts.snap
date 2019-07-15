@@ -46,6 +46,29 @@ Array [
 ]
 `;
 
+exports[`settings listAppContacts fails to list app contacts 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_LIST_APP_CONTACTS_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "SETTINGS_LIST_APP_CONTACTS_ERROR",
+  },
+]
+`;
+
+exports[`settings listAppContacts lists app contacts 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_LIST_APP_CONTACTS_NEXT",
+  },
+  Object {
+    "type": "SETTINGS_LIST_APP_CONTACTS_COMPLETE",
+  },
+]
+`;
+
 exports[`settings reducer adds an app contact 1`] = `
 Object {
   "appContacts": Array [
@@ -60,6 +83,22 @@ Object {
     },
     Object {
       "email": "bit@bot",
+    },
+  ],
+  "settings": Object {
+    "projectType": "other",
+  },
+}
+`;
+
+exports[`settings reducer loads app contacts 1`] = `
+Object {
+  "appContacts": Array [
+    Object {
+      "email": "purr@req.io",
+    },
+    Object {
+      "email": "bit@bot.io",
     },
   ],
   "settings": Object {

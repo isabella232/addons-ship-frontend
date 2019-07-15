@@ -8,7 +8,7 @@ import { mockSettings } from '@/mocks';
 import { Settings, IosSettings, AppContact } from '@/models/settings';
 import shipApi from '@/services/ship-api';
 
-import settings, { fetchSettings, updateSettings, addAppContact } from '.';
+import settings, { fetchSettings, updateSettings, addAppContact, listAppContacts } from '.';
 
 describe('settings', () => {
   const mockAppContact: AppContact = {
@@ -37,6 +37,15 @@ describe('settings', () => {
           appContacts: [mockAppContact]
         },
         addAppContact.complete({ email: 'bit@bot' } as AppContact)
+      );
+
+      expect(state).toMatchSnapshot();
+    });
+
+    it('loads app contacts', () => {
+      const state = settings(
+        undefined,
+        listAppContacts.complete([{ email: 'purr@req.io' }, { email: 'bit@bot.io' }] as AppContact[])
       );
 
       expect(state).toMatchSnapshot();
@@ -93,6 +102,23 @@ describe('settings', () => {
     it('fails to add a new contact', async () => {
       (shipApi.addAppContact as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(addAppContact('app-clug', 'an@email.adr') as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  describe('listAppContacts', () => {
+    it('lists app contacts', async () => {
+      const appSlug = 'app-slug';
+      await store.dispatch(listAppContacts(appSlug) as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+      expect(shipApi.listAppContacts).toHaveBeenCalledWith(appSlug);
+    });
+
+    it('fails to list app contacts', async () => {
+      (shipApi.listAppContacts as jest.Mock).mockRejectedValueOnce('api had some issue');
+      await store.dispatch(listAppContacts('app-slug') as any);
 
       expect(store.getActions()).toMatchSnapshot();
     });
