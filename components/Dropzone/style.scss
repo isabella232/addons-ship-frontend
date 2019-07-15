@@ -60,7 +60,7 @@ $dropzone-height: 100 * $grid;
 }
 
 .thumbnail {
-  height: 100%;
+  height: $dropzone-height - 4 * $grid;
   display: block;
   border-radius: $grid;
   border: 1px solid transparent;
