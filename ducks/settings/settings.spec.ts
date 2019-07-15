@@ -5,10 +5,10 @@ import configureMockStore, { MockStoreCreator, MockStoreEnhanced } from 'redux-m
 import thunk from 'redux-thunk';
 
 import { mockSettings } from '@/mocks';
-import { Settings, IosSettings } from '@/models';
+import { Settings, IosSettings } from '@/models/settings';
 import shipApi from '@/services/ship-api';
 
-import { settings, fetchSettings, updateSettings } from './settings';
+import settings, { fetchSettings, updateSettings } from '.';
 
 describe('settings', () => {
   let mockStore: MockStoreCreator, store: MockStoreEnhanced;

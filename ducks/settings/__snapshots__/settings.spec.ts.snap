@@ -90,7 +90,7 @@ Array [
   },
   Object {
     "payload": "api had some issue",
-    "type": "SETTINGS_GET_ERROR",
+    "type": "SETTINGS_UPDATE_ERROR",
   },
 ]
 `;

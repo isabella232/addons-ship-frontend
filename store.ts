@@ -5,7 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import appVersion, { pollPublishStatusEpic, AppVersionState } from '@/ducks/appVersion';
 import { testDevices, TestDevicesState } from '@/ducks/testDevices';
-import { settings, SettingsState } from '@/ducks/settings';
+import settings, { SettingsState } from '@/ducks/settings';
 import { appVersionList, AppVersionListState } from '@/ducks/appVersionList';
 import auth, { AuthState } from '@/ducks/auth';
 import shipApi from '@/services/ship-api';
