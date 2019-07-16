@@ -47,6 +47,7 @@ export type Settings = {
 };
 
 export type AppContact = {
+  id: string;
   email: string;
   isConfirmed: boolean;
   notificationPreferences: {

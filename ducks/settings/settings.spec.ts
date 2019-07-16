@@ -12,6 +12,7 @@ import settings, { fetchSettings, updateSettings, addAppContact, listAppContacts
 
 describe('settings', () => {
   const mockAppContact: AppContact = {
+    id: '123-abc',
     email: 'what@ev.er',
     isConfirmed: false,
     notificationPreferences: { newVersion: true, failedPublish: false, successfulPublish: true }
