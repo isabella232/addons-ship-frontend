@@ -31,13 +31,14 @@ describe('NotificationSettings', () => {
       }
     ],
     addAppContact: jest.fn() as any,
-    updateAppContact: jest.fn() as any
+    updateAppContact: jest.fn() as any,
+    deleteAppContact: jest.fn() as any
   };
 
   beforeEach(() => {
-    const { addAppContact, updateAppContact } = defaultProps;
-    (addAppContact as jest.Mock).mockReset();
-    (updateAppContact as jest.Mock).mockReset();
+    const { addAppContact, updateAppContact, deleteAppContact } = defaultProps;
+
+    ([addAppContact, updateAppContact, deleteAppContact] as jest.Mock[]).forEach(mock => mock.mockReset());
   });
 
   it('renders correctly', () => {
@@ -94,18 +95,23 @@ describe('NotificationSettings', () => {
   });
 
   describe('onSave', () => {
-    let updateAppContact: jest.Mock, appContacts: AppContact[], appSlug: string, wrapper: ShallowWrapper;
+    let updateAppContact: jest.Mock,
+      deleteAppContact: jest.Mock,
+      appContacts: AppContact[],
+      appSlug: string,
+      wrapper: ShallowWrapper;
 
     beforeEach(() => {
-      ({ updateAppContact, appContacts, appSlug } = defaultProps);
+      ({ updateAppContact, deleteAppContact, appContacts, appSlug } = defaultProps);
 
       wrapper = shallow(<NotificationSettings {...defaultProps} />);
     });
 
-    it('should not call updateAppContact without modifications', () => {
+    it('should not call updateAppContact, deleteAppContact without modifications', () => {
       (wrapper.instance() as NotificationSettings).onSave();
 
       expect(updateAppContact).not.toHaveBeenCalled();
+      expect(deleteAppContact).not.toHaveBeenCalled();
     });
 
     it('should call updateAppContact', () => {
@@ -120,9 +126,17 @@ describe('NotificationSettings', () => {
 
       expect(updateAppContact).toHaveBeenCalledWith(appSlug, {
         ...appContact,
-        isMarkedForUpdate: true,
         notificationPreferences: { ...appContact.notificationPreferences, successfulPublish: false }
       });
+    });
+
+    it('should call deleteAppContact', () => {
+      const [appContact] = appContacts;
+
+      (wrapper.instance() as NotificationSettings).onDeleteContact(appContact.email);
+      (wrapper.instance() as NotificationSettings).onSave();
+
+      expect(deleteAppContact).toHaveBeenCalledWith(appSlug, appContact);
     });
   });
 
