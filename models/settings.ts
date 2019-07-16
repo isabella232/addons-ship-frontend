@@ -56,4 +56,5 @@ export type AppContact = {
     failedPublish: boolean;
   };
   isMarkedForDelete?: boolean;
+  isMarkedForUpdate?: boolean;
 };

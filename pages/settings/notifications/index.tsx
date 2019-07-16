@@ -4,7 +4,7 @@ import isEqual from 'lodash/isEqual';
 
 import { AppContact } from '@/models/settings';
 import { RootState } from '@/store';
-import { addAppContact } from '@/ducks/settings';
+import { addAppContact, updateAppContact } from '@/ducks/settings';
 
 import View from './view';
 
@@ -12,6 +12,7 @@ type Props = {
   appSlug: string;
   appContacts: AppContact[];
   addAppContact: typeof addAppContact;
+  updateAppContact: typeof updateAppContact;
 };
 
 type State = {
@@ -44,6 +45,7 @@ export class NotificationSettings extends React.Component<Props, State> {
       if (contact.email === email) {
         return {
           ...contact,
+          isMarkedForUpdate: true,
           notificationPreferences: {
             ...contact.notificationPreferences,
             [key]: value
@@ -64,7 +66,8 @@ export class NotificationSettings extends React.Component<Props, State> {
       if (contact.email === email) {
         return {
           ...contact,
-          isMarkedForDelete: true
+          isMarkedForDelete: true,
+          isMarkedForUpdate: false
         };
       }
 
@@ -75,7 +78,16 @@ export class NotificationSettings extends React.Component<Props, State> {
   };
 
   onSave = () => {
-    console.log('onSave');
+    const { appSlug, updateAppContact } = this.props;
+    const { updatedAppContacts, hasModifications } = this.state;
+
+    if (!hasModifications) return;
+
+    updatedAppContacts
+      .filter(({ isMarkedForUpdate }) => isMarkedForUpdate)
+      .forEach(appContact => {
+        updateAppContact(appSlug, appContact);
+      });
   };
 
   onCancel = () => {
@@ -101,7 +113,7 @@ export class NotificationSettings extends React.Component<Props, State> {
 }
 
 const mapStateToProps = ({ settings: { appContacts } }: RootState) => ({ appContacts }),
-  mapDispatchToProps = { addAppContact };
+  mapDispatchToProps = { addAppContact, updateAppContact };
 
 export default connect(
   mapStateToProps,

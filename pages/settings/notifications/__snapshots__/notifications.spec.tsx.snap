@@ -6,6 +6,7 @@ Object {
   "updatedAppContacts": Array [
     Object {
       "email": "bit.bot@bitrise.io",
+      "id": "bit-bot",
       "isConfirmed": true,
       "notificationPreferences": Object {
         "failedPublish": true,
@@ -15,6 +16,7 @@ Object {
     },
     Object {
       "email": "purr.request@bitrise.io",
+      "id": "purr-req",
       "isConfirmed": false,
       "notificationPreferences": Object {
         "failedPublish": true,
@@ -33,7 +35,9 @@ exports[`NotificationSettings onCancel 1`] = `
 Array [
   Object {
     "email": "bit.bot@bitrise.io",
+    "id": "bit-bot",
     "isConfirmed": true,
+    "isMarkedForUpdate": true,
     "notificationPreferences": Object {
       "failedPublish": true,
       "newVersion": true,
@@ -42,6 +46,7 @@ Array [
   },
   Object {
     "email": "purr.request@bitrise.io",
+    "id": "purr-req",
     "isConfirmed": false,
     "notificationPreferences": Object {
       "failedPublish": true,
@@ -56,8 +61,10 @@ exports[`NotificationSettings onDeleteContact 1`] = `
 Array [
   Object {
     "email": "bit.bot@bitrise.io",
+    "id": "bit-bot",
     "isConfirmed": true,
     "isMarkedForDelete": true,
+    "isMarkedForUpdate": false,
     "notificationPreferences": Object {
       "failedPublish": true,
       "newVersion": true,
@@ -66,6 +73,7 @@ Array [
   },
   Object {
     "email": "purr.request@bitrise.io",
+    "id": "purr-req",
     "isConfirmed": false,
     "notificationPreferences": Object {
       "failedPublish": true,
@@ -80,7 +88,9 @@ exports[`NotificationSettings onNotificationPreferenceChanged 1`] = `
 Array [
   Object {
     "email": "bit.bot@bitrise.io",
+    "id": "bit-bot",
     "isConfirmed": true,
+    "isMarkedForUpdate": true,
     "notificationPreferences": Object {
       "failedPublish": true,
       "newVersion": true,
@@ -89,6 +99,7 @@ Array [
   },
   Object {
     "email": "purr.request@bitrise.io",
+    "id": "purr-req",
     "isConfirmed": false,
     "notificationPreferences": Object {
       "failedPublish": true,
@@ -105,6 +116,7 @@ exports[`NotificationSettings renders correctly 1`] = `
     Array [
       Object {
         "email": "bit.bot@bitrise.io",
+        "id": "bit-bot",
         "isConfirmed": true,
         "notificationPreferences": Object {
           "failedPublish": true,
@@ -114,6 +126,7 @@ exports[`NotificationSettings renders correctly 1`] = `
       },
       Object {
         "email": "purr.request@bitrise.io",
+        "id": "purr-req",
         "isConfirmed": false,
         "notificationPreferences": Object {
           "failedPublish": true,

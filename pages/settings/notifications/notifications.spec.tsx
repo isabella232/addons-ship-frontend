@@ -1,5 +1,7 @@
-import { shallow } from 'enzyme';
+import { shallow, ShallowWrapper } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
+
+import { AppContact } from '@/models/settings';
 
 import { NotificationSettings } from '.';
 
@@ -8,6 +10,7 @@ describe('NotificationSettings', () => {
     appSlug: 'some-app',
     appContacts: [
       {
+        id: 'bit-bot',
         email: 'bit.bot@bitrise.io',
         isConfirmed: true,
         notificationPreferences: {
@@ -17,6 +20,7 @@ describe('NotificationSettings', () => {
         }
       },
       {
+        id: 'purr-req',
         email: 'purr.request@bitrise.io',
         isConfirmed: false,
         notificationPreferences: {
@@ -26,8 +30,15 @@ describe('NotificationSettings', () => {
         }
       }
     ],
-    addAppContact: jest.fn() as any
+    addAppContact: jest.fn() as any,
+    updateAppContact: jest.fn() as any
   };
+
+  beforeEach(() => {
+    const { addAppContact, updateAppContact } = defaultProps;
+    (addAppContact as jest.Mock).mockReset();
+    (updateAppContact as jest.Mock).mockReset();
+  });
 
   it('renders correctly', () => {
     const tree = shallowToJson(shallow(<NotificationSettings {...defaultProps} />));
@@ -82,13 +93,37 @@ describe('NotificationSettings', () => {
     expect(wrapper.state('hasModifications')).toBe(true);
   });
 
-  test('onSave', () => {
-    const spy = jest.spyOn(global.console, 'log');
-    const wrapper = shallow(<NotificationSettings {...defaultProps} />);
+  describe('onSave', () => {
+    let updateAppContact: jest.Mock, appContacts: AppContact[], appSlug: string, wrapper: ShallowWrapper;
 
-    (wrapper.instance() as NotificationSettings).onSave();
+    beforeEach(() => {
+      ({ updateAppContact, appContacts, appSlug } = defaultProps);
 
-    expect(spy).toHaveBeenCalledWith('onSave');
+      wrapper = shallow(<NotificationSettings {...defaultProps} />);
+    });
+
+    it('should not call updateAppContact without modifications', () => {
+      (wrapper.instance() as NotificationSettings).onSave();
+
+      expect(updateAppContact).not.toHaveBeenCalled();
+    });
+
+    it('should call updateAppContact', () => {
+      const [appContact] = appContacts;
+      (wrapper.instance() as NotificationSettings).onNotificationPreferenceChanged(
+        appContact.email,
+        'successfulPublish',
+        false
+      );
+
+      (wrapper.instance() as NotificationSettings).onSave();
+
+      expect(updateAppContact).toHaveBeenCalledWith(appSlug, {
+        ...appContact,
+        isMarkedForUpdate: true,
+        notificationPreferences: { ...appContact.notificationPreferences, successfulPublish: false }
+      });
+    });
   });
 
   test('onCancel', () => {
