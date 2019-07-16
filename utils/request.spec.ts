@@ -13,6 +13,7 @@ describe('request', () => {
 
   methodsWithoutBody.forEach(method => {
     test(method, async () => {
+      ((fetch as unknown) as jest.Mock).mockResolvedValueOnce({ ok: true });
       await request[method](url, token);
 
       expect(fetch).toHaveBeenCalledWith(url, {
@@ -26,6 +27,7 @@ describe('request', () => {
 
   methodsWithBody.forEach(method => {
     test(method, async () => {
+      ((fetch as unknown) as jest.Mock).mockResolvedValueOnce({ ok: true });
       await request[method](url, token, body);
 
       expect(fetch).toHaveBeenCalledWith(url, {
@@ -36,5 +38,15 @@ describe('request', () => {
         body
       });
     });
+  });
+
+  it('should throw an error for a bad request', async () => {
+    ((fetch as unknown) as jest.Mock).mockResolvedValueOnce({
+      ok: false,
+      status: 500,
+      statusText: 'Internal Server Error'
+    });
+
+    await expect(request.get('some-url', 'a-token')).rejects.toThrowError('500: Internal Server Error');
   });
 });

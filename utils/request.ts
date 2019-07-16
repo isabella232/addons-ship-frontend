@@ -14,6 +14,12 @@ export const request = ({ url, method, token, body }: RequestParams) =>
     method,
     headers: getHeaders(token),
     body
+  }).then(res => {
+    if (!res.ok) {
+      throw new Error(`${res.status}: ${res.statusText}`);
+    }
+
+    return res;
   });
 
 export const get = (url: string, token: string) => request({ method: 'get', url, token });
