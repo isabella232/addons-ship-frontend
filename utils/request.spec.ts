@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 import * as request from './request';
 
 describe('request', () => {
-  const methodsWithoutBody = ['get', 'patch'],
+  const methodsWithoutBody = ['get', 'patch', 'del'],
     methodsWithBody = ['post', 'put'],
     url = 'some.url',
     token = 'a-token',
@@ -16,7 +16,7 @@ describe('request', () => {
       await request[method](url, token);
 
       expect(fetch).toHaveBeenCalledWith(url, {
-        method,
+        method: method === 'del' ? 'delete' : method,
         headers: {
           Authorization: token
         }
