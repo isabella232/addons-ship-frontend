@@ -3,7 +3,7 @@ jest.mock('@/utils/request');
 import { Uploadable } from '@/models/uploadable';
 import { patch, post, get, put } from '@/utils/request';
 import { mockAppVersion, mockSettings } from '@/mocks';
-import { Settings } from '@/models/settings';
+import { Settings, AppContact } from '@/models/settings';
 
 import { ShipAPIService } from './ship-api';
 
@@ -280,6 +280,40 @@ describe('Ship API service', () => {
       const resp = await api.listAppContacts(appSlug);
 
       expect(get).toHaveBeenCalledWith(url, token);
+      expect(resp).toMatchSnapshot();
+    });
+  });
+
+  describe('updateAppContactNotificationPreferences', () => {
+    testTokenNotSet(() => api.updateAppContactNotificationPreferences('app-slug', {} as AppContact));
+
+    it("updates an app contact's notification preferences", async () => {
+      const token = 'noicest-token',
+        appSlug = 'my-app-slug',
+        appContactId = 'abc-123';
+
+      (put as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: {
+            id: appContactId,
+            notification_preferences: { new_version: true, failed_publish: false, successful_publish: false }
+          }
+        })
+      });
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/contacts/${appContactId}`;
+      const resp = await api.updateAppContactNotificationPreferences(appSlug, {
+        id: appContactId,
+        notificationPreferences: { newVersion: true, failedPublish: false, successfulPublish: false }
+      } as AppContact);
+
+      expect(put).toHaveBeenCalledWith(
+        url,
+        token,
+        '{"new_version":true,"failed_publish":false,"successful_publish":false}'
+      );
       expect(resp).toMatchSnapshot();
     });
   });

@@ -158,6 +158,17 @@ export class ShipAPIService {
 
     return data.map(camelizeKeysDeep);
   }
+
+  async updateAppContactNotificationPreferences(appSlug: string, appContact: AppContact): Promise<AppContact> {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/contacts/${appContact.id}`,
+      body = JSON.stringify(snakifyKeys(appContact.notificationPreferences));
+
+    const { data } = await put(url, this.token, body).then(res => res.json());
+
+    return camelizeKeysDeep(data);
+  }
 }
 
 export default new ShipAPIService(shipApiConfig);
