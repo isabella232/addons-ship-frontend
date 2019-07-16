@@ -1,7 +1,7 @@
 jest.mock('@/utils/request');
 
 import { Uploadable } from '@/models/uploadable';
-import { patch, post, get, put } from '@/utils/request';
+import { patch, post, get, put, del } from '@/utils/request';
 import { mockAppVersion, mockSettings } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
@@ -12,7 +12,7 @@ describe('Ship API service', () => {
   let api: ShipAPIService;
   beforeEach(() => {
     api = new ShipAPIService({ url: apiUrl });
-    ([patch, post, get, put] as jest.Mock[]).forEach(m => m.mockReset());
+    ([patch, post, get, put, del] as jest.Mock[]).forEach(m => m.mockReset());
   });
 
   const testTokenNotSet = (fn: Function) => {
@@ -315,6 +315,23 @@ describe('Ship API service', () => {
         '{"new_version":true,"failed_publish":false,"successful_publish":false}'
       );
       expect(resp).toMatchSnapshot();
+    });
+  });
+
+  describe('deleteAppContact', () => {
+    testTokenNotSet(() => api.deleteAppContact('app-slug', {} as AppContact));
+
+    it("updates an app contact's notification preferences", async () => {
+      const token = 'bestest-token',
+        appSlug = 'my-app-slug',
+        appContactId = 'abc-123';
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/contacts/${appContactId}`;
+      await api.deleteAppContact(appSlug, { id: appContactId } as AppContact);
+
+      expect(del).toHaveBeenCalledWith(url, token);
     });
   });
 });

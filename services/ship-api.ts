@@ -3,7 +3,7 @@ import { AppVersion, AppVersionEvent } from '@/models';
 import { APIConfig } from '@/models/services';
 import { Uploadable } from '@/models/uploadable';
 import { snakifyKeys, camelizeKeys, camelizeKeysDeep } from '@/utils';
-import { patch, post, get, put } from '@/utils/request';
+import { patch, post, get, put, del } from '@/utils/request';
 import { mockSettings } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
@@ -168,6 +168,14 @@ export class ShipAPIService {
     const { data } = await put(url, this.token, body).then(res => res.json());
 
     return camelizeKeysDeep(data);
+  }
+
+  async deleteAppContact(appSlug: string, appContact: AppContact): Promise<void> {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/contacts/${appContact.id}`;
+
+    await del(url, this.token);
   }
 }
 
