@@ -7,6 +7,7 @@ import updateSettings from './updateSettings';
 import addAppContact from './addAppContact';
 import listAppContacts from './listAppContacts';
 import updateAppContact from './updateAppContact';
+import deleteAppContact from './deleteAppContact';
 
 const defaultState: SettingsState = {
   settings: {
@@ -15,7 +16,7 @@ const defaultState: SettingsState = {
   appContacts: []
 };
 
-export { fetchSettings, updateSettings, addAppContact, listAppContacts, updateAppContact };
+export { fetchSettings, updateSettings, addAppContact, listAppContacts, updateAppContact, deleteAppContact };
 
 export type SettingsState = { settings: Settings; appContacts: AppContact[] };
 export default createReducer(defaultState, handleAction => [
@@ -37,5 +38,9 @@ export default createReducer(defaultState, handleAction => [
 
       return appContact;
     })
+  })),
+  handleAction(deleteAppContact.complete, ({ appContacts, ...state }, { payload }) => ({
+    ...state,
+    appContacts: appContacts.filter(({ id }) => id !== payload)
   }))
 ]);

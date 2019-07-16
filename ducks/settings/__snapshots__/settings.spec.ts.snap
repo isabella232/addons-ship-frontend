@@ -23,6 +23,30 @@ Array [
 ]
 `;
 
+exports[`settings deleteAppContact deletes an app contact 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_DELETE_APP_CONTACT_NEXT",
+  },
+  Object {
+    "payload": "asd-456",
+    "type": "SETTINGS_DELETE_APP_CONTACT_COMPLETE",
+  },
+]
+`;
+
+exports[`settings deleteAppContact fails updates an app contact's notification preferences 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_DELETE_APP_CONTACT_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "SETTINGS_DELETE_APP_CONTACT_ERROR",
+  },
+]
+`;
+
 exports[`settings fetchSettings can't fetch settings 1`] = `
 Array [
   Object {
@@ -167,6 +191,26 @@ Object {
         "name": "abcdefghijkl12345671566",
       },
     ],
+  },
+}
+`;
+
+exports[`settings reducer removes an app contact 1`] = `
+Object {
+  "appContacts": Array [
+    Object {
+      "email": "what@ev.er",
+      "id": "123-abc",
+      "isConfirmed": false,
+      "notificationPreferences": Object {
+        "failedPublish": false,
+        "newVersion": true,
+        "successfulPublish": true,
+      },
+    },
+  ],
+  "settings": Object {
+    "projectType": "other",
   },
 }
 `;

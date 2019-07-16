@@ -8,7 +8,14 @@ import { mockSettings } from '@/mocks';
 import { Settings, IosSettings, AppContact } from '@/models/settings';
 import shipApi from '@/services/ship-api';
 
-import settings, { fetchSettings, updateSettings, addAppContact, listAppContacts, updateAppContact } from '.';
+import settings, {
+  fetchSettings,
+  updateSettings,
+  addAppContact,
+  listAppContacts,
+  updateAppContact,
+  deleteAppContact
+} from '.';
 
 describe('settings', () => {
   const mockAppContact: AppContact = {
@@ -70,6 +77,25 @@ describe('settings', () => {
         } as AppContact)
       );
 
+      expect(state).toMatchSnapshot();
+    });
+
+    it('removes an app contact', () => {
+      const state = settings(
+        {
+          settings: { projectType: 'other' },
+          appContacts: [
+            mockAppContact,
+            {
+              id: '456-asd',
+              notificationPreferences: { newVersion: true, failedPublish: true, successfulPublish: false }
+            } as AppContact
+          ]
+        },
+        deleteAppContact.complete('456-asd')
+      );
+
+      expect(state.appContacts).toHaveLength(1);
       expect(state).toMatchSnapshot();
     });
   });
@@ -162,6 +188,24 @@ describe('settings', () => {
     it("fails updates an app contact's notification preferences", async () => {
       (shipApi.updateAppContactNotificationPreferences as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(updateAppContact('app-slug', {} as AppContact) as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  describe('deleteAppContact', () => {
+    it('deletes an app contact', async () => {
+      const appSlug = 'app-slug',
+        appContact = { id: 'asd-456' } as AppContact;
+      await store.dispatch(deleteAppContact(appSlug, appContact) as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+      expect(shipApi.deleteAppContact).toHaveBeenCalledWith(appSlug, appContact);
+    });
+
+    it("fails updates an app contact's notification preferences", async () => {
+      (shipApi.deleteAppContact as jest.Mock).mockRejectedValueOnce('api had some issue');
+      await store.dispatch(deleteAppContact('app-slug', {} as AppContact) as any);
 
       expect(store.getActions()).toMatchSnapshot();
     });
