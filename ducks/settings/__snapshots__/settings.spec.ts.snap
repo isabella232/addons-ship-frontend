@@ -74,6 +74,7 @@ Object {
   "appContacts": Array [
     Object {
       "email": "what@ev.er",
+      "id": "123-abc",
       "isConfirmed": false,
       "notificationPreferences": Object {
         "failedPublish": false,
@@ -168,6 +169,57 @@ Object {
     ],
   },
 }
+`;
+
+exports[`settings reducer updates an app contact 1`] = `
+Object {
+  "appContacts": Array [
+    Object {
+      "email": "what@ev.er",
+      "id": "123-abc",
+      "isConfirmed": false,
+      "notificationPreferences": Object {
+        "failedPublish": true,
+        "newVersion": false,
+        "successfulPublish": true,
+      },
+    },
+    Object {
+      "id": "456-asd",
+      "notificationPreferences": Object {
+        "failedPublish": true,
+        "newVersion": true,
+        "successfulPublish": false,
+      },
+    },
+  ],
+  "settings": Object {
+    "projectType": "other",
+  },
+}
+`;
+
+exports[`settings updateAppContact fails updates an app contact's notification preferences 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_UPDATE_APP_CONTACT_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "SETTINGS_UPDATE_APP_CONTACT_ERROR",
+  },
+]
+`;
+
+exports[`settings updateAppContact updates an app contact's notification preferences 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_UPDATE_APP_CONTACT_NEXT",
+  },
+  Object {
+    "type": "SETTINGS_UPDATE_APP_CONTACT_COMPLETE",
+  },
+]
 `;
 
 exports[`settings updateSettings can't update settings 1`] = `

@@ -8,7 +8,7 @@ import { mockSettings } from '@/mocks';
 import { Settings, IosSettings, AppContact } from '@/models/settings';
 import shipApi from '@/services/ship-api';
 
-import settings, { fetchSettings, updateSettings, addAppContact, listAppContacts } from '.';
+import settings, { fetchSettings, updateSettings, addAppContact, listAppContacts, updateAppContact } from '.';
 
 describe('settings', () => {
   const mockAppContact: AppContact = {
@@ -47,6 +47,27 @@ describe('settings', () => {
       const state = settings(
         undefined,
         listAppContacts.complete([{ email: 'purr@req.io' }, { email: 'bit@bot.io' }] as AppContact[])
+      );
+
+      expect(state).toMatchSnapshot();
+    });
+
+    it('updates an app contact', () => {
+      const state = settings(
+        {
+          settings: { projectType: 'other' },
+          appContacts: [
+            mockAppContact,
+            {
+              id: '456-asd',
+              notificationPreferences: { newVersion: true, failedPublish: true, successfulPublish: false }
+            } as AppContact
+          ]
+        },
+        updateAppContact.complete({
+          ...mockAppContact,
+          notificationPreferences: { newVersion: false, failedPublish: true, successfulPublish: true }
+        } as AppContact)
       );
 
       expect(state).toMatchSnapshot();
@@ -120,6 +141,27 @@ describe('settings', () => {
     it('fails to list app contacts', async () => {
       (shipApi.listAppContacts as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(listAppContacts('app-slug') as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  describe('updateAppContact', () => {
+    it("updates an app contact's notification preferences", async () => {
+      const appSlug = 'app-slug',
+        appContact = {
+          id: 'asd-456',
+          notificationPreferences: { newVersion: true, failedPublish: true, successfulPublish: false }
+        } as AppContact;
+      await store.dispatch(updateAppContact(appSlug, appContact) as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+      expect(shipApi.updateAppContactNotificationPreferences).toHaveBeenCalledWith(appSlug, appContact);
+    });
+
+    it("fails updates an app contact's notification preferences", async () => {
+      (shipApi.updateAppContactNotificationPreferences as jest.Mock).mockRejectedValueOnce('api had some issue');
+      await store.dispatch(updateAppContact('app-slug', {} as AppContact) as any);
 
       expect(store.getActions()).toMatchSnapshot();
     });
