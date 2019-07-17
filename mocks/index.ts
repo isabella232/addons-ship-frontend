@@ -4,7 +4,7 @@ import { TestDevice } from '@/models/test-device';
 
 export const mockAppVersions: AppVersion[] = [
   {
-    id: 123,
+    id: '123',
     appSlug: 'app-slug-123',
     version: '1.0.3',
     platform: 'ios',
@@ -33,7 +33,7 @@ export const mockAppVersions: AppVersion[] = [
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
-    id: 456,
+    id: '456',
     appSlug: 'app-slug-456',
     version: '1.0.3',
     platform: 'ios',
@@ -62,7 +62,7 @@ export const mockAppVersions: AppVersion[] = [
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
-    id: 789,
+    id: '789',
     appSlug: 'app-slug-789',
     version: '1.0.3',
     platform: 'ios',
@@ -91,7 +91,7 @@ export const mockAppVersions: AppVersion[] = [
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
-    id: 135,
+    id: '135',
     appSlug: 'app-slug-135',
     version: '1.0.2',
     platform: 'ios',
@@ -120,7 +120,7 @@ export const mockAppVersions: AppVersion[] = [
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
-    id: 246,
+    id: '246',
     appSlug: 'app-slug-246',
     version: '1.0.2',
     platform: 'ios',
