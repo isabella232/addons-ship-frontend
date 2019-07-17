@@ -8,6 +8,7 @@ import { mediaQuery } from '@/utils/media';
 import Sidebar from './sidebar';
 import FormIos from './form-ios';
 import FormAndroid from './form-android';
+import Link from 'next/link';
 
 type DeviceInfo = {
   key: string;
@@ -40,6 +41,8 @@ type Props = {
 };
 
 const publishNotification = (
+  appSlug: string,
+  versionId: string,
   publishStatus: AppVersionEvent['status'] | null,
   readyForPublish: boolean,
   publishTarget: string,
@@ -70,7 +73,11 @@ const publishNotification = (
     case 'failed':
       return (
         <Notification margin="x2" type="alert">
-          Publish has failed. See the error log at the <a href={activityPath}>Activity tab</a>.
+          Publish has failed. See the error log at the{' '}
+          <Link as={activityPath} href={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=activity`}>
+            <a>Activity tab</a>
+          </Link>
+          .
         </Notification>
       );
     default:
@@ -112,7 +119,17 @@ export default ({
     <Base>
       <Flex direction="vertical" alignChildren="middle" paddingVertical="x6">
         <Flex maxWidth={isDesktop ? '100%' : 688}>
-          {publishNotification(latestEventStatus, readyForPublish, publishTarget, settingsPath, activityPath)}
+          {console.log(activityPath)}
+          {console.log(`/version?appSlug=${appVersion.appSlug}&versionId=${appVersion.id}&selectedTab=activity`)}
+          {publishNotification(
+            appVersion.appSlug,
+            appVersion.id,
+            'failed',
+            readyForPublish,
+            publishTarget,
+            settingsPath,
+            activityPath
+          )}
         </Flex>
       </Flex>
       <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'} gap="x4">

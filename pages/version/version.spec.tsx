@@ -1,6 +1,7 @@
 jest.mock('@/ducks/appVersion');
 jest.mock('@/ducks/settings');
 jest.mock('@/ducks/testDevices');
+jest.mock('@/ducks/appVersion/fetchAppVersionEvents');
 
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
@@ -10,6 +11,7 @@ import { fetchAppVersion } from '@/ducks/appVersion';
 import { fetchSettings } from '@/ducks/settings';
 import { fetchTestDevices } from '@/ducks/testDevices';
 import { VersionPage } from '.';
+import fetchAppVersionEvents from '@/ducks/appVersion/fetchAppVersionEvents';
 
 describe('AppVersion', () => {
   it('renders the details tab correctly', () => {
@@ -76,6 +78,18 @@ describe('AppVersion', () => {
       } as any);
 
       expect(fetchTestDevices).toHaveBeenCalled();
+      expect(props).toMatchSnapshot();
+    });
+
+    it('dispatches fetchAppVersionEvents', async () => {
+      const props = await VersionPage.getInitialProps({
+        query: { selectedTab: 'activity' },
+        req,
+        store: { dispatch: jest.fn() },
+        isServer: true
+      } as any);
+
+      expect(fetchAppVersionEvents).toHaveBeenCalled();
       expect(props).toMatchSnapshot();
     });
 

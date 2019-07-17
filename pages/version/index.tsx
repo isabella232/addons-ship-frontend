@@ -13,7 +13,7 @@ import { fetchSettings } from '@/ducks/settings';
 import Details from './details';
 import Devices from './devices';
 import Activity from './activity';
-import { fetchAppVersionEvents } from '@/ducks/appVersionEvent';
+import fetchAppVersionEvents from '@/ducks/appVersion/fetchAppVersionEvents';
 
 interface VersionPageProps extends AppVersionPageQuery {
   appVersion: AppVersion;

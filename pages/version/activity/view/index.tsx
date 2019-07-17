@@ -1,69 +1,72 @@
 import formatDate from 'date-fns/format';
 
-import { Divider, Base, Text, Flex, Icon, Button, Link } from '@bitrise/bitkit';
-import { Fragment } from 'react';
+import {
+  Base,
+  Text,
+  Flex,
+  Icon,
+  Button,
+  TypeColors,
+  TableBody,
+  TableCell,
+  Table,
+  TableRow,
+  TableHeaderRow,
+  TableHeaderCell
+} from '@bitrise/bitkit';
 import { TypeIconName } from '@bitrise/bitkit/lib/esm/Icon/tsx';
 import { AppVersionEvent } from '@/models';
 
 type Props = {
-  appVersionEvents: AppVersionEvent[]
+  appVersionEvents: AppVersionEvent[];
 };
 
-const activityItem = (status: string, message: string, buildLogUrl: string) => {
-  let styleConfig = {
-    iconName: 'Tick',
-    iconColor: 'green-4',
-    textColor: 'grape-4'
-  };
+const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
+  let iconName: TypeIconName = 'Tick',
+    iconColor: TypeColors = 'green-4',
+    textColor: TypeColors = 'grape-4';
 
-  switch (status) {
-    case 'failed': {
-      styleConfig.iconName = 'CloseSmall';
-      styleConfig.iconColor = 'red-3';
-      styleConfig.textColor = 'red-3';
-    }
+  if (status === 'failed') {
+    iconName = 'CloseSmall';
+    iconColor = 'red-3';
+    textColor = 'red-3';
   }
 
   return (
-    <Flex direction="horizontal" gap="x4" grow>
-      <Flex direction="horizontal" gap="x4" grow>
-        <Icon name={styleConfig.iconName as TypeIconName} color={styleConfig.iconColor as any} />
-        <Text size="x3" color={styleConfig.textColor as any}>
-          {message}
-        </Text>
-      </Flex>
-      {status === 'failed' && (
-        <Link href={buildLogUrl}>
-          <Button level="secondary" size="small">
-            <Icon name="Download" color="grape-4" />
-            Download Build Log
-          </Button>
-        </Link>
-      )}
+    <Flex direction="horizontal" gap="x4">
+      <Icon name={iconName} color={iconColor} />
+      <Text size="x3" color={textColor}>
+        {message}
+      </Text>
     </Flex>
   );
 };
 
 export default ({ appVersionEvents }: Props) => (
   <Base paddingVertical="x8">
-    <Flex direction="horizontal" gap="x4" paddingHorizontal="x3" paddingVertical="x4">
-      <Text size="x3" color="grape-5" weight="bold" width="200px" shrink="0">
-        Date
-      </Text>
-      <Text size="x3" color="grape-5" weight="bold">
-        Activity
-      </Text>
-    </Flex>
-    {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
-      <Fragment key={index}>
-        <Divider color="gray-2" direction="horizontal" width="0.125rem" />
-        <Flex direction="horizontal" gap="x4" paddingHorizontal="x3" paddingVertical="x4">
-          <Text size="x3" color="gray-7" width="200px" shrink="0">
-            {formatDate(appVersionEvent.createdAt, 'YYYY MM DD hh:mm:ss')}
-          </Text>
-          {activityItem(appVersionEvent.status, appVersionEvent.text, appVersionEvent.logDownloadUrl)}
-        </Flex>
-      </Fragment>
-    ))}
+    <Table type="flat">
+      <TableBody>
+        <TableHeaderRow>
+          <TableHeaderCell>Date</TableHeaderCell>
+          <TableHeaderCell colSpan="2">Activity</TableHeaderCell>
+        </TableHeaderRow>
+        {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
+          <TableRow key={index}>
+            <TableCell width="200px">{formatDate(appVersionEvent.createdAt, 'YYYY MM DD hh:mm:ss')}</TableCell>
+            <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
+            <TableCell width="200px">
+              {appVersionEvent.status === 'failed' && (
+                <a href={appVersionEvent.logDownloadUrl}>
+                  <Button level="secondary" size="small">
+                    <Icon name="Download" color="grape-4" />
+                    Download Build Log
+                  </Button>
+                </a>
+              )}
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
   </Base>
 );

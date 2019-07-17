@@ -5,7 +5,8 @@ import thunk from 'redux-thunk';
 
 import api from '@/services/ship-api';
 
-import { appVersionEvents, fetchAppVersionEvents } from './appVersionEvent';
+import { appVersionEvents } from './appVersionEvent';
+import fetchAppVersionEvents from './appVersion/fetchAppVersionEvents';
 import { mockAppVersionEvents } from '@/mocks';
 
 describe('appVersion', () => {
@@ -30,8 +31,10 @@ describe('appVersion', () => {
     });
 
     it('fetches app version events', async () => {
+      (api.getAppVersionEvents as jest.Mock).mockResolvedValueOnce([]);
       await store.dispatch(fetchAppVersionEvents('app-slug', 'app-version') as any);
 
+      expect(api.getAppVersionEvents).toHaveBeenCalledWith('app-slug', 'app-version');
       expect(store.getActions()).toMatchSnapshot();
     });
 

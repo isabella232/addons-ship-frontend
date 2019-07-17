@@ -3,12 +3,17 @@ jest.mock('@/utils/device');
 jest.mock('@/ducks/appVersion');
 jest.mock('@/services/settings');
 
-import { shallow, mount } from 'enzyme';
-import toJSON, { shallowToJson } from 'enzyme-to-json';
+import { shallow } from 'enzyme';
+import toJSON from 'enzyme-to-json';
 import { mediaQuery } from '@/utils/media';
 import { Activity } from '.';
 import ActivityView from './view';
-import { mockAppVersionEvents, mockFailedAppVersionEvent, mockFinishedAppVersionEvent, mockInProgressAppVersionEvent } from '@/mocks';
+import {
+  mockAppVersionEvents,
+  mockFailedAppVersionEvent,
+  mockFinishedAppVersionEvent,
+  mockInProgressAppVersionEvent
+} from '@/mocks';
 
 describe('ActivityView', () => {
   const defaultProps = {
@@ -21,7 +26,7 @@ describe('ActivityView', () => {
     });
 
     it('renders the details view correctly', () => {
-      const tree = toJSON(mount(<ActivityView {...defaultProps} />));
+      const tree = toJSON(shallow(<ActivityView {...defaultProps} />));
       expect(tree).toMatchSnapshot();
     });
   });
@@ -32,28 +37,28 @@ describe('ActivityView', () => {
     });
 
     it('renders the details view correctly', () => {
-      const tree = toJSON(mount(<ActivityView {...defaultProps} />));
+      const tree = toJSON(shallow(<ActivityView {...defaultProps} />));
       expect(tree).toMatchSnapshot();
     });
   });
 
   describe('when a test failed', () => {
     it('renders entry with download log button', () => {
-      const tree = toJSON(mount(<ActivityView appVersionEvents={[mockFailedAppVersionEvent]} />));
+      const tree = toJSON(shallow(<ActivityView appVersionEvents={[mockFailedAppVersionEvent]} />));
       expect(tree).toMatchSnapshot();
     });
   });
 
   describe('when a test is successful', () => {
     it('renders entry without download log button', () => {
-      const tree = toJSON(mount(<ActivityView appVersionEvents={[mockFinishedAppVersionEvent]} />));
+      const tree = toJSON(shallow(<ActivityView appVersionEvents={[mockFinishedAppVersionEvent]} />));
       expect(tree).toMatchSnapshot();
     });
   });
 
   describe('when a test is in progress', () => {
     it('renders entry without download log button', () => {
-      const tree = toJSON(mount(<ActivityView appVersionEvents={[mockInProgressAppVersionEvent]} />));
+      const tree = toJSON(shallow(<ActivityView appVersionEvents={[mockInProgressAppVersionEvent]} />));
       expect(tree).toMatchSnapshot();
     });
   });

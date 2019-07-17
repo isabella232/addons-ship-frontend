@@ -4,7 +4,7 @@ import { createAction, createReducer } from 'deox';
 import { ShipAPIService } from '@/services/ship-api';
 import { RootState } from '@/store';
 import { actionTypeCreator } from '@/utils';
-import { Settings } from '@/models';
+import { Settings } from '@/models/settings';
 
 const $ = actionTypeCreator('SETTINGS');
 

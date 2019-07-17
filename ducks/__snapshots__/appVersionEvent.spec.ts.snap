@@ -3,11 +3,11 @@
 exports[`appVersion fetchAppVersionEvents can't fetch app version events 1`] = `
 Array [
   Object {
-    "type": "TEST_DEVICES_GET_NEXT",
+    "type": "APP_VERSION_GET_EVENTS_NEXT",
   },
   Object {
     "payload": "api had some issue",
-    "type": "TEST_DEVICES_GET_ERROR",
+    "type": "APP_VERSION_GET_EVENTS_ERROR",
   },
 ]
 `;
@@ -15,10 +15,11 @@ Array [
 exports[`appVersion fetchAppVersionEvents fetches app version events 1`] = `
 Array [
   Object {
-    "type": "TEST_DEVICES_GET_NEXT",
+    "type": "APP_VERSION_GET_EVENTS_NEXT",
   },
   Object {
-    "type": "TEST_DEVICES_GET_COMPLETE",
+    "payload": Array [],
+    "type": "APP_VERSION_GET_EVENTS_COMPLETE",
   },
 ]
 `;

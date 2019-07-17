@@ -34,2724 +34,434 @@ exports[`Activity renders correctly 1`] = `
 `;
 
 exports[`ActivityView when a test failed renders entry with download log button 1`] = `
-<_default
-  appVersionEvents={
-    Array [
-      Object {
-        "createdAt": 2018-09-26T12:42:31.000Z,
-        "id": "1234",
-        "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-        "status": "failed",
-        "text": "An error occured.",
-        "updatedAt": 2018-09-27T12:42:31.000Z,
-      },
-    ]
-  }
+<Base
+  paddingVertical="x8"
 >
-  <Base
-    paddingVertical="x8"
+  <Table
+    type="flat"
   >
-    <div
-      className="Base Base--padding-vertical-x8"
-      style={
-        Object {
-          "height": undefined,
-          "maxHeight": undefined,
-          "maxWidth": undefined,
-          "width": undefined,
-        }
-      }
-    >
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
+    <TableBody>
+      <TableHeaderRow>
+        <TableHeaderCell>
+          Date
+        </TableHeaderCell>
+        <TableHeaderCell
+          colSpan="2"
         >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          Activity
+        </TableHeaderCell>
+      </TableHeaderRow>
+      <TableRow
+        key="0"
+      >
+        <TableCell
+          width="200px"
+        >
+          2018 09 26 02:42:31
+        </TableCell>
+        <TableCell>
+          <Flex
+            direction="horizontal"
+            gap="x4"
           >
+            <Icon
+              color="red-3"
+              name="CloseSmall"
+              size="1.5rem"
+            />
             <Text
-              color="grape-5"
-              shrink="0"
+              color="red-3"
               size="x3"
-              weight="bold"
-              width="200px"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3 Text--weight-bold"
-                color="grape-5"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-grape-5 Text Text--size-x3 Text--weight-bold"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  Date
-                </div>
-              </Base>
+              An error occured.
             </Text>
-            <Text
-              color="grape-5"
-              size="x3"
-              weight="bold"
-            >
-              <Base
-                Component="div"
-                className="Text Text--size-x3 Text--weight-bold"
-                color="grape-5"
-              >
-                <div
-                  className="Base Base--color-grape-5 Text Text--size-x3 Text--weight-bold"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  Activity
-                </div>
-              </Base>
-            </Text>
-          </div>
-        </Base>
-      </Flex>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="0.125rem"
-      >
-        <Base
-          Component="hr"
-          className="Divider"
-          color="gray-2"
-          style={
-            Object {
-              "borderTopWidth": "0.125rem",
-            }
-          }
+          </Flex>
+        </TableCell>
+        <TableCell
+          width="200px"
         >
-          <hr
-            className="Base Base--color-gray-2 Divider"
-            style={
-              Object {
-                "borderTopWidth": "0.125rem",
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </Base>
-      </Divider>
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
-        >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          <a
+            href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
           >
-            <Text
-              color="gray-7"
-              shrink="0"
-              size="x3"
-              width="200px"
+            <Button
+              level="secondary"
+              size="small"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3"
-                color="gray-7"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-gray-7 Text Text--size-x3"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  2018 09 26 02:42:31
-                </div>
-              </Base>
-            </Text>
-            <Flex
-              direction="horizontal"
-              gap="x4"
-              grow={true}
-            >
-              <Base
-                className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-              >
-                <div
-                  className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  <Flex
-                    direction="horizontal"
-                    gap="x4"
-                    grow={true}
-                  >
-                    <Base
-                      className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                    >
-                      <div
-                        className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Icon
-                          color="red-3"
-                          name="CloseSmall"
-                          size="1.5rem"
-                        >
-                          <Base
-                            Component="svg"
-                            className="Icon"
-                            color="red-3"
-                            height="1.5rem"
-                            viewBox="0 0 24 24"
-                            width="1.5rem"
-                          >
-                            <svg
-                              className="Base Base--color-red-3 Icon"
-                              style={
-                                Object {
-                                  "height": "1.5rem",
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": "1.5rem",
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <Component
-                                height="100%"
-                                width="100%"
-                              >
-                                <svg
-                                  height="100%"
-                                  viewBox="0 0 24 24"
-                                  width="100%"
-                                >
-                                  <defs>
-                                    <path
-                                      d="M12.01 10.608L16.618 6l1.402 1.402-4.608 4.608 4.608 4.608-1.402 1.402-4.608-4.608-4.608 4.608L6 16.618l4.608-4.608L6 7.402 7.402 6z"
-                                      id="icons-close-small_svg__a"
-                                    />
-                                  </defs>
-                                  <use
-                                    fill="currentColor"
-                                    fillRule="evenodd"
-                                    xlinkHref="#icons-close-small_svg__a"
-                                  />
-                                </svg>
-                              </Component>
-                            </svg>
-                          </Base>
-                        </Icon>
-                        <Text
-                          color="red-3"
-                          size="x3"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3"
-                            color="red-3"
-                          >
-                            <div
-                              className="Base Base--color-red-3 Text Text--size-x3"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              An error occured.
-                            </div>
-                          </Base>
-                        </Text>
-                      </div>
-                    </Base>
-                  </Flex>
-                  <Link
-                    href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-                  >
-                    <Base
-                      Component="a"
-                      className="Link Link--color-undefined Link--clickable"
-                      href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-                    >
-                      <a
-                        className="Base Link Link--color-undefined Link--clickable"
-                        href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Button
-                          level="secondary"
-                          size="small"
-                        >
-                          <Flex
-                            Component="button"
-                            alignChildren="middle"
-                            className="Button Button--level-secondary Button--size-small"
-                            direction="horizontal"
-                            gap="x1"
-                          >
-                            <Base
-                              Component="button"
-                              className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x1 Button Button--level-secondary Button--size-small"
-                            >
-                              <button
-                                className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x1 Button Button--level-secondary Button--size-small"
-                                style={
-                                  Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": undefined,
-                                    "width": undefined,
-                                  }
-                                }
-                              >
-                                <Icon
-                                  color="grape-4"
-                                  name="Download"
-                                  size="1.5rem"
-                                >
-                                  <Base
-                                    Component="svg"
-                                    className="Icon"
-                                    color="grape-4"
-                                    height="1.5rem"
-                                    viewBox="0 0 24 24"
-                                    width="1.5rem"
-                                  >
-                                    <svg
-                                      className="Base Base--color-grape-4 Icon"
-                                      style={
-                                        Object {
-                                          "height": "1.5rem",
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "width": "1.5rem",
-                                        }
-                                      }
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <Component
-                                        height="100%"
-                                        width="100%"
-                                      >
-                                        <svg
-                                          height="100%"
-                                          viewBox="0 0 24 24"
-                                          width="100%"
-                                        >
-                                          <defs>
-                                            <path
-                                              d="M17 10.9l-1.4-1.4-2.6 2.6V4h-2v8L8.5 9.5l-1.4 1.4 5 5 4.9-5zM6 18h12v2H6v-2z"
-                                              id="icons-download_svg__a"
-                                            />
-                                          </defs>
-                                          <use
-                                            fill="currentColor"
-                                            fillRule="evenodd"
-                                            xlinkHref="#icons-download_svg__a"
-                                          />
-                                        </svg>
-                                      </Component>
-                                    </svg>
-                                  </Base>
-                                </Icon>
-                                Download Build Log
-                              </button>
-                            </Base>
-                          </Flex>
-                        </Button>
-                      </a>
-                    </Base>
-                  </Link>
-                </div>
-              </Base>
-            </Flex>
-          </div>
-        </Base>
-      </Flex>
-    </div>
-  </Base>
-</_default>
+              <Icon
+                color="grape-4"
+                name="Download"
+                size="1.5rem"
+              />
+              Download Build Log
+            </Button>
+          </a>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</Base>
 `;
 
 exports[`ActivityView when a test is in progress renders entry without download log button 1`] = `
-<_default
-  appVersionEvents={
-    Array [
-      Object {
-        "createdAt": 2018-09-22T12:42:31.000Z,
-        "id": "1234",
-        "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-        "status": "in-progress",
-        "text": "Doing something...",
-        "updatedAt": 2018-09-25T12:42:31.000Z,
-      },
-    ]
-  }
+<Base
+  paddingVertical="x8"
 >
-  <Base
-    paddingVertical="x8"
+  <Table
+    type="flat"
   >
-    <div
-      className="Base Base--padding-vertical-x8"
-      style={
-        Object {
-          "height": undefined,
-          "maxHeight": undefined,
-          "maxWidth": undefined,
-          "width": undefined,
-        }
-      }
-    >
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
+    <TableBody>
+      <TableHeaderRow>
+        <TableHeaderCell>
+          Date
+        </TableHeaderCell>
+        <TableHeaderCell
+          colSpan="2"
         >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          Activity
+        </TableHeaderCell>
+      </TableHeaderRow>
+      <TableRow
+        key="0"
+      >
+        <TableCell
+          width="200px"
+        >
+          2018 09 22 02:42:31
+        </TableCell>
+        <TableCell>
+          <Flex
+            direction="horizontal"
+            gap="x4"
           >
+            <Icon
+              color="green-4"
+              name="Tick"
+              size="1.5rem"
+            />
             <Text
-              color="grape-5"
-              shrink="0"
+              color="grape-4"
               size="x3"
-              weight="bold"
-              width="200px"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3 Text--weight-bold"
-                color="grape-5"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-grape-5 Text Text--size-x3 Text--weight-bold"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  Date
-                </div>
-              </Base>
+              Doing something...
             </Text>
-            <Text
-              color="grape-5"
-              size="x3"
-              weight="bold"
-            >
-              <Base
-                Component="div"
-                className="Text Text--size-x3 Text--weight-bold"
-                color="grape-5"
-              >
-                <div
-                  className="Base Base--color-grape-5 Text Text--size-x3 Text--weight-bold"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  Activity
-                </div>
-              </Base>
-            </Text>
-          </div>
-        </Base>
-      </Flex>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="0.125rem"
-      >
-        <Base
-          Component="hr"
-          className="Divider"
-          color="gray-2"
-          style={
-            Object {
-              "borderTopWidth": "0.125rem",
-            }
-          }
-        >
-          <hr
-            className="Base Base--color-gray-2 Divider"
-            style={
-              Object {
-                "borderTopWidth": "0.125rem",
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </Base>
-      </Divider>
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
-        >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          >
-            <Text
-              color="gray-7"
-              shrink="0"
-              size="x3"
-              width="200px"
-            >
-              <Base
-                Component="div"
-                className="Text Text--size-x3"
-                color="gray-7"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-gray-7 Text Text--size-x3"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  2018 09 22 02:42:31
-                </div>
-              </Base>
-            </Text>
-            <Flex
-              direction="horizontal"
-              gap="x4"
-              grow={true}
-            >
-              <Base
-                className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-              >
-                <div
-                  className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  <Flex
-                    direction="horizontal"
-                    gap="x4"
-                    grow={true}
-                  >
-                    <Base
-                      className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                    >
-                      <div
-                        className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Icon
-                          color="green-4"
-                          name="Tick"
-                          size="1.5rem"
-                        >
-                          <Base
-                            Component="svg"
-                            className="Icon"
-                            color="green-4"
-                            height="1.5rem"
-                            viewBox="0 0 24 24"
-                            width="1.5rem"
-                          >
-                            <svg
-                              className="Base Base--color-green-4 Icon"
-                              style={
-                                Object {
-                                  "height": "1.5rem",
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": "1.5rem",
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <Component
-                                height="100%"
-                                width="100%"
-                              >
-                                <svg
-                                  height="100%"
-                                  viewBox="0 0 24 24"
-                                  width="100%"
-                                >
-                                  <defs>
-                                    <path
-                                      d="M10.213 13.915L17.234 7l1.49 1.49L10.212 17 5 11.68l1.49-1.489z"
-                                      id="icons-tick_svg__a"
-                                    />
-                                  </defs>
-                                  <use
-                                    fill="currentColor"
-                                    fillRule="evenodd"
-                                    xlinkHref="#icons-tick_svg__a"
-                                  />
-                                </svg>
-                              </Component>
-                            </svg>
-                          </Base>
-                        </Icon>
-                        <Text
-                          color="grape-4"
-                          size="x3"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3"
-                            color="grape-4"
-                          >
-                            <div
-                              className="Base Base--color-grape-4 Text Text--size-x3"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              Doing something...
-                            </div>
-                          </Base>
-                        </Text>
-                      </div>
-                    </Base>
-                  </Flex>
-                </div>
-              </Base>
-            </Flex>
-          </div>
-        </Base>
-      </Flex>
-    </div>
-  </Base>
-</_default>
+          </Flex>
+        </TableCell>
+        <TableCell
+          width="200px"
+        />
+      </TableRow>
+    </TableBody>
+  </Table>
+</Base>
 `;
 
 exports[`ActivityView when a test is successful renders entry without download log button 1`] = `
-<_default
-  appVersionEvents={
-    Array [
-      Object {
-        "createdAt": 2018-09-20T12:42:31.000Z,
-        "id": "1234",
-        "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-        "status": "finished",
-        "text": "Event finished successfully!",
-        "updatedAt": 2018-09-21T12:42:31.000Z,
-      },
-    ]
-  }
+<Base
+  paddingVertical="x8"
 >
-  <Base
-    paddingVertical="x8"
+  <Table
+    type="flat"
   >
-    <div
-      className="Base Base--padding-vertical-x8"
-      style={
-        Object {
-          "height": undefined,
-          "maxHeight": undefined,
-          "maxWidth": undefined,
-          "width": undefined,
-        }
-      }
-    >
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
+    <TableBody>
+      <TableHeaderRow>
+        <TableHeaderCell>
+          Date
+        </TableHeaderCell>
+        <TableHeaderCell
+          colSpan="2"
         >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          Activity
+        </TableHeaderCell>
+      </TableHeaderRow>
+      <TableRow
+        key="0"
+      >
+        <TableCell
+          width="200px"
+        >
+          2018 09 20 02:42:31
+        </TableCell>
+        <TableCell>
+          <Flex
+            direction="horizontal"
+            gap="x4"
           >
+            <Icon
+              color="green-4"
+              name="Tick"
+              size="1.5rem"
+            />
             <Text
-              color="grape-5"
-              shrink="0"
+              color="grape-4"
               size="x3"
-              weight="bold"
-              width="200px"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3 Text--weight-bold"
-                color="grape-5"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-grape-5 Text Text--size-x3 Text--weight-bold"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  Date
-                </div>
-              </Base>
+              Event finished successfully!
             </Text>
-            <Text
-              color="grape-5"
-              size="x3"
-              weight="bold"
-            >
-              <Base
-                Component="div"
-                className="Text Text--size-x3 Text--weight-bold"
-                color="grape-5"
-              >
-                <div
-                  className="Base Base--color-grape-5 Text Text--size-x3 Text--weight-bold"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  Activity
-                </div>
-              </Base>
-            </Text>
-          </div>
-        </Base>
-      </Flex>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="0.125rem"
-      >
-        <Base
-          Component="hr"
-          className="Divider"
-          color="gray-2"
-          style={
-            Object {
-              "borderTopWidth": "0.125rem",
-            }
-          }
-        >
-          <hr
-            className="Base Base--color-gray-2 Divider"
-            style={
-              Object {
-                "borderTopWidth": "0.125rem",
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </Base>
-      </Divider>
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
-        >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          >
-            <Text
-              color="gray-7"
-              shrink="0"
-              size="x3"
-              width="200px"
-            >
-              <Base
-                Component="div"
-                className="Text Text--size-x3"
-                color="gray-7"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-gray-7 Text Text--size-x3"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  2018 09 20 02:42:31
-                </div>
-              </Base>
-            </Text>
-            <Flex
-              direction="horizontal"
-              gap="x4"
-              grow={true}
-            >
-              <Base
-                className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-              >
-                <div
-                  className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  <Flex
-                    direction="horizontal"
-                    gap="x4"
-                    grow={true}
-                  >
-                    <Base
-                      className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                    >
-                      <div
-                        className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Icon
-                          color="green-4"
-                          name="Tick"
-                          size="1.5rem"
-                        >
-                          <Base
-                            Component="svg"
-                            className="Icon"
-                            color="green-4"
-                            height="1.5rem"
-                            viewBox="0 0 24 24"
-                            width="1.5rem"
-                          >
-                            <svg
-                              className="Base Base--color-green-4 Icon"
-                              style={
-                                Object {
-                                  "height": "1.5rem",
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": "1.5rem",
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <Component
-                                height="100%"
-                                width="100%"
-                              >
-                                <svg
-                                  height="100%"
-                                  viewBox="0 0 24 24"
-                                  width="100%"
-                                >
-                                  <defs>
-                                    <path
-                                      d="M10.213 13.915L17.234 7l1.49 1.49L10.212 17 5 11.68l1.49-1.489z"
-                                      id="icons-tick_svg__a"
-                                    />
-                                  </defs>
-                                  <use
-                                    fill="currentColor"
-                                    fillRule="evenodd"
-                                    xlinkHref="#icons-tick_svg__a"
-                                  />
-                                </svg>
-                              </Component>
-                            </svg>
-                          </Base>
-                        </Icon>
-                        <Text
-                          color="grape-4"
-                          size="x3"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3"
-                            color="grape-4"
-                          >
-                            <div
-                              className="Base Base--color-grape-4 Text Text--size-x3"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              Event finished successfully!
-                            </div>
-                          </Base>
-                        </Text>
-                      </div>
-                    </Base>
-                  </Flex>
-                </div>
-              </Base>
-            </Flex>
-          </div>
-        </Base>
-      </Flex>
-    </div>
-  </Base>
-</_default>
+          </Flex>
+        </TableCell>
+        <TableCell
+          width="200px"
+        />
+      </TableRow>
+    </TableBody>
+  </Table>
+</Base>
 `;
 
 exports[`ActivityView when viewed on desktop renders the details view correctly 1`] = `
-<_default
-  appVersionEvents={
-    Array [
-      Object {
-        "createdAt": 2018-09-20T12:42:31.000Z,
-        "id": "1234",
-        "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-        "status": "finished",
-        "text": "Event finished successfully!",
-        "updatedAt": 2018-09-21T12:42:31.000Z,
-      },
-      Object {
-        "createdAt": 2018-09-22T12:42:31.000Z,
-        "id": "1234",
-        "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-        "status": "in-progress",
-        "text": "Doing something...",
-        "updatedAt": 2018-09-25T12:42:31.000Z,
-      },
-      Object {
-        "createdAt": 2018-09-26T12:42:31.000Z,
-        "id": "1234",
-        "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-        "status": "failed",
-        "text": "An error occured.",
-        "updatedAt": 2018-09-27T12:42:31.000Z,
-      },
-    ]
-  }
+<Base
+  paddingVertical="x8"
 >
-  <Base
-    paddingVertical="x8"
+  <Table
+    type="flat"
   >
-    <div
-      className="Base Base--padding-vertical-x8"
-      style={
-        Object {
-          "height": undefined,
-          "maxHeight": undefined,
-          "maxWidth": undefined,
-          "width": undefined,
-        }
-      }
-    >
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
+    <TableBody>
+      <TableHeaderRow>
+        <TableHeaderCell>
+          Date
+        </TableHeaderCell>
+        <TableHeaderCell
+          colSpan="2"
         >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          Activity
+        </TableHeaderCell>
+      </TableHeaderRow>
+      <TableRow
+        key="0"
+      >
+        <TableCell
+          width="200px"
+        >
+          2018 09 20 02:42:31
+        </TableCell>
+        <TableCell>
+          <Flex
+            direction="horizontal"
+            gap="x4"
           >
+            <Icon
+              color="green-4"
+              name="Tick"
+              size="1.5rem"
+            />
             <Text
-              color="grape-5"
-              shrink="0"
+              color="grape-4"
               size="x3"
-              weight="bold"
-              width="200px"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3 Text--weight-bold"
-                color="grape-5"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-grape-5 Text Text--size-x3 Text--weight-bold"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  Date
-                </div>
-              </Base>
+              Event finished successfully!
             </Text>
-            <Text
-              color="grape-5"
-              size="x3"
-              weight="bold"
-            >
-              <Base
-                Component="div"
-                className="Text Text--size-x3 Text--weight-bold"
-                color="grape-5"
-              >
-                <div
-                  className="Base Base--color-grape-5 Text Text--size-x3 Text--weight-bold"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  Activity
-                </div>
-              </Base>
-            </Text>
-          </div>
-        </Base>
-      </Flex>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="0.125rem"
+          </Flex>
+        </TableCell>
+        <TableCell
+          width="200px"
+        />
+      </TableRow>
+      <TableRow
+        key="1"
       >
-        <Base
-          Component="hr"
-          className="Divider"
-          color="gray-2"
-          style={
-            Object {
-              "borderTopWidth": "0.125rem",
-            }
-          }
+        <TableCell
+          width="200px"
         >
-          <hr
-            className="Base Base--color-gray-2 Divider"
-            style={
-              Object {
-                "borderTopWidth": "0.125rem",
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </Base>
-      </Divider>
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
-        >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          2018 09 22 02:42:31
+        </TableCell>
+        <TableCell>
+          <Flex
+            direction="horizontal"
+            gap="x4"
           >
+            <Icon
+              color="green-4"
+              name="Tick"
+              size="1.5rem"
+            />
             <Text
-              color="gray-7"
-              shrink="0"
+              color="grape-4"
               size="x3"
-              width="200px"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3"
-                color="gray-7"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-gray-7 Text Text--size-x3"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  2018 09 20 02:42:31
-                </div>
-              </Base>
+              Doing something...
             </Text>
-            <Flex
-              direction="horizontal"
-              gap="x4"
-              grow={true}
-            >
-              <Base
-                className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-              >
-                <div
-                  className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  <Flex
-                    direction="horizontal"
-                    gap="x4"
-                    grow={true}
-                  >
-                    <Base
-                      className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                    >
-                      <div
-                        className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Icon
-                          color="green-4"
-                          name="Tick"
-                          size="1.5rem"
-                        >
-                          <Base
-                            Component="svg"
-                            className="Icon"
-                            color="green-4"
-                            height="1.5rem"
-                            viewBox="0 0 24 24"
-                            width="1.5rem"
-                          >
-                            <svg
-                              className="Base Base--color-green-4 Icon"
-                              style={
-                                Object {
-                                  "height": "1.5rem",
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": "1.5rem",
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <Component
-                                height="100%"
-                                width="100%"
-                              >
-                                <svg
-                                  height="100%"
-                                  viewBox="0 0 24 24"
-                                  width="100%"
-                                >
-                                  <defs>
-                                    <path
-                                      d="M10.213 13.915L17.234 7l1.49 1.49L10.212 17 5 11.68l1.49-1.489z"
-                                      id="icons-tick_svg__a"
-                                    />
-                                  </defs>
-                                  <use
-                                    fill="currentColor"
-                                    fillRule="evenodd"
-                                    xlinkHref="#icons-tick_svg__a"
-                                  />
-                                </svg>
-                              </Component>
-                            </svg>
-                          </Base>
-                        </Icon>
-                        <Text
-                          color="grape-4"
-                          size="x3"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3"
-                            color="grape-4"
-                          >
-                            <div
-                              className="Base Base--color-grape-4 Text Text--size-x3"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              Event finished successfully!
-                            </div>
-                          </Base>
-                        </Text>
-                      </div>
-                    </Base>
-                  </Flex>
-                </div>
-              </Base>
-            </Flex>
-          </div>
-        </Base>
-      </Flex>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="0.125rem"
+          </Flex>
+        </TableCell>
+        <TableCell
+          width="200px"
+        />
+      </TableRow>
+      <TableRow
+        key="2"
       >
-        <Base
-          Component="hr"
-          className="Divider"
-          color="gray-2"
-          style={
-            Object {
-              "borderTopWidth": "0.125rem",
-            }
-          }
+        <TableCell
+          width="200px"
         >
-          <hr
-            className="Base Base--color-gray-2 Divider"
-            style={
-              Object {
-                "borderTopWidth": "0.125rem",
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </Base>
-      </Divider>
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
-        >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          2018 09 26 02:42:31
+        </TableCell>
+        <TableCell>
+          <Flex
+            direction="horizontal"
+            gap="x4"
           >
+            <Icon
+              color="red-3"
+              name="CloseSmall"
+              size="1.5rem"
+            />
             <Text
-              color="gray-7"
-              shrink="0"
+              color="red-3"
               size="x3"
-              width="200px"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3"
-                color="gray-7"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-gray-7 Text Text--size-x3"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  2018 09 22 02:42:31
-                </div>
-              </Base>
+              An error occured.
             </Text>
-            <Flex
-              direction="horizontal"
-              gap="x4"
-              grow={true}
-            >
-              <Base
-                className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-              >
-                <div
-                  className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  <Flex
-                    direction="horizontal"
-                    gap="x4"
-                    grow={true}
-                  >
-                    <Base
-                      className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                    >
-                      <div
-                        className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Icon
-                          color="green-4"
-                          name="Tick"
-                          size="1.5rem"
-                        >
-                          <Base
-                            Component="svg"
-                            className="Icon"
-                            color="green-4"
-                            height="1.5rem"
-                            viewBox="0 0 24 24"
-                            width="1.5rem"
-                          >
-                            <svg
-                              className="Base Base--color-green-4 Icon"
-                              style={
-                                Object {
-                                  "height": "1.5rem",
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": "1.5rem",
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <Component
-                                height="100%"
-                                width="100%"
-                              >
-                                <svg
-                                  height="100%"
-                                  viewBox="0 0 24 24"
-                                  width="100%"
-                                >
-                                  <defs>
-                                    <path
-                                      d="M10.213 13.915L17.234 7l1.49 1.49L10.212 17 5 11.68l1.49-1.489z"
-                                      id="icons-tick_svg__a"
-                                    />
-                                  </defs>
-                                  <use
-                                    fill="currentColor"
-                                    fillRule="evenodd"
-                                    xlinkHref="#icons-tick_svg__a"
-                                  />
-                                </svg>
-                              </Component>
-                            </svg>
-                          </Base>
-                        </Icon>
-                        <Text
-                          color="grape-4"
-                          size="x3"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3"
-                            color="grape-4"
-                          >
-                            <div
-                              className="Base Base--color-grape-4 Text Text--size-x3"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              Doing something...
-                            </div>
-                          </Base>
-                        </Text>
-                      </div>
-                    </Base>
-                  </Flex>
-                </div>
-              </Base>
-            </Flex>
-          </div>
-        </Base>
-      </Flex>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="0.125rem"
-      >
-        <Base
-          Component="hr"
-          className="Divider"
-          color="gray-2"
-          style={
-            Object {
-              "borderTopWidth": "0.125rem",
-            }
-          }
+          </Flex>
+        </TableCell>
+        <TableCell
+          width="200px"
         >
-          <hr
-            className="Base Base--color-gray-2 Divider"
-            style={
-              Object {
-                "borderTopWidth": "0.125rem",
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </Base>
-      </Divider>
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
-        >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          <a
+            href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
           >
-            <Text
-              color="gray-7"
-              shrink="0"
-              size="x3"
-              width="200px"
+            <Button
+              level="secondary"
+              size="small"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3"
-                color="gray-7"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-gray-7 Text Text--size-x3"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  2018 09 26 02:42:31
-                </div>
-              </Base>
-            </Text>
-            <Flex
-              direction="horizontal"
-              gap="x4"
-              grow={true}
-            >
-              <Base
-                className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-              >
-                <div
-                  className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  <Flex
-                    direction="horizontal"
-                    gap="x4"
-                    grow={true}
-                  >
-                    <Base
-                      className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                    >
-                      <div
-                        className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Icon
-                          color="red-3"
-                          name="CloseSmall"
-                          size="1.5rem"
-                        >
-                          <Base
-                            Component="svg"
-                            className="Icon"
-                            color="red-3"
-                            height="1.5rem"
-                            viewBox="0 0 24 24"
-                            width="1.5rem"
-                          >
-                            <svg
-                              className="Base Base--color-red-3 Icon"
-                              style={
-                                Object {
-                                  "height": "1.5rem",
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": "1.5rem",
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <Component
-                                height="100%"
-                                width="100%"
-                              >
-                                <svg
-                                  height="100%"
-                                  viewBox="0 0 24 24"
-                                  width="100%"
-                                >
-                                  <defs>
-                                    <path
-                                      d="M12.01 10.608L16.618 6l1.402 1.402-4.608 4.608 4.608 4.608-1.402 1.402-4.608-4.608-4.608 4.608L6 16.618l4.608-4.608L6 7.402 7.402 6z"
-                                      id="icons-close-small_svg__a"
-                                    />
-                                  </defs>
-                                  <use
-                                    fill="currentColor"
-                                    fillRule="evenodd"
-                                    xlinkHref="#icons-close-small_svg__a"
-                                  />
-                                </svg>
-                              </Component>
-                            </svg>
-                          </Base>
-                        </Icon>
-                        <Text
-                          color="red-3"
-                          size="x3"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3"
-                            color="red-3"
-                          >
-                            <div
-                              className="Base Base--color-red-3 Text Text--size-x3"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              An error occured.
-                            </div>
-                          </Base>
-                        </Text>
-                      </div>
-                    </Base>
-                  </Flex>
-                  <Link
-                    href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-                  >
-                    <Base
-                      Component="a"
-                      className="Link Link--color-undefined Link--clickable"
-                      href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-                    >
-                      <a
-                        className="Base Link Link--color-undefined Link--clickable"
-                        href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Button
-                          level="secondary"
-                          size="small"
-                        >
-                          <Flex
-                            Component="button"
-                            alignChildren="middle"
-                            className="Button Button--level-secondary Button--size-small"
-                            direction="horizontal"
-                            gap="x1"
-                          >
-                            <Base
-                              Component="button"
-                              className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x1 Button Button--level-secondary Button--size-small"
-                            >
-                              <button
-                                className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x1 Button Button--level-secondary Button--size-small"
-                                style={
-                                  Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": undefined,
-                                    "width": undefined,
-                                  }
-                                }
-                              >
-                                <Icon
-                                  color="grape-4"
-                                  name="Download"
-                                  size="1.5rem"
-                                >
-                                  <Base
-                                    Component="svg"
-                                    className="Icon"
-                                    color="grape-4"
-                                    height="1.5rem"
-                                    viewBox="0 0 24 24"
-                                    width="1.5rem"
-                                  >
-                                    <svg
-                                      className="Base Base--color-grape-4 Icon"
-                                      style={
-                                        Object {
-                                          "height": "1.5rem",
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "width": "1.5rem",
-                                        }
-                                      }
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <Component
-                                        height="100%"
-                                        width="100%"
-                                      >
-                                        <svg
-                                          height="100%"
-                                          viewBox="0 0 24 24"
-                                          width="100%"
-                                        >
-                                          <defs>
-                                            <path
-                                              d="M17 10.9l-1.4-1.4-2.6 2.6V4h-2v8L8.5 9.5l-1.4 1.4 5 5 4.9-5zM6 18h12v2H6v-2z"
-                                              id="icons-download_svg__a"
-                                            />
-                                          </defs>
-                                          <use
-                                            fill="currentColor"
-                                            fillRule="evenodd"
-                                            xlinkHref="#icons-download_svg__a"
-                                          />
-                                        </svg>
-                                      </Component>
-                                    </svg>
-                                  </Base>
-                                </Icon>
-                                Download Build Log
-                              </button>
-                            </Base>
-                          </Flex>
-                        </Button>
-                      </a>
-                    </Base>
-                  </Link>
-                </div>
-              </Base>
-            </Flex>
-          </div>
-        </Base>
-      </Flex>
-    </div>
-  </Base>
-</_default>
+              <Icon
+                color="grape-4"
+                name="Download"
+                size="1.5rem"
+              />
+              Download Build Log
+            </Button>
+          </a>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</Base>
 `;
 
 exports[`ActivityView when viewed on mobile renders the details view correctly 1`] = `
-<_default
-  appVersionEvents={
-    Array [
-      Object {
-        "createdAt": 2018-09-20T12:42:31.000Z,
-        "id": "1234",
-        "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-        "status": "finished",
-        "text": "Event finished successfully!",
-        "updatedAt": 2018-09-21T12:42:31.000Z,
-      },
-      Object {
-        "createdAt": 2018-09-22T12:42:31.000Z,
-        "id": "1234",
-        "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-        "status": "in-progress",
-        "text": "Doing something...",
-        "updatedAt": 2018-09-25T12:42:31.000Z,
-      },
-      Object {
-        "createdAt": 2018-09-26T12:42:31.000Z,
-        "id": "1234",
-        "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-        "status": "failed",
-        "text": "An error occured.",
-        "updatedAt": 2018-09-27T12:42:31.000Z,
-      },
-    ]
-  }
+<Base
+  paddingVertical="x8"
 >
-  <Base
-    paddingVertical="x8"
+  <Table
+    type="flat"
   >
-    <div
-      className="Base Base--padding-vertical-x8"
-      style={
-        Object {
-          "height": undefined,
-          "maxHeight": undefined,
-          "maxWidth": undefined,
-          "width": undefined,
-        }
-      }
-    >
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
+    <TableBody>
+      <TableHeaderRow>
+        <TableHeaderCell>
+          Date
+        </TableHeaderCell>
+        <TableHeaderCell
+          colSpan="2"
         >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          Activity
+        </TableHeaderCell>
+      </TableHeaderRow>
+      <TableRow
+        key="0"
+      >
+        <TableCell
+          width="200px"
+        >
+          2018 09 20 02:42:31
+        </TableCell>
+        <TableCell>
+          <Flex
+            direction="horizontal"
+            gap="x4"
           >
+            <Icon
+              color="green-4"
+              name="Tick"
+              size="1.5rem"
+            />
             <Text
-              color="grape-5"
-              shrink="0"
+              color="grape-4"
               size="x3"
-              weight="bold"
-              width="200px"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3 Text--weight-bold"
-                color="grape-5"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-grape-5 Text Text--size-x3 Text--weight-bold"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  Date
-                </div>
-              </Base>
+              Event finished successfully!
             </Text>
-            <Text
-              color="grape-5"
-              size="x3"
-              weight="bold"
-            >
-              <Base
-                Component="div"
-                className="Text Text--size-x3 Text--weight-bold"
-                color="grape-5"
-              >
-                <div
-                  className="Base Base--color-grape-5 Text Text--size-x3 Text--weight-bold"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  Activity
-                </div>
-              </Base>
-            </Text>
-          </div>
-        </Base>
-      </Flex>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="0.125rem"
+          </Flex>
+        </TableCell>
+        <TableCell
+          width="200px"
+        />
+      </TableRow>
+      <TableRow
+        key="1"
       >
-        <Base
-          Component="hr"
-          className="Divider"
-          color="gray-2"
-          style={
-            Object {
-              "borderTopWidth": "0.125rem",
-            }
-          }
+        <TableCell
+          width="200px"
         >
-          <hr
-            className="Base Base--color-gray-2 Divider"
-            style={
-              Object {
-                "borderTopWidth": "0.125rem",
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </Base>
-      </Divider>
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
-        >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          2018 09 22 02:42:31
+        </TableCell>
+        <TableCell>
+          <Flex
+            direction="horizontal"
+            gap="x4"
           >
+            <Icon
+              color="green-4"
+              name="Tick"
+              size="1.5rem"
+            />
             <Text
-              color="gray-7"
-              shrink="0"
+              color="grape-4"
               size="x3"
-              width="200px"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3"
-                color="gray-7"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-gray-7 Text Text--size-x3"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  2018 09 20 02:42:31
-                </div>
-              </Base>
+              Doing something...
             </Text>
-            <Flex
-              direction="horizontal"
-              gap="x4"
-              grow={true}
-            >
-              <Base
-                className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-              >
-                <div
-                  className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  <Flex
-                    direction="horizontal"
-                    gap="x4"
-                    grow={true}
-                  >
-                    <Base
-                      className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                    >
-                      <div
-                        className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Icon
-                          color="green-4"
-                          name="Tick"
-                          size="1.5rem"
-                        >
-                          <Base
-                            Component="svg"
-                            className="Icon"
-                            color="green-4"
-                            height="1.5rem"
-                            viewBox="0 0 24 24"
-                            width="1.5rem"
-                          >
-                            <svg
-                              className="Base Base--color-green-4 Icon"
-                              style={
-                                Object {
-                                  "height": "1.5rem",
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": "1.5rem",
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <Component
-                                height="100%"
-                                width="100%"
-                              >
-                                <svg
-                                  height="100%"
-                                  viewBox="0 0 24 24"
-                                  width="100%"
-                                >
-                                  <defs>
-                                    <path
-                                      d="M10.213 13.915L17.234 7l1.49 1.49L10.212 17 5 11.68l1.49-1.489z"
-                                      id="icons-tick_svg__a"
-                                    />
-                                  </defs>
-                                  <use
-                                    fill="currentColor"
-                                    fillRule="evenodd"
-                                    xlinkHref="#icons-tick_svg__a"
-                                  />
-                                </svg>
-                              </Component>
-                            </svg>
-                          </Base>
-                        </Icon>
-                        <Text
-                          color="grape-4"
-                          size="x3"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3"
-                            color="grape-4"
-                          >
-                            <div
-                              className="Base Base--color-grape-4 Text Text--size-x3"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              Event finished successfully!
-                            </div>
-                          </Base>
-                        </Text>
-                      </div>
-                    </Base>
-                  </Flex>
-                </div>
-              </Base>
-            </Flex>
-          </div>
-        </Base>
-      </Flex>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="0.125rem"
+          </Flex>
+        </TableCell>
+        <TableCell
+          width="200px"
+        />
+      </TableRow>
+      <TableRow
+        key="2"
       >
-        <Base
-          Component="hr"
-          className="Divider"
-          color="gray-2"
-          style={
-            Object {
-              "borderTopWidth": "0.125rem",
-            }
-          }
+        <TableCell
+          width="200px"
         >
-          <hr
-            className="Base Base--color-gray-2 Divider"
-            style={
-              Object {
-                "borderTopWidth": "0.125rem",
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </Base>
-      </Divider>
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
-        >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          2018 09 26 02:42:31
+        </TableCell>
+        <TableCell>
+          <Flex
+            direction="horizontal"
+            gap="x4"
           >
+            <Icon
+              color="red-3"
+              name="CloseSmall"
+              size="1.5rem"
+            />
             <Text
-              color="gray-7"
-              shrink="0"
+              color="red-3"
               size="x3"
-              width="200px"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3"
-                color="gray-7"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-gray-7 Text Text--size-x3"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  2018 09 22 02:42:31
-                </div>
-              </Base>
+              An error occured.
             </Text>
-            <Flex
-              direction="horizontal"
-              gap="x4"
-              grow={true}
-            >
-              <Base
-                className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-              >
-                <div
-                  className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  <Flex
-                    direction="horizontal"
-                    gap="x4"
-                    grow={true}
-                  >
-                    <Base
-                      className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                    >
-                      <div
-                        className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Icon
-                          color="green-4"
-                          name="Tick"
-                          size="1.5rem"
-                        >
-                          <Base
-                            Component="svg"
-                            className="Icon"
-                            color="green-4"
-                            height="1.5rem"
-                            viewBox="0 0 24 24"
-                            width="1.5rem"
-                          >
-                            <svg
-                              className="Base Base--color-green-4 Icon"
-                              style={
-                                Object {
-                                  "height": "1.5rem",
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": "1.5rem",
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <Component
-                                height="100%"
-                                width="100%"
-                              >
-                                <svg
-                                  height="100%"
-                                  viewBox="0 0 24 24"
-                                  width="100%"
-                                >
-                                  <defs>
-                                    <path
-                                      d="M10.213 13.915L17.234 7l1.49 1.49L10.212 17 5 11.68l1.49-1.489z"
-                                      id="icons-tick_svg__a"
-                                    />
-                                  </defs>
-                                  <use
-                                    fill="currentColor"
-                                    fillRule="evenodd"
-                                    xlinkHref="#icons-tick_svg__a"
-                                  />
-                                </svg>
-                              </Component>
-                            </svg>
-                          </Base>
-                        </Icon>
-                        <Text
-                          color="grape-4"
-                          size="x3"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3"
-                            color="grape-4"
-                          >
-                            <div
-                              className="Base Base--color-grape-4 Text Text--size-x3"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              Doing something...
-                            </div>
-                          </Base>
-                        </Text>
-                      </div>
-                    </Base>
-                  </Flex>
-                </div>
-              </Base>
-            </Flex>
-          </div>
-        </Base>
-      </Flex>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="0.125rem"
-      >
-        <Base
-          Component="hr"
-          className="Divider"
-          color="gray-2"
-          style={
-            Object {
-              "borderTopWidth": "0.125rem",
-            }
-          }
+          </Flex>
+        </TableCell>
+        <TableCell
+          width="200px"
         >
-          <hr
-            className="Base Base--color-gray-2 Divider"
-            style={
-              Object {
-                "borderTopWidth": "0.125rem",
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          />
-        </Base>
-      </Divider>
-      <Flex
-        direction="horizontal"
-        gap="x4"
-        paddingHorizontal="x3"
-        paddingVertical="x4"
-      >
-        <Base
-          className="Flex Flex--horizontal Flex--gap-x4"
-          paddingHorizontal="x3"
-          paddingVertical="x4"
-        >
-          <div
-            className="Base Base--padding-horizontal-x3 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gap-x4"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
+          <a
+            href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
           >
-            <Text
-              color="gray-7"
-              shrink="0"
-              size="x3"
-              width="200px"
+            <Button
+              level="secondary"
+              size="small"
             >
-              <Base
-                Component="div"
-                className="Text Text--size-x3"
-                color="gray-7"
-                shrink="0"
-                width="200px"
-              >
-                <div
-                  className="Base Base--color-gray-7 Text Text--size-x3"
-                  shrink="0"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": "200px",
-                    }
-                  }
-                >
-                  2018 09 26 02:42:31
-                </div>
-              </Base>
-            </Text>
-            <Flex
-              direction="horizontal"
-              gap="x4"
-              grow={true}
-            >
-              <Base
-                className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-              >
-                <div
-                  className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                  style={
-                    Object {
-                      "height": undefined,
-                      "maxHeight": undefined,
-                      "maxWidth": undefined,
-                      "width": undefined,
-                    }
-                  }
-                >
-                  <Flex
-                    direction="horizontal"
-                    gap="x4"
-                    grow={true}
-                  >
-                    <Base
-                      className="Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                    >
-                      <div
-                        className="Base Flex Flex--horizontal Flex--gap-x4 Flex--grow"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Icon
-                          color="red-3"
-                          name="CloseSmall"
-                          size="1.5rem"
-                        >
-                          <Base
-                            Component="svg"
-                            className="Icon"
-                            color="red-3"
-                            height="1.5rem"
-                            viewBox="0 0 24 24"
-                            width="1.5rem"
-                          >
-                            <svg
-                              className="Base Base--color-red-3 Icon"
-                              style={
-                                Object {
-                                  "height": "1.5rem",
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": "1.5rem",
-                                }
-                              }
-                              viewBox="0 0 24 24"
-                            >
-                              <Component
-                                height="100%"
-                                width="100%"
-                              >
-                                <svg
-                                  height="100%"
-                                  viewBox="0 0 24 24"
-                                  width="100%"
-                                >
-                                  <defs>
-                                    <path
-                                      d="M12.01 10.608L16.618 6l1.402 1.402-4.608 4.608 4.608 4.608-1.402 1.402-4.608-4.608-4.608 4.608L6 16.618l4.608-4.608L6 7.402 7.402 6z"
-                                      id="icons-close-small_svg__a"
-                                    />
-                                  </defs>
-                                  <use
-                                    fill="currentColor"
-                                    fillRule="evenodd"
-                                    xlinkHref="#icons-close-small_svg__a"
-                                  />
-                                </svg>
-                              </Component>
-                            </svg>
-                          </Base>
-                        </Icon>
-                        <Text
-                          color="red-3"
-                          size="x3"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3"
-                            color="red-3"
-                          >
-                            <div
-                              className="Base Base--color-red-3 Text Text--size-x3"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              An error occured.
-                            </div>
-                          </Base>
-                        </Text>
-                      </div>
-                    </Base>
-                  </Flex>
-                  <Link
-                    href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-                  >
-                    <Base
-                      Component="a"
-                      className="Link Link--color-undefined Link--clickable"
-                      href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-                    >
-                      <a
-                        className="Base Link Link--color-undefined Link--clickable"
-                        href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Button
-                          level="secondary"
-                          size="small"
-                        >
-                          <Flex
-                            Component="button"
-                            alignChildren="middle"
-                            className="Button Button--level-secondary Button--size-small"
-                            direction="horizontal"
-                            gap="x1"
-                          >
-                            <Base
-                              Component="button"
-                              className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x1 Button Button--level-secondary Button--size-small"
-                            >
-                              <button
-                                className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x1 Button Button--level-secondary Button--size-small"
-                                style={
-                                  Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": undefined,
-                                    "width": undefined,
-                                  }
-                                }
-                              >
-                                <Icon
-                                  color="grape-4"
-                                  name="Download"
-                                  size="1.5rem"
-                                >
-                                  <Base
-                                    Component="svg"
-                                    className="Icon"
-                                    color="grape-4"
-                                    height="1.5rem"
-                                    viewBox="0 0 24 24"
-                                    width="1.5rem"
-                                  >
-                                    <svg
-                                      className="Base Base--color-grape-4 Icon"
-                                      style={
-                                        Object {
-                                          "height": "1.5rem",
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "width": "1.5rem",
-                                        }
-                                      }
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <Component
-                                        height="100%"
-                                        width="100%"
-                                      >
-                                        <svg
-                                          height="100%"
-                                          viewBox="0 0 24 24"
-                                          width="100%"
-                                        >
-                                          <defs>
-                                            <path
-                                              d="M17 10.9l-1.4-1.4-2.6 2.6V4h-2v8L8.5 9.5l-1.4 1.4 5 5 4.9-5zM6 18h12v2H6v-2z"
-                                              id="icons-download_svg__a"
-                                            />
-                                          </defs>
-                                          <use
-                                            fill="currentColor"
-                                            fillRule="evenodd"
-                                            xlinkHref="#icons-download_svg__a"
-                                          />
-                                        </svg>
-                                      </Component>
-                                    </svg>
-                                  </Base>
-                                </Icon>
-                                Download Build Log
-                              </button>
-                            </Base>
-                          </Flex>
-                        </Button>
-                      </a>
-                    </Base>
-                  </Link>
-                </div>
-              </Base>
-            </Flex>
-          </div>
-        </Base>
-      </Flex>
-    </div>
-  </Base>
-</_default>
+              <Icon
+                color="grape-4"
+                name="Download"
+                size="1.5rem"
+              />
+              Download Build Log
+            </Button>
+          </a>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</Base>
 `;
