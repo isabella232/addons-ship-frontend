@@ -119,8 +119,6 @@ export default ({
     <Base>
       <Flex direction="vertical" alignChildren="middle" paddingVertical="x6">
         <Flex maxWidth={isDesktop ? '100%' : 688}>
-          {console.log(activityPath)}
-          {console.log(`/version?appSlug=${appVersion.appSlug}&versionId=${appVersion.id}&selectedTab=activity`)}
           {publishNotification(
             appVersion.appSlug,
             appVersion.id,
