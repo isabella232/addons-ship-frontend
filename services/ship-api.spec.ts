@@ -1,16 +1,18 @@
 jest.mock('@/utils/request');
 
 import { Uploadable } from '@/models/uploadable';
-import { patch, post, get, put } from '@/utils/request';
+import { patch, post, get, put, del } from '@/utils/request';
+import { mockAppVersion, mockSettings } from '@/mocks';
+import { Settings, AppContact } from '@/models/settings';
 
 import { ShipAPIService } from './ship-api';
-import { mockAppVersion, mockSettings } from '@/mocks';
 
 describe('Ship API service', () => {
   const apiUrl = 'http://ship.api';
   let api: ShipAPIService;
   beforeEach(() => {
     api = new ShipAPIService({ url: apiUrl });
+    ([patch, post, get, put, del] as jest.Mock[]).forEach(m => m.mockReset());
   });
 
   const testTokenNotSet = (fn: Function) => {
@@ -163,7 +165,7 @@ describe('Ship API service', () => {
   });
 
   describe('updateSettings', () => {
-    testTokenNotSet(() => api.updateSettings({}));
+    testTokenNotSet(() => api.updateSettings({} as Settings));
 
     it('updates settings for an app', async () => {
       api.setToken('very-token');
@@ -225,6 +227,111 @@ describe('Ship API service', () => {
 
       expect(get).toHaveBeenCalledWith(url, token);
       expect(resp).toMatchSnapshot();
+    });
+  });
+
+  describe('addAppContact', () => {
+    testTokenNotSet(() => api.addAppContact('app-slug', 'john@do.e'));
+
+    it('posts a new app contact', async () => {
+      const token = 'best-token',
+        appSlug = 'aplikashun',
+        email = 'josh@bend.er';
+      (post as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: {
+            email,
+            is_confirmed: false,
+            notification_preferences: { new_version: true, failed_publish: false, successful_publish: true }
+          }
+        })
+      });
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/contacts`;
+      const resp = await api.addAppContact(appSlug, email);
+
+      expect(post).toHaveBeenCalledWith(
+        url,
+        token,
+        `{"email":"${email}","notification_preferences":{"new_version":true,"failed_publish":true,"successful_publish":true}}`
+      );
+      expect(resp).toMatchSnapshot();
+    });
+  });
+
+  describe('listAppContacts', () => {
+    testTokenNotSet(() => api.listAppContacts('app-slug'));
+
+    it('lists all app contacts', async () => {
+      const token = 'best-token',
+        appSlug = 'aplikashun';
+
+      (get as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: [{ email: 'aaa', notification_preferences: { new_version: true } }, { email: 'bbb' }, { email: 'ccc' }]
+        })
+      });
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/contacts`;
+      const resp = await api.listAppContacts(appSlug);
+
+      expect(get).toHaveBeenCalledWith(url, token);
+      expect(resp).toMatchSnapshot();
+    });
+  });
+
+  describe('updateAppContactNotificationPreferences', () => {
+    testTokenNotSet(() => api.updateAppContactNotificationPreferences('app-slug', {} as AppContact));
+
+    it("updates an app contact's notification preferences", async () => {
+      const token = 'noicest-token',
+        appSlug = 'my-app-slug',
+        appContactId = 'abc-123';
+
+      (put as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: {
+            id: appContactId,
+            notification_preferences: { new_version: true, failed_publish: false, successful_publish: false }
+          }
+        })
+      });
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/contacts/${appContactId}`;
+      const resp = await api.updateAppContactNotificationPreferences(appSlug, {
+        id: appContactId,
+        notificationPreferences: { newVersion: true, failedPublish: false, successfulPublish: false }
+      } as AppContact);
+
+      expect(put).toHaveBeenCalledWith(
+        url,
+        token,
+        '{"new_version":true,"failed_publish":false,"successful_publish":false}'
+      );
+      expect(resp).toMatchSnapshot();
+    });
+  });
+
+  describe('deleteAppContact', () => {
+    testTokenNotSet(() => api.deleteAppContact('app-slug', {} as AppContact));
+
+    it("updates an app contact's notification preferences", async () => {
+      const token = 'bestest-token',
+        appSlug = 'my-app-slug',
+        appContactId = 'abc-123';
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/contacts/${appContactId}`;
+      await api.deleteAppContact(appSlug, { id: appContactId } as AppContact);
+
+      expect(del).toHaveBeenCalledWith(url, token);
     });
   });
 });
