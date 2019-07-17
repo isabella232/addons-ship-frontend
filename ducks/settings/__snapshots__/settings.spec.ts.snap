@@ -1,0 +1,347 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`settings addAppContact adds a new contact 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_ADD_CONTACT_NEXT",
+  },
+  Object {
+    "type": "SETTINGS_ADD_CONTACT_COMPLETE",
+  },
+]
+`;
+
+exports[`settings addAppContact fails to add a new contact 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_ADD_CONTACT_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "SETTINGS_ADD_CONTACT_ERROR",
+  },
+]
+`;
+
+exports[`settings deleteAppContact deletes an app contact 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_DELETE_APP_CONTACT_NEXT",
+  },
+  Object {
+    "payload": "asd-456",
+    "type": "SETTINGS_DELETE_APP_CONTACT_COMPLETE",
+  },
+]
+`;
+
+exports[`settings deleteAppContact fails updates an app contact's notification preferences 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_DELETE_APP_CONTACT_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "SETTINGS_DELETE_APP_CONTACT_ERROR",
+  },
+]
+`;
+
+exports[`settings fetchSettings can't fetch settings 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_GET_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "SETTINGS_GET_ERROR",
+  },
+]
+`;
+
+exports[`settings fetchSettings fetches settings 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_GET_NEXT",
+  },
+  Object {
+    "type": "SETTINGS_GET_COMPLETE",
+  },
+]
+`;
+
+exports[`settings listAppContacts fails to list app contacts 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_LIST_APP_CONTACTS_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "SETTINGS_LIST_APP_CONTACTS_ERROR",
+  },
+]
+`;
+
+exports[`settings listAppContacts lists app contacts 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_LIST_APP_CONTACTS_NEXT",
+  },
+  Object {
+    "type": "SETTINGS_LIST_APP_CONTACTS_COMPLETE",
+  },
+]
+`;
+
+exports[`settings reducer adds an app contact 1`] = `
+Object {
+  "appContacts": Array [
+    Object {
+      "email": "what@ev.er",
+      "id": "123-abc",
+      "isConfirmed": false,
+      "notificationPreferences": Object {
+        "failedPublish": false,
+        "newVersion": true,
+        "successfulPublish": true,
+      },
+    },
+    Object {
+      "email": "bit@bot",
+    },
+  ],
+  "settings": Object {
+    "projectType": "other",
+  },
+}
+`;
+
+exports[`settings reducer loads app contacts 1`] = `
+Object {
+  "appContacts": Array [
+    Object {
+      "email": "purr@req.io",
+    },
+    Object {
+      "email": "bit@bot.io",
+    },
+  ],
+  "settings": Object {
+    "projectType": "other",
+  },
+}
+`;
+
+exports[`settings reducer loads settings 1`] = `
+Object {
+  "appContacts": Array [],
+  "settings": Object {
+    "androidSettings": Object {
+      "artifactExposingWorkflows": "All",
+      "selectedKeystoreFile": Object {
+        "name": "abcdefghijkl1234567",
+      },
+      "selectedServiceAccountJsonFile": Object {
+        "name": "abcdefghijkl12345671566",
+      },
+      "track": "Release",
+    },
+    "certificates": Array [
+      Object {
+        "name": "iPhone Developer: John Doe (ABCD1234)",
+      },
+      Object {
+        "name": "iPhone Developer: John Doe (ABCD5678)",
+      },
+    ],
+    "iosSettings": Object {
+      "appSku": "Fill",
+      "appSpecificPassword": "Fill",
+      "appleDeveloperAccountEmail": "Fill",
+      "artifactExposingWorkflows": "All",
+      "selectedCertificate": Object {
+        "name": "iPhone Developer: John Doe (ABCD5678)",
+      },
+      "selectedProvProfile": Object {
+        "name": "abcdefghijkl1234567",
+      },
+    },
+    "keystoreFiles": Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+      },
+    ],
+    "projectType": "other",
+    "provProfiles": Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+      },
+    ],
+    "serviceAccountJsonFiles": Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+      },
+    ],
+  },
+}
+`;
+
+exports[`settings reducer removes an app contact 1`] = `
+Object {
+  "appContacts": Array [
+    Object {
+      "email": "what@ev.er",
+      "id": "123-abc",
+      "isConfirmed": false,
+      "notificationPreferences": Object {
+        "failedPublish": false,
+        "newVersion": true,
+        "successfulPublish": true,
+      },
+    },
+  ],
+  "settings": Object {
+    "projectType": "other",
+  },
+}
+`;
+
+exports[`settings reducer updates an app contact 1`] = `
+Object {
+  "appContacts": Array [
+    Object {
+      "email": "what@ev.er",
+      "id": "123-abc",
+      "isConfirmed": false,
+      "notificationPreferences": Object {
+        "failedPublish": true,
+        "newVersion": false,
+        "successfulPublish": true,
+      },
+    },
+    Object {
+      "id": "456-asd",
+      "notificationPreferences": Object {
+        "failedPublish": true,
+        "newVersion": true,
+        "successfulPublish": false,
+      },
+    },
+  ],
+  "settings": Object {
+    "projectType": "other",
+  },
+}
+`;
+
+exports[`settings updateAppContact fails updates an app contact's notification preferences 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_UPDATE_APP_CONTACT_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "SETTINGS_UPDATE_APP_CONTACT_ERROR",
+  },
+]
+`;
+
+exports[`settings updateAppContact updates an app contact's notification preferences 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_UPDATE_APP_CONTACT_NEXT",
+  },
+  Object {
+    "type": "SETTINGS_UPDATE_APP_CONTACT_COMPLETE",
+  },
+]
+`;
+
+exports[`settings updateSettings can't update settings 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_UPDATE_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "SETTINGS_UPDATE_ERROR",
+  },
+]
+`;
+
+exports[`settings updateSettings updates settings 1`] = `
+Array [
+  Object {
+    "type": "SETTINGS_UPDATE_NEXT",
+  },
+  Object {
+    "payload": Object {
+      "androidSettings": Object {
+        "artifactExposingWorkflows": "All",
+        "selectedKeystoreFile": Object {
+          "name": "abcdefghijkl1234567",
+        },
+        "selectedServiceAccountJsonFile": Object {
+          "name": "abcdefghijkl12345671566",
+        },
+        "track": "Release",
+      },
+      "certificates": Array [
+        Object {
+          "name": "iPhone Developer: John Doe (ABCD1234)",
+        },
+        Object {
+          "name": "iPhone Developer: John Doe (ABCD5678)",
+        },
+      ],
+      "iosSettings": Object {
+        "appSku": "Fill",
+        "appSpecificPassword": "Fill",
+        "appleDeveloperAccountEmail": "Fill",
+        "artifactExposingWorkflows": "Primary",
+        "selectedCertificate": Object {
+          "name": "iPhone Developer: John Doe (ABCD5678)",
+        },
+        "selectedProvProfile": Object {
+          "name": "abcdefghijkl1234567",
+        },
+      },
+      "keystoreFiles": Array [
+        Object {
+          "name": "abcdefghijkl1234567",
+        },
+        Object {
+          "name": "abcdefghijkl12345671566",
+        },
+      ],
+      "projectType": "other",
+      "provProfiles": Array [
+        Object {
+          "name": "abcdefghijkl1234567",
+        },
+        Object {
+          "name": "abcdefghijkl12345671566",
+        },
+      ],
+      "serviceAccountJsonFiles": Array [
+        Object {
+          "name": "abcdefghijkl1234567",
+        },
+        Object {
+          "name": "abcdefghijkl12345671566",
+        },
+      ],
+    },
+    "type": "SETTINGS_UPDATE_COMPLETE",
+  },
+]
+`;

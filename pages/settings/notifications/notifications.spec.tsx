@@ -1,12 +1,16 @@
-import { shallow } from 'enzyme';
+import { shallow, ShallowWrapper } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
+
+import { AppContact } from '@/models/settings';
 
 import { NotificationSettings } from '.';
 
 describe('NotificationSettings', () => {
   const defaultProps = {
+    appSlug: 'some-app',
     appContacts: [
       {
+        id: 'bit-bot',
         email: 'bit.bot@bitrise.io',
         isConfirmed: true,
         notificationPreferences: {
@@ -16,6 +20,7 @@ describe('NotificationSettings', () => {
         }
       },
       {
+        id: 'purr-req',
         email: 'purr.request@bitrise.io',
         isConfirmed: false,
         notificationPreferences: {
@@ -24,8 +29,17 @@ describe('NotificationSettings', () => {
           failedPublish: true
         }
       }
-    ]
+    ],
+    addAppContact: jest.fn() as any,
+    updateAppContact: jest.fn() as any,
+    deleteAppContact: jest.fn() as any
   };
+
+  beforeEach(() => {
+    const { addAppContact, updateAppContact, deleteAppContact } = defaultProps;
+
+    ([addAppContact, updateAppContact, deleteAppContact] as jest.Mock[]).forEach(mock => mock.mockReset());
+  });
 
   it('renders correctly', () => {
     const tree = shallowToJson(shallow(<NotificationSettings {...defaultProps} />));
@@ -33,14 +47,25 @@ describe('NotificationSettings', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('sets the email', () => {
-    const spy = jest.spyOn(global.console, 'log');
+  test('componentDidUpdate', () => {
+    const { appContacts } = defaultProps;
     const wrapper = shallow(<NotificationSettings {...defaultProps} />);
 
-    const email = 'whatever@email.com';
+    wrapper.setProps({ appContacts: [...appContacts, { email: ' doesnt@matt.er' }] });
+
+    const { state } = wrapper.instance();
+
+    expect(state).toMatchSnapshot();
+  });
+
+  it('sets the email', () => {
+    const { addAppContact, appSlug } = defaultProps,
+      email = 'whatever@email.com';
+    const wrapper = shallow(<NotificationSettings {...defaultProps} />);
+
     (wrapper.instance() as NotificationSettings).onAddEmail(email);
 
-    expect(spy).toHaveBeenCalledWith('onAddEmail', email);
+    expect(addAppContact).toHaveBeenCalledWith(appSlug, email);
   });
 
   test('onNotificationPreferenceChanged', () => {
@@ -69,13 +94,50 @@ describe('NotificationSettings', () => {
     expect(wrapper.state('hasModifications')).toBe(true);
   });
 
-  test('onSave', () => {
-    const spy = jest.spyOn(global.console, 'log');
-    const wrapper = shallow(<NotificationSettings {...defaultProps} />);
+  describe('onSave', () => {
+    let updateAppContact: jest.Mock,
+      deleteAppContact: jest.Mock,
+      appContacts: AppContact[],
+      appSlug: string,
+      wrapper: ShallowWrapper;
 
-    (wrapper.instance() as NotificationSettings).onSave();
+    beforeEach(() => {
+      ({ updateAppContact, deleteAppContact, appContacts, appSlug } = defaultProps);
 
-    expect(spy).toHaveBeenCalledWith('onSave');
+      wrapper = shallow(<NotificationSettings {...defaultProps} />);
+    });
+
+    it('should not call updateAppContact, deleteAppContact without modifications', () => {
+      (wrapper.instance() as NotificationSettings).onSave();
+
+      expect(updateAppContact).not.toHaveBeenCalled();
+      expect(deleteAppContact).not.toHaveBeenCalled();
+    });
+
+    it('should call updateAppContact', () => {
+      const [appContact] = appContacts;
+      (wrapper.instance() as NotificationSettings).onNotificationPreferenceChanged(
+        appContact.email,
+        'successfulPublish',
+        false
+      );
+
+      (wrapper.instance() as NotificationSettings).onSave();
+
+      expect(updateAppContact).toHaveBeenCalledWith(appSlug, {
+        ...appContact,
+        notificationPreferences: { ...appContact.notificationPreferences, successfulPublish: false }
+      });
+    });
+
+    it('should call deleteAppContact', () => {
+      const [appContact] = appContacts;
+
+      (wrapper.instance() as NotificationSettings).onDeleteContact(appContact.email);
+      (wrapper.instance() as NotificationSettings).onSave();
+
+      expect(deleteAppContact).toHaveBeenCalledWith(appSlug, appContact);
+    });
   });
 
   test('onCancel', () => {

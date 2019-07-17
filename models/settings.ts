@@ -47,6 +47,7 @@ export type Settings = {
 };
 
 export type AppContact = {
+  id: string;
   email: string;
   isConfirmed: boolean;
   notificationPreferences: {
@@ -55,4 +56,5 @@ export type AppContact = {
     failedPublish: boolean;
   };
   isMarkedForDelete?: boolean;
+  isMarkedForUpdate?: boolean;
 };

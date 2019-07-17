@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { get, find } from 'lodash';
 
 import { RootState } from '@/store';
+import { MaximumNumberOfCertificates } from '@/models';
 import {
-  MaximumNumberOfCertificates,
   ProvProfile,
   Certificate,
   KeystoreFile,
@@ -12,7 +12,7 @@ import {
   IosSettings,
   AndroidSettings,
   Settings
-} from '@/models';
+} from '@/models/settings';
 
 import View from './view';
 import { updateSettings } from '@/ducks/settings';
@@ -184,7 +184,7 @@ export class General extends Component<Props> {
   }
 }
 
-const mapStateToProps = ({ settings }: RootState) => ({ settings });
+const mapStateToProps = ({ settings: { settings } }: RootState) => ({ settings });
 const mapDispatchToProps = {
   updateSettings
 };

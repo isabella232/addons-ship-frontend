@@ -1,4 +1,4 @@
-import { actionTypeCreator, camelizeKeys, snakifyKeys } from './';
+import { actionTypeCreator, camelizeKeys, snakifyKeys, snakifyKeysDeep, camelizeKeysDeep } from './';
 
 describe('actionTypeCreator', () => {
   it('returns a function', () => {
@@ -33,8 +33,36 @@ describe('camelizeKeys', () => {
   });
 });
 
-describe('snakifyKeys', () => {
+describe('camelizeKeysDeep', () => {
   it('shallow converts keys to camelCase', () => {
+    const input = {
+      CONSTANT_CASE: 'aaa',
+      snake_case: 123,
+      PascalCase: 'bbb',
+      nes_ted: {
+        SOME_NICE: {
+          ParaMeter: 789
+        }
+      }
+    };
+
+    const expected = {
+      constantCase: 'aaa',
+      snakeCase: 123,
+      pascalCase: 'bbb',
+      nesTed: {
+        someNice: {
+          paraMeter: 789
+        }
+      }
+    };
+
+    expect(camelizeKeysDeep(input)).toEqual(expected);
+  });
+});
+
+describe('snakifyKeys', () => {
+  it('shallow converts keys to snake_case', () => {
     const input = {
       CONSTANT_CASE: 'aaa',
       snake_case: 123,
@@ -50,5 +78,33 @@ describe('snakifyKeys', () => {
     };
 
     expect(snakifyKeys(input)).toEqual(expected);
+  });
+});
+
+describe('snakifyKeysDeep', () => {
+  it('deep converts keys to snake_case', () => {
+    const input = {
+      CONSTANT_CASE: 'aaa',
+      snake_case: 123,
+      PascalCase: 'bbb',
+      camelCase: 456,
+      deep: {
+        nestedObject: {
+          soDeep: 123
+        }
+      }
+    };
+
+    const expected = {
+      constant_case: 'aaa',
+      snake_case: 123,
+      pascal_case: 'bbb',
+      camel_case: 456,
+      deep: {
+        nested_object: { so_deep: 123 }
+      }
+    };
+
+    expect(snakifyKeysDeep(input)).toEqual(expected);
   });
 });

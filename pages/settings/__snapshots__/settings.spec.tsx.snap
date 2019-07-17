@@ -14,7 +14,8 @@ exports[`Settings renders tabs correctly general 1`] = `
         active={true}
       >
         <Link
-          href="some/path/general"
+          as="some/path/general"
+          href="/settings?appSlug=some-app&selectedTab=general"
         >
           <a>
             General
@@ -25,7 +26,8 @@ exports[`Settings renders tabs correctly general 1`] = `
         active={false}
       >
         <Link
-          href="some/path/notifications"
+          as="some/path/notifications"
+          href="/settings?appSlug=some-app&selectedTab=notifications"
         >
           <a>
             Notifications
@@ -61,7 +63,8 @@ exports[`Settings renders tabs correctly notifications 1`] = `
         active={false}
       >
         <Link
-          href="some/path/general"
+          as="some/path/general"
+          href="/settings?appSlug=some-app&selectedTab=general"
         >
           <a>
             General
@@ -72,7 +75,8 @@ exports[`Settings renders tabs correctly notifications 1`] = `
         active={true}
       >
         <Link
-          href="some/path/notifications"
+          as="some/path/notifications"
+          href="/settings?appSlug=some-app&selectedTab=notifications"
         >
           <a>
             Notifications
@@ -89,7 +93,9 @@ exports[`Settings renders tabs correctly notifications 1`] = `
   <Base
     maxWidth={960}
   >
-    <Connect(NotificationSettings) />
+    <Connect(NotificationSettings)
+      appSlug="some-app"
+    />
   </Base>
 </Base>
 `;
@@ -108,7 +114,8 @@ exports[`Settings renders tabs correctly other 1`] = `
         active={false}
       >
         <Link
-          href="some/path/general"
+          as="some/path/general"
+          href="/settings?appSlug=some-app&selectedTab=general"
         >
           <a>
             General
@@ -119,7 +126,8 @@ exports[`Settings renders tabs correctly other 1`] = `
         active={false}
       >
         <Link
-          href="some/path/notifications"
+          as="some/path/notifications"
+          href="/settings?appSlug=some-app&selectedTab=notifications"
         >
           <a>
             Notifications

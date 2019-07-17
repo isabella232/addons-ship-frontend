@@ -3,11 +3,17 @@ import { connect } from 'react-redux';
 import isEqual from 'lodash/isEqual';
 
 import { AppContact } from '@/models/settings';
+import { RootState } from '@/store';
+import { addAppContact, updateAppContact, deleteAppContact } from '@/ducks/settings';
 
 import View from './view';
 
 type Props = {
+  appSlug: string;
   appContacts: AppContact[];
+  addAppContact: typeof addAppContact;
+  updateAppContact: typeof updateAppContact;
+  deleteAppContact: typeof deleteAppContact;
 };
 
 type State = {
@@ -21,8 +27,18 @@ export class NotificationSettings extends React.Component<Props, State> {
     updatedAppContacts: this.props.appContacts
   };
 
+  componentDidUpdate({ appContacts: prevAppContacts }: Props) {
+    const { appContacts } = this.props;
+
+    if (prevAppContacts.length !== appContacts.length) {
+      this.setState({ updatedAppContacts: appContacts, hasModifications: false });
+    }
+  }
+
   onAddEmail = (email: string) => {
-    console.log('onAddEmail', email);
+    const { appSlug, addAppContact } = this.props;
+
+    addAppContact(appSlug, email);
   };
 
   onNotificationPreferenceChanged = (email: string, key: string, value: boolean) => {
@@ -30,6 +46,7 @@ export class NotificationSettings extends React.Component<Props, State> {
       if (contact.email === email) {
         return {
           ...contact,
+          isMarkedForUpdate: true,
           notificationPreferences: {
             ...contact.notificationPreferences,
             [key]: value
@@ -50,7 +67,8 @@ export class NotificationSettings extends React.Component<Props, State> {
       if (contact.email === email) {
         return {
           ...contact,
-          isMarkedForDelete: true
+          isMarkedForDelete: true,
+          isMarkedForUpdate: false
         };
       }
 
@@ -61,7 +79,24 @@ export class NotificationSettings extends React.Component<Props, State> {
   };
 
   onSave = () => {
-    console.log('onSave');
+    const { appSlug, updateAppContact, deleteAppContact } = this.props;
+    const { updatedAppContacts, hasModifications } = this.state;
+
+    if (!hasModifications) return;
+
+    updatedAppContacts
+      .filter(({ isMarkedForUpdate, isMarkedForDelete }) => isMarkedForUpdate || isMarkedForDelete)
+      .forEach(({ isMarkedForUpdate, isMarkedForDelete, ...appContact }) => {
+        if (isMarkedForUpdate) {
+          updateAppContact(appSlug, appContact);
+        }
+
+        if (isMarkedForDelete) {
+          deleteAppContact(appSlug, appContact);
+        }
+      });
+
+    this.setState({ hasModifications: false });
   };
 
   onCancel = () => {
@@ -86,34 +121,11 @@ export class NotificationSettings extends React.Component<Props, State> {
   }
 }
 
-export default connect(() => ({
-  appContacts: [
-    {
-      email: 'gergo.ovari@bitrise.io',
-      isConfirmed: true,
-      notificationPreferences: {
-        newVersion: true,
-        successfulPublish: true,
-        failedPublish: true
-      }
-    },
-    {
-      email: 'jozsef.eros@bitrise.io',
-      isConfirmed: false,
-      notificationPreferences: {
-        newVersion: false,
-        successfulPublish: true,
-        failedPublish: true
-      }
-    },
-    {
-      email: 'gergely.bekesi@bitrise.io',
-      isConfirmed: true,
-      notificationPreferences: {
-        newVersion: true,
-        successfulPublish: false,
-        failedPublish: true
-      }
-    }
-  ]
-}))(NotificationSettings);
+const mapStateToProps = ({ settings: { appContacts } }: RootState) => ({ appContacts }),
+  mapDispatchToProps = { addAppContact, updateAppContact, deleteAppContact };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+  // @ts-ignore
+)(NotificationSettings);
