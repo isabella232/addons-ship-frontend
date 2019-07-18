@@ -122,7 +122,7 @@ export default ({
           {publishNotification(
             appVersion.appSlug,
             appVersion.id,
-            'failed',
+            latestEventStatus,
             readyForPublish,
             publishTarget,
             settingsPath,
