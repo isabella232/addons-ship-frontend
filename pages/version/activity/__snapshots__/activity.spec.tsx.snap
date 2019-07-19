@@ -57,7 +57,7 @@ exports[`ActivityView when a test failed renders entry with download log button 
         <TableCell
           width="200px"
         >
-          2018 09 26 02:42:31
+          2018 09 26 12:42:31
         </TableCell>
         <TableCell>
           <Flex
@@ -126,7 +126,7 @@ exports[`ActivityView when a test is in progress renders entry without download 
         <TableCell
           width="200px"
         >
-          2018 09 22 02:42:31
+          2018 09 22 12:42:31
         </TableCell>
         <TableCell>
           <Flex
@@ -179,7 +179,7 @@ exports[`ActivityView when a test is successful renders entry without download l
         <TableCell
           width="200px"
         >
-          2018 09 20 02:42:31
+          2018 09 20 12:42:31
         </TableCell>
         <TableCell>
           <Flex
@@ -232,7 +232,7 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
         <TableCell
           width="200px"
         >
-          2018 09 20 02:42:31
+          2018 09 20 12:42:31
         </TableCell>
         <TableCell>
           <Flex
@@ -262,7 +262,7 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
         <TableCell
           width="200px"
         >
-          2018 09 22 02:42:31
+          2018 09 22 12:42:31
         </TableCell>
         <TableCell>
           <Flex
@@ -292,7 +292,7 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
         <TableCell
           width="200px"
         >
-          2018 09 26 02:42:31
+          2018 09 26 12:42:31
         </TableCell>
         <TableCell>
           <Flex
@@ -361,7 +361,7 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
         <TableCell
           width="200px"
         >
-          2018 09 20 02:42:31
+          2018 09 20 12:42:31
         </TableCell>
         <TableCell>
           <Flex
@@ -391,7 +391,7 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
         <TableCell
           width="200px"
         >
-          2018 09 22 02:42:31
+          2018 09 22 12:42:31
         </TableCell>
         <TableCell>
           <Flex
@@ -421,7 +421,7 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
         <TableCell
           width="200px"
         >
-          2018 09 26 02:42:31
+          2018 09 26 12:42:31
         </TableCell>
         <TableCell>
           <Flex
