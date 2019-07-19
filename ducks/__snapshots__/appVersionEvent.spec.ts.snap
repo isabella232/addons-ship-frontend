@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`appVersion fetchAppVersionEvents can't fetch app version events 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_GET_EVENTS_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_GET_EVENTS_ERROR",
+  },
+]
+`;
+
+exports[`appVersion fetchAppVersionEvents fetches app version events 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_GET_EVENTS_NEXT",
+  },
+  Object {
+    "payload": Array [],
+    "type": "APP_VERSION_GET_EVENTS_COMPLETE",
+  },
+]
+`;
+
+exports[`appVersion reducer loads app version events 1`] = `
+Array [
+  Object {
+    "createdAt": 2018-09-20T12:42:31.000Z,
+    "id": "1234",
+    "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
+    "status": "finished",
+    "text": "Event finished successfully!",
+    "updatedAt": 2018-09-21T12:42:31.000Z,
+  },
+  Object {
+    "createdAt": 2018-09-22T12:42:31.000Z,
+    "id": "1234",
+    "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
+    "status": "in-progress",
+    "text": "Doing something...",
+    "updatedAt": 2018-09-25T12:42:31.000Z,
+  },
+  Object {
+    "createdAt": 2018-09-26T12:42:31.000Z,
+    "id": "1234",
+    "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
+    "status": "failed",
+    "text": "An error occured.",
+    "updatedAt": 2018-09-27T12:42:31.000Z,
+  },
+]
+`;

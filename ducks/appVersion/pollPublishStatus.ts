@@ -31,7 +31,7 @@ export const pollPublishStatusEpic = (
     ofType(pollPublishStatus.start),
     exhaustMap(({ payload }) =>
       interval(1000).pipe(
-        mergeMap(() => shipApi.getAppVersionEvents(payload)),
+        mergeMap(() => shipApi.getAppVersionEvents(payload.appSlug, payload.id as string)),
         map(events => pollPublishStatus.complete(events)),
         takeUntil(action$.pipe(ofType(pollPublishStatus.cancel)))
       )

@@ -5,5 +5,6 @@ module.exports = {
   },
   testPathIgnorePatterns: ['/node_modules/', '.next'],
   setupFilesAfterEnv: ['<rootDir>/setupEnzyme.js'],
-  setupFiles: ['jest-canvas-mock']
+  setupFiles: ['jest-canvas-mock'],
+  globalSetup: './jestGlobalSetup.js'
 };

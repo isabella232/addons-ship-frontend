@@ -1,10 +1,10 @@
-import { AppVersion } from '@/models';
+import { AppVersion, AppVersionEvent } from '@/models';
 import { Settings } from '@/models/settings';
 import { TestDevice } from '@/models/test-device';
 
 export const mockAppVersions: AppVersion[] = [
   {
-    id: 123,
+    id: '123',
     appSlug: 'app-slug-123',
     version: '1.0.3',
     platform: 'ios',
@@ -33,7 +33,7 @@ export const mockAppVersions: AppVersion[] = [
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
-    id: 456,
+    id: '456',
     appSlug: 'app-slug-456',
     version: '1.0.3',
     platform: 'ios',
@@ -62,7 +62,7 @@ export const mockAppVersions: AppVersion[] = [
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
-    id: 789,
+    id: '789',
     appSlug: 'app-slug-789',
     version: '1.0.3',
     platform: 'ios',
@@ -91,7 +91,7 @@ export const mockAppVersions: AppVersion[] = [
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
-    id: 135,
+    id: '135',
     appSlug: 'app-slug-135',
     version: '1.0.2',
     platform: 'ios',
@@ -120,7 +120,7 @@ export const mockAppVersions: AppVersion[] = [
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
   },
   {
-    id: 246,
+    id: '246',
     appSlug: 'app-slug-246',
     version: '1.0.2',
     platform: 'ios',
@@ -152,7 +152,7 @@ export const mockAppVersions: AppVersion[] = [
 
 export const mockAppVersion = mockAppVersions[0];
 export const mockAppVersionWithoutPublicPage = {
-  id: 123,
+  id: '123',
   appSlug: 'app-slug-123',
   version: '1.0.3',
   platform: 'ios',
@@ -182,7 +182,7 @@ export const mockAppVersionWithoutPublicPage = {
 };
 
 export const mockAndroidAppVersion = {
-  id: 123,
+  id: '123',
   appSlug: 'app-slug-123',
   version: '1.0.3',
   platform: 'android',
@@ -243,3 +243,36 @@ export const mockSettings: Settings = {
   keystoreFiles: keystoreFiles,
   serviceAccountJsonFiles: serviceAccountJsonFiles
 };
+
+export const mockFinishedAppVersionEvent: AppVersionEvent = {
+  id: '1234',
+  status: 'finished',
+  text: 'Event finished successfully!',
+  createdAt: new Date('2018-09-20T12:42:31Z'),
+  updatedAt: new Date('2018-09-21T12:42:31Z'),
+  logDownloadUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg'
+};
+
+export const mockInProgressAppVersionEvent: AppVersionEvent = {
+  id: '1234',
+  status: 'in-progress',
+  text: 'Doing something...',
+  createdAt: new Date('2018-09-22T12:42:31Z'),
+  updatedAt: new Date('2018-09-25T12:42:31Z'),
+  logDownloadUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg'
+};
+
+export const mockFailedAppVersionEvent: AppVersionEvent = {
+  id: '1234',
+  status: 'failed',
+  text: 'An error occured.',
+  createdAt: new Date('2018-09-26T12:42:31Z'),
+  updatedAt: new Date('2018-09-27T12:42:31Z'),
+  logDownloadUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg'
+};
+
+export const mockAppVersionEvents: AppVersionEvent[] = [
+  mockFinishedAppVersionEvent,
+  mockInProgressAppVersionEvent,
+  mockFailedAppVersionEvent
+];

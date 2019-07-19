@@ -12,6 +12,8 @@ import { fetchSettings } from '@/ducks/settings';
 
 import Details from './details';
 import Devices from './devices';
+import Activity from './activity';
+import fetchAppVersionEvents from '@/ducks/appVersion/fetchAppVersionEvents';
 
 interface VersionPageProps extends AppVersionPageQuery {
   appVersion: AppVersion;
@@ -43,6 +45,9 @@ export class VersionPage extends Component<VersionPageProps> {
       case 'devices':
         promises.push(store.dispatch(fetchTestDevices(appSlug) as any));
         break;
+      case 'activity':
+        promises.push(store.dispatch(fetchAppVersionEvents(appSlug, versionId) as any));
+        break;
     }
 
     await Promise.all(promises);
@@ -58,6 +63,8 @@ export class VersionPage extends Component<VersionPageProps> {
         return <Details />;
       case 'devices':
         return <Devices />;
+      case 'activity':
+        return <Activity />;
       default:
         return <h1>{selectedTab}</h1>;
     }

@@ -37,6 +37,7 @@ describe('AppVersionDetailsView', () => {
     isPublishInProgress: false,
     publishTarget: 'App Store Connect',
     settingsPath: '/path',
+    activityPath: '/path',
     latestEventStatus: null
   };
 
