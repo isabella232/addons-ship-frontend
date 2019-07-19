@@ -152,7 +152,7 @@ export const mockAppVersions: AppVersion[] = [
 
 export const mockAppVersion = mockAppVersions[0];
 export const mockAppVersionWithoutPublicPage = {
-  id: 123,
+  id: '123',
   appSlug: 'app-slug-123',
   version: '1.0.3',
   platform: 'ios',
@@ -182,7 +182,7 @@ export const mockAppVersionWithoutPublicPage = {
 };
 
 export const mockAndroidAppVersion = {
-  id: 123,
+  id: '123',
   appSlug: 'app-slug-123',
   version: '1.0.3',
   platform: 'android',

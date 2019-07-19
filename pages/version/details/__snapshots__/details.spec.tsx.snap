@@ -130,7 +130,7 @@ Object {
     "description": "Some semi-long description",
     "distributionType": "development",
     "iconUrl": "http://placekitten.com/160/160",
-    "id": 123,
+    "id": "123",
     "keywords": "Keywords",
     "lastUpdate": 2018-09-22T12:42:31.000Z,
     "marketingUrl": "https://bitrise.io/marketing",
@@ -167,7 +167,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
       "certificateExpires": 2018-09-22T12:42:31.000Z,
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -281,7 +281,7 @@ exports[`AppVersionDetails disables install button when device is from different
       "certificateExpires": 2018-09-22T12:42:31.000Z,
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -395,7 +395,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
       "certificateExpires": 2018-09-22T12:42:31.000Z,
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -511,7 +511,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -624,7 +624,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       "certificateExpires": 2018-09-22T12:42:31.000Z,
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -738,7 +738,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       "certificateExpires": 2018-09-22T12:42:31.000Z,
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -854,7 +854,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -967,7 +967,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
       "certificateExpires": 2018-09-22T12:42:31.000Z,
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -1079,24 +1079,25 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                   }
                 >
                   <Notification
+                    icon="Deployment"
                     margin="x2"
-                    type="alert"
+                    type="inform"
                   >
                     <Flex
                       alignChildrenVertical="middle"
-                      className="Notification Notification--type-alert"
+                      className="Notification Notification--type-inform"
                       direction="horizontal"
                       gap="x2"
                       margin="x2"
                       padding="x3"
                     >
                       <Base
-                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
                         margin="x2"
                         padding="x3"
                       >
                         <div
-                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
                           style={
                             Object {
                               "height": undefined,
@@ -1122,7 +1123,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 }
                               >
                                 <Icon
-                                  name="CloseSmall"
+                                  name="Deployment"
                                   size="1.5rem"
                                 >
                                   <Base
@@ -1153,16 +1154,10 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                           viewBox="0 0 24 24"
                                           width="100%"
                                         >
-                                          <defs>
-                                            <path
-                                              d="M12.01 10.608L16.618 6l1.402 1.402-4.608 4.608 4.608 4.608-1.402 1.402-4.608-4.608-4.608 4.608L6 16.618l4.608-4.608L6 7.402 7.402 6z"
-                                              id="icons-close-small_svg__a"
-                                            />
-                                          </defs>
-                                          <use
+                                          <path
+                                            d="M13.67 19.27l-3.366 3.368-1.698-1.697 1.253-3.799-2.545-2.545-3.799 1.252-1.697-1.697 3.367-3.367.135-.135a1 1 0 0 1 1.414 0l1.015 1.015c1.43-2.433 4.037-5.792 4.682-6.428 2.454-2.42 8.32-2.457 8.782-1.994.463.463.44 6.348-1.994 8.782-.64.64-3.77 3.478-6.2 4.91l.786.786a1 1 0 0 1 0 1.415l-.134.134zm-2.12-3.804c.584-.303 1.325-.785 2.163-1.405 1.505-1.112 3.346-2.704 4.092-3.45.714-.714 1.27-2.2 1.516-3.989.077-.56.118-1.118.125-1.609-.49.007-1.044.05-1.602.127-1.789.248-3.283.805-4.01 1.521-.441.436-2.028 2.488-3.204 4.212a28.106 28.106 0 0 0-1.414 2.259l.205.205 2.129 2.129zm-4.654.397l1.697 1.697-2.525 2.525c-.39.39-.955.389-1.695-.002-.391-.74-.392-1.305-.002-1.695l2.525-2.525zM15.85 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
                                             fill="currentColor"
                                             fillRule="evenodd"
-                                            xlinkHref="#icons-close-small_svg__a"
                                           />
                                         </svg>
                                       </Component>
@@ -1190,19 +1185,8 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                   }
                                 }
                               >
-                                Publish has failed. See the error log at the
-                                 
-                                <Link
-                                  as="/path"
-                                  href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
-                                >
-                                  <a
-                                    href="/path"
-                                    onClick={[Function]}
-                                  >
-                                    Activity tab
-                                  </a>
-                                </Link>
+                                App is ready for publishing to 
+                                Google Play Store
                                 .
                               </div>
                             </Base>
@@ -1719,7 +1703,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                           "certificateExpires": 2018-09-22T12:42:31.000Z,
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
-                          "id": 123,
+                          "id": "123",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
                           "minimumSdk": "26",
@@ -4988,7 +4972,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -5099,24 +5083,25 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                   }
                 >
                   <Notification
+                    icon="Deployment"
                     margin="x2"
-                    type="alert"
+                    type="inform"
                   >
                     <Flex
                       alignChildrenVertical="middle"
-                      className="Notification Notification--type-alert"
+                      className="Notification Notification--type-inform"
                       direction="horizontal"
                       gap="x2"
                       margin="x2"
                       padding="x3"
                     >
                       <Base
-                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
                         margin="x2"
                         padding="x3"
                       >
                         <div
-                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
                           style={
                             Object {
                               "height": undefined,
@@ -5142,7 +5127,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 }
                               >
                                 <Icon
-                                  name="CloseSmall"
+                                  name="Deployment"
                                   size="1.5rem"
                                 >
                                   <Base
@@ -5173,16 +5158,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                           viewBox="0 0 24 24"
                                           width="100%"
                                         >
-                                          <defs>
-                                            <path
-                                              d="M12.01 10.608L16.618 6l1.402 1.402-4.608 4.608 4.608 4.608-1.402 1.402-4.608-4.608-4.608 4.608L6 16.618l4.608-4.608L6 7.402 7.402 6z"
-                                              id="icons-close-small_svg__a"
-                                            />
-                                          </defs>
-                                          <use
+                                          <path
+                                            d="M13.67 19.27l-3.366 3.368-1.698-1.697 1.253-3.799-2.545-2.545-3.799 1.252-1.697-1.697 3.367-3.367.135-.135a1 1 0 0 1 1.414 0l1.015 1.015c1.43-2.433 4.037-5.792 4.682-6.428 2.454-2.42 8.32-2.457 8.782-1.994.463.463.44 6.348-1.994 8.782-.64.64-3.77 3.478-6.2 4.91l.786.786a1 1 0 0 1 0 1.415l-.134.134zm-2.12-3.804c.584-.303 1.325-.785 2.163-1.405 1.505-1.112 3.346-2.704 4.092-3.45.714-.714 1.27-2.2 1.516-3.989.077-.56.118-1.118.125-1.609-.49.007-1.044.05-1.602.127-1.789.248-3.283.805-4.01 1.521-.441.436-2.028 2.488-3.204 4.212a28.106 28.106 0 0 0-1.414 2.259l.205.205 2.129 2.129zm-4.654.397l1.697 1.697-2.525 2.525c-.39.39-.955.389-1.695-.002-.391-.74-.392-1.305-.002-1.695l2.525-2.525zM15.85 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
                                             fill="currentColor"
                                             fillRule="evenodd"
-                                            xlinkHref="#icons-close-small_svg__a"
                                           />
                                         </svg>
                                       </Component>
@@ -5210,19 +5189,8 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                   }
                                 }
                               >
-                                Publish has failed. See the error log at the
-                                 
-                                <Link
-                                  as="/path"
-                                  href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
-                                >
-                                  <a
-                                    href="/path"
-                                    onClick={[Function]}
-                                  >
-                                    Activity tab
-                                  </a>
-                                </Link>
+                                App is ready for publishing to 
+                                App Store Connect
                                 .
                               </div>
                             </Base>
@@ -5741,7 +5709,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           "description": "Some semi-long description",
                           "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
-                          "id": 123,
+                          "id": "123",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -9330,7 +9298,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -10076,7 +10044,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           "description": "Some semi-long description",
                           "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
-                          "id": 123,
+                          "id": "123",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -13665,7 +13633,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -13776,24 +13744,25 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                   }
                 >
                   <Notification
+                    icon="Deployment"
                     margin="x2"
-                    type="alert"
+                    type="inform"
                   >
                     <Flex
                       alignChildrenVertical="middle"
-                      className="Notification Notification--type-alert"
+                      className="Notification Notification--type-inform"
                       direction="horizontal"
                       gap="x2"
                       margin="x2"
                       padding="x3"
                     >
                       <Base
-                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
                         margin="x2"
                         padding="x3"
                       >
                         <div
-                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
                           style={
                             Object {
                               "height": undefined,
@@ -13819,7 +13788,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 }
                               >
                                 <Icon
-                                  name="CloseSmall"
+                                  name="Deployment"
                                   size="1.5rem"
                                 >
                                   <Base
@@ -13850,16 +13819,10 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                           viewBox="0 0 24 24"
                                           width="100%"
                                         >
-                                          <defs>
-                                            <path
-                                              d="M12.01 10.608L16.618 6l1.402 1.402-4.608 4.608 4.608 4.608-1.402 1.402-4.608-4.608-4.608 4.608L6 16.618l4.608-4.608L6 7.402 7.402 6z"
-                                              id="icons-close-small_svg__a"
-                                            />
-                                          </defs>
-                                          <use
+                                          <path
+                                            d="M13.67 19.27l-3.366 3.368-1.698-1.697 1.253-3.799-2.545-2.545-3.799 1.252-1.697-1.697 3.367-3.367.135-.135a1 1 0 0 1 1.414 0l1.015 1.015c1.43-2.433 4.037-5.792 4.682-6.428 2.454-2.42 8.32-2.457 8.782-1.994.463.463.44 6.348-1.994 8.782-.64.64-3.77 3.478-6.2 4.91l.786.786a1 1 0 0 1 0 1.415l-.134.134zm-2.12-3.804c.584-.303 1.325-.785 2.163-1.405 1.505-1.112 3.346-2.704 4.092-3.45.714-.714 1.27-2.2 1.516-3.989.077-.56.118-1.118.125-1.609-.49.007-1.044.05-1.602.127-1.789.248-3.283.805-4.01 1.521-.441.436-2.028 2.488-3.204 4.212a28.106 28.106 0 0 0-1.414 2.259l.205.205 2.129 2.129zm-4.654.397l1.697 1.697-2.525 2.525c-.39.39-.955.389-1.695-.002-.391-.74-.392-1.305-.002-1.695l2.525-2.525zM15.85 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
                                             fill="currentColor"
                                             fillRule="evenodd"
-                                            xlinkHref="#icons-close-small_svg__a"
                                           />
                                         </svg>
                                       </Component>
@@ -13887,19 +13850,8 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                   }
                                 }
                               >
-                                Publish has failed. See the error log at the
-                                 
-                                <Link
-                                  as="/path"
-                                  href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
-                                >
-                                  <a
-                                    href="/path"
-                                    onClick={[Function]}
-                                  >
-                                    Activity tab
-                                  </a>
-                                </Link>
+                                App is ready for publishing to 
+                                App Store Connect
                                 .
                               </div>
                             </Base>
@@ -14418,7 +14370,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           "description": "Some semi-long description",
                           "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
-                          "id": 123,
+                          "id": "123",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -17925,7 +17877,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
               "description": "Some semi-long description",
               "distributionType": "development",
               "iconUrl": "http://placekitten.com/160/160",
-              "id": 123,
+              "id": "123",
               "keywords": "Keywords",
               "lastUpdate": 2018-09-22T12:42:31.000Z,
               "marketingUrl": "https://bitrise.io/marketing",
@@ -18003,18 +17955,10 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
     >
       <Notification
         margin="x2"
-        type="alert"
+        type="success"
       >
-        Publish has failed. See the error log at the
-         
-        <Link
-          as="/path"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
-        >
-          <a>
-            Activity tab
-          </a>
-        </Link>
+        Your app has been successfully published to 
+        App Store Connect
         .
       </Notification>
     </Flex>
@@ -18131,7 +18075,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
               "description": "Some semi-long description",
               "distributionType": "development",
               "iconUrl": "http://placekitten.com/160/160",
-              "id": 123,
+              "id": "123",
               "keywords": "Keywords",
               "lastUpdate": 2018-09-22T12:42:31.000Z,
               "marketingUrl": "https://bitrise.io/marketing",
@@ -18212,7 +18156,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -18324,23 +18268,23 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                 >
                   <Notification
                     margin="x2"
-                    type="alert"
+                    type="progress"
                   >
                     <Flex
                       alignChildrenVertical="middle"
-                      className="Notification Notification--type-alert"
+                      className="Notification Notification--type-progress"
                       direction="horizontal"
                       gap="x2"
                       margin="x2"
                       padding="x3"
                     >
                       <Base
-                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-progress"
                         margin="x2"
                         padding="x3"
                       >
                         <div
-                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-progress"
                           style={
                             Object {
                               "height": undefined,
@@ -18365,19 +18309,18 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                   }
                                 }
                               >
-                                <Icon
-                                  name="CloseSmall"
+                                <ProgressSpinner
                                   size="1.5rem"
                                 >
                                   <Base
                                     Component="svg"
-                                    className="Icon"
+                                    className="ProgressSpinner"
                                     height="1.5rem"
                                     viewBox="0 0 24 24"
                                     width="1.5rem"
                                   >
                                     <svg
-                                      className="Base Icon"
+                                      className="Base ProgressSpinner"
                                       style={
                                         Object {
                                           "height": "1.5rem",
@@ -18388,31 +18331,39 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                       }
                                       viewBox="0 0 24 24"
                                     >
-                                      <Component
-                                        height="100%"
-                                        width="100%"
+                                      <circle
+                                        cx={12}
+                                        cy={12}
+                                        fill="transparent"
+                                        r={8}
+                                        stroke="currentColor"
+                                        strokeDasharray={50.26548245743669}
+                                        strokeWidth="2px"
+                                        transform="rotate(-90 12 12)"
                                       >
-                                        <svg
-                                          height="100%"
-                                          viewBox="0 0 24 24"
-                                          width="100%"
-                                        >
-                                          <defs>
-                                            <path
-                                              d="M12.01 10.608L16.618 6l1.402 1.402-4.608 4.608 4.608 4.608-1.402 1.402-4.608-4.608-4.608 4.608L6 16.618l4.608-4.608L6 7.402 7.402 6z"
-                                              id="icons-close-small_svg__a"
-                                            />
-                                          </defs>
-                                          <use
-                                            fill="currentColor"
-                                            fillRule="evenodd"
-                                            xlinkHref="#icons-close-small_svg__a"
-                                          />
-                                        </svg>
-                                      </Component>
+                                        <animate
+                                          attributeName="stroke-dashoffset"
+                                          calcMode="spline"
+                                          dur="2000ms"
+                                          fill="freeze"
+                                          keySplines="0.4 0 0.2 1"
+                                          repeatCount="indefinite"
+                                          values="150.79644737231007;50.26548245743669"
+                                        />
+                                        <animateTransform
+                                          attributeName="transform"
+                                          calcMode="spline"
+                                          dur="2000ms"
+                                          fill="freeze"
+                                          keySplines="0.4 0 0.2 1"
+                                          repeatCount="indefinite"
+                                          type="rotate"
+                                          values="-90 12 12;270 12 12"
+                                        />
+                                      </circle>
                                     </svg>
                                   </Base>
-                                </Icon>
+                                </ProgressSpinner>
                               </div>
                             </Base>
                           </Flex>
@@ -18434,20 +18385,9 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                   }
                                 }
                               >
-                                Publish has failed. See the error log at the
-                                 
-                                <Link
-                                  as="/path"
-                                  href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
-                                >
-                                  <a
-                                    href="/path"
-                                    onClick={[Function]}
-                                  >
-                                    Activity tab
-                                  </a>
-                                </Link>
-                                .
+                                Publishing to 
+                                App Store Connect
+                                 is in progress.
                               </div>
                             </Base>
                           </Flex>
@@ -18965,7 +18905,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           "description": "Some semi-long description",
                           "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
-                          "id": 123,
+                          "id": "123",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -22554,7 +22494,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
-      "id": 123,
+      "id": "123",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -22665,24 +22605,25 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                   }
                 >
                   <Notification
+                    icon="Deployment"
                     margin="x2"
-                    type="alert"
+                    type="inform"
                   >
                     <Flex
                       alignChildrenVertical="middle"
-                      className="Notification Notification--type-alert"
+                      className="Notification Notification--type-inform"
                       direction="horizontal"
                       gap="x2"
                       margin="x2"
                       padding="x3"
                     >
                       <Base
-                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
                         margin="x2"
                         padding="x3"
                       >
                         <div
-                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
                           style={
                             Object {
                               "height": undefined,
@@ -22708,7 +22649,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 }
                               >
                                 <Icon
-                                  name="CloseSmall"
+                                  name="Deployment"
                                   size="1.5rem"
                                 >
                                   <Base
@@ -22739,16 +22680,10 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                           viewBox="0 0 24 24"
                                           width="100%"
                                         >
-                                          <defs>
-                                            <path
-                                              d="M12.01 10.608L16.618 6l1.402 1.402-4.608 4.608 4.608 4.608-1.402 1.402-4.608-4.608-4.608 4.608L6 16.618l4.608-4.608L6 7.402 7.402 6z"
-                                              id="icons-close-small_svg__a"
-                                            />
-                                          </defs>
-                                          <use
+                                          <path
+                                            d="M13.67 19.27l-3.366 3.368-1.698-1.697 1.253-3.799-2.545-2.545-3.799 1.252-1.697-1.697 3.367-3.367.135-.135a1 1 0 0 1 1.414 0l1.015 1.015c1.43-2.433 4.037-5.792 4.682-6.428 2.454-2.42 8.32-2.457 8.782-1.994.463.463.44 6.348-1.994 8.782-.64.64-3.77 3.478-6.2 4.91l.786.786a1 1 0 0 1 0 1.415l-.134.134zm-2.12-3.804c.584-.303 1.325-.785 2.163-1.405 1.505-1.112 3.346-2.704 4.092-3.45.714-.714 1.27-2.2 1.516-3.989.077-.56.118-1.118.125-1.609-.49.007-1.044.05-1.602.127-1.789.248-3.283.805-4.01 1.521-.441.436-2.028 2.488-3.204 4.212a28.106 28.106 0 0 0-1.414 2.259l.205.205 2.129 2.129zm-4.654.397l1.697 1.697-2.525 2.525c-.39.39-.955.389-1.695-.002-.391-.74-.392-1.305-.002-1.695l2.525-2.525zM15.85 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
                                             fill="currentColor"
                                             fillRule="evenodd"
-                                            xlinkHref="#icons-close-small_svg__a"
                                           />
                                         </svg>
                                       </Component>
@@ -22776,19 +22711,8 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                   }
                                 }
                               >
-                                Publish has failed. See the error log at the
-                                 
-                                <Link
-                                  as="/path"
-                                  href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
-                                >
-                                  <a
-                                    href="/path"
-                                    onClick={[Function]}
-                                  >
-                                    Activity tab
-                                  </a>
-                                </Link>
+                                App is ready for publishing to 
+                                App Store Connect
                                 .
                               </div>
                             </Base>
@@ -23307,7 +23231,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           "description": "Some semi-long description",
                           "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
-                          "id": 123,
+                          "id": "123",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
