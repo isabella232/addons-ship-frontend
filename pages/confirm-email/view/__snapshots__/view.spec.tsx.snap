@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirm Email View NotificationSetting when it's off 1`] = `
+<Flex
+  direction="horizontal"
+>
+  <Icon
+    color="red-3"
+    name="CloseSmall"
+    size="1.5rem"
+  />
+  <Text
+    color="gray-7"
+    paddingHorizontal="x2"
+    size="x3"
+  >
+    when it's off
+  </Text>
+</Flex>
+`;
+
+exports[`Confirm Email View NotificationSetting when it's on 1`] = `
+<Flex
+  direction="horizontal"
+>
+  <Icon
+    color="green-3"
+    name="Tick"
+    size="1.5rem"
+  />
+  <Text
+    color="gray-7"
+    paddingHorizontal="x2"
+    size="x3"
+  >
+    when it's on
+  </Text>
+</Flex>
+`;
+
+exports[`Confirm Email View it renders without errors on desktop 1`] = `
+<div
+  className="container"
+>
+  <Flex
+    alignChildrenHorizontal="middle"
+    direction="vertical"
+    paddingHorizontal="x4"
+    paddingVertical="x16"
+  >
+    <Text
+      align="middle"
+      color="grape-5"
+      size="x5"
+      weight="bold"
+    >
+      You confirmed to get notifications
+    </Text>
+    <Text
+      color="gray-8"
+      margin="x2"
+      size="x3"
+    >
+      Now you will get activity updates of this app:
+    </Text>
+    <Card
+      margin="x8"
+      width="420px"
+    >
+      <CardContent
+        alignChildrenVertical="middle"
+        direction="horizontal"
+        padding="x3"
+      >
+        <Image
+          src="some-img.url"
+          width="28px"
+        />
+        <Flex
+          grow={true}
+        >
+          <Text
+            color="gray-6"
+            paddingHorizontal="x3"
+            size="x3"
+            weight="bold"
+          >
+            Super App
+          </Text>
+        </Flex>
+        <Text
+          color="gray-7"
+          size="x2"
+          uppercase={true}
+        >
+          ios
+        </Text>
+      </CardContent>
+    </Card>
+    <Text
+      color="gray-7"
+      size="x3"
+      weight="bold"
+    >
+      Notification Settings:
+    </Text>
+    <div>
+      <NotificationSetting
+        isEnabled={true}
+      >
+        New app version
+      </NotificationSetting>
+      <NotificationSetting
+        isEnabled={false}
+      >
+        Successful publish
+      </NotificationSetting>
+      <NotificationSetting
+        isEnabled={true}
+      >
+        Failed publish
+      </NotificationSetting>
+    </div>
+    <Link
+      as="/apps/test-app-slug-1"
+      href="/app?appSlug=test-app-slug-1"
+    >
+      <Button
+        Component="a"
+        level="primary"
+        margin="x10"
+        size="medium"
+      >
+        View App
+      </Button>
+    </Link>
+  </Flex>
+</div>
+`;
+
+exports[`Confirm Email View it renders without errors on mobile 1`] = `
+<div
+  className="container"
+>
+  <Flex
+    alignChildrenHorizontal="middle"
+    direction="vertical"
+    paddingHorizontal="x4"
+    paddingVertical="x8"
+  >
+    <Text
+      align="middle"
+      color="grape-5"
+      size="x5"
+      weight="bold"
+    >
+      You confirmed to get notifications
+    </Text>
+    <Text
+      color="gray-8"
+      margin="x2"
+      size="x3"
+    >
+      Now you will get activity updates of this app:
+    </Text>
+    <Card
+      margin="x8"
+      width="100%"
+    >
+      <CardContent
+        alignChildrenVertical="middle"
+        direction="horizontal"
+        padding="x3"
+      >
+        <Image
+          src="some-img.url"
+          width="28px"
+        />
+        <Flex
+          grow={true}
+        >
+          <Text
+            color="gray-6"
+            paddingHorizontal="x3"
+            size="x3"
+            weight="bold"
+          >
+            Super App
+          </Text>
+        </Flex>
+        <Text
+          color="gray-7"
+          size="x2"
+          uppercase={true}
+        >
+          ios
+        </Text>
+      </CardContent>
+    </Card>
+    <Text
+      color="gray-7"
+      size="x3"
+      weight="bold"
+    >
+      Notification Settings:
+    </Text>
+    <div>
+      <NotificationSetting
+        isEnabled={true}
+      >
+        New app version
+      </NotificationSetting>
+      <NotificationSetting
+        isEnabled={false}
+      >
+        Successful publish
+      </NotificationSetting>
+      <NotificationSetting
+        isEnabled={true}
+      >
+        Failed publish
+      </NotificationSetting>
+    </div>
+    <Link
+      as="/apps/test-app-slug-1"
+      href="/app?appSlug=test-app-slug-1"
+    >
+      <Button
+        Component="a"
+        level="primary"
+        margin="x10"
+        size="medium"
+      >
+        View App
+      </Button>
+    </Link>
+  </Flex>
+</div>
+`;
