@@ -12,6 +12,24 @@ Object {
 }
 `;
 
+exports[`Ship API service confirmEmail calls the API with the confirm token 1`] = `
+Object {
+  "app": Object {
+    "appSlug": "app-slug",
+    "id": "app-id",
+  },
+  "appContact": Object {
+    "email": "some-email",
+    "id": "app-contact-id",
+    "notificationPreferences": Object {
+      "failedPublish": false,
+      "newVersion": true,
+      "successfulPublish": false,
+    },
+  },
+}
+`;
+
 exports[`Ship API service getAppVersion fetches a version for an app 1`] = `
 Object {
   "appSlug": "an-app-slug",
