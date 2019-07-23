@@ -6,13 +6,13 @@ const getHeaders = (token: string) => ({
 
 interface RequestParams extends RequestInit {
   url: string;
-  token: string;
+  token?: string;
 }
 
 export const request = ({ url, method, token, body }: RequestParams) =>
   fetch(url, {
     method,
-    headers: getHeaders(token),
+    headers: token ? getHeaders(token) : undefined,
     body
   }).then(res => {
     if (!res.ok) {
