@@ -2,8 +2,9 @@ import { shipApiConfig } from '@/config';
 import { AppVersion, AppVersionEvent } from '@/models';
 import { APIConfig } from '@/models/services';
 import { Uploadable } from '@/models/uploadable';
+import { App } from '@/models/app';
 import { snakifyKeys, camelizeKeys, camelizeKeysDeep } from '@/utils';
-import { patch, post, get, put, del } from '@/utils/request';
+import { patch, post, get, put, del, request } from '@/utils/request';
 import { mockSettings } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
@@ -180,6 +181,15 @@ export class ShipAPIService {
     const url = `${this.config.url}/apps/${appSlug}/contacts/${appContact.id}`;
 
     await del(url, this.token);
+  }
+
+  async confirmEmail(confirmToken: string): Promise<{ app: App; appContact: AppContact }> {
+    const url = `${this.config.url}/confirm_email`,
+      body = JSON.stringify({ confirmation_token: confirmToken });
+
+    const { data } = await request({ url, method: 'PATCH', body }).then(res => res.json());
+
+    return camelizeKeysDeep(data);
   }
 }
 
