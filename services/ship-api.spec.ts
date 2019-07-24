@@ -1,7 +1,7 @@
 jest.mock('@/utils/request');
 
 import { Uploadable } from '@/models/uploadable';
-import { patch, post, get, put, del } from '@/utils/request';
+import { patch, post, get, put, del, request } from '@/utils/request';
 import { mockAppVersion, mockSettings } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
@@ -12,7 +12,7 @@ describe('Ship API service', () => {
   let api: ShipAPIService;
   beforeEach(() => {
     api = new ShipAPIService({ url: apiUrl });
-    ([patch, post, get, put, del] as jest.Mock[]).forEach(m => m.mockReset());
+    ([patch, post, get, put, del, request] as jest.Mock[]).forEach(m => m.mockReset());
   });
 
   const testTokenNotSet = (fn: Function) => {
@@ -332,6 +332,31 @@ describe('Ship API service', () => {
       await api.deleteAppContact(appSlug, { id: appContactId } as AppContact);
 
       expect(del).toHaveBeenCalledWith(url, token);
+    });
+  });
+
+  describe('confirmEmail', () => {
+    it('calls the API with the confirm token', async () => {
+      (request as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: {
+            app: { id: 'app-id', app_slug: 'app-slug' },
+            app_contact: {
+              id: 'app-contact-id',
+              email: 'some-email',
+              notification_preferences: { new_version: true, failed_publish: false, successful_publish: false }
+            }
+          }
+        })
+      });
+
+      const confirmToken = 'a-noice-confirm-token',
+        url = `${apiUrl}/confirm_email`;
+
+      const response = await api.confirmEmail(confirmToken);
+
+      expect(request).toHaveBeenCalledWith({ url, method: 'PATCH', body: `{"confirmation_token":"${confirmToken}"}` });
+      expect(response).toMatchSnapshot();
     });
   });
 });

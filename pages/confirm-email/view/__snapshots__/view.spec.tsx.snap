@@ -88,13 +88,6 @@ exports[`Confirm Email View it renders without errors on desktop 1`] = `
             Super App
           </Text>
         </Flex>
-        <Text
-          color="gray-7"
-          size="x2"
-          uppercase={true}
-        >
-          ios
-        </Text>
       </CardContent>
     </Card>
     <Text
@@ -188,13 +181,6 @@ exports[`Confirm Email View it renders without errors on mobile 1`] = `
             Super App
           </Text>
         </Flex>
-        <Text
-          color="gray-7"
-          size="x2"
-          uppercase={true}
-        >
-          ios
-        </Text>
       </CardContent>
     </Card>
     <Text

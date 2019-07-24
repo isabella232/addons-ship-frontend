@@ -49,4 +49,14 @@ describe('request', () => {
 
     await expect(request.get('some-url', 'a-token')).rejects.toThrowError('500: Internal Server Error');
   });
+
+  it('should only include auth header when token was set', async () => {
+    ((fetch as unknown) as jest.Mock).mockResolvedValueOnce({ ok: true });
+
+    const url = 'some.url',
+      method = 'get';
+    await request.request({ url, method });
+
+    expect(fetch).toHaveBeenCalledWith(url, { method });
+  });
 });
