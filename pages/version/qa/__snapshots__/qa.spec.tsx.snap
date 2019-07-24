@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QA tab it renders without errors on desktop 1`] = `
+<Flex
+  alignChildrenHorizontal="middle"
+  direction="vertical"
+  paddingVertical="x16"
+>
+  <Flex
+    alignChildrenHorizontal="middle"
+    direction="vertical"
+    maxWidth="730px"
+  >
+    <Text
+      color="grape-4"
+      size="x6"
+      weight="bold"
+    >
+      Feature coming soon! 🚀
+    </Text>
+    <Text
+      align="middle"
+      color="gray-7"
+      margin="x5"
+      size="x3"
+    >
+      We are planning to extend Ship's functionality with more collaboration options for stakeholders in the project (QA, engineers, product managers, designers and so on) and also to support gated releases. Please let us know what you would like to see on this tab.
+    </Text>
+    <Base
+      backgroundColor="grape-1"
+      borderRadius="x2"
+      padding="x5"
+    >
+      <Text
+        Component="a"
+        color="grape-3"
+        href="https://discuss.bitrise.io/c/feature-request/ship"
+        size="x4"
+        target="_blank"
+        weight="bold"
+      >
+        https://discuss.bitrise.io/c/feature-request/ship
+      </Text>
+    </Base>
+  </Flex>
+</Flex>
+`;
+
+exports[`QA tab it renders without errors on mobile 1`] = `
+<Flex
+  alignChildrenHorizontal="middle"
+  direction="vertical"
+  paddingVertical="x16"
+>
+  <Flex
+    alignChildrenHorizontal="middle"
+    direction="vertical"
+    maxWidth="90%"
+  >
+    <Text
+      color="grape-4"
+      size="x4"
+      weight="bold"
+    >
+      Feature coming soon! 🚀
+    </Text>
+    <Text
+      align="middle"
+      color="gray-7"
+      margin="x5"
+      size="x3"
+    >
+      We are planning to extend Ship's functionality with more collaboration options for stakeholders in the project (QA, engineers, product managers, designers and so on) and also to support gated releases. Please let us know what you would like to see on this tab.
+    </Text>
+    <Base
+      backgroundColor="grape-1"
+      borderRadius="x2"
+      padding="x5"
+    >
+      <Text
+        Component="a"
+        color="grape-3"
+        href="https://discuss.bitrise.io/c/feature-request/ship"
+        size="x3"
+        target="_blank"
+        weight="bold"
+      >
+        https://discuss.bitrise.io/c/feature-request/ship
+      </Text>
+    </Base>
+  </Flex>
+</Flex>
+`;

@@ -40,6 +40,79 @@ Object {
 }
 `;
 
+exports[`AppVersion renders the activity tab correctly 1`] = `
+<Base
+  paddingVertical="x10"
+>
+  <Base
+    maxWidth={960}
+  >
+    <Tabs
+      gap="x10"
+    >
+      <Tab
+        active={false}
+      >
+        <Link
+          as="some/path/details"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+        >
+          <a>
+            Details
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={false}
+      >
+        <Link
+          as="some/path/devices"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+        >
+          <a>
+            Devices
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={false}
+      >
+        <Link
+          as="some/path/qa"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+        >
+          <a>
+            Qa
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={true}
+      >
+        <Link
+          as="some/path/activity"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+        >
+          <a>
+            Activity
+          </a>
+        </Link>
+      </Tab>
+    </Tabs>
+  </Base>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    width="0.125rem"
+  />
+  <Base
+    maxWidth={960}
+  >
+    <Connect(Activity) />
+  </Base>
+</Base>
+`;
+
 exports[`AppVersion renders the details tab correctly 1`] = `
 <Base
   paddingVertical="x10"
@@ -78,11 +151,11 @@ exports[`AppVersion renders the details tab correctly 1`] = `
         active={false}
       >
         <Link
-          as="some/path/test"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=test"
+          as="some/path/qa"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
         >
           <a>
-            Test
+            Qa
           </a>
         </Link>
       </Tab>
@@ -151,11 +224,11 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
         active={false}
       >
         <Link
-          as="some/path/test"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=test"
+          as="some/path/qa"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
         >
           <a>
-            Test
+            Qa
           </a>
         </Link>
       </Tab>
@@ -224,11 +297,11 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
         active={false}
       >
         <Link
-          as="some/path/test"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=test"
+          as="some/path/qa"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
         >
           <a>
-            Test
+            Qa
           </a>
         </Link>
       </Tab>
@@ -257,6 +330,79 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
     <h1>
       whateever
     </h1>
+  </Base>
+</Base>
+`;
+
+exports[`AppVersion renders the qa tab correctly 1`] = `
+<Base
+  paddingVertical="x10"
+>
+  <Base
+    maxWidth={960}
+  >
+    <Tabs
+      gap="x10"
+    >
+      <Tab
+        active={false}
+      >
+        <Link
+          as="some/path/details"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+        >
+          <a>
+            Details
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={false}
+      >
+        <Link
+          as="some/path/devices"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+        >
+          <a>
+            Devices
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={true}
+      >
+        <Link
+          as="some/path/qa"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+        >
+          <a>
+            Qa
+          </a>
+        </Link>
+      </Tab>
+      <Tab
+        active={false}
+      >
+        <Link
+          as="some/path/activity"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+        >
+          <a>
+            Activity
+          </a>
+        </Link>
+      </Tab>
+    </Tabs>
+  </Base>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    width="0.125rem"
+  />
+  <Base
+    maxWidth={960}
+  >
+    <_default />
   </Base>
 </Base>
 `;

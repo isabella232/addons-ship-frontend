@@ -7,7 +7,7 @@ export type AppVersionProps = {
   versionId: string;
 };
 
-export const AppVersionPageTabs = ['details', 'devices', 'test', 'activity'];
+export const AppVersionPageTabs = ['details', 'devices', 'qa', 'activity'];
 
 export const MaximumNumberOfCertificates = 30;
 

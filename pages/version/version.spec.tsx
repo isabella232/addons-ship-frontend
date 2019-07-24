@@ -14,42 +14,34 @@ import { VersionPage } from '.';
 import fetchAppVersionEvents from '@/ducks/appVersion/fetchAppVersionEvents';
 
 describe('AppVersion', () => {
+  const defaultProps = {
+    appVersion: mockAppVersion,
+    appSlug: 'some-app',
+    versionId: 'a-version-id',
+    pagePath: 'some/path'
+  };
   it('renders the details tab correctly', () => {
-    const tree = toJSON(
-      shallow(
-        <VersionPage appVersion={mockAppVersion} appSlug="some-app" versionId="a-version-id" pagePath="some/path" />
-      )
-    );
+    const tree = toJSON(shallow(<VersionPage {...defaultProps} />));
     expect(tree).toMatchSnapshot();
   });
 
   it('renders the devices tab correctly', () => {
-    const tree = toJSON(
-      shallow(
-        <VersionPage
-          appVersion={mockAppVersion}
-          appSlug="some-app"
-          versionId="a-version-id"
-          pagePath="some/path"
-          selectedTab="devices"
-        />
-      )
-    );
+    const tree = toJSON(shallow(<VersionPage {...defaultProps} selectedTab="devices" />));
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders the qa tab correctly', () => {
+    const tree = toJSON(shallow(<VersionPage {...defaultProps} selectedTab="qa" />));
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders the activity tab correctly', () => {
+    const tree = toJSON(shallow(<VersionPage {...defaultProps} selectedTab="activity" />));
     expect(tree).toMatchSnapshot();
   });
 
   it('renders the other tabs correctly', () => {
-    const tree = toJSON(
-      shallow(
-        <VersionPage
-          appVersion={mockAppVersion}
-          appSlug="some-app"
-          versionId="a-version-id"
-          pagePath="some/path"
-          selectedTab="whateever"
-        />
-      )
-    );
+    const tree = toJSON(shallow(<VersionPage {...defaultProps} selectedTab="whateever" />));
     expect(tree).toMatchSnapshot();
   });
 
