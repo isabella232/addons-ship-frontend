@@ -29,14 +29,14 @@ describe('Confirm Email', () => {
     }
   };
 
-  describe('it renders without errors', () => {
+  describe('it renders without exceptions', () => {
     test('when it has everything loaded', () => {
       const tree = shallowToJson(shallow(<ConfirmEmail {...defaultProps} />));
 
       expect(tree).toMatchSnapshot();
     });
 
-    test('when there was an error', () => {
+    test('when there is an error message to show', () => {
       const tree = shallowToJson(shallow(<ConfirmEmail error="Ouchie!" />));
 
       expect(tree).toMatchSnapshot();

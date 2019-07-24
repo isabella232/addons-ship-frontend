@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Confirm Email it renders without errors when it has everything loaded 1`] = `
+exports[`Confirm Email it renders without exceptions when it has everything loaded 1`] = `
 <_default
   appIconUrl="avatarl.url"
   appSlug="app-slug"
@@ -22,7 +22,7 @@ exports[`Confirm Email it renders without errors when it has everything loaded 1
 />
 `;
 
-exports[`Confirm Email it renders without errors when there was an error 1`] = `
+exports[`Confirm Email it renders without exceptions when there is an error message to show 1`] = `
 <Flex
   alignChildrenHorizontal="middle"
   padding="x16"
