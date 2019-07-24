@@ -9,11 +9,12 @@ import { RootState } from '@/store';
 import { fetchAppVersion } from '@/ducks/appVersion';
 import { fetchTestDevices } from '@/ducks/testDevices';
 import { fetchSettings } from '@/ducks/settings';
+import fetchAppVersionEvents from '@/ducks/appVersion/fetchAppVersionEvents';
 
 import Details from './details';
 import Devices from './devices';
 import Activity from './activity';
-import fetchAppVersionEvents from '@/ducks/appVersion/fetchAppVersionEvents';
+import QA from './qa';
 
 interface VersionPageProps extends AppVersionPageQuery {
   appVersion: AppVersion;
@@ -65,6 +66,8 @@ export class VersionPage extends Component<VersionPageProps> {
         return <Devices />;
       case 'activity':
         return <Activity />;
+      case 'qa':
+        return <QA />;
       default:
         return <h1>{selectedTab}</h1>;
     }
@@ -91,7 +94,7 @@ export class VersionPage extends Component<VersionPageProps> {
           <Tabs gap="x10">
             {tab('details')}
             {tab('devices')}
-            {tab('test')}
+            {tab('qa')}
             {tab('activity')}
           </Tabs>
         </Base>
