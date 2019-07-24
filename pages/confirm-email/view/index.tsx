@@ -10,7 +10,6 @@ export type Props = {
   appSlug: string;
   appIconUrl: string;
   appTitle: string;
-  platform: string;
   notificationPreferences: AppContact['notificationPreferences'];
 };
 
@@ -27,7 +26,6 @@ export default ({
   appSlug,
   appIconUrl,
   appTitle,
-  platform,
   notificationPreferences: { newVersion, successfulPublish, failedPublish }
 }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
@@ -56,9 +54,6 @@ export default ({
                 {appTitle}
               </Text>
             </Flex>
-            <Text size="x2" color="gray-7" uppercase>
-              {platform}
-            </Text>
           </CardContent>
         </Card>
 

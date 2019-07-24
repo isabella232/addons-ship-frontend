@@ -11,7 +11,6 @@ describe('Confirm Email View', () => {
     appSlug: 'test-app-slug-1',
     appIconUrl: 'some-img.url',
     appTitle: 'Super App',
-    platform: 'ios',
     notificationPreferences: {
       failedPublish: true,
       newVersion: true,

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirm Email it renders without errors when it has everything loaded 1`] = `
+<_default
+  appIconUrl="avatarl.url"
+  appSlug="app-slug"
+  appTitle="The Best App Ever"
+  avatarUrl="avatarl.url"
+  email="bit.bot@bitrise.io"
+  id="bit-bot"
+  isConfirmed={true}
+  notificationPreferences={
+    Object {
+      "failedPublish": true,
+      "newVersion": true,
+      "successfulPublish": true,
+    }
+  }
+  plan="gold"
+  projectType="ios"
+  title="The Best App Ever"
+/>
+`;
+
+exports[`Confirm Email it renders without errors when there was an error 1`] = `
+<Flex
+  alignChildrenHorizontal="middle"
+  padding="x16"
+>
+  <Notification
+    type="alert"
+  >
+    Ouchie!
+  </Notification>
+</Flex>
+`;
