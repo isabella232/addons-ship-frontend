@@ -1,0 +1,6 @@
+@import '~@/assets/style/colors';
+
+.container :global(.Checkbox__input:checked + .Checkbox__indicator) {
+  border-color: $eggplant;
+  background: $grape-4;
+}

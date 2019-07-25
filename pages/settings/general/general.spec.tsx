@@ -154,6 +154,18 @@ describe('GeneralView', () => {
       });
     });
   });
+
+  test('when includeBitCode is changed', () => {
+    const mockOnSettingsPropertyChange = jest.fn() as any;
+    const tree = mount(<GeneralView {...defaultProps} onSettingsPropertyChange={mockOnSettingsPropertyChange} />);
+
+    tree
+      .find(`input[name="includeBitCode"]`)
+      .last()
+      .simulate('change', { target: { checked: true } });
+
+    expect(mockOnSettingsPropertyChange).toHaveBeenCalledWith('iosSettings', 'includeBitCode', true);
+  });
 });
 
 describe('General', () => {

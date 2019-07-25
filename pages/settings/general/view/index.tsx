@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import {
   Base,
   Button,
+  Checkbox,
   Divider,
   Flex,
   Grid,
@@ -25,6 +26,8 @@ import {
   ServiceAccountJsonFile
 } from '@/models/settings';
 import { mediaQuery } from '@/utils/media';
+
+import css from './style.scss';
 
 type Props = {
   maximumNumberOfCertificates: number;
@@ -69,7 +72,7 @@ export default ({
   const [isDesktop] = mediaQuery('60rem');
 
   return (
-    <Base paddingVertical="x8" maxWidth={isDesktop ? '100%' : 660}>
+    <Base paddingVertical="x8" maxWidth={isDesktop ? '100%' : 660} className={css.container}>
       <Base paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
         {hasIosSettings && iosSettings && (
           <Fragment>
@@ -168,6 +171,17 @@ export default ({
                     </InputContainer>
                   </Flex>
                 </Grid>
+              </Base>
+              <Base>
+                <Checkbox
+                  name="includeBitCode"
+                  checked={iosSettings.includeBitCode}
+                  onChange={(event: any) =>
+                    onSettingsPropertyChange('iosSettings', 'includeBitCode', event.target.checked)
+                  }
+                >
+                  Include bitcode
+                </Checkbox>
               </Base>
             </Base>
 

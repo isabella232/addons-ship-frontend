@@ -12,6 +12,7 @@ export type IosSettings = {
   appSpecificPassword: string;
   selectedProvProfile: any;
   selectedCertificate: any;
+  includeBitCode: boolean;
 };
 
 export type AndroidSettings = {
