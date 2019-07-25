@@ -1,29 +1,30 @@
+import { Fragment } from 'react';
 import {
   Base,
-  Text,
+  Button,
   Divider,
   Flex,
-  InputLabel,
+  Grid,
   Icon,
   Input,
   InputContainer,
-  Grid,
+  InputContent,
+  InputLabel,
   Link,
   RadioButton,
-  Tooltip,
-  Button
+  Text,
+  Tooltip
 } from '@bitrise/bitkit';
 
 import {
-  ProvProfile,
+  AndroidSettings,
   Certificate,
-  KeystoreFile,
-  ServiceAccountJsonFile,
   IosSettings,
-  AndroidSettings
+  KeystoreFile,
+  ProvProfile,
+  ServiceAccountJsonFile
 } from '@/models/settings';
 import { mediaQuery } from '@/utils/media';
-import { Fragment } from 'react';
 
 type Props = {
   maximumNumberOfCertificates: number;
@@ -102,23 +103,29 @@ export default ({
                       )}
                     </Flex>
                     <InputContainer>
-                      <Input
-                        name="artifactExposingWorkflows"
-                        onChange={(event: any) =>
-                          onSettingsPropertyChange('iosSettings', 'artifactExposingWorkflows', event.target.value)
-                        }
-                        value={iosSettings.artifactExposingWorkflows}
-                      />
+                      <InputContent>
+                        <Input
+                          name="artifactExposingWorkflows"
+                          onChange={(event: any) =>
+                            onSettingsPropertyChange('iosSettings', 'artifactExposingWorkflows', event.target.value)
+                          }
+                          value={iosSettings.artifactExposingWorkflows}
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                   <Flex>
                     <InputLabel margin="x1">App SKU</InputLabel>
                     <InputContainer>
-                      <Input
-                        name="appSku"
-                        onChange={(event: any) => onSettingsPropertyChange('iosSettings', 'appSku', event.target.value)}
-                        value={iosSettings.appSku}
-                      />
+                      <InputContent>
+                        <Input
+                          name="appSku"
+                          onChange={(event: any) =>
+                            onSettingsPropertyChange('iosSettings', 'appSku', event.target.value)
+                          }
+                          value={iosSettings.appSku}
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                 </Grid>
@@ -135,25 +142,29 @@ export default ({
                   <Flex>
                     <InputLabel margin="x1">Apple Developer Account Email</InputLabel>
                     <InputContainer>
-                      <Input
-                        name="appleDeveloperAccountEmail"
-                        onChange={(event: any) =>
-                          onSettingsPropertyChange('iosSettings', 'appleDeveloperAccountEmail', event.target.value)
-                        }
-                        value={iosSettings.appleDeveloperAccountEmail}
-                      />
+                      <InputContent>
+                        <Input
+                          name="appleDeveloperAccountEmail"
+                          onChange={(event: any) =>
+                            onSettingsPropertyChange('iosSettings', 'appleDeveloperAccountEmail', event.target.value)
+                          }
+                          value={iosSettings.appleDeveloperAccountEmail}
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                   <Flex>
                     <InputLabel margin="x1">App Specific Password</InputLabel>
                     <InputContainer>
-                      <Input
-                        name="appSpecificPassword"
-                        onChange={(event: any) =>
-                          onSettingsPropertyChange('iosSettings', 'appSpecificPassword', event.target.value)
-                        }
-                        value={iosSettings.appSpecificPassword}
-                      />
+                      <InputContent>
+                        <Input
+                          name="appSpecificPassword"
+                          onChange={(event: any) =>
+                            onSettingsPropertyChange('iosSettings', 'appSpecificPassword', event.target.value)
+                          }
+                          value={iosSettings.appSpecificPassword}
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                 </Grid>
@@ -275,25 +286,29 @@ export default ({
                       )}
                     </Flex>
                     <InputContainer>
-                      <Input
-                        name="artifactExposingWorkflows"
-                        onChange={(event: any) =>
-                          onSettingsPropertyChange('androidSettings', 'artifactExposingWorkflows', event.target.value)
-                        }
-                        value={androidSettings.artifactExposingWorkflows}
-                      />
+                      <InputContent>
+                        <Input
+                          name="artifactExposingWorkflows"
+                          onChange={(event: any) =>
+                            onSettingsPropertyChange('androidSettings', 'artifactExposingWorkflows', event.target.value)
+                          }
+                          value={androidSettings.artifactExposingWorkflows}
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                   <Flex>
                     <InputLabel margin="x1">Track</InputLabel>
                     <InputContainer>
-                      <Input
-                        name="track"
-                        onChange={(event: any) =>
-                          onSettingsPropertyChange('androidSettings', 'track', event.target.value)
-                        }
-                        value={androidSettings.track}
-                      />
+                      <InputContent>
+                        <Input
+                          name="track"
+                          onChange={(event: any) =>
+                            onSettingsPropertyChange('androidSettings', 'track', event.target.value)
+                          }
+                          value={androidSettings.track}
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                 </Grid>
