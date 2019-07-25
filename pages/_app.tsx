@@ -16,6 +16,7 @@ interface ShipAppProps extends DefaultAppIProps {
   appSlug: string;
   appName: string;
   token: string;
+  settingsOnboardingSeen: boolean;
 }
 
 interface Context extends NextContext {
@@ -31,19 +32,26 @@ class ShipApp extends App<ShipAppProps> {
     ready: false
   };
   static async getInitialProps({ Component, ctx }: AppContext) {
-    let { 'auth-token': token } = nookies.get(ctx);
+    let { 'auth-token': token, 'settings-onboarding-seen': settingsOnboardingSeen } = nookies.get(ctx);
     token = token || 'test-api-token-1';
+    settingsOnboardingSeen = settingsOnboardingSeen || 'false';
 
     // Set the token on the server side
     await ctx.store.dispatch(setToken(token) as any);
 
     const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
 
-    return { pageProps, appSlug: 'my-super-app', appName: 'My Super App', token };
+    return {
+      pageProps,
+      appSlug: 'my-super-app',
+      appName: 'My Super App',
+      token,
+      settingsOnboardingSeen: settingsOnboardingSeen === 'true'
+    };
   }
 
   async componentDidMount() {
-    const { token, store } = this.props;
+    const { token, store, settingsOnboardingSeen } = this.props;
 
     // Set token on the client side too
     await store.dispatch(setToken(token) as any);
@@ -52,6 +60,13 @@ class ShipApp extends App<ShipAppProps> {
     const { Beam } = require('@bitrise/beam');
     const { appSlug, appName } = this.props;
 
+    if (!settingsOnboardingSeen) {
+      nookies.set(undefined, 'settings-onboarding-seen', 'true', {
+        maxAge: 1000 * 24 * 60 * 60,
+        path: '/',
+      });
+    }
+
     Beam.init({
       app_name: appName,
       app_slug: appSlug
@@ -59,7 +74,7 @@ class ShipApp extends App<ShipAppProps> {
   }
 
   render() {
-    const { Component, pageProps, store } = this.props;
+    const { Component, pageProps, store, settingsOnboardingSeen } = this.props;
     const { ready } = this.state;
 
     if (!ready) {
@@ -75,12 +90,17 @@ class ShipApp extends App<ShipAppProps> {
         <Provider store={store}>
           <Component {...pageProps} />
         </Provider>
-        <Notification type="inform" icon="Lightbulb">
-          <Text size="x3" weight="bold" margin="x1">Setup Publishing</Text>
-          <Text>
-            We really recommend you to setup publishing as a first step. You only need to do this once per application, then you will be able to publish all versions to App Store Connect or Google Play Console.
-          </Text>
-        </Notification>
+        {!settingsOnboardingSeen && (
+          <Notification type="inform" icon="Lightbulb">
+            <Text size="x3" weight="bold" margin="x1">
+              Setup Publishing
+            </Text>
+            <Text>
+              We really recommend you to setup publishing as a first step. You only need to do this once per
+              application, then you will be able to publish all versions to App Store Connect or Google Play Console.
+            </Text>
+          </Notification>
+        )}
       </Container>
     );
   }
