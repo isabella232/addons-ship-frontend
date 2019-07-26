@@ -91,11 +91,13 @@ export class General extends Component<Props> {
     });
   }
 
-  onSettingsPropertyChange = (settings: 'iosSettings' | 'androidSettings', settingsProperty: string, value: string) => {
-    let updatedSettings = {};
-    updatedSettings[settings] = { ...this.state[settings] };
-    updatedSettings[settings][settingsProperty] = value;
-    this.setState(updatedSettings);
+  onSettingsPropertyChange = (key: 'iosSettings' | 'androidSettings', settingsProperty: string, value: string) => {
+    this.setState({
+      [key]: {
+        ...this.state[key],
+        [settingsProperty]: value
+      }
+    });
   };
 
   onWorkflowChange = (platform: Platform, workflow: string) => {

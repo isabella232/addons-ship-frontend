@@ -292,7 +292,7 @@ export default ({
                     <InputContainer>
                       <InputContent>
                         <Input
-                          name="artifactExposingWorkflows"
+                          name="androidWorkflow"
                           onChange={(event: any) => onWorkflowChange('android', event.target.value)}
                           value={androidWorkflow}
                         />

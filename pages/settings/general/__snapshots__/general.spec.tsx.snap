@@ -69,6 +69,29 @@ Object {
 }
 `;
 
+exports[`General onSettingsPropertyChange 1`] = `
+Object {
+  "androidSettings": Object {
+    "selectedKeystoreFile": "abcdefghijkl1234567",
+    "selectedServiceAccount": "abcdefghijkl12345671566",
+    "track": "Release",
+  },
+  "androidWorkflow": "All",
+  "hasAndroidSettings": true,
+  "hasIosSettings": true,
+  "hasMounted": true,
+  "iosSettings": Object {
+    "appSku": "some-vlaue",
+    "appSpecificPassword": "Fill",
+    "appleDeveloperAccountEmail": "Fill",
+    "includeBitCode": true,
+    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
+    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
+  },
+  "iosWorkflow": "All",
+}
+`;
+
 exports[`General renders correctly 1`] = `
 <_default
   androidSettings={
@@ -197,7 +220,7 @@ exports[`GeneralView when there are no Android settings does not render Android 
             <InputContainer>
               <InputContent>
                 <Input
-                  name="artifactExposingWorkflows"
+                  name="iosWorkflow"
                   onChange={[Function]}
                   value="All"
                 />
@@ -565,7 +588,7 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
             <InputContainer>
               <InputContent>
                 <Input
-                  name="artifactExposingWorkflows"
+                  name="androidWorkflow"
                   onChange={[Function]}
                   value="All"
                 />
@@ -875,7 +898,7 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
             <InputContainer>
               <InputContent>
                 <Input
-                  name="artifactExposingWorkflows"
+                  name="iosWorkflow"
                   onChange={[Function]}
                   value="All"
                 />
@@ -1207,7 +1230,7 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
             <InputContainer>
               <InputContent>
                 <Input
-                  name="artifactExposingWorkflows"
+                  name="androidWorkflow"
                   onChange={[Function]}
                   value="All"
                 />
@@ -1517,7 +1540,7 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
             <InputContainer>
               <InputContent>
                 <Input
-                  name="artifactExposingWorkflows"
+                  name="iosWorkflow"
                   onChange={[Function]}
                   value="All"
                 />
@@ -1849,7 +1872,7 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
             <InputContainer>
               <InputContent>
                 <Input
-                  name="artifactExposingWorkflows"
+                  name="androidWorkflow"
                   onChange={[Function]}
                   value="All"
                 />

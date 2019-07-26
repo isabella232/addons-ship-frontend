@@ -170,7 +170,7 @@ describe('GeneralView', () => {
   });
 });
 
-describe.only('General', () => {
+describe('General', () => {
   const defaultProps = {
     appSlug: 'some-app-slug',
     appVersion: mockAppVersion,
@@ -188,7 +188,7 @@ describe.only('General', () => {
     it('sets the state correctly for ios', () => {
       const settings: Settings = { ...mockSettings, projectType: 'ios' };
       const wrapper = shallow(<General {...defaultProps} settings={settings} />);
-      expect(wrapper.instance().state).toMatchSnapshot();
+      expect(wrapper.state()).toMatchSnapshot();
     });
 
     it('sets the state correctly for android', () => {
@@ -200,8 +200,26 @@ describe.only('General', () => {
     it('sets the state correctly for other project types', () => {
       const settings: Settings = { ...mockSettings, projectType: 'other' };
       const wrapper = shallow(<General {...defaultProps} settings={settings} />);
-      expect(wrapper.instance().state).toMatchSnapshot();
+      expect(wrapper.state()).toMatchSnapshot();
     });
+
+    it('sets the default workflows correctly', () => {
+      const wrapper = shallow(
+        <General {...defaultProps} settings={{ ...mockSettings, iosWorkflow: '', androidWorkflow: '' }} />
+      );
+
+      expect(wrapper.state('iosWorkflow')).toBe('All');
+      expect(wrapper.state('androidWorkflow')).toBe('All');
+    });
+  });
+
+  test('onSettingsPropertyChange', () => {
+    (mediaQuery as jest.Mock).mockReturnValue([true]);
+    const wrapper = shallow(<General {...defaultProps} />);
+
+    (wrapper.instance() as General).onSettingsPropertyChange('iosSettings', 'appSku', 'some-vlaue');
+
+    expect(wrapper.state()).toMatchSnapshot();
   });
 
   it('triggers a save', () => {
@@ -217,7 +235,7 @@ describe.only('General', () => {
     expect(mockUpdateSettings).toHaveBeenCalled();
   });
 
-  it('triggers a state update when a form item is modified', () => {
+  it('triggers a state update when a form item is modified for ios', () => {
     const tree = mount(<General {...defaultProps} />);
 
     tree
@@ -226,6 +244,17 @@ describe.only('General', () => {
       .simulate('change', { target: { value: 'Primary' } });
 
     expect(tree.state('iosWorkflow')).toEqual('Primary');
+  });
+
+  it('triggers a state update when a form item is modified for android', () => {
+    const tree = mount(<General {...defaultProps} />);
+
+    tree
+      .find('input[name="androidWorkflow"]')
+      .first()
+      .simulate('change', { target: { value: 'Primary' } });
+
+    expect(tree.state('androidWorkflow')).toEqual('Primary');
   });
 
   it('triggers a state reset when cancel is selected', () => {
