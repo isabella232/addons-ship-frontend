@@ -136,12 +136,9 @@ export class General extends Component<Props> {
 
   onSave = () => {
     const { appSlug, updateSettings } = this.props;
-    const { iosSettings, androidSettings } = this.state;
+    const { iosWorkflow, androidWorkflow, iosSettings, androidSettings } = this.state;
 
-    updateSettings(appSlug, {
-      iosSettings,
-      androidSettings
-    } as Settings);
+    updateSettings(appSlug, { iosWorkflow, androidWorkflow, iosSettings, androidSettings } as Settings);
   };
 
   render() {

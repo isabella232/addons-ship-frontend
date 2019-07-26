@@ -42,7 +42,7 @@ export class SettingsPage extends Component<SettingsPageProps> {
 
     switch (selectedTab) {
       case 'general':
-        return <General />;
+        return <General appSlug={appSlug} />;
       case 'notifications':
         return <Notifications appSlug={appSlug} />;
       default:

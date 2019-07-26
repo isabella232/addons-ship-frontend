@@ -2,7 +2,7 @@ jest.mock('@/utils/request');
 
 import { Uploadable } from '@/models/uploadable';
 import { patch, post, get, put, del, request } from '@/utils/request';
-import { mockAppVersion, mockSettings } from '@/mocks';
+import { mockAppVersion } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
 import { ShipAPIService } from './ship-api';
@@ -165,13 +165,61 @@ describe('Ship API service', () => {
   });
 
   describe('updateSettings', () => {
-    testTokenNotSet(() => api.updateSettings({} as Settings));
+    testTokenNotSet(() => api.updateSettings('app-321', {} as Settings));
 
     it('updates settings for an app', async () => {
-      api.setToken('very-token');
-      const settings = await api.updateSettings(mockSettings);
+      (patch as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: {
+            ios_workflow: 'All',
+            android_workflow: 'All',
+            ios_settings: {
+              apple_developer_account_email: 'some.email@addr.ess',
+              app_sku: 'Fill',
+              app_specific_password: 'Fill',
+              selected_app_store_provisioning_profile: 'prov-profile-id',
+              selected_code_signing_identity: 'code-signing-identity-id',
+              include_bit_code: true
+            },
+            android_settings: {
+              track: 'Release',
+              selected_keystore_file: 'keystore-filename',
+              selected_service_account: 'service-account-filename'
+            }
+          }
+        })
+      });
 
-      // expect(fetch).toHaveBeenCalledWith(`/v0.1/apps/${appSlug}/settings`);
+      const appSlug = 'an-app-slug',
+        token = 'very-token';
+
+      api.setToken(token);
+
+      const url = `${apiUrl}/apps/${appSlug}/settings`;
+
+      const settings = await api.updateSettings(appSlug, {
+        iosWorkflow: 'All',
+        androidWorkflow: 'All',
+        iosSettings: {
+          appleDeveloperAccountEmail: 'some.email@addr.ess',
+          appSku: 'Fill',
+          appSpecificPassword: 'Fill',
+          selectedAppStoreProvisioningProfile: 'prov-profile-id',
+          selectedCodeSigningIdentity: 'code-signing-identity-id',
+          includeBitCode: true
+        },
+        androidSettings: {
+          track: 'Release',
+          selectedKeystoreFile: 'keystore-filename',
+          selectedServiceAccount: 'service-account-filename'
+        }
+      });
+
+      expect(patch).toHaveBeenCalledWith(
+        url,
+        token,
+        '{"ios_workflow":"All","android_workflow":"All","ios_settings":{"apple_developer_account_email":"some.email@addr.ess","app_sku":"Fill","app_specific_password":"Fill","selected_app_store_provisioning_profile":"prov-profile-id","selected_code_signing_identity":"code-signing-identity-id","include_bit_code":true},"android_settings":{"track":"Release","selected_keystore_file":"keystore-filename","selected_service_account":"service-account-filename"}}'
+      );
 
       expect(settings).toMatchSnapshot();
     });

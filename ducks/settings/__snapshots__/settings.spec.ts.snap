@@ -111,6 +111,8 @@ Object {
     },
   ],
   "settings": Object {
+    "androidWorkflow": "all",
+    "iosWorkflow": "all",
     "projectType": "other",
   },
 }
@@ -203,6 +205,8 @@ Object {
     },
   ],
   "settings": Object {
+    "androidWorkflow": "all",
+    "iosWorkflow": "all",
     "projectType": "other",
   },
 }
@@ -231,6 +235,8 @@ Object {
     },
   ],
   "settings": Object {
+    "androidWorkflow": "all",
+    "iosWorkflow": "all",
     "projectType": "other",
   },
 }
