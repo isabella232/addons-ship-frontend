@@ -25,7 +25,7 @@
   "license": "ISC",
   "dependencies": {
     "@bitrise/beam": "^0.1.6",
-    "@bitrise/bitkit": "^0.0.3",
+    "@bitrise/bitkit": "^0.0.4",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
