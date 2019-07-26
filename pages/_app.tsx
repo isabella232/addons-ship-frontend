@@ -8,6 +8,7 @@ import { ProgressBitbot, Base } from '@bitrise/bitkit';
 
 import makeStore from '../store';
 import { setToken } from '@/ducks/auth';
+import Header from '@/components/Header';
 
 import '@/assets/style/index.scss';
 
@@ -34,12 +35,14 @@ class ShipApp extends App<ShipAppProps> {
     let { 'auth-token': token } = nookies.get(ctx);
     token = token || 'test-api-token-1';
 
+    const { appSlug } = ctx.query;
+
     // Set the token on the server side
     await ctx.store.dispatch(setToken(token) as any);
 
     const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
 
-    return { pageProps, appSlug: 'my-super-app', appName: 'My Super App', token };
+    return { pageProps, appSlug, appName: 'My Super App', token };
   }
 
   async componentDidMount() {
@@ -49,13 +52,6 @@ class ShipApp extends App<ShipAppProps> {
     await store.dispatch(setToken(token) as any);
 
     this.setState({ ready: true });
-    const { Beam } = require('@bitrise/beam');
-    const { appSlug, appName } = this.props;
-
-    Beam.init({
-      app_name: appName,
-      app_slug: appSlug
-    });
   }
 
   render() {
@@ -73,6 +69,7 @@ class ShipApp extends App<ShipAppProps> {
     return (
       <Container>
         <Provider store={store}>
+          <Header />
           <Component {...pageProps} />
         </Provider>
       </Container>
