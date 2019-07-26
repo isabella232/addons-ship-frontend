@@ -66,53 +66,10 @@ Array [
 exports[`Ship API service getSettings fetches settings for an app 1`] = `
 Object {
   "androidSettings": Object {
-    "selectedKeystoreFile": "abcdefghijkl1234567",
-    "selectedServiceAccount": "abcdefghijkl12345671566",
-    "track": "Release",
+    "selectedKeystoreFile": "whatever",
+    "selectedServiceAccount": "does not matter",
   },
-  "androidWorkflow": "All",
-  "certificates": Array [
-    Object {
-      "name": "iPhone Developer: John Doe (ABCD1234)",
-    },
-    Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-  ],
-  "iosSettings": Object {
-    "appSku": "Fill",
-    "appSpecificPassword": "Fill",
-    "appleDeveloperAccountEmail": "Fill",
-    "includeBitCode": true,
-    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
-    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
-  },
-  "iosWorkflow": "All",
-  "keystoreFiles": Array [
-    Object {
-      "name": "abcdefghijkl1234567",
-    },
-    Object {
-      "name": "abcdefghijkl12345671566",
-    },
-  ],
   "projectType": "android",
-  "provProfiles": Array [
-    Object {
-      "name": "abcdefghijkl1234567",
-    },
-    Object {
-      "name": "abcdefghijkl12345671566",
-    },
-  ],
-  "serviceAccountJsonFiles": Array [
-    Object {
-      "name": "abcdefghijkl1234567",
-    },
-    Object {
-      "name": "abcdefghijkl12345671566",
-    },
-  ],
 }
 `;
 

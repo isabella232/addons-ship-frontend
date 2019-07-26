@@ -5,7 +5,6 @@ import { Uploadable } from '@/models/uploadable';
 import { App } from '@/models/app';
 import { snakifyKeys, camelizeKeys, camelizeKeysDeep, snakifyKeysDeep } from '@/utils';
 import { patch, post, get, put, del, request } from '@/utils/request';
-import { mockSettings } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
 export class ShipAPIService {
@@ -121,11 +120,9 @@ export class ShipAPIService {
 
     const url = `${this.config.url}/apps/${appSlug}/settings`;
 
-    const {
-      data: { project_type: projectType }
-    } = await get(url, this.token).then(res => res.json());
+    const { data } = await get(url, this.token).then(res => res.json());
 
-    return { ...mockSettings, projectType };
+    return camelizeKeysDeep(data);
   }
 
   async updateSettings(appSlug: string, settings: Settings): Promise<Settings> {

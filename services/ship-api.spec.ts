@@ -148,7 +148,13 @@ describe('Ship API service', () => {
     it('fetches settings for an app', async () => {
       (get as jest.Mock).mockResolvedValueOnce({
         json: () => ({
-          data: { project_type: 'android' }
+          data: {
+            project_type: 'android',
+            android_settings: {
+              selectedKeystoreFile: 'whatever',
+              selectedServiceAccount: 'does not matter'
+            }
+          }
         })
       });
 
