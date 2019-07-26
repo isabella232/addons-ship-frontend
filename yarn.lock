@@ -766,11 +766,6 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@bitrise/beam@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@bitrise/beam/-/beam-0.1.6.tgz#4cbd827ba056ac0058a91603b5bff47ae04e892f"
-  integrity sha512-/Z8WxJ/Q3OBiGUoMDi5AJrVrEX0yn/xgJ1S2CmrqMEFMmsYpftceDHuWKJHe1YIifYfXVtHVh73dTHZWDO2YSg==
-
 "@bitrise/bitkit@^0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@bitrise/bitkit/-/bitkit-0.0.4.tgz#0bb21f487f450ace9cc3e9d6655cd1c5e3d7c157"
