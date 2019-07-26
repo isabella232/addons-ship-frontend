@@ -3,15 +3,11 @@
 exports[`General configureSettingsFromProps sets the state correctly for android 1`] = `
 Object {
   "androidSettings": Object {
-    "artifactExposingWorkflows": "All",
-    "selectedKeystoreFile": Object {
-      "name": "abcdefghijkl1234567",
-    },
-    "selectedServiceAccountJsonFile": Object {
-      "name": "abcdefghijkl12345671566",
-    },
+    "selectedKeystoreFile": "abcdefghijkl1234567",
+    "selectedServiceAccount": "abcdefghijkl12345671566",
     "track": "Release",
   },
+  "androidWorkflow": "All",
   "hasAndroidSettings": true,
   "hasIosSettings": false,
   "hasMounted": true,
@@ -19,29 +15,22 @@ Object {
     "appSku": "Fill",
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
-    "artifactExposingWorkflows": "All",
-    "selectedCertificate": Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-    "selectedProvProfile": Object {
-      "name": "abcdefghijkl1234567",
-    },
+    "includeBitCode": true,
+    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
+    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
   },
+  "iosWorkflow": "All",
 }
 `;
 
 exports[`General configureSettingsFromProps sets the state correctly for ios 1`] = `
 Object {
   "androidSettings": Object {
-    "artifactExposingWorkflows": "All",
-    "selectedKeystoreFile": Object {
-      "name": "abcdefghijkl1234567",
-    },
-    "selectedServiceAccountJsonFile": Object {
-      "name": "abcdefghijkl12345671566",
-    },
+    "selectedKeystoreFile": "abcdefghijkl1234567",
+    "selectedServiceAccount": "abcdefghijkl12345671566",
     "track": "Release",
   },
+  "androidWorkflow": "All",
   "hasAndroidSettings": false,
   "hasIosSettings": true,
   "hasMounted": true,
@@ -49,29 +38,22 @@ Object {
     "appSku": "Fill",
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
-    "artifactExposingWorkflows": "All",
-    "selectedCertificate": Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-    "selectedProvProfile": Object {
-      "name": "abcdefghijkl1234567",
-    },
+    "includeBitCode": true,
+    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
+    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
   },
+  "iosWorkflow": "All",
 }
 `;
 
 exports[`General configureSettingsFromProps sets the state correctly for other project types 1`] = `
 Object {
   "androidSettings": Object {
-    "artifactExposingWorkflows": "All",
-    "selectedKeystoreFile": Object {
-      "name": "abcdefghijkl1234567",
-    },
-    "selectedServiceAccountJsonFile": Object {
-      "name": "abcdefghijkl12345671566",
-    },
+    "selectedKeystoreFile": "abcdefghijkl1234567",
+    "selectedServiceAccount": "abcdefghijkl12345671566",
     "track": "Release",
   },
+  "androidWorkflow": "All",
   "hasAndroidSettings": true,
   "hasIosSettings": true,
   "hasMounted": true,
@@ -79,14 +61,11 @@ Object {
     "appSku": "Fill",
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
-    "artifactExposingWorkflows": "All",
-    "selectedCertificate": Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-    "selectedProvProfile": Object {
-      "name": "abcdefghijkl1234567",
-    },
+    "includeBitCode": true,
+    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
+    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
   },
+  "iosWorkflow": "All",
 }
 `;
 
@@ -94,16 +73,12 @@ exports[`General renders correctly 1`] = `
 <_default
   androidSettings={
     Object {
-      "artifactExposingWorkflows": "All",
-      "selectedKeystoreFile": Object {
-        "name": "abcdefghijkl1234567",
-      },
-      "selectedServiceAccountJsonFile": Object {
-        "name": "abcdefghijkl12345671566",
-      },
+      "selectedKeystoreFile": "abcdefghijkl1234567",
+      "selectedServiceAccount": "abcdefghijkl12345671566",
       "track": "Release",
     }
   }
+  androidWorkflow="All"
   certificates={
     Array [
       Object {
@@ -122,15 +97,12 @@ exports[`General renders correctly 1`] = `
       "appSku": "Fill",
       "appSpecificPassword": "Fill",
       "appleDeveloperAccountEmail": "Fill",
-      "artifactExposingWorkflows": "All",
-      "selectedCertificate": Object {
-        "name": "iPhone Developer: John Doe (ABCD5678)",
-      },
-      "selectedProvProfile": Object {
-        "name": "abcdefghijkl1234567",
-      },
+      "includeBitCode": true,
+      "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
+      "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
     }
   }
+  iosWorkflow="All"
   keystoreFiles={
     Array [
       Object {
@@ -146,6 +118,7 @@ exports[`General renders correctly 1`] = `
   onSave={[Function]}
   onSelectedFileChange={[Function]}
   onSettingsPropertyChange={[Function]}
+  onWorkflowChange={[Function]}
   provProfiles={
     Array [
       Object {
@@ -296,6 +269,7 @@ exports[`GeneralView when there are no Android settings does not render Android 
       </Base>
       <Base>
         <Checkbox
+          checked={true}
           name="includeBitCode"
           onChange={[Function]}
         >
@@ -973,6 +947,7 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
       </Base>
       <Base>
         <Checkbox
+          checked={true}
           name="includeBitCode"
           onChange={[Function]}
         >
@@ -1614,6 +1589,7 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
       </Base>
       <Base>
         <Checkbox
+          checked={true}
           name="includeBitCode"
           onChange={[Function]}
         >

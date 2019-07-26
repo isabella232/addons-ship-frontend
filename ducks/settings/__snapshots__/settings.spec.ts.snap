@@ -137,15 +137,11 @@ Object {
   "appContacts": Array [],
   "settings": Object {
     "androidSettings": Object {
-      "artifactExposingWorkflows": "All",
-      "selectedKeystoreFile": Object {
-        "name": "abcdefghijkl1234567",
-      },
-      "selectedServiceAccountJsonFile": Object {
-        "name": "abcdefghijkl12345671566",
-      },
+      "selectedKeystoreFile": "abcdefghijkl1234567",
+      "selectedServiceAccount": "abcdefghijkl12345671566",
       "track": "Release",
     },
+    "androidWorkflow": "All",
     "certificates": Array [
       Object {
         "name": "iPhone Developer: John Doe (ABCD1234)",
@@ -158,14 +154,11 @@ Object {
       "appSku": "Fill",
       "appSpecificPassword": "Fill",
       "appleDeveloperAccountEmail": "Fill",
-      "artifactExposingWorkflows": "All",
-      "selectedCertificate": Object {
-        "name": "iPhone Developer: John Doe (ABCD5678)",
-      },
-      "selectedProvProfile": Object {
-        "name": "abcdefghijkl1234567",
-      },
+      "includeBitCode": true,
+      "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
+      "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
     },
+    "iosWorkflow": "All",
     "keystoreFiles": Array [
       Object {
         "name": "abcdefghijkl1234567",
@@ -284,63 +277,6 @@ Array [
     "type": "SETTINGS_UPDATE_NEXT",
   },
   Object {
-    "payload": Object {
-      "androidSettings": Object {
-        "artifactExposingWorkflows": "All",
-        "selectedKeystoreFile": Object {
-          "name": "abcdefghijkl1234567",
-        },
-        "selectedServiceAccountJsonFile": Object {
-          "name": "abcdefghijkl12345671566",
-        },
-        "track": "Release",
-      },
-      "certificates": Array [
-        Object {
-          "name": "iPhone Developer: John Doe (ABCD1234)",
-        },
-        Object {
-          "name": "iPhone Developer: John Doe (ABCD5678)",
-        },
-      ],
-      "iosSettings": Object {
-        "appSku": "Fill",
-        "appSpecificPassword": "Fill",
-        "appleDeveloperAccountEmail": "Fill",
-        "artifactExposingWorkflows": "Primary",
-        "selectedCertificate": Object {
-          "name": "iPhone Developer: John Doe (ABCD5678)",
-        },
-        "selectedProvProfile": Object {
-          "name": "abcdefghijkl1234567",
-        },
-      },
-      "keystoreFiles": Array [
-        Object {
-          "name": "abcdefghijkl1234567",
-        },
-        Object {
-          "name": "abcdefghijkl12345671566",
-        },
-      ],
-      "projectType": "other",
-      "provProfiles": Array [
-        Object {
-          "name": "abcdefghijkl1234567",
-        },
-        Object {
-          "name": "abcdefghijkl12345671566",
-        },
-      ],
-      "serviceAccountJsonFiles": Array [
-        Object {
-          "name": "abcdefghijkl1234567",
-        },
-        Object {
-          "name": "abcdefghijkl12345671566",
-        },
-      ],
-    },
     "type": "SETTINGS_UPDATE_COMPLETE",
   },
 ]

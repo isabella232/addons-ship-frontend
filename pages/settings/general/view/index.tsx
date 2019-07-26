@@ -17,41 +17,30 @@ import {
   Tooltip
 } from '@bitrise/bitkit';
 
-import {
-  AndroidSettings,
-  Certificate,
-  IosSettings,
-  KeystoreFile,
-  ProvProfile,
-  ServiceAccountJsonFile
-} from '@/models/settings';
+import { Certificate, KeystoreFile, ProvProfile, ServiceAccountJsonFile, Settings } from '@/models/settings';
 import { mediaQuery } from '@/utils/media';
+import { Platform } from '@/models';
 
 import css from './style.scss';
 
-type Props = {
+interface Props extends Settings {
   maximumNumberOfCertificates: number;
   hasMounted: boolean;
-  provProfiles?: ProvProfile[];
-  certificates?: Certificate[];
-  keystoreFiles?: KeystoreFile[];
-  serviceAccountJsonFiles?: ServiceAccountJsonFile[];
-  iosSettings?: IosSettings;
-  androidSettings?: AndroidSettings;
+  hasIosSettings: boolean;
+  hasAndroidSettings: boolean;
   onSettingsPropertyChange: (
     settings: 'iosSettings' | 'androidSettings',
     settingsProperty: string,
     value: string
   ) => void;
+  onWorkflowChange: (platform: Platform, workflow: string) => void;
   onSelectedFileChange: (
     type: 'ProvProfile' | 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
     file: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
   ) => void;
   onCancel: () => void;
   onSave: () => void;
-  hasIosSettings: boolean;
-  hasAndroidSettings: boolean;
-};
+}
 
 export default ({
   maximumNumberOfCertificates,
@@ -62,7 +51,10 @@ export default ({
   serviceAccountJsonFiles,
   iosSettings,
   androidSettings,
+  iosWorkflow,
+  androidWorkflow,
   onSettingsPropertyChange,
+  onWorkflowChange,
   onSelectedFileChange,
   onCancel,
   onSave,
@@ -108,11 +100,9 @@ export default ({
                     <InputContainer>
                       <InputContent>
                         <Input
-                          name="artifactExposingWorkflows"
-                          onChange={(event: any) =>
-                            onSettingsPropertyChange('iosSettings', 'artifactExposingWorkflows', event.target.value)
-                          }
-                          value={iosSettings.artifactExposingWorkflows}
+                          name="iosWorkflow"
+                          onChange={(event: any) => onWorkflowChange('ios', event.target.value)}
+                          value={iosWorkflow}
                         />
                       </InputContent>
                     </InputContainer>
@@ -214,7 +204,7 @@ export default ({
                   {provProfiles.map((provProfile: ProvProfile, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={provProfile === iosSettings.selectedProvProfile}
+                        checked={provProfile.name === iosSettings.selectedAppStoreProvisioningProfile}
                         onChange={() => onSelectedFileChange('ProvProfile', provProfile)}
                       >
                         <Flex
@@ -244,7 +234,7 @@ export default ({
                   {certificates.map((certificate: Certificate, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={certificate === iosSettings.selectedCertificate}
+                        checked={certificate.name === iosSettings.selectedCodeSigningIdentity}
                         onChange={() => onSelectedFileChange('Certificate', certificate)}
                       >
                         <Flex
@@ -303,10 +293,8 @@ export default ({
                       <InputContent>
                         <Input
                           name="artifactExposingWorkflows"
-                          onChange={(event: any) =>
-                            onSettingsPropertyChange('androidSettings', 'artifactExposingWorkflows', event.target.value)
-                          }
-                          value={androidSettings.artifactExposingWorkflows}
+                          onChange={(event: any) => onWorkflowChange('android', event.target.value)}
+                          value={androidWorkflow}
                         />
                       </InputContent>
                     </InputContainer>
@@ -358,7 +346,7 @@ export default ({
                   {keystoreFiles.map((keystoreFile: KeystoreFile, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={keystoreFile === androidSettings.selectedKeystoreFile}
+                        checked={keystoreFile.name === androidSettings.selectedKeystoreFile}
                         onChange={() => onSelectedFileChange('KeystoreFile', keystoreFile)}
                       >
                         <Flex
@@ -388,7 +376,7 @@ export default ({
                   {serviceAccountJsonFiles.map((serviceAccountJsonFile: ServiceAccountJsonFile, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={serviceAccountJsonFile === androidSettings.selectedServiceAccountJsonFile}
+                        checked={serviceAccountJsonFile.name === androidSettings.selectedServiceAccount}
                         onChange={() => onSelectedFileChange('ServiceAccountJsonFile', serviceAccountJsonFile)}
                       >
                         <Flex

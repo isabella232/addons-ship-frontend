@@ -224,19 +224,20 @@ const serviceAccountJsonFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcde
 
 export const mockSettings: Settings = {
   projectType: 'other',
+  iosWorkflow: 'All',
+  androidWorkflow: 'All',
   iosSettings: {
-    artifactExposingWorkflows: 'All',
     appleDeveloperAccountEmail: 'Fill',
     appSku: 'Fill',
     appSpecificPassword: 'Fill',
-    selectedProvProfile: provProfiles[0],
-    selectedCertificate: certificates[1]
+    selectedAppStoreProvisioningProfile: provProfiles[0].name,
+    selectedCodeSigningIdentity: certificates[1].name,
+    includeBitCode: true
   },
   androidSettings: {
-    artifactExposingWorkflows: 'All',
     track: 'Release',
-    selectedKeystoreFile: keystoreFiles[0],
-    selectedServiceAccountJsonFile: serviceAccountJsonFiles[1]
+    selectedKeystoreFile: keystoreFiles[0].name,
+    selectedServiceAccount: serviceAccountJsonFiles[1].name
   },
   provProfiles: provProfiles,
   certificates: certificates,

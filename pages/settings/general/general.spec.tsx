@@ -23,6 +23,8 @@ describe('GeneralView', () => {
   const defaultProps = {
     maximumNumberOfCertificates: 30,
     appVersion: mockAppVersion,
+    iosWorkflow: 'All',
+    androidWorkflow: 'All',
     iosSettings: mockSettings.iosSettings,
     androidSettings: mockSettings.androidSettings,
     provProfiles: mockSettings.provProfiles,
@@ -32,6 +34,7 @@ describe('GeneralView', () => {
     hasMounted: true,
     onSettingsPropertyChange: jest.fn(),
     onSelectedFileChange: jest.fn(),
+    onWorkflowChange: jest.fn(),
     onCancel: jest.fn(),
     onSave: jest.fn(),
     hasIosSettings: true,
@@ -137,7 +140,6 @@ describe('GeneralView', () => {
     ['appSku', 'iosSettings'],
     ['appleDeveloperAccountEmail', 'iosSettings'],
     ['appSpecificPassword', 'iosSettings'],
-    ['artifactExposingWorkflows', 'androidSettings'],
     ['track', 'androidSettings']
   ].forEach(([inputName, settings]) => {
     describe(`when input ${inputName} is changing`, () => {
@@ -168,8 +170,9 @@ describe('GeneralView', () => {
   });
 });
 
-describe('General', () => {
+describe.only('General', () => {
   const defaultProps = {
+    appSlug: 'some-app-slug',
     appVersion: mockAppVersion,
     settings: mockSettings,
     updateSettings: jest.fn() as any
@@ -218,14 +221,11 @@ describe('General', () => {
     const tree = mount(<General {...defaultProps} />);
 
     tree
-      .find('input[name="artifactExposingWorkflows"]')
+      .find('input[name="iosWorkflow"]')
       .first()
-      .simulate('change', { target: { name: 'artifactExposingWorkflows', value: 'Primary' } });
+      .simulate('change', { target: { value: 'Primary' } });
 
-    expect(tree.state('iosSettings')).toEqual({
-      ...mockSettings.iosSettings,
-      artifactExposingWorkflows: 'Primary'
-    });
+    expect(tree.state('iosWorkflow')).toEqual('Primary');
   });
 
   it('triggers a state reset when cancel is selected', () => {
@@ -233,15 +233,15 @@ describe('General', () => {
     const tree = mount(<General {...defaultProps} />);
 
     tree
-      .find('input[name="artifactExposingWorkflows"]')
+      .find('input[name="iosWorkflow"]')
       .first()
-      .simulate('change', { target: { name: 'artifactExposingWorkflows', value: 'Primary' } });
+      .simulate('change', { target: { value: 'Primary' } });
     tree
       .find('button')
       .first()
       .simulate('click');
 
-    expect(tree.state('iosSettings')).toEqual(mockSettings.iosSettings);
+    expect(tree.state('iosWorkflow')).toEqual(mockSettings.iosWorkflow);
   });
 
   it('triggers a state update when selected prov profile changes', () => {
@@ -250,7 +250,9 @@ describe('General', () => {
     const tree = shallow(<General {...defaultProps} />);
     (tree.instance() as General).onSelectedFileChange('ProvProfile', selectedProvProfile);
 
-    expect((tree.state('iosSettings') as IosSettings).selectedProvProfile).toEqual(selectedProvProfile);
+    expect((tree.state('iosSettings') as IosSettings).selectedAppStoreProvisioningProfile).toEqual(
+      selectedProvProfile.name
+    );
   });
 
   it('triggers a state update when selected certificate changes', () => {
@@ -259,7 +261,7 @@ describe('General', () => {
     const tree = shallow(<General {...defaultProps} />);
     (tree.instance() as General).onSelectedFileChange('Certificate', selectedCertificate);
 
-    expect((tree.state('iosSettings') as IosSettings).selectedCertificate).toEqual(selectedCertificate);
+    expect((tree.state('iosSettings') as IosSettings).selectedCodeSigningIdentity).toEqual(selectedCertificate.name);
   });
 
   it('triggers a state update when selected keystore file changes', () => {
@@ -268,7 +270,7 @@ describe('General', () => {
     const tree = shallow(<General {...defaultProps} />);
     (tree.instance() as General).onSelectedFileChange('KeystoreFile', selectedKeystoreFile);
 
-    expect((tree.state('androidSettings') as AndroidSettings).selectedKeystoreFile).toEqual(selectedKeystoreFile);
+    expect((tree.state('androidSettings') as AndroidSettings).selectedKeystoreFile).toEqual(selectedKeystoreFile.name);
   });
 
   it('triggers a state update when selected service account JSON file changes', () => {
@@ -277,8 +279,8 @@ describe('General', () => {
     const tree = shallow(<General {...defaultProps} />);
     (tree.instance() as General).onSelectedFileChange('ServiceAccountJsonFile', selectedServiceAccountJsonFile);
 
-    expect((tree.state('androidSettings') as AndroidSettings).selectedServiceAccountJsonFile).toEqual(
-      selectedServiceAccountJsonFile
+    expect((tree.state('androidSettings') as AndroidSettings).selectedServiceAccount).toEqual(
+      selectedServiceAccountJsonFile.name
     );
   });
 });
