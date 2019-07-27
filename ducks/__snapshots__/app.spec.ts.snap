@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app fetchApp can't fetch an app 1`] = `
+Array [
+  Object {
+    "type": "APP_GET_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_GET_ERROR",
+  },
+]
+`;
+
+exports[`app fetchApp fetches app version events 1`] = `
+Array [
+  Object {
+    "type": "APP_GET_NEXT",
+  },
+  Object {
+    "payload": Object {
+      "appSlug": "some-app",
+      "avatarUrl": "https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png",
+      "plan": "gold",
+      "projectType": "other",
+      "title": "This is an awesome app",
+    },
+    "type": "APP_GET_COMPLETE",
+  },
+]
+`;
+
+exports[`app fetchApp fetches app version events 2`] = `Object {}`;
+
+exports[`app reducer loads an app 1`] = `
+Object {
+  "appSlug": "some-app",
+  "avatarUrl": "https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png",
+  "plan": "gold",
+  "projectType": "other",
+  "title": "This is an awesome app",
+}
+`;
