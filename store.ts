@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import { createEpicMiddleware, combineEpics, Epic } from 'redux-observable';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import app from '@/ducks/app';
+import app, { AppState } from '@/ducks/app';
 import appVersion, { pollPublishStatusEpic, AppVersionState } from '@/ducks/appVersion';
 import { testDevices, TestDevicesState } from '@/ducks/testDevices';
 import settings, { SettingsState } from '@/ducks/settings';
@@ -24,6 +24,7 @@ const rootReducer = combineReducers({
 const rootEpic = combineEpics(pollPublishStatusEpic) as Epic<Action>;
 
 export type RootState = {
+  app: AppState;
   appVersion: AppVersionState;
   testDevices: TestDevicesState;
   settings: SettingsState;

@@ -33,7 +33,6 @@ export class BitriseAPIService {
   }
 
   async getApp(appSlug: string): Promise<App> {
-    console.log({ token: this.token });
     // TODO replace with `checkToken` and proper implementation, tests
     if (this.token) {
       const { data } = await get(`${this.config.url}/apps/${appSlug}`, this.token).then(res => res.json());
