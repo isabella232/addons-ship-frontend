@@ -5,4 +5,4 @@ $screen-xlarge-width: 1920px;
 
 $grid: 4px !default;
 
-$beam-height: 47px;
+$beam-height: var(--AddonBeam--height) !default;

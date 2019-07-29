@@ -1,6 +1,7 @@
 import { AppVersion, AppVersionEvent } from '@/models';
 import { Settings } from '@/models/settings';
 import { TestDevice } from '@/models/test-device';
+import { App } from '@/models/app';
 
 export const mockAppVersions: AppVersion[] = [
   {
@@ -224,19 +225,20 @@ const serviceAccountJsonFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcde
 
 export const mockSettings: Settings = {
   projectType: 'other',
+  iosWorkflow: 'All',
+  androidWorkflow: 'All',
   iosSettings: {
-    artifactExposingWorkflows: 'All',
     appleDeveloperAccountEmail: 'Fill',
     appSku: 'Fill',
     appSpecificPassword: 'Fill',
-    selectedProvProfile: provProfiles[0],
-    selectedCertificate: certificates[1]
+    selectedAppStoreProvisioningProfile: provProfiles[0].name,
+    selectedCodeSigningIdentity: certificates[1].name,
+    includeBitCode: true
   },
   androidSettings: {
-    artifactExposingWorkflows: 'All',
     track: 'Release',
-    selectedKeystoreFile: keystoreFiles[0],
-    selectedServiceAccountJsonFile: serviceAccountJsonFiles[1]
+    selectedKeystoreFile: keystoreFiles[0].name,
+    selectedServiceAccount: serviceAccountJsonFiles[1].name
   },
   provProfiles: provProfiles,
   certificates: certificates,
@@ -276,3 +278,12 @@ export const mockAppVersionEvents: AppVersionEvent[] = [
   mockInProgressAppVersionEvent,
   mockFailedAppVersionEvent
 ];
+
+export const mockApp: App = {
+  appSlug: 'some-app',
+  title: 'This is an awesome app',
+  avatarUrl:
+    'https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png',
+  plan: 'gold',
+  projectType: 'other'
+};

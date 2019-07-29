@@ -22,10 +22,11 @@ export const request = ({ url, method, token, body }: RequestParams) =>
     return res;
   });
 
-export const get = (url: string, token: string) => request({ method: 'get', url, token });
-export const del = (url: string, token: string) => request({ method: 'delete', url, token });
-export const patch = (url: string, token: string) => request({ method: 'patch', url, token });
+export const get = (url: string, token: string) => request({ method: 'GET', url, token });
+export const del = (url: string, token: string) => request({ method: 'DELETE', url, token });
+export const patch = (url: string, token: string, body?: RequestInit['body']) =>
+  request({ method: 'PATCH', url, token, body });
 export const post = (url: string, token: string, body: RequestInit['body']) =>
-  request({ method: 'post', url, token, body });
+  request({ method: 'POST', url, token, body });
 export const put = (url: string, token: string, body: RequestInit['body']) =>
-  request({ method: 'put', url, token, body });
+  request({ method: 'PUT', url, token, body });

@@ -3,14 +3,17 @@ import thunk from 'redux-thunk';
 import { createEpicMiddleware, combineEpics, Epic } from 'redux-observable';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
+import app, { AppState } from '@/ducks/app';
 import appVersion, { pollPublishStatusEpic, AppVersionState } from '@/ducks/appVersion';
 import { testDevices, TestDevicesState } from '@/ducks/testDevices';
 import settings, { SettingsState } from '@/ducks/settings';
 import { appVersionList, AppVersionListState } from '@/ducks/appVersionList';
 import auth, { AuthState } from '@/ducks/auth';
 import shipApi from '@/services/ship-api';
+import bitriseApi from '@/services/bitrise-api';
 
 const rootReducer = combineReducers({
+  app,
   appVersion,
   testDevices,
   settings,
@@ -21,6 +24,7 @@ const rootReducer = combineReducers({
 const rootEpic = combineEpics(pollPublishStatusEpic) as Epic<Action>;
 
 export type RootState = {
+  app: AppState;
   appVersion: AppVersionState;
   testDevices: TestDevicesState;
   settings: SettingsState;
@@ -44,7 +48,7 @@ export default (initialState: any, _options: any) => {
   const store = createStore(
     rootReducer,
     initialState,
-    composeWithDevTools(applyMiddleware(thunk.withExtraArgument({ shipApi }), epicMiddleware))
+    composeWithDevTools(applyMiddleware(thunk.withExtraArgument({ shipApi, bitriseApi }), epicMiddleware))
   );
 
   epicMiddleware.run(rootEpic);

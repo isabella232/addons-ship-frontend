@@ -19,3 +19,9 @@ Array [
   },
 ]
 `;
+
+exports[`Bitrise API service getApp fetches a version for an app 1`] = `
+Object {
+  "appSlug": "such-a-nice-app",
+}
+`;

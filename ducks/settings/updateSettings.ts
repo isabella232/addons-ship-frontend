@@ -6,7 +6,7 @@ import { Settings } from '@/models/settings';
 import { ShipAPIService } from '@/services/ship-api';
 
 import { $ } from './common';
-const _updateSettings = (settings: Settings) => async (
+const _updateSettings = (appSlug: string, settings: Settings) => async (
   dispatch: Dispatch,
   _getState: () => RootState,
   { shipApi }: { shipApi: ShipAPIService }
@@ -14,9 +14,9 @@ const _updateSettings = (settings: Settings) => async (
   dispatch(updateSettings.next());
 
   try {
-    await shipApi.updateSettings(settings);
+    const newSettings = await shipApi.updateSettings(appSlug, settings);
 
-    dispatch(updateSettings.complete(settings));
+    dispatch(updateSettings.complete(newSettings));
   } catch (error) {
     dispatch(updateSettings.error(error));
   }

@@ -1,50 +1,55 @@
 import App, { Container, NextAppContext, DefaultAppIProps } from 'next/app';
-import { NextContext } from 'next';
 import { Store } from 'redux';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import nookies from 'nookies';
 import { ProgressBitbot, Base, Notification, Text } from '@bitrise/bitkit';
 
-import makeStore from '../store';
 import { setToken } from '@/ducks/auth';
+import Header from '@/components/Header';
+import { PageContext } from '@/models';
+import { fetchApp } from '@/ducks/app';
 
 import '@/assets/style/index.scss';
+import makeStore from '../store';
 
-interface ShipAppProps extends DefaultAppIProps {
+export interface ShipAppProps extends DefaultAppIProps {
   store: Store;
   appSlug: string;
-  appName: string;
   token: string;
   settingsOnboardingSeen: boolean;
 }
 
-interface Context extends NextContext {
-  store: Store;
-}
-
 interface AppContext extends NextAppContext {
-  ctx: Context;
+  ctx: PageContext;
 }
 
-class ShipApp extends App<ShipAppProps> {
+export class ShipApp extends App<ShipAppProps> {
   state = {
     ready: false
   };
+
   static async getInitialProps({ Component, ctx }: AppContext) {
     let { 'auth-token': token, 'settings-onboarding-seen': settingsOnboardingSeen } = nookies.get(ctx);
     token = token || 'test-api-token-1';
     settingsOnboardingSeen = settingsOnboardingSeen || 'false';
 
+    const { appSlug } = ctx.query;
+
     // Set the token on the server side
-    await ctx.store.dispatch(setToken(token) as any);
+    if (ctx.isServer) {
+      await ctx.store.dispatch(setToken(token) as any);
+    }
+
+    if (appSlug) {
+      await ctx.store.dispatch(fetchApp(appSlug as string) as any);
+    }
 
     const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
 
     return {
       pageProps,
-      appSlug: 'my-super-app',
-      appName: 'My Super App',
+      appSlug,
       token,
       settingsOnboardingSeen: settingsOnboardingSeen === 'true'
     };
@@ -57,20 +62,13 @@ class ShipApp extends App<ShipAppProps> {
     await store.dispatch(setToken(token) as any);
 
     this.setState({ ready: true });
-    const { Beam } = require('@bitrise/beam');
-    const { appSlug, appName } = this.props;
 
     if (!settingsOnboardingSeen) {
       nookies.set(undefined, 'settings-onboarding-seen', 'true', {
         maxAge: 1000 * 24 * 60 * 60,
-        path: '/',
+        path: '/'
       });
     }
-
-    Beam.init({
-      app_name: appName,
-      app_slug: appSlug
-    });
   }
 
   render() {
@@ -88,6 +86,7 @@ class ShipApp extends App<ShipAppProps> {
     return (
       <Container>
         <Provider store={store}>
+          <Header />
           <Component {...pageProps} />
         </Provider>
         {!settingsOnboardingSeen && (
@@ -96,8 +95,7 @@ class ShipApp extends App<ShipAppProps> {
               Setup Publishing
             </Text>
             <Text>
-              We really recommend you to setup publishing as a first step. You only need to do this once per
-              application, then you will be able to publish all versions to App Store Connect or Google Play Console.
+              We really recommend you to setup publishing as a first step. You only need to do this once per application, then you will be able to publish all versions to App Store Connect or Google Play Console.
             </Text>
           </Notification>
         )}

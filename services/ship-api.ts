@@ -3,9 +3,8 @@ import { AppVersion, AppVersionEvent } from '@/models';
 import { APIConfig } from '@/models/services';
 import { Uploadable } from '@/models/uploadable';
 import { App } from '@/models/app';
-import { snakifyKeys, camelizeKeys, camelizeKeysDeep } from '@/utils';
+import { snakifyKeys, camelizeKeys, camelizeKeysDeep, snakifyKeysDeep } from '@/utils';
 import { patch, post, get, put, del, request } from '@/utils/request';
-import { mockSettings } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
 export class ShipAPIService {
@@ -121,17 +120,29 @@ export class ShipAPIService {
 
     const url = `${this.config.url}/apps/${appSlug}/settings`;
 
-    const {
-      data: { project_type: projectType }
-    } = await get(url, this.token).then(res => res.json());
+    const { data } = await get(url, this.token).then(res => res.json());
 
-    return { ...mockSettings, projectType };
+    return camelizeKeysDeep(data);
   }
 
-  async updateSettings(settings: Settings): Promise<void> {
+  async updateSettings(appSlug: string, settings: Settings): Promise<Settings> {
     this.checkToken();
 
-    return await new Promise(resolve => setTimeout(resolve, 500)).then(() => {});
+    const { iosWorkflow, androidWorkflow, iosSettings, androidSettings } = settings;
+
+    const url = `${this.config.url}/apps/${appSlug}/settings`,
+      body = JSON.stringify(
+        snakifyKeysDeep({
+          iosWorkflow,
+          androidWorkflow,
+          iosSettings,
+          androidSettings
+        })
+      );
+
+    const { data } = await patch(url, this.token, body).then(res => res.json());
+
+    return camelizeKeysDeep(data);
   }
 
   async addAppContact(
