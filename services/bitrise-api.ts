@@ -2,9 +2,9 @@ import { bitriseApiConfig } from '@/config';
 import { TestDevice } from '@/models/test-device';
 import { APIConfig } from '@/models/services';
 import { App } from '@/models/app';
-import { camelizeKeys, snakifyKeys, camelizeKeysDeep } from '@/utils';
+import { camelizeKeysDeep } from '@/utils';
 import { get } from '@/utils/request';
-import { mockTestDevices, mockApp } from '@/mocks';
+import { mockApp } from '@/mocks';
 
 export class BitriseAPIService {
   constructor(private config: APIConfig) {}
@@ -23,13 +23,11 @@ export class BitriseAPIService {
 
   // /v0.1/apps/{app-slug}/test-devices
   async getTestDevices(appSlug: string): Promise<TestDevice[]> {
-    const resp = await {
-      data: mockTestDevices.map(snakifyKeys)
-    };
+    this.checkToken();
 
-    const { data } = resp;
+    const { data } = await get(`${this.config.url}/apps/${appSlug}/test-devices`, this.token).then(res => res.json());
 
-    return data.map((device: any) => camelizeKeys<TestDevice>(device));
+    return data.map(camelizeKeysDeep);
   }
 
   async getApp(appSlug: string): Promise<App> {

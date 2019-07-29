@@ -11,11 +11,48 @@ describe('Bitrise API service', () => {
     ([get] as jest.Mock[]).forEach(m => m.mockReset());
   });
 
+  const testTokenNotSet = (fn: Function) => {
+    it('throws an error if token was not set', () => {
+      expect(fn()).rejects.toEqual(new Error('Token not set'));
+    });
+  };
+
+  describe('getTestDevices', () => {
+    testTokenNotSet(() => api.getTestDevices('app-slug'));
+  });
+
   it('fetches test devices for an app', async () => {
-    const appSlug = 'an-app-slug';
+    const appSlug = 'an-app-slug',
+      token = 'such-token';
+
+    (get as jest.Mock).mockResolvedValueOnce({
+      json: () => ({
+        data: [
+          {
+            device_id: 'some-device-id-01',
+            device_type: 'ios',
+            owner: 'test-user-1'
+          },
+          {
+            device_id: 'some-device-id-02',
+            device_type: 'android',
+            owner: 'test-user-1'
+          },
+          {
+            device_id: 'some-device-id-03',
+            device_type: 'ios',
+            owner: 'test-user-2'
+          }
+        ]
+      })
+    });
+
+    api.setToken(token);
+
     const testDevices = await api.getTestDevices(appSlug);
 
-    // expect(fetch).toHaveBeenCalledWith(`/v0.1/apps/${appSlug}/test-devices`);
+    const url = `${apiUrl}/apps/${appSlug}/test-devices`;
+    expect(get).toHaveBeenCalledWith(url, token);
 
     expect(testDevices).toMatchSnapshot();
   });
