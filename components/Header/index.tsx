@@ -44,10 +44,10 @@ export const Header = ({ app: { appSlug, title, avatarUrl, projectType }, appVer
 
   if (['settings', 'version'].includes(pageType)) {
     breadcrumbs = (
-      <Flex direction="horizontal">
+      <Flex direction="horizontal" paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
         <Link href={`/app?appSlug=${appSlug}`} as={`/apps/${appSlug}`}>
           <a>
-            <Text size="x4" className={css.breadcrumbs}>
+            <Text size={isDesktop ? 'x4' : 'x3'} className={css.breadcrumbs}>
               « {title}
             </Text>
           </a>

@@ -6,6 +6,7 @@ exports[`PageTitle renders without errors 1`] = `
   color="white"
   direction="horizontal"
   gap="x2"
+  paddingHorizontal="x0"
 >
   <Icon
     name="Bitbot"
@@ -26,6 +27,28 @@ exports[`PageTitle renders without errors in smaller 1`] = `
   color="white"
   direction="horizontal"
   gap="x2"
+  paddingHorizontal="x0"
+>
+  <Icon
+    name="Bitbot"
+    size="2rem"
+  />
+  <Text
+    size="x5"
+    weight="bold"
+  >
+    Some title
+  </Text>
+</Flex>
+`;
+
+exports[`PageTitle renders without errors on mobile 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x4"
 >
   <Icon
     name="Bitbot"
@@ -46,6 +69,7 @@ exports[`PageTitle with android project type 1`] = `
   color="white"
   direction="horizontal"
   gap="x2"
+  paddingHorizontal="x0"
 >
   <Icon
     name="PlatformsAndroid"
@@ -66,6 +90,7 @@ exports[`PageTitle with cordova project type 1`] = `
   color="white"
   direction="horizontal"
   gap="x2"
+  paddingHorizontal="x0"
 >
   <Icon
     name="PlatformsCordova"
@@ -86,6 +111,7 @@ exports[`PageTitle with ionic project type 1`] = `
   color="white"
   direction="horizontal"
   gap="x2"
+  paddingHorizontal="x0"
 >
   <Icon
     name="PlatformsIonic"
@@ -106,6 +132,7 @@ exports[`PageTitle with ios project type 1`] = `
   color="white"
   direction="horizontal"
   gap="x2"
+  paddingHorizontal="x0"
 >
   <Icon
     name="PlatformsApple"
@@ -126,6 +153,7 @@ exports[`PageTitle with react project type 1`] = `
   color="white"
   direction="horizontal"
   gap="x2"
+  paddingHorizontal="x0"
 >
   <Icon
     name="PlatformsReact"
@@ -146,6 +174,7 @@ exports[`PageTitle with settings project type 1`] = `
   color="white"
   direction="horizontal"
   gap="x2"
+  paddingHorizontal="x0"
 >
   <Icon
     name="Settings"
@@ -166,6 +195,7 @@ exports[`PageTitle with xamarin project type 1`] = `
   color="white"
   direction="horizontal"
   gap="x2"
+  paddingHorizontal="x0"
 >
   <Icon
     name="PlatformsXamarin"

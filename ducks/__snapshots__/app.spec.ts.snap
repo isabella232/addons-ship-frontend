@@ -23,7 +23,7 @@ Array [
       "avatarUrl": "https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png",
       "plan": "gold",
       "projectType": "other",
-      "title": "This is an awesome app",
+      "title": "Awesome app",
     },
     "type": "APP_GET_COMPLETE",
   },
@@ -38,6 +38,6 @@ Object {
   "avatarUrl": "https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png",
   "plan": "gold",
   "projectType": "other",
-  "title": "This is an awesome app",
+  "title": "Awesome app",
 }
 `;

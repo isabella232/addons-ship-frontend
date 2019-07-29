@@ -1,4 +1,6 @@
-import { Flex, Icon, Text, TypeIconName } from '@bitrise/bitkit';
+import { Flex, Icon, Text, TypeIconName, TypeTextSize } from '@bitrise/bitkit';
+
+import { mediaQuery } from '@/utils/media';
 
 export type Props = {
   projectType: string;
@@ -6,7 +8,9 @@ export type Props = {
   smaller?: boolean;
 };
 
-export default ({ projectType, title, smaller }: Props) => {
+export default ({ projectType, title, smaller = false }: Props) => {
+  const [isDesktop] = mediaQuery('60rem');
+
   let platformIcon: TypeIconName;
   switch (projectType) {
     case 'android':
@@ -35,10 +39,19 @@ export default ({ projectType, title, smaller }: Props) => {
       break;
   }
 
+  // I'm sorry... https://gph.is/22Wx2jP
+  const fontSize = `x${6 - +!isDesktop - +smaller}` as TypeTextSize;
+
   return (
-    <Flex direction="horizontal" alignChildrenVertical="middle" gap="x2" color="white">
+    <Flex
+      direction="horizontal"
+      alignChildrenVertical="middle"
+      paddingHorizontal={isDesktop ? 'x0' : 'x4'}
+      gap="x2"
+      color="white"
+    >
       <Icon name={platformIcon} size="2rem" />
-      <Text size={smaller ? 'x5' : 'x6'} weight="bold">
+      <Text size={fontSize} weight="bold">
         {title}
       </Text>
     </Flex>

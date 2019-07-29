@@ -53,13 +53,20 @@ describe('Header', () => {
   describe('routes', () => {
     const routes = ['/settings', '/version', '/app'];
 
-    routes.forEach(route =>
-      test(route, () => {
+    routes.forEach(route => {
+      test(`${route} for desktop`, () => {
         (useRouter as jest.Mock).mockReturnValueOnce({ route });
         (mediaQuery as jest.Mock).mockReturnValueOnce([true]);
         const tree = shallowToJson(shallow(<Header {...defaultProps}>My app</Header>));
         expect(tree).toMatchSnapshot();
-      })
-    );
+      });
+
+      test(`${route} for mobile`, () => {
+        (useRouter as jest.Mock).mockReturnValueOnce({ route });
+        (mediaQuery as jest.Mock).mockReturnValueOnce([false]);
+        const tree = shallowToJson(shallow(<Header {...defaultProps}>My app</Header>));
+        expect(tree).toMatchSnapshot();
+      });
+    });
   });
 });
