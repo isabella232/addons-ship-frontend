@@ -1,6 +1,7 @@
 import { AppVersion, AppVersionEvent } from '@/models';
 import { Settings } from '@/models/settings';
 import { TestDevice } from '@/models/test-device';
+import { App } from '@/models/app';
 
 export const mockAppVersions: AppVersion[] = [
   {
@@ -277,3 +278,12 @@ export const mockAppVersionEvents: AppVersionEvent[] = [
   mockInProgressAppVersionEvent,
   mockFailedAppVersionEvent
 ];
+
+export const mockApp: App = {
+  appSlug: 'some-app',
+  title: 'This is an awesome app',
+  avatarUrl:
+    'https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png',
+  plan: 'gold',
+  projectType: 'other'
+};

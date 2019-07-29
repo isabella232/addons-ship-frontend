@@ -1092,12 +1092,12 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                       padding="x3"
                     >
                       <Base
-                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
                         margin="x2"
                         padding="x3"
                       >
                         <div
-                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
                           style={
                             Object {
                               "height": undefined,
@@ -1207,10 +1207,10 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
         gap="x4"
       >
         <Base
-          className="Flex Flex--align-horz-start Flex--horizontal Flex--gap-x4"
+          className="Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
         >
           <div
-            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gap-x4"
+            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -1475,11 +1475,11 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                       margin="x8"
                     >
                       <Base
-                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                         margin="x8"
                       >
                         <div
-                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                           style={
                             Object {
                               "height": undefined,
@@ -1502,10 +1502,10 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -1602,11 +1602,11 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                 disabled={false}
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                   disabled={false}
                                   style={
                                     Object {
@@ -3453,10 +3453,10 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                             grow={true}
                           >
                             <Base
-                              className="Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                              className="Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                             >
                               <div
-                                className="Base Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                                className="Base Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -4384,11 +4384,11 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                         >
                           <Base
                             Component="button"
-                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
                             margin="x4"
                           >
                             <button
-                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
                               style={
                                 Object {
                                   "height": undefined,
@@ -4488,12 +4488,12 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                         >
                           <Base
                             Component="button"
-                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                             disabled={false}
                             margin="x4"
                           >
                             <button
-                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                               disabled={false}
                               style={
                                 Object {
@@ -4580,11 +4580,11 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                     paddingVertical="x4"
                   >
                     <Base
-                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gap-x3"
+                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                       paddingVertical="x4"
                     >
                       <div
-                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gap-x3"
+                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                         style={
                           Object {
                             "height": undefined,
@@ -5096,12 +5096,12 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                       padding="x3"
                     >
                       <Base
-                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
                         margin="x2"
                         padding="x3"
                       >
                         <div
-                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
                           style={
                             Object {
                               "height": undefined,
@@ -5211,10 +5211,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
         gap="x4"
       >
         <Base
-          className="Flex Flex--align-horz-start Flex--horizontal Flex--gap-x4"
+          className="Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
         >
           <div
-            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gap-x4"
+            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -5479,11 +5479,11 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                       margin="x8"
                     >
                       <Base
-                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                         margin="x8"
                       >
                         <div
-                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                           style={
                             Object {
                               "height": undefined,
@@ -5506,10 +5506,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -5606,11 +5606,11 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                 disabled={false}
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                   disabled={false}
                                   style={
                                     Object {
@@ -7545,10 +7545,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                         grow={true}
                       >
                         <Base
-                          className="Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                          className="Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                         >
                           <div
-                            className="Base Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                            className="Base Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                             style={
                               Object {
                                 "height": undefined,
@@ -8710,11 +8710,11 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                         >
                           <Base
                             Component="button"
-                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
                             margin="x4"
                           >
                             <button
-                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
                               style={
                                 Object {
                                   "height": undefined,
@@ -8814,12 +8814,12 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                         >
                           <Base
                             Component="button"
-                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                             disabled={false}
                             margin="x4"
                           >
                             <button
-                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                               disabled={false}
                               style={
                                 Object {
@@ -8906,11 +8906,11 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                     paddingVertical="x4"
                   >
                     <Base
-                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gap-x3"
+                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                       paddingVertical="x4"
                     >
                       <div
-                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gap-x3"
+                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                         style={
                           Object {
                             "height": undefined,
@@ -9422,12 +9422,12 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                       padding="x3"
                     >
                       <Base
-                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-alert"
                         margin="x2"
                         padding="x3"
                       >
                         <div
-                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-alert"
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-alert"
                           style={
                             Object {
                               "height": undefined,
@@ -9546,10 +9546,10 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
         gap="x4"
       >
         <Base
-          className="Flex Flex--align-horz-start Flex--horizontal Flex--gap-x4"
+          className="Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
         >
           <div
-            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gap-x4"
+            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -9814,11 +9814,11 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                       margin="x8"
                     >
                       <Base
-                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                         margin="x8"
                       >
                         <div
-                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                           style={
                             Object {
                               "height": undefined,
@@ -9841,10 +9841,10 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -9941,11 +9941,11 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                 disabled={false}
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                   disabled={false}
                                   style={
                                     Object {
@@ -11880,10 +11880,10 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                         grow={true}
                       >
                         <Base
-                          className="Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                          className="Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                         >
                           <div
-                            className="Base Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                            className="Base Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                             style={
                               Object {
                                 "height": undefined,
@@ -13045,11 +13045,11 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                         >
                           <Base
                             Component="button"
-                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
                             margin="x4"
                           >
                             <button
-                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
                               style={
                                 Object {
                                   "height": undefined,
@@ -13149,12 +13149,12 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                         >
                           <Base
                             Component="button"
-                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                             disabled={true}
                             margin="x4"
                           >
                             <button
-                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                               disabled={true}
                               style={
                                 Object {
@@ -13241,11 +13241,11 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                     paddingVertical="x4"
                   >
                     <Base
-                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gap-x3"
+                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                       paddingVertical="x4"
                     >
                       <div
-                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gap-x3"
+                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                         style={
                           Object {
                             "height": undefined,
@@ -13757,12 +13757,12 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                       padding="x3"
                     >
                       <Base
-                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
                         margin="x2"
                         padding="x3"
                       >
                         <div
-                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
                           style={
                             Object {
                               "height": undefined,
@@ -13872,10 +13872,10 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
         gap="x4"
       >
         <Base
-          className="Flex Flex--align-horz-start Flex--horizontal Flex--gap-x4"
+          className="Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
         >
           <div
-            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gap-x4"
+            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -14140,11 +14140,11 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                       margin="x8"
                     >
                       <Base
-                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                         margin="x8"
                       >
                         <div
-                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                           style={
                             Object {
                               "height": undefined,
@@ -14167,10 +14167,10 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -14267,11 +14267,11 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                 disabled={false}
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                   disabled={false}
                                   style={
                                     Object {
@@ -16206,10 +16206,10 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                         grow={true}
                       >
                         <Base
-                          className="Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                          className="Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                         >
                           <div
-                            className="Base Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                            className="Base Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                             style={
                               Object {
                                 "height": undefined,
@@ -17370,11 +17370,11 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                         >
                           <Base
                             Component="button"
-                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
                             margin="x4"
                           >
                             <button
-                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
                               style={
                                 Object {
                                   "height": undefined,
@@ -17474,12 +17474,12 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                         >
                           <Base
                             Component="button"
-                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                             disabled={false}
                             margin="x4"
                           >
                             <button
-                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                               disabled={false}
                               style={
                                 Object {
@@ -17575,12 +17575,12 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                       borderColor="gray-3"
                       borderRadius="x2"
                       borderWidth="x2"
-                      className="Flex Flex--align-horz-middle Flex--vertical Flex--gap-x4 shareDisabled"
+                      className="Flex Flex--align-horz-middle Flex--vertical Flex--gapped Flex--gap-x4 shareDisabled"
                       margin="x10"
                       padding="x6"
                     >
                       <div
-                        className="Base Base--background-color-gray-1 Base--border-radius-x2 Base--border-color-gray-3 Base--border-width-x2 Base--margin-x10 Base--padding-horizontal-x6 Base--padding-vertical-x6 Flex Flex--align-horz-middle Flex--vertical Flex--gap-x4 shareDisabled"
+                        className="Base Base--background-color-gray-1 Base--border-radius-x2 Base--border-color-gray-3 Base--border-width-x2 Base--margin-x10 Base--padding-horizontal-x6 Base--padding-vertical-x6 Flex Flex--align-horz-middle Flex--vertical Flex--gapped Flex--gap-x4 shareDisabled"
                         style={
                           Object {
                             "height": undefined,
@@ -18279,12 +18279,12 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                       padding="x3"
                     >
                       <Base
-                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-progress"
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-progress"
                         margin="x2"
                         padding="x3"
                       >
                         <div
-                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-progress"
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-progress"
                           style={
                             Object {
                               "height": undefined,
@@ -18407,10 +18407,10 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
         gap="x4"
       >
         <Base
-          className="Flex Flex--align-horz-start Flex--horizontal Flex--gap-x4"
+          className="Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
         >
           <div
-            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gap-x4"
+            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -18675,11 +18675,11 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                       margin="x8"
                     >
                       <Base
-                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                         margin="x8"
                       >
                         <div
-                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                           style={
                             Object {
                               "height": undefined,
@@ -18702,10 +18702,10 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -18802,11 +18802,11 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                 disabled={false}
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                   disabled={false}
                                   style={
                                     Object {
@@ -20741,10 +20741,10 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                         grow={true}
                       >
                         <Base
-                          className="Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                          className="Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                         >
                           <div
-                            className="Base Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                            className="Base Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                             style={
                               Object {
                                 "height": undefined,
@@ -21906,11 +21906,11 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                         >
                           <Base
                             Component="button"
-                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
                             margin="x4"
                           >
                             <button
-                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium Button--full-width"
                               style={
                                 Object {
                                   "height": undefined,
@@ -22010,12 +22010,12 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                         >
                           <Base
                             Component="button"
-                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                            className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                             disabled={true}
                             margin="x4"
                           >
                             <button
-                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                              className="Base Base--margin-x4 Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                               disabled={true}
                               style={
                                 Object {
@@ -22102,11 +22102,11 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                     paddingVertical="x4"
                   >
                     <Base
-                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gap-x3"
+                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                       paddingVertical="x4"
                     >
                       <div
-                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gap-x3"
+                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                         style={
                           Object {
                             "height": undefined,
@@ -22618,12 +22618,12 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                       padding="x3"
                     >
                       <Base
-                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
+                        className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
                         margin="x2"
                         padding="x3"
                       >
                         <div
-                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Notification Notification--type-inform"
+                          className="Base Base--margin-x2 Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
                           style={
                             Object {
                               "height": undefined,
@@ -22733,10 +22733,10 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
         gap="x4"
       >
         <Base
-          className="Flex Flex--align-horz-middle Flex--horizontal Flex--gap-x4"
+          className="Flex Flex--align-horz-middle Flex--horizontal Flex--gapped Flex--gap-x4"
         >
           <div
-            className="Base Flex Flex--align-horz-middle Flex--horizontal Flex--gap-x4"
+            className="Base Flex Flex--align-horz-middle Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -23001,11 +23001,11 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                       margin="x8"
                     >
                       <Base
-                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                        className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                         margin="x8"
                       >
                         <div
-                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gap-x4"
+                          className="Base Base--margin-x8 Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x4"
                           style={
                             Object {
                               "height": undefined,
@@ -23028,10 +23028,10 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-primary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-primary Button--size-medium"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -23128,11 +23128,11 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                             >
                               <Base
                                 Component="button"
-                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                 disabled={false}
                               >
                                 <button
-                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium"
+                                  className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                   disabled={false}
                                   style={
                                     Object {
@@ -25067,10 +25067,10 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                         grow={true}
                       >
                         <Base
-                          className="Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                          className="Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                         >
                           <div
-                            className="Base Flex Flex--horizontal Flex--gap-x6 Flex--grow"
+                            className="Base Flex Flex--horizontal Flex--gapped Flex--gap-x6 Flex--grow"
                             style={
                               Object {
                                 "height": undefined,

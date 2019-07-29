@@ -13,3 +13,16 @@
     padding-left: 16 * $grid;
   }
 }
+
+.mobileMenu {
+  position: absolute;
+  display: none;
+  top: $beam-height;
+  height: calc(100vh - #{$beam-height});
+  width: 100%;
+  z-index: 100;
+
+  &.mobileMenuVisible {
+    display: flex;
+  }
+}
