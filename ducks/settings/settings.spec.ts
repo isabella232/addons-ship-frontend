@@ -41,7 +41,7 @@ describe('settings', () => {
     it('adds an app contact', () => {
       const state = settings(
         {
-          settings: { projectType: 'other' },
+          settings: { projectType: 'other', iosWorkflow: 'all', androidWorkflow: 'all' },
           appContacts: [mockAppContact]
         },
         addAppContact.complete({ email: 'bit@bot' } as AppContact)
@@ -62,7 +62,7 @@ describe('settings', () => {
     it('updates an app contact', () => {
       const state = settings(
         {
-          settings: { projectType: 'other' },
+          settings: { projectType: 'other', iosWorkflow: 'all', androidWorkflow: 'all' },
           appContacts: [
             mockAppContact,
             {
@@ -83,7 +83,7 @@ describe('settings', () => {
     it('removes an app contact', () => {
       const state = settings(
         {
-          settings: { projectType: 'other' },
+          settings: { projectType: 'other', iosWorkflow: 'all', androidWorkflow: 'all' },
           appContacts: [
             mockAppContact,
             {
@@ -120,18 +120,18 @@ describe('settings', () => {
   describe('updateSettings', () => {
     const updatedSettings: Settings = {
       ...mockSettings,
-      iosSettings: { ...(mockSettings.iosSettings as IosSettings), artifactExposingWorkflows: 'Primary' }
+      iosSettings: { ...(mockSettings.iosSettings as IosSettings) }
     };
 
     it('updates settings', async () => {
-      await store.dispatch(updateSettings(updatedSettings) as any);
+      await store.dispatch(updateSettings('app-123', updatedSettings) as any);
 
       expect(store.getActions()).toMatchSnapshot();
     });
 
     it("can't update settings", async () => {
       (shipApi.updateSettings as jest.Mock).mockRejectedValueOnce('api had some issue');
-      await store.dispatch(updateSettings(updatedSettings) as any);
+      await store.dispatch(updateSettings('app-123', updatedSettings) as any);
 
       expect(store.getActions()).toMatchSnapshot();
     });

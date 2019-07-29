@@ -66,60 +66,10 @@ Array [
 exports[`Ship API service getSettings fetches settings for an app 1`] = `
 Object {
   "androidSettings": Object {
-    "artifactExposingWorkflows": "All",
-    "selectedKeystoreFile": Object {
-      "name": "abcdefghijkl1234567",
-    },
-    "selectedServiceAccountJsonFile": Object {
-      "name": "abcdefghijkl12345671566",
-    },
-    "track": "Release",
+    "selectedKeystoreFile": "whatever",
+    "selectedServiceAccount": "does not matter",
   },
-  "certificates": Array [
-    Object {
-      "name": "iPhone Developer: John Doe (ABCD1234)",
-    },
-    Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-  ],
-  "iosSettings": Object {
-    "appSku": "Fill",
-    "appSpecificPassword": "Fill",
-    "appleDeveloperAccountEmail": "Fill",
-    "artifactExposingWorkflows": "All",
-    "selectedCertificate": Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-    "selectedProvProfile": Object {
-      "name": "abcdefghijkl1234567",
-    },
-  },
-  "keystoreFiles": Array [
-    Object {
-      "name": "abcdefghijkl1234567",
-    },
-    Object {
-      "name": "abcdefghijkl12345671566",
-    },
-  ],
   "projectType": "android",
-  "provProfiles": Array [
-    Object {
-      "name": "abcdefghijkl1234567",
-    },
-    Object {
-      "name": "abcdefghijkl12345671566",
-    },
-  ],
-  "serviceAccountJsonFiles": Array [
-    Object {
-      "name": "abcdefghijkl1234567",
-    },
-    Object {
-      "name": "abcdefghijkl12345671566",
-    },
-  ],
 }
 `;
 
@@ -159,7 +109,25 @@ Object {
 }
 `;
 
-exports[`Ship API service updateSettings updates settings for an app 1`] = `undefined`;
+exports[`Ship API service updateSettings updates settings for an app 1`] = `
+Object {
+  "androidSettings": Object {
+    "selectedKeystoreFile": "keystore-filename",
+    "selectedServiceAccount": "service-account-filename",
+    "track": "Release",
+  },
+  "androidWorkflow": "All",
+  "iosSettings": Object {
+    "appSku": "Fill",
+    "appSpecificPassword": "Fill",
+    "appleDeveloperAccountEmail": "some.email@addr.ess",
+    "includeBitCode": true,
+    "selectedAppStoreProvisioningProfile": "prov-profile-id",
+    "selectedCodeSigningIdentity": "code-signing-identity-id",
+  },
+  "iosWorkflow": "All",
+}
+`;
 
 exports[`Ship API service uploadScreenshots calls the api 1`] = `
 Array [
