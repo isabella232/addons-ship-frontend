@@ -6,19 +6,15 @@ export type AppSettingsPageQuery = {
 };
 
 export type IosSettings = {
-  // artifactExposingWorkflows: string;
   appleDeveloperAccountEmail: string;
   appSku: string;
   appSpecificPassword: string;
-  // selectedProvProfile: any;
   selectedAppStoreProvisioningProfile: string;
-  // selectedCertificate: any;
   selectedCodeSigningIdentity: string;
   includeBitCode: boolean;
 };
 
 export type AndroidSettings = {
-  // artifactExposingWorkflows: string;
   track: string;
   selectedKeystoreFile: string;
   selectedServiceAccount: string;
