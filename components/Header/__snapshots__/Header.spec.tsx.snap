@@ -6,7 +6,7 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
     addonIcon="SecurityShield"
     addonName="Ship"
     appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-    appLink="https://app.bitrise.io/app/some-app"
+    appLink="https://app.bitrise.io/app/test-app-slug-1"
     appName="This is an awesome app"
     backgroundColor="grape-4"
     color="white"
@@ -15,22 +15,31 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
     onHamburgerIconClick={[Function]}
   >
     <Link
-      as="/apps/some-app/settings"
-      href="/settings?appSlug=some-app"
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <AddonBeamLink
-        Component="a"
-        icon="Settings"
-      >
-        Settings
-      </AddonBeamLink>
+      <a>
+        <AddonBeamLink
+          Component="div"
+          icon="Settings"
+        >
+          Settings
+        </AddonBeamLink>
+      </a>
     </Link>
   </AddonBeam>
-  <div
+  <Flex
     className="header"
+    direction="vertical"
+    gap="x2"
+    paddingVertical="x8"
   >
-    My app
-  </div>
+    <_default
+      projectType="other"
+      smaller={false}
+      title="This is an awesome app"
+    />
+  </Flex>
   <Flex
     alignChildrenVertical="end"
     backgroundColor="grape-5"
@@ -42,7 +51,7 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
       padding="x4"
     >
       <a
-        href="https://app.bitrise.io/app/some-app"
+        href="https://app.bitrise.io/app/test-app-slug-1"
         target="_blank"
       >
         <Flex
@@ -83,16 +92,17 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
       padding="x4"
     >
       <Link
-        as="/apps/some-app/settings"
-        href="/settings?appSlug=some-app"
+        as="/apps/test-app-slug-1/settings"
+        href="/settings?appSlug=test-app-slug-1"
       >
-        <Text
-          Component="a"
-          color="gray-1"
-          size="x3"
-        >
-          Settings
-        </Text>
+        <a>
+          <Text
+            color="gray-1"
+            size="x3"
+          >
+            Settings
+          </Text>
+        </a>
       </Link>
     </Flex>
   </Flex>
@@ -105,7 +115,7 @@ exports[`Header renders correctly 1`] = `
     addonIcon="SecurityShield"
     addonName="Ship"
     appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-    appLink="https://app.bitrise.io/app/some-app"
+    appLink="https://app.bitrise.io/app/test-app-slug-1"
     appName="This is an awesome app"
     backgroundColor="grape-4"
     color="white"
@@ -114,22 +124,31 @@ exports[`Header renders correctly 1`] = `
     onHamburgerIconClick={[Function]}
   >
     <Link
-      as="/apps/some-app/settings"
-      href="/settings?appSlug=some-app"
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <AddonBeamLink
-        Component="a"
-        icon="Settings"
-      >
-        Settings
-      </AddonBeamLink>
+      <a>
+        <AddonBeamLink
+          Component="div"
+          icon="Settings"
+        >
+          Settings
+        </AddonBeamLink>
+      </a>
     </Link>
   </AddonBeam>
-  <div
+  <Flex
     className="header"
+    direction="vertical"
+    gap="x2"
+    paddingVertical="x8"
   >
-    My app
-  </div>
+    <_default
+      projectType="other"
+      smaller={false}
+      title="This is an awesome app"
+    />
+  </Flex>
   <Flex
     alignChildrenVertical="end"
     backgroundColor="grape-5"
@@ -141,7 +160,7 @@ exports[`Header renders correctly 1`] = `
       padding="x4"
     >
       <a
-        href="https://app.bitrise.io/app/some-app"
+        href="https://app.bitrise.io/app/test-app-slug-1"
         target="_blank"
       >
         <Flex
@@ -182,16 +201,380 @@ exports[`Header renders correctly 1`] = `
       padding="x4"
     >
       <Link
-        as="/apps/some-app/settings"
-        href="/settings?appSlug=some-app"
+        as="/apps/test-app-slug-1/settings"
+        href="/settings?appSlug=test-app-slug-1"
       >
-        <Text
-          Component="a"
-          color="gray-1"
-          size="x3"
+        <a>
+          <Text
+            color="gray-1"
+            size="x3"
+          >
+            Settings
+          </Text>
+        </a>
+      </Link>
+    </Flex>
+  </Flex>
+</Base>
+`;
+
+exports[`Header routes /app 1`] = `
+<Base>
+  <AddonBeam
+    addonIcon="SecurityShield"
+    addonName="Ship"
+    appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+    appLink="https://app.bitrise.io/app/test-app-slug-1"
+    appName="This is an awesome app"
+    backgroundColor="grape-4"
+    color="white"
+    isHamburgerIconActive={false}
+    isInResponsiveView={false}
+    onHamburgerIconClick={[Function]}
+  >
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
+    >
+      <a>
+        <AddonBeamLink
+          Component="div"
+          icon="Settings"
         >
           Settings
-        </Text>
+        </AddonBeamLink>
+      </a>
+    </Link>
+  </AddonBeam>
+  <Flex
+    className="header"
+    direction="vertical"
+    gap="x2"
+    paddingVertical="x8"
+  >
+    <_default
+      projectType="other"
+      smaller={false}
+      title="This is an awesome app"
+    />
+  </Flex>
+  <Flex
+    alignChildrenVertical="end"
+    backgroundColor="grape-5"
+    className="mobileMenu"
+    color="white"
+    direction="vertical"
+  >
+    <Flex
+      padding="x4"
+    >
+      <a
+        href="https://app.bitrise.io/app/test-app-slug-1"
+        target="_blank"
+      >
+        <Flex
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x2"
+        >
+          <Image
+            borderRadius="x1"
+            height="1.5rem"
+            src="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+            width="1.5rem"
+          />
+          <Flex
+            alignChildrenVertical="middle"
+            direction="horizontal"
+            gap="x1"
+          >
+            <Text
+              size="x3"
+            >
+              This is an awesome app
+            </Text>
+            <Icon
+              name="OpenInBrowser"
+              size="1.5rem"
+            />
+          </Flex>
+        </Flex>
+      </a>
+    </Flex>
+    <Divider
+      color="grape-4"
+      direction="horizontal"
+      width="0.125rem"
+    />
+    <Flex
+      padding="x4"
+    >
+      <Link
+        as="/apps/test-app-slug-1/settings"
+        href="/settings?appSlug=test-app-slug-1"
+      >
+        <a>
+          <Text
+            color="gray-1"
+            size="x3"
+          >
+            Settings
+          </Text>
+        </a>
+      </Link>
+    </Flex>
+  </Flex>
+</Base>
+`;
+
+exports[`Header routes /settings 1`] = `
+<Base>
+  <AddonBeam
+    addonIcon="SecurityShield"
+    addonName="Ship"
+    appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+    appLink="https://app.bitrise.io/app/test-app-slug-1"
+    appName="This is an awesome app"
+    backgroundColor="grape-4"
+    color="white"
+    isHamburgerIconActive={false}
+    isInResponsiveView={false}
+    onHamburgerIconClick={[Function]}
+  >
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
+    >
+      <a>
+        <AddonBeamLink
+          Component="div"
+          icon="Settings"
+        >
+          Settings
+        </AddonBeamLink>
+      </a>
+    </Link>
+  </AddonBeam>
+  <Flex
+    className="header"
+    direction="vertical"
+    gap="x2"
+    paddingVertical="x5"
+  >
+    <Flex
+      direction="horizontal"
+    >
+      <Link
+        as="/apps/test-app-slug-1"
+        href="/app?appSlug=test-app-slug-1"
+      >
+        <a>
+          <Text
+            className="breadcrumbs"
+            size="x4"
+          >
+            « 
+            This is an awesome app
+          </Text>
+        </a>
+      </Link>
+    </Flex>
+    <_default
+      projectType="settings"
+      smaller={true}
+      title="Settings"
+    />
+  </Flex>
+  <Flex
+    alignChildrenVertical="end"
+    backgroundColor="grape-5"
+    className="mobileMenu"
+    color="white"
+    direction="vertical"
+  >
+    <Flex
+      padding="x4"
+    >
+      <a
+        href="https://app.bitrise.io/app/test-app-slug-1"
+        target="_blank"
+      >
+        <Flex
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x2"
+        >
+          <Image
+            borderRadius="x1"
+            height="1.5rem"
+            src="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+            width="1.5rem"
+          />
+          <Flex
+            alignChildrenVertical="middle"
+            direction="horizontal"
+            gap="x1"
+          >
+            <Text
+              size="x3"
+            >
+              This is an awesome app
+            </Text>
+            <Icon
+              name="OpenInBrowser"
+              size="1.5rem"
+            />
+          </Flex>
+        </Flex>
+      </a>
+    </Flex>
+    <Divider
+      color="grape-4"
+      direction="horizontal"
+      width="0.125rem"
+    />
+    <Flex
+      padding="x4"
+    >
+      <Link
+        as="/apps/test-app-slug-1/settings"
+        href="/settings?appSlug=test-app-slug-1"
+      >
+        <a>
+          <Text
+            color="gray-1"
+            size="x3"
+          >
+            Settings
+          </Text>
+        </a>
+      </Link>
+    </Flex>
+  </Flex>
+</Base>
+`;
+
+exports[`Header routes /version 1`] = `
+<Base>
+  <AddonBeam
+    addonIcon="SecurityShield"
+    addonName="Ship"
+    appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+    appLink="https://app.bitrise.io/app/test-app-slug-1"
+    appName="This is an awesome app"
+    backgroundColor="grape-4"
+    color="white"
+    isHamburgerIconActive={false}
+    isInResponsiveView={false}
+    onHamburgerIconClick={[Function]}
+  >
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
+    >
+      <a>
+        <AddonBeamLink
+          Component="div"
+          icon="Settings"
+        >
+          Settings
+        </AddonBeamLink>
+      </a>
+    </Link>
+  </AddonBeam>
+  <Flex
+    className="header"
+    direction="vertical"
+    gap="x2"
+    paddingVertical="x5"
+  >
+    <Flex
+      direction="horizontal"
+    >
+      <Link
+        as="/apps/test-app-slug-1"
+        href="/app?appSlug=test-app-slug-1"
+      >
+        <a>
+          <Text
+            className="breadcrumbs"
+            size="x4"
+          >
+            « 
+            This is an awesome app
+          </Text>
+        </a>
+      </Link>
+    </Flex>
+    <_default
+      projectType="other"
+      smaller={true}
+      title="This is an awesome app v1.0.3 (32)"
+    />
+  </Flex>
+  <Flex
+    alignChildrenVertical="end"
+    backgroundColor="grape-5"
+    className="mobileMenu"
+    color="white"
+    direction="vertical"
+  >
+    <Flex
+      padding="x4"
+    >
+      <a
+        href="https://app.bitrise.io/app/test-app-slug-1"
+        target="_blank"
+      >
+        <Flex
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x2"
+        >
+          <Image
+            borderRadius="x1"
+            height="1.5rem"
+            src="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+            width="1.5rem"
+          />
+          <Flex
+            alignChildrenVertical="middle"
+            direction="horizontal"
+            gap="x1"
+          >
+            <Text
+              size="x3"
+            >
+              This is an awesome app
+            </Text>
+            <Icon
+              name="OpenInBrowser"
+              size="1.5rem"
+            />
+          </Flex>
+        </Flex>
+      </a>
+    </Flex>
+    <Divider
+      color="grape-4"
+      direction="horizontal"
+      width="0.125rem"
+    />
+    <Flex
+      padding="x4"
+    >
+      <Link
+        as="/apps/test-app-slug-1/settings"
+        href="/settings?appSlug=test-app-slug-1"
+      >
+        <a>
+          <Text
+            color="gray-1"
+            size="x3"
+          >
+            Settings
+          </Text>
+        </a>
       </Link>
     </Flex>
   </Flex>
