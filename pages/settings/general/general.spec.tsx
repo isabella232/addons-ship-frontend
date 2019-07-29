@@ -23,8 +23,8 @@ describe('GeneralView', () => {
   const defaultProps = {
     maximumNumberOfCertificates: 30,
     appVersion: mockAppVersion,
-    iosWorkflow: 'All',
-    androidWorkflow: 'All',
+    iosWorkflow: '',
+    androidWorkflow: '',
     iosSettings: mockSettings.iosSettings,
     androidSettings: mockSettings.androidSettings,
     provProfiles: mockSettings.provProfiles,
@@ -201,15 +201,6 @@ describe('General', () => {
       const settings: Settings = { ...mockSettings, projectType: 'other' };
       const wrapper = shallow(<General {...defaultProps} settings={settings} />);
       expect(wrapper.state()).toMatchSnapshot();
-    });
-
-    it('sets the default workflows correctly', () => {
-      const wrapper = shallow(
-        <General {...defaultProps} settings={{ ...mockSettings, iosWorkflow: '', androidWorkflow: '' }} />
-      );
-
-      expect(wrapper.state('iosWorkflow')).toBe('All');
-      expect(wrapper.state('androidWorkflow')).toBe('All');
     });
   });
 

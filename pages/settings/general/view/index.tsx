@@ -103,6 +103,7 @@ export default ({
                           name="iosWorkflow"
                           onChange={(event: any) => onWorkflowChange('ios', event.target.value)}
                           value={iosWorkflow}
+                          placeholder="All"
                         />
                       </InputContent>
                     </InputContainer>
@@ -295,6 +296,7 @@ export default ({
                           name="androidWorkflow"
                           onChange={(event: any) => onWorkflowChange('android', event.target.value)}
                           value={androidWorkflow}
+                          placeholder="All"
                         />
                       </InputContent>
                     </InputContainer>

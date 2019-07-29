@@ -34,8 +34,8 @@ export type State = {
 
 export class General extends Component<Props> {
   state: State = {
-    iosWorkflow: 'All',
-    androidWorkflow: 'All',
+    iosWorkflow: '',
+    androidWorkflow: '',
     hasIosSettings: false,
     hasAndroidSettings: false,
     hasMounted: false,
@@ -84,8 +84,8 @@ export class General extends Component<Props> {
     this.setState({
       hasIosSettings,
       hasAndroidSettings,
-      iosWorkflow: iosWorkflow || 'All',
-      androidWorkflow: androidWorkflow || 'All',
+      iosWorkflow,
+      androidWorkflow,
       iosSettings,
       androidSettings
     });
