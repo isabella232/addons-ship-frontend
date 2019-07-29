@@ -6,19 +6,18 @@ export type AppSettingsPageQuery = {
 };
 
 export type IosSettings = {
-  artifactExposingWorkflows: string;
   appleDeveloperAccountEmail: string;
   appSku: string;
   appSpecificPassword: string;
-  selectedProvProfile: any;
-  selectedCertificate: any;
+  selectedAppStoreProvisioningProfile: string;
+  selectedCodeSigningIdentity: string;
+  includeBitCode: boolean;
 };
 
 export type AndroidSettings = {
-  artifactExposingWorkflows: string;
   track: string;
-  selectedKeystoreFile: any;
-  selectedServiceAccountJsonFile: any;
+  selectedKeystoreFile: string;
+  selectedServiceAccount: string;
 };
 
 export type ProvProfile = { name: string };
@@ -27,13 +26,15 @@ export type KeystoreFile = { name: string };
 export type ServiceAccountJsonFile = { name: string };
 
 export type Settings = {
+  iosWorkflow: string;
+  androidWorkflow: string;
   iosSettings?: IosSettings;
   androidSettings?: AndroidSettings;
   provProfiles?: ProvProfile[];
   certificates?: Certificate[];
   keystoreFiles?: KeystoreFile[];
   serviceAccountJsonFiles?: ServiceAccountJsonFile[];
-  projectType:
+  projectType?:
     | 'xamarin'
     | 'ios'
     | 'osx'

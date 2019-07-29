@@ -3,15 +3,11 @@
 exports[`General configureSettingsFromProps sets the state correctly for android 1`] = `
 Object {
   "androidSettings": Object {
-    "artifactExposingWorkflows": "All",
-    "selectedKeystoreFile": Object {
-      "name": "abcdefghijkl1234567",
-    },
-    "selectedServiceAccountJsonFile": Object {
-      "name": "abcdefghijkl12345671566",
-    },
+    "selectedKeystoreFile": "abcdefghijkl1234567",
+    "selectedServiceAccount": "abcdefghijkl12345671566",
     "track": "Release",
   },
+  "androidWorkflow": "All",
   "hasAndroidSettings": true,
   "hasIosSettings": false,
   "hasMounted": true,
@@ -19,29 +15,22 @@ Object {
     "appSku": "Fill",
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
-    "artifactExposingWorkflows": "All",
-    "selectedCertificate": Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-    "selectedProvProfile": Object {
-      "name": "abcdefghijkl1234567",
-    },
+    "includeBitCode": true,
+    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
+    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
   },
+  "iosWorkflow": "All",
 }
 `;
 
 exports[`General configureSettingsFromProps sets the state correctly for ios 1`] = `
 Object {
   "androidSettings": Object {
-    "artifactExposingWorkflows": "All",
-    "selectedKeystoreFile": Object {
-      "name": "abcdefghijkl1234567",
-    },
-    "selectedServiceAccountJsonFile": Object {
-      "name": "abcdefghijkl12345671566",
-    },
+    "selectedKeystoreFile": "abcdefghijkl1234567",
+    "selectedServiceAccount": "abcdefghijkl12345671566",
     "track": "Release",
   },
+  "androidWorkflow": "All",
   "hasAndroidSettings": false,
   "hasIosSettings": true,
   "hasMounted": true,
@@ -49,29 +38,22 @@ Object {
     "appSku": "Fill",
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
-    "artifactExposingWorkflows": "All",
-    "selectedCertificate": Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-    "selectedProvProfile": Object {
-      "name": "abcdefghijkl1234567",
-    },
+    "includeBitCode": true,
+    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
+    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
   },
+  "iosWorkflow": "All",
 }
 `;
 
 exports[`General configureSettingsFromProps sets the state correctly for other project types 1`] = `
 Object {
   "androidSettings": Object {
-    "artifactExposingWorkflows": "All",
-    "selectedKeystoreFile": Object {
-      "name": "abcdefghijkl1234567",
-    },
-    "selectedServiceAccountJsonFile": Object {
-      "name": "abcdefghijkl12345671566",
-    },
+    "selectedKeystoreFile": "abcdefghijkl1234567",
+    "selectedServiceAccount": "abcdefghijkl12345671566",
     "track": "Release",
   },
+  "androidWorkflow": "All",
   "hasAndroidSettings": true,
   "hasIosSettings": true,
   "hasMounted": true,
@@ -79,14 +61,34 @@ Object {
     "appSku": "Fill",
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
-    "artifactExposingWorkflows": "All",
-    "selectedCertificate": Object {
-      "name": "iPhone Developer: John Doe (ABCD5678)",
-    },
-    "selectedProvProfile": Object {
-      "name": "abcdefghijkl1234567",
-    },
+    "includeBitCode": true,
+    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
+    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
   },
+  "iosWorkflow": "All",
+}
+`;
+
+exports[`General onSettingsPropertyChange 1`] = `
+Object {
+  "androidSettings": Object {
+    "selectedKeystoreFile": "abcdefghijkl1234567",
+    "selectedServiceAccount": "abcdefghijkl12345671566",
+    "track": "Release",
+  },
+  "androidWorkflow": "All",
+  "hasAndroidSettings": true,
+  "hasIosSettings": true,
+  "hasMounted": true,
+  "iosSettings": Object {
+    "appSku": "some-vlaue",
+    "appSpecificPassword": "Fill",
+    "appleDeveloperAccountEmail": "Fill",
+    "includeBitCode": true,
+    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
+    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
+  },
+  "iosWorkflow": "All",
 }
 `;
 
@@ -94,16 +96,12 @@ exports[`General renders correctly 1`] = `
 <_default
   androidSettings={
     Object {
-      "artifactExposingWorkflows": "All",
-      "selectedKeystoreFile": Object {
-        "name": "abcdefghijkl1234567",
-      },
-      "selectedServiceAccountJsonFile": Object {
-        "name": "abcdefghijkl12345671566",
-      },
+      "selectedKeystoreFile": "abcdefghijkl1234567",
+      "selectedServiceAccount": "abcdefghijkl12345671566",
       "track": "Release",
     }
   }
+  androidWorkflow="All"
   certificates={
     Array [
       Object {
@@ -122,15 +120,12 @@ exports[`General renders correctly 1`] = `
       "appSku": "Fill",
       "appSpecificPassword": "Fill",
       "appleDeveloperAccountEmail": "Fill",
-      "artifactExposingWorkflows": "All",
-      "selectedCertificate": Object {
-        "name": "iPhone Developer: John Doe (ABCD5678)",
-      },
-      "selectedProvProfile": Object {
-        "name": "abcdefghijkl1234567",
-      },
+      "includeBitCode": true,
+      "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
+      "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
     }
   }
+  iosWorkflow="All"
   keystoreFiles={
     Array [
       Object {
@@ -146,6 +141,7 @@ exports[`General renders correctly 1`] = `
   onSave={[Function]}
   onSelectedFileChange={[Function]}
   onSettingsPropertyChange={[Function]}
+  onWorkflowChange={[Function]}
   provProfiles={
     Array [
       Object {
@@ -171,6 +167,7 @@ exports[`General renders correctly 1`] = `
 
 exports[`GeneralView when there are no Android settings does not render Android settings section 1`] = `
 <Base
+  className="container"
   maxWidth={660}
   paddingVertical="x8"
 >
@@ -221,11 +218,14 @@ exports[`GeneralView when there are no Android settings does not render Android 
               </Tooltip>
             </Flex>
             <InputContainer>
-              <Input
-                name="artifactExposingWorkflows"
-                onChange={[Function]}
-                value="All"
-              />
+              <InputContent>
+                <Input
+                  name="iosWorkflow"
+                  onChange={[Function]}
+                  placeholder="All"
+                  value=""
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
           <Flex>
@@ -235,11 +235,13 @@ exports[`GeneralView when there are no Android settings does not render Android 
               App SKU
             </InputLabel>
             <InputContainer>
-              <Input
-                name="appSku"
-                onChange={[Function]}
-                value="Fill"
-              />
+              <InputContent>
+                <Input
+                  name="appSku"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
         </Grid>
@@ -262,11 +264,13 @@ exports[`GeneralView when there are no Android settings does not render Android 
               Apple Developer Account Email
             </InputLabel>
             <InputContainer>
-              <Input
-                name="appleDeveloperAccountEmail"
-                onChange={[Function]}
-                value="Fill"
-              />
+              <InputContent>
+                <Input
+                  name="appleDeveloperAccountEmail"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
           <Flex>
@@ -276,14 +280,25 @@ exports[`GeneralView when there are no Android settings does not render Android 
               App Specific Password
             </InputLabel>
             <InputContainer>
-              <Input
-                name="appSpecificPassword"
-                onChange={[Function]}
-                value="Fill"
-              />
+              <InputContent>
+                <Input
+                  name="appSpecificPassword"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
         </Grid>
+      </Base>
+      <Base>
+        <Checkbox
+          checked={true}
+          name="includeBitCode"
+          onChange={[Function]}
+        >
+          Include bitcode
+        </Checkbox>
       </Base>
     </Base>
     <Base
@@ -521,6 +536,7 @@ exports[`GeneralView when there are no Android settings does not render Android 
 
 exports[`GeneralView when there are no iOS settings does not render iOS settings section 1`] = `
 <Base
+  className="container"
   maxWidth={660}
   paddingVertical="x8"
 >
@@ -571,11 +587,14 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
               </Tooltip>
             </Flex>
             <InputContainer>
-              <Input
-                name="artifactExposingWorkflows"
-                onChange={[Function]}
-                value="All"
-              />
+              <InputContent>
+                <Input
+                  name="androidWorkflow"
+                  onChange={[Function]}
+                  placeholder="All"
+                  value=""
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
           <Flex>
@@ -585,11 +604,13 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
               Track
             </InputLabel>
             <InputContainer>
-              <Input
-                name="track"
-                onChange={[Function]}
-                value="Release"
-              />
+              <InputContent>
+                <Input
+                  name="track"
+                  onChange={[Function]}
+                  value="Release"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
         </Grid>
@@ -826,6 +847,7 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
 
 exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
 <Base
+  className="container"
   maxWidth="100%"
   paddingVertical="x8"
 >
@@ -876,11 +898,14 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
               </Tooltip>
             </Flex>
             <InputContainer>
-              <Input
-                name="artifactExposingWorkflows"
-                onChange={[Function]}
-                value="All"
-              />
+              <InputContent>
+                <Input
+                  name="iosWorkflow"
+                  onChange={[Function]}
+                  placeholder="All"
+                  value=""
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
           <Flex>
@@ -890,11 +915,13 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
               App SKU
             </InputLabel>
             <InputContainer>
-              <Input
-                name="appSku"
-                onChange={[Function]}
-                value="Fill"
-              />
+              <InputContent>
+                <Input
+                  name="appSku"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
         </Grid>
@@ -917,11 +944,13 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
               Apple Developer Account Email
             </InputLabel>
             <InputContainer>
-              <Input
-                name="appleDeveloperAccountEmail"
-                onChange={[Function]}
-                value="Fill"
-              />
+              <InputContent>
+                <Input
+                  name="appleDeveloperAccountEmail"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
           <Flex>
@@ -931,14 +960,25 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
               App Specific Password
             </InputLabel>
             <InputContainer>
-              <Input
-                name="appSpecificPassword"
-                onChange={[Function]}
-                value="Fill"
-              />
+              <InputContent>
+                <Input
+                  name="appSpecificPassword"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
         </Grid>
+      </Base>
+      <Base>
+        <Checkbox
+          checked={true}
+          name="includeBitCode"
+          onChange={[Function]}
+        >
+          Include bitcode
+        </Checkbox>
       </Base>
     </Base>
     <Base
@@ -1191,11 +1231,14 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
               </Tooltip>
             </Flex>
             <InputContainer>
-              <Input
-                name="artifactExposingWorkflows"
-                onChange={[Function]}
-                value="All"
-              />
+              <InputContent>
+                <Input
+                  name="androidWorkflow"
+                  onChange={[Function]}
+                  placeholder="All"
+                  value=""
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
           <Flex>
@@ -1205,11 +1248,13 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
               Track
             </InputLabel>
             <InputContainer>
-              <Input
-                name="track"
-                onChange={[Function]}
-                value="Release"
-              />
+              <InputContent>
+                <Input
+                  name="track"
+                  onChange={[Function]}
+                  value="Release"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
         </Grid>
@@ -1446,6 +1491,7 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
 
 exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
 <Base
+  className="container"
   maxWidth={660}
   paddingVertical="x8"
 >
@@ -1496,11 +1542,14 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
               </Tooltip>
             </Flex>
             <InputContainer>
-              <Input
-                name="artifactExposingWorkflows"
-                onChange={[Function]}
-                value="All"
-              />
+              <InputContent>
+                <Input
+                  name="iosWorkflow"
+                  onChange={[Function]}
+                  placeholder="All"
+                  value=""
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
           <Flex>
@@ -1510,11 +1559,13 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
               App SKU
             </InputLabel>
             <InputContainer>
-              <Input
-                name="appSku"
-                onChange={[Function]}
-                value="Fill"
-              />
+              <InputContent>
+                <Input
+                  name="appSku"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
         </Grid>
@@ -1537,11 +1588,13 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
               Apple Developer Account Email
             </InputLabel>
             <InputContainer>
-              <Input
-                name="appleDeveloperAccountEmail"
-                onChange={[Function]}
-                value="Fill"
-              />
+              <InputContent>
+                <Input
+                  name="appleDeveloperAccountEmail"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
           <Flex>
@@ -1551,14 +1604,25 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
               App Specific Password
             </InputLabel>
             <InputContainer>
-              <Input
-                name="appSpecificPassword"
-                onChange={[Function]}
-                value="Fill"
-              />
+              <InputContent>
+                <Input
+                  name="appSpecificPassword"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
         </Grid>
+      </Base>
+      <Base>
+        <Checkbox
+          checked={true}
+          name="includeBitCode"
+          onChange={[Function]}
+        >
+          Include bitcode
+        </Checkbox>
       </Base>
     </Base>
     <Base
@@ -1811,11 +1875,14 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
               </Tooltip>
             </Flex>
             <InputContainer>
-              <Input
-                name="artifactExposingWorkflows"
-                onChange={[Function]}
-                value="All"
-              />
+              <InputContent>
+                <Input
+                  name="androidWorkflow"
+                  onChange={[Function]}
+                  placeholder="All"
+                  value=""
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
           <Flex>
@@ -1825,11 +1892,13 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
               Track
             </InputLabel>
             <InputContainer>
-              <Input
-                name="track"
-                onChange={[Function]}
-                value="Release"
-              />
+              <InputContent>
+                <Input
+                  name="track"
+                  onChange={[Function]}
+                  value="Release"
+                />
+              </InputContent>
             </InputContainer>
           </Flex>
         </Grid>

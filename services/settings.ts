@@ -11,18 +11,16 @@ export class SettingsService {
     switch (appVersion.platform) {
       case 'ios': {
         return ![
-          'artifactExposingWorkflows',
           'appleDeveloperAccountEmail',
           'appSku',
           'appSpecificPassword',
-          'selectedProvProfile',
-          'selectedCertificate'
+          'selectedAppStoreProvisioningProfile',
+          'selectedCodeSigningIdentity',
+          'includeBitCode'
         ].find(key => !iosSettings[key]);
       }
       case 'android': {
-        return !['artifactExposingWorkflows', 'track', 'selectedKeystoreFile', 'selectedServiceAccountJsonFile'].find(
-          key => !androidSettings[key]
-        );
+        return !['track', 'selectedKeystoreFile', 'selectedServiceAccount'].find(key => !androidSettings[key]);
       }
     }
 

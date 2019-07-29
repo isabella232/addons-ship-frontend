@@ -6,7 +6,7 @@ import * as request from './request';
 
 describe('request', () => {
   const methodsWithoutBody = ['get', 'patch', 'del'],
-    methodsWithBody = ['post', 'put'],
+    methodsWithBody = ['post', 'put', 'patch'],
     url = 'some.url',
     token = 'a-token',
     body = 'some-body';
@@ -17,7 +17,7 @@ describe('request', () => {
       await request[method](url, token);
 
       expect(fetch).toHaveBeenCalledWith(url, {
-        method: method === 'del' ? 'delete' : method,
+        method: (method === 'del' ? 'delete' : method).toUpperCase(),
         headers: {
           Authorization: token
         }
@@ -31,7 +31,7 @@ describe('request', () => {
       await request[method](url, token, body);
 
       expect(fetch).toHaveBeenCalledWith(url, {
-        method,
+        method: method.toUpperCase(),
         headers: {
           Authorization: token
         },
@@ -54,7 +54,7 @@ describe('request', () => {
     ((fetch as unknown) as jest.Mock).mockResolvedValueOnce({ ok: true });
 
     const url = 'some.url',
-      method = 'get';
+      method = 'GET';
     await request.request({ url, method });
 
     expect(fetch).toHaveBeenCalledWith(url, { method });

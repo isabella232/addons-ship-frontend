@@ -1,53 +1,46 @@
+import { Fragment } from 'react';
 import {
   Base,
-  Text,
+  Button,
+  Checkbox,
   Divider,
   Flex,
-  InputLabel,
+  Grid,
   Icon,
   Input,
   InputContainer,
-  Grid,
+  InputContent,
+  InputLabel,
   Link,
   RadioButton,
-  Tooltip,
-  Button
+  Text,
+  Tooltip
 } from '@bitrise/bitkit';
 
-import {
-  ProvProfile,
-  Certificate,
-  KeystoreFile,
-  ServiceAccountJsonFile,
-  IosSettings,
-  AndroidSettings
-} from '@/models/settings';
+import { Certificate, KeystoreFile, ProvProfile, ServiceAccountJsonFile, Settings } from '@/models/settings';
 import { mediaQuery } from '@/utils/media';
-import { Fragment } from 'react';
+import { Platform } from '@/models';
 
-type Props = {
+import css from './style.scss';
+
+interface Props extends Settings {
   maximumNumberOfCertificates: number;
   hasMounted: boolean;
-  provProfiles?: ProvProfile[];
-  certificates?: Certificate[];
-  keystoreFiles?: KeystoreFile[];
-  serviceAccountJsonFiles?: ServiceAccountJsonFile[];
-  iosSettings?: IosSettings;
-  androidSettings?: AndroidSettings;
+  hasIosSettings: boolean;
+  hasAndroidSettings: boolean;
   onSettingsPropertyChange: (
     settings: 'iosSettings' | 'androidSettings',
     settingsProperty: string,
     value: string
   ) => void;
+  onWorkflowChange: (platform: Platform, workflow: string) => void;
   onSelectedFileChange: (
     type: 'ProvProfile' | 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
     file: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
   ) => void;
   onCancel: () => void;
   onSave: () => void;
-  hasIosSettings: boolean;
-  hasAndroidSettings: boolean;
-};
+}
 
 export default ({
   maximumNumberOfCertificates,
@@ -58,7 +51,10 @@ export default ({
   serviceAccountJsonFiles,
   iosSettings,
   androidSettings,
+  iosWorkflow,
+  androidWorkflow,
   onSettingsPropertyChange,
+  onWorkflowChange,
   onSelectedFileChange,
   onCancel,
   onSave,
@@ -68,7 +64,7 @@ export default ({
   const [isDesktop] = mediaQuery('60rem');
 
   return (
-    <Base paddingVertical="x8" maxWidth={isDesktop ? '100%' : 660}>
+    <Base paddingVertical="x8" maxWidth={isDesktop ? '100%' : 660} className={css.container}>
       <Base paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
         {hasIosSettings && iosSettings && (
           <Fragment>
@@ -102,23 +98,28 @@ export default ({
                       )}
                     </Flex>
                     <InputContainer>
-                      <Input
-                        name="artifactExposingWorkflows"
-                        onChange={(event: any) =>
-                          onSettingsPropertyChange('iosSettings', 'artifactExposingWorkflows', event.target.value)
-                        }
-                        value={iosSettings.artifactExposingWorkflows}
-                      />
+                      <InputContent>
+                        <Input
+                          name="iosWorkflow"
+                          onChange={(event: any) => onWorkflowChange('ios', event.target.value)}
+                          value={iosWorkflow}
+                          placeholder="All"
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                   <Flex>
                     <InputLabel margin="x1">App SKU</InputLabel>
                     <InputContainer>
-                      <Input
-                        name="appSku"
-                        onChange={(event: any) => onSettingsPropertyChange('iosSettings', 'appSku', event.target.value)}
-                        value={iosSettings.appSku}
-                      />
+                      <InputContent>
+                        <Input
+                          name="appSku"
+                          onChange={(event: any) =>
+                            onSettingsPropertyChange('iosSettings', 'appSku', event.target.value)
+                          }
+                          value={iosSettings.appSku}
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                 </Grid>
@@ -135,28 +136,43 @@ export default ({
                   <Flex>
                     <InputLabel margin="x1">Apple Developer Account Email</InputLabel>
                     <InputContainer>
-                      <Input
-                        name="appleDeveloperAccountEmail"
-                        onChange={(event: any) =>
-                          onSettingsPropertyChange('iosSettings', 'appleDeveloperAccountEmail', event.target.value)
-                        }
-                        value={iosSettings.appleDeveloperAccountEmail}
-                      />
+                      <InputContent>
+                        <Input
+                          name="appleDeveloperAccountEmail"
+                          onChange={(event: any) =>
+                            onSettingsPropertyChange('iosSettings', 'appleDeveloperAccountEmail', event.target.value)
+                          }
+                          value={iosSettings.appleDeveloperAccountEmail}
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                   <Flex>
                     <InputLabel margin="x1">App Specific Password</InputLabel>
                     <InputContainer>
-                      <Input
-                        name="appSpecificPassword"
-                        onChange={(event: any) =>
-                          onSettingsPropertyChange('iosSettings', 'appSpecificPassword', event.target.value)
-                        }
-                        value={iosSettings.appSpecificPassword}
-                      />
+                      <InputContent>
+                        <Input
+                          name="appSpecificPassword"
+                          onChange={(event: any) =>
+                            onSettingsPropertyChange('iosSettings', 'appSpecificPassword', event.target.value)
+                          }
+                          value={iosSettings.appSpecificPassword}
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                 </Grid>
+              </Base>
+              <Base>
+                <Checkbox
+                  name="includeBitCode"
+                  checked={iosSettings.includeBitCode}
+                  onChange={(event: any) =>
+                    onSettingsPropertyChange('iosSettings', 'includeBitCode', event.target.checked)
+                  }
+                >
+                  Include bitcode
+                </Checkbox>
               </Base>
             </Base>
 
@@ -189,7 +205,7 @@ export default ({
                   {provProfiles.map((provProfile: ProvProfile, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={provProfile === iosSettings.selectedProvProfile}
+                        checked={provProfile.name === iosSettings.selectedAppStoreProvisioningProfile}
                         onChange={() => onSelectedFileChange('ProvProfile', provProfile)}
                       >
                         <Flex
@@ -219,7 +235,7 @@ export default ({
                   {certificates.map((certificate: Certificate, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={certificate === iosSettings.selectedCertificate}
+                        checked={certificate.name === iosSettings.selectedCodeSigningIdentity}
                         onChange={() => onSelectedFileChange('Certificate', certificate)}
                       >
                         <Flex
@@ -275,25 +291,28 @@ export default ({
                       )}
                     </Flex>
                     <InputContainer>
-                      <Input
-                        name="artifactExposingWorkflows"
-                        onChange={(event: any) =>
-                          onSettingsPropertyChange('androidSettings', 'artifactExposingWorkflows', event.target.value)
-                        }
-                        value={androidSettings.artifactExposingWorkflows}
-                      />
+                      <InputContent>
+                        <Input
+                          name="androidWorkflow"
+                          onChange={(event: any) => onWorkflowChange('android', event.target.value)}
+                          value={androidWorkflow}
+                          placeholder="All"
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                   <Flex>
                     <InputLabel margin="x1">Track</InputLabel>
                     <InputContainer>
-                      <Input
-                        name="track"
-                        onChange={(event: any) =>
-                          onSettingsPropertyChange('androidSettings', 'track', event.target.value)
-                        }
-                        value={androidSettings.track}
-                      />
+                      <InputContent>
+                        <Input
+                          name="track"
+                          onChange={(event: any) =>
+                            onSettingsPropertyChange('androidSettings', 'track', event.target.value)
+                          }
+                          value={androidSettings.track}
+                        />
+                      </InputContent>
                     </InputContainer>
                   </Flex>
                 </Grid>
@@ -329,7 +348,7 @@ export default ({
                   {keystoreFiles.map((keystoreFile: KeystoreFile, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={keystoreFile === androidSettings.selectedKeystoreFile}
+                        checked={keystoreFile.name === androidSettings.selectedKeystoreFile}
                         onChange={() => onSelectedFileChange('KeystoreFile', keystoreFile)}
                       >
                         <Flex
@@ -359,7 +378,7 @@ export default ({
                   {serviceAccountJsonFiles.map((serviceAccountJsonFile: ServiceAccountJsonFile, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={serviceAccountJsonFile === androidSettings.selectedServiceAccountJsonFile}
+                        checked={serviceAccountJsonFile.name === androidSettings.selectedServiceAccount}
                         onChange={() => onSelectedFileChange('ServiceAccountJsonFile', serviceAccountJsonFile)}
                       >
                         <Flex

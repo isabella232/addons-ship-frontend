@@ -44,7 +44,9 @@ exports[`Settings renders tabs correctly general 1`] = `
   <Base
     maxWidth={960}
   >
-    <Connect(General) />
+    <Connect(General)
+      appSlug="some-app"
+    />
   </Base>
 </Base>
 `;
