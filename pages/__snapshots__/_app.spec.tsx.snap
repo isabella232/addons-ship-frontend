@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShipApp componentDidMount 1`] = `
+Array [
+  Object {
+    "type": "MOCK_AUTH_SET_TOKEN",
+  },
+]
+`;
+
+exports[`ShipApp componentDidMount 2`] = `
+Object {
+  "ready": true,
+}
+`;
+
+exports[`ShipApp getInitialProps on the client 1`] = `
+Object {
+  "appSlug": "an-app-slug",
+  "pageProps": Object {
+    "page": "props",
+  },
+  "token": "test-api-token-1",
+}
+`;
+
+exports[`ShipApp getInitialProps on the server 1`] = `
+Object {
+  "appSlug": "an-app-slug",
+  "pageProps": Object {
+    "page": "props",
+  },
+  "token": "test-api-token-1",
+}
+`;
+
+exports[`ShipApp getInitialProps when no app slug is present 1`] = `
+Object {
+  "appSlug": undefined,
+  "pageProps": Object {
+    "page": "props",
+  },
+  "token": "test-api-token-1",
+}
+`;
+
+exports[`ShipApp getInitialProps when the Component has no getInitialProps method 1`] = `
+Object {
+  "appSlug": "an-app-slug",
+  "pageProps": Object {},
+  "token": "test-api-token-1",
+}
+`;
+
+exports[`ShipApp renders without errors 1`] = `
+<Base
+  absolute="center"
+>
+  <ProgressBitbot
+    color="grape-3"
+    content="Docking Ship..."
+    size="64px"
+  />
+</Base>
+`;

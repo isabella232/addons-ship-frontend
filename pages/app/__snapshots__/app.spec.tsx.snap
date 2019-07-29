@@ -1081,10 +1081,10 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                         gap="x2"
                       >
                         <Base
-                          className="Flex Flex--align-vert-end Flex--horizontal Flex--gap-x2"
+                          className="Flex Flex--align-vert-end Flex--horizontal Flex--gapped Flex--gap-x2"
                         >
                           <div
-                            className="Base Flex Flex--align-vert-end Flex--horizontal Flex--gap-x2"
+                            className="Base Flex Flex--align-vert-end Flex--horizontal Flex--gapped Flex--gap-x2"
                             style={
                               Object {
                                 "height": undefined,
@@ -1232,14 +1232,14 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                             >
                                               <Base
                                                 Component="button"
-                                                className="Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                                                className="Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                                                 elevation="x1"
                                                 innerRef={[Function]}
                                                 onClick={[Function]}
                                                 width={168}
                                               >
                                                 <button
-                                                  className="Base Base--elevation-x1 Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                                                  className="Base Base--elevation-x1 Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
                                                   onClick={[Function]}
                                                   style={
                                                     Object {
@@ -1257,10 +1257,10 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                                     grow={true}
                                                   >
                                                     <Base
-                                                      className="Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Flex--grow"
+                                                      className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow"
                                                     >
                                                       <div
-                                                        className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gap-x2 Flex--grow"
+                                                        className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow"
                                                         style={
                                                           Object {
                                                             "height": undefined,
