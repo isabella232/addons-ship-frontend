@@ -105,9 +105,8 @@ export class VersionPage extends Component<VersionPageProps> {
   }
 }
 
-const mapStateToProps = ({ appVersion: { appVersion }, settings }: RootState) => ({
-  appVersion,
-  settings
+const mapStateToProps = ({ appVersion: { appVersion } }: RootState) => ({
+  appVersion
 });
 
 export default connect(mapStateToProps)(VersionPage as any);

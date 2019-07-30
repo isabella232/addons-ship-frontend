@@ -280,8 +280,8 @@ export const mockAppVersionEvents: AppVersionEvent[] = [
 ];
 
 export const mockApp: App = {
-  appSlug: 'some-app',
-  title: 'This is an awesome app',
+  appSlug: 'test-app-slug-1',
+  title: 'Awesome app',
   avatarUrl:
     'https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png',
   plan: 'gold',

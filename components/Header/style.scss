@@ -2,16 +2,16 @@
 @import '~@/assets/style/dimensions';
 
 .header {
-  display: flex;
-  align-items: center;
-  height: 18 * $grid;
-  padding: 4 * $grid 8 * $grid;
   background-image: url('/static/header-bg.svg');
   background-size: cover;
 
   @include width-above-screen-small {
     padding-left: 16 * $grid;
   }
+}
+
+.breadcrumbs {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .mobileMenu {

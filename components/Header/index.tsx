@@ -1,5 +1,6 @@
-import { ReactNode, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { connect } from 'react-redux';
 import {
   Base,
@@ -10,31 +11,71 @@ import {
   Image,
   Text,
   Divider,
-  Notification,
   PlacementManager,
   PlacementReference,
-  Placement
+  Placement,
+  Notification
 } from '@bitrise/bitkit';
 import cx from 'classnames';
 
 import { RootState } from '@/store';
 import { App } from '@/models/app';
-
-import css from './style.scss';
+import { AppVersion } from '@/models';
 import { mediaQuery } from '@/utils/media';
 
+import css from './style.scss';
+import PageTitle from './PageTitle';
+
 export type Props = {
-  children?: ReactNode;
   app: App;
+  appVersion: AppVersion;
   shouldShowSettingsOnboarding: boolean;
 };
 
-export const Header = ({ children, app: { appSlug, title, avatarUrl }, shouldShowSettingsOnboarding }: Props) => {
+export const Header = ({
+  app: { appSlug, title, avatarUrl, projectType },
+  appVersion,
+  shouldShowSettingsOnboarding
+}: Props) => {
   const [isDesktop] = mediaQuery('60rem');
   const [isHamburgerIconActive, setHamburgerIconActive] = useState(false);
-  const [isSettingsOnboardingNotificationVisible, setSettingsOnboardingNotificationVisible] = useState(shouldShowSettingsOnboarding);
+  const [isSettingsOnboardingNotificationVisible, setSettingsOnboardingNotificationVisible] = useState(
+    shouldShowSettingsOnboarding
+  );
+  const { route } = useRouter();
 
-  const appLink = `https://app.bitrise.io/app/${appSlug}`;
+  const appLink = `https://app.bitrise.io/app/${appSlug}`,
+    pageType = route.replace(/^\//, '');
+
+  let pageTitle,
+    breadcrumbs = null;
+  switch (pageType) {
+    case 'settings':
+      projectType = 'settings';
+      pageTitle = 'Settings';
+      break;
+    case 'version':
+      const { version, buildNumber } = appVersion;
+      pageTitle = `${title} v${version} (${buildNumber})`;
+      break;
+    case 'app':
+    default:
+      pageTitle = title;
+  }
+
+  if (['settings', 'version'].includes(pageType)) {
+    breadcrumbs = (
+      <Flex direction="horizontal" paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
+        <Link href={`/app?appSlug=${appSlug}`} as={`/apps/${appSlug}`}>
+          <a>
+            <Text size={isDesktop ? 'x4' : 'x3'} className={css.breadcrumbs}>
+              « {title}
+            </Text>
+          </a>
+        </Link>
+      </Flex>
+    );
+  }
 
   return (
     <Base>
@@ -54,9 +95,11 @@ export const Header = ({ children, app: { appSlug, title, avatarUrl }, shouldSho
           <PlacementReference>
             {({ ref }) => (
               <Link href={`/settings?appSlug=${appSlug}`} as={`/apps/${appSlug}/settings`}>
-                <AddonBeamLink Component="a" icon="Settings" innerRef={ref}>
-                  Settings
-                </AddonBeamLink>
+                <a ref={ref}>
+                  <AddonBeamLink Component="div" icon="Settings">
+                    Settings
+                  </AddonBeamLink>
+                </a>
               </Link>
             )}
           </PlacementReference>
@@ -82,9 +125,13 @@ export const Header = ({ children, app: { appSlug, title, avatarUrl }, shouldSho
               </Base>
             )}
           </Placement>
-        </AddonBeam>
+        </AddonBeam>{' '}
       </PlacementManager>
-      <div className={css.header}>{children}</div>
+
+      <Flex className={css.header} direction="vertical" paddingVertical={breadcrumbs ? 'x5' : 'x8'} gap="x2">
+        {breadcrumbs}
+        <PageTitle projectType={projectType} title={pageTitle} smaller={!!breadcrumbs} />
+      </Flex>
       <Flex
         direction="vertical"
         alignChildrenVertical="end"
@@ -107,9 +154,11 @@ export const Header = ({ children, app: { appSlug, title, avatarUrl }, shouldSho
         <Divider color="grape-4" />
         <Flex padding="x4">
           <Link href={`/settings?appSlug=${appSlug}`} as={`/apps/${appSlug}/settings`}>
-            <Text Component="a" size="x3" color="gray-1">
-              Settings
-            </Text>
+            <a>
+              <Text size="x3" color="gray-1">
+                Settings
+              </Text>
+            </a>
           </Link>
         </Flex>
       </Flex>
@@ -117,6 +166,7 @@ export const Header = ({ children, app: { appSlug, title, avatarUrl }, shouldSho
   );
 };
 
-const mapStateToProps = ({ app }: RootState) => ({ app });
+const mapStateToProps = ({ app, appVersion: { appVersion } }: RootState) => ({ app, appVersion });
 
-export default connect(mapStateToProps)(Header as any);
+// @ts-ignore
+export default connect(mapStateToProps)(Header);

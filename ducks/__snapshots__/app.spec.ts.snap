@@ -19,11 +19,11 @@ Array [
   },
   Object {
     "payload": Object {
-      "appSlug": "some-app",
+      "appSlug": "test-app-slug-1",
       "avatarUrl": "https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png",
       "plan": "gold",
       "projectType": "other",
-      "title": "This is an awesome app",
+      "title": "Awesome app",
     },
     "type": "APP_GET_COMPLETE",
   },
@@ -34,10 +34,10 @@ exports[`app fetchApp fetches app version events 2`] = `Object {}`;
 
 exports[`app reducer loads an app 1`] = `
 Object {
-  "appSlug": "some-app",
+  "appSlug": "test-app-slug-1",
   "avatarUrl": "https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png",
   "plan": "gold",
   "projectType": "other",
-  "title": "This is an awesome app",
+  "title": "Awesome app",
 }
 `;
