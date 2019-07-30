@@ -6,7 +6,8 @@ import update from 'lodash/update';
 import filter from 'lodash/filter';
 
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
-import { AppVersion, Settings, IosSettings, AndroidSettings, AppVersionEvent } from '@/models';
+import { AppVersion, AppVersionEvent } from '@/models';
+import { Settings, IosSettings, AndroidSettings } from '@/models/settings';
 import { Uploadable } from '@/models/uploadable';
 import { RootState } from '@/store';
 import { updateAppVersion, uploadScreenshots, publishAppVersion, pollPublishStatus } from '@/ducks/appVersion';
@@ -282,7 +283,7 @@ export class AppVersionDetails extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ appVersion: { appVersion, events }, settings }: RootState) => ({
+const mapStateToProps = ({ appVersion: { appVersion, events }, settings: { settings } }: RootState) => ({
   appVersion,
   settings,
   appVersionEvents: orderedAppVersionEvents(events)

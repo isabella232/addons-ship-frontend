@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTitle renders without errors 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x0"
+>
+  <Icon
+    name="Bitbot"
+    size="2rem"
+  />
+  <Text
+    size="x6"
+    weight="bold"
+  >
+    Some title
+  </Text>
+</Flex>
+`;
+
+exports[`PageTitle renders without errors in smaller 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x0"
+>
+  <Icon
+    name="Bitbot"
+    size="2rem"
+  />
+  <Text
+    size="x5"
+    weight="bold"
+  >
+    Some title
+  </Text>
+</Flex>
+`;
+
+exports[`PageTitle renders without errors on mobile 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x4"
+>
+  <Icon
+    name="Bitbot"
+    size="2rem"
+  />
+  <Text
+    size="x5"
+    weight="bold"
+  >
+    Some title
+  </Text>
+</Flex>
+`;
+
+exports[`PageTitle with android project type 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x0"
+>
+  <Icon
+    name="PlatformsAndroid"
+    size="2rem"
+  />
+  <Text
+    size="x6"
+    weight="bold"
+  >
+    Some title
+  </Text>
+</Flex>
+`;
+
+exports[`PageTitle with cordova project type 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x0"
+>
+  <Icon
+    name="PlatformsCordova"
+    size="2rem"
+  />
+  <Text
+    size="x6"
+    weight="bold"
+  >
+    Some title
+  </Text>
+</Flex>
+`;
+
+exports[`PageTitle with ionic project type 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x0"
+>
+  <Icon
+    name="PlatformsIonic"
+    size="2rem"
+  />
+  <Text
+    size="x6"
+    weight="bold"
+  >
+    Some title
+  </Text>
+</Flex>
+`;
+
+exports[`PageTitle with ios project type 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x0"
+>
+  <Icon
+    name="PlatformsApple"
+    size="2rem"
+  />
+  <Text
+    size="x6"
+    weight="bold"
+  >
+    Some title
+  </Text>
+</Flex>
+`;
+
+exports[`PageTitle with react project type 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x0"
+>
+  <Icon
+    name="PlatformsReact"
+    size="2rem"
+  />
+  <Text
+    size="x6"
+    weight="bold"
+  >
+    Some title
+  </Text>
+</Flex>
+`;
+
+exports[`PageTitle with settings project type 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x0"
+>
+  <Icon
+    name="Settings"
+    size="2rem"
+  />
+  <Text
+    size="x6"
+    weight="bold"
+  >
+    Some title
+  </Text>
+</Flex>
+`;
+
+exports[`PageTitle with xamarin project type 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x0"
+>
+  <Icon
+    name="PlatformsXamarin"
+    size="2rem"
+  />
+  <Text
+    size="x6"
+    weight="bold"
+  >
+    Some title
+  </Text>
+</Flex>
+`;
