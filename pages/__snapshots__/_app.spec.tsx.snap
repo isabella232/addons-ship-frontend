@@ -20,7 +20,7 @@ Object {
   "pageProps": Object {
     "page": "props",
   },
-  "settingsOnboardingSeen": true,
+  "settingsOnboardingSeen": false,
   "token": "test-api-token-1",
 }
 `;
@@ -31,7 +31,7 @@ Object {
   "pageProps": Object {
     "page": "props",
   },
-  "settingsOnboardingSeen": true,
+  "settingsOnboardingSeen": false,
   "token": "test-api-token-1",
 }
 `;
@@ -39,6 +39,17 @@ Object {
 exports[`ShipApp getInitialProps when no app slug is present 1`] = `
 Object {
   "appSlug": undefined,
+  "pageProps": Object {
+    "page": "props",
+  },
+  "settingsOnboardingSeen": false,
+  "token": "test-api-token-1",
+}
+`;
+
+exports[`ShipApp getInitialProps when settings onboarding has already been seen 1`] = `
+Object {
+  "appSlug": "an-app-slug",
   "pageProps": Object {
     "page": "props",
   },
@@ -51,7 +62,7 @@ exports[`ShipApp getInitialProps when the Component has no getInitialProps metho
 Object {
   "appSlug": "an-app-slug",
   "pageProps": Object {},
-  "settingsOnboardingSeen": true,
+  "settingsOnboardingSeen": false,
   "token": "test-api-token-1",
 }
 `;
