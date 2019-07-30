@@ -86,19 +86,9 @@ export class ShipApp extends App<ShipAppProps> {
     return (
       <Container>
         <Provider store={store}>
-          <Header />
+          <Header shouldShowSettingsOnboarding={!settingsOnboardingSeen} />
           <Component {...pageProps} />
         </Provider>
-        {!settingsOnboardingSeen && (
-          <Notification type="inform" icon="Lightbulb">
-            <Text size="x3" weight="bold" margin="x1">
-              Setup Publishing
-            </Text>
-            <Text>
-              We really recommend you to setup publishing as a first step. You only need to do this once per application, then you will be able to publish all versions to App Store Connect or Google Play Console.
-            </Text>
-          </Notification>
-        )}
       </Container>
     );
   }
