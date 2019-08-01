@@ -7,12 +7,24 @@ jest.mock('next/router', () => ({
   ...jest.requireActual('next/router'),
   useRouter: jest.fn(() => ({ route: '' }))
 }));
+jest.mock(
+  'popper.js',
+  () =>
+    class {
+      constructor() {
+        return {
+          scheduleUpdate: jest.fn(),
+          update: jest.fn()
+        };
+      }
+    }
+);
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { shallow, mount } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-import { AddonBeam, Notification } from '@bitrise/bitkit';
+import { AddonBeam, Link } from '@bitrise/bitkit';
 
 import { mediaQuery } from '@/utils/media';
 import { mockApp, mockAppVersion } from '@/mocks';
@@ -95,7 +107,7 @@ describe('Header', () => {
       (useState as jest.Mock).mockReturnValue([true, setSettingsOnboardingNotificationVisible]);
 
       const tree = await mount(<Header {...defaultProps} shouldShowSettingsOnboarding />);
-      (tree.find(Notification).props() as any).onRemove();
+      (tree.find(Link).props() as any).onClick();
 
       expect(setSettingsOnboardingNotificationVisible).toHaveBeenCalledWith(false);
     });
