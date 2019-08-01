@@ -19,6 +19,7 @@ const _publishAppVersion = (appVersion: AppVersion) => async (
 
     dispatch(publishAppVersion.complete());
   } catch (error) {
+    console.error('publishAppVersion', error);
     dispatch(publishAppVersion.error(error));
   }
 };

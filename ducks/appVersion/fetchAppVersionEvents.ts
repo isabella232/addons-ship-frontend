@@ -14,13 +14,16 @@ const _fetchAppVersionEvents = (appSlug: string, versionId: string) => async (di
 
     dispatch(fetchAppVersionEvents.complete(appVersionEvents));
   } catch (error) {
+    console.error('fetchAppVersionEvents', error);
     dispatch(fetchAppVersionEvents.error(error));
   }
 };
 
 const fetchAppVersionEvents = Object.assign(_fetchAppVersionEvents, {
   next: createAction($`GET_EVENTS_NEXT`),
-  complete: createAction($`GET_EVENTS_COMPLETE`, resolve => (appVersionEvents: AppVersionEvent[]) => resolve(appVersionEvents)),
+  complete: createAction($`GET_EVENTS_COMPLETE`, resolve => (appVersionEvents: AppVersionEvent[]) =>
+    resolve(appVersionEvents)
+  ),
   error: createAction($`GET_EVENTS_ERROR`, resolve => (error: Error) => resolve(error))
 });
 

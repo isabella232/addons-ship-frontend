@@ -18,6 +18,7 @@ const _deleteAppContact = (appSlug: string, appContact: AppContact) => async (
 
     dispatch(deleteAppContact.complete(appContact.id));
   } catch (error) {
+    console.error('deleteAppContact', error);
     dispatch(deleteAppContact.error(error));
   }
 };

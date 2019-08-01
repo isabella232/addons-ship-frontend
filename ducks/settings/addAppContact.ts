@@ -19,6 +19,7 @@ const _addAppContact = (
 
     dispatch(addAppContact.complete(appContact));
   } catch (error) {
+    console.error('addAppContact', error);
     dispatch(addAppContact.error(error));
   }
 };

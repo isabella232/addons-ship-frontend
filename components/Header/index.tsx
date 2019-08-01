@@ -36,17 +36,20 @@ export type Props = {
   shouldShowSettingsOnboarding: boolean;
 };
 
-export const Header = ({
-  app: { appSlug, title, avatarUrl, projectType },
-  appVersion,
-  shouldShowSettingsOnboarding
-}: Props) => {
+export const Header = ({ app, appVersion, shouldShowSettingsOnboarding }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
   const [isHamburgerIconActive, setHamburgerIconActive] = useState(false);
   const [isSettingsOnboardingNotificationVisible, setSettingsOnboardingNotificationVisible] = useState(
     shouldShowSettingsOnboarding
   );
   const { route } = useRouter();
+
+  if (!app) {
+    console.log('Header has no app');
+    return null;
+  }
+
+  let { appSlug, title, avatarUrl, projectType } = app;
 
   const appLink = `https://app.bitrise.io/app/${appSlug}`,
     pageType = route.replace(/^\//, '');

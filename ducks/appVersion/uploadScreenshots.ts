@@ -31,6 +31,7 @@ const _uploadScreenshots = (appSlug: string, versionId: string, screenshots: Upl
     await shipApi.uploadedScreenshots(appSlug, versionId);
     dispatch(uploadScreenshots.complete());
   } catch (error) {
+    console.error('uploadScreenshots', error);
     dispatch(uploadScreenshots.error(error));
   }
 };

@@ -19,6 +19,7 @@ const _fetchApp = (appSlug: string) => async (
 
     dispatch(fetchApp.complete(app));
   } catch (error) {
+    console.error('fetchApp', error);
     dispatch(fetchApp.error(error));
   }
 };
