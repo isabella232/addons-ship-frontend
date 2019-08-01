@@ -30,15 +30,17 @@ export class ShipApp extends App<ShipAppProps> {
   };
 
   static async getInitialProps({ Component, ctx }: AppContext) {
-    let { 'auth-token': token, 'settings-onboarding-seen': settingsOnboardingSeen } = nookies.get(ctx);
-    token = token || 'test-api-token-1';
-    settingsOnboardingSeen = settingsOnboardingSeen || 'false';
+    const cookies = nookies.get(ctx);
 
-    const { appSlug } = ctx.query;
+    let { appSlug, token } = ctx.query;
+    token = token || cookies['auth-token'] || 'test-api-token-1';
+
+    let { 'settings-onboarding-seen': settingsOnboardingSeen } = cookies;
+    settingsOnboardingSeen = settingsOnboardingSeen || 'false';
 
     // Set the token on the server side
     if (ctx.isServer) {
-      await ctx.store.dispatch(setToken(token) as any);
+      await ctx.store.dispatch(setToken(token as string) as any);
     }
 
     if (appSlug) {
