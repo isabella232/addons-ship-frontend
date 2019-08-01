@@ -2,7 +2,24 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { connect } from 'react-redux';
-import { Base, AddonBeam, AddonBeamLink, Flex, Icon, Image, Text, Divider } from '@bitrise/bitkit';
+import {
+  Base,
+  AddonBeam,
+  AddonBeamLink,
+  Flex,
+  Icon,
+  Image,
+  Text,
+  Divider,
+  PlacementManager,
+  PlacementReference,
+  Placement,
+  Notification,
+  PlacementArea,
+  Button,
+  Link as BitkitLink,
+  PlacementArrow
+} from '@bitrise/bitkit';
 import cx from 'classnames';
 
 import { RootState } from '@/store';
@@ -16,11 +33,19 @@ import PageTitle from './PageTitle';
 export type Props = {
   app: App;
   appVersion: AppVersion;
+  shouldShowSettingsOnboarding: boolean;
 };
 
-export const Header = ({ app: { appSlug, title, avatarUrl, projectType }, appVersion }: Props) => {
+export const Header = ({
+  app: { appSlug, title, avatarUrl, projectType },
+  appVersion,
+  shouldShowSettingsOnboarding
+}: Props) => {
   const [isDesktop] = mediaQuery('60rem');
   const [isHamburgerIconActive, setHamburgerIconActive] = useState(false);
+  const [isSettingsOnboardingNotificationVisible, setSettingsOnboardingNotificationVisible] = useState(
+    shouldShowSettingsOnboarding
+  );
   const { route } = useRouter();
 
   const appLink = `https://app.bitrise.io/app/${appSlug}`,
@@ -58,26 +83,59 @@ export const Header = ({ app: { appSlug, title, avatarUrl, projectType }, appVer
 
   return (
     <Base>
-      <AddonBeam
-        addonIcon="SecurityShield"
-        addonName="Ship"
-        appLink={appLink}
-        appName={title}
-        appImage={avatarUrl}
-        backgroundColor="grape-4"
-        color="white"
-        isInResponsiveView={!isDesktop}
-        onHamburgerIconClick={() => setHamburgerIconActive(!isHamburgerIconActive)}
-        isHamburgerIconActive={isHamburgerIconActive}
-      >
-        <Link href={`/settings?appSlug=${appSlug}`} as={`/apps/${appSlug}/settings`}>
-          <a>
-            <AddonBeamLink Component="div" icon="Settings">
-              Settings
-            </AddonBeamLink>
-          </a>
-        </Link>
-      </AddonBeam>
+      <PlacementManager>
+        <AddonBeam
+          addonIcon="SecurityShield"
+          addonName="Ship"
+          appLink={appLink}
+          appName={title}
+          appImage={avatarUrl}
+          backgroundColor="grape-4"
+          color="white"
+          isInResponsiveView={!isDesktop}
+          onHamburgerIconClick={() => setHamburgerIconActive(!isHamburgerIconActive)}
+          isHamburgerIconActive={isHamburgerIconActive}
+        >
+          <PlacementReference>
+            {({ ref }) => (
+              <Link href={`/settings?appSlug=${appSlug}`} as={`/apps/${appSlug}/settings`}>
+                <a ref={ref}>
+                  <AddonBeamLink Component="div" icon="Settings">
+                    Settings
+                  </AddonBeamLink>
+                </a>
+              </Link>
+            )}
+          </PlacementReference>
+          <Placement visible={isSettingsOnboardingNotificationVisible} backgroundColor="grape-1">
+            {() => (
+              <PlacementArea withArrow>
+                <PlacementArrow />
+                <Flex direction="vertical" padding="x6" gap="x3" className={css.settingsOnboardingNotification}>
+                  <Flex direction="horizontal">
+                    <Flex direction="horizontal" alignChildrenVertical="middle" gap="x2" grow>
+                      <Icon name="Lightbulb" color="grape-3" />
+                      <Text size="x3" weight="bold" margin="x1" color="grape-3">
+                        Setup Publishing
+                      </Text>
+                    </Flex>
+                    <BitkitLink onClick={() => setSettingsOnboardingNotificationVisible(false)}>
+                      <Icon name="CloseSmall" color="grape-5" />
+                    </BitkitLink>
+                  </Flex>
+
+                  <Text size="x3" weight="medium" color="grape-5">
+                    We really recommend you to setup publishing as a first step. You only need to do this once per
+                    application, then you will be able to publish all versions to App Store Connect or Google Play
+                    Console.
+                  </Text>
+                </Flex>
+              </PlacementArea>
+            )}
+          </Placement>
+        </AddonBeam>
+      </PlacementManager>
+
       <Flex className={css.header} direction="vertical" paddingVertical={breadcrumbs ? 'x5' : 'x8'} gap="x2">
         {breadcrumbs}
         <PageTitle projectType={projectType} title={pageTitle} smaller={!!breadcrumbs} />

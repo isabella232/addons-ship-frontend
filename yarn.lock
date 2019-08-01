@@ -766,10 +766,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@bitrise/bitkit@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@bitrise/bitkit/-/bitkit-0.0.4.tgz#0bb21f487f450ace9cc3e9d6655cd1c5e3d7c157"
-  integrity sha512-IydNBpmRWOyhlnvavbRRQCnAENRknXrj6zkWQOBZkdB8eE0Az5EmwlrsEgWBKcZLeqFS2h/RZR9qEQnwHQ6u/Q==
+"@bitrise/bitkit@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@bitrise/bitkit/-/bitkit-0.0.7.tgz#c55856cd4d82d2bb566e5050e8ae44010f152553"
+  integrity sha512-NniC/oTEhAx1QZKn5/G3BHZ/qpBCmquH6AIBXpCp2l3qJNtjmBE+sMDqpra3D0dmfpCn01cVO6yOo/ubm09pvA==
   dependencies:
     classnames "^2.2.6"
     clipboard "^2.0.4"

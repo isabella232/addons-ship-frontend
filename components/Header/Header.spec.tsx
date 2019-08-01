@@ -7,12 +7,24 @@ jest.mock('next/router', () => ({
   ...jest.requireActual('next/router'),
   useRouter: jest.fn(() => ({ route: '' }))
 }));
+jest.mock(
+  'popper.js',
+  () =>
+    class {
+      constructor() {
+        return {
+          scheduleUpdate: jest.fn(),
+          update: jest.fn()
+        };
+      }
+    }
+);
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-import { AddonBeam } from '@bitrise/bitkit';
+import { AddonBeam, Link } from '@bitrise/bitkit';
 
 import { mediaQuery } from '@/utils/media';
 import { mockApp, mockAppVersion } from '@/mocks';
@@ -20,7 +32,7 @@ import { mockApp, mockAppVersion } from '@/mocks';
 import { Header, Props } from '.';
 
 describe('Header', () => {
-  const defaultProps: Props = { app: mockApp, appVersion: mockAppVersion };
+  const defaultProps: Props = { app: mockApp, appVersion: mockAppVersion, shouldShowSettingsOnboarding: false };
 
   it('renders correctly', () => {
     (mediaQuery as jest.Mock).mockReturnValueOnce([true]);
@@ -57,16 +69,47 @@ describe('Header', () => {
       test(`${route} for desktop`, () => {
         (useRouter as jest.Mock).mockReturnValueOnce({ route });
         (mediaQuery as jest.Mock).mockReturnValueOnce([true]);
-        const tree = shallowToJson(shallow(<Header {...defaultProps}>My app</Header>));
+        const tree = shallowToJson(shallow(<Header {...defaultProps} />));
         expect(tree).toMatchSnapshot();
       });
 
       test(`${route} for mobile`, () => {
         (useRouter as jest.Mock).mockReturnValueOnce({ route });
         (mediaQuery as jest.Mock).mockReturnValueOnce([false]);
-        const tree = shallowToJson(shallow(<Header {...defaultProps}>My app</Header>));
+        const tree = shallowToJson(shallow(<Header {...defaultProps} />));
         expect(tree).toMatchSnapshot();
       });
+    });
+  });
+
+  describe('when settings onboarding should be shown', () => {
+    beforeEach(() => {
+      (mediaQuery as jest.Mock).mockReturnValue([true]);
+    });
+
+    it('shows the notification', () => {
+      const tree = shallowToJson(shallow(<Header {...defaultProps} shouldShowSettingsOnboarding />));
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('hides notification on close button selection', async () => {
+      // Needed for the tooltip
+      (global as any).document.createRange = () => ({
+        setStart: () => {},
+        setEnd: () => {},
+        commonAncestorContainer: {
+          nodeName: 'BODY',
+          ownerDocument: document
+        }
+      });
+
+      const setSettingsOnboardingNotificationVisible = jest.fn();
+      (useState as jest.Mock).mockReturnValue([true, setSettingsOnboardingNotificationVisible]);
+
+      const tree = await mount(<Header {...defaultProps} shouldShowSettingsOnboarding />);
+      (tree.find(Link).props() as any).onClick();
+
+      expect(setSettingsOnboardingNotificationVisible).toHaveBeenCalledWith(false);
     });
   });
 });
