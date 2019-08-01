@@ -2,32 +2,30 @@
 
 exports[`Header on mobile renders correctly on mobile 1`] = `
 <Base>
-  <AddonBeam
-    addonIcon="SecurityShield"
-    addonName="Ship"
-    appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-    appLink="https://app.bitrise.io/app/test-app-slug-1"
-    appName="Awesome app"
-    backgroundColor="grape-4"
-    color="white"
-    isHamburgerIconActive={false}
-    isInResponsiveView={true}
-    onHamburgerIconClick={[Function]}
-  >
-    <Link
-      as="/apps/test-app-slug-1/settings"
-      href="/settings?appSlug=test-app-slug-1"
+  <PlacementManager>
+    <AddonBeam
+      addonIcon="SecurityShield"
+      addonName="Ship"
+      appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+      appLink="https://app.bitrise.io/app/test-app-slug-1"
+      appName="Awesome app"
+      backgroundColor="grape-4"
+      color="white"
+      isHamburgerIconActive={false}
+      isInResponsiveView={true}
+      onHamburgerIconClick={[Function]}
     >
-      <a>
-        <AddonBeamLink
-          Component="div"
-          icon="Settings"
-        >
-          Settings
-        </AddonBeamLink>
-      </a>
-    </Link>
-  </AddonBeam>
+      <PlacementReference>
+        <Component />
+      </PlacementReference>
+      <Placement
+        placement="bottom-end"
+        visible={false}
+      >
+        <Component />
+      </Placement>
+    </AddonBeam>
+  </PlacementManager>
   <Flex
     className="header"
     direction="vertical"
@@ -111,32 +109,30 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
 
 exports[`Header renders correctly 1`] = `
 <Base>
-  <AddonBeam
-    addonIcon="SecurityShield"
-    addonName="Ship"
-    appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-    appLink="https://app.bitrise.io/app/test-app-slug-1"
-    appName="Awesome app"
-    backgroundColor="grape-4"
-    color="white"
-    isHamburgerIconActive={false}
-    isInResponsiveView={false}
-    onHamburgerIconClick={[Function]}
-  >
-    <Link
-      as="/apps/test-app-slug-1/settings"
-      href="/settings?appSlug=test-app-slug-1"
+  <PlacementManager>
+    <AddonBeam
+      addonIcon="SecurityShield"
+      addonName="Ship"
+      appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+      appLink="https://app.bitrise.io/app/test-app-slug-1"
+      appName="Awesome app"
+      backgroundColor="grape-4"
+      color="white"
+      isHamburgerIconActive={false}
+      isInResponsiveView={false}
+      onHamburgerIconClick={[Function]}
     >
-      <a>
-        <AddonBeamLink
-          Component="div"
-          icon="Settings"
-        >
-          Settings
-        </AddonBeamLink>
-      </a>
-    </Link>
-  </AddonBeam>
+      <PlacementReference>
+        <Component />
+      </PlacementReference>
+      <Placement
+        placement="bottom-end"
+        visible={false}
+      >
+        <Component />
+      </Placement>
+    </AddonBeam>
+  </PlacementManager>
   <Flex
     className="header"
     direction="vertical"
@@ -220,32 +216,30 @@ exports[`Header renders correctly 1`] = `
 
 exports[`Header routes /app for desktop 1`] = `
 <Base>
-  <AddonBeam
-    addonIcon="SecurityShield"
-    addonName="Ship"
-    appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-    appLink="https://app.bitrise.io/app/test-app-slug-1"
-    appName="Awesome app"
-    backgroundColor="grape-4"
-    color="white"
-    isHamburgerIconActive={false}
-    isInResponsiveView={false}
-    onHamburgerIconClick={[Function]}
-  >
-    <Link
-      as="/apps/test-app-slug-1/settings"
-      href="/settings?appSlug=test-app-slug-1"
+  <PlacementManager>
+    <AddonBeam
+      addonIcon="SecurityShield"
+      addonName="Ship"
+      appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+      appLink="https://app.bitrise.io/app/test-app-slug-1"
+      appName="Awesome app"
+      backgroundColor="grape-4"
+      color="white"
+      isHamburgerIconActive={false}
+      isInResponsiveView={false}
+      onHamburgerIconClick={[Function]}
     >
-      <a>
-        <AddonBeamLink
-          Component="div"
-          icon="Settings"
-        >
-          Settings
-        </AddonBeamLink>
-      </a>
-    </Link>
-  </AddonBeam>
+      <PlacementReference>
+        <Component />
+      </PlacementReference>
+      <Placement
+        placement="bottom-end"
+        visible={false}
+      >
+        <Component />
+      </Placement>
+    </AddonBeam>
+  </PlacementManager>
   <Flex
     className="header"
     direction="vertical"
@@ -329,32 +323,30 @@ exports[`Header routes /app for desktop 1`] = `
 
 exports[`Header routes /app for mobile 1`] = `
 <Base>
-  <AddonBeam
-    addonIcon="SecurityShield"
-    addonName="Ship"
-    appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-    appLink="https://app.bitrise.io/app/test-app-slug-1"
-    appName="Awesome app"
-    backgroundColor="grape-4"
-    color="white"
-    isHamburgerIconActive={false}
-    isInResponsiveView={true}
-    onHamburgerIconClick={[Function]}
-  >
-    <Link
-      as="/apps/test-app-slug-1/settings"
-      href="/settings?appSlug=test-app-slug-1"
+  <PlacementManager>
+    <AddonBeam
+      addonIcon="SecurityShield"
+      addonName="Ship"
+      appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+      appLink="https://app.bitrise.io/app/test-app-slug-1"
+      appName="Awesome app"
+      backgroundColor="grape-4"
+      color="white"
+      isHamburgerIconActive={false}
+      isInResponsiveView={true}
+      onHamburgerIconClick={[Function]}
     >
-      <a>
-        <AddonBeamLink
-          Component="div"
-          icon="Settings"
-        >
-          Settings
-        </AddonBeamLink>
-      </a>
-    </Link>
-  </AddonBeam>
+      <PlacementReference>
+        <Component />
+      </PlacementReference>
+      <Placement
+        placement="bottom-end"
+        visible={false}
+      >
+        <Component />
+      </Placement>
+    </AddonBeam>
+  </PlacementManager>
   <Flex
     className="header"
     direction="vertical"
@@ -438,32 +430,30 @@ exports[`Header routes /app for mobile 1`] = `
 
 exports[`Header routes /settings for desktop 1`] = `
 <Base>
-  <AddonBeam
-    addonIcon="SecurityShield"
-    addonName="Ship"
-    appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-    appLink="https://app.bitrise.io/app/test-app-slug-1"
-    appName="Awesome app"
-    backgroundColor="grape-4"
-    color="white"
-    isHamburgerIconActive={false}
-    isInResponsiveView={false}
-    onHamburgerIconClick={[Function]}
-  >
-    <Link
-      as="/apps/test-app-slug-1/settings"
-      href="/settings?appSlug=test-app-slug-1"
+  <PlacementManager>
+    <AddonBeam
+      addonIcon="SecurityShield"
+      addonName="Ship"
+      appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+      appLink="https://app.bitrise.io/app/test-app-slug-1"
+      appName="Awesome app"
+      backgroundColor="grape-4"
+      color="white"
+      isHamburgerIconActive={false}
+      isInResponsiveView={false}
+      onHamburgerIconClick={[Function]}
     >
-      <a>
-        <AddonBeamLink
-          Component="div"
-          icon="Settings"
-        >
-          Settings
-        </AddonBeamLink>
-      </a>
-    </Link>
-  </AddonBeam>
+      <PlacementReference>
+        <Component />
+      </PlacementReference>
+      <Placement
+        placement="bottom-end"
+        visible={false}
+      >
+        <Component />
+      </Placement>
+    </AddonBeam>
+  </PlacementManager>
   <Flex
     className="header"
     direction="vertical"
@@ -566,32 +556,30 @@ exports[`Header routes /settings for desktop 1`] = `
 
 exports[`Header routes /settings for mobile 1`] = `
 <Base>
-  <AddonBeam
-    addonIcon="SecurityShield"
-    addonName="Ship"
-    appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-    appLink="https://app.bitrise.io/app/test-app-slug-1"
-    appName="Awesome app"
-    backgroundColor="grape-4"
-    color="white"
-    isHamburgerIconActive={false}
-    isInResponsiveView={true}
-    onHamburgerIconClick={[Function]}
-  >
-    <Link
-      as="/apps/test-app-slug-1/settings"
-      href="/settings?appSlug=test-app-slug-1"
+  <PlacementManager>
+    <AddonBeam
+      addonIcon="SecurityShield"
+      addonName="Ship"
+      appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+      appLink="https://app.bitrise.io/app/test-app-slug-1"
+      appName="Awesome app"
+      backgroundColor="grape-4"
+      color="white"
+      isHamburgerIconActive={false}
+      isInResponsiveView={true}
+      onHamburgerIconClick={[Function]}
     >
-      <a>
-        <AddonBeamLink
-          Component="div"
-          icon="Settings"
-        >
-          Settings
-        </AddonBeamLink>
-      </a>
-    </Link>
-  </AddonBeam>
+      <PlacementReference>
+        <Component />
+      </PlacementReference>
+      <Placement
+        placement="bottom-end"
+        visible={false}
+      >
+        <Component />
+      </Placement>
+    </AddonBeam>
+  </PlacementManager>
   <Flex
     className="header"
     direction="vertical"
@@ -694,32 +682,30 @@ exports[`Header routes /settings for mobile 1`] = `
 
 exports[`Header routes /version for desktop 1`] = `
 <Base>
-  <AddonBeam
-    addonIcon="SecurityShield"
-    addonName="Ship"
-    appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-    appLink="https://app.bitrise.io/app/test-app-slug-1"
-    appName="Awesome app"
-    backgroundColor="grape-4"
-    color="white"
-    isHamburgerIconActive={false}
-    isInResponsiveView={false}
-    onHamburgerIconClick={[Function]}
-  >
-    <Link
-      as="/apps/test-app-slug-1/settings"
-      href="/settings?appSlug=test-app-slug-1"
+  <PlacementManager>
+    <AddonBeam
+      addonIcon="SecurityShield"
+      addonName="Ship"
+      appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+      appLink="https://app.bitrise.io/app/test-app-slug-1"
+      appName="Awesome app"
+      backgroundColor="grape-4"
+      color="white"
+      isHamburgerIconActive={false}
+      isInResponsiveView={false}
+      onHamburgerIconClick={[Function]}
     >
-      <a>
-        <AddonBeamLink
-          Component="div"
-          icon="Settings"
-        >
-          Settings
-        </AddonBeamLink>
-      </a>
-    </Link>
-  </AddonBeam>
+      <PlacementReference>
+        <Component />
+      </PlacementReference>
+      <Placement
+        placement="bottom-end"
+        visible={false}
+      >
+        <Component />
+      </Placement>
+    </AddonBeam>
+  </PlacementManager>
   <Flex
     className="header"
     direction="vertical"
@@ -822,32 +808,30 @@ exports[`Header routes /version for desktop 1`] = `
 
 exports[`Header routes /version for mobile 1`] = `
 <Base>
-  <AddonBeam
-    addonIcon="SecurityShield"
-    addonName="Ship"
-    appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-    appLink="https://app.bitrise.io/app/test-app-slug-1"
-    appName="Awesome app"
-    backgroundColor="grape-4"
-    color="white"
-    isHamburgerIconActive={false}
-    isInResponsiveView={true}
-    onHamburgerIconClick={[Function]}
-  >
-    <Link
-      as="/apps/test-app-slug-1/settings"
-      href="/settings?appSlug=test-app-slug-1"
+  <PlacementManager>
+    <AddonBeam
+      addonIcon="SecurityShield"
+      addonName="Ship"
+      appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+      appLink="https://app.bitrise.io/app/test-app-slug-1"
+      appName="Awesome app"
+      backgroundColor="grape-4"
+      color="white"
+      isHamburgerIconActive={false}
+      isInResponsiveView={true}
+      onHamburgerIconClick={[Function]}
     >
-      <a>
-        <AddonBeamLink
-          Component="div"
-          icon="Settings"
-        >
-          Settings
-        </AddonBeamLink>
-      </a>
-    </Link>
-  </AddonBeam>
+      <PlacementReference>
+        <Component />
+      </PlacementReference>
+      <Placement
+        placement="bottom-end"
+        visible={false}
+      >
+        <Component />
+      </Placement>
+    </AddonBeam>
+  </PlacementManager>
   <Flex
     className="header"
     direction="vertical"
@@ -877,6 +861,113 @@ exports[`Header routes /version for mobile 1`] = `
       projectType="other"
       smaller={true}
       title="Awesome app v1.0.3 (32)"
+    />
+  </Flex>
+  <Flex
+    alignChildrenVertical="end"
+    backgroundColor="grape-5"
+    className="mobileMenu"
+    color="white"
+    direction="vertical"
+  >
+    <Flex
+      padding="x4"
+    >
+      <a
+        href="https://app.bitrise.io/app/test-app-slug-1"
+        target="_blank"
+      >
+        <Flex
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x2"
+        >
+          <Image
+            borderRadius="x1"
+            height="1.5rem"
+            src="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+            width="1.5rem"
+          />
+          <Flex
+            alignChildrenVertical="middle"
+            direction="horizontal"
+            gap="x1"
+          >
+            <Text
+              size="x3"
+            >
+              Awesome app
+            </Text>
+            <Icon
+              name="OpenInBrowser"
+              size="1.5rem"
+            />
+          </Flex>
+        </Flex>
+      </a>
+    </Flex>
+    <Divider
+      color="grape-4"
+      direction="horizontal"
+      width="0.125rem"
+    />
+    <Flex
+      padding="x4"
+    >
+      <Link
+        as="/apps/test-app-slug-1/settings"
+        href="/settings?appSlug=test-app-slug-1"
+      >
+        <a>
+          <Text
+            color="gray-1"
+            size="x3"
+          >
+            Settings
+          </Text>
+        </a>
+      </Link>
+    </Flex>
+  </Flex>
+</Base>
+`;
+
+exports[`Header when settings onboarding should be shown shows the notification 1`] = `
+<Base>
+  <PlacementManager>
+    <AddonBeam
+      addonIcon="SecurityShield"
+      addonName="Ship"
+      appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+      appLink="https://app.bitrise.io/app/test-app-slug-1"
+      appName="Awesome app"
+      backgroundColor="grape-4"
+      color="white"
+      isHamburgerIconActive={false}
+      isInResponsiveView={false}
+      onHamburgerIconClick={[Function]}
+    >
+      <PlacementReference>
+        <Component />
+      </PlacementReference>
+      <Placement
+        placement="bottom-end"
+        visible={true}
+      >
+        <Component />
+      </Placement>
+    </AddonBeam>
+  </PlacementManager>
+  <Flex
+    className="header"
+    direction="vertical"
+    gap="x2"
+    paddingVertical="x8"
+  >
+    <_default
+      projectType="other"
+      smaller={false}
+      title="Awesome app"
     />
   </Flex>
   <Flex

@@ -17,6 +17,7 @@ export interface ShipAppProps extends DefaultAppIProps {
   store: Store;
   appSlug: string;
   token: string;
+  settingsOnboardingSeen: boolean;
 }
 
 interface AppContext extends NextAppContext {
@@ -29,8 +30,9 @@ export class ShipApp extends App<ShipAppProps> {
   };
 
   static async getInitialProps({ Component, ctx }: AppContext) {
-    let { 'auth-token': token } = nookies.get(ctx);
+    let { 'auth-token': token, 'settings-onboarding-seen': settingsOnboardingSeen } = nookies.get(ctx);
     token = token || 'test-api-token-1';
+    settingsOnboardingSeen = settingsOnboardingSeen || 'false';
 
     const { appSlug } = ctx.query;
 
@@ -45,20 +47,32 @@ export class ShipApp extends App<ShipAppProps> {
 
     const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
 
-    return { pageProps, appSlug, token };
+    return {
+      pageProps,
+      appSlug,
+      token,
+      settingsOnboardingSeen: settingsOnboardingSeen === 'true'
+    };
   }
 
   async componentDidMount() {
-    const { token, store } = this.props;
+    const { token, store, settingsOnboardingSeen } = this.props;
 
     // Set token on the client side too
     await store.dispatch(setToken(token) as any);
 
     this.setState({ ready: true });
+
+    if (!settingsOnboardingSeen) {
+      nookies.set(undefined, 'settings-onboarding-seen', 'true', {
+        maxAge: 1000 * 24 * 60 * 60,
+        path: '/'
+      });
+    }
   }
 
   render() {
-    const { Component, pageProps, store } = this.props;
+    const { Component, pageProps, store, settingsOnboardingSeen } = this.props;
     const { ready } = this.state;
 
     if (!ready) {
@@ -72,7 +86,7 @@ export class ShipApp extends App<ShipAppProps> {
     return (
       <Container>
         <Provider store={store}>
-          <Header />
+          <Header shouldShowSettingsOnboarding={!settingsOnboardingSeen} />
           <Component {...pageProps} />
         </Provider>
       </Container>
