@@ -14,7 +14,11 @@ import {
   PlacementManager,
   PlacementReference,
   Placement,
-  Notification
+  Notification,
+  PlacementArea,
+  Button,
+  Link as BitkitLink,
+  PlacementArrow
 } from '@bitrise/bitkit';
 import cx from 'classnames';
 
@@ -103,26 +107,30 @@ export const Header = ({
               </Link>
             )}
           </PlacementReference>
-          <Placement visible={isSettingsOnboardingNotificationVisible} placement="bottom-end">
+          <Placement visible={isSettingsOnboardingNotificationVisible} backgroundColor="grape-1">
             {() => (
-              <Base className={css.settingsOnboardingNotification}>
-                <Notification
-                  type="inform"
-                  icon="Lightbulb"
-                  onRemove={() => {
-                    setSettingsOnboardingNotificationVisible(false);
-                  }}
-                >
-                  <Text size="x3" weight="bold" margin="x1">
-                    Setup Publishing
-                  </Text>
-                  <Text>
+              <PlacementArea withArrow>
+                <PlacementArrow />
+                <Flex direction="vertical" padding="x6" gap="x3" className={css.settingsOnboardingNotification}>
+                  <Flex direction="horizontal">
+                    <Flex direction="horizontal" alignChildrenVertical="middle" gap="x2" grow>
+                      <Icon name="Lightbulb" color="grape-3" />
+                      <Text size="x3" weight="bold" margin="x1" color="grape-3">
+                        Setup Publishing
+                      </Text>
+                    </Flex>
+                    <BitkitLink onClick={() => setSettingsOnboardingNotificationVisible(false)}>
+                      <Icon name="CloseSmall" color="grape-5" />
+                    </BitkitLink>
+                  </Flex>
+
+                  <Text size="x3" weight="medium" color="grape-5">
                     We really recommend you to setup publishing as a first step. You only need to do this once per
                     application, then you will be able to publish all versions to App Store Connect or Google Play
                     Console.
                   </Text>
-                </Notification>
-              </Base>
+                </Flex>
+              </PlacementArea>
             )}
           </Placement>
         </AddonBeam>
