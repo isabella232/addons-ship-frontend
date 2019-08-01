@@ -1,17 +1,21 @@
 import { Dispatch } from 'redux';
 import { createAction, createReducer } from 'deox';
 
-import api from '@/services/bitrise-api';
+import { ShipAPIService } from '@/services/ship-api';
 import { actionTypeCreator } from '@/utils';
 import { TestDevice } from '@/models/test-device';
 
 const $ = actionTypeCreator('TEST_DEVICES');
 
-const _fetchTestDevices = (appSlug: string) => async (dispatch: Dispatch) => {
+const _fetchTestDevices = (appSlug: string) => async (
+  dispatch: Dispatch,
+  _getState: any,
+  { shipApi }: { shipApi: ShipAPIService }
+) => {
   dispatch(fetchTestDevices.next());
 
   try {
-    const testDevices = await api.getTestDevices(appSlug);
+    const testDevices = await shipApi.getTestDevices(appSlug);
 
     dispatch(fetchTestDevices.complete(testDevices));
   } catch (error) {

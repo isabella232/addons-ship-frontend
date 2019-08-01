@@ -30,6 +30,12 @@ Object {
 }
 `;
 
+exports[`Ship API service getApp fetches a version for an app 1`] = `
+Object {
+  "appSlug": "such-a-nice-app",
+}
+`;
+
 exports[`Ship API service getAppVersion fetches a version for an app 1`] = `
 Object {
   "appSlug": "an-app-slug",
@@ -71,6 +77,26 @@ Object {
   },
   "projectType": "android",
 }
+`;
+
+exports[`Ship API service getTestDevices fetches test devices for an app 1`] = `
+Array [
+  Object {
+    "deviceId": "some-device-id-01",
+    "deviceType": "ios",
+    "owner": "test-user-1",
+  },
+  Object {
+    "deviceId": "some-device-id-02",
+    "deviceType": "android",
+    "owner": "test-user-1",
+  },
+  Object {
+    "deviceId": "some-device-id-03",
+    "deviceType": "ios",
+    "owner": "test-user-2",
+  },
+]
 `;
 
 exports[`Ship API service listAppContacts lists all app contacts 1`] = `

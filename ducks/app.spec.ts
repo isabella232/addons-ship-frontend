@@ -1,9 +1,9 @@
-jest.mock('@/services/bitrise-api');
+jest.mock('@/services/ship-api');
 
 import configureMockStore, { MockStoreCreator, MockStoreEnhanced } from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import bitriseApi from '@/services/bitrise-api';
+import shipApi from '@/services/ship-api';
 import { mockApp } from '@/mocks';
 
 import reducer, { fetchApp } from './app';
@@ -11,7 +11,7 @@ import reducer, { fetchApp } from './app';
 describe('app', () => {
   let mockStore: MockStoreCreator;
   beforeEach(() => {
-    mockStore = configureMockStore([thunk.withExtraArgument({ bitriseApi })]);
+    mockStore = configureMockStore([thunk.withExtraArgument({ shipApi })]);
   });
 
   describe('reducer', () => {
@@ -31,16 +31,16 @@ describe('app', () => {
 
     it('fetches app version events', async () => {
       const appSlug = 'balatonon';
-      (bitriseApi.getApp as jest.Mock).mockResolvedValueOnce(mockApp);
+      (shipApi.getApp as jest.Mock).mockResolvedValueOnce(mockApp);
       await store.dispatch(fetchApp(appSlug) as any);
 
-      expect(bitriseApi.getApp).toHaveBeenCalledWith(appSlug);
+      expect(shipApi.getApp).toHaveBeenCalledWith(appSlug);
       expect(store.getActions()).toMatchSnapshot();
       expect(store.getState()).toMatchSnapshot();
     });
 
     it("can't fetch an app", async () => {
-      (bitriseApi.getApp as jest.Mock).mockRejectedValueOnce('api had some issue');
+      (shipApi.getApp as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(fetchApp('froccsozok') as any);
 
       expect(store.getActions()).toMatchSnapshot();

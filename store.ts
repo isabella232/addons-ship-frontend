@@ -10,7 +10,6 @@ import settings, { SettingsState } from '@/ducks/settings';
 import { appVersionList, AppVersionListState } from '@/ducks/appVersionList';
 import auth, { AuthState } from '@/ducks/auth';
 import shipApi from '@/services/ship-api';
-import bitriseApi from '@/services/bitrise-api';
 
 const rootReducer = combineReducers({
   app,
@@ -48,7 +47,7 @@ export default (initialState: any, _options: any) => {
   const store = createStore(
     rootReducer,
     initialState,
-    composeWithDevTools(applyMiddleware(thunk.withExtraArgument({ shipApi, bitriseApi }), epicMiddleware))
+    composeWithDevTools(applyMiddleware(thunk.withExtraArgument({ shipApi }), epicMiddleware))
   );
 
   epicMiddleware.run(rootEpic);
