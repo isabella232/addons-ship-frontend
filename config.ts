@@ -1,5 +1,11 @@
-import { APIConfig } from './models/services';
+import getConfig from 'next/config';
+
+import { APIConfig } from '@/models/services';
+
+const {
+  publicRuntimeConfig: { SHIP_API_URL }
+} = getConfig();
 
 export const shipApiConfig: APIConfig = {
-  url: 'http://localhost:3003'
+  url: SHIP_API_URL || 'http://localhost:3003'
 };

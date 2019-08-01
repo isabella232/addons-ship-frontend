@@ -19,6 +19,9 @@ module.exports = compose(
     }),
   withTM
 )({
+  publicRuntimeConfig: {
+    SHIP_API_URL: process.env.SHIP_API_URL
+  },
   cssModules: true,
   cssLoaderOptions: {
     modules: true,
