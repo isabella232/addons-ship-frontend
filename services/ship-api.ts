@@ -6,6 +6,7 @@ import { App } from '@/models/app';
 import { snakifyKeys, camelizeKeys, camelizeKeysDeep, snakifyKeysDeep } from '@/utils';
 import { patch, post, get, put, del, request } from '@/utils/request';
 import { Settings, AppContact } from '@/models/settings';
+import { TestDevice } from '@/models/test-device';
 
 export class ShipAPIService {
   constructor(private config: APIConfig) {}
@@ -201,6 +202,26 @@ export class ShipAPIService {
     const { data } = await request({ url, method: 'PATCH', body }).then(res => res.json());
 
     return camelizeKeysDeep(data);
+  }
+
+  async getResource<T>(reourcePath: string): Promise<T> {
+    this.checkToken();
+
+    const { data } = await get(`${this.config.url}/resources/${reourcePath}`, this.token).then(res => res.json());
+
+    return data;
+  }
+
+  async getApp(appSlug: string): Promise<App> {
+    const data = await this.getResource<any>(`apps/${appSlug}`);
+
+    return camelizeKeysDeep(data);
+  }
+
+  async getTestDevices(appSlug: string): Promise<TestDevice[]> {
+    const data = await this.getResource<any[]>(`apps/${appSlug}/test-devices`);
+
+    return data.map(camelizeKeysDeep) as TestDevice[];
   }
 }
 

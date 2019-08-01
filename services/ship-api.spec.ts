@@ -413,4 +413,67 @@ describe('Ship API service', () => {
       expect(response).toMatchSnapshot();
     });
   });
+
+  describe('getTestDevices', () => {
+    testTokenNotSet(() => api.getTestDevices('app-slug'));
+
+    it('fetches test devices for an app', async () => {
+      const appSlug = 'an-app-slug',
+        token = 'such-token';
+
+      (get as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: [
+            {
+              device_id: 'some-device-id-01',
+              device_type: 'ios',
+              owner: 'test-user-1'
+            },
+            {
+              device_id: 'some-device-id-02',
+              device_type: 'android',
+              owner: 'test-user-1'
+            },
+            {
+              device_id: 'some-device-id-03',
+              device_type: 'ios',
+              owner: 'test-user-2'
+            }
+          ]
+        })
+      });
+
+      api.setToken(token);
+
+      const testDevices = await api.getTestDevices(appSlug);
+
+      const url = `${apiUrl}/resources/apps/${appSlug}/test-devices`;
+      expect(get).toHaveBeenCalledWith(url, token);
+
+      expect(testDevices).toMatchSnapshot();
+    });
+  });
+
+  describe('getApp', () => {
+    testTokenNotSet(() => api.getApp('app-slug'));
+
+    it('fetches a version for an app', async () => {
+      const appSlug = 'such-a-nice-app',
+        token = 'very-token';
+
+      (get as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: { app_slug: appSlug }
+        })
+      });
+
+      api.setToken(token);
+
+      const app = await api.getApp(appSlug);
+
+      const url = `${apiUrl}/resources/apps/${appSlug}`;
+      expect(get).toHaveBeenCalledWith(url, token);
+      expect(app).toMatchSnapshot();
+    });
+  });
 });

@@ -1,9 +1,9 @@
-jest.mock('@/services/bitrise-api');
+jest.mock('@/services/ship-api');
 
 import configureMockStore, { MockStoreCreator, MockStoreEnhanced } from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import api from '@/services/bitrise-api';
+import shipApi from '@/services/ship-api';
 
 import { testDevices, fetchTestDevices } from './testDevices';
 import { mockTestDevices } from '@/mocks';
@@ -11,7 +11,7 @@ import { mockTestDevices } from '@/mocks';
 describe('appVersion', () => {
   let mockStore: MockStoreCreator;
   beforeEach(() => {
-    mockStore = configureMockStore([thunk]);
+    mockStore = configureMockStore([thunk.withExtraArgument({ shipApi })]);
   });
 
   describe('reducer', () => {
@@ -36,7 +36,7 @@ describe('appVersion', () => {
     });
 
     it("can't fetch test devices", async () => {
-      (api.getTestDevices as jest.Mock).mockRejectedValueOnce('api had some issue');
+      (shipApi.getTestDevices as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(fetchTestDevices('app-slug') as any);
 
       expect(store.getActions()).toMatchSnapshot();
