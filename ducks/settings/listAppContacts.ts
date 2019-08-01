@@ -19,6 +19,7 @@ const _listAppContacts = (appSlug: string) => async (
 
     dispatch(listAppContacts.complete(appContacts));
   } catch (error) {
+    console.error('listAppContacts', error);
     dispatch(listAppContacts.error(error));
   }
 };

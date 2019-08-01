@@ -18,6 +18,7 @@ const _updateAppContact = (appSlug: string, appContact: AppContact) => async (
 
     dispatch(updateAppContact.complete(newAppContact));
   } catch (error) {
+    console.error('updateAppContact', error);
     dispatch(updateAppContact.error(error));
   }
 };

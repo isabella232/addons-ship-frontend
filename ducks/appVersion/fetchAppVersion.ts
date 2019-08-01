@@ -19,6 +19,7 @@ const _fetchAppVersion = (appSlug: string, versionId: string) => async (
 
     dispatch(fetchAppVersion.complete(appVersion));
   } catch (error) {
+    console.error('fetchAppVersion', error);
     dispatch(fetchAppVersion.error(error));
   }
 };

@@ -19,6 +19,7 @@ const _fetchSettings = (appSlug: string) => async (
 
     dispatch(fetchSettings.complete(settings));
   } catch (error) {
+    console.error('fetchSettings', error);
     dispatch(fetchSettings.error(error));
   }
 };

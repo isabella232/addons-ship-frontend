@@ -19,6 +19,7 @@ const _fetchTestDevices = (appSlug: string) => async (
 
     dispatch(fetchTestDevices.complete(testDevices));
   } catch (error) {
+    console.error('fetchTestDevices', error);
     dispatch(fetchTestDevices.error(error));
   }
 };

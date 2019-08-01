@@ -51,6 +51,8 @@ export class ShipApp extends App<ShipAppProps> {
 
     if (appSlug) {
       await ctx.store.dispatch(fetchApp(appSlug as string) as any);
+    } else {
+      console.log('No app slug provided');
     }
 
     const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};

@@ -18,6 +18,7 @@ const _updateSettings = (appSlug: string, settings: Settings) => async (
 
     dispatch(updateSettings.complete(newSettings));
   } catch (error) {
+    console.error('updateSettings', error);
     dispatch(updateSettings.error(error));
   }
 };
