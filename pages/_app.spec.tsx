@@ -59,7 +59,7 @@ describe('ShipApp', () => {
       ctx = ({
         store,
         isServer: true,
-        query: { appSlug: 'an-app-slug' }
+        query: { appSlug: 'an-app-slug', token: 'a-token-from-query' }
       } as any) as PageContext;
     });
 
@@ -91,6 +91,40 @@ describe('ShipApp', () => {
       const result = await ShipApp.getInitialProps({
         Component,
         ctx: { ...ctx, isServer: false },
+        router: {} as RouterProps
+      });
+
+      expect(result).toMatchSnapshot();
+    });
+
+    test('when token is included in query', async () => {
+      const result = await ShipApp.getInitialProps({
+        Component,
+        ctx: ctx,
+        router: {} as RouterProps
+      });
+
+      expect(result).toMatchSnapshot();
+    });
+
+    test('when token is not included in query, included in cookie', async () => {
+      nookies.get = jest.fn().mockImplementation(() => ({
+        'auth-token': 'a-token-from-cookie'
+      }));
+
+      const result = await ShipApp.getInitialProps({
+        Component,
+        ctx: { ...ctx, query: { appSlug: 'an-app-slug' } },
+        router: {} as RouterProps
+      });
+
+      expect(result).toMatchSnapshot();
+    });
+
+    test('when token is not included in query, nor included in cookie', async () => {
+      const result = await ShipApp.getInitialProps({
+        Component,
+        ctx: { ...ctx, query: { appSlug: 'an-app-slug' } },
         router: {} as RouterProps
       });
 
