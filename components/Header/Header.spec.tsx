@@ -80,7 +80,17 @@ describe('Header', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it.only('hides notification on close button selection', async () => {
+    it('hides notification on close button selection', async () => {
+      // Needed for the tooltip
+      (global as any).document.createRange = () => ({
+        setStart: () => {},
+        setEnd: () => {},
+        commonAncestorContainer: {
+          nodeName: 'BODY',
+          ownerDocument: document
+        }
+      });
+
       const setSettingsOnboardingNotificationVisible = jest.fn();
       (useState as jest.Mock).mockReturnValue([true, setSettingsOnboardingNotificationVisible]);
 

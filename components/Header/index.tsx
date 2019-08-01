@@ -125,7 +125,7 @@ export const Header = ({
               </Base>
             )}
           </Placement>
-        </AddonBeam>{' '}
+        </AddonBeam>
       </PlacementManager>
 
       <Flex className={css.header} direction="vertical" paddingVertical={breadcrumbs ? 'x5' : 'x8'} gap="x2">

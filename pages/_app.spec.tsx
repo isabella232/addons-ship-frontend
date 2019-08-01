@@ -29,6 +29,7 @@ describe('ShipApp', () => {
       store,
       appSlug: 'an-app-slug',
       token: 'auth-token',
+      settingsOnboardingSeen: false,
       pageProps: {},
       Component: () => <h1>Ship Add-on</h1>,
       router: {} as RouterProps

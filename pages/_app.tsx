@@ -3,7 +3,7 @@ import { Store } from 'redux';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import nookies from 'nookies';
-import { ProgressBitbot, Base, Notification, Text } from '@bitrise/bitkit';
+import { ProgressBitbot, Base } from '@bitrise/bitkit';
 
 import { setToken } from '@/ducks/auth';
 import Header from '@/components/Header';

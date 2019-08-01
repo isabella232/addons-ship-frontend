@@ -25,7 +25,6 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
         <Component />
       </Placement>
     </AddonBeam>
-     
   </PlacementManager>
   <Flex
     className="header"
@@ -133,7 +132,6 @@ exports[`Header renders correctly 1`] = `
         <Component />
       </Placement>
     </AddonBeam>
-     
   </PlacementManager>
   <Flex
     className="header"
@@ -241,7 +239,6 @@ exports[`Header routes /app for desktop 1`] = `
         <Component />
       </Placement>
     </AddonBeam>
-     
   </PlacementManager>
   <Flex
     className="header"
@@ -349,7 +346,6 @@ exports[`Header routes /app for mobile 1`] = `
         <Component />
       </Placement>
     </AddonBeam>
-     
   </PlacementManager>
   <Flex
     className="header"
@@ -457,7 +453,6 @@ exports[`Header routes /settings for desktop 1`] = `
         <Component />
       </Placement>
     </AddonBeam>
-     
   </PlacementManager>
   <Flex
     className="header"
@@ -584,7 +579,6 @@ exports[`Header routes /settings for mobile 1`] = `
         <Component />
       </Placement>
     </AddonBeam>
-     
   </PlacementManager>
   <Flex
     className="header"
@@ -711,7 +705,6 @@ exports[`Header routes /version for desktop 1`] = `
         <Component />
       </Placement>
     </AddonBeam>
-     
   </PlacementManager>
   <Flex
     className="header"
@@ -838,7 +831,6 @@ exports[`Header routes /version for mobile 1`] = `
         <Component />
       </Placement>
     </AddonBeam>
-     
   </PlacementManager>
   <Flex
     className="header"
@@ -965,7 +957,6 @@ exports[`Header when settings onboarding should be shown shows the notification 
         <Component />
       </Placement>
     </AddonBeam>
-     
   </PlacementManager>
   <Flex
     className="header"
