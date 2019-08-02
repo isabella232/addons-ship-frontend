@@ -4,7 +4,7 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
 <Base>
   <PlacementManager>
     <AddonBeam
-      addonIcon="SecurityShield"
+      addonIcon="Ship"
       addonName="Ship"
       appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
       appLink="https://app.bitrise.io/app/test-app-slug-1"
@@ -111,7 +111,7 @@ exports[`Header renders correctly 1`] = `
 <Base>
   <PlacementManager>
     <AddonBeam
-      addonIcon="SecurityShield"
+      addonIcon="Ship"
       addonName="Ship"
       appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
       appLink="https://app.bitrise.io/app/test-app-slug-1"
@@ -218,7 +218,7 @@ exports[`Header routes /app for desktop 1`] = `
 <Base>
   <PlacementManager>
     <AddonBeam
-      addonIcon="SecurityShield"
+      addonIcon="Ship"
       addonName="Ship"
       appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
       appLink="https://app.bitrise.io/app/test-app-slug-1"
@@ -325,7 +325,7 @@ exports[`Header routes /app for mobile 1`] = `
 <Base>
   <PlacementManager>
     <AddonBeam
-      addonIcon="SecurityShield"
+      addonIcon="Ship"
       addonName="Ship"
       appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
       appLink="https://app.bitrise.io/app/test-app-slug-1"
@@ -432,7 +432,7 @@ exports[`Header routes /settings for desktop 1`] = `
 <Base>
   <PlacementManager>
     <AddonBeam
-      addonIcon="SecurityShield"
+      addonIcon="Ship"
       addonName="Ship"
       appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
       appLink="https://app.bitrise.io/app/test-app-slug-1"
@@ -558,7 +558,7 @@ exports[`Header routes /settings for mobile 1`] = `
 <Base>
   <PlacementManager>
     <AddonBeam
-      addonIcon="SecurityShield"
+      addonIcon="Ship"
       addonName="Ship"
       appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
       appLink="https://app.bitrise.io/app/test-app-slug-1"
@@ -684,7 +684,7 @@ exports[`Header routes /version for desktop 1`] = `
 <Base>
   <PlacementManager>
     <AddonBeam
-      addonIcon="SecurityShield"
+      addonIcon="Ship"
       addonName="Ship"
       appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
       appLink="https://app.bitrise.io/app/test-app-slug-1"
@@ -810,7 +810,7 @@ exports[`Header routes /version for mobile 1`] = `
 <Base>
   <PlacementManager>
     <AddonBeam
-      addonIcon="SecurityShield"
+      addonIcon="Ship"
       addonName="Ship"
       appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
       appLink="https://app.bitrise.io/app/test-app-slug-1"
@@ -936,7 +936,7 @@ exports[`Header when settings onboarding should be shown shows the notification 
 <Base>
   <PlacementManager>
     <AddonBeam
-      addonIcon="SecurityShield"
+      addonIcon="Ship"
       addonName="Ship"
       appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
       appLink="https://app.bitrise.io/app/test-app-slug-1"
