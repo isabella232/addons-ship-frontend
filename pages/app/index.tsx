@@ -68,7 +68,7 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
         ? appVersionsByVersion
         : appVersionsByBuildNumber;
 
-    if (groupedAppVersionList.length === 0) {
+    if (!groupedAppVersionList || groupedAppVersionList.length === 0) {
       return <EmptyPage />;
     }
 
