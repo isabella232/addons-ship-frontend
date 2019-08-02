@@ -215,7 +215,7 @@ export class ShipAPIService {
   async getApp(appSlug: string): Promise<App> {
     const data = await this.getResource<any>(`apps/${appSlug}`);
 
-    return camelizeKeysDeep(data);
+    return camelizeKeysDeep({ ...data, appSlug });
   }
 
   async getTestDevices(appSlug: string): Promise<TestDevice[]> {
