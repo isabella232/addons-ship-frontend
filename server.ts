@@ -15,7 +15,7 @@ app.prepare().then(() => {
   server.get('/', (req, res) => app.render(req, res, '/', req.params));
 
   const appPath = '/apps/:appSlug';
-  server.get(appPath, (req, res) => app.render(req, res, '/app', req.params));
+  server.get(appPath, (req, res) => app.render(req, res, '/app', { ...req.params, ...req.query }));
 
   const appVersionPath = `${appPath}/versions/:versionId`;
 
