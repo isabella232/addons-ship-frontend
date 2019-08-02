@@ -20,7 +20,8 @@ module.exports = compose(
   withTM
 )({
   publicRuntimeConfig: {
-    SHIP_API_URL: process.env.SHIP_API_URL
+    SHIP_API_URL: process.env.SHIP_API_URL,
+    VERBOSE_LOGGING: process.env.VERBOSE_LOGGING
   },
   cssModules: true,
   cssLoaderOptions: {

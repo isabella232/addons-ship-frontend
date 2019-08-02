@@ -1,5 +1,13 @@
 import fetch, { RequestInit } from 'node-fetch';
 
+import getConfig from 'next/config';
+
+const {
+  publicRuntimeConfig: { VERBOSE_LOGGING }
+} = getConfig();
+
+const verboseLogging = Boolean(VERBOSE_LOGGING);
+
 const getHeaders = (token: string) => ({
   Authorization: token
 });
@@ -15,6 +23,10 @@ export const request = ({ url, method, token, body }: RequestParams) =>
     headers: token ? getHeaders(token) : undefined,
     body
   }).then(res => {
+    if (verboseLogging) {
+      console.log('Request', { url, method, token, body });
+    }
+
     if (!res.ok) {
       throw new Error(`${res.status}: ${res.statusText}`);
     }
