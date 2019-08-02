@@ -9,8 +9,10 @@ import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/se
 import EmptyPage from '@/components/EmptyPage';
 
 import View from './view';
+import { App } from '@/models/app';
 
 export interface AppPageProps extends AppPageQuery {
+  app: App | null;
   appVersionsByVersion: Array<{
     groupName: string;
     appVersions: AppVersion[];
@@ -60,7 +62,7 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
   };
 
   render() {
-    const { appVersionsByVersion, appVersionsByBuildNumber } = this.props;
+    const { appVersionsByVersion, appVersionsByBuildNumber, app } = this.props;
     const { selectedVersionSortingOptionValue } = this.state;
 
     const groupedAppVersionList =
@@ -72,9 +74,17 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
       return <EmptyPage />;
     }
 
-    const {
+    let {
       appVersions: [latestAppVersion]
     } = groupedAppVersionList[0];
+
+    if (app) {
+      latestAppVersion = {
+        appName: app.title,
+        iconUrl: app.avatarUrl,
+        ...latestAppVersion
+      };
+    }
 
     const viewProps = {
       latestAppVersion,
@@ -91,6 +101,7 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
 }
 
 const mapStateToProps = (rootState: RootState) => ({
+  app: rootState.app,
   appVersionsByVersion: getAppVersionsByVersion(rootState),
   appVersionsByBuildNumber: getAppVersionsByBuildNumber(rootState)
 });

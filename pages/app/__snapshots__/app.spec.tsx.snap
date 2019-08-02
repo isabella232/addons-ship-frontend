@@ -984,18 +984,18 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                 >
                   <_default
                     description="Some semi-long description"
-                    detailsPagePath="/123/details"
+                    detailsPagePath="/apps/undefined/versions/123/details"
                     iconUrl="http://placekitten.com/160/160"
                     note="Updated on September 22, 2018"
                     platformIconUrl="/static/icon-apple.svg"
                     title="Standup Timer v1.0.3 (32)"
                   >
                     <Link
-                      href="/123/details"
+                      href="/apps/undefined/versions/123/details"
                     >
                       <a
                         className="appSummary"
-                        href="/123/details"
+                        href="/apps/undefined/versions/123/details"
                         onClick={[Function]}
                       >
                         <div
@@ -1007,27 +1007,57 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                           <div
                             className="iconWrapper"
                           >
-                            <div
+                            <img
+                              alt="Standup Timer v1.0.3 (32)"
                               className="icon"
+                              src="http://placekitten.com/160/160"
+                            />
+                            <Base
+                              paddingHorizontal="x4"
+                              paddingVertical="x2"
                             >
-                              <ReactSVG
-                                afterInjection={[Function]}
-                                beforeInjection={[Function]}
-                                evalScripts="never"
-                                fallback={null}
-                                loading={null}
-                                renumerateIRIElements={true}
-                                src="http://placekitten.com/160/160"
-                                wrapper="div"
+                              <div
+                                className="Base Base--padding-horizontal-x4 Base--padding-vertical-x2"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
                               >
-                                <div />
-                              </ReactSVG>
-                            </div>
+                                <Text
+                                  color="gray-6"
+                                  letterSpacing="x1"
+                                  size="x3"
+                                  weight="medium"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--letter-spacing-x1 Text--size-x3 Text--weight-medium"
+                                    color="gray-6"
+                                  >
+                                    <div
+                                      className="Base Base--color-gray-6 Text Text--letter-spacing-x1 Text--size-x3 Text--weight-medium"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      Updated on September 22, 2018
+                                    </div>
+                                  </Base>
+                                </Text>
+                              </div>
+                            </Base>
                             <div
                               className="note"
-                            >
-                              Updated on September 22, 2018
-                            </div>
+                            />
                           </div>
                           <div
                             className="titleWrapper"
@@ -1044,11 +1074,32 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             >
                               <div />
                             </ReactSVG>
-                            <div
-                              className="title"
+                            <Text
+                              color="grape-4"
+                              letterSpacing="x1"
+                              size="x4"
+                              weight="bold"
                             >
-                              Standup Timer v1.0.3 (32)
-                            </div>
+                              <Base
+                                Component="h5"
+                                className="Text Text--letter-spacing-x1 Text--size-x4 Text--weight-bold"
+                                color="grape-4"
+                              >
+                                <h5
+                                  className="Base Base--color-grape-4 Text Text--letter-spacing-x1 Text--size-x4 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Standup Timer v1.0.3 (32)
+                                </h5>
+                              </Base>
+                            </Text>
                           </div>
                           <div
                             className="description"
