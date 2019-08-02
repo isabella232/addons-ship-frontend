@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AppPage renders empty page 1`] = `<_default />`;
+
 exports[`AppPage renders the list of app versions correctly 1`] = `
 <_default
-  emptyPage={false}
   groupedAppVersionList={
     Array [
       Object {
@@ -250,7 +251,6 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
 
 exports[`AppPage when user selects sort by build numbers renders the list of app version grouped by build number 1`] = `
 <_default
-  emptyPage={false}
   groupedAppVersionList={
     Array [
       Object {
@@ -498,7 +498,6 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
 
 exports[`AppPage when user selects sort by versions renders the list of app version grouped by version 1`] = `
 <_default
-  emptyPage={false}
   groupedAppVersionList={
     Array [
       Object {
@@ -731,7 +730,6 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
 
 exports[`AppPageView when page has apps renders page with apps 1`] = `
 <_default
-  emptyPage={false}
   groupedAppVersionList={
     Array [
       Object {
@@ -1805,173 +1803,6 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
             </div>
           </Base>
         </Flex>
-        <Base
-          paddingVertical="x6"
-        >
-          <div
-            className="Base Base--padding-vertical-x6"
-            style={
-              Object {
-                "height": undefined,
-                "maxHeight": undefined,
-                "maxWidth": undefined,
-                "width": undefined,
-              }
-            }
-          >
-            <_default>
-              <div
-                className="footer"
-              >
-                <ReactSVG
-                  afterInjection={[Function]}
-                  beforeInjection={[Function]}
-                  className="icon"
-                  evalScripts="never"
-                  fallback={null}
-                  loading={null}
-                  renumerateIRIElements={true}
-                  src="/static/icon-bitrise-notext.svg"
-                  wrapper="div"
-                >
-                  <div
-                    className="icon"
-                  />
-                </ReactSVG>
-                <div
-                  className="text"
-                >
-                  Ship
-                </div>
-                <div
-                  className="text"
-                >
-                  An official Bitrise add-on
-                </div>
-              </div>
-            </_default>
-          </div>
-        </Base>
-      </div>
-    </Base>
-  </Flex>
-</_default>
-`;
-
-exports[`AppPageView when page is empty renders empty page 1`] = `
-<_default
-  emptyPage={true}
-  groupedAppVersionList={Array []}
-  latestAppVersion={null}
-  selectedVersionSortingOption={
-    Object {
-      "text": "Option 1",
-      "value": "option-1",
-    }
-  }
-  versionSortOptionWithValueSelected={[Function]}
-  versionSortingOptions={
-    Array [
-      Object {
-        "text": "Option 1",
-        "value": "option-1",
-      },
-      Object {
-        "text": "Option 2",
-        "value": "option-2",
-      },
-    ]
-  }
->
-  <Flex
-    className="wrapper"
-    direction="vertical"
-  >
-    <Base
-      className="Flex Flex--vertical wrapper"
-    >
-      <div
-        className="Base Flex Flex--vertical wrapper"
-        style={
-          Object {
-            "height": undefined,
-            "maxHeight": undefined,
-            "maxWidth": undefined,
-            "width": undefined,
-          }
-        }
-      >
-        <_default>
-          <Flex
-            className="emptyPage"
-            grow={true}
-            paddingVertical="x16"
-          >
-            <Base
-              className="Flex Flex--grow emptyPage"
-              paddingVertical="x16"
-            >
-              <div
-                className="Base Base--padding-vertical-x16 Flex Flex--grow emptyPage"
-                style={
-                  Object {
-                    "height": undefined,
-                    "maxHeight": undefined,
-                    "maxWidth": undefined,
-                    "width": undefined,
-                  }
-                }
-              >
-                <Flex
-                  alignChildrenVertical="middle"
-                  className="textContainer"
-                  direction="vertical"
-                >
-                  <Base
-                    className="Flex Flex--align-vert-middle Flex--vertical textContainer"
-                  >
-                    <div
-                      className="Base Flex Flex--align-vert-middle Flex--vertical textContainer"
-                      style={
-                        Object {
-                          "height": undefined,
-                          "maxHeight": undefined,
-                          "maxWidth": undefined,
-                          "width": undefined,
-                        }
-                      }
-                    >
-                      <Text
-                        align="middle"
-                        size="x4"
-                        weight="bold"
-                      >
-                        <Base
-                          Component="h5"
-                          className="Text Text--align-middle Text--size-x4 Text--weight-bold"
-                        >
-                          <h5
-                            className="Base Text Text--align-middle Text--size-x4 Text--weight-bold"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
-                          >
-                            First, you need to build an IPA/APK
-                          </h5>
-                        </Base>
-                      </Text>
-                    </div>
-                  </Base>
-                </Flex>
-              </div>
-            </Base>
-          </Flex>
-        </_default>
         <Base
           paddingVertical="x6"
         >

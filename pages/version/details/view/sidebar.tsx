@@ -17,7 +17,7 @@ export default ({ publicInstallPageURL, shouldEnablePublish, onSave, onPublish, 
   <Base maxWidth="16rem">
     <Base>
       <Button level="primary" fullWidth margin="x4" onClick={onSave}>
-        <Icon name="Bug" />
+        <Icon name="Save" />
         <Text>Save</Text>
       </Button>
       <Button level="secondary" fullWidth margin="x4" disabled={!shouldEnablePublish} onClick={onPublish}>

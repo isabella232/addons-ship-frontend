@@ -6,6 +6,7 @@ import { AppPageQuery, PageContext, AppVersion } from '@/models';
 import { RootState } from '@/store';
 import { fetchAppVersionList } from '@/ducks/appVersionList';
 import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
+import EmptyPage from '@/components/EmptyPage';
 
 import View from './view';
 
@@ -59,21 +60,23 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
   };
 
   render() {
-    const { appVersionsByVersion, appVersionsByBuildNumber, appSlug } = this.props;
+    const { appVersionsByVersion, appVersionsByBuildNumber } = this.props;
     const { selectedVersionSortingOptionValue } = this.state;
 
     const groupedAppVersionList =
       selectedVersionSortingOptionValue && selectedVersionSortingOptionValue === 'latest-version'
         ? appVersionsByVersion
         : appVersionsByBuildNumber;
+
+    if (groupedAppVersionList.length === 0) {
+      return <EmptyPage />;
+    }
+
     const {
       appVersions: [latestAppVersion]
     } = groupedAppVersionList[0];
 
-    const emptyPage = appSlug === 'empty';
-
     const viewProps = {
-      emptyPage,
       latestAppVersion,
       versionSortingOptions: this.versionSortingOptions,
       versionSortOptionWithValueSelected: this.versionSortOptionWithValueSelected,

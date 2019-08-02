@@ -14,9 +14,7 @@ import {
   PlacementManager,
   PlacementReference,
   Placement,
-  Notification,
   PlacementArea,
-  Button,
   Link as BitkitLink,
   PlacementArrow
 } from '@bitrise/bitkit';
@@ -88,7 +86,7 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding }: Props)
     <Base>
       <PlacementManager>
         <AddonBeam
-          addonIcon="SecurityShield"
+          addonIcon="Ship"
           addonName="Ship"
           appLink={appLink}
           appName={title}

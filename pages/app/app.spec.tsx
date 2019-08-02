@@ -2,7 +2,7 @@ jest.mock('@/utils/media');
 jest.mock('@/ducks/appVersionList');
 
 import { shallow, mount } from 'enzyme';
-import toJSON from 'enzyme-to-json';
+import toJSON, { shallowToJson } from 'enzyme-to-json';
 
 import { mockAppVersions, mockAppVersion } from '@/mocks';
 import { fetchAppVersionList } from '@/ducks/appVersionList';
@@ -15,47 +15,12 @@ import { mediaQuery } from '@/utils/media';
 describe('AppPageView', () => {
   (mediaQuery as jest.Mock).mockReturnValue([true]);
 
-  describe('when page is empty', () => {
-    let appViewComponent: any;
-
-    beforeAll(() => {
-      appViewComponent = mount(
-        <AppView
-          emptyPage={true}
-          latestAppVersion={null}
-          versionSortingOptions={[
-            {
-              text: 'Option 1',
-              value: 'option-1'
-            },
-            {
-              text: 'Option 2',
-              value: 'option-2'
-            }
-          ]}
-          versionSortOptionWithValueSelected={() => {}}
-          selectedVersionSortingOption={{
-            text: 'Option 1',
-            value: 'option-1'
-          }}
-          groupedAppVersionList={[]}
-        />
-      );
-    });
-
-    it('renders empty page', () => {
-      const tree = toJSON(appViewComponent);
-      expect(tree).toMatchSnapshot();
-    });
-  });
-
   describe('when page has apps', () => {
     let appViewComponent: any;
 
     beforeAll(() => {
       appViewComponent = mount(
         <AppView
-          emptyPage={false}
           latestAppVersion={
             {
               id: mockAppVersion.id,
@@ -126,6 +91,13 @@ describe('AppPage', () => {
           appVersionsByBuildNumber={appVersionsByBuildNumber}
         />
       )
+    );
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders empty page', () => {
+    const tree = shallowToJson(
+      shallow(<AppPage appSlug="app-slug-123" appVersionsByVersion={[]} appVersionsByBuildNumber={[]} />)
     );
     expect(tree).toMatchSnapshot();
   });
