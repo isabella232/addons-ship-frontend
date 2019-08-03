@@ -1,5 +1,146 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Header on desktop renders correctly 1`] = `
+<Base>
+  <PlacementManager>
+    <AddonBeam
+      addonIcon="Ship"
+      addonName="Ship"
+      appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+      appLink="https://app.bitrise.io/app/test-app-slug-1"
+      appName="Awesome app"
+      backgroundColor="grape-4"
+      color="white"
+      isHamburgerIconActive={false}
+      isInResponsiveView={false}
+      onHamburgerIconClick={[Function]}
+    >
+      <PlacementReference>
+        <Component />
+      </PlacementReference>
+      <Placement
+        backgroundColor="grape-1"
+        visible={false}
+      >
+        <Component />
+      </Placement>
+    </AddonBeam>
+  </PlacementManager>
+  <Flex
+    className="header"
+    direction="vertical"
+    gap="x2"
+    paddingVertical="x8"
+  >
+    <_default
+      projectType="other"
+      smaller={false}
+      title="Awesome app"
+    />
+  </Flex>
+  <Flex
+    alignChildrenVertical="end"
+    backgroundColor="grape-5"
+    className="mobileMenu"
+    color="white"
+    direction="vertical"
+  >
+    <Flex
+      padding="x4"
+    >
+      <a
+        href="https://app.bitrise.io/app/test-app-slug-1"
+        target="_blank"
+      >
+        <Flex
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x2"
+        >
+          <Image
+            borderRadius="x1"
+            height="1.5rem"
+            src="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
+            width="1.5rem"
+          />
+          <Flex
+            alignChildrenVertical="middle"
+            direction="horizontal"
+            gap="x1"
+          >
+            <Text
+              size="x3"
+            >
+              Awesome app
+            </Text>
+            <Icon
+              name="OpenInBrowser"
+              size="1.5rem"
+            />
+          </Flex>
+        </Flex>
+      </a>
+    </Flex>
+    <Divider
+      color="grape-4"
+      direction="horizontal"
+      width="0.125rem"
+    />
+    <Flex
+      padding="x4"
+    >
+      <Link
+        as="/apps/test-app-slug-1/settings"
+        href="/settings?appSlug=test-app-slug-1"
+      >
+        <a>
+          <Text
+            color="gray-1"
+            size="x3"
+          >
+            Settings
+          </Text>
+        </a>
+      </Link>
+    </Flex>
+  </Flex>
+</Base>
+`;
+
+exports[`Header on desktop renders correctly when no app is defined 1`] = `
+<Flex
+  alignChildrenHorizontal="start"
+  alignChildrenVertical="middle"
+  backgroundColor="grape-4"
+  className="simpleHeader"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x5"
+>
+  <Flex>
+    <Icon
+      name="Ship"
+      size="1.5rem"
+    />
+  </Flex>
+  <Flex>
+    <Text
+      size="x3"
+    >
+      <Text
+        inline={true}
+        weight="bold"
+      >
+        Ship
+      </Text>
+       
+      by Bitrise
+    </Text>
+  </Flex>
+</Flex>
+`;
+
 exports[`Header on mobile renders correctly on mobile 1`] = `
 <Base>
   <PlacementManager>
@@ -107,111 +248,38 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
 </Base>
 `;
 
-exports[`Header renders correctly 1`] = `
-<Base>
-  <PlacementManager>
-    <AddonBeam
-      addonIcon="Ship"
-      addonName="Ship"
-      appImage="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-      appLink="https://app.bitrise.io/app/test-app-slug-1"
-      appName="Awesome app"
-      backgroundColor="grape-4"
-      color="white"
-      isHamburgerIconActive={false}
-      isInResponsiveView={false}
-      onHamburgerIconClick={[Function]}
-    >
-      <PlacementReference>
-        <Component />
-      </PlacementReference>
-      <Placement
-        backgroundColor="grape-1"
-        visible={false}
-      >
-        <Component />
-      </Placement>
-    </AddonBeam>
-  </PlacementManager>
-  <Flex
-    className="header"
-    direction="vertical"
-    gap="x2"
-    paddingVertical="x8"
-  >
-    <_default
-      projectType="other"
-      smaller={false}
-      title="Awesome app"
+exports[`Header on mobile renders correctly when no app is defined 1`] = `
+<Flex
+  alignChildrenHorizontal="middle"
+  alignChildrenVertical="middle"
+  backgroundColor="grape-4"
+  className="simpleHeader"
+  color="white"
+  direction="horizontal"
+  gap="x2"
+  paddingHorizontal="x5"
+>
+  <Flex>
+    <Icon
+      name="Ship"
+      size="1.5rem"
     />
   </Flex>
-  <Flex
-    alignChildrenVertical="end"
-    backgroundColor="grape-5"
-    className="mobileMenu"
-    color="white"
-    direction="vertical"
-  >
-    <Flex
-      padding="x4"
+  <Flex>
+    <Text
+      size="x3"
     >
-      <a
-        href="https://app.bitrise.io/app/test-app-slug-1"
-        target="_blank"
+      <Text
+        inline={true}
+        weight="bold"
       >
-        <Flex
-          alignChildrenVertical="middle"
-          direction="horizontal"
-          gap="x2"
-        >
-          <Image
-            borderRadius="x1"
-            height="1.5rem"
-            src="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
-            width="1.5rem"
-          />
-          <Flex
-            alignChildrenVertical="middle"
-            direction="horizontal"
-            gap="x1"
-          >
-            <Text
-              size="x3"
-            >
-              Awesome app
-            </Text>
-            <Icon
-              name="OpenInBrowser"
-              size="1.5rem"
-            />
-          </Flex>
-        </Flex>
-      </a>
-    </Flex>
-    <Divider
-      color="grape-4"
-      direction="horizontal"
-      width="0.125rem"
-    />
-    <Flex
-      padding="x4"
-    >
-      <Link
-        as="/apps/test-app-slug-1/settings"
-        href="/settings?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            color="gray-1"
-            size="x3"
-          >
-            Settings
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+        Ship
+      </Text>
+       
+      by Bitrise
+    </Text>
   </Flex>
-</Base>
+</Flex>
 `;
 
 exports[`Header routes /app for desktop 1`] = `

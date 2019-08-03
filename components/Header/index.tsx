@@ -29,7 +29,7 @@ import css from './style.scss';
 import PageTitle from './PageTitle';
 
 export type Props = {
-  app: App;
+  app?: App;
   appVersion: AppVersion;
   shouldShowSettingsOnboarding: boolean;
 };
@@ -43,8 +43,30 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding }: Props)
   const { route } = useRouter();
 
   if (!app) {
-    console.log('Header has no app');
-    return null;
+    return (
+      <Flex
+        direction="horizontal"
+        className={css.simpleHeader}
+        backgroundColor="grape-4"
+        color="white"
+        gap="x2"
+        alignChildrenVertical="middle"
+        alignChildrenHorizontal={isDesktop ? 'start' : 'middle'}
+        paddingHorizontal="x5"
+      >
+        <Flex>
+          <Icon name="Ship" />
+        </Flex>
+        <Flex>
+          <Text size="x3">
+            <Text inline weight="bold">
+              Ship
+            </Text>{' '}
+            by Bitrise
+          </Text>
+        </Flex>
+      </Flex>
+    );
   }
 
   let { appSlug, title, avatarUrl, projectType } = app;

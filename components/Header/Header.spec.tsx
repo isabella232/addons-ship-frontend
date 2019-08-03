@@ -34,11 +34,20 @@ import { Header, Props } from '.';
 describe('Header', () => {
   const defaultProps: Props = { app: mockApp, appVersion: mockAppVersion, shouldShowSettingsOnboarding: false };
 
-  it('renders correctly', () => {
-    (mediaQuery as jest.Mock).mockReturnValueOnce([true]);
+  describe('on desktop', () => {
+    beforeEach(() => {
+      (mediaQuery as jest.Mock).mockReturnValueOnce([true]);
+    });
 
-    const tree = shallowToJson(shallow(<Header {...defaultProps}>My app</Header>));
-    expect(tree).toMatchSnapshot();
+    it('renders correctly', () => {
+      const tree = shallowToJson(shallow(<Header {...defaultProps} />));
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('renders correctly when no app is defined', () => {
+      const tree = shallowToJson(shallow(<Header {...defaultProps} app={undefined} />));
+      expect(tree).toMatchSnapshot();
+    });
   });
 
   describe('on mobile', () => {
@@ -59,6 +68,11 @@ describe('Header', () => {
       (wrapper.find(AddonBeam).props() as any).onHamburgerIconClick();
 
       expect(setHamburgerIconActive).toHaveBeenCalledWith(true);
+    });
+
+    it('renders correctly when no app is defined', () => {
+      const tree = shallowToJson(shallow(<Header {...defaultProps} app={undefined} />));
+      expect(tree).toMatchSnapshot();
     });
   });
 
