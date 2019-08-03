@@ -21,7 +21,8 @@
 
   .colorBar {
     height: 20 * $grid - $hover-border-width;
-    background-color: $gray-6;
+    background: conic-gradient(from 266deg at 100% 50%, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.2)),
+      linear-gradient(to right, rgba(13, 131, 205, 1), rgba(29, 227, 219, 1));
   }
 
   .body {
@@ -33,16 +34,8 @@
       margin-top: -20 * $grid;
 
       .icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         @include size(24 * $grid);
         border-radius: 4 * $grid;
-        background-color: $gray-6;
-
-        svg {
-          display: block;
-        }
       }
 
       .note {
