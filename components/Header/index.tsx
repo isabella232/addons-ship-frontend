@@ -92,7 +92,7 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding }: Props)
   }
 
   return (
-    <Base>
+    <Base className={css.navbar}>
       <PlacementManager>
         <AddonBeam
           addonIcon="Ship"

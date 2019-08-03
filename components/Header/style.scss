@@ -1,6 +1,14 @@
 @import '~@/assets/style/mixins';
 @import '~@/assets/style/dimensions';
 
+.navbar :global(.AddonBeam) {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $beam-height;
+  z-index: 100;
+}
+
 .header {
   background-image: url('/static/header-bg.svg');
   background-size: cover;
@@ -15,7 +23,7 @@
 }
 
 .mobileMenu {
-  position: absolute;
+  position: fixed;
   display: none;
   top: $beam-height;
   height: calc(100vh - #{$beam-height});
