@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { connect } from 'react-redux';
 import {
   Base,
@@ -41,6 +41,15 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding }: Props)
     shouldShowSettingsOnboarding
   );
   const { route } = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = () => setHamburgerIconActive(false);
+
+    Router.events.on('routeChangeStart', handleRouteChange);
+    return () => {
+      Router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, []);
 
   if (!app) {
     console.log('Header has no app');
