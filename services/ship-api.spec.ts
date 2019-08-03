@@ -336,6 +336,22 @@ describe('Ship API service', () => {
       expect(get).toHaveBeenCalledWith(url, token);
       expect(resp).toMatchSnapshot();
     });
+
+    it('fills isConfimed properly', async () => {
+      (get as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: [
+            { email: 'not confirmed 1' },
+            { email: 'not confirmed 2', confirmed_at: '0001-01-01 00:00:00+00' },
+            { email: 'confirmed', confirmed_at: '2019-08-03' }
+          ]
+        })
+      });
+
+      api.setToken('yes');
+      const resp = await api.listAppContacts('app-slug');
+      expect(resp).toMatchSnapshot();
+    });
   });
 
   describe('updateAppContactNotificationPreferences', () => {

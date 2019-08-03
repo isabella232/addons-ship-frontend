@@ -99,19 +99,39 @@ Array [
 ]
 `;
 
+exports[`Ship API service listAppContacts fills isConfimed properly 1`] = `
+Array [
+  Object {
+    "email": "not confirmed 1",
+    "isConfirmed": false,
+  },
+  Object {
+    "email": "not confirmed 2",
+    "isConfirmed": true,
+  },
+  Object {
+    "email": "confirmed",
+    "isConfirmed": true,
+  },
+]
+`;
+
 exports[`Ship API service listAppContacts lists all app contacts 1`] = `
 Array [
   Object {
     "email": "aaa",
+    "isConfirmed": false,
     "notificationPreferences": Object {
       "newVersion": true,
     },
   },
   Object {
     "email": "bbb",
+    "isConfirmed": false,
   },
   Object {
     "email": "ccc",
+    "isConfirmed": false,
   },
 ]
 `;

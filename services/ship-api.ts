@@ -173,7 +173,12 @@ export class ShipAPIService {
     const url = `${this.config.url}/apps/${appSlug}/contacts`;
     const { data } = await get(url, this.token).then(res => res.json());
 
-    return data.map(camelizeKeysDeep);
+    const appContacts: AppContact[] = data.map(camelizeKeysDeep);
+
+    return appContacts.map(({ confirmedAt, ...contact }) => ({
+      ...contact,
+      isConfirmed: !!confirmedAt && new Date(confirmedAt).getTime() > 0
+    }));
   }
 
   async updateAppContactNotificationPreferences(appSlug: string, appContact: AppContact): Promise<AppContact> {
