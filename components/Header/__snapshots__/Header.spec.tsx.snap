@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header on mobile renders correctly on mobile 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -108,7 +110,9 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
 `;
 
 exports[`Header renders correctly 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -215,7 +219,9 @@ exports[`Header renders correctly 1`] = `
 `;
 
 exports[`Header routes /app for desktop 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -322,7 +328,9 @@ exports[`Header routes /app for desktop 1`] = `
 `;
 
 exports[`Header routes /app for mobile 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -429,7 +437,9 @@ exports[`Header routes /app for mobile 1`] = `
 `;
 
 exports[`Header routes /settings for desktop 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -555,7 +565,9 @@ exports[`Header routes /settings for desktop 1`] = `
 `;
 
 exports[`Header routes /settings for mobile 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -681,7 +693,9 @@ exports[`Header routes /settings for mobile 1`] = `
 `;
 
 exports[`Header routes /version for desktop 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -807,7 +821,9 @@ exports[`Header routes /version for desktop 1`] = `
 `;
 
 exports[`Header routes /version for mobile 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -933,7 +949,9 @@ exports[`Header routes /version for mobile 1`] = `
 `;
 
 exports[`Header when settings onboarding should be shown shows the notification 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
