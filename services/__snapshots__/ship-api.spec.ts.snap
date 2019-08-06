@@ -107,7 +107,11 @@ Array [
   },
   Object {
     "email": "not confirmed 2",
-    "isConfirmed": true,
+    "isConfirmed": false,
+  },
+  Object {
+    "email": "not confirmed 3",
+    "isConfirmed": false,
   },
   Object {
     "email": "confirmed",

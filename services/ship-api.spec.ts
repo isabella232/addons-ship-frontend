@@ -343,6 +343,7 @@ describe('Ship API service', () => {
           data: [
             { email: 'not confirmed 1' },
             { email: 'not confirmed 2', confirmed_at: '0001-01-01 00:00:00+00' },
+            { email: 'not confirmed 3', confirmed_at: '0001' },
             { email: 'confirmed', confirmed_at: '2019-08-03' }
           ]
         })

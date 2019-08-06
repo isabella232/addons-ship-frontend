@@ -177,7 +177,7 @@ export class ShipAPIService {
 
     return appContacts.map(({ confirmedAt, ...contact }) => ({
       ...contact,
-      isConfirmed: !!confirmedAt && new Date(confirmedAt).getTime() > 0
+      isConfirmed: !!confirmedAt && !confirmedAt.startsWith('0001') && new Date(confirmedAt).getTime() > 0
     }));
   }
 
