@@ -43,11 +43,20 @@ describe('Header', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
   });
 
-  it('renders correctly', () => {
-    (mediaQuery as jest.Mock).mockReturnValueOnce([true]);
+  describe('on desktop', () => {
+    beforeEach(() => {
+      (mediaQuery as jest.Mock).mockReturnValueOnce([true]);
+    });
 
-    const tree = shallowToJson(shallow(<Header {...defaultProps}>My app</Header>));
-    expect(tree).toMatchSnapshot();
+    it('renders correctly', () => {
+      const tree = shallowToJson(shallow(<Header {...defaultProps} />));
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('renders correctly when no app is defined', () => {
+      const tree = shallowToJson(shallow(<Header {...defaultProps} app={undefined} />));
+      expect(tree).toMatchSnapshot();
+    });
   });
 
   describe('on mobile', () => {
@@ -68,6 +77,11 @@ describe('Header', () => {
       (wrapper.find(AddonBeam).props() as any).onHamburgerIconClick();
 
       expect(setHamburgerIconActive).toHaveBeenCalledWith(true);
+    });
+
+    it('renders correctly when no app is defined', () => {
+      const tree = shallowToJson(shallow(<Header {...defaultProps} app={undefined} />));
+      expect(tree).toMatchSnapshot();
     });
   });
 
@@ -95,10 +109,7 @@ describe('Header', () => {
     const setHamburgerIconActive = jest.fn();
     (useState as jest.Mock).mockReturnValueOnce([true, setHamburgerIconActive]);
     let handler;
-    (Router.events.on as jest.Mock).mockImplementationOnce((event, _handler) => {
-      console.log('Router.events.on', { event, _handler });
-      handler = _handler;
-    });
+    (Router.events.on as jest.Mock).mockImplementationOnce((_, _handler) => (handler = _handler));
 
     await shallow(<Header {...defaultProps} />);
     expect(typeof handler).toBe('function');

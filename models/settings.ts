@@ -58,4 +58,5 @@ export type AppContact = {
   };
   isMarkedForDelete?: boolean;
   isMarkedForUpdate?: boolean;
+  confirmedAt?: string;
 };
