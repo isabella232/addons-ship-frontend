@@ -39,6 +39,10 @@ import { Header, Props } from '.';
 describe('Header', () => {
   const defaultProps: Props = { app: mockApp, appVersion: mockAppVersion, shouldShowSettingsOnboarding: false };
 
+  beforeEach(() => {
+    (mediaQuery as jest.Mock).mockReturnValue([true]);
+  });
+
   describe('on desktop', () => {
     beforeEach(() => {
       (mediaQuery as jest.Mock).mockReturnValueOnce([true]);
@@ -105,10 +109,7 @@ describe('Header', () => {
     const setHamburgerIconActive = jest.fn();
     (useState as jest.Mock).mockReturnValueOnce([true, setHamburgerIconActive]);
     let handler;
-    (Router.events.on as jest.Mock).mockImplementationOnce((event, _handler) => {
-      console.log('Router.events.on', { event, _handler });
-      handler = _handler;
-    });
+    (Router.events.on as jest.Mock).mockImplementationOnce((_, _handler) => (handler = _handler));
 
     await shallow(<Header {...defaultProps} />);
     expect(typeof handler).toBe('function');

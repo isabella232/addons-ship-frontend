@@ -1029,7 +1029,7 @@ exports[`Header when settings onboarding should be shown shows the notification 
       appName="Awesome app"
       backgroundColor="grape-4"
       color="white"
-      isHamburgerIconActive={true}
+      isHamburgerIconActive={false}
       isInResponsiveView={false}
       onHamburgerIconClick={[Function]}
     >
@@ -1059,7 +1059,7 @@ exports[`Header when settings onboarding should be shown shows the notification 
   <Flex
     alignChildrenVertical="end"
     backgroundColor="grape-5"
-    className="mobileMenu mobileMenuVisible"
+    className="mobileMenu"
     color="white"
     direction="vertical"
   >
