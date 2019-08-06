@@ -1,10 +1,15 @@
 jest.mock('@/utils/media');
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
-  useState: jest.fn(input => [input, jest.fn()])
+  useState: jest.fn(input => [input, jest.fn()]),
+  useEffect: jest.fn((fn: Function) => fn())
 }));
 jest.mock('next/router', () => ({
   ...jest.requireActual('next/router'),
+  events: {
+    on: jest.fn(),
+    off: jest.fn()
+  },
   useRouter: jest.fn(() => ({ route: '' }))
 }));
 jest.mock(
@@ -21,7 +26,7 @@ jest.mock(
 );
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { shallow, mount } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import { AddonBeam, Link } from '@bitrise/bitkit';
@@ -94,6 +99,24 @@ describe('Header', () => {
         expect(tree).toMatchSnapshot();
       });
     });
+  });
+
+  test('handleRouteChange', async () => {
+    const setHamburgerIconActive = jest.fn();
+    (useState as jest.Mock).mockReturnValueOnce([true, setHamburgerIconActive]);
+    let handler;
+    (Router.events.on as jest.Mock).mockImplementationOnce((event, _handler) => {
+      console.log('Router.events.on', { event, _handler });
+      handler = _handler;
+    });
+
+    await shallow(<Header {...defaultProps} />);
+    expect(typeof handler).toBe('function');
+
+    // @ts-ignore
+    await handler();
+
+    expect(setHamburgerIconActive).toHaveBeenCalledWith(false);
   });
 
   describe('when settings onboarding should be shown', () => {

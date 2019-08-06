@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header on desktop renders correctly 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -142,7 +144,9 @@ exports[`Header on desktop renders correctly when no app is defined 1`] = `
 `;
 
 exports[`Header on mobile renders correctly on mobile 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -283,7 +287,9 @@ exports[`Header on mobile renders correctly when no app is defined 1`] = `
 `;
 
 exports[`Header routes /app for desktop 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -390,7 +396,9 @@ exports[`Header routes /app for desktop 1`] = `
 `;
 
 exports[`Header routes /app for mobile 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -497,7 +505,9 @@ exports[`Header routes /app for mobile 1`] = `
 `;
 
 exports[`Header routes /settings for desktop 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -623,7 +633,9 @@ exports[`Header routes /settings for desktop 1`] = `
 `;
 
 exports[`Header routes /settings for mobile 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -749,7 +761,9 @@ exports[`Header routes /settings for mobile 1`] = `
 `;
 
 exports[`Header routes /version for desktop 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -875,7 +889,9 @@ exports[`Header routes /version for desktop 1`] = `
 `;
 
 exports[`Header routes /version for mobile 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -1001,7 +1017,9 @@ exports[`Header routes /version for mobile 1`] = `
 `;
 
 exports[`Header when settings onboarding should be shown shows the notification 1`] = `
-<Base>
+<Base
+  className="navbar"
+>
   <PlacementManager>
     <AddonBeam
       addonIcon="Ship"
@@ -1011,7 +1029,7 @@ exports[`Header when settings onboarding should be shown shows the notification 
       appName="Awesome app"
       backgroundColor="grape-4"
       color="white"
-      isHamburgerIconActive={false}
+      isHamburgerIconActive={true}
       isInResponsiveView={false}
       onHamburgerIconClick={[Function]}
     >
@@ -1041,7 +1059,7 @@ exports[`Header when settings onboarding should be shown shows the notification 
   <Flex
     alignChildrenVertical="end"
     backgroundColor="grape-5"
-    className="mobileMenu"
+    className="mobileMenu mobileMenuVisible"
     color="white"
     direction="vertical"
   >
