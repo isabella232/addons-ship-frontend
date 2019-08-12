@@ -32,12 +32,15 @@ export class ShipApp extends App<ShipAppProps> {
   static async getInitialProps({ Component, ctx }: AppContext) {
     const cookies = nookies.get(ctx);
 
+    console.log(ctx.query);
+
     let { appSlug, token } = ctx.query;
     if (token) {
-      nookies.set(undefined, 'auth-token', token as string, {
+      console.log(token);
+      console.log(nookies.set(undefined, 'auth-token', token as string, {
         maxAge: 1000 * 24 * 60 * 60,
         path: '/'
-      });
+      }));
     }
     token = token || cookies['auth-token'] || 'test-api-token-1';
 
