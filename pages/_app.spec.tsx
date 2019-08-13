@@ -107,7 +107,7 @@ describe('ShipApp', () => {
       });
 
       expect(result).toMatchSnapshot();
-      expect(nookies.set).toHaveBeenCalledWith(undefined, 'auth-token', 'a-token-from-query', {
+      expect(nookies.set).toHaveBeenCalledWith(ctx, 'auth-token', 'a-token-from-query', {
         maxAge: 1000 * 24 * 60 * 60,
         path: '/'
       });
