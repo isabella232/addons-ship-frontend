@@ -46,8 +46,13 @@ export class ShipAPIService {
     const publicInstallPageURL = data.public_install_page_url;
     data.public_install_page_url = undefined;
 
+    let camelizedData: AppVersion = camelizeKeys(data);
+    if (!camelizedData.supportedDeviceTypes) {
+      camelizedData.supportedDeviceTypes = [];
+    }
+
     return {
-      ...camelizeKeys(data),
+      ...camelizedData,
       appSlug,
       publicInstallPageURL
     };
