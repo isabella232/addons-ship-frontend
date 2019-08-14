@@ -1,6 +1,6 @@
 import { shipApiConfig } from '@/config';
 import { AppVersion, AppVersionEvent } from '@/models';
-import { APIConfig } from '@/models/services';
+import { APIConfig, AppConfig } from '@/models/services';
 import { Uploadable } from '@/models/uploadable';
 import { App } from '@/models/app';
 import { snakifyKeys, camelizeKeys, camelizeKeysDeep, snakifyKeysDeep } from '@/utils';
@@ -9,9 +9,7 @@ import { Settings, AppContact } from '@/models/settings';
 import { TestDevice } from '@/models/test-device';
 
 export class ShipAPIService {
-  constructor(private config: APIConfig) {}
-
-  // private token: string | null = null;
+  constructor(private config: APIConfig & AppConfig) {}
 
   // @ts-ignore TypeScript has no guard for throwing unfortunately, `token` *can* be null
   private token: string = null;
@@ -221,7 +219,10 @@ export class ShipAPIService {
   async getResource<T>(reourcePath: string): Promise<T> {
     this.checkToken();
 
-    const { data } = await get(`${this.config.url}/resources/${reourcePath}`, this.token).then(res => res.json());
+    const { data } = await get(
+      `${this.config.baseUrl}/api/resources?path=${encodeURIComponent(reourcePath)}`,
+      this.token
+    ).then(res => res.json());
 
     return data;
   }
