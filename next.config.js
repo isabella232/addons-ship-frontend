@@ -21,6 +21,7 @@ module.exports = compose(
 )({
   publicRuntimeConfig: {
     SHIP_API_URL: process.env.SHIP_API_URL,
+    APP_BASE_URL: process.env.APP_BASE_URL,
     VERBOSE_LOGGING: process.env.VERBOSE_LOGGING
   },
   cssModules: true,
