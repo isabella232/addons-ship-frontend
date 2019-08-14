@@ -97,7 +97,16 @@ describe('Ship API service', () => {
 
     it('fetches a list of versions for an app', async () => {
       (get as jest.Mock).mockResolvedValueOnce({
-        json: () => ({ data: [{ id: 123, app_slug: appSlug, build_number: '456' }] })
+        json: () => ({
+          data: [
+            {
+              id: 123,
+              app_slug: appSlug,
+              build_number: '456',
+              app_info: { title: 'An app', app_icon_url: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg' }
+            }
+          ]
+        })
       });
 
       const appSlug = 'an-app-slug',
