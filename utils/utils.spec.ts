@@ -59,6 +59,14 @@ describe('camelizeKeysDeep', () => {
 
     expect(camelizeKeysDeep(input)).toEqual(expected);
   });
+
+  it('converts arrays properly', () => {
+    expect(
+      camelizeKeysDeep({
+        a: { nested_array: [1, 2] }
+      })
+    ).toEqual({ a: { nestedArray: [1, 2] } });
+  });
 });
 
 describe('snakifyKeys', () => {
@@ -106,5 +114,13 @@ describe('snakifyKeysDeep', () => {
     };
 
     expect(snakifyKeysDeep(input)).toEqual(expected);
+  });
+
+  it('converts arrays properly', () => {
+    expect(
+      snakifyKeysDeep({
+        a: { nestedArray: [1, 2] }
+      })
+    ).toEqual({ a: { nested_array: [1, 2] } });
   });
 });
