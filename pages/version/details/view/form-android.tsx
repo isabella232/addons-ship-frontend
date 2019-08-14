@@ -56,7 +56,7 @@ export default ({
           1235
         </Text>
       </Flex>
-      <Textarea name="description" defaultValue={appVersion.shortDescription} />
+      <Textarea name="shortDescription" defaultValue={appVersion.shortDescription} />
     </Base>
 
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
