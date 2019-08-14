@@ -8,10 +8,11 @@ import { Settings, AppContact } from '@/models/settings';
 import { ShipAPIService } from './ship-api';
 
 describe('Ship API service', () => {
-  const apiUrl = 'http://ship.api';
+  const apiUrl = 'http://ship.api',
+    baseAppUrl = 'http://ship.app';
   let api: ShipAPIService;
   beforeEach(() => {
-    api = new ShipAPIService({ url: apiUrl });
+    api = new ShipAPIService({ url: apiUrl, baseUrl: baseAppUrl });
     ([patch, post, get, put, del, request] as jest.Mock[]).forEach(m => m.mockReset());
   });
 
@@ -490,7 +491,7 @@ describe('Ship API service', () => {
 
       const testDevices = await api.getTestDevices(appSlug);
 
-      const url = `${apiUrl}/resources/apps/${appSlug}/test-devices`;
+      const url = `${baseAppUrl}/api/resources?path=apps%2F${appSlug}%2Ftest-devices`;
       expect(get).toHaveBeenCalledWith(url, token);
 
       expect(testDevices).toMatchSnapshot();
@@ -514,7 +515,7 @@ describe('Ship API service', () => {
 
       const app = await api.getApp(appSlug);
 
-      const url = `${apiUrl}/resources/apps/${appSlug}`;
+      const url = `${baseAppUrl}/api/resources?path=apps%2F${appSlug}`;
       expect(get).toHaveBeenCalledWith(url, token);
       expect(app).toMatchSnapshot();
     });
