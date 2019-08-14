@@ -43,6 +43,7 @@ Object {
   "id": 123,
   "publicInstallPageURL": "def.a.valid.url",
   "publicInstallPageUrl": undefined,
+  "supportedDeviceTypes": Array [],
 }
 `;
 
