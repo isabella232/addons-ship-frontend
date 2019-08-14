@@ -27,7 +27,17 @@ describe('Ship API service', () => {
     it('fetches a version for an app', async () => {
       (get as jest.Mock).mockResolvedValueOnce({
         json: () => ({
-          data: { id: 123, app_slug: appSlug, build_number: '456', public_install_page_url: 'def.a.valid.url' }
+          data: {
+            id: 123,
+            app_slug: appSlug,
+            build_number: '456',
+            public_install_page_url: 'def.a.valid.url',
+            app_store_info: {
+              full_description: 'A description',
+              short_description: 'A short description',
+              whats_new: 'Something new'
+            }
+          }
         })
       });
 
@@ -59,16 +69,23 @@ describe('Ship API service', () => {
       const appSlug = 'an-app-slug',
         id = 'a-version-id',
         token = 'very-token',
-        buildNumber = 123;
+        buildNumber = 123,
+        appStoreInfo = {
+          description: 'A description',
+          shortDescription: 'A short description',
+          whatsNew: 'Something new'
+        };
 
       api.setToken(token);
 
       const url = `${apiUrl}/apps/${appSlug}/versions/${id}`;
-      const appVersion = await api.updateAppVersion({ appSlug, id, buildNumber } as any);
+      const appVersion = await api.updateAppVersion({ appSlug, id, buildNumber, ...appStoreInfo } as any);
       expect(put).toHaveBeenCalledWith(
         url,
         token,
-        `{"app_slug":"${appSlug}","id":"${id}","build_number":${buildNumber}}`
+        `{"app_slug":"${appSlug}","id":"${id}","build_number":${buildNumber},"app_store_info":{"short_description":"${appStoreInfo.shortDescription}","full_description":"${
+          appStoreInfo.description
+        }","whats_new":"${appStoreInfo.whatsNew}"}}`
       );
 
       expect(appVersion).toMatchSnapshot();
