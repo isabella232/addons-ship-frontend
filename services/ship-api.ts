@@ -48,25 +48,52 @@ export class ShipAPIService {
     const publicInstallPageURL = data.public_install_page_url;
     data.public_install_page_url = undefined;
 
-    let camelizedData: AppVersion = camelizeKeys(data);
-    if (!camelizedData.supportedDeviceTypes) {
-      camelizedData.supportedDeviceTypes = [];
+    let {
+      appStoreInfo: { fullDescription: description, ...appStoreInfo },
+      ...appVersionData
+    } = camelizeKeysDeep(data);
+    appStoreInfo = { ...appStoreInfo, description };
+    appVersionData = { ...appVersionData, ...appStoreInfo, appSlug, publicInstallPageURL };
+    if (!appVersionData.supportedDeviceTypes) {
+      appVersionData.supportedDeviceTypes = [];
     }
 
-    return {
-      ...camelizedData,
-      appSlug,
-      publicInstallPageURL
-    };
+    return appVersionData as AppVersion;
   }
 
   // PUT /apps/{app-slug}/versions/{version-id}
   async updateAppVersion(appVersion: AppVersion): Promise<AppVersion> {
     this.checkToken();
 
+    let {
+      shortDescription,
+      description: fullDescription,
+      whatsNew,
+      promotionalText,
+      keywords,
+      reviewNotes,
+      supportUrl,
+      marketingUrl,
+      ...appVersionData
+    } = appVersion;
+
     const { appSlug, id: versionId } = appVersion;
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}`,
-      body = JSON.stringify(snakifyKeys(appVersion));
+      body = JSON.stringify(
+        snakifyKeysDeep({
+          ...appVersionData,
+          appStoreInfo: {
+            shortDescription,
+            fullDescription,
+            whatsNew,
+            promotionalText,
+            keywords,
+            reviewNotes,
+            supportUrl,
+            marketingUrl
+          }
+        })
+      );
 
     const { data } = await put(url, this.token, body).then(res => res.json());
     return await camelizeKeys(data);

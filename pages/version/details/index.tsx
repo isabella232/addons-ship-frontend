@@ -122,14 +122,11 @@ export class AppVersionDetails extends Component<Props, State> {
   onChange = (key: string, newValue: string) => {
     if (!key) return;
 
-    const { appVersion } = this.props;
+    const { updatedAppVersion } = this.state;
 
-    const updatedAppVersion = {
-      ...appVersion,
-      [key]: newValue
-    };
-
-    this.setState({ updatedAppVersion });
+    this.setState({
+      updatedAppVersion: { ...updatedAppVersion, [key]: newValue } as AppVersion
+    });
   };
 
   getUploadableScreenshots = (): [Uploadable[], File[]] => {
