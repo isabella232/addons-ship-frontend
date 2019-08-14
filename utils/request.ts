@@ -1,4 +1,4 @@
-import fetch, { RequestInit } from 'node-fetch';
+import fetch, { RequestInit, Response } from 'node-fetch';
 
 import getConfig from 'next/config';
 
@@ -20,9 +20,9 @@ interface RequestParams extends RequestInit {
 export const request = ({ url, method, token, body }: RequestParams) =>
   fetch(url, {
     method,
-    headers: token ? getHeaders(token) : undefined,
+    headers: { ...(token ? getHeaders(token) : undefined), Accept: 'application/json' },
     body
-  }).then(res => {
+  }).then((res: Response) => {
     if (verboseLogging) {
       console.log('Request', { url, method, token, body });
     }

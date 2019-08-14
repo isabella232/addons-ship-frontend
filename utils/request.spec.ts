@@ -19,7 +19,8 @@ describe('request', () => {
       expect(fetch).toHaveBeenCalledWith(url, {
         method: (method === 'del' ? 'delete' : method).toUpperCase(),
         headers: {
-          Authorization: token
+          Authorization: token,
+          Accept: 'application/json'
         }
       });
     });
@@ -33,7 +34,8 @@ describe('request', () => {
       expect(fetch).toHaveBeenCalledWith(url, {
         method: method.toUpperCase(),
         headers: {
-          Authorization: token
+          Authorization: token,
+          Accept: 'application/json'
         },
         body
       });
@@ -57,6 +59,6 @@ describe('request', () => {
       method = 'GET';
     await request.request({ url, method });
 
-    expect(fetch).toHaveBeenCalledWith(url, { method });
+    expect(fetch).toHaveBeenCalledWith(url, { method, headers: { Accept: 'application/json' } });
   });
 });
