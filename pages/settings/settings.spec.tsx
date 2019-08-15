@@ -12,17 +12,15 @@ describe('Settings', () => {
   describe('renders tabs correctly', () => {
     [...AppSettingsPageTabs, 'other'].forEach(tab => {
       test(tab, () => {
-        const tree = shallowToJson(shallow(<SettingsPage selectedTab={tab} appSlug="some-app" pagePath="some/path" />));
+        const tree = shallowToJson(shallow(<SettingsPage selectedTab={tab} appSlug="some-app" />));
         expect(tree).toMatchSnapshot();
       });
     });
   });
 
   describe('dispatches the proper actions', () => {
-    const req = { path: 'some/path' };
-
     it('dispatches fetchSettings', async () => {
-      await SettingsPage.getInitialProps({ query: {}, req, store: { dispatch: jest.fn() } } as any);
+      await SettingsPage.getInitialProps({ query: {}, store: { dispatch: jest.fn() } } as any);
 
       expect(fetchSettings).toHaveBeenCalled();
     });
@@ -30,7 +28,6 @@ describe('Settings', () => {
     it('dispatches listAppContacts', async () => {
       await SettingsPage.getInitialProps({
         query: { selectedTab: 'notifications' },
-        req,
         store: { dispatch: jest.fn() }
       } as any);
 
