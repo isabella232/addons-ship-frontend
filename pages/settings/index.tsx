@@ -10,11 +10,7 @@ import { fetchSettings, listAppContacts } from '@/ducks/settings';
 import General from './general';
 import Notifications from './notifications';
 
-interface SettingsPageProps extends AppSettingsPageQuery {
-  pagePath: string;
-}
-
-export class SettingsPage extends Component<SettingsPageProps> {
+export class SettingsPage extends Component<AppSettingsPageQuery> {
   static displayName = 'SettingsPage';
   static defaultProps = {
     selectedTab: 'general'
@@ -34,10 +30,7 @@ export class SettingsPage extends Component<SettingsPageProps> {
         break;
     }
 
-    const path = isServer ? req.path : location.pathname;
-    const pagePath = path.replace(new RegExp(`/(${AppSettingsPageTabs.join('|')})?$`), '');
-
-    return { appSlug, selectedTab, pagePath };
+    return { appSlug, selectedTab };
   }
 
   tabContent = () => {
@@ -54,11 +47,11 @@ export class SettingsPage extends Component<SettingsPageProps> {
   };
 
   render() {
-    const { pagePath, appSlug, selectedTab } = this.props;
+    const { appSlug, selectedTab } = this.props;
 
     const tab = (key: string) => (
       <Tab active={selectedTab === key}>
-        <Link as={`${pagePath}/${key}`} href={`/settings?appSlug=${appSlug}&selectedTab=${key}`}>
+        <Link as={`/apps/${appSlug}/settings/${key}`} href={`/settings?appSlug=${appSlug}&selectedTab=${key}`}>
           <a>{startCase(key)}</a>
         </Link>
       </Tab>
