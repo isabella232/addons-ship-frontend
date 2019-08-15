@@ -15,6 +15,7 @@ interface SettingsPageProps extends AppSettingsPageQuery {
 }
 
 export class SettingsPage extends Component<SettingsPageProps> {
+  static displayName = 'SettingsPage';
   static defaultProps = {
     selectedTab: 'general'
   };
@@ -24,9 +25,11 @@ export class SettingsPage extends Component<SettingsPageProps> {
 
     switch (selectedTab) {
       case 'general':
+        SettingsPage.displayName = 'GeneralSettings';
         await store.dispatch(fetchSettings(appSlug) as any);
         break;
       case 'notifications':
+        SettingsPage.displayName = 'NotificationSettings';
         await store.dispatch(listAppContacts(appSlug) as any);
         break;
     }

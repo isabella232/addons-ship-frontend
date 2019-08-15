@@ -68,7 +68,7 @@ export class ShipApp extends App<ShipAppProps> {
     };
   }
 
-  handleRouteChange = (_url: string) => {
+  handleRouteChange = (_url?: string) => {
     const { appSlug, Component } = this.props;
     const pageName = Component.displayName;
 
@@ -82,6 +82,7 @@ export class ShipApp extends App<ShipAppProps> {
 
     if (analyticsConfig.segmentWriteKey) {
       initializeSegment(analyticsConfig.segmentWriteKey);
+      this.handleRouteChange();
       Router.events.on('routeChangeComplete', this.handleRouteChange);
     }
 

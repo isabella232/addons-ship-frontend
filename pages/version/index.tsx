@@ -41,13 +41,19 @@ export class VersionPage extends Component<VersionPageProps> {
 
     switch (selectedTab) {
       case 'details':
+        Connected.displayName = 'AppVersionDetails';
         promises.push(store.dispatch(fetchSettings(appSlug) as any));
         break;
       case 'devices':
+        Connected.displayName = 'AppVersionDevices';
         promises.push(store.dispatch(fetchTestDevices(appSlug) as any));
         break;
       case 'activity':
+        Connected.displayName = 'AppVersionActivity';
         promises.push(store.dispatch(fetchAppVersionEvents(appSlug, versionId) as any));
+        break;
+      case 'qa':
+        Connected.displayName = 'AppVersionQA';
         break;
     }
 
@@ -109,4 +115,7 @@ const mapStateToProps = ({ appVersion: { appVersion } }: RootState) => ({
   appVersion
 });
 
-export default connect(mapStateToProps)(VersionPage as any);
+const Connected = connect(mapStateToProps)(VersionPage as any);
+Connected.displayName = 'AppVersionPage';
+
+export default Connected;
