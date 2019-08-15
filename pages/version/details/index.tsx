@@ -159,6 +159,10 @@ export class AppVersionDetails extends Component<Props, State> {
     } = this.props;
     const { updatedAppVersion } = this.state;
 
+    if (window.analytics) {
+      window.analytics.track('AppVersionDetails Save', { appSlug, appVersionId: id });
+    }
+
     updateAppVersion(updatedAppVersion as AppVersion);
 
     const [uploadable, files] = this.getUploadableScreenshots();
@@ -168,11 +172,23 @@ export class AppVersionDetails extends Component<Props, State> {
 
   onPublish = async () => {
     const { appVersion, publishAppVersion } = this.props;
+    const { appSlug, id } = appVersion;
+
+    if (window.analytics) {
+      window.analytics.track('AppVersionDetails Publish', { appSlug, appVersionId: id });
+    }
 
     await publishAppVersion(appVersion);
   };
 
   onScreenshotAdded = (deviceId: string, newScreenshots: File[]) => {
+    const {
+      appVersion: { appSlug, id }
+    } = this.props;
+    if (window.analytics) {
+      window.analytics.track('AppVersionDetails Added Screenshot', { appSlug, appVersionId: id, deviceId });
+    }
+
     const screenshotList = update({ ...this.state.screenshotList }, `${deviceId}.screenshots`, (screenshots = []) =>
       screenshots.concat(newScreenshots)
     );
