@@ -1,4 +1,5 @@
 import App, { Container, NextAppContext, DefaultAppIProps } from 'next/app';
+import Router from 'next/router';
 import { Store } from 'redux';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
@@ -9,6 +10,8 @@ import { setToken } from '@/ducks/auth';
 import Header from '@/components/Header';
 import { PageContext } from '@/models';
 import { fetchApp } from '@/ducks/app';
+import { analyticsConfig } from '@/config';
+import { initializeSegment } from '@/utils/analytics';
 
 import '@/assets/style/index.scss';
 import makeStore from '../store';
@@ -65,8 +68,22 @@ export class ShipApp extends App<ShipAppProps> {
     };
   }
 
+  handleRouteChange = (_url: string) => {
+    const { appSlug, Component } = this.props;
+    const pageName = Component.displayName;
+
+    if (window.analytics) {
+      window.analytics.page({ addonId: 'addons-ship', appSlug, pageName });
+    }
+  };
+
   async componentDidMount() {
     const { token, store, settingsOnboardingSeen } = this.props;
+
+    if (analyticsConfig.segmentWriteKey) {
+      initializeSegment(analyticsConfig.segmentWriteKey);
+      Router.events.on('routeChangeComplete', this.handleRouteChange);
+    }
 
     // Set token on the client side too
     await store.dispatch(setToken(token) as any);
@@ -79,6 +96,10 @@ export class ShipApp extends App<ShipAppProps> {
         path: '/'
       });
     }
+  }
+
+  componentWillUnmount() {
+    Router.events.off('routeChangeComplete', this.handleRouteChange);
   }
 
   render() {
