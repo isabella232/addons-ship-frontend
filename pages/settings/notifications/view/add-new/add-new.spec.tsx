@@ -40,8 +40,10 @@ describe('NotificationSettings View AddNew', () => {
     const onAddEmail = jest.fn();
 
     const wrapper = shallow(<AddNew onAddEmail={onAddEmail} />);
-    wrapper.find(Button).simulate('click');
+    const preventDefault = jest.fn();
+    wrapper.find('form').simulate('submit', { preventDefault });
 
+    expect(preventDefault).toHaveBeenCalled();
     expect(onAddEmail).toHaveBeenCalledWith(email);
   });
 });
