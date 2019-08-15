@@ -153,7 +153,7 @@ export default ({
             </Flex>
             <Flex direction="horizontal" alignChildren="start" gap="x4" margin="x8">
               <Button level="primary" onClick={onSave}>
-                <Icon name="Bug" />
+                <Icon name="Save" />
                 <Text>Save</Text>
               </Button>
               <Button level="secondary" disabled={!shouldEnableInstall}>
