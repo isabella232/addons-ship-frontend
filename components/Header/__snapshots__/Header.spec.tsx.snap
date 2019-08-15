@@ -111,6 +111,7 @@ exports[`Header on desktop renders correctly 1`] = `
 
 exports[`Header on desktop renders correctly when no app is defined 1`] = `
 <Flex
+  absolute={true}
   alignChildrenHorizontal="start"
   alignChildrenVertical="middle"
   backgroundColor="grape-4"
@@ -254,6 +255,7 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
 
 exports[`Header on mobile renders correctly when no app is defined 1`] = `
 <Flex
+  absolute={true}
   alignChildrenHorizontal="middle"
   alignChildrenVertical="middle"
   backgroundColor="grape-4"

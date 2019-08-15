@@ -62,6 +62,7 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding }: Props)
         alignChildrenVertical="middle"
         alignChildrenHorizontal={isDesktop ? 'start' : 'middle'}
         paddingHorizontal="x5"
+        absolute
       >
         <Flex>
           <Icon name="Ship" />
