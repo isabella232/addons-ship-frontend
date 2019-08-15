@@ -123,9 +123,8 @@ export class AppVersionDetails extends Component<Props, State> {
       }
 
       (screenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
-      console.log(screenshotList);
       this.setState({
-        screenshotList: screenshotList
+        screenshotList
       });
     });
   }
