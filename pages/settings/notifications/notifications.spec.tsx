@@ -68,6 +68,15 @@ describe('NotificationSettings', () => {
     expect(addAppContact).toHaveBeenCalledWith(appSlug, email);
   });
 
+  it('does not addAppContact with an empty email', () => {
+    const { addAppContact } = defaultProps;
+    const wrapper = shallow(<NotificationSettings {...defaultProps} />);
+
+    (wrapper.instance() as NotificationSettings).onAddEmail('');
+
+    expect(addAppContact).not.toHaveBeenCalled();
+  });
+
   test('onNotificationPreferenceChanged', () => {
     const { appContacts } = defaultProps;
 
