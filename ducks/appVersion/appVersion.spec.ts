@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import { TestScheduler } from 'rxjs/testing';
 import { getType } from 'deox';
 
-import { mockAppVersion } from '@/mocks';
+import { mockAppVersion, mockUploadedScreenshotResponse } from '@/mocks';
 import { AppVersion, AppVersionEvent } from '@/models';
 import api, { ShipAPIService } from '@/services/ship-api';
 
@@ -68,6 +68,7 @@ describe('appVersion', () => {
   describe('fetchAppVersion', () => {
     it('fetches an app version', async () => {
       (api.getAppVersion as jest.Mock).mockResolvedValueOnce(mockAppVersion);
+      (api.getScreenshots as jest.Mock).mockResolvedValueOnce([mockUploadedScreenshotResponse]);
       await store.dispatch(fetchAppVersion('app-slug', 'version-id') as any);
 
       expect(store.getActions()).toMatchSnapshot();

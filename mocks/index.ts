@@ -1,4 +1,4 @@
-import { AppVersion, AppVersionEvent } from '@/models';
+import { AppVersion, AppVersionEvent, ScreenshotResponse } from '@/models';
 import { Settings } from '@/models/settings';
 import { TestDevice } from '@/models/test-device';
 import { App } from '@/models/app';
@@ -293,4 +293,16 @@ export const mockApp: App = {
     'https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png',
   plan: 'gold',
   projectType: 'other'
+};
+
+export const mockUploadedScreenshotResponse: ScreenshotResponse = {
+  createdAt: new Date('2018-09-26T12:42:31Z'),
+  deviceType: 'iPhone 6.5”',
+  downloadUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg',
+  filename: 'screenshot-1.jpg',
+  filesize: 1000,
+  id: 'test-id-1',
+  screenSize: '1024x768',
+  updatedAt: new Date('2018-09-27T12:42:31Z'),
+  uploaded: true
 };
