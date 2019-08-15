@@ -104,19 +104,29 @@ export class AppVersionDetails extends Component<Props, State> {
         screenshotData.filesize,
         screenshotData.deviceType
       );
-      let [deviceType]: any = Object.entries(this.state.screenshotList).find(
-        ([_key, value]) => value.deviceName === screenshot.deviceType
-      );
 
-      const screenshotList = this.state.screenshotList;
-      if (!screenshotList[deviceType].screenshots) {
-        screenshotList[deviceType].screenshots = [];
+      let deviceId = Object.keys(this.state.screenshotList).find(
+        key => this.state.screenshotList[key].deviceName === screenshot.deviceType
+      ) as string;
+      if (!deviceId) {
+        deviceId = screenshot.deviceType as string;
       }
 
-      (screenshotList[deviceType].screenshots as Screenshot[]).push(screenshot);
+      const screenshotList = this.state.screenshotList;
+      if (!screenshotList[deviceId]) {
+        screenshotList[deviceId] = {
+          deviceName: deviceId
+        };
+      }
+      if (!screenshotList[deviceId].screenshots) {
+        screenshotList[deviceId].screenshots = [];
+      }
+
+      (screenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
+      console.log(screenshotList);
       this.setState({
         screenshotList: screenshotList
-      })
+      });
     });
   }
 
