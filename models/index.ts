@@ -53,7 +53,51 @@ export type AppVersion = {
   variant?: string;
   buildType?: string;
   publicInstallPageURL?: string;
+  screenshotDatas: ScreenshotResponse[];
 };
+
+export type ScreenshotResponse = {
+  createdAt: Date;
+  deviceType: string;
+  downloadUrl: string;
+  filename: string;
+  filesize: number;
+  id: string;
+  screenSize: string;
+  updatedAt: Date;
+  uploaded: boolean;
+};
+
+export class Screenshot {
+  constructor(name: string, content: any, size: number, deviceType: string) {
+    this.name = name;
+    if (typeof content === 'string') {
+      this.src = content;
+    } else {
+      this.file = content;
+    }
+    this.size = size;
+    this.deviceType = deviceType;
+  }
+
+  name: string;
+  src?: string;
+  file?: any;
+  size: number;
+  deviceType: string;
+
+  type(): 'uploaded' | 'pending' {
+    return this.src ? 'uploaded' : 'pending';
+  }
+
+  url() {
+    if (this.src) {
+      return this.src as string;
+    }
+
+    return URL.createObjectURL(this.file);
+  }
+}
 
 export type AppVersionEvent = {
   id: string;

@@ -4,11 +4,12 @@ import { Card, Base, Flex, Text, Icon } from '@bitrise/bitkit';
 import cx from 'classnames';
 
 import css from './style.scss';
+import { Screenshot } from '@/models';
 
 type Props = {
   onFilesAdded: (files: File[]) => void;
-  removeFile: (file: File) => void;
-  files?: File[];
+  removeFile: (file: Screenshot) => void;
+  screenshots?: Screenshot[];
   isMultiple?: boolean;
   instructionsBeginning?: string;
   instructionsAction?: string;
@@ -17,7 +18,7 @@ type Props = {
 export default ({
   onFilesAdded,
   removeFile,
-  files = [],
+  screenshots = [],
   isMultiple = true,
   instructionsBeginning = 'Drag & Drop',
   instructionsAction = 'Browse Files'
@@ -26,15 +27,15 @@ export default ({
     (acceptedFiles: File[]) => {
       onFilesAdded(acceptedFiles);
     },
-    [onFilesAdded, removeFile, files]
+    [onFilesAdded, removeFile, screenshots]
   );
 
-  const thumbs = files.map(file => (
-    <Base paddingHorizontal="x3" key={file.name} container className={css.thumbnailContainer}>
-      <div className={css.removeIcon} onClick={() => removeFile(file)}>
+  const thumbs = screenshots.map((screenshot: Screenshot, index: number) => (
+    <Base paddingHorizontal="x3" key={index} container className={css.thumbnailContainer}>
+      <div className={css.removeIcon} onClick={() => removeFile(screenshot)}>
         <Icon name="CloseSmall" color="white" />
       </div>
-      <Base Component="img" src={URL.createObjectURL(file)} className={css.thumbnail} />
+      <Base Component="img" src={screenshot.url()} className={css.thumbnail} />
     </Base>
   ));
 
@@ -44,7 +45,7 @@ export default ({
     multiple: isMultiple
   });
 
-  const hasFiles = files.length > 0;
+  const hasFiles = screenshots.length > 0;
 
   return (
     <Card>
