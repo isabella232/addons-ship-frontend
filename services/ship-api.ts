@@ -131,7 +131,14 @@ export class ShipAPIService {
 
     const { data } = await get(url, this.token).then(res => res.json());
 
-    return data.map(camelizeKeys);
+    return data.map(camelizeKeys).map(
+      ({ createdAt, updatedAt, ...screenshotData }: any) =>
+        ({
+          ...screenshotData,
+          createdAt: new Date(createdAt),
+          updatedAt: new Date(updatedAt)
+        } as ScreenshotResponse)
+    );
   }
 
   // POST /apps/{app-slug}/versions/{version-id}/screenshots

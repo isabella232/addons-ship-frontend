@@ -97,24 +97,27 @@ export class AppVersionDetails extends Component<Props, State> {
     });
     startPollPublishStatus(appVersion);
 
-    if (appVersion.screenshotDatas) {
-      appVersion.screenshotDatas.forEach((screenshotData: ScreenshotResponse) => {
-        const screenshot = new Screenshot(
-          screenshotData.filename,
-          screenshotData.downloadUrl,
-          screenshotData.filesize,
-          screenshotData.deviceType
-        );
-        let [deviceType]: any = Object.entries(this.state.screenshotList).find(
-          ([_key, value]) => value.deviceName === screenshot.deviceType
-        );
-        if (!this.state.screenshotList[deviceType].screenshots) {
-          this.state.screenshotList[deviceType].screenshots = [];
-        }
+    appVersion.screenshotDatas.forEach((screenshotData: ScreenshotResponse) => {
+      const screenshot = new Screenshot(
+        screenshotData.filename,
+        screenshotData.downloadUrl,
+        screenshotData.filesize,
+        screenshotData.deviceType
+      );
+      let [deviceType]: any = Object.entries(this.state.screenshotList).find(
+        ([_key, value]) => value.deviceName === screenshot.deviceType
+      );
 
-        (this.state.screenshotList[deviceType].screenshots as Screenshot[]).push(screenshot);
-      });
-    }
+      const screenshotList = this.state.screenshotList;
+      if (!screenshotList[deviceType].screenshots) {
+        screenshotList[deviceType].screenshots = [];
+      }
+
+      (screenshotList[deviceType].screenshots as Screenshot[]).push(screenshot);
+      this.setState({
+        screenshotList: screenshotList
+      })
+    });
   }
 
   componentDidUpdate({ appVersionEvents: prevEvents }: Props) {
