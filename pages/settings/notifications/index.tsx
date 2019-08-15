@@ -37,6 +37,7 @@ export class NotificationSettings extends React.Component<Props, State> {
 
   onAddEmail = (email: string) => {
     const { appSlug, addAppContact } = this.props;
+    if (!email) return;
 
     addAppContact(appSlug, email);
   };

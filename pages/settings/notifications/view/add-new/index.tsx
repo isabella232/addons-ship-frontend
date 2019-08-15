@@ -9,8 +9,15 @@ export type Props = {
 
 export default ({ onAddEmail }: Props) => {
   const [email, setEmail] = useState('');
+
   return (
-    <div className={css.container}>
+    <form
+      className={css.container}
+      onSubmit={evt => {
+        evt.preventDefault();
+        onAddEmail(email);
+      }}
+    >
       <InputLabel>Add New</InputLabel>
       <InputContainer>
         <InputContent>
@@ -18,14 +25,15 @@ export default ({ onAddEmail }: Props) => {
             placeholder="Email address"
             value={email}
             onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setEmail(value)}
+            type="email"
           />
         </InputContent>
         <InputContent outside>
-          <Button level="secondary" onClick={() => onAddEmail(email)}>
+          <Button level="secondary" disabled={!email}>
             Add
           </Button>
         </InputContent>
       </InputContainer>
-    </div>
+    </form>
   );
 };

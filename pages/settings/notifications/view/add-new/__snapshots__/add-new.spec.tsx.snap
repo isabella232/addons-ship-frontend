@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotificationSettings View AddNew renders correctly 1`] = `
-<div
+<form
   className="container"
+  onSubmit={[Function]}
 >
   <InputLabel>
     Add New
@@ -12,6 +13,7 @@ exports[`NotificationSettings View AddNew renders correctly 1`] = `
       <Input
         onChange={[Function]}
         placeholder="Email address"
+        type="email"
         value=""
       />
     </InputContent>
@@ -19,13 +21,13 @@ exports[`NotificationSettings View AddNew renders correctly 1`] = `
       outside={true}
     >
       <Button
+        disabled={true}
         level="secondary"
-        onClick={[Function]}
         size="medium"
       >
         Add
       </Button>
     </InputContent>
   </InputContainer>
-</div>
+</form>
 `;
