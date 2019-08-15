@@ -6,7 +6,7 @@ import update from 'lodash/update';
 import filter from 'lodash/filter';
 
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
-import { AppVersion, AppVersionEvent } from '@/models';
+import { AppVersion, AppVersionEvent, Screenshot, ScreenshotResponse } from '@/models';
 import { Settings, IosSettings, AndroidSettings } from '@/models/settings';
 import { Uploadable } from '@/models/uploadable';
 import { RootState } from '@/store';
@@ -31,7 +31,7 @@ export type State = {
   hasMounted: boolean;
   updatedAppVersion: AppVersion | null;
   screenshotList: { [deviceId: string]: DeviceScreenshots };
-  featureGraphic?: File;
+  featureGraphic?: Screenshot;
   selectedDeviceIdForScreenshots: string;
   readyForPublish?: boolean;
   latestEvent: AppVersionEvent | null;
@@ -40,7 +40,7 @@ export type State = {
 
 type DeviceScreenshots = {
   deviceName: string;
-  screenshots?: File[];
+  screenshots?: Screenshot[];
 };
 
 export class AppVersionDetails extends Component<Props, State> {
@@ -91,8 +91,33 @@ export class AppVersionDetails extends Component<Props, State> {
   componentDidMount() {
     const { appVersion, startPollPublishStatus } = this.props;
 
-    this.setState({ hasMounted: true, updatedAppVersion: appVersion });
+    this.setState({
+      hasMounted: true,
+      updatedAppVersion: appVersion
+    });
     startPollPublishStatus(appVersion);
+
+    appVersion.screenshotDatas.forEach((screenshotData: ScreenshotResponse) => {
+      const screenshot = new Screenshot(
+        screenshotData.filename,
+        screenshotData.downloadUrl,
+        screenshotData.filesize,
+        screenshotData.deviceType
+      );
+      let [deviceType]: any = Object.entries(this.state.screenshotList).find(
+        ([_key, value]) => value.deviceName === screenshot.deviceType
+      );
+
+      const screenshotList = this.state.screenshotList;
+      if (!screenshotList[deviceType].screenshots) {
+        screenshotList[deviceType].screenshots = [];
+      }
+
+      (screenshotList[deviceType].screenshots as Screenshot[]).push(screenshot);
+      this.setState({
+        screenshotList: screenshotList
+      })
+    });
   }
 
   componentDidUpdate({ appVersionEvents: prevEvents }: Props) {
@@ -136,16 +161,17 @@ export class AppVersionDetails extends Component<Props, State> {
       files: File[] = [];
 
     filter(screenshotList, 'screenshots').forEach(({ deviceName, screenshots }) => {
+      const pendingScreenshots = (screenshots as Screenshot[]).filter(screenshot => screenshot.type() === 'pending');
       uploadables.push(
-        ...(screenshots as File[]).map(s => ({
+        ...pendingScreenshots.map(s => ({
           filename: s.name,
-          filesize: s.size,
-          deviceType: deviceName,
-          screenSize: deviceName
+          filesize: s.size as number,
+          deviceType: deviceName as string,
+          screenSize: deviceName as string
         }))
       );
 
-      files.push(...(screenshots as File[]));
+      files.push(...pendingScreenshots.map(screenshot => screenshot.file));
     });
 
     return [uploadables, files];
@@ -181,7 +207,7 @@ export class AppVersionDetails extends Component<Props, State> {
     await publishAppVersion(appVersion);
   };
 
-  onScreenshotAdded = (deviceId: string, newScreenshots: File[]) => {
+  onScreenshotAdded = (deviceId: string, files: File[]) => {
     const {
       appVersion: { appSlug, id }
     } = this.props;
@@ -190,22 +216,26 @@ export class AppVersionDetails extends Component<Props, State> {
     }
 
     const screenshotList = update({ ...this.state.screenshotList }, `${deviceId}.screenshots`, (screenshots = []) =>
-      screenshots.concat(newScreenshots)
+      screenshots.concat(
+        files.map(
+          (file: File) => new Screenshot(file.name, file, file.size, this.state.screenshotList[deviceId].deviceName)
+        )
+      )
     );
 
     this.setState({ screenshotList });
   };
 
-  removeScreenshot = (deviceId: string, screenshot: File) => {
+  removeScreenshot = (deviceId: string, screenshot: Screenshot) => {
     const screenshotList = update({ ...this.state.screenshotList }, `${deviceId}.screenshots`, (screenshots = []) =>
-      screenshots.filter((file: File) => file !== screenshot)
+      screenshots.filter((file: Screenshot) => file !== screenshot)
     );
 
     this.setState({ screenshotList });
   };
 
   onFeatureGraphicAdded = (newFeatureGraphic: File) => {
-    this.setState({ featureGraphic: newFeatureGraphic });
+    this.setState({ featureGraphic: new Screenshot('feature graphic', newFeatureGraphic) });
   };
 
   removeFeatureGraphic = () => {

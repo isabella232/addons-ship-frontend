@@ -16,6 +16,7 @@ const _fetchAppVersion = (appSlug: string, versionId: string) => async (
 
   try {
     const appVersion = await shipApi.getAppVersion(appSlug, versionId);
+    appVersion.screenshotDatas = await shipApi.getScreenshots(appSlug, versionId);
 
     dispatch(fetchAppVersion.complete(appVersion));
   } catch (error) {

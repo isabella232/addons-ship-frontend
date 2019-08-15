@@ -57,7 +57,7 @@ exports[`Dropzone renders correctly with files 1`] = `
           <Base
             className="thumbnailContainer"
             container={true}
-            key="file.png"
+            key="0"
             paddingHorizontal="x3"
           >
             <div

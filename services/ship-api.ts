@@ -1,5 +1,5 @@
 import { shipApiConfig } from '@/config';
-import { AppVersion, AppVersionEvent } from '@/models';
+import { AppVersion, AppVersionEvent, Screenshot, ScreenshotResponse } from '@/models';
 import { APIConfig, AppConfig } from '@/models/services';
 import { Uploadable } from '@/models/uploadable';
 import { App } from '@/models/app';
@@ -32,9 +32,14 @@ export class ShipAPIService {
     const { data } = await get(url, this.token).then(res => res.json());
 
     return data.map((version: any) => {
-      const camelizedAppVersionData:any = camelizeKeys(version);
-      const camelizedAppInfo:any = camelizeKeys(camelizedAppVersionData.appInfo);
-      return { appSlug, appName: camelizedAppInfo.title, iconUrl: camelizedAppInfo.appIconUrl, ...camelizedAppVersionData };
+      const camelizedAppVersionData: any = camelizeKeys(version);
+      const camelizedAppInfo: any = camelizeKeys(camelizedAppVersionData.appInfo);
+      return {
+        appSlug,
+        appName: camelizedAppInfo.title,
+        iconUrl: camelizedAppInfo.appIconUrl,
+        ...camelizedAppVersionData
+      };
     }) as AppVersion[];
   }
 
@@ -114,6 +119,25 @@ export class ShipAPIService {
           createdAt: new Date(createdAt),
           updatedAt: new Date(updatedAt)
         } as AppVersionEvent)
+    );
+  }
+
+  // GET /apps/{app-slug}/versions/{version-id}/screenshots
+
+  async getScreenshots(appSlug: string, versionId: string): Promise<ScreenshotResponse[]> {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots`;
+
+    const { data } = await get(url, this.token).then(res => res.json());
+
+    return data.map(camelizeKeys).map(
+      ({ createdAt, updatedAt, ...screenshotData }: any) =>
+        ({
+          ...screenshotData,
+          createdAt: new Date(createdAt),
+          updatedAt: new Date(updatedAt)
+        } as ScreenshotResponse)
     );
   }
 

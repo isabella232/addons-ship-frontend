@@ -2,7 +2,7 @@ jest.mock('@/utils/request');
 
 import { Uploadable } from '@/models/uploadable';
 import { patch, post, get, put, del, request } from '@/utils/request';
-import { mockAppVersion } from '@/mocks';
+import { mockAppVersion, mockUploadedScreenshotResponse } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
 import { ShipAPIService } from './ship-api';
@@ -84,9 +84,9 @@ describe('Ship API service', () => {
       expect(put).toHaveBeenCalledWith(
         url,
         token,
-        `{"app_slug":"${appSlug}","id":"${id}","build_number":${buildNumber},"app_store_info":{"short_description":"${appStoreInfo.shortDescription}","full_description":"${
-          appStoreInfo.description
-        }","whats_new":"${appStoreInfo.whatsNew}"}}`
+        `{"app_slug":"${appSlug}","id":"${id}","build_number":${buildNumber},"app_store_info":{"short_description":"${
+          appStoreInfo.shortDescription
+        }","full_description":"${appStoreInfo.description}","whats_new":"${appStoreInfo.whatsNew}"}}`
       );
 
       expect(appVersion).toMatchSnapshot();
@@ -118,6 +118,43 @@ describe('Ship API service', () => {
 
       expect(get).toHaveBeenCalledWith(`${apiUrl}/apps/${appSlug}/versions`, token);
       expect(appVersions).toMatchSnapshot();
+    });
+  });
+
+  describe('getScreenshots', () => {
+    testTokenNotSet(() => api.getScreenshots('slug', 'version'));
+
+    it('fetches screenshots of an app', async () => {
+      (get as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: [
+            {
+              created_at: '2018-09-26T12:42:31Z',
+              device_type: 'iPhone 6.5”',
+              download_url: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg',
+              filename: 'screenshot-1.jpg',
+              filesize: 1000,
+              id: 'test-id-1',
+              screen_size: '1024x768',
+              updated_at: '2018-09-27T12:42:31Z',
+              uploaded: true
+            }
+          ]
+        })
+      });
+
+      const appSlug = 'an-app-slug',
+        versionId = 'a-version-id',
+        token = 'very-token';
+
+      api.setToken(token);
+
+      const screenshotsData = await api.getScreenshots(appSlug, versionId);
+
+      const url = `${apiUrl}/apps/${appSlug}/versions/${versionId}/screenshots`;
+      expect(get).toHaveBeenCalledWith(url, token);
+
+      expect(screenshotsData).toMatchSnapshot();
     });
   });
 

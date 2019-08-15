@@ -2,7 +2,7 @@ import formatDate from 'date-fns/format';
 import { Base, Flex, Text, Icon, Image, Notification, Button } from '@bitrise/bitkit';
 import { TypeIconName } from '@bitrise/bitkit/lib/esm/Icon/tsx';
 
-import { AppVersion, AppVersionEvent } from '@/models';
+import { AppVersion, AppVersionEvent, Screenshot } from '@/models';
 import { mediaQuery } from '@/utils/media';
 
 import Sidebar from './sidebar';
@@ -21,10 +21,10 @@ type Props = {
   hasMounted: boolean;
   selectedDeviceIdForScreenshots: string;
   availableDevices: DeviceInfo[];
-  screenshots?: File[];
-  onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
-  removeScreenshot: (deviceId: string, screenshot: File) => void;
-  featureGraphic?: File;
+  screenshots?: Screenshot[];
+  onScreenshotAdded: (deviceId: string, files: File[]) => void;
+  removeScreenshot: (deviceId: string, screenshot: Screenshot) => void;
+  featureGraphic?: Screenshot;
   onFeatureGraphicAdded: (featureGraphic: File) => void;
   removeFeatureGraphic: () => void;
   onDeviceSelected: (key: string) => void;

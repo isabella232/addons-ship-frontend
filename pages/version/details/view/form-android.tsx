@@ -3,7 +3,7 @@ import formatDate from 'date-fns/format';
 import prettyBytes from 'pretty-bytes';
 import { Base, Flex, Text, Icon, InputLabel, Textarea, Divider } from '@bitrise/bitkit';
 
-import { AppVersion } from '@/models';
+import { AppVersion, Screenshot } from '@/models';
 import Dropzone from '@/components/Dropzone';
 import SmallTabs from '@/components/SmallTabs';
 
@@ -16,10 +16,10 @@ type Props = {
   }>;
   deviceId: string;
   deviceName: string;
-  screenshots?: File[];
-  onScreenshotAdded: (deviceId: string, screenshots: File[]) => void;
-  removeScreenshot: (deviceId: string, screenshot: File) => void;
-  featureGraphic?: File;
+  screenshots?: Screenshot[];
+  onScreenshotAdded: (deviceId: string, files: File[]) => void;
+  removeScreenshot: (deviceId: string, screenshot: Screenshot) => void;
+  featureGraphic?: Screenshot;
   onFeatureGraphicAdded: (featureGraphic: File) => void;
   removeFeatureGraphic: () => void;
   onDeviceSelected: (key: string) => void;
@@ -77,7 +77,7 @@ export default ({
 
       {hasMounted && <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />}
       <Dropzone
-        files={screenshots}
+        screenshots={screenshots}
         onFilesAdded={files => onScreenshotAdded(deviceId, files)}
         removeFile={file => removeScreenshot(deviceId, file)}
         instructionsBeginning={`Drag & Drop for ${deviceName}`}
@@ -98,7 +98,7 @@ export default ({
       </Flex>
 
       <Dropzone
-        files={featureGraphic && [featureGraphic]}
+        screenshots={featureGraphic && [featureGraphic]}
         onFilesAdded={([file]) => onFeatureGraphicAdded(file)}
         removeFile={() => removeFeatureGraphic()}
         isMultiple={false}
