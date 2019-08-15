@@ -162,9 +162,9 @@ export class AppVersionDetails extends Component<Props, State> {
       uploadables.push(
         ...pendingScreenshots.map(s => ({
           filename: s.name,
-          filesize: s.size,
-          deviceType: deviceName,
-          screenSize: deviceName
+          filesize: s.size as number,
+          deviceType: deviceName as string,
+          screenSize: deviceName as string
         }))
       );
 
@@ -231,8 +231,8 @@ export class AppVersionDetails extends Component<Props, State> {
     this.setState({ screenshotList });
   };
 
-  onFeatureGraphicAdded = (newFeatureGraphic: Screenshot) => {
-    this.setState({ featureGraphic: newFeatureGraphic });
+  onFeatureGraphicAdded = (newFeatureGraphic: File) => {
+    this.setState({ featureGraphic: new Screenshot('feature graphic', newFeatureGraphic) });
   };
 
   removeFeatureGraphic = () => {

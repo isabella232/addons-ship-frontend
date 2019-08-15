@@ -14,7 +14,7 @@ import Dropzone from '@/components/Dropzone';
 
 import DetailsView from './view';
 import { AppVersionDetails, State } from './';
-import { AppVersionEvent } from '@/models';
+import { AppVersionEvent, Screenshot } from '@/models';
 
 describe('AppVersionDetailsView', () => {
   const defaultProps = {
@@ -305,13 +305,13 @@ describe('AppVersionDetails', () => {
     const wrap = shallow(<AppVersionDetails {...defaultProps} />);
     const deviceId = 'iphone65',
       otherDeviceId = 'other-iphone65',
-      screenshot = new File([], 'image.png');
+      screenshot = new Screenshot('image.png', new File([], 'image.png'), 1000, 'iPhone 6.5”');
 
     beforeEach(() => {
       // prettier-ignore
       const screenshotList = {
         [deviceId]: { deviceName: 'iPhone 6.5”', screenshots: [screenshot]},
-        [otherDeviceId]: { deviceName: 'iPhone 5.8”', screenshots: [new File([], 'image2.jpg')]},
+        [otherDeviceId]: { deviceName: 'iPhone 5.8”', screenshots: [new Screenshot('image2.png', new File([], 'image2.jpg'))]},
         'device-without-screenshots': { deviceName: 'whatever', screenshots: null }
       };
       const featureGraphic = new File([], 'image.png');

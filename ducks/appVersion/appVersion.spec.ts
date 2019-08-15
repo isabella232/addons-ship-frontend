@@ -67,6 +67,7 @@ describe('appVersion', () => {
 
   describe('fetchAppVersion', () => {
     it('fetches an app version', async () => {
+      (api.getAppVersion as jest.Mock).mockResolvedValueOnce(mockAppVersion);
       await store.dispatch(fetchAppVersion('app-slug', 'version-id') as any);
 
       expect(store.getActions()).toMatchSnapshot();

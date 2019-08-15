@@ -69,22 +69,22 @@ export type ScreenshotResponse = {
 };
 
 export class Screenshot {
-  constructor(name: string, content: any, size: number, deviceType: string) {
+  constructor(name: string, content: any, size?: number, deviceType?: string) {
     this.name = name;
     if (typeof content === 'string') {
       this.src = content;
     } else {
       this.file = content;
     }
-    this.size = size;
+    this.size = size || 0;
     this.deviceType = deviceType;
   }
 
   name: string;
   src?: string;
   file?: any;
-  size: number;
-  deviceType: string;
+  size?: number;
+  deviceType?: string;
 
   type(): 'uploaded' | 'pending' {
     return this.src ? 'uploaded' : 'pending';

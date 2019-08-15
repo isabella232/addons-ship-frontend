@@ -6,12 +6,12 @@ Array [
     Object {
       "deviceType": "iPhone 6.5”",
       "filename": "image.png",
-      "filesize": 0,
+      "filesize": 1000,
       "screenSize": "iPhone 6.5”",
     },
     Object {
       "deviceType": "iPhone 5.8”",
-      "filename": "image2.jpg",
+      "filename": "image2.png",
       "filesize": 0,
       "screenSize": "iPhone 5.8”",
     },
@@ -24,9 +24,15 @@ Array [
 `;
 
 exports[`AppVersionDetails appends a feature graphic for Android apps 1`] = `
-File {
-  "path": "file.png",
-  "type": "image/png",
+Screenshot {
+  "deviceType": undefined,
+  "file": File {
+    "path": "file.png",
+    "type": "image/png",
+  },
+  "name": "feature graphic",
+  "size": 0,
+  "src": undefined,
 }
 `;
 
@@ -65,9 +71,15 @@ Object {
   "iphone65": Object {
     "deviceName": "iPhone 6.5”",
     "screenshots": Array [
-      File {
-        "path": "file.png",
-        "type": "image/png",
+      Screenshot {
+        "deviceType": "iPhone 6.5”",
+        "file": File {
+          "path": "file.png",
+          "type": "image/png",
+        },
+        "name": "file.png",
+        "size": 0,
+        "src": undefined,
       },
     ],
   },
@@ -142,6 +154,7 @@ Object {
     "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
     "reviewNotes": "Review Notes",
     "scheme": "piramid",
+    "screenshotDatas": Array [],
     "size": 4567034,
     "supportUrl": "https://bitrise.io/support",
     "supportedDeviceTypes": Array [
@@ -175,6 +188,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
       "packageName": "com.package.name",
       "platform": "android",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "screenshotDatas": Array [],
       "shortDescription": "Some short description",
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
@@ -289,6 +303,7 @@ exports[`AppVersionDetails disables install button when device is from different
       "packageName": "com.package.name",
       "platform": "android",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "screenshotDatas": Array [],
       "shortDescription": "Some short description",
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
@@ -403,6 +418,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
       "packageName": "com.package.name",
       "platform": "android",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "screenshotDatas": Array [],
       "shortDescription": "Some short description",
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
@@ -523,6 +539,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
       "publicInstallPageURL": undefined,
       "reviewNotes": "Review Notes",
       "scheme": "piramid",
+      "screenshotDatas": Array [],
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
@@ -632,6 +649,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       "packageName": "com.package.name",
       "platform": "android",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "screenshotDatas": Array [],
       "shortDescription": "Some short description",
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
@@ -746,6 +764,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       "packageName": "com.package.name",
       "platform": "android",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "screenshotDatas": Array [],
       "shortDescription": "Some short description",
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
@@ -866,6 +885,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "reviewNotes": "Review Notes",
       "scheme": "piramid",
+      "screenshotDatas": Array [],
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
@@ -975,6 +995,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
       "packageName": "com.package.name",
       "platform": "android",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+      "screenshotDatas": Array [],
       "shortDescription": "Some short description",
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
@@ -1705,6 +1726,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                           "packageName": "com.package.name",
                           "platform": "android",
                           "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+                          "screenshotDatas": Array [],
                           "shortDescription": "Some short description",
                           "size": 4567034,
                           "supportUrl": "https://bitrise.io/support",
@@ -4972,6 +4994,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "reviewNotes": "Review Notes",
       "scheme": "piramid",
+      "screenshotDatas": Array [],
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
@@ -5703,6 +5726,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
                           "reviewNotes": "Review Notes",
                           "scheme": "piramid",
+                          "screenshotDatas": Array [],
                           "size": 4567034,
                           "supportUrl": "https://bitrise.io/support",
                           "supportedDeviceTypes": Array [
@@ -9286,6 +9310,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "reviewNotes": "Review Notes",
       "scheme": "piramid",
+      "screenshotDatas": Array [],
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
@@ -10026,6 +10051,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
                           "reviewNotes": "Review Notes",
                           "scheme": "piramid",
+                          "screenshotDatas": Array [],
                           "size": 4567034,
                           "supportUrl": "https://bitrise.io/support",
                           "supportedDeviceTypes": Array [
@@ -13609,6 +13635,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
       "publicInstallPageURL": undefined,
       "reviewNotes": "Review Notes",
       "scheme": "piramid",
+      "screenshotDatas": Array [],
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
@@ -14340,6 +14367,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           "publicInstallPageURL": undefined,
                           "reviewNotes": "Review Notes",
                           "scheme": "piramid",
+                          "screenshotDatas": Array [],
                           "size": 4567034,
                           "supportUrl": "https://bitrise.io/support",
                           "supportedDeviceTypes": Array [
@@ -17841,6 +17869,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
               "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
               "reviewNotes": "Review Notes",
               "scheme": "piramid",
+              "screenshotDatas": Array [],
               "size": 4567034,
               "supportUrl": "https://bitrise.io/support",
               "supportedDeviceTypes": Array [
@@ -18039,6 +18068,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
               "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
               "reviewNotes": "Review Notes",
               "scheme": "piramid",
+              "screenshotDatas": Array [],
               "size": 4567034,
               "supportUrl": "https://bitrise.io/support",
               "supportedDeviceTypes": Array [
@@ -18120,6 +18150,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "reviewNotes": "Review Notes",
       "scheme": "piramid",
+      "screenshotDatas": Array [],
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
@@ -18863,6 +18894,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
                           "reviewNotes": "Review Notes",
                           "scheme": "piramid",
+                          "screenshotDatas": Array [],
                           "size": 4567034,
                           "supportUrl": "https://bitrise.io/support",
                           "supportedDeviceTypes": Array [
@@ -22446,6 +22478,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "reviewNotes": "Review Notes",
       "scheme": "piramid",
+      "screenshotDatas": Array [],
       "size": 4567034,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
@@ -23177,6 +23210,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
                           "reviewNotes": "Review Notes",
                           "scheme": "piramid",
+                          "screenshotDatas": Array [],
                           "size": 4567034,
                           "supportUrl": "https://bitrise.io/support",
                           "supportedDeviceTypes": Array [

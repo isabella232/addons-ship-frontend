@@ -31,7 +31,8 @@ export const mockAppVersions: AppVersion[] = [
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
     configuration: 'canary',
-    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
+    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
+    screenshotDatas: []
   },
   {
     id: '456',
@@ -60,7 +61,8 @@ export const mockAppVersions: AppVersion[] = [
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
     configuration: 'canary',
-    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
+    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
+    screenshotDatas: []
   },
   {
     id: '789',
@@ -89,7 +91,8 @@ export const mockAppVersions: AppVersion[] = [
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
     configuration: 'canary',
-    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
+    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
+    screenshotDatas: []
   },
   {
     id: '135',
@@ -118,7 +121,8 @@ export const mockAppVersions: AppVersion[] = [
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
     configuration: 'canary',
-    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
+    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
+    screenshotDatas: []
   },
   {
     id: '246',
@@ -147,7 +151,8 @@ export const mockAppVersions: AppVersion[] = [
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
     configuration: 'canary',
-    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
+    publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
+    screenshotDatas: []
   }
 ];
 
@@ -179,7 +184,8 @@ export const mockAppVersionWithoutPublicPage = {
   marketingUrl: 'https://bitrise.io/marketing',
   scheme: 'piramid',
   configuration: 'canary',
-  publicInstallPageURL: undefined
+  publicInstallPageURL: undefined,
+  screenshotDatas: []
 };
 
 export const mockAndroidAppVersion = {
@@ -206,7 +212,8 @@ export const mockAndroidAppVersion = {
   module: 'Celeste-config',
   variant: 'Fennek',
   buildType: 'Celeste-config',
-  publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276'
+  publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
+  screenshotDatas: []
 };
 
 export const mockTestDevices: TestDevice[] = [
