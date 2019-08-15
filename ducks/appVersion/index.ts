@@ -26,9 +26,9 @@ export {
   pollPublishStatusEpic
 };
 export default createReducer(defaultState, handleAction => [
-  handleAction([fetchAppVersion.complete, updateAppVersion.complete], (state, { payload }) => ({
+  handleAction([fetchAppVersion.complete, updateAppVersion.complete], ({ appVersion, ...state }, { payload }) => ({
     ...state,
-    appVersion: payload
+    appVersion: { ...appVersion, ...payload }
   })),
   handleAction(publishAppVersion.next, state => ({ ...state, isPublishInProgress: true })),
   handleAction([publishAppVersion.complete, publishAppVersion.error], state => ({

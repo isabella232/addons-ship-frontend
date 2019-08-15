@@ -95,4 +95,7 @@ const mapStateToProps = (rootState: RootState) => ({
   appVersionsByBuildNumber: getAppVersionsByBuildNumber(rootState)
 });
 
-export default connect(mapStateToProps)(AppPage as any);
+const Connected = connect(mapStateToProps)(AppPage as any);
+Connected.displayName = 'AppPage';
+
+export default Connected;

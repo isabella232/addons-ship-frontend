@@ -1,6 +1,7 @@
+jest.mock('nookies');
 jest.mock('@/ducks/auth');
 jest.mock('@/ducks/app');
-jest.mock('nookies');
+jest.mock('@/utils/analytics');
 
 import { AppProps } from 'next/app';
 import { RouterProps } from 'next/router';
@@ -12,6 +13,7 @@ import nookies from 'nookies';
 
 import { setToken } from '@/ducks/auth';
 import { fetchApp } from '@/ducks/app';
+import { initializeSegment } from '@/utils/analytics';
 
 import { ShipApp, ShipAppProps } from './_app';
 import { PageContext } from '@/models';
@@ -172,5 +174,26 @@ describe('ShipApp', () => {
     expect(spy).toHaveBeenCalledWith(setTokenAction);
     expect(store.getActions()).toMatchSnapshot();
     expect(wrapper.state()).toMatchSnapshot();
+  });
+
+  describe('analytics', () => {
+    it('initializes Segment tracking', () => {
+      shallow(<ShipApp {...defaultProps} />);
+
+      expect(initializeSegment).toHaveBeenCalled();
+    });
+
+    it('track pageviews on route change', () => {
+      const pageEvt = jest.fn(),
+        appSlug = 'some-app-slug',
+        Component = () => <h1>Hello</h1>;
+      Component.displayName = 'Whatever';
+      Object.defineProperty(window, 'analytics', { value: { page: pageEvt } });
+
+      const wrapper = shallow(<ShipApp {...defaultProps} appSlug={appSlug} Component={Component as any} />);
+
+      (wrapper.instance() as ShipApp).handleRouteChange('some-url');
+      expect(pageEvt).toHaveBeenCalledWith({ addonId: 'addons-ship', appSlug, pageName: Component.displayName });
+    });
   });
 });
