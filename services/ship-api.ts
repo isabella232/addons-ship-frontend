@@ -55,10 +55,18 @@ export class ShipAPIService {
 
     let {
       appStoreInfo: { fullDescription: description, ...appStoreInfo },
+      appInfo,
       ...appVersionData
     } = camelizeKeysDeep(data);
     appStoreInfo = { ...appStoreInfo, description };
-    appVersionData = { ...appVersionData, ...appStoreInfo, appSlug, publicInstallPageURL };
+    appVersionData = {
+      ...appVersionData,
+      ...appStoreInfo,
+      appName: appInfo.title,
+      iconUrl: appInfo.appIconUrl,
+      appSlug,
+      publicInstallPageURL
+    };
     if (!appVersionData.supportedDeviceTypes) {
       appVersionData.supportedDeviceTypes = [];
     }

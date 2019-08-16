@@ -38,9 +38,11 @@ Object {
 
 exports[`Ship API service getAppVersion fetches a version for an app 1`] = `
 Object {
+  "appName": "App title",
   "appSlug": "an-app-slug",
   "buildNumber": "456",
   "description": "A description",
+  "iconUrl": "icon.url",
   "id": 123,
   "publicInstallPageURL": "def.a.valid.url",
   "publicInstallPageUrl": undefined,
