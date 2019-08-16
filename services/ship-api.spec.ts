@@ -37,6 +37,10 @@ describe('Ship API service', () => {
               full_description: 'A description',
               short_description: 'A short description',
               whats_new: 'Something new'
+            },
+            app_info: {
+              title: 'App title',
+              appIconUrl: 'icon.url'
             }
           }
         })
