@@ -151,16 +151,24 @@ export default ({
                 </Text>
               </Flex>
             </Flex>
-            <Flex direction="horizontal" alignChildren="start" gap="x4" margin="x8">
-              <Button level="primary" onClick={onSave}>
-                <Icon name="Save" />
-                <Text>Save</Text>
-              </Button>
-              <Button level="secondary" disabled={!shouldEnableInstall}>
-                <Icon name="Download" />
-                <Text>Install</Text>
-              </Button>
-            </Flex>
+            {!isDesktop && (
+              <Flex direction="horizontal" alignChildren="start" gap="x4" margin="x8">
+                <Button
+                  level="primary"
+                  onClick={(evt: Event) => {
+                    evt.preventDefault();
+                    onSave && onSave();
+                  }}
+                >
+                  <Icon name="Save" />
+                  <Text>Save</Text>
+                </Button>
+                <Button level="secondary" disabled={!shouldEnableInstall}>
+                  <Icon name="Download" />
+                  <Text>Install</Text>
+                </Button>
+              </Flex>
+            )}
             {appVersion.platform === 'ios' && (
               <FormIos
                 appVersion={appVersion}
