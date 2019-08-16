@@ -101,7 +101,9 @@ Object {
     "selectedKeystoreFile": "whatever",
     "selectedServiceAccount": "does not matter",
   },
+  "keystoreFiles": Array [],
   "projectType": "android",
+  "serviceAccountJsonFiles": Array [],
 }
 `;
 

@@ -97,18 +97,36 @@ describe('GeneralView', () => {
     });
   });
 
+  describe('when there are no files', () => {
+    it('renders no files section', () => {
+      const tree = toJSON(
+        shallow(
+          <GeneralView
+            {...defaultProps}
+            provProfiles={[]}
+            certificates={[]}
+            keystoreFiles={[]}
+            serviceAccountJsonFiles={[]}
+          />
+        )
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  });
+
   ([
-    ['ProvProfile', mockSettings.provProfiles, undefined, undefined, undefined],
-    ['Certificate', undefined, mockSettings.certificates, undefined, undefined],
-    ['KeystoreFile', undefined, undefined, mockSettings.keystoreFiles, undefined],
-    ['ServiceAccountJsonFile', undefined, undefined, undefined, mockSettings.serviceAccountJsonFiles]
+    ['ProvProfile', mockSettings.provProfiles, [], [], [], mockSettings.provProfiles],
+    ['Certificate', [], mockSettings.certificates, [], [], mockSettings.certificates],
+    ['KeystoreFile', [], [], mockSettings.keystoreFiles, [], mockSettings.keystoreFiles],
+    ['ServiceAccountJsonFile', [], [], [], mockSettings.serviceAccountJsonFiles, mockSettings.serviceAccountJsonFiles]
   ] as any).forEach(
-    ([fileType, provProfiles, certificates, keystoreFiles, serviceAccountJsonFiles]: [
+    ([fileType, provProfiles, certificates, keystoreFiles, serviceAccountJsonFiles, selectables]: [
       string,
       ProvProfile[],
       Certificate[],
       KeystoreFile[],
-      ServiceAccountJsonFile[]
+      ServiceAccountJsonFile[],
+      any[]
     ]) => {
       describe('when a file is selected', () => {
         it('calls onSelectedFileChange with the file type and the file itself', () => {
@@ -127,9 +145,7 @@ describe('GeneralView', () => {
           tree.find('input[type="radio"]').forEach((radioInput, index) => {
             radioInput.simulate('change', { target: { checked: true } });
 
-            const files = provProfiles || certificates || keystoreFiles || serviceAccountJsonFiles;
-
-            expect(mockOnSelectedFileChange).toHaveBeenCalledWith(fileType, files[index]);
+            expect(mockOnSelectedFileChange).toHaveBeenCalledWith(fileType, selectables[index]);
           });
         });
       });
