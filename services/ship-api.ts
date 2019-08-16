@@ -181,7 +181,27 @@ export class ShipAPIService {
 
     const { data } = await get(url, this.token).then(res => res.json());
 
-    return camelizeKeysDeep(data);
+    let settings: any = camelizeKeysDeep(data);
+    if (settings.iosSettings) {
+      if (!settings.provProfiles) {
+        settings.provProfiles = [];
+      }
+
+      if (!settings.certificates) {
+        settings.certificates = [];
+      }
+    }
+    if (settings.androidSettings) {
+      if (!settings.keystoreFiles) {
+        settings.keystoreFiles = [];
+      }
+
+      if (!settings.serviceAccountJsonFiles) {
+        settings.serviceAccountJsonFiles = [];
+      }
+    }
+
+    return settings;
   }
 
   async updateSettings(appSlug: string, settings: Settings): Promise<Settings> {

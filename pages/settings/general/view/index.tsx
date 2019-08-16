@@ -177,7 +177,7 @@ export default ({
             </Base>
 
             <Base margin="x12">
-              {provProfiles && (
+              {
                 <Base margin="x6">
                   <Flex
                     direction={isDesktop ? 'horizontal' : 'vertical'}
@@ -202,7 +202,7 @@ export default ({
                     </Link>
                   </Flex>
                   <Divider color="gray-2" direction="horizontal" margin="x2" />
-                  {provProfiles.map((provProfile: ProvProfile, index) => (
+                  {(provProfiles as ProvProfile[]).map((provProfile: ProvProfile, index) => (
                     <Base key={index}>
                       <RadioButton
                         checked={provProfile.name === iosSettings.selectedAppStoreProvisioningProfile}
@@ -223,16 +223,21 @@ export default ({
                       <Divider color="gray-1" direction="horizontal" margin="x2" />
                     </Base>
                   ))}
+                  {(provProfiles as ProvProfile[]).length === 0 && (
+                    <Text size="x3" color="gray-7">
+                      No Provisioning Profiles
+                    </Text>
+                  )}
                 </Base>
-              )}
+              }
 
-              {certificates && (
+              {
                 <Base margin="x6">
                   <Text size="x3" weight="bold" margin="x1">
-                    Code Signing Identity ({certificates.length}/{maximumNumberOfCertificates})
+                    Code Signing Identity ({(certificates as Certificate[]).length}/{maximumNumberOfCertificates})
                   </Text>
                   <Divider color="gray-2" direction="horizontal" margin="x2" />
-                  {certificates.map((certificate: Certificate, index) => (
+                  {(certificates as Certificate[]).map((certificate: Certificate, index) => (
                     <Base key={index}>
                       <RadioButton
                         checked={certificate.name === iosSettings.selectedCodeSigningIdentity}
@@ -253,8 +258,13 @@ export default ({
                       <Divider color="gray-1" direction="horizontal" margin="x2" />
                     </Base>
                   ))}
+                  {(certificates as Certificate[]).length === 0 && (
+                    <Text size="x3" color="gray-7">
+                      No Code Signing Identities
+                    </Text>
+                  )}
                 </Base>
-              )}
+              }
             </Base>
           </Fragment>
         )}
@@ -320,7 +330,7 @@ export default ({
             </Base>
 
             <Base margin="x12">
-              {keystoreFiles && (
+              {
                 <Base margin="x6">
                   <Flex
                     direction={isDesktop ? 'horizontal' : 'vertical'}
@@ -345,7 +355,7 @@ export default ({
                     </Link>
                   </Flex>
                   <Divider color="gray-2" direction="horizontal" margin="x2" />
-                  {keystoreFiles.map((keystoreFile: KeystoreFile, index) => (
+                  {(keystoreFiles as KeystoreFile[]).map((keystoreFile: KeystoreFile, index) => (
                     <Base key={index}>
                       <RadioButton
                         checked={keystoreFile.name === androidSettings.selectedKeystoreFile}
@@ -366,38 +376,50 @@ export default ({
                       <Divider color="gray-1" direction="horizontal" margin="x2" />
                     </Base>
                   ))}
+                  {(keystoreFiles as KeystoreFile[]).length === 0 && (
+                    <Text size="x3" color="gray-7">
+                      No Android Keystore Files
+                    </Text>
+                  )}
                 </Base>
-              )}
+              }
 
-              {serviceAccountJsonFiles && (
+              {
                 <Base margin="x6">
                   <Text size="x3" weight="bold" margin="x1">
                     Android Service Account JSON File
                   </Text>
                   <Divider color="gray-2" direction="horizontal" margin="x2" />
-                  {serviceAccountJsonFiles.map((serviceAccountJsonFile: ServiceAccountJsonFile, index) => (
-                    <Base key={index}>
-                      <RadioButton
-                        checked={serviceAccountJsonFile.name === androidSettings.selectedServiceAccount}
-                        onChange={() => onSelectedFileChange('ServiceAccountJsonFile', serviceAccountJsonFile)}
-                      >
-                        <Flex
-                          direction="horizontal"
-                          alignChildrenHorizontal="between"
-                          alignChildrenVertical="middle"
-                          gap="x1"
-                          margin="x1"
-                          paddingVertical="x3"
+                  {(serviceAccountJsonFiles as ServiceAccountJsonFile[]).map(
+                    (serviceAccountJsonFile: ServiceAccountJsonFile, index) => (
+                      <Base key={index}>
+                        <RadioButton
+                          checked={serviceAccountJsonFile.name === androidSettings.selectedServiceAccount}
+                          onChange={() => onSelectedFileChange('ServiceAccountJsonFile', serviceAccountJsonFile)}
                         >
-                          <Icon name="Doc" size="2rem" color="grape-4" />
-                          <Text size="x3">{serviceAccountJsonFile.name}</Text>
-                        </Flex>
-                      </RadioButton>
-                      <Divider color="gray-1" direction="horizontal" margin="x2" />
-                    </Base>
-                  ))}
+                          <Flex
+                            direction="horizontal"
+                            alignChildrenHorizontal="between"
+                            alignChildrenVertical="middle"
+                            gap="x1"
+                            margin="x1"
+                            paddingVertical="x3"
+                          >
+                            <Icon name="Doc" size="2rem" color="grape-4" />
+                            <Text size="x3">{serviceAccountJsonFile.name}</Text>
+                          </Flex>
+                        </RadioButton>
+                        <Divider color="gray-1" direction="horizontal" margin="x2" />
+                      </Base>
+                    )
+                  )}
+                  {(serviceAccountJsonFiles as ServiceAccountJsonFile[]).length === 0 && (
+                    <Text size="x3" color="gray-7">
+                      No Android Service Account JSON File
+                    </Text>
+                  )}
                 </Base>
-              )}
+              }
             </Base>
           </Fragment>
         )}
