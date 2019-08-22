@@ -195,7 +195,7 @@ export class AppVersionDetails extends Component<Props, State> {
     const { updatedAppVersion } = this.state;
 
     if (window.analytics) {
-      window.analytics.track('AppVersionDetails Save', { appSlug, appVersionId: id });
+      window.analytics.track('AppVersionDetails Save', { addonId: 'addons-ship', appSlug, appVersionId: id });
     }
 
     updateAppVersion(updatedAppVersion as AppVersion);
@@ -210,7 +210,7 @@ export class AppVersionDetails extends Component<Props, State> {
     const { appSlug, id } = appVersion;
 
     if (window.analytics) {
-      window.analytics.track('AppVersionDetails Publish', { appSlug, appVersionId: id });
+      window.analytics.track('AppVersionDetails Publish', { addonId: 'addons-ship', appSlug, appVersionId: id });
     }
 
     await publishAppVersion(appVersion);
@@ -221,7 +221,12 @@ export class AppVersionDetails extends Component<Props, State> {
       appVersion: { appSlug, id }
     } = this.props;
     if (window.analytics) {
-      window.analytics.track('AppVersionDetails Added Screenshot', { appSlug, appVersionId: id, deviceId });
+      window.analytics.track('AppVersionDetails Added Screenshot', {
+        addonId: 'addons-ship',
+        appSlug,
+        appVersionId: id,
+        deviceId
+      });
     }
 
     const screenshotList = update({ ...this.state.screenshotList }, `${deviceId}.screenshots`, (screenshots = []) =>
