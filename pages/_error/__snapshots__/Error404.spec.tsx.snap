@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error404 renders ok on desktop 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  direction="vertical"
+  gap="x10"
+  grow={true}
+>
+  <Status404 />
+  <Text
+    align="middle"
+    config="5"
+    margin="x8"
+  >
+    Do you prefer the deep unkown, or looking for something else?
+  </Text>
+  <Buttons
+    alignChildren="middle"
+    fullWidth={false}
+    gap="x6"
+    paddingHorizontal="x10"
+  >
+    <Button
+      Component="a"
+      href="https://app.bitrise.io/dashboard/apps"
+      level="splash"
+      size="large"
+    >
+      Dashboard
+    </Button>
+    <Button
+      Component="a"
+      href="https://devcenter.bitrise.io/tips-and-tricks/tips-and-tricks-index/"
+      level="splash"
+      size="large"
+    >
+      Learn Bitrise Tricks
+    </Button>
+    <Button
+      Component="a"
+      href="https://careers.bitrise.io/"
+      level="splash"
+      size="large"
+    >
+      Check Open Positions
+    </Button>
+  </Buttons>
+</Flex>
+`;
+
+exports[`Error404 renders ok on mobile 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  direction="vertical"
+  gap="x10"
+  grow={true}
+>
+  <Status404 />
+  <Text
+    align="middle"
+    config="5"
+    margin="x8"
+  >
+    Do you prefer the deep unkown, or looking for something else?
+  </Text>
+  <Buttons
+    fullWidth={true}
+    gap="x3"
+    paddingHorizontal="x10"
+  >
+    <Button
+      Component="a"
+      href="https://app.bitrise.io/dashboard/apps"
+      level="splash"
+      size="large"
+    >
+      Dashboard
+    </Button>
+    <Button
+      Component="a"
+      href="https://devcenter.bitrise.io/tips-and-tricks/tips-and-tricks-index/"
+      level="splash"
+      size="large"
+    >
+      Learn Bitrise Tricks
+    </Button>
+    <Button
+      Component="a"
+      href="https://careers.bitrise.io/"
+      level="splash"
+      size="large"
+    >
+      Check Open Positions
+    </Button>
+  </Buttons>
+</Flex>
+`;

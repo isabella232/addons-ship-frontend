@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`_error renders ok when status code is 404 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  backgroundColor="grape-5"
+  color="aqua-1"
+  direction="vertical"
+  grow={true}
+>
+  <_default />
+  <Flex
+    paddingVertical="x10"
+  >
+    <AddonFooter
+      addonName="Ship"
+    />
+  </Flex>
+</Flex>
+`;
+
+exports[`_error renders ok when status code is 420 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  backgroundColor="grape-5"
+  color="aqua-1"
+  direction="vertical"
+  grow={true}
+>
+  <Flex
+    alignChildrenVertical="middle"
+    direction="vertical"
+    grow={true}
+  >
+    <Text
+      align="middle"
+      config="5"
+      margin="x8"
+    >
+      An unexpected error occured
+    </Text>
+  </Flex>
+  <Flex
+    paddingVertical="x10"
+  >
+    <AddonFooter
+      addonName="Ship"
+    />
+  </Flex>
+</Flex>
+`;
+
+exports[`_error renders ok when status code is 500 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  backgroundColor="grape-5"
+  color="aqua-1"
+  direction="vertical"
+  grow={true}
+>
+  <_default />
+  <Flex
+    paddingVertical="x10"
+  >
+    <AddonFooter
+      addonName="Ship"
+    />
+  </Flex>
+</Flex>
+`;
+
+exports[`_error renders ok when status code is null 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  backgroundColor="grape-5"
+  color="aqua-1"
+  direction="vertical"
+  grow={true}
+>
+  <Flex
+    alignChildrenVertical="middle"
+    direction="vertical"
+    grow={true}
+  >
+    <Text
+      align="middle"
+      config="5"
+      margin="x8"
+    >
+      An unexpected error occured
+    </Text>
+  </Flex>
+  <Flex
+    paddingVertical="x10"
+  >
+    <AddonFooter
+      addonName="Ship"
+    />
+  </Flex>
+</Flex>
+`;
