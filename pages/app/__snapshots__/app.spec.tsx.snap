@@ -967,6 +967,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
             "height": undefined,
             "maxHeight": undefined,
             "maxWidth": undefined,
+            "minHeight": undefined,
+            "minWidth": undefined,
             "width": undefined,
           }
         }
@@ -987,6 +989,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                   "height": undefined,
                   "maxHeight": undefined,
                   "maxWidth": undefined,
+                  "minHeight": undefined,
+                  "minWidth": undefined,
                   "width": undefined,
                 }
               }
@@ -1001,6 +1005,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       "height": undefined,
                       "maxHeight": undefined,
                       "maxWidth": undefined,
+                      "minHeight": undefined,
+                      "minWidth": undefined,
                       "width": "100%",
                     }
                   }
@@ -1046,6 +1052,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     "height": undefined,
                                     "maxHeight": undefined,
                                     "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
                                     "width": undefined,
                                   }
                                 }
@@ -1068,6 +1076,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                           "height": undefined,
                                           "maxHeight": undefined,
                                           "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
                                           "width": undefined,
                                         }
                                       }
@@ -1115,6 +1125,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                       "height": undefined,
                                       "maxHeight": undefined,
                                       "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
                                       "width": undefined,
                                     }
                                   }
@@ -1143,6 +1155,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                           "height": undefined,
                           "maxHeight": undefined,
                           "maxWidth": undefined,
+                          "minHeight": undefined,
+                          "minWidth": undefined,
                           "width": undefined,
                         }
                       }
@@ -1162,6 +1176,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                 "height": undefined,
                                 "maxHeight": undefined,
                                 "maxWidth": undefined,
+                                "minHeight": undefined,
+                                "minWidth": undefined,
                                 "width": undefined,
                               }
                             }
@@ -1180,6 +1196,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                       "height": undefined,
                                       "maxHeight": undefined,
                                       "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
                                       "width": undefined,
                                     }
                                   }
@@ -1200,6 +1218,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                             "height": undefined,
                                             "maxHeight": undefined,
                                             "maxWidth": undefined,
+                                            "minHeight": undefined,
+                                            "minWidth": undefined,
                                             "width": undefined,
                                           }
                                         }
@@ -1233,6 +1253,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                             "height": undefined,
                                             "maxHeight": undefined,
                                             "maxWidth": undefined,
+                                            "minHeight": undefined,
+                                            "minWidth": undefined,
                                             "width": undefined,
                                           }
                                         }
@@ -1318,6 +1340,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                                       "height": undefined,
                                                       "maxHeight": undefined,
                                                       "maxWidth": undefined,
+                                                      "minHeight": undefined,
+                                                      "minWidth": undefined,
                                                       "width": 168,
                                                     }
                                                   }
@@ -1338,6 +1362,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                                             "height": undefined,
                                                             "maxHeight": undefined,
                                                             "maxWidth": undefined,
+                                                            "minHeight": undefined,
+                                                            "minWidth": undefined,
                                                             "width": undefined,
                                                           }
                                                         }
@@ -1357,6 +1383,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                                             "height": undefined,
                                                             "maxHeight": undefined,
                                                             "maxWidth": undefined,
+                                                            "minHeight": undefined,
+                                                            "minWidth": undefined,
                                                             "width": undefined,
                                                           }
                                                         }
@@ -1379,6 +1407,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                                                   "height": "1.5rem",
                                                                   "maxHeight": undefined,
                                                                   "maxWidth": undefined,
+                                                                  "minHeight": undefined,
+                                                                  "minWidth": undefined,
                                                                   "width": "1.5rem",
                                                                 }
                                                               }
@@ -1887,6 +1917,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                 "height": undefined,
                 "maxHeight": undefined,
                 "maxWidth": undefined,
+                "minHeight": undefined,
+                "minWidth": undefined,
                 "width": undefined,
               }
             }
