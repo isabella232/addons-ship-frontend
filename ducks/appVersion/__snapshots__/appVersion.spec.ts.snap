@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`appVersion deleteScreenshot can't delete a screenshot 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_DELETE_SCREENSHOTS_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_DELETE_SCREENSHOTS_ERROR",
+  },
+]
+`;
+
+exports[`appVersion deleteScreenshot deletes a screenshot 1`] = `[Function]`;
+
 exports[`appVersion fetchAppVersion can't fetch an app version 1`] = `
 Array [
   Object {
