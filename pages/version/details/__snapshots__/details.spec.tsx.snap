@@ -5,20 +5,20 @@ Array [
   Array [
     Object {
       "deviceType": "iPhone 6.5”",
-      "filename": "image.png",
-      "filesize": 1000,
+      "filename": File {},
+      "filesize": "iPhone 6.5”",
       "screenSize": "iPhone 6.5”",
     },
     Object {
       "deviceType": "iPhone 5.8”",
-      "filename": "image2.png",
+      "filename": File {},
       "filesize": 0,
       "screenSize": "iPhone 5.8”",
     },
   ],
   Array [
-    File {},
-    File {},
+    1000,
+    undefined,
   ],
 ]
 `;
@@ -30,6 +30,7 @@ Screenshot {
     "path": "file.png",
     "type": "image/png",
   },
+  "id": "",
   "name": "feature graphic",
   "size": 0,
   "src": undefined,
@@ -77,6 +78,7 @@ Object {
           "path": "file.png",
           "type": "image/png",
         },
+        "id": "",
         "name": "file.png",
         "size": 0,
         "src": undefined,
@@ -95,6 +97,7 @@ Object {
     "id": "some-id",
     "status": "in-progress",
   },
+  "screenshotIdsToDelete": Array [],
   "screenshotList": Object {
     "applewatch": Object {
       "deviceName": "Apple Watch",

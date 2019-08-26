@@ -36,6 +36,7 @@ export type State = {
   readyForPublish?: boolean;
   latestEvent: AppVersionEvent | null;
   isPublishInProgress: boolean;
+  screenshotIdsToDelete: string[];
 };
 
 type DeviceScreenshots = {
@@ -85,7 +86,8 @@ export class AppVersionDetails extends Component<Props, State> {
     featureGraphic: undefined,
     selectedDeviceIdForScreenshots: 'iphone65',
     latestEvent: null,
-    isPublishInProgress: false
+    isPublishInProgress: false,
+    screenshotIdsToDelete: []
   };
 
   componentDidMount() {
@@ -97,13 +99,8 @@ export class AppVersionDetails extends Component<Props, State> {
     });
     startPollPublishStatus(appVersion);
 
-    appVersion.screenshotDatas.forEach((screenshotData: ScreenshotResponse) => {
-      const screenshot = new Screenshot(
-        screenshotData.filename,
-        screenshotData.downloadUrl,
-        screenshotData.filesize,
-        screenshotData.deviceType
-      );
+    appVersion.screenshotDatas.forEach(({ id, filename, downloadUrl, filesize, deviceType }: ScreenshotResponse) => {
+      const screenshot = new Screenshot(id, filename, downloadUrl, filesize, deviceType);
 
       let deviceId = Object.keys(this.state.screenshotList).find(
         key => this.state.screenshotList[key].deviceName === screenshot.deviceType
@@ -192,11 +189,13 @@ export class AppVersionDetails extends Component<Props, State> {
       updateAppVersion,
       uploadScreenshots
     } = this.props;
-    const { updatedAppVersion } = this.state;
+    const { updatedAppVersion, screenshotIdsToDelete } = this.state;
 
     if (window.analytics) {
       window.analytics.track('AppVersionDetails Save', { addonId: 'addons-ship', appSlug, appVersionId: id });
     }
+
+    console.log('screenshotIdsToDelete', screenshotIdsToDelete);
 
     updateAppVersion(updatedAppVersion as AppVersion);
 
@@ -232,7 +231,7 @@ export class AppVersionDetails extends Component<Props, State> {
     const screenshotList = update({ ...this.state.screenshotList }, `${deviceId}.screenshots`, (screenshots = []) =>
       screenshots.concat(
         files.map(
-          (file: File) => new Screenshot(file.name, file, file.size, this.state.screenshotList[deviceId].deviceName)
+          (file: File) => new Screenshot('', file.name, file, file.size, this.state.screenshotList[deviceId].deviceName)
         )
       )
     );
@@ -241,6 +240,9 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   removeScreenshot = (deviceId: string, screenshot: Screenshot) => {
+    if (screenshot.src) {
+      this.setState({ screenshotIdsToDelete: [...this.state.screenshotIdsToDelete, screenshot.id] });
+    }
     const screenshotList = update({ ...this.state.screenshotList }, `${deviceId}.screenshots`, (screenshots = []) =>
       screenshots.filter((file: Screenshot) => file !== screenshot)
     );
@@ -249,7 +251,7 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   onFeatureGraphicAdded = (newFeatureGraphic: File) => {
-    this.setState({ featureGraphic: new Screenshot('feature graphic', newFeatureGraphic) });
+    this.setState({ featureGraphic: new Screenshot('', 'feature graphic', newFeatureGraphic) });
   };
 
   removeFeatureGraphic = () => {
