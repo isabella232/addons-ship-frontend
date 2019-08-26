@@ -13,6 +13,7 @@ body {
   #__next {
     display: flex;
     flex-grow: 1;
+    flex-direction: column;
   }
 
   .Button:disabled {
