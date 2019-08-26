@@ -36,7 +36,9 @@ exports[`NotificationSettings View has an enabled save button 1`] = `
     direction="horizontal"
     margin="x12"
   >
-    <Buttons>
+    <Buttons
+      gap="x2"
+    >
       <Button
         level="secondary"
         size="medium"
@@ -92,7 +94,9 @@ exports[`NotificationSettings View renders correctly 1`] = `
     direction="horizontal"
     margin="x12"
   >
-    <Buttons>
+    <Buttons
+      gap="x2"
+    >
       <Button
         level="secondary"
         size="medium"

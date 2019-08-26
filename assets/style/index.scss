@@ -10,6 +10,11 @@ body {
 }
 
 :global {
+  #__next {
+    display: flex;
+    flex-grow: 1;
+  }
+
   .Button:disabled {
     opacity: 0.5;
   }

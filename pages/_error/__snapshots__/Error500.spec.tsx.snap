@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error500 renders ok 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  direction="vertical"
+  gap="x10"
+  grow={true}
+>
+  <Status500 />
+</Flex>
+`;
