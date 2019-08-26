@@ -10,7 +10,13 @@ import { AppVersion, AppVersionEvent, Screenshot, ScreenshotResponse } from '@/m
 import { Settings, IosSettings, AndroidSettings } from '@/models/settings';
 import { Uploadable } from '@/models/uploadable';
 import { RootState } from '@/store';
-import { updateAppVersion, uploadScreenshots, publishAppVersion, pollPublishStatus } from '@/ducks/appVersion';
+import {
+  updateAppVersion,
+  uploadScreenshots,
+  deleteScreenshot,
+  publishAppVersion,
+  pollPublishStatus
+} from '@/ducks/appVersion';
 import { orderedAppVersionEvents } from '@/ducks/selectors';
 import settingService from '@/services/settings';
 
@@ -22,6 +28,7 @@ type Props = {
   appVersionEvents: AppVersionEvent[];
   updateAppVersion: typeof updateAppVersion;
   uploadScreenshots: typeof uploadScreenshots;
+  deleteScreenshot: typeof deleteScreenshot;
   publishAppVersion: typeof publishAppVersion;
   startPollPublishStatus: typeof pollPublishStatus.start;
   cancelPollPublishStatus: typeof pollPublishStatus.cancel;
@@ -187,7 +194,8 @@ export class AppVersionDetails extends Component<Props, State> {
     const {
       appVersion: { appSlug, id },
       updateAppVersion,
-      uploadScreenshots
+      uploadScreenshots,
+      deleteScreenshot
     } = this.props;
     const { updatedAppVersion, screenshotIdsToDelete } = this.state;
 
@@ -195,7 +203,9 @@ export class AppVersionDetails extends Component<Props, State> {
       window.analytics.track('AppVersionDetails Save', { addonId: 'addons-ship', appSlug, appVersionId: id });
     }
 
-    console.log('screenshotIdsToDelete', screenshotIdsToDelete);
+    if (screenshotIdsToDelete.length > 0) {
+      screenshotIdsToDelete.forEach(screenshotId => deleteScreenshot(appSlug, id.toString(), screenshotId));
+    }
 
     updateAppVersion(updatedAppVersion as AppVersion);
 
@@ -350,6 +360,7 @@ const mapStateToProps = ({ appVersion: { appVersion, events }, settings: { setti
 const mapDispatchToProps = {
   updateAppVersion,
   uploadScreenshots,
+  deleteScreenshot,
   publishAppVersion,
   startPollPublishStatus: pollPublishStatus.start,
   cancelPollPublishStatus: pollPublishStatus.cancel

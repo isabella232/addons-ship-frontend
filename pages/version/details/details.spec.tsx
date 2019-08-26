@@ -136,6 +136,7 @@ describe('AppVersionDetails', () => {
     isPublishInProgress: false,
     updateAppVersion: jest.fn() as any,
     uploadScreenshots: jest.fn() as any,
+    deleteScreenshot: jest.fn() as any,
     publishAppVersion: jest.fn() as any,
     startPollPublishStatus: jest.fn() as any,
     cancelPollPublishStatus: jest.fn() as any,
@@ -305,26 +306,47 @@ describe('AppVersionDetails', () => {
     const wrap = shallow(<AppVersionDetails {...defaultProps} />);
     const deviceId = 'iphone65',
       otherDeviceId = 'other-iphone65',
-      screenshot = new Screenshot('image.png', new File([], 'image.png'), 1000, 'iPhone 6.5”');
+      screenshot = new Screenshot('screenshot-id', 'image.png', new File([], 'image.png'), 1000, 'iPhone 6.5”');
 
     beforeEach(() => {
       // prettier-ignore
       const screenshotList = {
         [deviceId]: { deviceName: 'iPhone 6.5”', screenshots: [screenshot]},
-        [otherDeviceId]: { deviceName: 'iPhone 5.8”', screenshots: [new Screenshot('image2.png', new File([], 'image2.jpg'))]},
+        [otherDeviceId]: { deviceName: 'iPhone 5.8”', screenshots: [new Screenshot('screenshot-2', 'image2.png', new File([], 'image2.jpg'))]},
         'device-without-screenshots': { deviceName: 'whatever', screenshots: null }
       };
       const featureGraphic = new File([], 'image.png');
 
-      wrap.setState({ screenshotList, selectedDeviceIdForScreenshots: deviceId, featureGraphic });
+      wrap.setState({
+        screenshotList,
+        selectedDeviceIdForScreenshots: deviceId,
+        featureGraphic,
+        screenshotIdsToDelete: []
+      });
     });
 
-    it('removes a screenshot', () => {
-      expect((wrap.state() as State).screenshotList.iphone65.screenshots).toHaveLength(1);
+    describe('removeScreenshot', () => {
+      it('removes a new screenshot', () => {
+        expect((wrap.state() as State).screenshotList.iphone65.screenshots).toHaveLength(1);
 
-      (wrap.instance() as AppVersionDetails).removeScreenshot(deviceId, screenshot);
+        (wrap.instance() as AppVersionDetails).removeScreenshot(deviceId, screenshot);
 
-      expect((wrap.state() as State).screenshotList.iphone65.screenshots).toHaveLength(0);
+        expect((wrap.state() as State).screenshotList.iphone65.screenshots).toHaveLength(0);
+      });
+
+      it('removes an already uploaded screenshot', () => {
+        const screenshotId = 'screenshot-id',
+          screenshot = new Screenshot(screenshotId, 'image.png', 'some.url', 1000, 'iPhone 6.5”'),
+          screenshotList = {
+            [deviceId]: { deviceName: 'iPhone 6.5”', screenshots: [screenshot] }
+          };
+
+        wrap.setState({ screenshotList });
+
+        (wrap.instance() as AppVersionDetails).removeScreenshot(deviceId, screenshot);
+
+        expect((wrap.state() as State).screenshotIdsToDelete).toEqual([screenshotId]);
+      });
     });
 
     it('removes feature graphic', () => {
@@ -344,6 +366,29 @@ describe('AppVersionDetails', () => {
     test('getUploadableScreenshots', () => {
       const uploadableScreenshots = (wrap.instance() as AppVersionDetails).getUploadableScreenshots();
       expect(uploadableScreenshots).toMatchSnapshot();
+    });
+
+    describe('onSave', () => {
+      it('calls update and uploads', () => {
+        const { updateAppVersion, uploadScreenshots, deleteScreenshot } = defaultProps;
+        (wrap.instance() as AppVersionDetails).onSave();
+
+        expect(updateAppVersion).toHaveBeenCalled();
+        expect(uploadScreenshots).toHaveBeenCalled();
+        expect(deleteScreenshot).not.toHaveBeenCalled();
+      });
+
+      it('calls delete too', () => {
+        const {
+            deleteScreenshot,
+            appVersion: { appSlug, id }
+          } = defaultProps,
+          screenshotId = 'screenshot-to-delete';
+        wrap.setState({ screenshotIdsToDelete: [screenshotId] });
+        (wrap.instance() as AppVersionDetails).onSave();
+
+        expect(deleteScreenshot).toHaveBeenCalledWith(appSlug, id, screenshotId);
+      });
     });
   });
 

@@ -5,20 +5,20 @@ Array [
   Array [
     Object {
       "deviceType": "iPhone 6.5”",
-      "filename": File {},
-      "filesize": "iPhone 6.5”",
+      "filename": "image.png",
+      "filesize": 1000,
       "screenSize": "iPhone 6.5”",
     },
     Object {
       "deviceType": "iPhone 5.8”",
-      "filename": File {},
+      "filename": "image2.png",
       "filesize": 0,
       "screenSize": "iPhone 5.8”",
     },
   ],
   Array [
-    1000,
-    undefined,
+    File {},
+    File {},
   ],
 ]
 `;
