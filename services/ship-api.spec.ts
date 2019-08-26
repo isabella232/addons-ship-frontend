@@ -88,9 +88,7 @@ describe('Ship API service', () => {
       expect(put).toHaveBeenCalledWith(
         url,
         token,
-        `{"app_slug":"${appSlug}","id":"${id}","build_number":${buildNumber},"app_store_info":{"short_description":"${
-          appStoreInfo.shortDescription
-        }","full_description":"${appStoreInfo.description}","whats_new":"${appStoreInfo.whatsNew}"}}`
+        `{"app_slug":"${appSlug}","id":"${id}","build_number":${buildNumber},"app_store_info":{"short_description":"${appStoreInfo.shortDescription}","full_description":"${appStoreInfo.description}","whats_new":"${appStoreInfo.whatsNew}"}}`
       );
 
       expect(appVersion).toMatchSnapshot();
@@ -190,6 +188,31 @@ describe('Ship API service', () => {
         `${apiUrl}/apps/${appSlug}/versions/${versionId}/screenshots`,
         token,
         expectedBody
+      );
+    });
+  });
+
+  describe('deleteScreenshot', () => {
+    testTokenNotSet(() => api.deleteScreenshot('slug', 'version', 'screenshot-id'));
+
+    it('calls the api', async () => {
+      // (del as jest.Mock).mockResolvedValueOnce({
+      //   json: () => ({ data: [{ filename: 'some-file.png', upload_url: 'http://some.url?token=123' }] })
+      // });
+
+      const appSlug = 'an-app-slug',
+        versionId = 'a-version-id',
+        screenshotId = 'screenshot-id',
+        token = 'such-token';
+
+      api.setToken(token);
+
+      const result = await api.deleteScreenshot(appSlug, versionId, screenshotId);
+
+      expect(result).toMatchSnapshot();
+      expect(del).toHaveBeenLastCalledWith(
+        `${apiUrl}/apps/${appSlug}/versions/${versionId}/screenshots/${screenshotId}`,
+        token
       );
     });
   });
