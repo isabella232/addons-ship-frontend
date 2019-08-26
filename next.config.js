@@ -23,7 +23,8 @@ module.exports = compose(
     SHIP_API_URL: process.env.SHIP_API_URL,
     APP_BASE_URL: process.env.APP_BASE_URL,
     VERBOSE_LOGGING: process.env.VERBOSE_LOGGING,
-    SEGMENT_WRITE_KEY: process.env.SEGMENT_WRITE_KEY
+    SEGMENT_WRITE_KEY: process.env.SEGMENT_WRITE_KEY,
+    POLL_INTERVAL: process.env.POLL_INTERVAL
   },
   cssModules: true,
   cssLoaderOptions: {
