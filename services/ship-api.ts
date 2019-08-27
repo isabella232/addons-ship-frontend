@@ -181,6 +181,17 @@ export class ShipAPIService {
     return patch(url, this.token);
   }
 
+  // GET /apps/{app-slug}/versions/{version-id}/feature-graphic
+  async getFeatureGraphic(appSlug: string, versionId: string): Promise<Uploadable> {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic`;
+
+    const { data } = await get(url, this.token).then(res => res.json());
+
+    return camelizeKeysDeep(data);
+  }
+
   // POST /apps/{app-slug}/versions/{version-id}/publish
   async publishAppVersion(appVersion: AppVersion): Promise<AppVersion> {
     this.checkToken();

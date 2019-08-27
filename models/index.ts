@@ -68,8 +68,8 @@ export type ScreenshotResponse = {
   uploaded: boolean;
 };
 
-export class Screenshot {
-  constructor(id: string, name: string, content: any, size?: number, deviceType?: string) {
+export class FetureGraphic {
+  constructor(id: string, name: string, content: any) {
     this.id = id;
     this.name = name;
     if (typeof content === 'string') {
@@ -77,16 +77,12 @@ export class Screenshot {
     } else {
       this.file = content;
     }
-    this.size = size || 0;
-    this.deviceType = deviceType;
   }
 
   id: string;
   name: string;
   src?: string;
   file?: any;
-  size?: number;
-  deviceType?: string;
 
   type(): 'uploaded' | 'pending' {
     return this.src ? 'uploaded' : 'pending';
@@ -98,6 +94,18 @@ export class Screenshot {
     }
 
     return URL.createObjectURL(this.file);
+  }
+}
+
+export class Screenshot extends FetureGraphic {
+  size?: number;
+  deviceType?: string;
+
+  constructor(id: string, name: string, content: any, size?: number, deviceType?: string) {
+    super(id, name, content);
+
+    this.size = size || 0;
+    this.deviceType = deviceType;
   }
 }
 

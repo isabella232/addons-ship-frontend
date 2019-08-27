@@ -233,6 +233,39 @@ describe('Ship API service', () => {
     });
   });
 
+  describe('getFeatureGraphic', () => {
+    testTokenNotSet(() => api.getFeatureGraphic('slug', 'version'));
+
+    it('fetches the feature graphic for an app', async () => {
+      (get as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: {
+            id: 'test-id-1',
+            created_at: '2019-09-26T12:42:31Z',
+            updated_at: '2019-09-27T12:42:31Z',
+            download_url: 'some.url',
+            filename: 'screenshot-1.jpg',
+            filesize: 1234,
+            uploaded: true
+          }
+        })
+      });
+
+      const appSlug = 'an-app-slug',
+        versionId = 'a-version-id',
+        token = 'very-token';
+
+      api.setToken(token);
+
+      const featureGraphic = await api.getFeatureGraphic(appSlug, versionId);
+
+      const url = `${apiUrl}/apps/${appSlug}/versions/${versionId}/feature-graphic`;
+      expect(get).toHaveBeenCalledWith(url, token);
+
+      expect(featureGraphic).toMatchSnapshot();
+    });
+  });
+
   describe('getSettings', () => {
     testTokenNotSet(() => api.getSettings('slug'));
 
