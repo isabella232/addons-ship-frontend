@@ -204,6 +204,15 @@ export class ShipAPIService {
     return camelizeKeysDeep(data);
   }
 
+  // PATCH /apps/{app-slug}/versions/{version-id}/feature-graphic/uploaded
+  async uploadedFeatureGraphic(appSlug: string, versionId: string) {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic/uploaded`;
+
+    return await patch(url, this.token);
+  }
+
   // POST /apps/{app-slug}/versions/{version-id}/publish
   async publishAppVersion(appVersion: AppVersion): Promise<AppVersion> {
     this.checkToken();

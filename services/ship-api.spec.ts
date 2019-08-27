@@ -294,6 +294,22 @@ describe('Ship API service', () => {
     });
   });
 
+  describe('uploadedFeatureGraphic', () => {
+    testTokenNotSet(async () => await api.uploadedFeatureGraphic('slug', 'version'));
+
+    it('calls the api', async () => {
+      const appSlug = 'an-app-slug',
+        versionId = 'a-version-id',
+        token = 'some-token';
+      api.setToken(token);
+
+      await api.uploadedFeatureGraphic(appSlug, versionId);
+
+      const url = `${apiUrl}/apps/${appSlug}/versions/${versionId}/feature-graphic/uploaded`;
+      expect(patch).toHaveBeenLastCalledWith(url, token);
+    });
+  });
+
   describe('getSettings', () => {
     testTokenNotSet(() => api.getSettings('slug'));
 
