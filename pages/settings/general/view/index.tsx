@@ -24,6 +24,7 @@ import { Platform } from '@/models';
 import css from './style.scss';
 
 interface Props extends Settings {
+  appSlug: string;
   maximumNumberOfCertificates: number;
   hasMounted: boolean;
   hasIosSettings: boolean;
@@ -43,6 +44,7 @@ interface Props extends Settings {
 }
 
 export default ({
+  appSlug,
   maximumNumberOfCertificates,
   hasMounted,
   provProfiles,
@@ -188,7 +190,7 @@ export default ({
                     <Text size="x3" weight="bold">
                       App Store Provisioning Profile
                     </Text>
-                    <Link href="#" color="grape-3">
+                    <Link href={`https://app.bitrise.io/app/${ appSlug }/workflow_editor#!/code_signing`} target="_blank" color="grape-3">
                       <Flex
                         direction="horizontal"
                         alignChildrenHorizontal="start"
@@ -341,7 +343,7 @@ export default ({
                     <Text size="x3" weight="bold">
                       Android Keystore Files
                     </Text>
-                    <Link href="#" color="grape-3">
+                    <Link href={`https://app.bitrise.io/app/${ appSlug }/workflow_editor#!/code_signing`} target="_blank" color="grape-3">
                       <Flex
                         direction="horizontal"
                         alignChildrenHorizontal="start"

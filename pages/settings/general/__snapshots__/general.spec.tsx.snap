@@ -102,6 +102,7 @@ exports[`General renders correctly 1`] = `
     }
   }
   androidWorkflow="All"
+  appSlug="some-app-slug"
   certificates={
     Array [
       Object {
@@ -321,7 +322,8 @@ exports[`GeneralView when there are no Android settings does not render Android 
           </Text>
           <Link
             color="grape-3"
-            href="#"
+            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            target="_blank"
           >
             <Flex
               alignChildrenHorizontal="start"
@@ -690,7 +692,8 @@ exports[`GeneralView when there are no files renders no files section 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="#"
+            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            target="_blank"
           >
             <Flex
               alignChildrenHorizontal="start"
@@ -845,7 +848,8 @@ exports[`GeneralView when there are no files renders no files section 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="#"
+            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            target="_blank"
           >
             <Flex
               alignChildrenHorizontal="start"
@@ -1032,7 +1036,8 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
           </Text>
           <Link
             color="grape-3"
-            href="#"
+            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            target="_blank"
           >
             <Flex
               alignChildrenHorizontal="start"
@@ -1397,7 +1402,8 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="#"
+            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            target="_blank"
           >
             <Flex
               alignChildrenHorizontal="start"
@@ -1676,7 +1682,8 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="#"
+            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            target="_blank"
           >
             <Flex
               alignChildrenHorizontal="start"
@@ -2041,7 +2048,8 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="#"
+            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            target="_blank"
           >
             <Flex
               alignChildrenHorizontal="start"
@@ -2320,7 +2328,8 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="#"
+            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            target="_blank"
           >
             <Flex
               alignChildrenHorizontal="start"

@@ -145,10 +145,12 @@ export class General extends Component<Props> {
 
   render() {
     const {
+      appSlug,
       settings: { provProfiles, certificates, keystoreFiles, serviceAccountJsonFiles }
     } = this.props;
 
     const viewProps = {
+      appSlug,
       ...this.state,
       maximumNumberOfCertificates: MaximumNumberOfCertificates,
       provProfiles,
