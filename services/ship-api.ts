@@ -112,6 +112,7 @@ export class ShipAPIService {
     return await camelizeKeys(data);
   }
 
+  // GET /apps/{app-slug}/versions/{version-id}/events
   async getAppVersionEvents(appSlug: string, versionId: string): Promise<AppVersionEvent[]> {
     this.checkToken();
 
@@ -131,7 +132,6 @@ export class ShipAPIService {
   }
 
   // GET /apps/{app-slug}/versions/{version-id}/screenshots
-
   async getScreenshots(appSlug: string, versionId: string): Promise<ScreenshotResponse[]> {
     this.checkToken();
 
@@ -163,12 +163,22 @@ export class ShipAPIService {
     return data.map(camelizeKeys);
   }
 
-  async deleteScreenshot(appSlug: string, versionId: string, screenshotId: string): Promise<void> {
+  // DELETE /apps/{app-slug}/versions/{version-id}/screenshots/{screenshot-id}
+  deleteScreenshot(appSlug: string, versionId: string, screenshotId: string) {
     this.checkToken();
 
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/${screenshotId}`;
 
-    await del(url, this.token);
+    return del(url, this.token);
+  }
+
+  // PATCH /apps/{app-slug}/versions/{version-id}/screenshots/uploaded
+  uploadedScreenshots(appSlug: string, versionId: string) {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/uploaded`;
+
+    return patch(url, this.token);
   }
 
   // POST /apps/{app-slug}/versions/{version-id}/publish
@@ -181,15 +191,7 @@ export class ShipAPIService {
     return await post(url, this.token, undefined).then(res => res.json());
   }
 
-  // PATCH /apps/{app-slug}/versions/{version-id}/screenshots/uploaded
-  uploadedScreenshots(appSlug: string, versionId: string) {
-    this.checkToken();
-
-    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/uploaded`;
-
-    return patch(url, this.token);
-  }
-
+  // GET /apps/{app-slug}/settings
   async getSettings(appSlug: string): Promise<Settings> {
     this.checkToken();
 
@@ -220,6 +222,7 @@ export class ShipAPIService {
     return settings;
   }
 
+  // PATCH /apps/{app-slug}/settings
   async updateSettings(appSlug: string, settings: Settings): Promise<Settings> {
     this.checkToken();
 
@@ -240,6 +243,7 @@ export class ShipAPIService {
     return camelizeKeysDeep(data);
   }
 
+  // POST /apps/{app-slug}/contacts
   async addAppContact(
     appSlug: string,
     email: string,
@@ -261,6 +265,7 @@ export class ShipAPIService {
     return camelizeKeysDeep(data);
   }
 
+  // GET /apps/{app-slug}/contacts
   async listAppContacts(appSlug: string): Promise<AppContact[]> {
     this.checkToken();
 
@@ -275,6 +280,7 @@ export class ShipAPIService {
     }));
   }
 
+  // PUT /apps/{app-slug}/contacts/{contact-id}
   async updateAppContactNotificationPreferences(appSlug: string, appContact: AppContact): Promise<AppContact> {
     this.checkToken();
 
@@ -286,6 +292,7 @@ export class ShipAPIService {
     return camelizeKeysDeep(data);
   }
 
+  // DELETE /apps/{app-slug}/contacts/{contact-id}
   async deleteAppContact(appSlug: string, appContact: AppContact): Promise<void> {
     this.checkToken();
 
@@ -294,6 +301,7 @@ export class ShipAPIService {
     await del(url, this.token);
   }
 
+  // PATCH /confirm_email
   async confirmEmail(confirmToken: string): Promise<{ app: App; appContact: AppContact }> {
     const url = `${this.config.url}/confirm_email`,
       body = JSON.stringify({ confirmation_token: confirmToken });
@@ -303,6 +311,7 @@ export class ShipAPIService {
     return camelizeKeysDeep(data);
   }
 
+  // GET /api/resources?path={resource-path}
   async getResource<T>(reourcePath: string): Promise<T> {
     this.checkToken();
 
