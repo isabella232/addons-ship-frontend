@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`appVersion deleteFeatureGraphic can't delete the feature graphic 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_DELETE_FEATURE_GRAPHIC_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_DELETE_FEATURE_GRAPHIC_ERROR",
+  },
+]
+`;
+
+exports[`appVersion deleteFeatureGraphic deletes the feature graphic 1`] = `[Function]`;
+
 exports[`appVersion deleteScreenshot can't delete a screenshot 1`] = `
 Array [
   Object {

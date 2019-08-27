@@ -17,6 +17,7 @@ import reducer, {
   updateAppVersion,
   uploadScreenshots,
   uploadFeatureGraphic,
+  deleteFeatureGraphic,
   publishAppVersion,
   pollPublishStatus,
   pollPublishStatusEpic,
@@ -176,6 +177,24 @@ describe('appVersion', () => {
     it("can't upload a feature graphic", async () => {
       (api.uploadFeatureGraphic as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(uploadFeatureGraphic('app-slug', 'version-id', {} as Uploadable, {} as File) as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  describe('deleteFeatureGraphic', () => {
+    it('deletes the feature graphic', async () => {
+      const appSlug = 'app-slug',
+        versionId = 'version-id';
+      await store.dispatch(deleteFeatureGraphic(appSlug, versionId) as any);
+
+      expect(api.deleteFeatureGraphic).toHaveBeenCalledWith(appSlug, versionId);
+      expect(store.getActions).toMatchSnapshot();
+    });
+
+    it("can't delete the feature graphic", async () => {
+      (api.deleteFeatureGraphic as jest.Mock).mockRejectedValueOnce('api had some issue');
+      await store.dispatch(deleteFeatureGraphic('appSlug', 'versionId') as any);
 
       expect(store.getActions()).toMatchSnapshot();
     });
