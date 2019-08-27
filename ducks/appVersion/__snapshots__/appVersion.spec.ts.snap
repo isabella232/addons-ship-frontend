@@ -209,6 +209,29 @@ Array [
 ]
 `;
 
+exports[`appVersion uploadFeatureGraphic can't upload a feature graphic 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_UPLOAD_FEATURE_GRAPHIC_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_UPLOAD_FEATURE_GRAPHIC_ERROR",
+  },
+]
+`;
+
+exports[`appVersion uploadFeatureGraphic uploads a feature graphic 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_UPLOAD_FEATURE_GRAPHIC_NEXT",
+  },
+  Object {
+    "type": "APP_VERSION_UPLOAD_FEATURE_GRAPHIC_COMPLETE",
+  },
+]
+`;
+
 exports[`appVersion uploadScreenshots can't upload screenshots 1`] = `
 Array [
   Object {
