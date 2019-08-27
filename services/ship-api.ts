@@ -213,6 +213,15 @@ export class ShipAPIService {
     return await patch(url, this.token);
   }
 
+  // DELETE /apps/{app-slug}/versions/{version-id}/feature-graphic
+  async deleteFeatureGraphic(appSlug: string, versionId: string) {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic`;
+
+    return await del(url, this.token);
+  }
+
   // POST /apps/{app-slug}/versions/{version-id}/publish
   async publishAppVersion(appVersion: AppVersion): Promise<AppVersion> {
     this.checkToken();

@@ -310,6 +310,23 @@ describe('Ship API service', () => {
     });
   });
 
+  describe('deleteFeatureGraphic', () => {
+    testTokenNotSet(() => api.deleteFeatureGraphic('slug', 'version'));
+
+    it('calls the api', async () => {
+      const appSlug = 'an-app-slug',
+        versionId = 'a-version-id',
+        token = 'such-token';
+
+      api.setToken(token);
+
+      const result = await api.deleteFeatureGraphic(appSlug, versionId);
+
+      expect(result).toMatchSnapshot();
+      expect(del).toHaveBeenLastCalledWith(`${apiUrl}/apps/${appSlug}/versions/${versionId}/feature-graphic`, token);
+    });
+  });
+
   describe('getSettings', () => {
     testTokenNotSet(() => api.getSettings('slug'));
 
