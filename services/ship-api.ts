@@ -164,21 +164,21 @@ export class ShipAPIService {
   }
 
   // DELETE /apps/{app-slug}/versions/{version-id}/screenshots/{screenshot-id}
-  deleteScreenshot(appSlug: string, versionId: string, screenshotId: string) {
+  async deleteScreenshot(appSlug: string, versionId: string, screenshotId: string) {
     this.checkToken();
 
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/${screenshotId}`;
 
-    return del(url, this.token);
+    return await del(url, this.token);
   }
 
   // PATCH /apps/{app-slug}/versions/{version-id}/screenshots/uploaded
-  uploadedScreenshots(appSlug: string, versionId: string) {
+  async uploadedScreenshots(appSlug: string, versionId: string) {
     this.checkToken();
 
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/uploaded`;
 
-    return patch(url, this.token);
+    return await patch(url, this.token);
   }
 
   // GET /apps/{app-slug}/versions/{version-id}/feature-graphic
@@ -188,6 +188,18 @@ export class ShipAPIService {
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic`;
 
     const { data } = await get(url, this.token).then(res => res.json());
+
+    return camelizeKeysDeep(data);
+  }
+
+  // POST /apps/{app-slug}/versions/{version-id}/feature-graphic
+  async uploadFeatureGraphic(appSlug: string, versionId: string, featureGraphic: Uploadable): Promise<Uploadable> {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic`,
+      body = JSON.stringify(snakifyKeysDeep(featureGraphic));
+
+    const { data } = await post(url, this.token, body).then(res => res.json());
 
     return camelizeKeysDeep(data);
   }

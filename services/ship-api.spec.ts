@@ -2,7 +2,7 @@ jest.mock('@/utils/request');
 
 import { Uploadable } from '@/models/uploadable';
 import { patch, post, get, put, del, request } from '@/utils/request';
-import { mockAppVersion, mockUploadedScreenshotResponse } from '@/mocks';
+import { mockAppVersion } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
 import { ShipAPIService } from './ship-api';
@@ -263,6 +263,34 @@ describe('Ship API service', () => {
       expect(get).toHaveBeenCalledWith(url, token);
 
       expect(featureGraphic).toMatchSnapshot();
+    });
+  });
+
+  describe('uploadFeatureGraphic', () => {
+    testTokenNotSet(() => api.uploadFeatureGraphic('slug', 'version', { filename: 'aaa', filesize: 10 }));
+
+    it('calls the api', async () => {
+      (post as jest.Mock).mockResolvedValueOnce({
+        json: () => ({ data: { filename: 'some-file.png', upload_url: 'http://some.url?token=123' } })
+      });
+
+      const appSlug = 'an-app-slug',
+        versionId = 'a-version-id',
+        featureGraphic: Uploadable = { filename: 'some-file.png', filesize: 123 },
+        token = 'such-token';
+
+      api.setToken(token);
+
+      const result = await api.uploadFeatureGraphic(appSlug, versionId, featureGraphic);
+
+      const expectedBody = JSON.stringify({ filename: 'some-file.png', filesize: 123 });
+
+      expect(result).toMatchSnapshot();
+      expect(post).toHaveBeenLastCalledWith(
+        `${apiUrl}/apps/${appSlug}/versions/${versionId}/feature-graphic`,
+        token,
+        expectedBody
+      );
     });
   });
 

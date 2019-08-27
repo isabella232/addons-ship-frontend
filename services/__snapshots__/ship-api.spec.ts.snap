@@ -223,6 +223,13 @@ Object {
 }
 `;
 
+exports[`Ship API service uploadFeatureGraphic calls the api 1`] = `
+Object {
+  "filename": "some-file.png",
+  "uploadUrl": "http://some.url?token=123",
+}
+`;
+
 exports[`Ship API service uploadScreenshots calls the api 1`] = `
 Array [
   Object {
