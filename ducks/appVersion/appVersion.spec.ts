@@ -16,7 +16,8 @@ import reducer, {
   uploadScreenshots,
   publishAppVersion,
   pollPublishStatus,
-  pollPublishStatusEpic
+  pollPublishStatusEpic,
+  deleteScreenshot
 } from '.';
 import { uploadFileToS3 } from '@/utils/file';
 
@@ -124,6 +125,25 @@ describe('appVersion', () => {
     it("can't upload screenshots", async () => {
       (api.uploadScreenshots as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(uploadScreenshots('app-slug', 'version-id', [], []) as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  describe('deleteScreenshot', () => {
+    it('deletes a screenshot', async () => {
+      const appSlug = 'app-slug',
+        versionId = 'version-id',
+        screenshoId = 'screenshot-id';
+      await store.dispatch(deleteScreenshot(appSlug, versionId, screenshoId) as any);
+
+      expect(api.deleteScreenshot).toHaveBeenCalledWith(appSlug, versionId, screenshoId);
+      expect(store.getActions).toMatchSnapshot();
+    });
+
+    it("can't delete a screenshot", async () => {
+      (api.deleteScreenshot as jest.Mock).mockRejectedValueOnce('api had some issue');
+      await store.dispatch(deleteScreenshot('appSlug', 'versionId', 'screenshoId') as any);
 
       expect(store.getActions()).toMatchSnapshot();
     });

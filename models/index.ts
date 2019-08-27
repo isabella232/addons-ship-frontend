@@ -69,7 +69,8 @@ export type ScreenshotResponse = {
 };
 
 export class Screenshot {
-  constructor(name: string, content: any, size?: number, deviceType?: string) {
+  constructor(id: string, name: string, content: any, size?: number, deviceType?: string) {
+    this.id = id;
     this.name = name;
     if (typeof content === 'string') {
       this.src = content;
@@ -80,6 +81,7 @@ export class Screenshot {
     this.deviceType = deviceType;
   }
 
+  id: string;
   name: string;
   src?: string;
   file?: any;

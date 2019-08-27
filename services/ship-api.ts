@@ -163,6 +163,14 @@ export class ShipAPIService {
     return data.map(camelizeKeys);
   }
 
+  async deleteScreenshot(appSlug: string, versionId: string, screenshotId: string): Promise<void> {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/${screenshotId}`;
+
+    await del(url, this.token);
+  }
+
   // POST /apps/{app-slug}/versions/{version-id}/publish
   async publishAppVersion(appVersion: AppVersion): Promise<AppVersion> {
     this.checkToken();
