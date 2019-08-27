@@ -105,8 +105,10 @@ Object {
     "selectedKeystoreFile": "whatever",
     "selectedServiceAccount": "does not matter",
   },
+  "certificates": undefined,
   "keystoreFiles": Array [],
   "projectType": "android",
+  "provProfiles": undefined,
   "serviceAccountJsonFiles": Array [],
 }
 `;

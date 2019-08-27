@@ -197,7 +197,14 @@ export class ShipAPIService {
 
     const { data } = await get(url, this.token).then(res => res.json());
 
-    let settings: any = camelizeKeysDeep(data);
+    let settings: any = {
+      ...camelizeKeysDeep(data),
+      provProfiles: data.available_provisioning_profiles,
+      certificates: data.available_code_signing_identities,
+      keystoreFiles: data.available_keystore_files,
+      serviceAccountJsonFiles: data.available_service_account_files
+    };
+
     if (settings.iosSettings) {
       if (!settings.provProfiles) {
         settings.provProfiles = [];
