@@ -18,7 +18,7 @@ const _deleteScreenshot = (appSlug: string, versionId: string, screenshotId: str
 
     dispatch(deleteScreenshot.complete());
   } catch (error) {
-    console.error(deleteScreenshot, error);
+    console.error('deleteScreenshot', error);
     dispatch(deleteScreenshot.error(error));
   }
 };
