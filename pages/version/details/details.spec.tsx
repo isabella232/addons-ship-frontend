@@ -334,7 +334,7 @@ describe('AppVersionDetails', () => {
         expect((wrap.state() as State).screenshotList.iphone65.screenshots).toHaveLength(0);
       });
 
-      it('removes an already uploaded screenshot', () => {
+      it('removes an already uploaded screenshot from the preview, and marks it for delete', () => {
         const screenshotId = 'screenshot-id',
           screenshot = new Screenshot(screenshotId, 'image.png', 'some.url', 1000, 'iPhone 6.5”'),
           screenshotList = {
