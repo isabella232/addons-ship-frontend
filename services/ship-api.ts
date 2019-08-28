@@ -197,31 +197,33 @@ export class ShipAPIService {
 
     const { data } = await get(url, this.token).then(res => res.json());
 
-    let settings: any = {
-      ...camelizeKeysDeep(data),
-      provProfiles: data.available_provisioning_profiles,
-      certificates: data.available_code_signing_identities,
-      keystoreFiles: data.available_keystore_files,
-      serviceAccountJsonFiles: data.available_service_account_files
-    };
+    let settings: any = camelizeKeysDeep(data);
+    settings.provProfiles = (settings.iosSettings && settings.iosSettings.availableProvisioningProfiles) || [];
+    settings.certificates = (settings.iosSettings && settings.iosSettings.availableCodeSigningIdentities) || [];
+    settings.keystoreFiles = (settings.androidSettings && settings.androidSettings.availableKeystoreFiles) || [];
+    settings.serviceAccountJsonFiles =
+      (settings.androidSettings && settings.androidSettings.availableServiceAccountFiles) || [];
+
+    settings.provProfiles = settings.provProfiles.map((provProfile: any) => ({
+      name: provProfile.upload_file_name
+    }));
+    settings.certificates = settings.certificates.map((certificate: any) => ({
+      name: certificate.upload_file_name
+    }));
+    settings.keystoreFiles = settings.keystoreFiles.map((keystoreFile: any) => ({
+      name: keystoreFile.upload_file_name
+    }));
+    settings.serviceAccountJsonFiles = settings.serviceAccountJsonFiles.map((serviceAccountJsonFile: any) => ({
+      name: serviceAccountJsonFile.upload_file_name
+    }));
 
     if (settings.iosSettings) {
-      if (!settings.provProfiles) {
-        settings.provProfiles = [];
-      }
-
-      if (!settings.certificates) {
-        settings.certificates = [];
-      }
+      delete settings.iosSettings['availableProvisioningProfiles'];
+      delete settings.iosSettings['availableCodeSigningIdentities'];
     }
     if (settings.androidSettings) {
-      if (!settings.keystoreFiles) {
-        settings.keystoreFiles = [];
-      }
-
-      if (!settings.serviceAccountJsonFiles) {
-        settings.serviceAccountJsonFiles = [];
-      }
+      delete settings.androidSettings['availableKeystoreFiles'];
+      delete settings.androidSettings['availableServiceAccountFiles'];
     }
 
     return settings;
