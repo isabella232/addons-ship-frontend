@@ -1,4 +1,11 @@
 @import '~@/assets/style/colors';
+@import '~@/assets/style/dimensions';
+
+.sidebar {
+  position: sticky;
+  top: $grid * 4;
+  height: 0;
+}
 
 .clipboard-button {
   border: none;
