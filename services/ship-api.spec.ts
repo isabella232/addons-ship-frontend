@@ -335,10 +335,45 @@ describe('Ship API service', () => {
       (get as jest.Mock).mockResolvedValueOnce({
         json: () => ({
           data: {
-            project_type: 'android',
+            project_type: 'other',
+            ios_settings: {
+              available_provisioning_profiles: [
+                {
+                  upload_file_name: 'provisioning_profile-1'
+                },
+                {
+                  upload_file_name: 'provisioning_profile-2'
+                }
+              ],
+              available_code_signing_identities: [
+                {
+                  upload_file_name: 'code_signing_identity-1'
+                },
+                {
+                  upload_file_name: 'code_signing_identity-2'
+                }
+              ],
+              selected_app_store_provisioning_profile: 'provisioning_profile-1',
+              selected_code_signing_identity: 'code_signing_identity-2'
+            },
             android_settings: {
-              selectedKeystoreFile: 'whatever',
-              selectedServiceAccount: 'does not matter'
+              available_keystore_files: [
+                {
+                  upload_file_name: 'keystore_file-1'
+                },
+                {
+                  upload_file_name: 'keystore_file-2'
+                }
+              ],
+              available_service_account_files: [
+                {
+                  upload_file_name: 'service_account_file-1'
+                },
+                {
+                  upload_file_name: 'service_account_file-2'
+                }
+              ],
+              selected_service_account: 'service_account_file-2'
             }
           }
         })
