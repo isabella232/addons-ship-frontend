@@ -91,6 +91,7 @@ exports[`AppVersionDetails componentDidUpdate sets the latest event 1`] = `
 Object {
   "featureGraphic": undefined,
   "hasMounted": true,
+  "isFeatureGraphicMarkedForDelete": false,
   "isPublishInProgress": true,
   "latestEvent": Object {
     "id": "some-id",

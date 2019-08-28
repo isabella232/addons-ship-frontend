@@ -15,6 +15,7 @@ import {
   uploadScreenshots,
   deleteScreenshot,
   uploadFeatureGraphic,
+  deleteFeatureGraphic,
   publishAppVersion,
   pollPublishStatus
 } from '@/ducks/appVersion';
@@ -31,6 +32,8 @@ export type Props = {
   uploadScreenshots: typeof uploadScreenshots;
   deleteScreenshot: typeof deleteScreenshot;
   uploadFeatureGraphic: typeof uploadFeatureGraphic;
+  deleteFeatureGraphic: typeof deleteFeatureGraphic;
+
   publishAppVersion: typeof publishAppVersion;
   startPollPublishStatus: typeof pollPublishStatus.start;
   cancelPollPublishStatus: typeof pollPublishStatus.cancel;
@@ -46,6 +49,7 @@ export type State = {
   latestEvent: AppVersionEvent | null;
   isPublishInProgress: boolean;
   screenshotIdsToDelete: string[];
+  isFeatureGraphicMarkedForDelete: boolean;
 };
 
 type DeviceScreenshots = {
@@ -96,7 +100,8 @@ export class AppVersionDetails extends Component<Props, State> {
     selectedDeviceIdForScreenshots: 'iphone65',
     latestEvent: null,
     isPublishInProgress: false,
-    screenshotIdsToDelete: []
+    screenshotIdsToDelete: [],
+    isFeatureGraphicMarkedForDelete: false
   };
 
   componentDidMount() {
@@ -205,9 +210,10 @@ export class AppVersionDetails extends Component<Props, State> {
       updateAppVersion,
       uploadScreenshots,
       deleteScreenshot,
-      uploadFeatureGraphic
+      uploadFeatureGraphic,
+      deleteFeatureGraphic
     } = this.props;
-    const { updatedAppVersion, screenshotIdsToDelete, featureGraphic } = this.state;
+    const { updatedAppVersion, screenshotIdsToDelete, featureGraphic, isFeatureGraphicMarkedForDelete } = this.state;
 
     if (window.analytics) {
       window.analytics.track('AppVersionDetails Save', { addonId: 'addons-ship', appSlug, appVersionId: id });
@@ -225,10 +231,10 @@ export class AppVersionDetails extends Component<Props, State> {
       uploadScreenshots(appSlug, id.toString(), uploadables, files);
     }
 
-    console.log({ featureGraphic });
-
     if (featureGraphic && featureGraphic.type() === 'pending') {
       uploadFeatureGraphic(appSlug, id.toString(), featureGraphic);
+    } else if (isFeatureGraphicMarkedForDelete) {
+      deleteFeatureGraphic(appSlug, id.toString());
     }
   };
 
@@ -283,7 +289,13 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   removeFeatureGraphic = () => {
-    this.setState({ featureGraphic: undefined });
+    const { featureGraphic } = this.state;
+    let deleteFeatureGraphic = false;
+    if ((featureGraphic as FeatureGraphic).type() === 'uploaded' || this.state.isFeatureGraphicMarkedForDelete) {
+      deleteFeatureGraphic = true;
+    }
+
+    this.setState({ featureGraphic: undefined, isFeatureGraphicMarkedForDelete: deleteFeatureGraphic });
   };
 
   onDeviceSelected = (deviceId: string) => {
@@ -380,6 +392,7 @@ const mapDispatchToProps = {
   uploadScreenshots,
   deleteScreenshot,
   uploadFeatureGraphic,
+  deleteFeatureGraphic,
   publishAppVersion,
   startPollPublishStatus: pollPublishStatus.start,
   cancelPollPublishStatus: pollPublishStatus.cancel

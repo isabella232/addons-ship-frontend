@@ -1,5 +1,11 @@
 export class RequestError extends Error {
-  constructor(public status: number, public statusText: string) {
+  status: number;
+  statusText: string;
+
+  constructor(status: number, statusText: string) {
     super(`${status}: ${statusText}`);
+
+    this.status = status;
+    this.statusText = statusText;
   }
 }

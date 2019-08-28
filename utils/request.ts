@@ -29,7 +29,6 @@ export const request = ({ url, method, token, body }: RequestParams) =>
     }
 
     if (!res.ok) {
-      // throw new Error(`${res.status}: ${res.statusText}`);
       throw new RequestError(res.status, res.statusText);
     }
 

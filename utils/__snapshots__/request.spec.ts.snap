@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`request should throw an error for a bad request 1`] = `"Cannot set property 'status' of undefined"`;

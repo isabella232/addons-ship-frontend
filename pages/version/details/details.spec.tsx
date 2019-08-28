@@ -11,10 +11,10 @@ import { mediaQuery } from '@/utils/media';
 import { isAndroid, osVersion, mobileModel, compareVersions } from '@/utils/device';
 import settingService from '@/services/settings';
 import Dropzone from '@/components/Dropzone';
+import { AppVersionEvent, Screenshot, FeatureGraphic } from '@/models';
 
 import DetailsView, { Props as AppVersionDetailsViewProps } from './view';
 import { AppVersionDetails, State, Props as AppVersionDetailsProps } from './';
-import { AppVersionEvent, Screenshot } from '@/models';
 
 describe('AppVersionDetailsView', () => {
   const defaultProps: AppVersionDetailsViewProps = {
@@ -137,6 +137,7 @@ describe('AppVersionDetails', () => {
     uploadScreenshots: jest.fn() as any,
     deleteScreenshot: jest.fn() as any,
     uploadFeatureGraphic: jest.fn() as any,
+    deleteFeatureGraphic: jest.fn() as any,
     publishAppVersion: jest.fn() as any,
     startPollPublishStatus: jest.fn() as any,
     cancelPollPublishStatus: jest.fn() as any,
@@ -321,6 +322,7 @@ describe('AppVersionDetails', () => {
 
       wrap.setState({
         screenshotList,
+        featureGraphic: undefined,
         selectedDeviceIdForScreenshots: deviceId,
         screenshotIdsToDelete: []
       });
@@ -351,7 +353,7 @@ describe('AppVersionDetails', () => {
     });
 
     it('removes feature graphic', () => {
-      wrap.setState({ featureGraphic: 'whatever' });
+      wrap.setState({ featureGraphic: new FeatureGraphic('some-id', 'img.jpg', 'some.url') });
       expect((wrap.state() as State).featureGraphic).not.toBeUndefined();
 
       (wrap.instance() as AppVersionDetails).removeFeatureGraphic();
@@ -388,7 +390,7 @@ describe('AppVersionDetails', () => {
         expect(uploadScreenshots).toHaveBeenCalled();
       });
 
-      it('calls delete too', () => {
+      it('deletes sscreenshots', () => {
         const {
             deleteScreenshot,
             appVersion: { appSlug, id }
@@ -398,6 +400,19 @@ describe('AppVersionDetails', () => {
         (wrap.instance() as AppVersionDetails).onSave();
 
         expect(deleteScreenshot).toHaveBeenCalledWith(appSlug, id, screenshotId);
+      });
+
+      it('deletes the feature graphic', () => {
+        const {
+          deleteFeatureGraphic,
+          appVersion: { appSlug, id }
+        } = defaultProps;
+
+        wrap.setState({ isFeatureGraphicMarkedForDelete: true });
+
+        (wrap.instance() as AppVersionDetails).onSave();
+
+        expect(deleteFeatureGraphic).toHaveBeenCalledWith(appSlug, id);
       });
     });
   });

@@ -1,6 +1,7 @@
 jest.mock('node-fetch');
 
 import fetch from 'node-fetch';
+import { RequestError } from '@/models/errors';
 
 import * as request from './request';
 
@@ -49,7 +50,9 @@ describe('request', () => {
       statusText: 'Internal Server Error'
     });
 
-    await expect(request.get('some-url', 'a-token')).rejects.toThrowErrorMatchingSnapshot();
+    await expect(request.get('some-url', 'a-token')).rejects.toThrowError(
+      new RequestError(500, 'Internal Server Error')
+    );
   });
 
   it('should only include auth header when token was set', async () => {
