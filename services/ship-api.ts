@@ -1,3 +1,4 @@
+import lodashGet from 'lodash/get';
 import { shipApiConfig } from '@/config';
 import { AppVersion, AppVersionEvent, Screenshot, ScreenshotResponse } from '@/models';
 import { APIConfig, AppConfig } from '@/models/services';
@@ -5,7 +6,6 @@ import { Uploadable } from '@/models/uploadable';
 import { App } from '@/models/app';
 import { snakifyKeys, camelizeKeys, camelizeKeysDeep, snakifyKeysDeep } from '@/utils';
 import { patch, post, get, put, del, request } from '@/utils/request';
-import lodashGet from 'lodash/get';
 import { Settings, AppContact } from '@/models/settings';
 import { TestDevice } from '@/models/test-device';
 
@@ -199,10 +199,10 @@ export class ShipAPIService {
     const { data } = await get(url, this.token).then(res => res.json());
 
     let settings: any = camelizeKeysDeep(data);
-    settings.provProfiles = lodashGet(settings, 'iosSettings.availableProvisioningProfiles') || [];
-    settings.certificates = lodashGet(settings, 'iosSettings.availableCodeSigningIdentities') || [];
-    settings.keystoreFiles = lodashGet(settings, 'androidSettings.availableKeystoreFiles') || [];
-    settings.serviceAccountJsonFiles = lodashGet(settings, 'androidSettings.availableServiceAccountFiles') || [];
+    settings.provProfiles = lodashGet(settings, 'iosSettings.availableProvisioningProfiles', []);
+    settings.certificates = lodashGet(settings, 'iosSettings.availableCodeSigningIdentities', []);
+    settings.keystoreFiles = lodashGet(settings, 'androidSettings.availableKeystoreFiles', []);
+    settings.serviceAccountJsonFiles = lodashGet(settings, 'androidSettings.availableServiceAccountFiles', []);
 
     settings.provProfiles = settings.provProfiles.map((provProfile: any) => ({
       name: provProfile.upload_file_name
