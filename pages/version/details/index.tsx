@@ -6,9 +6,9 @@ import update from 'lodash/update';
 import filter from 'lodash/filter';
 
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
-import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot, ScreenshotResponse } from '@/models';
+import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot } from '@/models';
 import { Settings, IosSettings, AndroidSettings } from '@/models/settings';
-import { Uploadable } from '@/models/uploadable';
+import { Uploadable, ScreenshotResponse } from '@/models/uploadable';
 import { RootState } from '@/store';
 import {
   updateAppVersion,
@@ -137,8 +137,8 @@ export class AppVersionDetails extends Component<Props, State> {
     });
 
     if (appVersion.featureGraphicData) {
-      console.log('featureGraphicData', appVersion.featureGraphicData);
-      // this.setState({featureGraphic: new FetureGraphic(appVersion.featureGraphicData)})
+      const { id, filename, downloadUrl } = appVersion.featureGraphicData;
+      this.setState({ featureGraphic: new FeatureGraphic(id, filename, downloadUrl) });
     }
   }
 

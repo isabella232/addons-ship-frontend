@@ -1,4 +1,5 @@
-import { AppVersion, AppVersionEvent, ScreenshotResponse } from '@/models';
+import { AppVersion, AppVersionEvent } from '@/models';
+import { ScreenshotResponse } from '@/models/uploadable';
 import { Settings } from '@/models/settings';
 import { TestDevice } from '@/models/test-device';
 import { App } from '@/models/app';

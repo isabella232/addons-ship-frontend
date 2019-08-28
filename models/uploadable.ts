@@ -5,3 +5,18 @@ export type Uploadable = {
   screenSize?: string;
   uploadUrl?: string;
 };
+
+export type UploadableResponse = {
+  createdAt: Date;
+  updatedAt: Date;
+  id: string;
+  downloadUrl: string;
+  filename: string;
+  filesize: number;
+  uploaded: boolean;
+};
+
+export interface ScreenshotResponse extends UploadableResponse {
+  deviceType: string;
+  screenSize: string;
+}

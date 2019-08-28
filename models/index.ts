@@ -2,7 +2,7 @@ import { NextContext } from 'next';
 import { Store } from 'redux';
 import { Request } from 'express';
 
-import { Uploadable } from './uploadable';
+import { ScreenshotResponse, UploadableResponse } from './uploadable';
 
 export type AppVersionProps = {
   appSlug: string;
@@ -56,19 +56,7 @@ export type AppVersion = {
   buildType?: string;
   publicInstallPageURL?: string;
   screenshotDatas: ScreenshotResponse[];
-  featureGraphicData?: Uploadable;
-};
-
-export type ScreenshotResponse = {
-  createdAt: Date;
-  deviceType: string;
-  downloadUrl: string;
-  filename: string;
-  filesize: number;
-  id: string;
-  screenSize: string;
-  updatedAt: Date;
-  uploaded: boolean;
+  featureGraphicData?: UploadableResponse;
 };
 
 export class FeatureGraphic {

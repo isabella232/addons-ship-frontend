@@ -1,7 +1,7 @@
 import { shipApiConfig } from '@/config';
-import { AppVersion, AppVersionEvent, Screenshot, ScreenshotResponse, FeatureGraphic } from '@/models';
+import { AppVersion, AppVersionEvent, FeatureGraphic } from '@/models';
 import { APIConfig, AppConfig } from '@/models/services';
-import { Uploadable } from '@/models/uploadable';
+import { Uploadable, UploadableResponse, ScreenshotResponse } from '@/models/uploadable';
 import { App } from '@/models/app';
 import { snakifyKeys, camelizeKeys, camelizeKeysDeep, snakifyKeysDeep } from '@/utils';
 import { patch, post, get, put, del, request } from '@/utils/request';
@@ -182,7 +182,7 @@ export class ShipAPIService {
   }
 
   // GET /apps/{app-slug}/versions/{version-id}/feature-graphic
-  async getFeatureGraphic(appSlug: string, versionId: string): Promise<Uploadable> {
+  async getFeatureGraphic(appSlug: string, versionId: string): Promise<UploadableResponse> {
     this.checkToken();
 
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic`;
@@ -193,7 +193,11 @@ export class ShipAPIService {
   }
 
   // POST /apps/{app-slug}/versions/{version-id}/feature-graphic
-  async uploadFeatureGraphic(appSlug: string, versionId: string, { name, size }: FeatureGraphic): Promise<Uploadable> {
+  async uploadFeatureGraphic(
+    appSlug: string,
+    versionId: string,
+    { name, size }: FeatureGraphic
+  ): Promise<UploadableResponse> {
     this.checkToken();
 
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic`,
