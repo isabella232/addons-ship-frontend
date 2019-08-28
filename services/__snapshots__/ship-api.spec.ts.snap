@@ -102,12 +102,45 @@ Array [
 exports[`Ship API service getSettings fetches settings for an app 1`] = `
 Object {
   "androidSettings": Object {
-    "selectedKeystoreFile": "whatever",
-    "selectedServiceAccount": "does not matter",
+    "selectedServiceAccount": "service_account_file-2",
   },
-  "keystoreFiles": Array [],
-  "projectType": "android",
-  "serviceAccountJsonFiles": Array [],
+  "certificates": Array [
+    Object {
+      "name": "code_signing_identity-1",
+    },
+    Object {
+      "name": "code_signing_identity-2",
+    },
+  ],
+  "iosSettings": Object {
+    "selectedAppStoreProvisioningProfile": "provisioning_profile-1",
+    "selectedCodeSigningIdentity": "code_signing_identity-2",
+  },
+  "keystoreFiles": Array [
+    Object {
+      "name": "keystore_file-1",
+    },
+    Object {
+      "name": "keystore_file-2",
+    },
+  ],
+  "projectType": "other",
+  "provProfiles": Array [
+    Object {
+      "name": "provisioning_profile-1",
+    },
+    Object {
+      "name": "provisioning_profile-2",
+    },
+  ],
+  "serviceAccountJsonFiles": Array [
+    Object {
+      "name": "service_account_file-1",
+    },
+    Object {
+      "name": "service_account_file-2",
+    },
+  ],
 }
 `;
 

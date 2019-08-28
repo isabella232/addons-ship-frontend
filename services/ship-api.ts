@@ -1,3 +1,4 @@
+import lodashGet from 'lodash/get';
 import { shipApiConfig } from '@/config';
 import { AppVersion, AppVersionEvent, Screenshot, ScreenshotResponse } from '@/models';
 import { APIConfig, AppConfig } from '@/models/services';
@@ -198,23 +199,31 @@ export class ShipAPIService {
     const { data } = await get(url, this.token).then(res => res.json());
 
     let settings: any = camelizeKeysDeep(data);
-    if (settings.iosSettings) {
-      if (!settings.provProfiles) {
-        settings.provProfiles = [];
-      }
+    settings.provProfiles = lodashGet(settings, 'iosSettings.availableProvisioningProfiles', []);
+    settings.certificates = lodashGet(settings, 'iosSettings.availableCodeSigningIdentities', []);
+    settings.keystoreFiles = lodashGet(settings, 'androidSettings.availableKeystoreFiles', []);
+    settings.serviceAccountJsonFiles = lodashGet(settings, 'androidSettings.availableServiceAccountFiles', []);
 
-      if (!settings.certificates) {
-        settings.certificates = [];
-      }
+    settings.provProfiles = settings.provProfiles.map((provProfile: any) => ({
+      name: provProfile.upload_file_name
+    }));
+    settings.certificates = settings.certificates.map((certificate: any) => ({
+      name: certificate.upload_file_name
+    }));
+    settings.keystoreFiles = settings.keystoreFiles.map((keystoreFile: any) => ({
+      name: keystoreFile.upload_file_name
+    }));
+    settings.serviceAccountJsonFiles = settings.serviceAccountJsonFiles.map((serviceAccountJsonFile: any) => ({
+      name: serviceAccountJsonFile.upload_file_name
+    }));
+
+    if (settings.iosSettings) {
+      delete settings.iosSettings['availableProvisioningProfiles'];
+      delete settings.iosSettings['availableCodeSigningIdentities'];
     }
     if (settings.androidSettings) {
-      if (!settings.keystoreFiles) {
-        settings.keystoreFiles = [];
-      }
-
-      if (!settings.serviceAccountJsonFiles) {
-        settings.serviceAccountJsonFiles = [];
-      }
+      delete settings.androidSettings['availableKeystoreFiles'];
+      delete settings.androidSettings['availableServiceAccountFiles'];
     }
 
     return settings;
