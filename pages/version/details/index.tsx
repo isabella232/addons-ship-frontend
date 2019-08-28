@@ -6,7 +6,7 @@ import update from 'lodash/update';
 import filter from 'lodash/filter';
 
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
-import { AppVersion, AppVersionEvent, Screenshot, ScreenshotResponse } from '@/models';
+import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot, ScreenshotResponse } from '@/models';
 import { Settings, IosSettings, AndroidSettings } from '@/models/settings';
 import { Uploadable } from '@/models/uploadable';
 import { RootState } from '@/store';
@@ -14,6 +14,7 @@ import {
   updateAppVersion,
   uploadScreenshots,
   deleteScreenshot,
+  uploadFeatureGraphic,
   publishAppVersion,
   pollPublishStatus
 } from '@/ducks/appVersion';
@@ -22,13 +23,14 @@ import settingService from '@/services/settings';
 
 import View from './view';
 
-type Props = {
+export type Props = {
   appVersion: AppVersion;
   settings: Settings;
   appVersionEvents: AppVersionEvent[];
   updateAppVersion: typeof updateAppVersion;
   uploadScreenshots: typeof uploadScreenshots;
   deleteScreenshot: typeof deleteScreenshot;
+  uploadFeatureGraphic: typeof uploadFeatureGraphic;
   publishAppVersion: typeof publishAppVersion;
   startPollPublishStatus: typeof pollPublishStatus.start;
   cancelPollPublishStatus: typeof pollPublishStatus.cancel;
@@ -38,7 +40,7 @@ export type State = {
   hasMounted: boolean;
   updatedAppVersion: AppVersion | null;
   screenshotList: { [deviceId: string]: DeviceScreenshots };
-  featureGraphic?: Screenshot;
+  featureGraphic?: FeatureGraphic;
   selectedDeviceIdForScreenshots: string;
   readyForPublish?: boolean;
   latestEvent: AppVersionEvent | null;
@@ -99,6 +101,9 @@ export class AppVersionDetails extends Component<Props, State> {
 
   componentDidMount() {
     const { appVersion, startPollPublishStatus } = this.props;
+    const { screenshotList } = this.state;
+
+    const newScreenshotList = { ...screenshotList };
 
     this.setState({
       hasMounted: true,
@@ -109,28 +114,32 @@ export class AppVersionDetails extends Component<Props, State> {
     appVersion.screenshotDatas.forEach(({ id, filename, downloadUrl, filesize, deviceType }: ScreenshotResponse) => {
       const screenshot = new Screenshot(id, filename, downloadUrl, filesize, deviceType);
 
-      let deviceId = Object.keys(this.state.screenshotList).find(
-        key => this.state.screenshotList[key].deviceName === screenshot.deviceType
+      let deviceId = Object.keys(newScreenshotList).find(
+        key => newScreenshotList[key].deviceName === screenshot.deviceType
       ) as string;
       if (!deviceId) {
         deviceId = screenshot.deviceType as string;
       }
 
-      const screenshotList = this.state.screenshotList;
-      if (!screenshotList[deviceId]) {
-        screenshotList[deviceId] = {
+      if (!newScreenshotList[deviceId]) {
+        newScreenshotList[deviceId] = {
           deviceName: deviceId
         };
       }
-      if (!screenshotList[deviceId].screenshots) {
-        screenshotList[deviceId].screenshots = [];
+      if (!newScreenshotList[deviceId].screenshots) {
+        newScreenshotList[deviceId].screenshots = [];
       }
 
-      (screenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
-      this.setState({
-        screenshotList
-      });
+      (newScreenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
     });
+    this.setState({
+      screenshotList: newScreenshotList
+    });
+
+    if (appVersion.featureGraphicData) {
+      console.log('featureGraphicData', appVersion.featureGraphicData);
+      // this.setState({featureGraphic: new FetureGraphic(appVersion.featureGraphicData)})
+    }
   }
 
   componentDidUpdate({ appVersionEvents: prevEvents }: Props) {
@@ -195,9 +204,10 @@ export class AppVersionDetails extends Component<Props, State> {
       appVersion: { appSlug, id },
       updateAppVersion,
       uploadScreenshots,
-      deleteScreenshot
+      deleteScreenshot,
+      uploadFeatureGraphic
     } = this.props;
-    const { updatedAppVersion, screenshotIdsToDelete } = this.state;
+    const { updatedAppVersion, screenshotIdsToDelete, featureGraphic } = this.state;
 
     if (window.analytics) {
       window.analytics.track('AppVersionDetails Save', { addonId: 'addons-ship', appSlug, appVersionId: id });
@@ -209,9 +219,17 @@ export class AppVersionDetails extends Component<Props, State> {
 
     updateAppVersion(updatedAppVersion as AppVersion);
 
-    const [uploadable, files] = this.getUploadableScreenshots();
+    const [uploadables, files] = this.getUploadableScreenshots();
 
-    uploadScreenshots(appSlug, id.toString(), uploadable, files);
+    if (uploadables.length > 0) {
+      uploadScreenshots(appSlug, id.toString(), uploadables, files);
+    }
+
+    console.log({ featureGraphic });
+
+    if (featureGraphic && featureGraphic.type() === 'pending') {
+      uploadFeatureGraphic(appSlug, id.toString(), featureGraphic);
+    }
   };
 
   onPublish = async () => {
@@ -260,8 +278,8 @@ export class AppVersionDetails extends Component<Props, State> {
     this.setState({ screenshotList });
   };
 
-  onFeatureGraphicAdded = (newFeatureGraphic: File) => {
-    this.setState({ featureGraphic: new Screenshot('', 'feature graphic', newFeatureGraphic) });
+  onFeatureGraphicAdded = (file: File) => {
+    this.setState({ featureGraphic: new FeatureGraphic('', file.name, file, file.size) });
   };
 
   removeFeatureGraphic = () => {
@@ -332,7 +350,7 @@ export class AppVersionDetails extends Component<Props, State> {
       selectedDeviceIdForScreenshots,
       screenshots: screenshotList[selectedDeviceIdForScreenshots].screenshots,
       removeScreenshot: this.removeScreenshot,
-      featureGraphic: featureGraphic,
+      featureGraphic,
       onFeatureGraphicAdded: this.onFeatureGraphicAdded,
       removeFeatureGraphic: this.removeFeatureGraphic,
       onDeviceSelected: this.onDeviceSelected,
@@ -361,6 +379,7 @@ const mapDispatchToProps = {
   updateAppVersion,
   uploadScreenshots,
   deleteScreenshot,
+  uploadFeatureGraphic,
   publishAppVersion,
   startPollPublishStatus: pollPublishStatus.start,
   cancelPollPublishStatus: pollPublishStatus.cancel

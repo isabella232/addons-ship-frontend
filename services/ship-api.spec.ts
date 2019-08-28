@@ -6,6 +6,7 @@ import { mockAppVersion } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
 import { ShipAPIService } from './ship-api';
+import { FeatureGraphic } from '@/models';
 
 describe('Ship API service', () => {
   const apiUrl = 'http://ship.api',
@@ -267,7 +268,7 @@ describe('Ship API service', () => {
   });
 
   describe('uploadFeatureGraphic', () => {
-    testTokenNotSet(() => api.uploadFeatureGraphic('slug', 'version', { filename: 'aaa', filesize: 10 }));
+    testTokenNotSet(() => api.uploadFeatureGraphic('slug', 'version', {} as FeatureGraphic));
 
     it('calls the api', async () => {
       (post as jest.Mock).mockResolvedValueOnce({
@@ -276,7 +277,7 @@ describe('Ship API service', () => {
 
       const appSlug = 'an-app-slug',
         versionId = 'a-version-id',
-        featureGraphic: Uploadable = { filename: 'some-file.png', filesize: 123 },
+        featureGraphic: FeatureGraphic = new FeatureGraphic('id-01', 'some-file.png', 'src', 123),
         token = 'such-token';
 
       api.setToken(token);

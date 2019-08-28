@@ -1,5 +1,5 @@
 import { shipApiConfig } from '@/config';
-import { AppVersion, AppVersionEvent, Screenshot, ScreenshotResponse } from '@/models';
+import { AppVersion, AppVersionEvent, Screenshot, ScreenshotResponse, FeatureGraphic } from '@/models';
 import { APIConfig, AppConfig } from '@/models/services';
 import { Uploadable } from '@/models/uploadable';
 import { App } from '@/models/app';
@@ -193,11 +193,11 @@ export class ShipAPIService {
   }
 
   // POST /apps/{app-slug}/versions/{version-id}/feature-graphic
-  async uploadFeatureGraphic(appSlug: string, versionId: string, featureGraphic: Uploadable): Promise<Uploadable> {
+  async uploadFeatureGraphic(appSlug: string, versionId: string, { name, size }: FeatureGraphic): Promise<Uploadable> {
     this.checkToken();
 
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic`,
-      body = JSON.stringify(snakifyKeysDeep(featureGraphic));
+      body = JSON.stringify({ filename: name, filesize: size });
 
     const { data } = await post(url, this.token, body).then(res => res.json());
 

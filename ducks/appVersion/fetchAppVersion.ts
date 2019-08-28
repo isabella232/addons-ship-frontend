@@ -6,6 +6,7 @@ import { AppVersion } from '@/models';
 import { RootState } from '@/store';
 
 import { $ } from './common';
+import { RequestError } from '@/models/errors';
 
 const _fetchAppVersion = (appSlug: string, versionId: string) => async (
   dispatch: Dispatch,
@@ -17,6 +18,14 @@ const _fetchAppVersion = (appSlug: string, versionId: string) => async (
   try {
     const appVersion = await shipApi.getAppVersion(appSlug, versionId);
     appVersion.screenshotDatas = await shipApi.getScreenshots(appSlug, versionId);
+
+    try {
+      appVersion.featureGraphicData = await shipApi.getFeatureGraphic(appSlug, versionId);
+    } catch (error) {
+      if (!(error instanceof RequestError && error.status === 404)) {
+        throw error;
+      }
+    }
 
     dispatch(fetchAppVersion.complete(appVersion));
   } catch (error) {

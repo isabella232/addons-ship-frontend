@@ -2,6 +2,8 @@ import { NextContext } from 'next';
 import { Store } from 'redux';
 import { Request } from 'express';
 
+import { Uploadable } from './uploadable';
+
 export type AppVersionProps = {
   appSlug: string;
   versionId: string;
@@ -54,6 +56,7 @@ export type AppVersion = {
   buildType?: string;
   publicInstallPageURL?: string;
   screenshotDatas: ScreenshotResponse[];
+  featureGraphicData?: Uploadable;
 };
 
 export type ScreenshotResponse = {
@@ -68,10 +71,11 @@ export type ScreenshotResponse = {
   uploaded: boolean;
 };
 
-export class FetureGraphic {
-  constructor(id: string, name: string, content: any) {
+export class FeatureGraphic {
+  constructor(id: string, name: string, content: string | File, size?: number) {
     this.id = id;
     this.name = name;
+    this.size = size || 0;
     if (typeof content === 'string') {
       this.src = content;
     } else {
@@ -83,6 +87,7 @@ export class FetureGraphic {
   name: string;
   src?: string;
   file?: any;
+  size?: number;
 
   type(): 'uploaded' | 'pending' {
     return this.src ? 'uploaded' : 'pending';
@@ -97,14 +102,12 @@ export class FetureGraphic {
   }
 }
 
-export class Screenshot extends FetureGraphic {
-  size?: number;
+export class Screenshot extends FeatureGraphic {
   deviceType?: string;
 
   constructor(id: string, name: string, content: any, size?: number, deviceType?: string) {
-    super(id, name, content);
+    super(id, name, content, size);
 
-    this.size = size || 0;
     this.deviceType = deviceType;
   }
 }

@@ -2,12 +2,12 @@ import { Dispatch } from 'redux';
 import { createAction } from 'deox';
 
 import { ShipAPIService } from '@/services/ship-api';
-import { Uploadable } from '@/models/uploadable';
+import { FeatureGraphic } from '@/models';
 import { RootState } from '@/store';
 import { uploadFileToS3 } from '@/utils/file';
 
 import { $ } from './common';
-const _uploadFeatureGraphic = (appSlug: string, versionId: string, featureGraphic: Uploadable, file: File) => async (
+const _uploadFeatureGraphic = (appSlug: string, versionId: string, featureGraphic: FeatureGraphic) => async (
   dispatch: Dispatch,
   _getState: () => RootState,
   { shipApi }: { shipApi: ShipAPIService }
@@ -19,7 +19,7 @@ const _uploadFeatureGraphic = (appSlug: string, versionId: string, featureGraphi
     const { uploadUrl } = await shipApi.uploadFeatureGraphic(appSlug, versionId, featureGraphic);
 
     // Upload images to S3
-    await uploadFileToS3(file, uploadUrl);
+    await uploadFileToS3(featureGraphic.file, uploadUrl);
 
     // Mark screenshots as uploaded
     await shipApi.uploadedFeatureGraphic(appSlug, versionId);

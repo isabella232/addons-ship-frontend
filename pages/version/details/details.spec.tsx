@@ -12,12 +12,12 @@ import { isAndroid, osVersion, mobileModel, compareVersions } from '@/utils/devi
 import settingService from '@/services/settings';
 import Dropzone from '@/components/Dropzone';
 
-import DetailsView from './view';
-import { AppVersionDetails, State } from './';
+import DetailsView, { Props as AppVersionDetailsViewProps } from './view';
+import { AppVersionDetails, State, Props as AppVersionDetailsProps } from './';
 import { AppVersionEvent, Screenshot } from '@/models';
 
 describe('AppVersionDetailsView', () => {
-  const defaultProps = {
+  const defaultProps: AppVersionDetailsViewProps = {
     appVersion: mockAppVersion,
     hasMounted: true,
     selectedDeviceIdForScreenshots: 'iphone65',
@@ -130,13 +130,13 @@ describe('AppVersionDetailsView', () => {
 });
 
 describe('AppVersionDetails', () => {
-  const defaultProps = {
+  const defaultProps: AppVersionDetailsProps = {
     appVersion: mockAppVersion,
     settings: mockSettings,
-    isPublishInProgress: false,
     updateAppVersion: jest.fn() as any,
     uploadScreenshots: jest.fn() as any,
     deleteScreenshot: jest.fn() as any,
+    uploadFeatureGraphic: jest.fn() as any,
     publishAppVersion: jest.fn() as any,
     startPollPublishStatus: jest.fn() as any,
     cancelPollPublishStatus: jest.fn() as any,
@@ -200,7 +200,7 @@ describe('AppVersionDetails', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
     const mockUpdateAppVersion = jest.fn() as any;
     const mockUploadScreenshots = jest.fn() as any;
-    const tree = mount(
+    const wrap = mount(
       <AppVersionDetails
         {...defaultProps}
         updateAppVersion={mockUpdateAppVersion}
@@ -208,13 +208,16 @@ describe('AppVersionDetails', () => {
       />
     );
 
-    tree
+    const spy = jest.spyOn(wrap.instance() as AppVersionDetails, 'onSave');
+    wrap.instance().forceUpdate();
+
+    wrap
       .find('button')
       .first()
       .simulate('click');
 
     expect(mockUpdateAppVersion).toHaveBeenCalled();
-    expect(mockUploadScreenshots).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalled();
   });
 
   describe('when publish is selected', () => {
@@ -315,12 +318,10 @@ describe('AppVersionDetails', () => {
         [otherDeviceId]: { deviceName: 'iPhone 5.8”', screenshots: [new Screenshot('screenshot-2', 'image2.png', new File([], 'image2.jpg'))]},
         'device-without-screenshots': { deviceName: 'whatever', screenshots: null }
       };
-      const featureGraphic = new File([], 'image.png');
 
       wrap.setState({
         screenshotList,
         selectedDeviceIdForScreenshots: deviceId,
-        featureGraphic,
         screenshotIdsToDelete: []
       });
     });
@@ -350,6 +351,7 @@ describe('AppVersionDetails', () => {
     });
 
     it('removes feature graphic', () => {
+      wrap.setState({ featureGraphic: 'whatever' });
       expect((wrap.state() as State).featureGraphic).not.toBeUndefined();
 
       (wrap.instance() as AppVersionDetails).removeFeatureGraphic();
@@ -376,6 +378,14 @@ describe('AppVersionDetails', () => {
         expect(updateAppVersion).toHaveBeenCalled();
         expect(uploadScreenshots).toHaveBeenCalled();
         expect(deleteScreenshot).not.toHaveBeenCalled();
+      });
+
+      it('uploads screenshots if there are new ones', () => {
+        const { uploadScreenshots } = defaultProps;
+
+        (wrap.instance() as AppVersionDetails).onScreenshotAdded(deviceId, [new File([], 'whatever.jpg')]);
+        (wrap.instance() as AppVersionDetails).onSave();
+        expect(uploadScreenshots).toHaveBeenCalled();
       });
 
       it('calls delete too', () => {
