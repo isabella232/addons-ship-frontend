@@ -49,7 +49,7 @@ describe('request', () => {
       statusText: 'Internal Server Error'
     });
 
-    await expect(request.get('some-url', 'a-token')).rejects.toThrowError('500: Internal Server Error');
+    await expect(request.get('some-url', 'a-token')).rejects.toThrowErrorMatchingSnapshot();
   });
 
   it('should only include auth header when token was set', async () => {
