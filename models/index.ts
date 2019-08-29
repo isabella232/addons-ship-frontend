@@ -59,7 +59,7 @@ export type AppVersion = {
   featureGraphicData?: UploadableResponse;
 };
 
-export class FeatureGraphic {
+class ImageAsset {
   constructor(id: string, name: string, content: string | File, size?: number) {
     this.id = id;
     this.name = name;
@@ -90,7 +90,9 @@ export class FeatureGraphic {
   }
 }
 
-export class Screenshot extends FeatureGraphic {
+export class FeatureGraphic extends ImageAsset {}
+
+export class Screenshot extends ImageAsset {
   deviceType?: string;
 
   constructor(id: string, name: string, content: any, size?: number, deviceType?: string) {
