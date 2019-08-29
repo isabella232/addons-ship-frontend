@@ -21,6 +21,7 @@ import {
 
 describe('GeneralView', () => {
   const defaultProps = {
+    appSlug: mockAppVersion.appSlug,
     maximumNumberOfCertificates: 30,
     appVersion: mockAppVersion,
     iosWorkflow: '',
@@ -287,7 +288,7 @@ describe('General', () => {
     (tree.instance() as General).onSelectedFileChange('ProvProfile', selectedProvProfile);
 
     expect((tree.state('iosSettings') as IosSettings).selectedAppStoreProvisioningProfile).toEqual(
-      selectedProvProfile.name
+      selectedProvProfile.slug
     );
   });
 
@@ -297,7 +298,7 @@ describe('General', () => {
     const tree = shallow(<General {...defaultProps} />);
     (tree.instance() as General).onSelectedFileChange('Certificate', selectedCertificate);
 
-    expect((tree.state('iosSettings') as IosSettings).selectedCodeSigningIdentity).toEqual(selectedCertificate.name);
+    expect((tree.state('iosSettings') as IosSettings).selectedCodeSigningIdentity).toEqual(selectedCertificate.slug);
   });
 
   it('triggers a state update when selected keystore file changes', () => {
@@ -306,7 +307,7 @@ describe('General', () => {
     const tree = shallow(<General {...defaultProps} />);
     (tree.instance() as General).onSelectedFileChange('KeystoreFile', selectedKeystoreFile);
 
-    expect((tree.state('androidSettings') as AndroidSettings).selectedKeystoreFile).toEqual(selectedKeystoreFile.name);
+    expect((tree.state('androidSettings') as AndroidSettings).selectedKeystoreFile).toEqual(selectedKeystoreFile.slug);
   });
 
   it('triggers a state update when selected service account JSON file changes', () => {
@@ -316,7 +317,7 @@ describe('General', () => {
     (tree.instance() as General).onSelectedFileChange('ServiceAccountJsonFile', selectedServiceAccountJsonFile);
 
     expect((tree.state('androidSettings') as AndroidSettings).selectedServiceAccount).toEqual(
-      selectedServiceAccountJsonFile.name
+      selectedServiceAccountJsonFile.slug
     );
   });
 });
