@@ -37,7 +37,6 @@ export type AppVersion = {
   minimumOs?: string;
   minimumSdk?: string;
   packageName?: string;
-  certificateExpires: Date;
   bundleId?: string;
   supportedDeviceTypes: string[];
   distributionType?: string;

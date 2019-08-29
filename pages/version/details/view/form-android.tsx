@@ -118,11 +118,6 @@ export default ({
 
           <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-          <InputLabel>Certificate Expires</InputLabel>
-          <Text size="x3">{formatDate(appVersion.certificateExpires, 'MMM DD')}</Text>
-
-          <Divider color="gray-2" direction="horizontal" margin="x4" />
-
           <InputLabel>Minimum SDK Version</InputLabel>
           <Text size="x3">{appVersion.minimumSdk}</Text>
 
