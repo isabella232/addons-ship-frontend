@@ -15,8 +15,7 @@ export class SettingsService {
           'appSku',
           'appSpecificPassword',
           'selectedAppStoreProvisioningProfile',
-          'selectedCodeSigningIdentity',
-          'includeBitCode'
+          'selectedCodeSigningIdentity'
         ].find(key => !iosSettings[key]);
       }
       case 'android': {
