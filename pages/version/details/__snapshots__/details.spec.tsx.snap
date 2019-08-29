@@ -1286,36 +1286,79 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                             }
                           }
                         >
-                          <Image
+                          <_default
                             borderRadius="x2"
                             margin="x0"
                             maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
-                            <Base
-                              Component="img"
-                              borderRadius="x2"
-                              className="Image"
-                              margin="x0"
-                              maxWidth="160px"
-                              src="http://placekitten.com/160/160"
-                            >
-                              <img
-                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                            <div>
+                              <svg
+                                height="0"
+                                width="0"
+                              >
+                                <defs>
+                                  <clipPath
+                                    clipPathUnits="objectBoundingBox"
+                                    id="squircle-0.05"
+                                  >
+                                    <path
+                                      d="M .5,0
+    C 0.05,0 0,0.05 0,.5
+    0,0.95 0.05,1 .5,1
+    0.95,1 1,0.95 1,.5
+    1,0.05 0.95,0 .5,0
+    Z"
+                                    />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                              <Image
+                                borderRadius="x2"
+                                margin="x0"
+                                maxWidth="160px"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": "160px",
-                                    "minHeight": undefined,
-                                    "minWidth": undefined,
-                                    "width": undefined,
+                                    "clipPath": "url(#squircle-0.05)",
+                                    "objectFit": "covver",
                                   }
                                 }
-                              />
-                            </Base>
-                          </Image>
+                              >
+                                <Base
+                                  Component="img"
+                                  borderRadius="x2"
+                                  className="Image"
+                                  margin="x0"
+                                  maxWidth="160px"
+                                  src="http://placekitten.com/160/160"
+                                  style={
+                                    Object {
+                                      "clipPath": "url(#squircle-0.05)",
+                                      "objectFit": "covver",
+                                    }
+                                  }
+                                >
+                                  <img
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src="http://placekitten.com/160/160"
+                                    style={
+                                      Object {
+                                        "clipPath": "url(#squircle-0.05)",
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": "160px",
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "objectFit": "covver",
+                                        "width": undefined,
+                                      }
+                                    }
+                                  />
+                                </Base>
+                              </Image>
+                            </div>
+                          </_default>
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
@@ -5133,36 +5176,79 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                             }
                           }
                         >
-                          <Image
+                          <_default
                             borderRadius="x2"
                             margin="x0"
                             maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
-                            <Base
-                              Component="img"
-                              borderRadius="x2"
-                              className="Image"
-                              margin="x0"
-                              maxWidth="160px"
-                              src="http://placekitten.com/160/160"
-                            >
-                              <img
-                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                            <div>
+                              <svg
+                                height="0"
+                                width="0"
+                              >
+                                <defs>
+                                  <clipPath
+                                    clipPathUnits="objectBoundingBox"
+                                    id="squircle-0.05"
+                                  >
+                                    <path
+                                      d="M .5,0
+    C 0.05,0 0,0.05 0,.5
+    0,0.95 0.05,1 .5,1
+    0.95,1 1,0.95 1,.5
+    1,0.05 0.95,0 .5,0
+    Z"
+                                    />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                              <Image
+                                borderRadius="x2"
+                                margin="x0"
+                                maxWidth="160px"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": "160px",
-                                    "minHeight": undefined,
-                                    "minWidth": undefined,
-                                    "width": undefined,
+                                    "clipPath": "url(#squircle-0.05)",
+                                    "objectFit": "covver",
                                   }
                                 }
-                              />
-                            </Base>
-                          </Image>
+                              >
+                                <Base
+                                  Component="img"
+                                  borderRadius="x2"
+                                  className="Image"
+                                  margin="x0"
+                                  maxWidth="160px"
+                                  src="http://placekitten.com/160/160"
+                                  style={
+                                    Object {
+                                      "clipPath": "url(#squircle-0.05)",
+                                      "objectFit": "covver",
+                                    }
+                                  }
+                                >
+                                  <img
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src="http://placekitten.com/160/160"
+                                    style={
+                                      Object {
+                                        "clipPath": "url(#squircle-0.05)",
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": "160px",
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "objectFit": "covver",
+                                        "width": undefined,
+                                      }
+                                    }
+                                  />
+                                </Base>
+                              </Image>
+                            </div>
+                          </_default>
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
@@ -7399,27 +7485,19 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                             }
                                           }
                                         >
-                                          <Input
-                                            defaultValue="https://bitrise.io/support"
-                                            name="supportUrl"
-                                          >
+                                          <InputContent>
                                             <Flex
-                                              Component="input"
-                                              className="Input"
-                                              defaultValue="https://bitrise.io/support"
+                                              alignChildrenVertical="middle"
+                                              className="Input__content"
+                                              direction="horizontal"
+                                              gap="x2"
                                               grow={true}
-                                              name="supportUrl"
                                             >
                                               <Base
-                                                Component="input"
-                                                className="Flex Flex--grow Input"
-                                                defaultValue="https://bitrise.io/support"
-                                                name="supportUrl"
+                                                className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                               >
-                                                <input
-                                                  className="Base Flex Flex--grow Input"
-                                                  defaultValue="https://bitrise.io/support"
-                                                  name="supportUrl"
+                                                <div
+                                                  className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                                   style={
                                                     Object {
                                                       "height": undefined,
@@ -7430,10 +7508,46 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                                       "width": undefined,
                                                     }
                                                   }
-                                                />
+                                                >
+                                                  <Input
+                                                    defaultValue="https://bitrise.io/support"
+                                                    name="supportUrl"
+                                                  >
+                                                    <Flex
+                                                      Component="input"
+                                                      className="Input"
+                                                      defaultValue="https://bitrise.io/support"
+                                                      grow={true}
+                                                      name="supportUrl"
+                                                    >
+                                                      <Base
+                                                        Component="input"
+                                                        className="Flex Flex--grow Input"
+                                                        defaultValue="https://bitrise.io/support"
+                                                        name="supportUrl"
+                                                      >
+                                                        <input
+                                                          className="Base Flex Flex--grow Input"
+                                                          defaultValue="https://bitrise.io/support"
+                                                          name="supportUrl"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        />
+                                                      </Base>
+                                                    </Flex>
+                                                  </Input>
+                                                </div>
                                               </Base>
                                             </Flex>
-                                          </Input>
+                                          </InputContent>
                                         </label>
                                       </Base>
                                     </Flex>
@@ -7900,27 +8014,19 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                             }
                                           }
                                         >
-                                          <Input
-                                            defaultValue="https://bitrise.io/marketing"
-                                            name="marketingUrl"
-                                          >
+                                          <InputContent>
                                             <Flex
-                                              Component="input"
-                                              className="Input"
-                                              defaultValue="https://bitrise.io/marketing"
+                                              alignChildrenVertical="middle"
+                                              className="Input__content"
+                                              direction="horizontal"
+                                              gap="x2"
                                               grow={true}
-                                              name="marketingUrl"
                                             >
                                               <Base
-                                                Component="input"
-                                                className="Flex Flex--grow Input"
-                                                defaultValue="https://bitrise.io/marketing"
-                                                name="marketingUrl"
+                                                className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                               >
-                                                <input
-                                                  className="Base Flex Flex--grow Input"
-                                                  defaultValue="https://bitrise.io/marketing"
-                                                  name="marketingUrl"
+                                                <div
+                                                  className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                                   style={
                                                     Object {
                                                       "height": undefined,
@@ -7931,10 +8037,46 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                                       "width": undefined,
                                                     }
                                                   }
-                                                />
+                                                >
+                                                  <Input
+                                                    defaultValue="https://bitrise.io/marketing"
+                                                    name="marketingUrl"
+                                                  >
+                                                    <Flex
+                                                      Component="input"
+                                                      className="Input"
+                                                      defaultValue="https://bitrise.io/marketing"
+                                                      grow={true}
+                                                      name="marketingUrl"
+                                                    >
+                                                      <Base
+                                                        Component="input"
+                                                        className="Flex Flex--grow Input"
+                                                        defaultValue="https://bitrise.io/marketing"
+                                                        name="marketingUrl"
+                                                      >
+                                                        <input
+                                                          className="Base Flex Flex--grow Input"
+                                                          defaultValue="https://bitrise.io/marketing"
+                                                          name="marketingUrl"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        />
+                                                      </Base>
+                                                    </Flex>
+                                                  </Input>
+                                                </div>
                                               </Base>
                                             </Flex>
-                                          </Input>
+                                          </InputContent>
                                         </label>
                                       </Base>
                                     </Flex>
@@ -9327,36 +9469,79 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                             }
                           }
                         >
-                          <Image
+                          <_default
                             borderRadius="x2"
                             margin="x0"
                             maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
-                            <Base
-                              Component="img"
-                              borderRadius="x2"
-                              className="Image"
-                              margin="x0"
-                              maxWidth="160px"
-                              src="http://placekitten.com/160/160"
-                            >
-                              <img
-                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                            <div>
+                              <svg
+                                height="0"
+                                width="0"
+                              >
+                                <defs>
+                                  <clipPath
+                                    clipPathUnits="objectBoundingBox"
+                                    id="squircle-0.05"
+                                  >
+                                    <path
+                                      d="M .5,0
+    C 0.05,0 0,0.05 0,.5
+    0,0.95 0.05,1 .5,1
+    0.95,1 1,0.95 1,.5
+    1,0.05 0.95,0 .5,0
+    Z"
+                                    />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                              <Image
+                                borderRadius="x2"
+                                margin="x0"
+                                maxWidth="160px"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": "160px",
-                                    "minHeight": undefined,
-                                    "minWidth": undefined,
-                                    "width": undefined,
+                                    "clipPath": "url(#squircle-0.05)",
+                                    "objectFit": "covver",
                                   }
                                 }
-                              />
-                            </Base>
-                          </Image>
+                              >
+                                <Base
+                                  Component="img"
+                                  borderRadius="x2"
+                                  className="Image"
+                                  margin="x0"
+                                  maxWidth="160px"
+                                  src="http://placekitten.com/160/160"
+                                  style={
+                                    Object {
+                                      "clipPath": "url(#squircle-0.05)",
+                                      "objectFit": "covver",
+                                    }
+                                  }
+                                >
+                                  <img
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src="http://placekitten.com/160/160"
+                                    style={
+                                      Object {
+                                        "clipPath": "url(#squircle-0.05)",
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": "160px",
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "objectFit": "covver",
+                                        "width": undefined,
+                                      }
+                                    }
+                                  />
+                                </Base>
+                              </Image>
+                            </div>
+                          </_default>
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
@@ -11593,27 +11778,19 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                             }
                                           }
                                         >
-                                          <Input
-                                            defaultValue="https://bitrise.io/support"
-                                            name="supportUrl"
-                                          >
+                                          <InputContent>
                                             <Flex
-                                              Component="input"
-                                              className="Input"
-                                              defaultValue="https://bitrise.io/support"
+                                              alignChildrenVertical="middle"
+                                              className="Input__content"
+                                              direction="horizontal"
+                                              gap="x2"
                                               grow={true}
-                                              name="supportUrl"
                                             >
                                               <Base
-                                                Component="input"
-                                                className="Flex Flex--grow Input"
-                                                defaultValue="https://bitrise.io/support"
-                                                name="supportUrl"
+                                                className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                               >
-                                                <input
-                                                  className="Base Flex Flex--grow Input"
-                                                  defaultValue="https://bitrise.io/support"
-                                                  name="supportUrl"
+                                                <div
+                                                  className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                                   style={
                                                     Object {
                                                       "height": undefined,
@@ -11624,10 +11801,46 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                                       "width": undefined,
                                                     }
                                                   }
-                                                />
+                                                >
+                                                  <Input
+                                                    defaultValue="https://bitrise.io/support"
+                                                    name="supportUrl"
+                                                  >
+                                                    <Flex
+                                                      Component="input"
+                                                      className="Input"
+                                                      defaultValue="https://bitrise.io/support"
+                                                      grow={true}
+                                                      name="supportUrl"
+                                                    >
+                                                      <Base
+                                                        Component="input"
+                                                        className="Flex Flex--grow Input"
+                                                        defaultValue="https://bitrise.io/support"
+                                                        name="supportUrl"
+                                                      >
+                                                        <input
+                                                          className="Base Flex Flex--grow Input"
+                                                          defaultValue="https://bitrise.io/support"
+                                                          name="supportUrl"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        />
+                                                      </Base>
+                                                    </Flex>
+                                                  </Input>
+                                                </div>
                                               </Base>
                                             </Flex>
-                                          </Input>
+                                          </InputContent>
                                         </label>
                                       </Base>
                                     </Flex>
@@ -12094,27 +12307,19 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                             }
                                           }
                                         >
-                                          <Input
-                                            defaultValue="https://bitrise.io/marketing"
-                                            name="marketingUrl"
-                                          >
+                                          <InputContent>
                                             <Flex
-                                              Component="input"
-                                              className="Input"
-                                              defaultValue="https://bitrise.io/marketing"
+                                              alignChildrenVertical="middle"
+                                              className="Input__content"
+                                              direction="horizontal"
+                                              gap="x2"
                                               grow={true}
-                                              name="marketingUrl"
                                             >
                                               <Base
-                                                Component="input"
-                                                className="Flex Flex--grow Input"
-                                                defaultValue="https://bitrise.io/marketing"
-                                                name="marketingUrl"
+                                                className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                               >
-                                                <input
-                                                  className="Base Flex Flex--grow Input"
-                                                  defaultValue="https://bitrise.io/marketing"
-                                                  name="marketingUrl"
+                                                <div
+                                                  className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                                   style={
                                                     Object {
                                                       "height": undefined,
@@ -12125,10 +12330,46 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                                       "width": undefined,
                                                     }
                                                   }
-                                                />
+                                                >
+                                                  <Input
+                                                    defaultValue="https://bitrise.io/marketing"
+                                                    name="marketingUrl"
+                                                  >
+                                                    <Flex
+                                                      Component="input"
+                                                      className="Input"
+                                                      defaultValue="https://bitrise.io/marketing"
+                                                      grow={true}
+                                                      name="marketingUrl"
+                                                    >
+                                                      <Base
+                                                        Component="input"
+                                                        className="Flex Flex--grow Input"
+                                                        defaultValue="https://bitrise.io/marketing"
+                                                        name="marketingUrl"
+                                                      >
+                                                        <input
+                                                          className="Base Flex Flex--grow Input"
+                                                          defaultValue="https://bitrise.io/marketing"
+                                                          name="marketingUrl"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        />
+                                                      </Base>
+                                                    </Flex>
+                                                  </Input>
+                                                </div>
                                               </Base>
                                             </Flex>
-                                          </Input>
+                                          </InputContent>
                                         </label>
                                       </Base>
                                     </Flex>
@@ -13512,36 +13753,79 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                             }
                           }
                         >
-                          <Image
+                          <_default
                             borderRadius="x2"
                             margin="x0"
                             maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
-                            <Base
-                              Component="img"
-                              borderRadius="x2"
-                              className="Image"
-                              margin="x0"
-                              maxWidth="160px"
-                              src="http://placekitten.com/160/160"
-                            >
-                              <img
-                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                            <div>
+                              <svg
+                                height="0"
+                                width="0"
+                              >
+                                <defs>
+                                  <clipPath
+                                    clipPathUnits="objectBoundingBox"
+                                    id="squircle-0.05"
+                                  >
+                                    <path
+                                      d="M .5,0
+    C 0.05,0 0,0.05 0,.5
+    0,0.95 0.05,1 .5,1
+    0.95,1 1,0.95 1,.5
+    1,0.05 0.95,0 .5,0
+    Z"
+                                    />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                              <Image
+                                borderRadius="x2"
+                                margin="x0"
+                                maxWidth="160px"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": "160px",
-                                    "minHeight": undefined,
-                                    "minWidth": undefined,
-                                    "width": undefined,
+                                    "clipPath": "url(#squircle-0.05)",
+                                    "objectFit": "covver",
                                   }
                                 }
-                              />
-                            </Base>
-                          </Image>
+                              >
+                                <Base
+                                  Component="img"
+                                  borderRadius="x2"
+                                  className="Image"
+                                  margin="x0"
+                                  maxWidth="160px"
+                                  src="http://placekitten.com/160/160"
+                                  style={
+                                    Object {
+                                      "clipPath": "url(#squircle-0.05)",
+                                      "objectFit": "covver",
+                                    }
+                                  }
+                                >
+                                  <img
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src="http://placekitten.com/160/160"
+                                    style={
+                                      Object {
+                                        "clipPath": "url(#squircle-0.05)",
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": "160px",
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "objectFit": "covver",
+                                        "width": undefined,
+                                      }
+                                    }
+                                  />
+                                </Base>
+                              </Image>
+                            </div>
+                          </_default>
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
@@ -15778,27 +16062,19 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                             }
                                           }
                                         >
-                                          <Input
-                                            defaultValue="https://bitrise.io/support"
-                                            name="supportUrl"
-                                          >
+                                          <InputContent>
                                             <Flex
-                                              Component="input"
-                                              className="Input"
-                                              defaultValue="https://bitrise.io/support"
+                                              alignChildrenVertical="middle"
+                                              className="Input__content"
+                                              direction="horizontal"
+                                              gap="x2"
                                               grow={true}
-                                              name="supportUrl"
                                             >
                                               <Base
-                                                Component="input"
-                                                className="Flex Flex--grow Input"
-                                                defaultValue="https://bitrise.io/support"
-                                                name="supportUrl"
+                                                className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                               >
-                                                <input
-                                                  className="Base Flex Flex--grow Input"
-                                                  defaultValue="https://bitrise.io/support"
-                                                  name="supportUrl"
+                                                <div
+                                                  className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                                   style={
                                                     Object {
                                                       "height": undefined,
@@ -15809,10 +16085,46 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                                       "width": undefined,
                                                     }
                                                   }
-                                                />
+                                                >
+                                                  <Input
+                                                    defaultValue="https://bitrise.io/support"
+                                                    name="supportUrl"
+                                                  >
+                                                    <Flex
+                                                      Component="input"
+                                                      className="Input"
+                                                      defaultValue="https://bitrise.io/support"
+                                                      grow={true}
+                                                      name="supportUrl"
+                                                    >
+                                                      <Base
+                                                        Component="input"
+                                                        className="Flex Flex--grow Input"
+                                                        defaultValue="https://bitrise.io/support"
+                                                        name="supportUrl"
+                                                      >
+                                                        <input
+                                                          className="Base Flex Flex--grow Input"
+                                                          defaultValue="https://bitrise.io/support"
+                                                          name="supportUrl"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        />
+                                                      </Base>
+                                                    </Flex>
+                                                  </Input>
+                                                </div>
                                               </Base>
                                             </Flex>
-                                          </Input>
+                                          </InputContent>
                                         </label>
                                       </Base>
                                     </Flex>
@@ -16279,27 +16591,19 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                             }
                                           }
                                         >
-                                          <Input
-                                            defaultValue="https://bitrise.io/marketing"
-                                            name="marketingUrl"
-                                          >
+                                          <InputContent>
                                             <Flex
-                                              Component="input"
-                                              className="Input"
-                                              defaultValue="https://bitrise.io/marketing"
+                                              alignChildrenVertical="middle"
+                                              className="Input__content"
+                                              direction="horizontal"
+                                              gap="x2"
                                               grow={true}
-                                              name="marketingUrl"
                                             >
                                               <Base
-                                                Component="input"
-                                                className="Flex Flex--grow Input"
-                                                defaultValue="https://bitrise.io/marketing"
-                                                name="marketingUrl"
+                                                className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                               >
-                                                <input
-                                                  className="Base Flex Flex--grow Input"
-                                                  defaultValue="https://bitrise.io/marketing"
-                                                  name="marketingUrl"
+                                                <div
+                                                  className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                                   style={
                                                     Object {
                                                       "height": undefined,
@@ -16310,10 +16614,46 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                                       "width": undefined,
                                                     }
                                                   }
-                                                />
+                                                >
+                                                  <Input
+                                                    defaultValue="https://bitrise.io/marketing"
+                                                    name="marketingUrl"
+                                                  >
+                                                    <Flex
+                                                      Component="input"
+                                                      className="Input"
+                                                      defaultValue="https://bitrise.io/marketing"
+                                                      grow={true}
+                                                      name="marketingUrl"
+                                                    >
+                                                      <Base
+                                                        Component="input"
+                                                        className="Flex Flex--grow Input"
+                                                        defaultValue="https://bitrise.io/marketing"
+                                                        name="marketingUrl"
+                                                      >
+                                                        <input
+                                                          className="Base Flex Flex--grow Input"
+                                                          defaultValue="https://bitrise.io/marketing"
+                                                          name="marketingUrl"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        />
+                                                      </Base>
+                                                    </Flex>
+                                                  </Input>
+                                                </div>
                                               </Base>
                                             </Flex>
-                                          </Input>
+                                          </InputContent>
                                         </label>
                                       </Base>
                                     </Flex>
@@ -17191,7 +17531,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
           direction="horizontal"
           margin="x4"
         >
-          <Image
+          <_default
             borderRadius="x2"
             margin="x0"
             maxWidth="160px"
@@ -17358,7 +17698,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
           direction="horizontal"
           margin="x4"
         >
-          <Image
+          <_default
             borderRadius="x2"
             margin="x0"
             maxWidth="160px"
@@ -17828,36 +18168,79 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                             }
                           }
                         >
-                          <Image
+                          <_default
                             borderRadius="x2"
                             margin="x0"
                             maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
-                            <Base
-                              Component="img"
-                              borderRadius="x2"
-                              className="Image"
-                              margin="x0"
-                              maxWidth="160px"
-                              src="http://placekitten.com/160/160"
-                            >
-                              <img
-                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                            <div>
+                              <svg
+                                height="0"
+                                width="0"
+                              >
+                                <defs>
+                                  <clipPath
+                                    clipPathUnits="objectBoundingBox"
+                                    id="squircle-0.05"
+                                  >
+                                    <path
+                                      d="M .5,0
+    C 0.05,0 0,0.05 0,.5
+    0,0.95 0.05,1 .5,1
+    0.95,1 1,0.95 1,.5
+    1,0.05 0.95,0 .5,0
+    Z"
+                                    />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                              <Image
+                                borderRadius="x2"
+                                margin="x0"
+                                maxWidth="160px"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": "160px",
-                                    "minHeight": undefined,
-                                    "minWidth": undefined,
-                                    "width": undefined,
+                                    "clipPath": "url(#squircle-0.05)",
+                                    "objectFit": "covver",
                                   }
                                 }
-                              />
-                            </Base>
-                          </Image>
+                              >
+                                <Base
+                                  Component="img"
+                                  borderRadius="x2"
+                                  className="Image"
+                                  margin="x0"
+                                  maxWidth="160px"
+                                  src="http://placekitten.com/160/160"
+                                  style={
+                                    Object {
+                                      "clipPath": "url(#squircle-0.05)",
+                                      "objectFit": "covver",
+                                    }
+                                  }
+                                >
+                                  <img
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src="http://placekitten.com/160/160"
+                                    style={
+                                      Object {
+                                        "clipPath": "url(#squircle-0.05)",
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": "160px",
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "objectFit": "covver",
+                                        "width": undefined,
+                                      }
+                                    }
+                                  />
+                                </Base>
+                              </Image>
+                            </div>
+                          </_default>
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
@@ -20094,27 +20477,19 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                             }
                                           }
                                         >
-                                          <Input
-                                            defaultValue="https://bitrise.io/support"
-                                            name="supportUrl"
-                                          >
+                                          <InputContent>
                                             <Flex
-                                              Component="input"
-                                              className="Input"
-                                              defaultValue="https://bitrise.io/support"
+                                              alignChildrenVertical="middle"
+                                              className="Input__content"
+                                              direction="horizontal"
+                                              gap="x2"
                                               grow={true}
-                                              name="supportUrl"
                                             >
                                               <Base
-                                                Component="input"
-                                                className="Flex Flex--grow Input"
-                                                defaultValue="https://bitrise.io/support"
-                                                name="supportUrl"
+                                                className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                               >
-                                                <input
-                                                  className="Base Flex Flex--grow Input"
-                                                  defaultValue="https://bitrise.io/support"
-                                                  name="supportUrl"
+                                                <div
+                                                  className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                                   style={
                                                     Object {
                                                       "height": undefined,
@@ -20125,10 +20500,46 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                                       "width": undefined,
                                                     }
                                                   }
-                                                />
+                                                >
+                                                  <Input
+                                                    defaultValue="https://bitrise.io/support"
+                                                    name="supportUrl"
+                                                  >
+                                                    <Flex
+                                                      Component="input"
+                                                      className="Input"
+                                                      defaultValue="https://bitrise.io/support"
+                                                      grow={true}
+                                                      name="supportUrl"
+                                                    >
+                                                      <Base
+                                                        Component="input"
+                                                        className="Flex Flex--grow Input"
+                                                        defaultValue="https://bitrise.io/support"
+                                                        name="supportUrl"
+                                                      >
+                                                        <input
+                                                          className="Base Flex Flex--grow Input"
+                                                          defaultValue="https://bitrise.io/support"
+                                                          name="supportUrl"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        />
+                                                      </Base>
+                                                    </Flex>
+                                                  </Input>
+                                                </div>
                                               </Base>
                                             </Flex>
-                                          </Input>
+                                          </InputContent>
                                         </label>
                                       </Base>
                                     </Flex>
@@ -20595,27 +21006,19 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                             }
                                           }
                                         >
-                                          <Input
-                                            defaultValue="https://bitrise.io/marketing"
-                                            name="marketingUrl"
-                                          >
+                                          <InputContent>
                                             <Flex
-                                              Component="input"
-                                              className="Input"
-                                              defaultValue="https://bitrise.io/marketing"
+                                              alignChildrenVertical="middle"
+                                              className="Input__content"
+                                              direction="horizontal"
+                                              gap="x2"
                                               grow={true}
-                                              name="marketingUrl"
                                             >
                                               <Base
-                                                Component="input"
-                                                className="Flex Flex--grow Input"
-                                                defaultValue="https://bitrise.io/marketing"
-                                                name="marketingUrl"
+                                                className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                               >
-                                                <input
-                                                  className="Base Flex Flex--grow Input"
-                                                  defaultValue="https://bitrise.io/marketing"
-                                                  name="marketingUrl"
+                                                <div
+                                                  className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                                   style={
                                                     Object {
                                                       "height": undefined,
@@ -20626,10 +21029,46 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                                       "width": undefined,
                                                     }
                                                   }
-                                                />
+                                                >
+                                                  <Input
+                                                    defaultValue="https://bitrise.io/marketing"
+                                                    name="marketingUrl"
+                                                  >
+                                                    <Flex
+                                                      Component="input"
+                                                      className="Input"
+                                                      defaultValue="https://bitrise.io/marketing"
+                                                      grow={true}
+                                                      name="marketingUrl"
+                                                    >
+                                                      <Base
+                                                        Component="input"
+                                                        className="Flex Flex--grow Input"
+                                                        defaultValue="https://bitrise.io/marketing"
+                                                        name="marketingUrl"
+                                                      >
+                                                        <input
+                                                          className="Base Flex Flex--grow Input"
+                                                          defaultValue="https://bitrise.io/marketing"
+                                                          name="marketingUrl"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        />
+                                                      </Base>
+                                                    </Flex>
+                                                  </Input>
+                                                </div>
                                               </Base>
                                             </Flex>
-                                          </Input>
+                                          </InputContent>
                                         </label>
                                       </Base>
                                     </Flex>
@@ -22013,36 +22452,79 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                             }
                           }
                         >
-                          <Image
+                          <_default
                             borderRadius="x2"
                             margin="x0"
                             maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
-                            <Base
-                              Component="img"
-                              borderRadius="x2"
-                              className="Image"
-                              margin="x0"
-                              maxWidth="160px"
-                              src="http://placekitten.com/160/160"
-                            >
-                              <img
-                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                            <div>
+                              <svg
+                                height="0"
+                                width="0"
+                              >
+                                <defs>
+                                  <clipPath
+                                    clipPathUnits="objectBoundingBox"
+                                    id="squircle-0.05"
+                                  >
+                                    <path
+                                      d="M .5,0
+    C 0.05,0 0,0.05 0,.5
+    0,0.95 0.05,1 .5,1
+    0.95,1 1,0.95 1,.5
+    1,0.05 0.95,0 .5,0
+    Z"
+                                    />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                              <Image
+                                borderRadius="x2"
+                                margin="x0"
+                                maxWidth="160px"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": "160px",
-                                    "minHeight": undefined,
-                                    "minWidth": undefined,
-                                    "width": undefined,
+                                    "clipPath": "url(#squircle-0.05)",
+                                    "objectFit": "covver",
                                   }
                                 }
-                              />
-                            </Base>
-                          </Image>
+                              >
+                                <Base
+                                  Component="img"
+                                  borderRadius="x2"
+                                  className="Image"
+                                  margin="x0"
+                                  maxWidth="160px"
+                                  src="http://placekitten.com/160/160"
+                                  style={
+                                    Object {
+                                      "clipPath": "url(#squircle-0.05)",
+                                      "objectFit": "covver",
+                                    }
+                                  }
+                                >
+                                  <img
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src="http://placekitten.com/160/160"
+                                    style={
+                                      Object {
+                                        "clipPath": "url(#squircle-0.05)",
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": "160px",
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "objectFit": "covver",
+                                        "width": undefined,
+                                      }
+                                    }
+                                  />
+                                </Base>
+                              </Image>
+                            </div>
+                          </_default>
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
@@ -24515,27 +24997,19 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                             }
                                           }
                                         >
-                                          <Input
-                                            defaultValue="https://bitrise.io/support"
-                                            name="supportUrl"
-                                          >
+                                          <InputContent>
                                             <Flex
-                                              Component="input"
-                                              className="Input"
-                                              defaultValue="https://bitrise.io/support"
+                                              alignChildrenVertical="middle"
+                                              className="Input__content"
+                                              direction="horizontal"
+                                              gap="x2"
                                               grow={true}
-                                              name="supportUrl"
                                             >
                                               <Base
-                                                Component="input"
-                                                className="Flex Flex--grow Input"
-                                                defaultValue="https://bitrise.io/support"
-                                                name="supportUrl"
+                                                className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                               >
-                                                <input
-                                                  className="Base Flex Flex--grow Input"
-                                                  defaultValue="https://bitrise.io/support"
-                                                  name="supportUrl"
+                                                <div
+                                                  className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                                   style={
                                                     Object {
                                                       "height": undefined,
@@ -24546,10 +25020,46 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                                       "width": undefined,
                                                     }
                                                   }
-                                                />
+                                                >
+                                                  <Input
+                                                    defaultValue="https://bitrise.io/support"
+                                                    name="supportUrl"
+                                                  >
+                                                    <Flex
+                                                      Component="input"
+                                                      className="Input"
+                                                      defaultValue="https://bitrise.io/support"
+                                                      grow={true}
+                                                      name="supportUrl"
+                                                    >
+                                                      <Base
+                                                        Component="input"
+                                                        className="Flex Flex--grow Input"
+                                                        defaultValue="https://bitrise.io/support"
+                                                        name="supportUrl"
+                                                      >
+                                                        <input
+                                                          className="Base Flex Flex--grow Input"
+                                                          defaultValue="https://bitrise.io/support"
+                                                          name="supportUrl"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        />
+                                                      </Base>
+                                                    </Flex>
+                                                  </Input>
+                                                </div>
                                               </Base>
                                             </Flex>
-                                          </Input>
+                                          </InputContent>
                                         </label>
                                       </Base>
                                     </Flex>
@@ -25016,27 +25526,19 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                             }
                                           }
                                         >
-                                          <Input
-                                            defaultValue="https://bitrise.io/marketing"
-                                            name="marketingUrl"
-                                          >
+                                          <InputContent>
                                             <Flex
-                                              Component="input"
-                                              className="Input"
-                                              defaultValue="https://bitrise.io/marketing"
+                                              alignChildrenVertical="middle"
+                                              className="Input__content"
+                                              direction="horizontal"
+                                              gap="x2"
                                               grow={true}
-                                              name="marketingUrl"
                                             >
                                               <Base
-                                                Component="input"
-                                                className="Flex Flex--grow Input"
-                                                defaultValue="https://bitrise.io/marketing"
-                                                name="marketingUrl"
+                                                className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                               >
-                                                <input
-                                                  className="Base Flex Flex--grow Input"
-                                                  defaultValue="https://bitrise.io/marketing"
-                                                  name="marketingUrl"
+                                                <div
+                                                  className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow Input__content"
                                                   style={
                                                     Object {
                                                       "height": undefined,
@@ -25047,10 +25549,46 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                                       "width": undefined,
                                                     }
                                                   }
-                                                />
+                                                >
+                                                  <Input
+                                                    defaultValue="https://bitrise.io/marketing"
+                                                    name="marketingUrl"
+                                                  >
+                                                    <Flex
+                                                      Component="input"
+                                                      className="Input"
+                                                      defaultValue="https://bitrise.io/marketing"
+                                                      grow={true}
+                                                      name="marketingUrl"
+                                                    >
+                                                      <Base
+                                                        Component="input"
+                                                        className="Flex Flex--grow Input"
+                                                        defaultValue="https://bitrise.io/marketing"
+                                                        name="marketingUrl"
+                                                      >
+                                                        <input
+                                                          className="Base Flex Flex--grow Input"
+                                                          defaultValue="https://bitrise.io/marketing"
+                                                          name="marketingUrl"
+                                                          style={
+                                                            Object {
+                                                              "height": undefined,
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": undefined,
+                                                            }
+                                                          }
+                                                        />
+                                                      </Base>
+                                                    </Flex>
+                                                  </Input>
+                                                </div>
                                               </Base>
                                             </Flex>
-                                          </Input>
+                                          </InputContent>
                                         </label>
                                       </Base>
                                     </Flex>

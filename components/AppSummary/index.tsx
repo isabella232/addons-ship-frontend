@@ -2,6 +2,7 @@ import SVG from 'react-svg';
 import Link from 'next/link';
 import { Base, Text } from '@bitrise/bitkit';
 
+import Squircle from '@/components/Squircle';
 import { mediaQuery } from '@/utils/media';
 
 import css from './style.scss';
@@ -24,7 +25,7 @@ export default ({ detailsPagePath, title, description, note, iconUrl, platformIc
         <div className={css.colorBar} />
         <div className={css.body}>
           <div className={css.iconWrapper}>
-            <img className={css.icon} src={iconUrl} alt={title} />
+            <Squircle src={iconUrl} borderRadius="x2" maxWidth="96px" margin="x0" />
 
             <Base paddingHorizontal="x4" paddingVertical={isTablet ? 'x2' : 'x4'}>
               <Text size={isTablet ? 'x3' : 'x2'} color="gray-6" letterSpacing="x1" weight="medium">

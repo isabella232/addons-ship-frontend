@@ -16,9 +16,10 @@ exports[`AppSummary renders correctly on desktop 1`] = `
       <div
         className="iconWrapper"
       >
-        <img
-          alt="My app v1.1.0 (28)"
-          className="icon"
+        <_default
+          borderRadius="x2"
+          margin="x0"
+          maxWidth="96px"
           src="/static/icon-flutter.svg"
         />
         <Base
@@ -86,9 +87,10 @@ exports[`AppSummary renders correctly on mobile 1`] = `
       <div
         className="iconWrapper"
       >
-        <img
-          alt="My app v1.1.0 (28)"
-          className="icon"
+        <_default
+          borderRadius="x2"
+          margin="x0"
+          maxWidth="96px"
           src="/static/icon-flutter.svg"
         />
         <Base
@@ -156,9 +158,10 @@ exports[`AppSummary renders correctly on tablet 1`] = `
       <div
         className="iconWrapper"
       >
-        <img
-          alt="My app v1.1.0 (28)"
-          className="icon"
+        <_default
+          borderRadius="x2"
+          margin="x0"
+          maxWidth="96px"
           src="/static/icon-flutter.svg"
         />
         <Base

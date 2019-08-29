@@ -990,11 +990,79 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                           <div
                             className="iconWrapper"
                           >
-                            <img
-                              alt="Standup Timer v1.0.3 (32)"
-                              className="icon"
+                            <_default
+                              borderRadius="x2"
+                              margin="x0"
+                              maxWidth="96px"
                               src="http://placekitten.com/160/160"
-                            />
+                            >
+                              <div>
+                                <svg
+                                  height="0"
+                                  width="0"
+                                >
+                                  <defs>
+                                    <clipPath
+                                      clipPathUnits="objectBoundingBox"
+                                      id="squircle-0.05"
+                                    >
+                                      <path
+                                        d="M .5,0
+    C 0.05,0 0,0.05 0,.5
+    0,0.95 0.05,1 .5,1
+    0.95,1 1,0.95 1,.5
+    1,0.05 0.95,0 .5,0
+    Z"
+                                      />
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                                <Image
+                                  borderRadius="x2"
+                                  margin="x0"
+                                  maxWidth="96px"
+                                  src="http://placekitten.com/160/160"
+                                  style={
+                                    Object {
+                                      "clipPath": "url(#squircle-0.05)",
+                                      "objectFit": "covver",
+                                    }
+                                  }
+                                >
+                                  <Base
+                                    Component="img"
+                                    borderRadius="x2"
+                                    className="Image"
+                                    margin="x0"
+                                    maxWidth="96px"
+                                    src="http://placekitten.com/160/160"
+                                    style={
+                                      Object {
+                                        "clipPath": "url(#squircle-0.05)",
+                                        "objectFit": "covver",
+                                      }
+                                    }
+                                  >
+                                    <img
+                                      className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                      src="http://placekitten.com/160/160"
+                                      style={
+                                        Object {
+                                          "clipPath": "url(#squircle-0.05)",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": "96px",
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "objectFit": "covver",
+                                          "width": undefined,
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Image>
+                              </div>
+                            </_default>
                             <Base
                               paddingHorizontal="x4"
                               paddingVertical="x2"
