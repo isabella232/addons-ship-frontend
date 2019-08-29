@@ -171,11 +171,6 @@ export default ({
 
         <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-        <InputLabel>Size</InputLabel>
-        <Text size="x3">{appVersion.size && prettyBytes(appVersion.size)}</Text>
-
-        <Divider color="gray-2" direction="horizontal" margin="x4" />
-
         <InputLabel>Supported Device Types</InputLabel>
         <Text size="x3">{appVersion.supportedDeviceTypes && appVersion.supportedDeviceTypes.join(', ')}</Text>
 

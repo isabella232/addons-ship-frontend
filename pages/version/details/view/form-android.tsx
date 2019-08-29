@@ -144,11 +144,6 @@ export default ({
 
           <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-          <InputLabel>Size</InputLabel>
-          <Text size="x3">{prettyBytes(appVersion.size)}</Text>
-
-          <Divider color="gray-2" direction="horizontal" margin="x4" />
-
           <InputLabel>Module</InputLabel>
           <Text size="x3">{appVersion.module}</Text>
 
