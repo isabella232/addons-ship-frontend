@@ -39,7 +39,6 @@ export type AppVersion = {
   packageName?: string;
   certificateExpires: Date;
   bundleId?: string;
-  size: number;
   supportedDeviceTypes: string[];
   distributionType?: string;
   iconUrl: string;
