@@ -39,7 +39,7 @@ export default ({
   return (
     <Flex direction="vertical" className={css.wrapper}>
       <Flex direction="vertical" alignChildrenHorizontal="middle" padding={isDesktop ? 'x16' : 'x4'}>
-        <Base width="100%">
+        <Base width="100%" maxWidth={960}>
           {latestAppVersion && (
             <AppSummary
               detailsPagePath={`/apps/${latestAppVersion.appSlug}/versions/${latestAppVersion.id}/details`}
