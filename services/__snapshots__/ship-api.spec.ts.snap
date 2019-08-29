@@ -121,9 +121,11 @@ Object {
   "certificates": Array [
     Object {
       "name": "code_signing_identity-1",
+      "slug": undefined,
     },
     Object {
       "name": "code_signing_identity-2",
+      "slug": undefined,
     },
   ],
   "iosSettings": Object {
@@ -133,26 +135,32 @@ Object {
   "keystoreFiles": Array [
     Object {
       "name": "keystore_file-1",
+      "slug": undefined,
     },
     Object {
       "name": "keystore_file-2",
+      "slug": undefined,
     },
   ],
   "projectType": "other",
   "provProfiles": Array [
     Object {
       "name": "provisioning_profile-1",
+      "slug": undefined,
     },
     Object {
       "name": "provisioning_profile-2",
+      "slug": undefined,
     },
   ],
   "serviceAccountJsonFiles": Array [
     Object {
       "name": "service_account_file-1",
+      "slug": undefined,
     },
     Object {
       "name": "service_account_file-2",
+      "slug": undefined,
     },
   ],
 }

@@ -110,23 +110,23 @@ export class General extends Component<Props> {
 
   onSelectedFileChange = (
     type: 'ProvProfile' | 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
-    { name }: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
+    { slug }: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
   ) => {
     switch (type) {
       case 'ProvProfile': {
-        this.setState({ iosSettings: { ...this.state.iosSettings, selectedAppStoreProvisioningProfile: name } });
+        this.setState({ iosSettings: { ...this.state.iosSettings, selectedAppStoreProvisioningProfile: slug } });
         break;
       }
       case 'Certificate': {
-        this.setState({ iosSettings: { ...this.state.iosSettings, selectedCodeSigningIdentity: name } });
+        this.setState({ iosSettings: { ...this.state.iosSettings, selectedCodeSigningIdentity: slug } });
         break;
       }
       case 'KeystoreFile': {
-        this.setState({ androidSettings: { ...this.state.androidSettings, selectedKeystoreFile: name } });
+        this.setState({ androidSettings: { ...this.state.androidSettings, selectedKeystoreFile: slug } });
         break;
       }
       case 'ServiceAccountJsonFile': {
-        this.setState({ androidSettings: { ...this.state.androidSettings, selectedServiceAccount: name } });
+        this.setState({ androidSettings: { ...this.state.androidSettings, selectedServiceAccount: slug } });
         break;
       }
     }
