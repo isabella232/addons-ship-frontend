@@ -1,23 +1,22 @@
 import { Dispatch } from 'redux';
 import { createAction, createReducer } from 'deox';
 
-import api from '@/services/ship-api';
 import { actionTypeCreator } from '@/utils';
 import { AppVersion } from '@/models';
-import { RootState } from '@/store';
+import { ShipAPIService } from '@/services/ship-api';
+import { placeholderAppIcon } from '@/config';
 
 const $ = actionTypeCreator('APP_VERSION_LIST');
 
-const _fetchAppVersionList = (appSlug: string) => async (dispatch: Dispatch, getState: () => RootState) => {
+const _fetchAppVersionList = (appSlug: string) => async (
+  dispatch: Dispatch,
+  _getState: any,
+  { shipApi }: { shipApi: ShipAPIService }
+) => {
   dispatch(fetchAppVersionList.next());
 
-  const {
-    auth: { token }
-  } = getState();
-  api.setToken(token);
-
   try {
-    const appVersionList = await api.getAppVersionList(appSlug);
+    const appVersionList = await shipApi.getAppVersionList(appSlug);
 
     dispatch(fetchAppVersionList.complete(appVersionList));
   } catch (error) {
@@ -36,5 +35,7 @@ const defaultState = null as AppVersionListState;
 
 export type AppVersionListState = null | AppVersion[];
 export const appVersionList = createReducer(defaultState, handleAction => [
-  handleAction(fetchAppVersionList.complete, (_, { payload }) => payload)
+  handleAction(fetchAppVersionList.complete, (_, { payload }) =>
+    payload.map(({ iconUrl, ...v }) => ({ ...v, iconUrl: iconUrl || placeholderAppIcon }))
+  )
 ]);

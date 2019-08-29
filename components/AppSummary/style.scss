@@ -31,12 +31,7 @@
     .iconWrapper {
       display: flex;
       align-items: flex-end;
-      margin-top: -20 * $grid;
-
-      .icon {
-        @include size(24 * $grid);
-        border-radius: 4 * $grid;
-      }
+      margin-top: -29 * $grid;
 
       .note {
         margin-left: 4 * $grid;

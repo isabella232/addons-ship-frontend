@@ -5,14 +5,14 @@ import configureMockStore, { MockStoreCreator, MockStoreEnhanced } from 'redux-m
 import thunk from 'redux-thunk';
 
 import { mockAppVersions } from '@/mocks';
-import api from '@/services/ship-api';
+import shipApi from '@/services/ship-api';
 
 import { fetchAppVersionList, appVersionList } from './appVersionList';
 
 describe('appVersionList', () => {
   let mockStore: MockStoreCreator, store: MockStoreEnhanced;
   beforeEach(() => {
-    mockStore = configureMockStore([thunk]);
+    mockStore = configureMockStore([thunk.withExtraArgument({ shipApi })]);
     store = mockStore({ auth: { token: 'most-tokenish' } });
   });
 
@@ -28,13 +28,13 @@ describe('appVersionList', () => {
     it('fetches an app version', async () => {
       await store.dispatch(fetchAppVersionList('app-slug') as any);
 
-      expect(api.getAppVersionList).toHaveBeenCalledWith('app-slug');
+      expect(shipApi.getAppVersionList).toHaveBeenCalledWith('app-slug');
 
       expect(store.getActions()).toMatchSnapshot();
     });
 
     it("can't fetch an app version", async () => {
-      (api.getAppVersionList as jest.Mock).mockRejectedValueOnce('api had some issue');
+      (shipApi.getAppVersionList as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(fetchAppVersionList('app-slug') as any);
 
       expect(store.getActions()).toMatchSnapshot();

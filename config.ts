@@ -14,3 +14,6 @@ export const shipApiConfig: APIConfig & AppConfig = {
 export const analyticsConfig = {
   segmentWriteKey: SEGMENT_WRITE_KEY
 };
+
+export const placeholderAppIcon =
+  'https://bitrise-addons-ship-backend.s3-us-west-2.amazonaws.com/assets/icons/placeholder-512.jpg';
