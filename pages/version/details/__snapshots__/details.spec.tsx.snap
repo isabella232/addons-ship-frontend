@@ -1288,22 +1288,26 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                         >
                           <Image
                             borderRadius="x2"
+                            margin="x0"
+                            maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
                             <Base
                               Component="img"
                               borderRadius="x2"
                               className="Image"
+                              margin="x0"
+                              maxWidth="160px"
                               src="http://placekitten.com/160/160"
                             >
                               <img
-                                className="Base Base--border-radius-x2 Image"
+                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
                                     "height": undefined,
                                     "maxHeight": undefined,
-                                    "maxWidth": undefined,
+                                    "maxWidth": "160px",
                                     "minHeight": undefined,
                                     "minWidth": undefined,
                                     "width": undefined,
@@ -5131,22 +5135,26 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                         >
                           <Image
                             borderRadius="x2"
+                            margin="x0"
+                            maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
                             <Base
                               Component="img"
                               borderRadius="x2"
                               className="Image"
+                              margin="x0"
+                              maxWidth="160px"
                               src="http://placekitten.com/160/160"
                             >
                               <img
-                                className="Base Base--border-radius-x2 Image"
+                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
                                     "height": undefined,
                                     "maxHeight": undefined,
-                                    "maxWidth": undefined,
+                                    "maxWidth": "160px",
                                     "minHeight": undefined,
                                     "minWidth": undefined,
                                     "width": undefined,
@@ -9321,22 +9329,26 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                         >
                           <Image
                             borderRadius="x2"
+                            margin="x0"
+                            maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
                             <Base
                               Component="img"
                               borderRadius="x2"
                               className="Image"
+                              margin="x0"
+                              maxWidth="160px"
                               src="http://placekitten.com/160/160"
                             >
                               <img
-                                className="Base Base--border-radius-x2 Image"
+                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
                                     "height": undefined,
                                     "maxHeight": undefined,
-                                    "maxWidth": undefined,
+                                    "maxWidth": "160px",
                                     "minHeight": undefined,
                                     "minWidth": undefined,
                                     "width": undefined,
@@ -13502,22 +13514,26 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                         >
                           <Image
                             borderRadius="x2"
+                            margin="x0"
+                            maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
                             <Base
                               Component="img"
                               borderRadius="x2"
                               className="Image"
+                              margin="x0"
+                              maxWidth="160px"
                               src="http://placekitten.com/160/160"
                             >
                               <img
-                                className="Base Base--border-radius-x2 Image"
+                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
                                     "height": undefined,
                                     "maxHeight": undefined,
-                                    "maxWidth": undefined,
+                                    "maxWidth": "160px",
                                     "minHeight": undefined,
                                     "minWidth": undefined,
                                     "width": undefined,
@@ -17177,6 +17193,8 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
         >
           <Image
             borderRadius="x2"
+            margin="x0"
+            maxWidth="160px"
             src="http://placekitten.com/160/160"
           />
           <Flex
@@ -17342,6 +17360,8 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
         >
           <Image
             borderRadius="x2"
+            margin="x0"
+            maxWidth="160px"
             src="http://placekitten.com/160/160"
           />
           <Flex
@@ -17810,22 +17830,26 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                         >
                           <Image
                             borderRadius="x2"
+                            margin="x0"
+                            maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
                             <Base
                               Component="img"
                               borderRadius="x2"
                               className="Image"
+                              margin="x0"
+                              maxWidth="160px"
                               src="http://placekitten.com/160/160"
                             >
                               <img
-                                className="Base Base--border-radius-x2 Image"
+                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
                                     "height": undefined,
                                     "maxHeight": undefined,
-                                    "maxWidth": undefined,
+                                    "maxWidth": "160px",
                                     "minHeight": undefined,
                                     "minWidth": undefined,
                                     "width": undefined,
@@ -21991,22 +22015,26 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                         >
                           <Image
                             borderRadius="x2"
+                            margin="x0"
+                            maxWidth="160px"
                             src="http://placekitten.com/160/160"
                           >
                             <Base
                               Component="img"
                               borderRadius="x2"
                               className="Image"
+                              margin="x0"
+                              maxWidth="160px"
                               src="http://placekitten.com/160/160"
                             >
                               <img
-                                className="Base Base--border-radius-x2 Image"
+                                className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
                                     "height": undefined,
                                     "maxHeight": undefined,
-                                    "maxWidth": undefined,
+                                    "maxWidth": "160px",
                                     "minHeight": undefined,
                                     "minWidth": undefined,
                                     "width": undefined,

@@ -4,6 +4,7 @@ import { createAction, createReducer } from 'deox';
 import { ShipAPIService } from '@/services/ship-api';
 import { actionTypeCreator } from '@/utils';
 import { App } from '@/models/app';
+import { placeholderAppIcon } from '@/config';
 
 const $ = actionTypeCreator('APP');
 
@@ -34,5 +35,11 @@ const defaultState: AppState = null;
 
 export type AppState = App | null;
 export default createReducer(defaultState, handleAction => [
-  handleAction(fetchApp.complete, (_, { payload }) => payload as any)
+  handleAction(fetchApp.complete, (_, { payload }) => {
+    if (payload) {
+      const avatarUrl = payload.avatarUrl || placeholderAppIcon;
+      return { ...payload, avatarUrl } as any;
+    }
+    return null;
+  })
 ]);

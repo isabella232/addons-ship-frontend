@@ -3,7 +3,7 @@
 
 .sidebar {
   position: sticky;
-  top: $grid * 4;
+  top: calc(#{$grid} * 4 + #{$beam-height});
   height: 0;
 }
 
