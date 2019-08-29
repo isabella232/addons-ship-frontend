@@ -2,10 +2,11 @@ jest.mock('@/utils/request');
 
 import { Uploadable } from '@/models/uploadable';
 import { patch, post, get, put, del, request } from '@/utils/request';
-import { mockAppVersion, mockUploadedScreenshotResponse } from '@/mocks';
+import { mockAppVersion } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
 import { ShipAPIService } from './ship-api';
+import { FeatureGraphic } from '@/models';
 
 describe('Ship API service', () => {
   const apiUrl = 'http://ship.api',
@@ -230,6 +231,100 @@ describe('Ship API service', () => {
 
       const url = `${apiUrl}/apps/${appSlug}/versions/${versionId}/screenshots/uploaded`;
       expect(patch).toHaveBeenLastCalledWith(url, token);
+    });
+  });
+
+  describe('getFeatureGraphic', () => {
+    testTokenNotSet(() => api.getFeatureGraphic('slug', 'version'));
+
+    it('fetches the feature graphic for an app', async () => {
+      (get as jest.Mock).mockResolvedValueOnce({
+        json: () => ({
+          data: {
+            id: 'test-id-1',
+            created_at: '2019-09-26T12:42:31Z',
+            updated_at: '2019-09-27T12:42:31Z',
+            download_url: 'some.url',
+            filename: 'screenshot-1.jpg',
+            filesize: 1234,
+            uploaded: true
+          }
+        })
+      });
+
+      const appSlug = 'an-app-slug',
+        versionId = 'a-version-id',
+        token = 'very-token';
+
+      api.setToken(token);
+
+      const featureGraphic = await api.getFeatureGraphic(appSlug, versionId);
+
+      const url = `${apiUrl}/apps/${appSlug}/versions/${versionId}/feature-graphic`;
+      expect(get).toHaveBeenCalledWith(url, token);
+
+      expect(featureGraphic).toMatchSnapshot();
+    });
+  });
+
+  describe('uploadFeatureGraphic', () => {
+    testTokenNotSet(() => api.uploadFeatureGraphic('slug', 'version', {} as FeatureGraphic));
+
+    it('calls the api', async () => {
+      (post as jest.Mock).mockResolvedValueOnce({
+        json: () => ({ data: { filename: 'some-file.png', upload_url: 'http://some.url?token=123' } })
+      });
+
+      const appSlug = 'an-app-slug',
+        versionId = 'a-version-id',
+        featureGraphic: FeatureGraphic = new FeatureGraphic('id-01', 'some-file.png', 'src', 123),
+        token = 'such-token';
+
+      api.setToken(token);
+
+      const result = await api.uploadFeatureGraphic(appSlug, versionId, featureGraphic);
+
+      const expectedBody = JSON.stringify({ filename: 'some-file.png', filesize: 123 });
+
+      expect(result).toMatchSnapshot();
+      expect(post).toHaveBeenLastCalledWith(
+        `${apiUrl}/apps/${appSlug}/versions/${versionId}/feature-graphic`,
+        token,
+        expectedBody
+      );
+    });
+  });
+
+  describe('uploadedFeatureGraphic', () => {
+    testTokenNotSet(async () => await api.uploadedFeatureGraphic('slug', 'version'));
+
+    it('calls the api', async () => {
+      const appSlug = 'an-app-slug',
+        versionId = 'a-version-id',
+        token = 'some-token';
+      api.setToken(token);
+
+      await api.uploadedFeatureGraphic(appSlug, versionId);
+
+      const url = `${apiUrl}/apps/${appSlug}/versions/${versionId}/feature-graphic/uploaded`;
+      expect(patch).toHaveBeenLastCalledWith(url, token);
+    });
+  });
+
+  describe('deleteFeatureGraphic', () => {
+    testTokenNotSet(() => api.deleteFeatureGraphic('slug', 'version'));
+
+    it('calls the api', async () => {
+      const appSlug = 'an-app-slug',
+        versionId = 'a-version-id',
+        token = 'such-token';
+
+      api.setToken(token);
+
+      const result = await api.deleteFeatureGraphic(appSlug, versionId);
+
+      expect(result).toMatchSnapshot();
+      expect(del).toHaveBeenLastCalledWith(`${apiUrl}/apps/${appSlug}/versions/${versionId}/feature-graphic`, token);
     });
   });
 

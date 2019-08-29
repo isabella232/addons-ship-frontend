@@ -1,6 +1,7 @@
 import fetch, { RequestInit, Response } from 'node-fetch';
-
 import getConfig from 'next/config';
+
+import { RequestError } from '@/models/errors';
 
 const {
   publicRuntimeConfig: { VERBOSE_LOGGING }
@@ -28,7 +29,7 @@ export const request = ({ url, method, token, body }: RequestParams) =>
     }
 
     if (!res.ok) {
-      throw new Error(`${res.status}: ${res.statusText}`);
+      throw new RequestError(res.status, res.statusText);
     }
 
     return res;

@@ -9,17 +9,20 @@ import { getType } from 'deox';
 import { mockAppVersion, mockUploadedScreenshotResponse } from '@/mocks';
 import { AppVersion, AppVersionEvent } from '@/models';
 import api, { ShipAPIService } from '@/services/ship-api';
+import { uploadFileToS3 } from '@/utils/file';
+import { Uploadable } from '@/models/uploadable';
 
 import reducer, {
   fetchAppVersion,
   updateAppVersion,
   uploadScreenshots,
+  uploadFeatureGraphic,
+  deleteFeatureGraphic,
   publishAppVersion,
   pollPublishStatus,
   pollPublishStatusEpic,
   deleteScreenshot
 } from '.';
-import { uploadFileToS3 } from '@/utils/file';
 
 describe('appVersion', () => {
   let mockStore: MockStoreCreator, store: MockStoreEnhanced;
@@ -144,6 +147,54 @@ describe('appVersion', () => {
     it("can't delete a screenshot", async () => {
       (api.deleteScreenshot as jest.Mock).mockRejectedValueOnce('api had some issue');
       await store.dispatch(deleteScreenshot('appSlug', 'versionId', 'screenshoId') as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  describe('uploadFeatureGraphic', () => {
+    it('uploads a feature graphic', async () => {
+      const filename = 'a-file.jpg',
+        bits = 'whatever',
+        uploadUrl = 'http://some.url?token';
+      (api.uploadFeatureGraphic as jest.Mock).mockResolvedValueOnce([
+        {
+          filename,
+          filesize: bits.length,
+          uploadUrl
+        }
+      ]);
+
+      const file = new File([bits], filename);
+      await store.dispatch(uploadFeatureGraphic('app-slug', 'version-id', {} as Uploadable, file) as any);
+
+      expect(api.uploadFeatureGraphic).toHaveBeenCalledWith('app-slug', 'version-id', {});
+      expect(uploadFileToS3).toHaveBeenCalledWith(file, uploadUrl);
+      expect(api.uploadedFeatureGraphic).toHaveBeenCalledWith('app-slug', 'version-id');
+      expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it("can't upload a feature graphic", async () => {
+      (api.uploadFeatureGraphic as jest.Mock).mockRejectedValueOnce('api had some issue');
+      await store.dispatch(uploadFeatureGraphic('app-slug', 'version-id', {} as Uploadable, {} as File) as any);
+
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  describe('deleteFeatureGraphic', () => {
+    it('deletes the feature graphic', async () => {
+      const appSlug = 'app-slug',
+        versionId = 'version-id';
+      await store.dispatch(deleteFeatureGraphic(appSlug, versionId) as any);
+
+      expect(api.deleteFeatureGraphic).toHaveBeenCalledWith(appSlug, versionId);
+      expect(store.getActions).toMatchSnapshot();
+    });
+
+    it("can't delete the feature graphic", async () => {
+      (api.deleteFeatureGraphic as jest.Mock).mockRejectedValueOnce('api had some issue');
+      await store.dispatch(deleteFeatureGraphic('appSlug', 'versionId') as any);
 
       expect(store.getActions()).toMatchSnapshot();
     });

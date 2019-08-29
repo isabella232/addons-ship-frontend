@@ -6,6 +6,8 @@ import fetchAppVersion from './fetchAppVersion';
 import updateAppVersion from './updateAppVersion';
 import uploadScreenshots from './uploadScreenshots';
 import deleteScreenshot from './deleteScreenshot';
+import uploadFeatureGraphic from './uploadFeatureGraphic';
+import deleteFeatureGraphic from './deleteFeatureGraphic';
 import publishAppVersion from './publishAppVersion';
 import pollPublishStatus, { pollPublishStatusEpic } from './pollPublishStatus';
 import fetchAppVersionEvents from './fetchAppVersionEvents';
@@ -23,6 +25,8 @@ export {
   updateAppVersion,
   uploadScreenshots,
   deleteScreenshot,
+  uploadFeatureGraphic,
+  deleteFeatureGraphic,
   publishAppVersion,
   pollPublishStatus,
   pollPublishStatusEpic

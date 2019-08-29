@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`appVersion deleteFeatureGraphic can't delete the feature graphic 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_DELETE_FEATURE_GRAPHIC_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_DELETE_FEATURE_GRAPHIC_ERROR",
+  },
+]
+`;
+
+exports[`appVersion deleteFeatureGraphic deletes the feature graphic 1`] = `[Function]`;
+
 exports[`appVersion deleteScreenshot can't delete a screenshot 1`] = `
 Array [
   Object {
@@ -42,6 +56,7 @@ Array [
       "configuration": "canary",
       "description": "Some semi-long description",
       "distributionType": "development",
+      "featureGraphicData": undefined,
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
       "keywords": "Keywords",
@@ -205,6 +220,29 @@ Array [
   },
   Object {
     "type": "APP_VERSION_UPDATE_COMPLETE",
+  },
+]
+`;
+
+exports[`appVersion uploadFeatureGraphic can't upload a feature graphic 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_UPLOAD_FEATURE_GRAPHIC_NEXT",
+  },
+  Object {
+    "payload": "api had some issue",
+    "type": "APP_VERSION_UPLOAD_FEATURE_GRAPHIC_ERROR",
+  },
+]
+`;
+
+exports[`appVersion uploadFeatureGraphic uploads a feature graphic 1`] = `
+Array [
+  Object {
+    "type": "APP_VERSION_UPLOAD_FEATURE_GRAPHIC_NEXT",
+  },
+  Object {
+    "type": "APP_VERSION_UPLOAD_FEATURE_GRAPHIC_COMPLETE",
   },
 ]
 `;

@@ -1,8 +1,9 @@
-import { Base, Flex, Text, Icon, Button } from '@bitrise/bitkit';
 import { Fragment } from 'react';
 import QRCode from 'qrcode.react';
 import SVG from 'react-svg';
 import Clipboard from 'react-clipboard.js';
+import { Base, Flex, Text, Icon, Button } from '@bitrise/bitkit';
+
 import css from './style.scss';
 
 type Props = {
@@ -14,7 +15,7 @@ type Props = {
 };
 
 export default ({ publicInstallPageURL, shouldEnablePublish, onSave, onPublish, buildSlug }: Props) => (
-  <Base maxWidth="16rem">
+  <Base maxWidth="16rem" className={css.sidebar}>
     <Base>
       <Button level="primary" fullWidth margin="x4" onClick={onSave}>
         <Icon name="Save" />

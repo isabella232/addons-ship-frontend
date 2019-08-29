@@ -1,8 +1,8 @@
 import lodashGet from 'lodash/get';
 import { shipApiConfig } from '@/config';
-import { AppVersion, AppVersionEvent, Screenshot, ScreenshotResponse } from '@/models';
+import { AppVersion, AppVersionEvent, FeatureGraphic } from '@/models';
 import { APIConfig, AppConfig } from '@/models/services';
-import { Uploadable } from '@/models/uploadable';
+import { Uploadable, UploadableResponse, ScreenshotResponse } from '@/models/uploadable';
 import { App } from '@/models/app';
 import { snakifyKeys, camelizeKeys, camelizeKeysDeep, snakifyKeysDeep } from '@/utils';
 import { patch, post, get, put, del, request } from '@/utils/request';
@@ -113,6 +113,7 @@ export class ShipAPIService {
     return await camelizeKeys(data);
   }
 
+  // GET /apps/{app-slug}/versions/{version-id}/events
   async getAppVersionEvents(appSlug: string, versionId: string): Promise<AppVersionEvent[]> {
     this.checkToken();
 
@@ -132,7 +133,6 @@ export class ShipAPIService {
   }
 
   // GET /apps/{app-slug}/versions/{version-id}/screenshots
-
   async getScreenshots(appSlug: string, versionId: string): Promise<ScreenshotResponse[]> {
     this.checkToken();
 
@@ -164,12 +164,67 @@ export class ShipAPIService {
     return data.map(camelizeKeys);
   }
 
-  async deleteScreenshot(appSlug: string, versionId: string, screenshotId: string): Promise<void> {
+  // DELETE /apps/{app-slug}/versions/{version-id}/screenshots/{screenshot-id}
+  async deleteScreenshot(appSlug: string, versionId: string, screenshotId: string) {
     this.checkToken();
 
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/${screenshotId}`;
 
-    await del(url, this.token);
+    return await del(url, this.token);
+  }
+
+  // PATCH /apps/{app-slug}/versions/{version-id}/screenshots/uploaded
+  async uploadedScreenshots(appSlug: string, versionId: string) {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/uploaded`;
+
+    return await patch(url, this.token);
+  }
+
+  // GET /apps/{app-slug}/versions/{version-id}/feature-graphic
+  async getFeatureGraphic(appSlug: string, versionId: string): Promise<UploadableResponse> {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic`;
+
+    const { data } = await get(url, this.token).then(res => res.json());
+
+    return camelizeKeysDeep(data);
+  }
+
+  // POST /apps/{app-slug}/versions/{version-id}/feature-graphic
+  async uploadFeatureGraphic(
+    appSlug: string,
+    versionId: string,
+    { name, size }: FeatureGraphic
+  ): Promise<UploadableResponse> {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic`,
+      body = JSON.stringify({ filename: name, filesize: size });
+
+    const { data } = await post(url, this.token, body).then(res => res.json());
+
+    return camelizeKeysDeep(data);
+  }
+
+  // PATCH /apps/{app-slug}/versions/{version-id}/feature-graphic/uploaded
+  async uploadedFeatureGraphic(appSlug: string, versionId: string) {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic/uploaded`;
+
+    return await patch(url, this.token);
+  }
+
+  // DELETE /apps/{app-slug}/versions/{version-id}/feature-graphic
+  async deleteFeatureGraphic(appSlug: string, versionId: string) {
+    this.checkToken();
+
+    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic`;
+
+    return await del(url, this.token);
   }
 
   // POST /apps/{app-slug}/versions/{version-id}/publish
@@ -182,15 +237,7 @@ export class ShipAPIService {
     return await post(url, this.token, undefined).then(res => res.json());
   }
 
-  // PATCH /apps/{app-slug}/versions/{version-id}/screenshots/uploaded
-  uploadedScreenshots(appSlug: string, versionId: string) {
-    this.checkToken();
-
-    const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/uploaded`;
-
-    return patch(url, this.token);
-  }
-
+  // GET /apps/{app-slug}/settings
   async getSettings(appSlug: string): Promise<Settings> {
     this.checkToken();
 
@@ -229,6 +276,7 @@ export class ShipAPIService {
     return settings;
   }
 
+  // PATCH /apps/{app-slug}/settings
   async updateSettings(appSlug: string, settings: Settings): Promise<Settings> {
     this.checkToken();
 
@@ -249,6 +297,7 @@ export class ShipAPIService {
     return camelizeKeysDeep(data);
   }
 
+  // POST /apps/{app-slug}/contacts
   async addAppContact(
     appSlug: string,
     email: string,
@@ -270,6 +319,7 @@ export class ShipAPIService {
     return camelizeKeysDeep(data);
   }
 
+  // GET /apps/{app-slug}/contacts
   async listAppContacts(appSlug: string): Promise<AppContact[]> {
     this.checkToken();
 
@@ -284,6 +334,7 @@ export class ShipAPIService {
     }));
   }
 
+  // PUT /apps/{app-slug}/contacts/{contact-id}
   async updateAppContactNotificationPreferences(appSlug: string, appContact: AppContact): Promise<AppContact> {
     this.checkToken();
 
@@ -295,6 +346,7 @@ export class ShipAPIService {
     return camelizeKeysDeep(data);
   }
 
+  // DELETE /apps/{app-slug}/contacts/{contact-id}
   async deleteAppContact(appSlug: string, appContact: AppContact): Promise<void> {
     this.checkToken();
 
@@ -303,6 +355,7 @@ export class ShipAPIService {
     await del(url, this.token);
   }
 
+  // PATCH /confirm_email
   async confirmEmail(confirmToken: string): Promise<{ app: App; appContact: AppContact }> {
     const url = `${this.config.url}/confirm_email`,
       body = JSON.stringify({ confirmation_token: confirmToken });
@@ -312,6 +365,7 @@ export class ShipAPIService {
     return camelizeKeysDeep(data);
   }
 
+  // GET /api/resources?path={resource-path}
   async getResource<T>(reourcePath: string): Promise<T> {
     this.checkToken();
 

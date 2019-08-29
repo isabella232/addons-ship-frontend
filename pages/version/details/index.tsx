@@ -6,14 +6,16 @@ import update from 'lodash/update';
 import filter from 'lodash/filter';
 
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
-import { AppVersion, AppVersionEvent, Screenshot, ScreenshotResponse } from '@/models';
+import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot } from '@/models';
 import { Settings, IosSettings, AndroidSettings } from '@/models/settings';
-import { Uploadable } from '@/models/uploadable';
+import { Uploadable, ScreenshotResponse } from '@/models/uploadable';
 import { RootState } from '@/store';
 import {
   updateAppVersion,
   uploadScreenshots,
   deleteScreenshot,
+  uploadFeatureGraphic,
+  deleteFeatureGraphic,
   publishAppVersion,
   pollPublishStatus
 } from '@/ducks/appVersion';
@@ -22,13 +24,16 @@ import settingService from '@/services/settings';
 
 import View from './view';
 
-type Props = {
+export type Props = {
   appVersion: AppVersion;
   settings: Settings;
   appVersionEvents: AppVersionEvent[];
   updateAppVersion: typeof updateAppVersion;
   uploadScreenshots: typeof uploadScreenshots;
   deleteScreenshot: typeof deleteScreenshot;
+  uploadFeatureGraphic: typeof uploadFeatureGraphic;
+  deleteFeatureGraphic: typeof deleteFeatureGraphic;
+
   publishAppVersion: typeof publishAppVersion;
   startPollPublishStatus: typeof pollPublishStatus.start;
   cancelPollPublishStatus: typeof pollPublishStatus.cancel;
@@ -38,12 +43,13 @@ export type State = {
   hasMounted: boolean;
   updatedAppVersion: AppVersion | null;
   screenshotList: { [deviceId: string]: DeviceScreenshots };
-  featureGraphic?: Screenshot;
+  featureGraphic?: FeatureGraphic;
   selectedDeviceIdForScreenshots: string;
   readyForPublish?: boolean;
   latestEvent: AppVersionEvent | null;
   isPublishInProgress: boolean;
   screenshotIdsToDelete: string[];
+  isFeatureGraphicMarkedForDelete: boolean;
 };
 
 type DeviceScreenshots = {
@@ -94,11 +100,15 @@ export class AppVersionDetails extends Component<Props, State> {
     selectedDeviceIdForScreenshots: 'iphone65',
     latestEvent: null,
     isPublishInProgress: false,
-    screenshotIdsToDelete: []
+    screenshotIdsToDelete: [],
+    isFeatureGraphicMarkedForDelete: false
   };
 
   componentDidMount() {
     const { appVersion, startPollPublishStatus } = this.props;
+    const { screenshotList } = this.state;
+
+    const newScreenshotList = { ...screenshotList };
 
     this.setState({
       hasMounted: true,
@@ -109,28 +119,32 @@ export class AppVersionDetails extends Component<Props, State> {
     appVersion.screenshotDatas.forEach(({ id, filename, downloadUrl, filesize, deviceType }: ScreenshotResponse) => {
       const screenshot = new Screenshot(id, filename, downloadUrl, filesize, deviceType);
 
-      let deviceId = Object.keys(this.state.screenshotList).find(
-        key => this.state.screenshotList[key].deviceName === screenshot.deviceType
+      let deviceId = Object.keys(newScreenshotList).find(
+        key => newScreenshotList[key].deviceName === screenshot.deviceType
       ) as string;
       if (!deviceId) {
         deviceId = screenshot.deviceType as string;
       }
 
-      const screenshotList = this.state.screenshotList;
-      if (!screenshotList[deviceId]) {
-        screenshotList[deviceId] = {
+      if (!newScreenshotList[deviceId]) {
+        newScreenshotList[deviceId] = {
           deviceName: deviceId
         };
       }
-      if (!screenshotList[deviceId].screenshots) {
-        screenshotList[deviceId].screenshots = [];
+      if (!newScreenshotList[deviceId].screenshots) {
+        newScreenshotList[deviceId].screenshots = [];
       }
 
-      (screenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
-      this.setState({
-        screenshotList
-      });
+      (newScreenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
     });
+    this.setState({
+      screenshotList: newScreenshotList
+    });
+
+    if (appVersion.featureGraphicData) {
+      const { id, filename, downloadUrl } = appVersion.featureGraphicData;
+      this.setState({ featureGraphic: new FeatureGraphic(id, filename, downloadUrl) });
+    }
   }
 
   componentDidUpdate({ appVersionEvents: prevEvents }: Props) {
@@ -195,9 +209,11 @@ export class AppVersionDetails extends Component<Props, State> {
       appVersion: { appSlug, id },
       updateAppVersion,
       uploadScreenshots,
-      deleteScreenshot
+      deleteScreenshot,
+      uploadFeatureGraphic,
+      deleteFeatureGraphic
     } = this.props;
-    const { updatedAppVersion, screenshotIdsToDelete } = this.state;
+    const { updatedAppVersion, screenshotIdsToDelete, featureGraphic, isFeatureGraphicMarkedForDelete } = this.state;
 
     if (window.analytics) {
       window.analytics.track('AppVersionDetails Save', { addonId: 'addons-ship', appSlug, appVersionId: id });
@@ -209,9 +225,17 @@ export class AppVersionDetails extends Component<Props, State> {
 
     updateAppVersion(updatedAppVersion as AppVersion);
 
-    const [uploadable, files] = this.getUploadableScreenshots();
+    const [uploadables, files] = this.getUploadableScreenshots();
 
-    uploadScreenshots(appSlug, id.toString(), uploadable, files);
+    if (uploadables.length > 0) {
+      uploadScreenshots(appSlug, id.toString(), uploadables, files);
+    }
+
+    if (featureGraphic && featureGraphic.type() === 'pending') {
+      uploadFeatureGraphic(appSlug, id.toString(), featureGraphic);
+    } else if (isFeatureGraphicMarkedForDelete) {
+      deleteFeatureGraphic(appSlug, id.toString());
+    }
   };
 
   onPublish = async () => {
@@ -260,12 +284,18 @@ export class AppVersionDetails extends Component<Props, State> {
     this.setState({ screenshotList });
   };
 
-  onFeatureGraphicAdded = (newFeatureGraphic: File) => {
-    this.setState({ featureGraphic: new Screenshot('', 'feature graphic', newFeatureGraphic) });
+  onFeatureGraphicAdded = (file: File) => {
+    this.setState({ featureGraphic: new FeatureGraphic('', file.name, file, file.size) });
   };
 
   removeFeatureGraphic = () => {
-    this.setState({ featureGraphic: undefined });
+    const { featureGraphic } = this.state;
+    let deleteFeatureGraphic = false;
+    if ((featureGraphic as FeatureGraphic).type() === 'uploaded' || this.state.isFeatureGraphicMarkedForDelete) {
+      deleteFeatureGraphic = true;
+    }
+
+    this.setState({ featureGraphic: undefined, isFeatureGraphicMarkedForDelete: deleteFeatureGraphic });
   };
 
   onDeviceSelected = (deviceId: string) => {
@@ -332,7 +362,7 @@ export class AppVersionDetails extends Component<Props, State> {
       selectedDeviceIdForScreenshots,
       screenshots: screenshotList[selectedDeviceIdForScreenshots].screenshots,
       removeScreenshot: this.removeScreenshot,
-      featureGraphic: featureGraphic,
+      featureGraphic,
       onFeatureGraphicAdded: this.onFeatureGraphicAdded,
       removeFeatureGraphic: this.removeFeatureGraphic,
       onDeviceSelected: this.onDeviceSelected,
@@ -361,6 +391,8 @@ const mapDispatchToProps = {
   updateAppVersion,
   uploadScreenshots,
   deleteScreenshot,
+  uploadFeatureGraphic,
+  deleteFeatureGraphic,
   publishAppVersion,
   startPollPublishStatus: pollPublishStatus.start,
   cancelPollPublishStatus: pollPublishStatus.cancel

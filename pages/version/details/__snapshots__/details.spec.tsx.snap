@@ -24,14 +24,13 @@ Array [
 `;
 
 exports[`AppVersionDetails appends a feature graphic for Android apps 1`] = `
-Screenshot {
-  "deviceType": undefined,
+FeatureGraphic {
   "file": File {
     "path": "file.png",
     "type": "image/png",
   },
   "id": "",
-  "name": "feature graphic",
+  "name": "file.png",
   "size": 0,
   "src": undefined,
 }
@@ -92,6 +91,7 @@ exports[`AppVersionDetails componentDidUpdate sets the latest event 1`] = `
 Object {
   "featureGraphic": undefined,
   "hasMounted": true,
+  "isFeatureGraphicMarkedForDelete": false,
   "isPublishInProgress": true,
   "latestEvent": Object {
     "id": "some-id",
@@ -4348,10 +4348,11 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
               shouldEnablePublish={true}
             >
               <Base
+                className="sidebar"
                 maxWidth="16rem"
               >
                 <div
-                  className="Base Base--max-width"
+                  className="Base Base--max-width sidebar"
                   style={
                     Object {
                       "height": undefined,
@@ -8708,10 +8709,11 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
               shouldEnablePublish={true}
             >
               <Base
+                className="sidebar"
                 maxWidth="16rem"
               >
                 <div
-                  className="Base Base--max-width"
+                  className="Base Base--max-width sidebar"
                   style={
                     Object {
                       "height": undefined,
@@ -13077,10 +13079,11 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
               shouldEnablePublish={false}
             >
               <Base
+                className="sidebar"
                 maxWidth="16rem"
               >
                 <div
-                  className="Base Base--max-width"
+                  className="Base Base--max-width sidebar"
                   style={
                     Object {
                       "height": undefined,
@@ -17436,10 +17439,11 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
               shouldEnablePublish={true}
             >
               <Base
+                className="sidebar"
                 maxWidth="16rem"
               >
                 <div
-                  className="Base Base--max-width"
+                  className="Base Base--max-width sidebar"
                   style={
                     Object {
                       "height": undefined,
@@ -21928,10 +21932,11 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
               shouldEnablePublish={false}
             >
               <Base
+                className="sidebar"
                 maxWidth="16rem"
               >
                 <div
-                  className="Base Base--max-width"
+                  className="Base Base--max-width sidebar"
                   style={
                     Object {
                       "height": undefined,

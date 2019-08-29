@@ -2,6 +2,8 @@ import { NextContext } from 'next';
 import { Store } from 'redux';
 import { Request } from 'express';
 
+import { ScreenshotResponse, UploadableResponse } from './uploadable';
+
 export type AppVersionProps = {
   appSlug: string;
   versionId: string;
@@ -54,31 +56,19 @@ export type AppVersion = {
   buildType?: string;
   publicInstallPageURL?: string;
   screenshotDatas: ScreenshotResponse[];
+  featureGraphicData?: UploadableResponse;
 };
 
-export type ScreenshotResponse = {
-  createdAt: Date;
-  deviceType: string;
-  downloadUrl: string;
-  filename: string;
-  filesize: number;
-  id: string;
-  screenSize: string;
-  updatedAt: Date;
-  uploaded: boolean;
-};
-
-export class Screenshot {
-  constructor(id: string, name: string, content: any, size?: number, deviceType?: string) {
+class ImageAsset {
+  constructor(id: string, name: string, content: string | File, size?: number) {
     this.id = id;
     this.name = name;
+    this.size = size || 0;
     if (typeof content === 'string') {
       this.src = content;
     } else {
       this.file = content;
     }
-    this.size = size || 0;
-    this.deviceType = deviceType;
   }
 
   id: string;
@@ -86,7 +76,6 @@ export class Screenshot {
   src?: string;
   file?: any;
   size?: number;
-  deviceType?: string;
 
   type(): 'uploaded' | 'pending' {
     return this.src ? 'uploaded' : 'pending';
@@ -98,6 +87,18 @@ export class Screenshot {
     }
 
     return URL.createObjectURL(this.file);
+  }
+}
+
+export class FeatureGraphic extends ImageAsset {}
+
+export class Screenshot extends ImageAsset {
+  deviceType?: string;
+
+  constructor(id: string, name: string, content: any, size?: number, deviceType?: string) {
+    super(id, name, content, size);
+
+    this.deviceType = deviceType;
   }
 }
 

@@ -16,7 +16,7 @@ type DeviceInfo = {
   isMarked: boolean;
 };
 
-type Props = {
+export type Props = {
   appVersion: AppVersion;
   hasMounted: boolean;
   selectedDeviceIdForScreenshots: string;
