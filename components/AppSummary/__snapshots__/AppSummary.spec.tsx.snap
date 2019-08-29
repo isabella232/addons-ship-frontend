@@ -19,8 +19,8 @@ exports[`AppSummary renders correctly on desktop 1`] = `
         <_default
           borderRadius="x2"
           margin="x0"
-          maxWidth="96px"
           src="/static/icon-flutter.svg"
+          width="96px"
         />
         <Base
           paddingHorizontal="x4"
@@ -90,8 +90,8 @@ exports[`AppSummary renders correctly on mobile 1`] = `
         <_default
           borderRadius="x2"
           margin="x0"
-          maxWidth="96px"
           src="/static/icon-flutter.svg"
+          width="96px"
         />
         <Base
           paddingHorizontal="x4"
@@ -161,8 +161,8 @@ exports[`AppSummary renders correctly on tablet 1`] = `
         <_default
           borderRadius="x2"
           margin="x0"
-          maxWidth="96px"
           src="/static/icon-flutter.svg"
+          width="96px"
         />
         <Base
           paddingHorizontal="x4"

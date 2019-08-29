@@ -993,8 +993,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             <_default
                               borderRadius="x2"
                               margin="x0"
-                              maxWidth="96px"
                               src="http://placekitten.com/160/160"
+                              width="96px"
                             >
                               <div>
                                 <svg
@@ -1020,7 +1020,6 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                 <Image
                                   borderRadius="x2"
                                   margin="x0"
-                                  maxWidth="96px"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -1028,13 +1027,13 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                       "objectFit": "covver",
                                     }
                                   }
+                                  width="96px"
                                 >
                                   <Base
                                     Component="img"
                                     borderRadius="x2"
                                     className="Image"
                                     margin="x0"
-                                    maxWidth="96px"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
@@ -1042,20 +1041,21 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                         "objectFit": "covver",
                                       }
                                     }
+                                    width="96px"
                                   >
                                     <img
-                                      className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                      className="Base Base--border-radius-x2 Base--margin-x0 Image"
                                       src="http://placekitten.com/160/160"
                                       style={
                                         Object {
                                           "clipPath": "url(#squircle-0.05)",
                                           "height": undefined,
                                           "maxHeight": undefined,
-                                          "maxWidth": "96px",
+                                          "maxWidth": undefined,
                                           "minHeight": undefined,
                                           "minWidth": undefined,
                                           "objectFit": "covver",
-                                          "width": undefined,
+                                          "width": "96px",
                                         }
                                       }
                                     />

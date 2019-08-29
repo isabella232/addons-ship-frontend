@@ -25,7 +25,7 @@ export default ({ detailsPagePath, title, description, note, iconUrl, platformIc
         <div className={css.colorBar} />
         <div className={css.body}>
           <div className={css.iconWrapper}>
-            <Squircle src={iconUrl} borderRadius="x2" maxWidth="96px" margin="x0" />
+            <Squircle src={iconUrl} borderRadius="x2" width="96px" margin="x0" />
 
             <Base paddingHorizontal="x4" paddingVertical={isTablet ? 'x2' : 'x4'}>
               <Text size={isTablet ? 'x3' : 'x2'} color="gray-6" letterSpacing="x1" weight="medium">

@@ -134,7 +134,7 @@ export default ({
         <Flex maxWidth={688}>
           <form onChange={onFormChange}>
             <Flex direction="horizontal" margin="x4">
-              <Squircle src={appVersion.iconUrl} borderRadius="x2" maxWidth="160px" margin="x0" />
+              <Squircle src={appVersion.iconUrl} borderRadius="x2" width="160px" margin="x0" />
 
               <Flex direction="vertical" alignChildrenVertical="middle" paddingHorizontal="x6">
                 <Flex direction="horizontal" alignChildren="middle">
