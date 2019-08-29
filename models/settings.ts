@@ -20,10 +20,11 @@ export type AndroidSettings = {
   selectedServiceAccount: string;
 };
 
-export type Certificate = { name: string; slug: string };
-export interface ProvProfile extends Certificate {}
-export interface KeystoreFile extends Certificate {}
-export interface ServiceAccountJsonFile extends Certificate {}
+export type CodeSigningFile = { name: string; slug: string };
+export interface Certificate extends CodeSigningFile {}
+export interface ProvProfile extends CodeSigningFile {}
+export interface KeystoreFile extends CodeSigningFile {}
+export interface ServiceAccountJsonFile extends CodeSigningFile {}
 
 export type Settings = {
   iosWorkflow: string;
