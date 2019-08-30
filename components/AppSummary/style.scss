@@ -21,8 +21,7 @@
 
   .colorBar {
     height: 20 * $grid - $hover-border-width;
-    background: conic-gradient(from 266deg at 100% 50%, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.2)),
-      linear-gradient(to right, rgba(13, 131, 205, 1), rgba(29, 227, 219, 1));
+    background-size: cover;
   }
 
   .body {

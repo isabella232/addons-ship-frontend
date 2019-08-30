@@ -12,6 +12,7 @@
 .header {
   background-image: url('/static/header-bg.svg');
   background-size: cover;
+  background-position: center;
 
   @include width-above-screen-small {
     padding-left: 16 * $grid;
