@@ -46,17 +46,18 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
           </Link>
           <button className={descriptionWrapperClasses.join(' ')} onClick={this.toggle}>
             <div className={css.description}>{description}</div>
-            {isOpen ? (
-              <div className={css.showLess}>
-                <div className={css.text}>Show less</div>
-                <SVG src="/static/arrow-down.svg" className={css.arrow} />
-              </div>
-            ) : (
-              <div className={css.showMore}>
-                <div className={css.text}>Show more</div>
-                <SVG src="/static/arrow-down.svg" className={css.arrow} />
-              </div>
-            )}
+            {description &&
+              (isOpen ? (
+                <div className={css.showLess}>
+                  <div className={css.text}>Show less</div>
+                  <SVG src="/static/arrow-down.svg" className={css.arrow} />
+                </div>
+              ) : (
+                <div className={css.showMore}>
+                  <div className={css.text}>Show more</div>
+                  <SVG src="/static/arrow-down.svg" className={css.arrow} />
+                </div>
+              ))}
           </button>
         </div>
       </div>
