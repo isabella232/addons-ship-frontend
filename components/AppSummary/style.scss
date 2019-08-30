@@ -31,7 +31,7 @@
     .iconWrapper {
       display: flex;
       align-items: flex-end;
-      margin-top: -29 * $grid;
+      margin-top: -20 * $grid;
 
       .note {
         margin-left: 4 * $grid;
@@ -54,6 +54,8 @@
 
       svg {
         display: block;
+        margin-right: $grid;
+        margin-bottom: 3px;
         fill: $grape-5;
       }
 

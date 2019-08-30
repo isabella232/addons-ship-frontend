@@ -40,7 +40,7 @@ export default ({ detailsPagePath, title, description, note, iconUrl, platformIc
               {title}
             </Text>
           </div>
-          <div className={css.description}>{description}</div>
+          {description && <div className={css.description}>{description}</div>}
         </div>
       </a>
     </Link>
