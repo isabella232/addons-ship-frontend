@@ -2,6 +2,6 @@
 @import '~@/assets/style/dimensions';
 @import '~@/assets/style/colors';
 
-.contentWrapper {
-	padding-bottom: 26 * $grid;
+.footerWrapper {
+	@include padding-y(26 * $grid);
 }
