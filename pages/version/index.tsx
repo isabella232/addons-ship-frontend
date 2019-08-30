@@ -16,6 +16,8 @@ import Devices from './devices';
 import Activity from './activity';
 import QA from './qa';
 
+import css from './style.scss';
+
 interface VersionPageProps extends AppVersionPageQuery {
   appVersion: AppVersion;
   pagePath: string;
@@ -95,7 +97,7 @@ export class VersionPage extends Component<VersionPageProps> {
     );
 
     return (
-      <Base paddingVertical="x10">
+      <Base className={css.contentWrapper}>
         <Base maxWidth={960}>
           <Tabs gap="x10">
             {tab('details')}
