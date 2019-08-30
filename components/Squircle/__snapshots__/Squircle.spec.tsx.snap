@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Squircle renders without issues 1`] = `
+<div>
+  <svg
+    height="0"
+    width="0"
+  >
+    <defs>
+      <clipPath
+        clipPathUnits="objectBoundingBox"
+        id="squircle-0.05"
+      >
+        <path
+          d="M .5,0
+    C 0.05,0 0,0.05 0,.5
+    0,0.95 0.05,1 .5,1
+    0.95,1 1,0.95 1,.5
+    1,0.05 0.95,0 .5,0
+    Z"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+  <Image
+    src="img.url"
+    style={
+      Object {
+        "clipPath": "url(#squircle-0.05)",
+        "objectFit": "covver",
+      }
+    }
+  />
+</div>
+`;

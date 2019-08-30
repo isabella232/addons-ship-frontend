@@ -1,5 +1,5 @@
 import formatDate from 'date-fns/format';
-import { Base, Flex, Text, Icon, Image, Notification, Button, TypeIconName } from '@bitrise/bitkit';
+import { Base, Flex, Text, Icon, Notification, Button, TypeIconName } from '@bitrise/bitkit';
 
 import { AppVersion, AppVersionEvent, Screenshot } from '@/models';
 import { mediaQuery } from '@/utils/media';
@@ -8,6 +8,7 @@ import Sidebar from './sidebar';
 import FormIos from './form-ios';
 import FormAndroid from './form-android';
 import Link from 'next/link';
+import Squircle from '@/components/Squircle';
 
 type DeviceInfo = {
   key: string;
@@ -133,7 +134,7 @@ export default ({
         <Flex maxWidth={688}>
           <form onChange={onFormChange}>
             <Flex direction="horizontal" margin="x4">
-              <Image src={appVersion.iconUrl} borderRadius="x2" width={160} height={160} />
+              <Squircle src={appVersion.iconUrl} borderRadius="x2" width="160px" margin="x0" />
 
               <Flex direction="vertical" alignChildrenVertical="middle" paddingHorizontal="x6">
                 <Flex direction="horizontal" alignChildren="middle">

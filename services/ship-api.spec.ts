@@ -339,18 +339,22 @@ describe('Ship API service', () => {
             ios_settings: {
               available_provisioning_profiles: [
                 {
-                  upload_file_name: 'provisioning_profile-1'
+                  upload_file_name: 'provisioning_profile-1',
+                  slug: 'provisioning_profile-slug-1'
                 },
                 {
-                  upload_file_name: 'provisioning_profile-2'
+                  upload_file_name: 'provisioning_profile-2',
+                  slug: 'provisioning_profile-slug-2'
                 }
               ],
               available_code_signing_identities: [
                 {
-                  upload_file_name: 'code_signing_identity-1'
+                  upload_file_name: 'code_signing_identity-1',
+                  slug: 'code_signing_identity-slug-1'
                 },
                 {
-                  upload_file_name: 'code_signing_identity-2'
+                  upload_file_name: 'code_signing_identity-2',
+                  slug: 'code_signing_identity-slug-2'
                 }
               ],
               selected_app_store_provisioning_profile: 'provisioning_profile-1',
@@ -359,18 +363,22 @@ describe('Ship API service', () => {
             android_settings: {
               available_keystore_files: [
                 {
-                  upload_file_name: 'keystore_file-1'
+                  upload_file_name: 'keystore_file-1',
+                  slug: 'keystore_file-slug-1'
                 },
                 {
-                  upload_file_name: 'keystore_file-2'
+                  upload_file_name: 'keystore_file-2',
+                  slug: 'keystore_file-slug-2'
                 }
               ],
               available_service_account_files: [
                 {
-                  upload_file_name: 'service_account_file-1'
+                  upload_file_name: 'service_account_file-1',
+                  slug: 'service_account_file-slug-1'
                 },
                 {
-                  upload_file_name: 'service_account_file-2'
+                  upload_file_name: 'service_account_file-2',
+                  slug: 'service_account_file-slug-2'
                 }
               ],
               selected_service_account: 'service_account_file-2'

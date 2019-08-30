@@ -251,18 +251,24 @@ export class ShipAPIService {
     settings.keystoreFiles = lodashGet(settings, 'androidSettings.availableKeystoreFiles', []);
     settings.serviceAccountJsonFiles = lodashGet(settings, 'androidSettings.availableServiceAccountFiles', []);
 
-    settings.provProfiles = settings.provProfiles.map((provProfile: any) => ({
-      name: provProfile.upload_file_name
+    settings.provProfiles = settings.provProfiles.map(({ upload_file_name: name, slug }: any) => ({
+      name,
+      slug
     }));
-    settings.certificates = settings.certificates.map((certificate: any) => ({
-      name: certificate.upload_file_name
+    settings.certificates = settings.certificates.map(({ upload_file_name: name, slug }: any) => ({
+      name,
+      slug
     }));
-    settings.keystoreFiles = settings.keystoreFiles.map((keystoreFile: any) => ({
-      name: keystoreFile.upload_file_name
+    settings.keystoreFiles = settings.keystoreFiles.map(({ upload_file_name: name, slug }: any) => ({
+      name,
+      slug
     }));
-    settings.serviceAccountJsonFiles = settings.serviceAccountJsonFiles.map((serviceAccountJsonFile: any) => ({
-      name: serviceAccountJsonFile.upload_file_name
-    }));
+    settings.serviceAccountJsonFiles = settings.serviceAccountJsonFiles.map(
+      ({ upload_file_name: name, slug }: any) => ({
+        name,
+        slug
+      })
+    );
 
     if (settings.iosSettings) {
       delete settings.iosSettings['availableProvisioningProfiles'];

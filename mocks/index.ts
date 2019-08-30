@@ -209,13 +209,22 @@ export const mockTestDevices: TestDevice[] = [
   { deviceId: 'some-device-id-03', deviceType: 'ios', owner: 'test-user-2' }
 ];
 
-const provProfiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
-const certificates = [
-  { name: 'iPhone Developer: John Doe (ABCD1234)' },
-  { name: 'iPhone Developer: John Doe (ABCD5678)' }
+const provProfiles = [
+  { name: 'abcdefghijkl1234567', slug: 'prov-profile-1' },
+  { name: 'abcdefghijkl12345671566', slug: 'prov-profile-2' }
 ];
-const keystoreFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
-const serviceAccountJsonFiles = [{ name: 'abcdefghijkl1234567' }, { name: 'abcdefghijkl12345671566' }];
+const certificates = [
+  { name: 'iPhone Developer: John Doe (ABCD1234)', slug: 'cert-1' },
+  { name: 'iPhone Developer: John Doe (ABCD5678)', slug: 'cert-2' }
+];
+const keystoreFiles = [
+  { name: 'abcdefghijkl1234567', slug: 'keystore-1' },
+  { name: 'abcdefghijkl12345671566', slug: 'keystore-2' }
+];
+const serviceAccountJsonFiles = [
+  { name: 'abcdefghijkl1234567', slug: 'service-accoun-1' },
+  { name: 'abcdefghijkl12345671566', slug: 'service-accoun-1' }
+];
 
 export const mockSettings: Settings = {
   projectType: 'other',
@@ -225,19 +234,19 @@ export const mockSettings: Settings = {
     appleDeveloperAccountEmail: 'Fill',
     appSku: 'Fill',
     appSpecificPassword: 'Fill',
-    selectedAppStoreProvisioningProfile: provProfiles[0].name,
-    selectedCodeSigningIdentity: certificates[1].name,
+    selectedAppStoreProvisioningProfile: provProfiles[0].slug,
+    selectedCodeSigningIdentity: certificates[1].slug,
     includeBitCode: true
   },
   androidSettings: {
     track: 'Release',
-    selectedKeystoreFile: keystoreFiles[0].name,
-    selectedServiceAccount: serviceAccountJsonFiles[1].name
+    selectedKeystoreFile: keystoreFiles[0].slug,
+    selectedServiceAccount: serviceAccountJsonFiles[1].slug
   },
-  provProfiles: provProfiles,
-  certificates: certificates,
-  keystoreFiles: keystoreFiles,
-  serviceAccountJsonFiles: serviceAccountJsonFiles
+  provProfiles,
+  certificates,
+  keystoreFiles,
+  serviceAccountJsonFiles
 };
 
 export const mockFinishedAppVersionEvent: AppVersionEvent = {

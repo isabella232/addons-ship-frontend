@@ -1,7 +1,17 @@
 import { Fragment } from 'react';
-import formatDate from 'date-fns/format';
-import prettyBytes from 'pretty-bytes';
-import { Base, Flex, Text, Icon, InputLabel, Textarea, Divider, Tooltip, InputContainer, Input } from '@bitrise/bitkit';
+import {
+  Base,
+  Flex,
+  Text,
+  Icon,
+  InputLabel,
+  Textarea,
+  Divider,
+  Tooltip,
+  InputContainer,
+  InputContent,
+  Input
+} from '@bitrise/bitkit';
 
 import { AppVersion, Screenshot } from '@/models';
 import Dropzone from '@/components/Dropzone';
@@ -123,7 +133,9 @@ export default ({
       <Flex grow>
         <InputLabel>Support URL</InputLabel>
         <InputContainer>
-          <Input name="supportUrl" defaultValue={appVersion.supportUrl} />
+          <InputContent>
+            <Input name="supportUrl" defaultValue={appVersion.supportUrl} />
+          </InputContent>
         </InputContainer>
 
         <Divider color="gray-2" direction="horizontal" margin="x4" />
@@ -151,7 +163,9 @@ export default ({
       <Flex grow>
         <InputLabel>Marketing URL</InputLabel>
         <InputContainer>
-          <Input name="marketingUrl" defaultValue={appVersion.marketingUrl} />
+          <InputContent>
+            <Input name="marketingUrl" defaultValue={appVersion.marketingUrl} />
+          </InputContent>
         </InputContainer>
 
         <Divider color="gray-2" direction="horizontal" margin="x4" />

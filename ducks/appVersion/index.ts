@@ -11,6 +11,7 @@ import deleteFeatureGraphic from './deleteFeatureGraphic';
 import publishAppVersion from './publishAppVersion';
 import pollPublishStatus, { pollPublishStatusEpic } from './pollPublishStatus';
 import fetchAppVersionEvents from './fetchAppVersionEvents';
+import { placeholderAppIcon } from '@/config';
 
 export type AppVersionState = {
   appVersion: AppVersion | null;
@@ -34,7 +35,11 @@ export {
 export default createReducer(defaultState, handleAction => [
   handleAction([fetchAppVersion.complete, updateAppVersion.complete], ({ appVersion, ...state }, { payload }) => ({
     ...state,
-    appVersion: { ...appVersion, ...payload }
+    appVersion: {
+      ...appVersion,
+      ...payload,
+      iconUrl: (appVersion && appVersion.iconUrl) || payload.iconUrl || placeholderAppIcon
+    }
   })),
   handleAction(publishAppVersion.next, state => ({ ...state, isPublishInProgress: true })),
   handleAction([publishAppVersion.complete, publishAppVersion.error], state => ({

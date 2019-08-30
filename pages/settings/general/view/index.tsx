@@ -190,7 +190,11 @@ export default ({
                     <Text size="x3" weight="bold">
                       App Store Provisioning Profile
                     </Text>
-                    <Link href={`https://app.bitrise.io/app/${ appSlug }/workflow_editor#!/code_signing`} target="_blank" color="grape-3">
+                    <Link
+                      href={`https://app.bitrise.io/app/${appSlug}/workflow_editor#!/code_signing`}
+                      target="_blank"
+                      color="grape-3"
+                    >
                       <Flex
                         direction="horizontal"
                         alignChildrenHorizontal="start"
@@ -207,7 +211,7 @@ export default ({
                   {(provProfiles as ProvProfile[]).map((provProfile: ProvProfile, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={provProfile.name === iosSettings.selectedAppStoreProvisioningProfile}
+                        checked={provProfile.slug === iosSettings.selectedAppStoreProvisioningProfile}
                         onChange={() => onSelectedFileChange('ProvProfile', provProfile)}
                       >
                         <Flex
@@ -242,7 +246,7 @@ export default ({
                   {(certificates as Certificate[]).map((certificate: Certificate, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={certificate.name === iosSettings.selectedCodeSigningIdentity}
+                        checked={certificate.slug === iosSettings.selectedCodeSigningIdentity}
                         onChange={() => onSelectedFileChange('Certificate', certificate)}
                       >
                         <Flex
@@ -343,7 +347,11 @@ export default ({
                     <Text size="x3" weight="bold">
                       Android Keystore Files
                     </Text>
-                    <Link href={`https://app.bitrise.io/app/${ appSlug }/workflow_editor#!/code_signing`} target="_blank" color="grape-3">
+                    <Link
+                      href={`https://app.bitrise.io/app/${appSlug}/workflow_editor#!/code_signing`}
+                      target="_blank"
+                      color="grape-3"
+                    >
                       <Flex
                         direction="horizontal"
                         alignChildrenHorizontal="start"
@@ -360,7 +368,7 @@ export default ({
                   {(keystoreFiles as KeystoreFile[]).map((keystoreFile: KeystoreFile, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={keystoreFile.name === androidSettings.selectedKeystoreFile}
+                        checked={keystoreFile.slug === androidSettings.selectedKeystoreFile}
                         onChange={() => onSelectedFileChange('KeystoreFile', keystoreFile)}
                       >
                         <Flex
@@ -396,7 +404,7 @@ export default ({
                     (serviceAccountJsonFile: ServiceAccountJsonFile, index) => (
                       <Base key={index}>
                         <RadioButton
-                          checked={serviceAccountJsonFile.name === androidSettings.selectedServiceAccount}
+                          checked={serviceAccountJsonFile.slug === androidSettings.selectedServiceAccount}
                           onChange={() => onSelectedFileChange('ServiceAccountJsonFile', serviceAccountJsonFile)}
                         >
                           <Flex

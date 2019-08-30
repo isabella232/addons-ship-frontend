@@ -3,8 +3,8 @@
 exports[`General configureSettingsFromProps sets the state correctly for android 1`] = `
 Object {
   "androidSettings": Object {
-    "selectedKeystoreFile": "abcdefghijkl1234567",
-    "selectedServiceAccount": "abcdefghijkl12345671566",
+    "selectedKeystoreFile": "keystore-1",
+    "selectedServiceAccount": "service-accoun-1",
     "track": "Release",
   },
   "androidWorkflow": "All",
@@ -16,8 +16,8 @@ Object {
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
     "includeBitCode": true,
-    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
-    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
+    "selectedAppStoreProvisioningProfile": "prov-profile-1",
+    "selectedCodeSigningIdentity": "cert-2",
   },
   "iosWorkflow": "All",
 }
@@ -26,8 +26,8 @@ Object {
 exports[`General configureSettingsFromProps sets the state correctly for ios 1`] = `
 Object {
   "androidSettings": Object {
-    "selectedKeystoreFile": "abcdefghijkl1234567",
-    "selectedServiceAccount": "abcdefghijkl12345671566",
+    "selectedKeystoreFile": "keystore-1",
+    "selectedServiceAccount": "service-accoun-1",
     "track": "Release",
   },
   "androidWorkflow": "All",
@@ -39,8 +39,8 @@ Object {
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
     "includeBitCode": true,
-    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
-    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
+    "selectedAppStoreProvisioningProfile": "prov-profile-1",
+    "selectedCodeSigningIdentity": "cert-2",
   },
   "iosWorkflow": "All",
 }
@@ -49,8 +49,8 @@ Object {
 exports[`General configureSettingsFromProps sets the state correctly for other project types 1`] = `
 Object {
   "androidSettings": Object {
-    "selectedKeystoreFile": "abcdefghijkl1234567",
-    "selectedServiceAccount": "abcdefghijkl12345671566",
+    "selectedKeystoreFile": "keystore-1",
+    "selectedServiceAccount": "service-accoun-1",
     "track": "Release",
   },
   "androidWorkflow": "All",
@@ -62,8 +62,8 @@ Object {
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
     "includeBitCode": true,
-    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
-    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
+    "selectedAppStoreProvisioningProfile": "prov-profile-1",
+    "selectedCodeSigningIdentity": "cert-2",
   },
   "iosWorkflow": "All",
 }
@@ -72,8 +72,8 @@ Object {
 exports[`General onSettingsPropertyChange 1`] = `
 Object {
   "androidSettings": Object {
-    "selectedKeystoreFile": "abcdefghijkl1234567",
-    "selectedServiceAccount": "abcdefghijkl12345671566",
+    "selectedKeystoreFile": "keystore-1",
+    "selectedServiceAccount": "service-accoun-1",
     "track": "Release",
   },
   "androidWorkflow": "All",
@@ -85,8 +85,8 @@ Object {
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
     "includeBitCode": true,
-    "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
-    "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
+    "selectedAppStoreProvisioningProfile": "prov-profile-1",
+    "selectedCodeSigningIdentity": "cert-2",
   },
   "iosWorkflow": "All",
 }
@@ -96,8 +96,8 @@ exports[`General renders correctly 1`] = `
 <_default
   androidSettings={
     Object {
-      "selectedKeystoreFile": "abcdefghijkl1234567",
-      "selectedServiceAccount": "abcdefghijkl12345671566",
+      "selectedKeystoreFile": "keystore-1",
+      "selectedServiceAccount": "service-accoun-1",
       "track": "Release",
     }
   }
@@ -107,9 +107,11 @@ exports[`General renders correctly 1`] = `
     Array [
       Object {
         "name": "iPhone Developer: John Doe (ABCD1234)",
+        "slug": "cert-1",
       },
       Object {
         "name": "iPhone Developer: John Doe (ABCD5678)",
+        "slug": "cert-2",
       },
     ]
   }
@@ -122,8 +124,8 @@ exports[`General renders correctly 1`] = `
       "appSpecificPassword": "Fill",
       "appleDeveloperAccountEmail": "Fill",
       "includeBitCode": true,
-      "selectedAppStoreProvisioningProfile": "abcdefghijkl1234567",
-      "selectedCodeSigningIdentity": "iPhone Developer: John Doe (ABCD5678)",
+      "selectedAppStoreProvisioningProfile": "prov-profile-1",
+      "selectedCodeSigningIdentity": "cert-2",
     }
   }
   iosWorkflow="All"
@@ -131,9 +133,11 @@ exports[`General renders correctly 1`] = `
     Array [
       Object {
         "name": "abcdefghijkl1234567",
+        "slug": "keystore-1",
       },
       Object {
         "name": "abcdefghijkl12345671566",
+        "slug": "keystore-2",
       },
     ]
   }
@@ -147,9 +151,11 @@ exports[`General renders correctly 1`] = `
     Array [
       Object {
         "name": "abcdefghijkl1234567",
+        "slug": "prov-profile-1",
       },
       Object {
         "name": "abcdefghijkl12345671566",
+        "slug": "prov-profile-2",
       },
     ]
   }
@@ -157,9 +163,11 @@ exports[`General renders correctly 1`] = `
     Array [
       Object {
         "name": "abcdefghijkl1234567",
+        "slug": "service-accoun-1",
       },
       Object {
         "name": "abcdefghijkl12345671566",
+        "slug": "service-accoun-1",
       },
     ]
   }
@@ -322,7 +330,7 @@ exports[`GeneralView when there are no Android settings does not render Android 
           </Text>
           <Link
             color="grape-3"
-            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
             target="_blank"
           >
             <Flex
@@ -692,7 +700,7 @@ exports[`GeneralView when there are no files renders no files section 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
             target="_blank"
           >
             <Flex
@@ -848,7 +856,7 @@ exports[`GeneralView when there are no files renders no files section 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
             target="_blank"
           >
             <Flex
@@ -1036,7 +1044,7 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
           </Text>
           <Link
             color="grape-3"
-            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
             target="_blank"
           >
             <Flex
@@ -1153,7 +1161,7 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
           key="0"
         >
           <RadioButton
-            checked={false}
+            checked={true}
             onChange={[Function]}
           >
             <Flex
@@ -1402,7 +1410,7 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
             target="_blank"
           >
             <Flex
@@ -1682,7 +1690,7 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
             target="_blank"
           >
             <Flex
@@ -1799,7 +1807,7 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
           key="0"
         >
           <RadioButton
-            checked={false}
+            checked={true}
             onChange={[Function]}
           >
             <Flex
@@ -2048,7 +2056,7 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
             target="_blank"
           >
             <Flex
@@ -2328,7 +2336,7 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
           </Text>
           <Link
             color="grape-3"
-            href="https://app.bitrise.io/app/undefined/workflow_editor#!/code_signing"
+            href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
             target="_blank"
           >
             <Flex
@@ -2445,7 +2453,7 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
           key="0"
         >
           <RadioButton
-            checked={false}
+            checked={true}
             onChange={[Function]}
           >
             <Flex
