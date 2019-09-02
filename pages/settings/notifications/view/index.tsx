@@ -1,4 +1,4 @@
-import { Base, Text, Divider, Buttons, Button, Flex } from '@bitrise/bitkit';
+import { Base, Text, Divider, Buttons, Button, Flex, Notification } from '@bitrise/bitkit';
 
 import AddNew, { Props as AddNewProps } from './add-new';
 import List, { Props as ListProps } from './contact-list';
@@ -6,6 +6,7 @@ import List, { Props as ListProps } from './contact-list';
 export interface Props extends AddNewProps, ListProps {
   onSave?: () => void;
   onCancel: () => void;
+  error?: string;
 }
 
 export default ({
@@ -14,13 +15,19 @@ export default ({
   onNotificationPreferenceChanged,
   onDeleteContact,
   onSave,
-  onCancel
+  onCancel,
+  error
 }: Props) => (
   <Base paddingVertical="x8">
     <Text size="x5" weight="bold" paddingVertical="x3">
       Email Notifications
     </Text>
     <Divider color="gray-2" />
+    {error && (
+      <Notification margin="x4" type="alert">
+        {error}
+      </Notification>
+    )}
     <Base paddingVertical="x6">
       <AddNew onAddEmail={onAddEmail} />
     </Base>

@@ -19,6 +19,7 @@ type Props = {
 type State = {
   hasModifications: boolean;
   updatedAppContacts: AppContact[];
+  error?: string;
 };
 
 export class NotificationSettings extends React.Component<Props, State> {
@@ -36,8 +37,15 @@ export class NotificationSettings extends React.Component<Props, State> {
   }
 
   onAddEmail = (email: string) => {
-    const { appSlug, addAppContact } = this.props;
+    const { appSlug, addAppContact, appContacts } = this.props;
     if (!email) return;
+
+    if (appContacts.find(contact => contact.email === email)) {
+      this.setState({ error: 'Email already in contact list' });
+      return;
+    }
+
+    this.setState({ error: undefined });
 
     addAppContact(appSlug, email);
   };
@@ -107,7 +115,7 @@ export class NotificationSettings extends React.Component<Props, State> {
   };
 
   render() {
-    const { updatedAppContacts, hasModifications } = this.state;
+    const { updatedAppContacts, hasModifications, error } = this.state;
 
     const props = {
       appContacts: updatedAppContacts,
@@ -115,7 +123,8 @@ export class NotificationSettings extends React.Component<Props, State> {
       onNotificationPreferenceChanged: this.onNotificationPreferenceChanged,
       onDeleteContact: this.onDeleteContact,
       onSave: hasModifications ? this.onSave : undefined,
-      onCancel: this.onCancel
+      onCancel: this.onCancel,
+      error
     };
 
     return <View {...props} />;

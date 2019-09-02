@@ -14,7 +14,9 @@ import {
   Link,
   RadioButton,
   Text,
-  Tooltip
+  Tooltip,
+  ProgressBitbot,
+  ProgressSpinner
 } from '@bitrise/bitkit';
 
 import { Certificate, KeystoreFile, ProvProfile, ServiceAccountJsonFile, Settings } from '@/models/settings';
@@ -24,6 +26,7 @@ import { Platform } from '@/models';
 import css from './style.scss';
 
 interface Props extends Settings {
+  hasLoaded: boolean;
   appSlug: string;
   maximumNumberOfCertificates: number;
   hasMounted: boolean;
@@ -41,9 +44,11 @@ interface Props extends Settings {
   ) => void;
   onCancel: () => void;
   onSave: () => void;
+  isSaving?: boolean;
 }
 
 export default ({
+  hasLoaded,
   appSlug,
   maximumNumberOfCertificates,
   hasMounted,
@@ -60,10 +65,18 @@ export default ({
   onSelectedFileChange,
   onCancel,
   onSave,
+  isSaving,
   hasIosSettings,
   hasAndroidSettings
 }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
+
+  if (!hasLoaded)
+    return (
+      <Base absolute="center">
+        <ProgressBitbot color="grape-3" />
+      </Base>
+    );
 
   return (
     <Base paddingVertical="x8" maxWidth={isDesktop ? '100%' : 660} className={css.container}>
@@ -438,8 +451,14 @@ export default ({
           <Button level="secondary" width="8rem" onClick={onCancel}>
             Cancel
           </Button>
-          <Button level="primary" width="8rem" onClick={onSave}>
-            Save
+          <Button disabled={isSaving} level="primary" width="8rem" onClick={onSave}>
+            {isSaving ? (
+              <Fragment>
+                <ProgressSpinner /> &nbsp; Saving...
+              </Fragment>
+            ) : (
+              'Save'
+            )}
           </Button>
         </Flex>
       </Base>

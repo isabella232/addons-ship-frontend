@@ -117,6 +117,7 @@ exports[`General renders correctly 1`] = `
   }
   hasAndroidSettings={true}
   hasIosSettings={true}
+  hasLoaded={true}
   hasMounted={true}
   iosSettings={
     Object {
@@ -172,6 +173,739 @@ exports[`General renders correctly 1`] = `
     ]
   }
 />
+`;
+
+exports[`General renders correctly when loading 1`] = `
+<_default
+  androidSettings={
+    Object {
+      "selectedKeystoreFile": "",
+      "selectedServiceAccount": "",
+      "track": "",
+    }
+  }
+  androidWorkflow=""
+  appSlug="some-app-slug"
+  certificates={
+    Array [
+      Object {
+        "name": "iPhone Developer: John Doe (ABCD1234)",
+        "slug": "cert-1",
+      },
+      Object {
+        "name": "iPhone Developer: John Doe (ABCD5678)",
+        "slug": "cert-2",
+      },
+    ]
+  }
+  hasAndroidSettings={false}
+  hasIosSettings={false}
+  hasLoaded={false}
+  hasMounted={true}
+  iosSettings={
+    Object {
+      "appSku": "",
+      "appSpecificPassword": "",
+      "appleDeveloperAccountEmail": "",
+      "includeBitCode": true,
+      "selectedAppStoreProvisioningProfile": "",
+      "selectedCodeSigningIdentity": "",
+    }
+  }
+  iosWorkflow=""
+  keystoreFiles={
+    Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+        "slug": "keystore-1",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+        "slug": "keystore-2",
+      },
+    ]
+  }
+  maximumNumberOfCertificates={30}
+  onCancel={[Function]}
+  onSave={[Function]}
+  onSelectedFileChange={[Function]}
+  onSettingsPropertyChange={[Function]}
+  onWorkflowChange={[Function]}
+  provProfiles={
+    Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+        "slug": "prov-profile-1",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+        "slug": "prov-profile-2",
+      },
+    ]
+  }
+  serviceAccountJsonFiles={
+    Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+        "slug": "service-accoun-1",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+        "slug": "service-accoun-1",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`GeneralView when the settings are being saved 1`] = `
+<Base
+  className="container"
+  maxWidth={660}
+  paddingVertical="x8"
+>
+  <Base
+    paddingHorizontal="x4"
+  >
+    <Base
+      margin="x12"
+    >
+      <Text
+        size="x5"
+        weight="bold"
+      >
+        iOS Settings
+      </Text>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        margin="x4"
+        width="0.125rem"
+      />
+      <Base
+        margin="x6"
+      >
+        <Grid
+          alignChildrenVertical="end"
+          columnCount="1"
+          columnWidth="1fr"
+          direction="vertical"
+          gap="x6"
+          grow={true}
+        >
+          <Flex>
+            <Flex
+              alignChildrenHorizontal="start"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+            >
+              <InputLabel>
+                Expose Artifacts From the Selected Workflow to Ship
+              </InputLabel>
+              <Tooltip
+                title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              >
+                <Component />
+              </Tooltip>
+            </Flex>
+            <InputContainer>
+              <InputContent>
+                <Input
+                  name="iosWorkflow"
+                  onChange={[Function]}
+                  placeholder="All"
+                  value=""
+                />
+              </InputContent>
+            </InputContainer>
+          </Flex>
+          <Flex>
+            <InputLabel
+              margin="x1"
+            >
+              App SKU
+            </InputLabel>
+            <InputContainer>
+              <InputContent>
+                <Input
+                  name="appSku"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
+            </InputContainer>
+          </Flex>
+        </Grid>
+      </Base>
+      <Base
+        margin="x6"
+      >
+        <Grid
+          alignChildrenVertical="end"
+          columnCount="1"
+          columnWidth="1fr"
+          direction="vertical"
+          gap="x6"
+          grow={true}
+        >
+          <Flex>
+            <InputLabel
+              margin="x1"
+            >
+              Apple Developer Account Email
+            </InputLabel>
+            <InputContainer>
+              <InputContent>
+                <Input
+                  name="appleDeveloperAccountEmail"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
+            </InputContainer>
+          </Flex>
+          <Flex>
+            <InputLabel
+              margin="x1"
+            >
+              App Specific Password
+            </InputLabel>
+            <InputContainer>
+              <InputContent>
+                <Input
+                  name="appSpecificPassword"
+                  onChange={[Function]}
+                  value="Fill"
+                />
+              </InputContent>
+            </InputContainer>
+          </Flex>
+        </Grid>
+      </Base>
+      <Base>
+        <Checkbox
+          checked={true}
+          name="includeBitCode"
+          onChange={[Function]}
+        >
+          Include bitcode
+        </Checkbox>
+      </Base>
+    </Base>
+    <Base
+      margin="x12"
+    >
+      <Base
+        margin="x6"
+      >
+        <Flex
+          alignChildrenHorizontal="between"
+          direction="vertical"
+          gap="x1"
+          margin="x1"
+        >
+          <Text
+            size="x3"
+            weight="bold"
+          >
+            App Store Provisioning Profile
+          </Text>
+          <Link
+            color="grape-3"
+            href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
+            target="_blank"
+          >
+            <Flex
+              alignChildrenHorizontal="start"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+            >
+              <Text
+                size="x3"
+              >
+                Edit Profiles and Certificates on Bitrise
+              </Text>
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
+            </Flex>
+          </Link>
+        </Flex>
+        <Divider
+          color="gray-2"
+          direction="horizontal"
+          margin="x2"
+          width="0.125rem"
+        />
+        <Base
+          key="0"
+        >
+          <RadioButton
+            checked={true}
+            onChange={[Function]}
+          >
+            <Flex
+              alignChildrenHorizontal="between"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+              paddingVertical="x3"
+            >
+              <Icon
+                color="grape-4"
+                name="Doc"
+                size="2rem"
+              />
+              <Text
+                size="x3"
+              >
+                abcdefghijkl1234567
+              </Text>
+            </Flex>
+          </RadioButton>
+          <Divider
+            color="gray-1"
+            direction="horizontal"
+            margin="x2"
+            width="0.125rem"
+          />
+        </Base>
+        <Base
+          key="1"
+        >
+          <RadioButton
+            checked={false}
+            onChange={[Function]}
+          >
+            <Flex
+              alignChildrenHorizontal="between"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+              paddingVertical="x3"
+            >
+              <Icon
+                color="grape-4"
+                name="Doc"
+                size="2rem"
+              />
+              <Text
+                size="x3"
+              >
+                abcdefghijkl12345671566
+              </Text>
+            </Flex>
+          </RadioButton>
+          <Divider
+            color="gray-1"
+            direction="horizontal"
+            margin="x2"
+            width="0.125rem"
+          />
+        </Base>
+      </Base>
+      <Base
+        margin="x6"
+      >
+        <Text
+          margin="x1"
+          size="x3"
+          weight="bold"
+        >
+          Code Signing Identity (
+          2
+          /
+          30
+          )
+        </Text>
+        <Divider
+          color="gray-2"
+          direction="horizontal"
+          margin="x2"
+          width="0.125rem"
+        />
+        <Base
+          key="0"
+        >
+          <RadioButton
+            checked={false}
+            onChange={[Function]}
+          >
+            <Flex
+              alignChildrenHorizontal="between"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+              paddingVertical="x3"
+            >
+              <Icon
+                color="grape-4"
+                name="Doc"
+                size="2rem"
+              />
+              <Text
+                size="x3"
+              >
+                iPhone Developer: John Doe (ABCD1234)
+              </Text>
+            </Flex>
+          </RadioButton>
+          <Divider
+            color="gray-1"
+            direction="horizontal"
+            margin="x2"
+            width="0.125rem"
+          />
+        </Base>
+        <Base
+          key="1"
+        >
+          <RadioButton
+            checked={true}
+            onChange={[Function]}
+          >
+            <Flex
+              alignChildrenHorizontal="between"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+              paddingVertical="x3"
+            >
+              <Icon
+                color="grape-4"
+                name="Doc"
+                size="2rem"
+              />
+              <Text
+                size="x3"
+              >
+                iPhone Developer: John Doe (ABCD5678)
+              </Text>
+            </Flex>
+          </RadioButton>
+          <Divider
+            color="gray-1"
+            direction="horizontal"
+            margin="x2"
+            width="0.125rem"
+          />
+        </Base>
+      </Base>
+    </Base>
+    <Base
+      margin="x12"
+    >
+      <Text
+        size="x5"
+        weight="bold"
+      >
+        Android Settings
+      </Text>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        margin="x4"
+        width="0.125rem"
+      />
+      <Base
+        margin="x6"
+      >
+        <Grid
+          alignChildrenVertical="end"
+          columnCount="1"
+          columnWidth="1fr"
+          direction="vertical"
+          gap="x6"
+          grow={true}
+        >
+          <Flex>
+            <Flex
+              alignChildrenHorizontal="start"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+            >
+              <InputLabel>
+                Expose Artifacts From the Selected Workflow to Ship
+              </InputLabel>
+              <Tooltip
+                title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              >
+                <Component />
+              </Tooltip>
+            </Flex>
+            <InputContainer>
+              <InputContent>
+                <Input
+                  name="androidWorkflow"
+                  onChange={[Function]}
+                  placeholder="All"
+                  value=""
+                />
+              </InputContent>
+            </InputContainer>
+          </Flex>
+          <Flex>
+            <InputLabel
+              margin="x1"
+            >
+              Track
+            </InputLabel>
+            <InputContainer>
+              <InputContent>
+                <Input
+                  name="track"
+                  onChange={[Function]}
+                  value="Release"
+                />
+              </InputContent>
+            </InputContainer>
+          </Flex>
+        </Grid>
+      </Base>
+    </Base>
+    <Base
+      margin="x12"
+    >
+      <Base
+        margin="x6"
+      >
+        <Flex
+          alignChildrenHorizontal="between"
+          direction="vertical"
+          gap="x1"
+          margin="x1"
+        >
+          <Text
+            size="x3"
+            weight="bold"
+          >
+            Android Keystore Files
+          </Text>
+          <Link
+            color="grape-3"
+            href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
+            target="_blank"
+          >
+            <Flex
+              alignChildrenHorizontal="start"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+            >
+              <Text
+                size="x3"
+              >
+                Edit Keystore and JSON files on Bitrise
+              </Text>
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
+            </Flex>
+          </Link>
+        </Flex>
+        <Divider
+          color="gray-2"
+          direction="horizontal"
+          margin="x2"
+          width="0.125rem"
+        />
+        <Base
+          key="0"
+        >
+          <RadioButton
+            checked={true}
+            onChange={[Function]}
+          >
+            <Flex
+              alignChildrenHorizontal="between"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+              paddingVertical="x3"
+            >
+              <Icon
+                color="grape-4"
+                name="Doc"
+                size="2rem"
+              />
+              <Text
+                size="x3"
+              >
+                abcdefghijkl1234567
+              </Text>
+            </Flex>
+          </RadioButton>
+          <Divider
+            color="gray-1"
+            direction="horizontal"
+            margin="x2"
+            width="0.125rem"
+          />
+        </Base>
+        <Base
+          key="1"
+        >
+          <RadioButton
+            checked={false}
+            onChange={[Function]}
+          >
+            <Flex
+              alignChildrenHorizontal="between"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+              paddingVertical="x3"
+            >
+              <Icon
+                color="grape-4"
+                name="Doc"
+                size="2rem"
+              />
+              <Text
+                size="x3"
+              >
+                abcdefghijkl12345671566
+              </Text>
+            </Flex>
+          </RadioButton>
+          <Divider
+            color="gray-1"
+            direction="horizontal"
+            margin="x2"
+            width="0.125rem"
+          />
+        </Base>
+      </Base>
+      <Base
+        margin="x6"
+      >
+        <Text
+          margin="x1"
+          size="x3"
+          weight="bold"
+        >
+          Android Service Account JSON File
+        </Text>
+        <Divider
+          color="gray-2"
+          direction="horizontal"
+          margin="x2"
+          width="0.125rem"
+        />
+        <Base
+          key="0"
+        >
+          <RadioButton
+            checked={true}
+            onChange={[Function]}
+          >
+            <Flex
+              alignChildrenHorizontal="between"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+              paddingVertical="x3"
+            >
+              <Icon
+                color="grape-4"
+                name="Doc"
+                size="2rem"
+              />
+              <Text
+                size="x3"
+              >
+                abcdefghijkl1234567
+              </Text>
+            </Flex>
+          </RadioButton>
+          <Divider
+            color="gray-1"
+            direction="horizontal"
+            margin="x2"
+            width="0.125rem"
+          />
+        </Base>
+        <Base
+          key="1"
+        >
+          <RadioButton
+            checked={true}
+            onChange={[Function]}
+          >
+            <Flex
+              alignChildrenHorizontal="between"
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x1"
+              margin="x1"
+              paddingVertical="x3"
+            >
+              <Icon
+                color="grape-4"
+                name="Doc"
+                size="2rem"
+              />
+              <Text
+                size="x3"
+              >
+                abcdefghijkl12345671566
+              </Text>
+            </Flex>
+          </RadioButton>
+          <Divider
+            color="gray-1"
+            direction="horizontal"
+            margin="x2"
+            width="0.125rem"
+          />
+        </Base>
+      </Base>
+    </Base>
+    <Flex
+      alignChildrenHorizontal="end"
+      direction="horizontal"
+      gap="x4"
+      margin="x12"
+    >
+      <Button
+        level="secondary"
+        onClick={[MockFunction]}
+        size="medium"
+        width="8rem"
+      >
+        Cancel
+      </Button>
+      <Button
+        disabled={true}
+        level="primary"
+        onClick={[MockFunction]}
+        size="medium"
+        width="8rem"
+      >
+        <ProgressSpinner
+          size="1.5rem"
+        />
+           Saving...
+      </Button>
+    </Flex>
+  </Base>
+</Base>
 `;
 
 exports[`GeneralView when there are no Android settings does not render Android settings section 1`] = `
@@ -1251,6 +1985,17 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
       </Button>
     </Flex>
   </Base>
+</Base>
+`;
+
+exports[`GeneralView when viewed on desktop renders the loading state 1`] = `
+<Base
+  absolute="center"
+>
+  <ProgressBitbot
+    color="grape-3"
+    size="64px"
+  />
 </Base>
 `;
 

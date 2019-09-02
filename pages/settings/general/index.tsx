@@ -12,7 +12,7 @@ import {
   AndroidSettings,
   Settings
 } from '@/models/settings';
-import { updateSettings } from '@/ducks/settings';
+import { updateSettings, fetchSettings } from '@/ducks/settings';
 
 import View from './view';
 
@@ -20,6 +20,9 @@ type Props = {
   appSlug: string;
   settings: Settings;
   updateSettings: typeof updateSettings;
+  fetchSettings: typeof fetchSettings;
+  hasLoaded: boolean;
+  isSaving?: boolean;
 };
 
 export type State = {
@@ -33,6 +36,7 @@ export type State = {
 };
 
 export class General extends Component<Props> {
+  static displayName = 'GeneralSettings';
   state: State = {
     iosWorkflow: '',
     androidWorkflow: '',
@@ -55,11 +59,22 @@ export class General extends Component<Props> {
   };
 
   componentDidMount() {
+    const { appSlug, fetchSettings, hasLoaded } = this.props;
     this.setState({
       hasMounted: true
     });
 
-    this.configureSettingsFromProps();
+    if (hasLoaded) {
+      this.configureSettingsFromProps();
+    }
+
+    fetchSettings(appSlug);
+  }
+
+  componentDidUpdate({ hasLoaded }: Props) {
+    if (!hasLoaded && this.props.hasLoaded) {
+      this.configureSettingsFromProps();
+    }
   }
 
   configureSettingsFromProps() {
@@ -146,11 +161,14 @@ export class General extends Component<Props> {
   render() {
     const {
       appSlug,
-      settings: { provProfiles, certificates, keystoreFiles, serviceAccountJsonFiles }
+      settings: { provProfiles, certificates, keystoreFiles, serviceAccountJsonFiles },
+      hasLoaded,
+      isSaving
     } = this.props;
 
     const viewProps = {
       appSlug,
+      hasLoaded,
       ...this.state,
       maximumNumberOfCertificates: MaximumNumberOfCertificates,
       provProfiles,
@@ -161,16 +179,22 @@ export class General extends Component<Props> {
       onSelectedFileChange: this.onSelectedFileChange,
       onWorkflowChange: this.onWorkflowChange,
       onCancel: this.onCancel,
-      onSave: this.onSave
+      onSave: this.onSave,
+      isSaving
     };
 
     return <View {...viewProps} />;
   }
 }
 
-const mapStateToProps = ({ settings: { settings } }: RootState) => ({ settings });
+const mapStateToProps = ({ settings: { settings, isSavingSettings } }: RootState) => ({
+  settings,
+  isSaving: isSavingSettings,
+  hasLoaded: !!settings.iosSettings || !!settings.androidSettings
+});
 const mapDispatchToProps = {
-  updateSettings
+  updateSettings,
+  fetchSettings
 };
 
 export default connect(

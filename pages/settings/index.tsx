@@ -5,7 +5,7 @@ import startCase from 'lodash/startCase';
 
 import { PageContext } from '@/models';
 import { AppSettingsPageQuery, AppSettingsPageTabs } from '@/models/settings';
-import { fetchSettings, listAppContacts } from '@/ducks/settings';
+import { listAppContacts } from '@/ducks/settings';
 
 import General from './general';
 import Notifications from './notifications';
@@ -20,10 +20,6 @@ export class SettingsPage extends Component<AppSettingsPageQuery> {
     const { appSlug, selectedTab = AppSettingsPageTabs[0] } = (query as unknown) as AppSettingsPageQuery;
 
     switch (selectedTab) {
-      case 'general':
-        SettingsPage.displayName = 'GeneralSettings';
-        await store.dispatch(fetchSettings(appSlug) as any);
-        break;
       case 'notifications':
         SettingsPage.displayName = 'NotificationSettings';
         await store.dispatch(listAppContacts(appSlug) as any);

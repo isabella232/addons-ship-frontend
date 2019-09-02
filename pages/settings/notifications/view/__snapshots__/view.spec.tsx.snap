@@ -28,6 +28,7 @@ exports[`NotificationSettings View has an enabled save button 1`] = `
   >
     <_default
       appContacts={Array []}
+      onDeleteContact={[MockFunction]}
       onNotificationPreferenceChanged={[MockFunction]}
     />
   </Base>
@@ -41,6 +42,7 @@ exports[`NotificationSettings View has an enabled save button 1`] = `
     >
       <Button
         level="secondary"
+        onClick={[MockFunction]}
         size="medium"
       >
         Cancel
@@ -86,6 +88,7 @@ exports[`NotificationSettings View renders correctly 1`] = `
   >
     <_default
       appContacts={Array []}
+      onDeleteContact={[MockFunction]}
       onNotificationPreferenceChanged={[MockFunction]}
     />
   </Base>
@@ -99,6 +102,72 @@ exports[`NotificationSettings View renders correctly 1`] = `
     >
       <Button
         level="secondary"
+        onClick={[MockFunction]}
+        size="medium"
+      >
+        Cancel
+      </Button>
+      <Button
+        disabled={true}
+        level="primary"
+        size="medium"
+      >
+        Save
+      </Button>
+    </Buttons>
+  </Flex>
+</Base>
+`;
+
+exports[`NotificationSettings View renders correctly with error message 1`] = `
+<Base
+  paddingVertical="x8"
+>
+  <Text
+    paddingVertical="x3"
+    size="x5"
+    weight="bold"
+  >
+    Email Notifications
+  </Text>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    width="0.125rem"
+  />
+  <Notification
+    margin="x4"
+    type="alert"
+  >
+    Something went wrong
+  </Notification>
+  <Base
+    paddingVertical="x6"
+  >
+    <_default
+      onAddEmail={[MockFunction]}
+    />
+  </Base>
+  <Base
+    margin="x4"
+  >
+    <_default
+      appContacts={Array []}
+      onDeleteContact={[MockFunction]}
+      onNotificationPreferenceChanged={[MockFunction]}
+    />
+  </Base>
+  <Flex
+    alignChildrenHorizontal="end"
+    direction="horizontal"
+    margin="x12"
+  >
+    <Buttons
+      gap="x2"
+    >
+      <Button
+        level="secondary"
+        onClick={[MockFunction]}
         size="medium"
       >
         Cancel

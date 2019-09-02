@@ -11,14 +11,17 @@ import deleteAppContact from './deleteAppContact';
 
 const defaultState: SettingsState = {
   settings: {
-    projectType: 'other'
+    projectType: 'other',
+    iosWorkflow: '',
+    androidWorkflow: ''
   },
-  appContacts: []
+  appContacts: [],
+  isSavingSettings: false
 };
 
 export { fetchSettings, updateSettings, addAppContact, listAppContacts, updateAppContact, deleteAppContact };
 
-export type SettingsState = { settings: Settings; appContacts: AppContact[] };
+export type SettingsState = { settings: Settings; appContacts: AppContact[]; isSavingSettings?: boolean };
 export default createReducer(defaultState, handleAction => [
   handleAction(fetchSettings.complete, (state, { payload }) => ({ ...state, settings: payload })),
   handleAction(addAppContact.complete, (state, { payload }) => ({
@@ -42,5 +45,7 @@ export default createReducer(defaultState, handleAction => [
   handleAction(deleteAppContact.complete, ({ appContacts, ...state }, { payload }) => ({
     ...state,
     appContacts: appContacts.filter(({ id }) => id !== payload)
-  }))
+  })),
+  handleAction(updateSettings.next, state => ({ ...state, isSavingSettings: true })),
+  handleAction(updateSettings.complete, state => ({ ...state, isSavingSettings: false }))
 ]);
