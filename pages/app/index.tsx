@@ -9,6 +9,7 @@ import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/se
 import EmptyPage from '@/components/EmptyPage';
 
 import View from './view';
+import Placeholder from './view/placeholder-list';
 
 export interface AppPageProps extends AppPageQuery {
   appVersionsByVersion: Array<{
@@ -19,6 +20,8 @@ export interface AppPageProps extends AppPageQuery {
     groupName: string;
     appVersions: AppVersion[];
   }>;
+  fetchAppVersionList: typeof fetchAppVersionList;
+  isLoading?: boolean;
 }
 
 type AppPageState = {
@@ -27,7 +30,7 @@ type AppPageState = {
 
 export class AppPage extends Component<AppPageProps, AppPageState> {
   state: AppPageState = {
-    selectedVersionSortingOptionValue: null
+    selectedVersionSortingOptionValue: 'latest-build'
   };
 
   versionSortingOptions = [
@@ -41,16 +44,12 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
     }
   ];
 
+  static getInitialProps = ({ query: { appSlug } }: PageContext) => ({ appSlug });
+
   componentDidMount() {
-    this.setState({
-      selectedVersionSortingOptionValue: 'latest-build'
-    });
-  }
+    const { appSlug, fetchAppVersionList } = this.props;
 
-  static async getInitialProps({ query: { appSlug }, store }: PageContext) {
-    await store.dispatch(fetchAppVersionList(appSlug as string) as any);
-
-    return { appSlug };
+    fetchAppVersionList(appSlug);
   }
 
   versionSortOptionWithValueSelected = (value: string) => {
@@ -60,13 +59,17 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
   };
 
   render() {
-    const { appVersionsByVersion, appVersionsByBuildNumber } = this.props;
+    const { isLoading, appVersionsByVersion, appVersionsByBuildNumber } = this.props;
     const { selectedVersionSortingOptionValue } = this.state;
 
     const groupedAppVersionList =
       selectedVersionSortingOptionValue && selectedVersionSortingOptionValue === 'latest-version'
         ? appVersionsByVersion
         : appVersionsByBuildNumber;
+
+    if (isLoading) {
+      return <Placeholder />;
+    }
 
     if (!groupedAppVersionList || groupedAppVersionList.length === 0) {
       return <EmptyPage />;
@@ -91,11 +94,19 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
 }
 
 const mapStateToProps = (rootState: RootState) => ({
+  isLoading: !rootState.appVersionList,
   appVersionsByVersion: getAppVersionsByVersion(rootState),
   appVersionsByBuildNumber: getAppVersionsByBuildNumber(rootState)
 });
 
-const Connected = connect(mapStateToProps)(AppPage as any);
+const mapDispatchToProps = {
+  fetchAppVersionList
+};
+
+const Connected = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AppPage as any);
 Connected.displayName = 'AppPage';
 
 export default Connected;

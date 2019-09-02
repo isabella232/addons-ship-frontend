@@ -1,11 +1,9 @@
 jest.mock('@/utils/media');
-jest.mock('@/ducks/appVersionList');
 
 import { shallow, mount } from 'enzyme';
 import toJSON, { shallowToJson } from 'enzyme-to-json';
 
 import { mockAppVersions, mockAppVersion } from '@/mocks';
-import { fetchAppVersionList } from '@/ducks/appVersionList';
 import { AppPage, AppPageProps } from './';
 import AppView from './view';
 import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
@@ -65,91 +63,85 @@ describe('AppPageView', () => {
 });
 
 describe('AppPage', () => {
+  const defaultProps = {
+    fetchAppVersionList: jest.fn() as any,
+    appSlug: 'app-slug-123',
+    isLoading: false,
+    appVersionsByVersion: null as any,
+    appVersionsByBuildNumber: null as any
+  };
+
   let appVersionsByVersion: AppPageProps['appVersionsByVersion'];
   let appVersionsByBuildNumber: AppPageProps['appVersionsByBuildNumber'];
 
   beforeAll(() => {
     appVersionsByVersion = getAppVersionsByVersion({
       appVersionList: mockAppVersions,
-      appVersion: null,
       testDevices: []
-    }) as AppPageProps['appVersionsByVersion'];
+    } as any) as AppPageProps['appVersionsByVersion'];
 
     appVersionsByBuildNumber = getAppVersionsByBuildNumber({
       appVersionList: mockAppVersions,
-      appVersion: null,
       testDevices: []
-    }) as AppPageProps['appVersionsByBuildNumber'];
+    } as any) as AppPageProps['appVersionsByBuildNumber'];
+
+    defaultProps.appVersionsByVersion = appVersionsByVersion;
+    defaultProps.appVersionsByBuildNumber = appVersionsByBuildNumber;
   });
 
   it('renders the list of app versions correctly', () => {
-    const tree = toJSON(
-      shallow(
-        <AppPage
-          appSlug="app-slug-123"
-          appVersionsByVersion={appVersionsByVersion}
-          appVersionsByBuildNumber={appVersionsByBuildNumber}
-        />
-      )
-    );
+    const tree = toJSON(shallow(<AppPage {...defaultProps} />));
     expect(tree).toMatchSnapshot();
   });
 
   it('renders empty page', () => {
     const tree = shallowToJson(
-      shallow(<AppPage appSlug="app-slug-123" appVersionsByVersion={[]} appVersionsByBuildNumber={[]} />)
+      shallow(<AppPage {...defaultProps} appVersionsByVersion={[]} appVersionsByBuildNumber={[]} />)
     );
     expect(tree).toMatchSnapshot();
   });
 
-  describe('dispatches the proper actions', () => {
-    const req = { path: 'some/path' };
+  it('renders the loading placeholder', () => {
+    const tree = shallowToJson(shallow(<AppPage {...defaultProps} isLoading />));
+    expect(tree).toMatchSnapshot();
+  });
 
+  it('sets state when versionSortOptionWithValueSelected was called', () => {
+    const wrapper = shallow(<AppPage {...defaultProps} />);
+
+    const sortingOption = 'whatever';
+    (wrapper.instance() as AppPage).versionSortOptionWithValueSelected(sortingOption);
+    expect(wrapper.state('selectedVersionSortingOptionValue')).toEqual(sortingOption);
+  });
+
+  describe('dispatches the proper actions', () => {
     it('dispatches fetchAppVersionList', async () => {
-      await AppPage.getInitialProps({ query: {}, req, store: { dispatch: jest.fn() } } as any);
+      const { fetchAppVersionList } = defaultProps;
+
+      shallow(<AppPage {...defaultProps} />);
 
       expect(fetchAppVersionList).toHaveBeenCalled();
     });
   });
 
   describe('when user selects sort by versions', () => {
-    let appPageComponent: any;
-
-    beforeEach(() => {
-      appPageComponent = shallow(
-        <AppPage
-          appSlug="app-slug-123"
-          appVersionsByVersion={appVersionsByVersion}
-          appVersionsByBuildNumber={appVersionsByBuildNumber}
-        />
-      );
-
-      appPageComponent.setState({ selectedVersionSortingOptionValue: 'latest-version' });
-    });
-
     it('renders the list of app version grouped by version', () => {
-      const tree = toJSON(appPageComponent);
+      const wrapper = shallow(<AppPage {...defaultProps} />);
+
+      wrapper.setState({ selectedVersionSortingOptionValue: 'latest-version' });
+
+      const tree = shallowToJson(wrapper);
       expect(tree).toMatchSnapshot();
     });
   });
 
   describe('when user selects sort by build numbers', () => {
-    let appPageComponent: any;
-
-    beforeEach(() => {
-      appPageComponent = shallow(
-        <AppPage
-          appSlug="app-slug-123"
-          appVersionsByVersion={appVersionsByVersion}
-          appVersionsByBuildNumber={appVersionsByBuildNumber}
-        />
-      );
-
-      appPageComponent.setState({ selectedVersionSortingOptionValue: 'latest-build' });
-    });
-
     it('renders the list of app version grouped by build number', () => {
-      const tree = toJSON(appPageComponent);
+      const wrapper = shallow(<AppPage {...defaultProps} />);
+
+      wrapper.setState({ selectedVersionSortingOptionValue: 'latest-build' });
+
+      const tree = shallowToJson(wrapper);
       expect(tree).toMatchSnapshot();
     });
   });
