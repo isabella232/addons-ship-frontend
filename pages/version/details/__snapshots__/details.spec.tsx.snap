@@ -1269,14 +1269,15 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                   >
                     <Flex
                       direction="horizontal"
+                      gap="x6"
                       margin="x4"
                     >
                       <Base
-                        className="Flex Flex--horizontal"
+                        className="Flex Flex--horizontal Flex--gapped Flex--gap-x6"
                         margin="x4"
                       >
                         <div
-                          className="Base Base--margin-x4 Flex Flex--horizontal"
+                          className="Base Base--margin-x4 Flex Flex--horizontal Flex--gapped Flex--gap-x6"
                           style={
                             Object {
                               "height": undefined,
@@ -1369,14 +1370,12 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
-                            paddingHorizontal="x6"
                           >
                             <Base
                               className="Flex Flex--align-vert-middle Flex--vertical"
-                              paddingHorizontal="x6"
                             >
                               <div
-                                className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -1389,14 +1388,14 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildren="start"
                                   direction="horizontal"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -5166,14 +5165,15 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                   >
                     <Flex
                       direction="horizontal"
+                      gap="x6"
                       margin="x4"
                     >
                       <Base
-                        className="Flex Flex--horizontal"
+                        className="Flex Flex--horizontal Flex--gapped Flex--gap-x6"
                         margin="x4"
                       >
                         <div
-                          className="Base Base--margin-x4 Flex Flex--horizontal"
+                          className="Base Base--margin-x4 Flex Flex--horizontal Flex--gapped Flex--gap-x6"
                           style={
                             Object {
                               "height": undefined,
@@ -5266,14 +5266,12 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
-                            paddingHorizontal="x6"
                           >
                             <Base
                               className="Flex Flex--align-vert-middle Flex--vertical"
-                              paddingHorizontal="x6"
                             >
                               <div
-                                className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -5286,14 +5284,14 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildren="start"
                                   direction="horizontal"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -9466,14 +9464,15 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                   >
                     <Flex
                       direction="horizontal"
+                      gap="x6"
                       margin="x4"
                     >
                       <Base
-                        className="Flex Flex--horizontal"
+                        className="Flex Flex--horizontal Flex--gapped Flex--gap-x6"
                         margin="x4"
                       >
                         <div
-                          className="Base Base--margin-x4 Flex Flex--horizontal"
+                          className="Base Base--margin-x4 Flex Flex--horizontal Flex--gapped Flex--gap-x6"
                           style={
                             Object {
                               "height": undefined,
@@ -9566,14 +9565,12 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
-                            paddingHorizontal="x6"
                           >
                             <Base
                               className="Flex Flex--align-vert-middle Flex--vertical"
-                              paddingHorizontal="x6"
                             >
                               <div
-                                className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -9586,14 +9583,14 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildren="start"
                                   direction="horizontal"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -13757,14 +13754,15 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                   >
                     <Flex
                       direction="horizontal"
+                      gap="x6"
                       margin="x4"
                     >
                       <Base
-                        className="Flex Flex--horizontal"
+                        className="Flex Flex--horizontal Flex--gapped Flex--gap-x6"
                         margin="x4"
                       >
                         <div
-                          className="Base Base--margin-x4 Flex Flex--horizontal"
+                          className="Base Base--margin-x4 Flex Flex--horizontal Flex--gapped Flex--gap-x6"
                           style={
                             Object {
                               "height": undefined,
@@ -13857,14 +13855,12 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
-                            paddingHorizontal="x6"
                           >
                             <Base
                               className="Flex Flex--align-vert-middle Flex--vertical"
-                              paddingHorizontal="x6"
                             >
                               <div
-                                className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -13877,14 +13873,14 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildren="start"
                                   direction="horizontal"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -17558,6 +17554,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
       >
         <Flex
           direction="horizontal"
+          gap="x6"
           margin="x4"
         >
           <_default
@@ -17569,10 +17566,9 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
           <Flex
             alignChildrenVertical="middle"
             direction="vertical"
-            paddingHorizontal="x6"
           >
             <Flex
-              alignChildren="middle"
+              alignChildren="start"
               direction="horizontal"
             >
               <Icon
@@ -17726,6 +17722,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
       >
         <Flex
           direction="horizontal"
+          gap="x6"
           margin="x4"
         >
           <_default
@@ -17737,10 +17734,9 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
           <Flex
             alignChildrenVertical="middle"
             direction="vertical"
-            paddingHorizontal="x6"
           >
             <Flex
-              alignChildren="middle"
+              alignChildren="start"
               direction="horizontal"
             >
               <Icon
@@ -18181,14 +18177,15 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                   >
                     <Flex
                       direction="horizontal"
+                      gap="x6"
                       margin="x4"
                     >
                       <Base
-                        className="Flex Flex--horizontal"
+                        className="Flex Flex--horizontal Flex--gapped Flex--gap-x6"
                         margin="x4"
                       >
                         <div
-                          className="Base Base--margin-x4 Flex Flex--horizontal"
+                          className="Base Base--margin-x4 Flex Flex--horizontal Flex--gapped Flex--gap-x6"
                           style={
                             Object {
                               "height": undefined,
@@ -18281,14 +18278,12 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
-                            paddingHorizontal="x6"
                           >
                             <Base
                               className="Flex Flex--align-vert-middle Flex--vertical"
-                              paddingHorizontal="x6"
                             >
                               <div
-                                className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -18301,14 +18296,14 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildren="start"
                                   direction="horizontal"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -22471,15 +22466,16 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                     onChange={[Function]}
                   >
                     <Flex
-                      direction="horizontal"
+                      direction="vertical"
+                      gap="x6"
                       margin="x4"
                     >
                       <Base
-                        className="Flex Flex--horizontal"
+                        className="Flex Flex--vertical Flex--gapped Flex--gap-x6"
                         margin="x4"
                       >
                         <div
-                          className="Base Base--margin-x4 Flex Flex--horizontal"
+                          className="Base Base--margin-x4 Flex Flex--vertical Flex--gapped Flex--gap-x6"
                           style={
                             Object {
                               "height": undefined,
@@ -22572,14 +22568,12 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
-                            paddingHorizontal="x6"
                           >
                             <Base
                               className="Flex Flex--align-vert-middle Flex--vertical"
-                              paddingHorizontal="x6"
                             >
                               <div
-                                className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -22592,14 +22586,14 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildren="start"
                                   direction="horizontal"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal"
+                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal"
                                       style={
                                         Object {
                                           "height": undefined,

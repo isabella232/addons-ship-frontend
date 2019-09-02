@@ -133,11 +133,11 @@ export default ({
       <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'between' : 'middle'} gap="x4" paddingVertical="x4">
         <Flex maxWidth={660}>
           <form onChange={onFormChange}>
-            <Flex direction="horizontal" margin="x4">
+            <Flex direction={isDesktop ? 'horizontal' : 'vertical'} margin="x4" gap="x6">
               <Squircle src={appVersion.iconUrl} borderRadius="x2" width="160px" margin="x0" />
 
-              <Flex direction="vertical" alignChildrenVertical="middle" paddingHorizontal="x6">
-                <Flex direction="horizontal" alignChildren="middle">
+              <Flex direction="vertical" alignChildrenVertical="middle">
+                <Flex direction="horizontal" alignChildren="start">
                   <Icon color="grape-4" name={iconName} size="2rem" />
                   <Text letterSpacing="x2" size="x6" weight="bold" color="grape-4" paddingHorizontal="x2">
                     {appVersion.appName}
