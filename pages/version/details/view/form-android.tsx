@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import formatDate from 'date-fns/format';
 import prettyBytes from 'pretty-bytes';
-import { Base, Flex, Text, Icon, InputLabel, Textarea, Divider, Notification } from '@bitrise/bitkit';
+import { Base, Flex, Text, Icon, InputLabel, Textarea, Divider, Notification, Link } from '@bitrise/bitkit';
 
 import { AppVersion, Screenshot } from '@/models';
 import Dropzone from '@/components/Dropzone';
@@ -66,7 +66,7 @@ export default ({
         <Notification type="inform" icon="Info">
           Screenshots must be in the JPG or PNG format, and in the RGB color space. You can add up to 8 screenshots for
           each supported device type. To learn more,{' '}
-          <a href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en">click here</a>.
+          <Link href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en" underline>click here</Link>.
         </Notification>
         <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
       </Flex>

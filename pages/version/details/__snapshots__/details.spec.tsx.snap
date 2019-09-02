@@ -2094,11 +2094,33 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                             >
                                               Screenshots must be in the JPG or PNG format, and in the RGB color space. You can add up to 8 screenshots for each supported device type. To learn more,
                                                
-                                              <a
+                                              <Link
                                                 href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en"
+                                                underline={true}
                                               >
-                                                click here
-                                              </a>
+                                                <Base
+                                                  Component="a"
+                                                  className="Link Link--color-undefined Link--clickable Link--underline"
+                                                  href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en"
+                                                >
+                                                  <a
+                                                    className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                                    href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en"
+                                                    style={
+                                                      Object {
+                                                        "height": undefined,
+                                                        "maxHeight": undefined,
+                                                        "maxWidth": undefined,
+                                                        "minHeight": undefined,
+                                                        "minWidth": undefined,
+                                                        "width": undefined,
+                                                      }
+                                                    }
+                                                  >
+                                                    click here
+                                                  </a>
+                                                </Base>
+                                              </Link>
                                               .
                                             </div>
                                           </Base>
@@ -5836,11 +5858,33 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                       >
                                         Screenshots must be in the JPG or PNG format, and in the RGB color space. To learn more,
                                          
-                                        <a
+                                        <Link
                                           href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          underline={true}
                                         >
-                                          click here
-                                        </a>
+                                          <Base
+                                            Component="a"
+                                            className="Link Link--color-undefined Link--clickable Link--underline"
+                                            href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          >
+                                            <a
+                                              className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                              href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                              style={
+                                                Object {
+                                                  "height": undefined,
+                                                  "maxHeight": undefined,
+                                                  "maxWidth": undefined,
+                                                  "minHeight": undefined,
+                                                  "minWidth": undefined,
+                                                  "width": undefined,
+                                                }
+                                              }
+                                            >
+                                              click here
+                                            </a>
+                                          </Base>
+                                        </Link>
                                         .
                                       </div>
                                     </Base>
@@ -9371,12 +9415,35 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                   }
                                 }
                               >
-                                You need to setup publishing at the 
-                                <a
+                                You need to setup publishing at the
+                                 
+                                <Link
                                   href="/path"
+                                  underline={true}
                                 >
-                                  Settings page.
-                                </a>
+                                  <Base
+                                    Component="a"
+                                    className="Link Link--color-undefined Link--clickable Link--underline"
+                                    href="/path"
+                                  >
+                                    <a
+                                      className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                      href="/path"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      Settings page.
+                                    </a>
+                                  </Base>
+                                </Link>
                               </div>
                             </Base>
                           </Flex>
@@ -10067,11 +10134,33 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                       >
                                         Screenshots must be in the JPG or PNG format, and in the RGB color space. To learn more,
                                          
-                                        <a
+                                        <Link
                                           href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          underline={true}
                                         >
-                                          click here
-                                        </a>
+                                          <Base
+                                            Component="a"
+                                            className="Link Link--color-undefined Link--clickable Link--underline"
+                                            href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          >
+                                            <a
+                                              className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                              href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                              style={
+                                                Object {
+                                                  "height": undefined,
+                                                  "maxHeight": undefined,
+                                                  "maxWidth": undefined,
+                                                  "minHeight": undefined,
+                                                  "minWidth": undefined,
+                                                  "width": undefined,
+                                                }
+                                              }
+                                            >
+                                              click here
+                                            </a>
+                                          </Base>
+                                        </Link>
                                         .
                                       </div>
                                     </Base>
@@ -14289,11 +14378,33 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                       >
                                         Screenshots must be in the JPG or PNG format, and in the RGB color space. To learn more,
                                          
-                                        <a
+                                        <Link
                                           href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          underline={true}
                                         >
-                                          click here
-                                        </a>
+                                          <Base
+                                            Component="a"
+                                            className="Link Link--color-undefined Link--clickable Link--underline"
+                                            href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          >
+                                            <a
+                                              className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                              href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                              style={
+                                                Object {
+                                                  "height": undefined,
+                                                  "maxHeight": undefined,
+                                                  "maxWidth": undefined,
+                                                  "minHeight": undefined,
+                                                  "minWidth": undefined,
+                                                  "width": undefined,
+                                                }
+                                              }
+                                            >
+                                              click here
+                                            </a>
+                                          </Base>
+                                        </Link>
                                         .
                                       </div>
                                     </Base>
@@ -18644,11 +18755,33 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                       >
                                         Screenshots must be in the JPG or PNG format, and in the RGB color space. To learn more,
                                          
-                                        <a
+                                        <Link
                                           href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          underline={true}
                                         >
-                                          click here
-                                        </a>
+                                          <Base
+                                            Component="a"
+                                            className="Link Link--color-undefined Link--clickable Link--underline"
+                                            href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          >
+                                            <a
+                                              className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                              href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                              style={
+                                                Object {
+                                                  "height": undefined,
+                                                  "maxHeight": undefined,
+                                                  "maxWidth": undefined,
+                                                  "minHeight": undefined,
+                                                  "minWidth": undefined,
+                                                  "width": undefined,
+                                                }
+                                              }
+                                            >
+                                              click here
+                                            </a>
+                                          </Base>
+                                        </Link>
                                         .
                                       </div>
                                     </Base>
@@ -23102,11 +23235,33 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                       >
                                         Screenshots must be in the JPG or PNG format, and in the RGB color space. To learn more,
                                          
-                                        <a
+                                        <Link
                                           href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          underline={true}
                                         >
-                                          click here
-                                        </a>
+                                          <Base
+                                            Component="a"
+                                            className="Link Link--color-undefined Link--clickable Link--underline"
+                                            href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          >
+                                            <a
+                                              className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                              href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                              style={
+                                                Object {
+                                                  "height": undefined,
+                                                  "maxHeight": undefined,
+                                                  "maxWidth": undefined,
+                                                  "minHeight": undefined,
+                                                  "minWidth": undefined,
+                                                  "width": undefined,
+                                                }
+                                              }
+                                            >
+                                              click here
+                                            </a>
+                                          </Base>
+                                        </Link>
                                         .
                                       </div>
                                     </Base>

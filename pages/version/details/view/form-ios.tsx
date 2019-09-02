@@ -11,7 +11,8 @@ import {
   InputContainer,
   InputContent,
   Input,
-  Notification
+  Notification,
+  Link
 } from '@bitrise/bitkit';
 
 import { AppVersion, Screenshot } from '@/models';
@@ -60,7 +61,7 @@ export default ({
 
       <Notification type="inform" icon="Info">
         Screenshots must be in the JPG or PNG format, and in the RGB color space. To learn more,{' '}
-        <a href="https://help.apple.com/app-store-connect/#/devd274dd925">click here</a>.
+        <Link href="https://help.apple.com/app-store-connect/#/devd274dd925" underline>click here</Link>.
       </Notification>
 
       {hasMounted && <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />}
