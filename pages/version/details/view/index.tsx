@@ -137,9 +137,9 @@ export default ({
               <Squircle src={appVersion.iconUrl} borderRadius="x2" width="160px" margin="x0" />
 
               <Flex direction="vertical" alignChildrenVertical="middle">
-                <Flex direction="horizontal" alignChildren="start">
-                  <Icon color="grape-4" name={iconName} size="2rem" />
-                  <Text letterSpacing="x2" size="x6" weight="bold" color="grape-4" paddingHorizontal="x2">
+                <Flex direction="horizontal" alignChildren="start" gap="x2">
+                  <Icon color="grape-4" name={iconName} size="2rem"/>
+                  <Text letterSpacing="x2" size="x6" weight="bold" color="grape-4">
                     {appVersion.appName}
                   </Text>
                 </Flex>

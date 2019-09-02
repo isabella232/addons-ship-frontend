@@ -10,7 +10,8 @@ import {
   Tooltip,
   InputContainer,
   InputContent,
-  Input
+  Input,
+  Notification
 } from '@bitrise/bitkit';
 
 import { AppVersion, Screenshot } from '@/models';
@@ -58,8 +59,12 @@ export default ({
         <Text color="grape-4" size="x3" weight="bold">
           Screenshots
         </Text>
-        <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
       </Flex>
+
+      <Notification type="inform" icon="Info">
+        Screenshots must be in the JPG or PNG format, and in the RGB color space. To learn more,{' '}
+        <a href="https://help.apple.com/app-store-connect/#/devd274dd925">click here</a>.
+      </Notification>
 
       {hasMounted && <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />}
       <Dropzone
