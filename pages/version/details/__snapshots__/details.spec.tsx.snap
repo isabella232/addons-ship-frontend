@@ -1222,15 +1222,17 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
         </Base>
       </Flex>
       <Flex
-        alignChildrenHorizontal="start"
+        alignChildrenHorizontal="between"
         direction="horizontal"
         gap="x4"
+        paddingVertical="x4"
       >
         <Base
-          className="Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
+          className="Flex Flex--align-horz-between Flex--horizontal Flex--gapped Flex--gap-x4"
+          paddingVertical="x4"
         >
           <div
-            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
+            className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -1243,11 +1245,11 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
             }
           >
             <Flex
-              maxWidth={688}
+              maxWidth={660}
             >
               <Base
                 className="Flex"
-                maxWidth={688}
+                maxWidth={660}
               >
                 <div
                   className="Base Base--max-width Flex"
@@ -1255,7 +1257,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                     Object {
                       "height": undefined,
                       "maxHeight": undefined,
-                      "maxWidth": 688,
+                      "maxWidth": 660,
                       "minHeight": undefined,
                       "minWidth": undefined,
                       "width": undefined,
@@ -5117,15 +5119,17 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
         </Base>
       </Flex>
       <Flex
-        alignChildrenHorizontal="start"
+        alignChildrenHorizontal="between"
         direction="horizontal"
         gap="x4"
+        paddingVertical="x4"
       >
         <Base
-          className="Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
+          className="Flex Flex--align-horz-between Flex--horizontal Flex--gapped Flex--gap-x4"
+          paddingVertical="x4"
         >
           <div
-            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
+            className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -5138,11 +5142,11 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
             }
           >
             <Flex
-              maxWidth={688}
+              maxWidth={660}
             >
               <Base
                 className="Flex"
-                maxWidth={688}
+                maxWidth={660}
               >
                 <div
                   className="Base Base--max-width Flex"
@@ -5150,7 +5154,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                     Object {
                       "height": undefined,
                       "maxHeight": undefined,
-                      "maxWidth": 688,
+                      "maxWidth": 660,
                       "minHeight": undefined,
                       "minWidth": undefined,
                       "width": undefined,
@@ -9415,15 +9419,17 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
         </Base>
       </Flex>
       <Flex
-        alignChildrenHorizontal="start"
+        alignChildrenHorizontal="between"
         direction="horizontal"
         gap="x4"
+        paddingVertical="x4"
       >
         <Base
-          className="Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
+          className="Flex Flex--align-horz-between Flex--horizontal Flex--gapped Flex--gap-x4"
+          paddingVertical="x4"
         >
           <div
-            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
+            className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -9436,11 +9442,11 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
             }
           >
             <Flex
-              maxWidth={688}
+              maxWidth={660}
             >
               <Base
                 className="Flex"
-                maxWidth={688}
+                maxWidth={660}
               >
                 <div
                   className="Base Base--max-width Flex"
@@ -9448,7 +9454,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                     Object {
                       "height": undefined,
                       "maxHeight": undefined,
-                      "maxWidth": 688,
+                      "maxWidth": 660,
                       "minHeight": undefined,
                       "minWidth": undefined,
                       "width": undefined,
@@ -13704,15 +13710,17 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
         </Base>
       </Flex>
       <Flex
-        alignChildrenHorizontal="start"
+        alignChildrenHorizontal="between"
         direction="horizontal"
         gap="x4"
+        paddingVertical="x4"
       >
         <Base
-          className="Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
+          className="Flex Flex--align-horz-between Flex--horizontal Flex--gapped Flex--gap-x4"
+          paddingVertical="x4"
         >
           <div
-            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
+            className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -13725,11 +13733,11 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
             }
           >
             <Flex
-              maxWidth={688}
+              maxWidth={660}
             >
               <Base
                 className="Flex"
-                maxWidth={688}
+                maxWidth={660}
               >
                 <div
                   className="Base Base--max-width Flex"
@@ -13737,7 +13745,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                     Object {
                       "height": undefined,
                       "maxHeight": undefined,
-                      "maxWidth": 688,
+                      "maxWidth": 660,
                       "minHeight": undefined,
                       "minWidth": undefined,
                       "width": undefined,
@@ -17537,12 +17545,13 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
     </Flex>
   </Flex>
   <Flex
-    alignChildrenHorizontal="start"
+    alignChildrenHorizontal="between"
     direction="horizontal"
     gap="x4"
+    paddingVertical="x4"
   >
     <Flex
-      maxWidth={688}
+      maxWidth={660}
     >
       <form
         onChange={[Function]}
@@ -17704,12 +17713,13 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
     </Flex>
   </Flex>
   <Flex
-    alignChildrenHorizontal="start"
+    alignChildrenHorizontal="between"
     direction="horizontal"
     gap="x4"
+    paddingVertical="x4"
   >
     <Flex
-      maxWidth={688}
+      maxWidth={660}
     >
       <form
         onChange={[Function]}
@@ -18124,15 +18134,17 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
         </Base>
       </Flex>
       <Flex
-        alignChildrenHorizontal="start"
+        alignChildrenHorizontal="between"
         direction="horizontal"
         gap="x4"
+        paddingVertical="x4"
       >
         <Base
-          className="Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
+          className="Flex Flex--align-horz-between Flex--horizontal Flex--gapped Flex--gap-x4"
+          paddingVertical="x4"
         >
           <div
-            className="Base Flex Flex--align-horz-start Flex--horizontal Flex--gapped Flex--gap-x4"
+            className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -18145,11 +18157,11 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
             }
           >
             <Flex
-              maxWidth={688}
+              maxWidth={660}
             >
               <Base
                 className="Flex"
-                maxWidth={688}
+                maxWidth={660}
               >
                 <div
                   className="Base Base--max-width Flex"
@@ -18157,7 +18169,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                     Object {
                       "height": undefined,
                       "maxHeight": undefined,
-                      "maxWidth": 688,
+                      "maxWidth": 660,
                       "minHeight": undefined,
                       "minWidth": undefined,
                       "width": undefined,
@@ -22416,12 +22428,14 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
         alignChildrenHorizontal="middle"
         direction="horizontal"
         gap="x4"
+        paddingVertical="x4"
       >
         <Base
           className="Flex Flex--align-horz-middle Flex--horizontal Flex--gapped Flex--gap-x4"
+          paddingVertical="x4"
         >
           <div
-            className="Base Flex Flex--align-horz-middle Flex--horizontal Flex--gapped Flex--gap-x4"
+            className="Base Base--padding-vertical-x4 Flex Flex--align-horz-middle Flex--horizontal Flex--gapped Flex--gap-x4"
             style={
               Object {
                 "height": undefined,
@@ -22434,11 +22448,11 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
             }
           >
             <Flex
-              maxWidth={688}
+              maxWidth={660}
             >
               <Base
                 className="Flex"
-                maxWidth={688}
+                maxWidth={660}
               >
                 <div
                   className="Base Base--max-width Flex"
@@ -22446,7 +22460,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                     Object {
                       "height": undefined,
                       "maxHeight": undefined,
-                      "maxWidth": 688,
+                      "maxWidth": 660,
                       "minHeight": undefined,
                       "minWidth": undefined,
                       "width": undefined,

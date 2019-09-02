@@ -130,8 +130,8 @@ export default ({
           )}
         </Flex>
       </Flex>
-      <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'} gap="x4">
-        <Flex maxWidth={688}>
+      <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'between' : 'middle'} gap="x4" paddingVertical="x4">
+        <Flex maxWidth={660}>
           <form onChange={onFormChange}>
             <Flex direction="horizontal" margin="x4">
               <Squircle src={appVersion.iconUrl} borderRadius="x2" width="160px" margin="x0" />
