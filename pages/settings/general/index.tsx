@@ -22,6 +22,7 @@ type Props = {
   updateSettings: typeof updateSettings;
   fetchSettings: typeof fetchSettings;
   hasLoaded: boolean;
+  isSaving?: boolean;
 };
 
 export type State = {
@@ -161,7 +162,8 @@ export class General extends Component<Props> {
     const {
       appSlug,
       settings: { provProfiles, certificates, keystoreFiles, serviceAccountJsonFiles },
-      hasLoaded
+      hasLoaded,
+      isSaving
     } = this.props;
 
     const viewProps = {
@@ -177,15 +179,17 @@ export class General extends Component<Props> {
       onSelectedFileChange: this.onSelectedFileChange,
       onWorkflowChange: this.onWorkflowChange,
       onCancel: this.onCancel,
-      onSave: this.onSave
+      onSave: this.onSave,
+      isSaving
     };
 
     return <View {...viewProps} />;
   }
 }
 
-const mapStateToProps = ({ settings: { settings } }: RootState) => ({
+const mapStateToProps = ({ settings: { settings, isSavingSettings } }: RootState) => ({
   settings,
+  isSaving: isSavingSettings,
   hasLoaded: !!settings.iosSettings || !!settings.androidSettings
 });
 const mapDispatchToProps = {

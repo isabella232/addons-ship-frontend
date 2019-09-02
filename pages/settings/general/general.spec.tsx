@@ -2,7 +2,7 @@ jest.mock('@/utils/media');
 jest.mock('@/utils/device');
 
 import { shallow, mount } from 'enzyme';
-import toJSON from 'enzyme-to-json';
+import toJSON, { shallowToJson } from 'enzyme-to-json';
 
 import { mockSettings, mockAppVersion } from '@/mocks';
 import { mediaQuery } from '@/utils/media';
@@ -190,6 +190,11 @@ describe('GeneralView', () => {
       .simulate('change', { target: { checked: true } });
 
     expect(mockOnSettingsPropertyChange).toHaveBeenCalledWith('iosSettings', 'includeBitCode', true);
+  });
+
+  test('when the settings are being saved', () => {
+    const tree = shallowToJson(shallow(<GeneralView {...defaultProps} isSaving />));
+    expect(tree).toMatchSnapshot();
   });
 });
 
