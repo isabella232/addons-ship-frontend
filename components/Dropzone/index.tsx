@@ -35,7 +35,7 @@ export default ({
       <div className={css.removeIcon} onClick={() => removeFile(screenshot)}>
         <Icon name="CloseSmall" color="white" />
       </div>
-      <Base Component="img" src={screenshot.url()} className={css.thumbnail} />
+      <Base Component="img" src={screenshot.url()} className={css.thumbnail}/>
     </Base>
   ));
 
@@ -51,38 +51,34 @@ export default ({
     <Card>
       <Base backgroundColor="gray-1" className={css.dropzoneCardInner} padding="x3">
         <input {...getInputProps()} />
-        <Flex direction="horizontal" height={384} className={css.scrollableWrapper}>
-          <Flex direction="horizontal" height={400} className={css.scrollable}>
-            <Flex direction="horizontal" height={384} className={css.scrollableInner}>
-              {(!hasFiles || isMultiple) && (
-                <div
-                  className={cx(css.dropzone, {
-                    [css.dropzoneActive]: isDragActive,
-                    [css.dropzoneHasFiles]: hasFiles
-                  })}
-                  {...getRootProps()}
-                >
-                  {hasFiles ? (
-                    <Icon name="PlusAdd" color="grape-3" />
-                  ) : (
-                    <Flex direction="vertical" alignChildrenHorizontal="middle">
-                      <Text size="x5" color="gray-7" align="middle" weight="medium">
-                        {instructionsBeginning} <br />
-                        or
-                      </Text>
-                      <Flex direction="horizontal" alignChildrenVertical="middle">
-                        <Icon name="PlusAdd" color="grape-3" paddingHorizontal="x1" />
-                        <Text size="x3" color="grape-3" align="middle" weight="medium">
-                          {instructionsAction}
-                        </Text>
-                      </Flex>
-                    </Flex>
-                  )}
-                </div>
+        <Flex direction="horizontal" className={css.scrollable}>
+          {(!hasFiles || isMultiple) && (
+            <div
+              className={cx(css.dropzone, {
+                [css.dropzoneActive]: isDragActive,
+                [css.dropzoneHasFiles]: hasFiles
+              })}
+              {...getRootProps()}
+            >
+              {hasFiles ? (
+                <Icon name="PlusAdd" color="grape-3" />
+              ) : (
+                <Flex direction="vertical" alignChildrenHorizontal="middle">
+                  <Text size="x5" color="gray-7" align="middle" weight="medium">
+                    {instructionsBeginning} <br />
+                    or
+                  </Text>
+                  <Flex direction="horizontal" alignChildrenVertical="middle">
+                    <Icon name="PlusAdd" color="grape-3" paddingHorizontal="x1" />
+                    <Text size="x3" color="grape-3" align="middle" weight="medium">
+                      {instructionsAction}
+                    </Text>
+                  </Flex>
+                </Flex>
               )}
-              {thumbs}
-            </Flex>
-          </Flex>
+            </div>
+          )}
+          {thumbs}
         </Flex>
       </Base>
     </Card>
