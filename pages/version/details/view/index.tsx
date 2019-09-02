@@ -205,6 +205,7 @@ export default ({
             onSave={onSave}
             onPublish={onPublish}
             buildSlug={appVersion.buildSlug}
+            hasMounted
           />
         )}
       </Flex>

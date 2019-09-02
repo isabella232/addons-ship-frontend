@@ -4265,6 +4265,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
             </Flex>
             <_default
               buildSlug="13245ads"
+              hasMounted={true}
               publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
               shouldEnablePublish={true}
             >
@@ -4572,85 +4573,125 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                               }
                             }
                           >
-                            <ClipboardButton
-                              className="clipboard-button"
-                              data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                              onClick={[Function]}
+                            <Tooltip
+                              title="✓ Copied"
+                              visible={false}
                             >
-                              <button
-                                className="clipboard-button"
-                                data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                onClick={[Function]}
-                                style={Object {}}
-                                title=""
-                                type="button"
-                              >
-                                <Base
-                                  borderRadius="x1"
-                                  className="icon-container"
-                                  padding="x1"
-                                >
-                                  <div
-                                    className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
+                              <PlacementManager>
+                                <Manager>
+                                  <Placement
+                                    backgroundColor="black"
+                                    borderRadius="x1"
+                                    color="gray-1"
+                                    placement="top"
+                                    visible={false}
                                   >
-                                    <Icon
-                                      name="Duplicate"
-                                      size="1.5rem"
+                                    <PlacementPopper
+                                      backgroundColor="black"
+                                      borderRadius="x1"
+                                      closeElement={null}
+                                      color="gray-1"
+                                      flip={true}
+                                      isInsideModal={false}
+                                      placement="top"
+                                      visible={false}
+                                    />
+                                  </Placement>
+                                  <PlacementReference>
+                                    <Reference
+                                      innerRef={[Function]}
                                     >
-                                      <Base
-                                        Component="svg"
-                                        className="Icon"
-                                        height="1.5rem"
-                                        viewBox="0 0 24 24"
-                                        width="1.5rem"
+                                      <InnerReference
+                                        innerRef={[Function]}
+                                        setReferenceNode={[Function]}
                                       >
-                                        <svg
-                                          className="Base Icon"
-                                          style={
-                                            Object {
-                                              "height": "1.5rem",
-                                              "maxHeight": undefined,
-                                              "maxWidth": undefined,
-                                              "minHeight": undefined,
-                                              "minWidth": undefined,
-                                              "width": "1.5rem",
-                                            }
-                                          }
-                                          viewBox="0 0 24 24"
+                                        <ClipboardButton
+                                          className="clipboard-button"
+                                          data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                          onClick={[Function]}
+                                          onSuccess={[Function]}
                                         >
-                                          <Component
-                                            height="100%"
-                                            width="100%"
+                                          <button
+                                            className="clipboard-button"
+                                            data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                            onClick={[Function]}
+                                            style={Object {}}
+                                            title=""
+                                            type="button"
                                           >
-                                            <svg
-                                              height="100%"
-                                              viewBox="0 0 24 24"
-                                              width="100%"
+                                            <Base
+                                              borderRadius="x1"
+                                              className="icon-container"
+                                              innerRef={[Function]}
+                                              padding="x1"
                                             >
-                                              <path
-                                                d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
-                                                fill="currentColor"
-                                                fillRule="evenodd"
-                                              />
-                                            </svg>
-                                          </Component>
-                                        </svg>
-                                      </Base>
-                                    </Icon>
-                                  </div>
-                                </Base>
-                              </button>
-                            </ClipboardButton>
+                                              <div
+                                                className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
+                                                style={
+                                                  Object {
+                                                    "height": undefined,
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": undefined,
+                                                  }
+                                                }
+                                              >
+                                                <Icon
+                                                  name="Duplicate"
+                                                  size="1.5rem"
+                                                >
+                                                  <Base
+                                                    Component="svg"
+                                                    className="Icon"
+                                                    height="1.5rem"
+                                                    viewBox="0 0 24 24"
+                                                    width="1.5rem"
+                                                  >
+                                                    <svg
+                                                      className="Base Icon"
+                                                      style={
+                                                        Object {
+                                                          "height": "1.5rem",
+                                                          "maxHeight": undefined,
+                                                          "maxWidth": undefined,
+                                                          "minHeight": undefined,
+                                                          "minWidth": undefined,
+                                                          "width": "1.5rem",
+                                                        }
+                                                      }
+                                                      viewBox="0 0 24 24"
+                                                    >
+                                                      <Component
+                                                        height="100%"
+                                                        width="100%"
+                                                      >
+                                                        <svg
+                                                          height="100%"
+                                                          viewBox="0 0 24 24"
+                                                          width="100%"
+                                                        >
+                                                          <path
+                                                            d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
+                                                            fill="currentColor"
+                                                            fillRule="evenodd"
+                                                          />
+                                                        </svg>
+                                                      </Component>
+                                                    </svg>
+                                                  </Base>
+                                                </Icon>
+                                              </div>
+                                            </Base>
+                                          </button>
+                                        </ClipboardButton>
+                                      </InnerReference>
+                                    </Reference>
+                                  </PlacementReference>
+                                </Manager>
+                              </PlacementManager>
+                            </Tooltip>
                           </div>
                         </Base>
                       </div>
@@ -8509,6 +8550,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
             </Flex>
             <_default
               buildSlug="13245ads"
+              hasMounted={true}
               publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
               shouldEnablePublish={true}
             >
@@ -8816,85 +8858,125 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                               }
                             }
                           >
-                            <ClipboardButton
-                              className="clipboard-button"
-                              data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                              onClick={[Function]}
+                            <Tooltip
+                              title="✓ Copied"
+                              visible={false}
                             >
-                              <button
-                                className="clipboard-button"
-                                data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                onClick={[Function]}
-                                style={Object {}}
-                                title=""
-                                type="button"
-                              >
-                                <Base
-                                  borderRadius="x1"
-                                  className="icon-container"
-                                  padding="x1"
-                                >
-                                  <div
-                                    className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
+                              <PlacementManager>
+                                <Manager>
+                                  <Placement
+                                    backgroundColor="black"
+                                    borderRadius="x1"
+                                    color="gray-1"
+                                    placement="top"
+                                    visible={false}
                                   >
-                                    <Icon
-                                      name="Duplicate"
-                                      size="1.5rem"
+                                    <PlacementPopper
+                                      backgroundColor="black"
+                                      borderRadius="x1"
+                                      closeElement={null}
+                                      color="gray-1"
+                                      flip={true}
+                                      isInsideModal={false}
+                                      placement="top"
+                                      visible={false}
+                                    />
+                                  </Placement>
+                                  <PlacementReference>
+                                    <Reference
+                                      innerRef={[Function]}
                                     >
-                                      <Base
-                                        Component="svg"
-                                        className="Icon"
-                                        height="1.5rem"
-                                        viewBox="0 0 24 24"
-                                        width="1.5rem"
+                                      <InnerReference
+                                        innerRef={[Function]}
+                                        setReferenceNode={[Function]}
                                       >
-                                        <svg
-                                          className="Base Icon"
-                                          style={
-                                            Object {
-                                              "height": "1.5rem",
-                                              "maxHeight": undefined,
-                                              "maxWidth": undefined,
-                                              "minHeight": undefined,
-                                              "minWidth": undefined,
-                                              "width": "1.5rem",
-                                            }
-                                          }
-                                          viewBox="0 0 24 24"
+                                        <ClipboardButton
+                                          className="clipboard-button"
+                                          data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                          onClick={[Function]}
+                                          onSuccess={[Function]}
                                         >
-                                          <Component
-                                            height="100%"
-                                            width="100%"
+                                          <button
+                                            className="clipboard-button"
+                                            data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                            onClick={[Function]}
+                                            style={Object {}}
+                                            title=""
+                                            type="button"
                                           >
-                                            <svg
-                                              height="100%"
-                                              viewBox="0 0 24 24"
-                                              width="100%"
+                                            <Base
+                                              borderRadius="x1"
+                                              className="icon-container"
+                                              innerRef={[Function]}
+                                              padding="x1"
                                             >
-                                              <path
-                                                d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
-                                                fill="currentColor"
-                                                fillRule="evenodd"
-                                              />
-                                            </svg>
-                                          </Component>
-                                        </svg>
-                                      </Base>
-                                    </Icon>
-                                  </div>
-                                </Base>
-                              </button>
-                            </ClipboardButton>
+                                              <div
+                                                className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
+                                                style={
+                                                  Object {
+                                                    "height": undefined,
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": undefined,
+                                                  }
+                                                }
+                                              >
+                                                <Icon
+                                                  name="Duplicate"
+                                                  size="1.5rem"
+                                                >
+                                                  <Base
+                                                    Component="svg"
+                                                    className="Icon"
+                                                    height="1.5rem"
+                                                    viewBox="0 0 24 24"
+                                                    width="1.5rem"
+                                                  >
+                                                    <svg
+                                                      className="Base Icon"
+                                                      style={
+                                                        Object {
+                                                          "height": "1.5rem",
+                                                          "maxHeight": undefined,
+                                                          "maxWidth": undefined,
+                                                          "minHeight": undefined,
+                                                          "minWidth": undefined,
+                                                          "width": "1.5rem",
+                                                        }
+                                                      }
+                                                      viewBox="0 0 24 24"
+                                                    >
+                                                      <Component
+                                                        height="100%"
+                                                        width="100%"
+                                                      >
+                                                        <svg
+                                                          height="100%"
+                                                          viewBox="0 0 24 24"
+                                                          width="100%"
+                                                        >
+                                                          <path
+                                                            d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
+                                                            fill="currentColor"
+                                                            fillRule="evenodd"
+                                                          />
+                                                        </svg>
+                                                      </Component>
+                                                    </svg>
+                                                  </Base>
+                                                </Icon>
+                                              </div>
+                                            </Base>
+                                          </button>
+                                        </ClipboardButton>
+                                      </InnerReference>
+                                    </Reference>
+                                  </PlacementReference>
+                                </Manager>
+                              </PlacementManager>
+                            </Tooltip>
                           </div>
                         </Base>
                       </div>
@@ -12785,6 +12867,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
             </Flex>
             <_default
               buildSlug="13245ads"
+              hasMounted={true}
               publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
               shouldEnablePublish={false}
             >
@@ -13092,85 +13175,125 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                               }
                             }
                           >
-                            <ClipboardButton
-                              className="clipboard-button"
-                              data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                              onClick={[Function]}
+                            <Tooltip
+                              title="✓ Copied"
+                              visible={false}
                             >
-                              <button
-                                className="clipboard-button"
-                                data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                onClick={[Function]}
-                                style={Object {}}
-                                title=""
-                                type="button"
-                              >
-                                <Base
-                                  borderRadius="x1"
-                                  className="icon-container"
-                                  padding="x1"
-                                >
-                                  <div
-                                    className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
+                              <PlacementManager>
+                                <Manager>
+                                  <Placement
+                                    backgroundColor="black"
+                                    borderRadius="x1"
+                                    color="gray-1"
+                                    placement="top"
+                                    visible={false}
                                   >
-                                    <Icon
-                                      name="Duplicate"
-                                      size="1.5rem"
+                                    <PlacementPopper
+                                      backgroundColor="black"
+                                      borderRadius="x1"
+                                      closeElement={null}
+                                      color="gray-1"
+                                      flip={true}
+                                      isInsideModal={false}
+                                      placement="top"
+                                      visible={false}
+                                    />
+                                  </Placement>
+                                  <PlacementReference>
+                                    <Reference
+                                      innerRef={[Function]}
                                     >
-                                      <Base
-                                        Component="svg"
-                                        className="Icon"
-                                        height="1.5rem"
-                                        viewBox="0 0 24 24"
-                                        width="1.5rem"
+                                      <InnerReference
+                                        innerRef={[Function]}
+                                        setReferenceNode={[Function]}
                                       >
-                                        <svg
-                                          className="Base Icon"
-                                          style={
-                                            Object {
-                                              "height": "1.5rem",
-                                              "maxHeight": undefined,
-                                              "maxWidth": undefined,
-                                              "minHeight": undefined,
-                                              "minWidth": undefined,
-                                              "width": "1.5rem",
-                                            }
-                                          }
-                                          viewBox="0 0 24 24"
+                                        <ClipboardButton
+                                          className="clipboard-button"
+                                          data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                          onClick={[Function]}
+                                          onSuccess={[Function]}
                                         >
-                                          <Component
-                                            height="100%"
-                                            width="100%"
+                                          <button
+                                            className="clipboard-button"
+                                            data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                            onClick={[Function]}
+                                            style={Object {}}
+                                            title=""
+                                            type="button"
                                           >
-                                            <svg
-                                              height="100%"
-                                              viewBox="0 0 24 24"
-                                              width="100%"
+                                            <Base
+                                              borderRadius="x1"
+                                              className="icon-container"
+                                              innerRef={[Function]}
+                                              padding="x1"
                                             >
-                                              <path
-                                                d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
-                                                fill="currentColor"
-                                                fillRule="evenodd"
-                                              />
-                                            </svg>
-                                          </Component>
-                                        </svg>
-                                      </Base>
-                                    </Icon>
-                                  </div>
-                                </Base>
-                              </button>
-                            </ClipboardButton>
+                                              <div
+                                                className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
+                                                style={
+                                                  Object {
+                                                    "height": undefined,
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": undefined,
+                                                  }
+                                                }
+                                              >
+                                                <Icon
+                                                  name="Duplicate"
+                                                  size="1.5rem"
+                                                >
+                                                  <Base
+                                                    Component="svg"
+                                                    className="Icon"
+                                                    height="1.5rem"
+                                                    viewBox="0 0 24 24"
+                                                    width="1.5rem"
+                                                  >
+                                                    <svg
+                                                      className="Base Icon"
+                                                      style={
+                                                        Object {
+                                                          "height": "1.5rem",
+                                                          "maxHeight": undefined,
+                                                          "maxWidth": undefined,
+                                                          "minHeight": undefined,
+                                                          "minWidth": undefined,
+                                                          "width": "1.5rem",
+                                                        }
+                                                      }
+                                                      viewBox="0 0 24 24"
+                                                    >
+                                                      <Component
+                                                        height="100%"
+                                                        width="100%"
+                                                      >
+                                                        <svg
+                                                          height="100%"
+                                                          viewBox="0 0 24 24"
+                                                          width="100%"
+                                                        >
+                                                          <path
+                                                            d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
+                                                            fill="currentColor"
+                                                            fillRule="evenodd"
+                                                          />
+                                                        </svg>
+                                                      </Component>
+                                                    </svg>
+                                                  </Base>
+                                                </Icon>
+                                              </div>
+                                            </Base>
+                                          </button>
+                                        </ClipboardButton>
+                                      </InnerReference>
+                                    </Reference>
+                                  </PlacementReference>
+                                </Manager>
+                              </PlacementManager>
+                            </Tooltip>
                           </div>
                         </Base>
                       </div>
@@ -17029,6 +17152,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
             </Flex>
             <_default
               buildSlug="13245ads"
+              hasMounted={true}
               shouldEnablePublish={true}
             >
               <Base
@@ -17630,6 +17754,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
     </Flex>
     <_default
       buildSlug="13245ads"
+      hasMounted={true}
       publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
       shouldEnablePublish={true}
     />
@@ -17798,6 +17923,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
     </Flex>
     <_default
       buildSlug="13245ads"
+      hasMounted={true}
       publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
       shouldEnablePublish={true}
     />
@@ -21406,6 +21532,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
             </Flex>
             <_default
               buildSlug="13245ads"
+              hasMounted={true}
               publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
               shouldEnablePublish={false}
             >
@@ -21713,85 +21840,125 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                               }
                             }
                           >
-                            <ClipboardButton
-                              className="clipboard-button"
-                              data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                              onClick={[Function]}
+                            <Tooltip
+                              title="✓ Copied"
+                              visible={false}
                             >
-                              <button
-                                className="clipboard-button"
-                                data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                onClick={[Function]}
-                                style={Object {}}
-                                title=""
-                                type="button"
-                              >
-                                <Base
-                                  borderRadius="x1"
-                                  className="icon-container"
-                                  padding="x1"
-                                >
-                                  <div
-                                    className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
+                              <PlacementManager>
+                                <Manager>
+                                  <Placement
+                                    backgroundColor="black"
+                                    borderRadius="x1"
+                                    color="gray-1"
+                                    placement="top"
+                                    visible={false}
                                   >
-                                    <Icon
-                                      name="Duplicate"
-                                      size="1.5rem"
+                                    <PlacementPopper
+                                      backgroundColor="black"
+                                      borderRadius="x1"
+                                      closeElement={null}
+                                      color="gray-1"
+                                      flip={true}
+                                      isInsideModal={false}
+                                      placement="top"
+                                      visible={false}
+                                    />
+                                  </Placement>
+                                  <PlacementReference>
+                                    <Reference
+                                      innerRef={[Function]}
                                     >
-                                      <Base
-                                        Component="svg"
-                                        className="Icon"
-                                        height="1.5rem"
-                                        viewBox="0 0 24 24"
-                                        width="1.5rem"
+                                      <InnerReference
+                                        innerRef={[Function]}
+                                        setReferenceNode={[Function]}
                                       >
-                                        <svg
-                                          className="Base Icon"
-                                          style={
-                                            Object {
-                                              "height": "1.5rem",
-                                              "maxHeight": undefined,
-                                              "maxWidth": undefined,
-                                              "minHeight": undefined,
-                                              "minWidth": undefined,
-                                              "width": "1.5rem",
-                                            }
-                                          }
-                                          viewBox="0 0 24 24"
+                                        <ClipboardButton
+                                          className="clipboard-button"
+                                          data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                          onClick={[Function]}
+                                          onSuccess={[Function]}
                                         >
-                                          <Component
-                                            height="100%"
-                                            width="100%"
+                                          <button
+                                            className="clipboard-button"
+                                            data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                            onClick={[Function]}
+                                            style={Object {}}
+                                            title=""
+                                            type="button"
                                           >
-                                            <svg
-                                              height="100%"
-                                              viewBox="0 0 24 24"
-                                              width="100%"
+                                            <Base
+                                              borderRadius="x1"
+                                              className="icon-container"
+                                              innerRef={[Function]}
+                                              padding="x1"
                                             >
-                                              <path
-                                                d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
-                                                fill="currentColor"
-                                                fillRule="evenodd"
-                                              />
-                                            </svg>
-                                          </Component>
-                                        </svg>
-                                      </Base>
-                                    </Icon>
-                                  </div>
-                                </Base>
-                              </button>
-                            </ClipboardButton>
+                                              <div
+                                                className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
+                                                style={
+                                                  Object {
+                                                    "height": undefined,
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": undefined,
+                                                  }
+                                                }
+                                              >
+                                                <Icon
+                                                  name="Duplicate"
+                                                  size="1.5rem"
+                                                >
+                                                  <Base
+                                                    Component="svg"
+                                                    className="Icon"
+                                                    height="1.5rem"
+                                                    viewBox="0 0 24 24"
+                                                    width="1.5rem"
+                                                  >
+                                                    <svg
+                                                      className="Base Icon"
+                                                      style={
+                                                        Object {
+                                                          "height": "1.5rem",
+                                                          "maxHeight": undefined,
+                                                          "maxWidth": undefined,
+                                                          "minHeight": undefined,
+                                                          "minWidth": undefined,
+                                                          "width": "1.5rem",
+                                                        }
+                                                      }
+                                                      viewBox="0 0 24 24"
+                                                    >
+                                                      <Component
+                                                        height="100%"
+                                                        width="100%"
+                                                      >
+                                                        <svg
+                                                          height="100%"
+                                                          viewBox="0 0 24 24"
+                                                          width="100%"
+                                                        >
+                                                          <path
+                                                            d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
+                                                            fill="currentColor"
+                                                            fillRule="evenodd"
+                                                          />
+                                                        </svg>
+                                                      </Component>
+                                                    </svg>
+                                                  </Base>
+                                                </Icon>
+                                              </div>
+                                            </Base>
+                                          </button>
+                                        </ClipboardButton>
+                                      </InnerReference>
+                                    </Reference>
+                                  </PlacementReference>
+                                </Manager>
+                              </PlacementManager>
+                            </Tooltip>
                           </div>
                         </Base>
                       </div>
