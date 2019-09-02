@@ -38,6 +38,14 @@ describe('settings', () => {
       expect(state).toMatchSnapshot();
     });
 
+    it('indicates if settings are being updated', () => {
+      let { isSavingSettings } = settings(undefined, updateSettings.next() as any);
+      expect(isSavingSettings).toBe(true);
+
+      ({ isSavingSettings } = settings(undefined, updateSettings.complete(mockSettings)));
+      expect(isSavingSettings).toBe(false);
+    });
+
     it('adds an app contact', () => {
       const state = settings(
         {

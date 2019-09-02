@@ -15,7 +15,8 @@ import {
   RadioButton,
   Text,
   Tooltip,
-  ProgressBitbot
+  ProgressBitbot,
+  ProgressSpinner
 } from '@bitrise/bitkit';
 
 import { Certificate, KeystoreFile, ProvProfile, ServiceAccountJsonFile, Settings } from '@/models/settings';
@@ -43,6 +44,7 @@ interface Props extends Settings {
   ) => void;
   onCancel: () => void;
   onSave: () => void;
+  isSaving?: boolean;
 }
 
 export default ({
@@ -63,6 +65,7 @@ export default ({
   onSelectedFileChange,
   onCancel,
   onSave,
+  isSaving,
   hasIosSettings,
   hasAndroidSettings
 }: Props) => {
@@ -448,8 +451,14 @@ export default ({
           <Button level="secondary" width="8rem" onClick={onCancel}>
             Cancel
           </Button>
-          <Button level="primary" width="8rem" onClick={onSave}>
-            Save
+          <Button disabled={isSaving} level="primary" width="8rem" onClick={onSave}>
+            {isSaving ? (
+              <Fragment>
+                <ProgressSpinner /> &nbsp; Saving...
+              </Fragment>
+            ) : (
+              'Save'
+            )}
           </Button>
         </Flex>
       </Base>

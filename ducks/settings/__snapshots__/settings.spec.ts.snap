@@ -128,7 +128,10 @@ Object {
       "email": "bit@bot.io",
     },
   ],
+  "isSavingSettings": false,
   "settings": Object {
+    "androidWorkflow": "",
+    "iosWorkflow": "",
     "projectType": "other",
   },
 }
@@ -137,6 +140,7 @@ Object {
 exports[`settings reducer loads settings 1`] = `
 Object {
   "appContacts": Array [],
+  "isSavingSettings": false,
   "settings": Object {
     "androidSettings": Object {
       "selectedKeystoreFile": "keystore-1",
