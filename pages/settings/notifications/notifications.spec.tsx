@@ -77,6 +77,19 @@ describe('NotificationSettings', () => {
     expect(addAppContact).not.toHaveBeenCalled();
   });
 
+  it('does not addAppContact if the email is already in the list', () => {
+    const {
+      appContacts: [{ email }],
+      addAppContact
+    } = defaultProps;
+    const wrapper = shallow(<NotificationSettings {...defaultProps} />);
+
+    (wrapper.instance() as NotificationSettings).onAddEmail(email);
+
+    expect(wrapper.state('error')).not.toBeUndefined();
+    expect(addAppContact).not.toHaveBeenCalled();
+  });
+
   test('onNotificationPreferenceChanged', () => {
     const { appContacts } = defaultProps;
 
