@@ -19,7 +19,7 @@ export default ({ objectFit = 'covver', fatness = 0.05, ...props }: Props) => {
 
   return (
     <div>
-      <svg width="0" height="0">
+      <svg width="0" height="0" style={{ display: 'block' }}>
         <defs>
           <clipPath id={id} clipPathUnits="objectBoundingBox">
             <path d={path} />
@@ -27,7 +27,7 @@ export default ({ objectFit = 'covver', fatness = 0.05, ...props }: Props) => {
         </defs>
       </svg>
 
-      <Image {...props} style={{ clipPath: `url(#${id})`, objectFit, marginTop: '-25%' }} />
+      <Image {...props} style={{ clipPath: `url(#${id})`, objectFit }} />
     </div>
   );
 };

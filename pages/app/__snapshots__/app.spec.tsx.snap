@@ -1005,6 +1005,11 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                               <div>
                                 <svg
                                   height="0"
+                                  style={
+                                    Object {
+                                      "display": "block",
+                                    }
+                                  }
                                   width="0"
                                 >
                                   <defs>
@@ -1030,7 +1035,6 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
-                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -1045,7 +1049,6 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
-                                        "marginTop": "-25%",
                                         "objectFit": "covver",
                                       }
                                     }
@@ -1058,7 +1061,6 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                         Object {
                                           "clipPath": "url(#squircle-0.05)",
                                           "height": undefined,
-                                          "marginTop": "-25%",
                                           "maxHeight": undefined,
                                           "maxWidth": undefined,
                                           "minHeight": undefined,

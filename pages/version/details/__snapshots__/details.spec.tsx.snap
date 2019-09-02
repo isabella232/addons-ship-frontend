@@ -1295,6 +1295,11 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                             <div>
                               <svg
                                 height="0"
+                                style={
+                                  Object {
+                                    "display": "block",
+                                  }
+                                }
                                 width="0"
                               >
                                 <defs>
@@ -1320,7 +1325,6 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
-                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -1335,7 +1339,6 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
-                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -1348,7 +1351,6 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
-                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
@@ -5188,6 +5190,11 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                             <div>
                               <svg
                                 height="0"
+                                style={
+                                  Object {
+                                    "display": "block",
+                                  }
+                                }
                                 width="0"
                               >
                                 <defs>
@@ -5213,7 +5220,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
-                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -5228,7 +5234,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
-                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -5241,7 +5246,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
-                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
@@ -9484,6 +9488,11 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                             <div>
                               <svg
                                 height="0"
+                                style={
+                                  Object {
+                                    "display": "block",
+                                  }
+                                }
                                 width="0"
                               >
                                 <defs>
@@ -9509,7 +9518,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
-                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -9524,7 +9532,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
-                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -9537,7 +9544,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
-                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
@@ -13771,6 +13777,11 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                             <div>
                               <svg
                                 height="0"
+                                style={
+                                  Object {
+                                    "display": "block",
+                                  }
+                                }
                                 width="0"
                               >
                                 <defs>
@@ -13796,7 +13807,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
-                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -13811,7 +13821,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
-                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -13824,7 +13833,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
-                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
@@ -18189,6 +18197,11 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                             <div>
                               <svg
                                 height="0"
+                                style={
+                                  Object {
+                                    "display": "block",
+                                  }
+                                }
                                 width="0"
                               >
                                 <defs>
@@ -18214,7 +18227,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
-                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -18229,7 +18241,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
-                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -18242,7 +18253,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
-                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
@@ -22476,6 +22486,11 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                             <div>
                               <svg
                                 height="0"
+                                style={
+                                  Object {
+                                    "display": "block",
+                                  }
+                                }
                                 width="0"
                               >
                                 <defs>
@@ -22501,7 +22516,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
-                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -22516,7 +22530,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
-                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -22529,7 +22542,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
-                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
