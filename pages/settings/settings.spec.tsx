@@ -3,7 +3,7 @@ jest.mock('@/ducks/settings');
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import { fetchSettings, listAppContacts } from '@/ducks/settings';
+import { listAppContacts } from '@/ducks/settings';
 import { AppSettingsPageTabs } from '@/models/settings';
 
 import { SettingsPage } from './';
@@ -19,12 +19,6 @@ describe('Settings', () => {
   });
 
   describe('dispatches the proper actions', () => {
-    it('dispatches fetchSettings', async () => {
-      await SettingsPage.getInitialProps({ query: {}, store: { dispatch: jest.fn() } } as any);
-
-      expect(fetchSettings).toHaveBeenCalled();
-    });
-
     it('dispatches listAppContacts', async () => {
       await SettingsPage.getInitialProps({
         query: { selectedTab: 'notifications' },
