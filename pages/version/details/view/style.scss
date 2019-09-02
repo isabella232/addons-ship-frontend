@@ -13,6 +13,10 @@
   .icon-container:hover {
     background-color: $grape-1;
     cursor: pointer;
+
+    svg path {
+      fill: $grape-3;
+    }
   }
 }
 
