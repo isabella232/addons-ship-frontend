@@ -7068,14 +7068,14 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                         </Base>
                       </Divider>
                       <Flex
-                        alignChildrenVertical="middle"
+                        alignChildrenVertical="end"
                         direction="horizontal"
                       >
                         <Base
-                          className="Flex Flex--align-vert-middle Flex--horizontal"
+                          className="Flex Flex--align-vert-end Flex--horizontal"
                         >
                           <div
-                            className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                            className="Base Flex Flex--align-vert-end Flex--horizontal"
                             style={
                               Object {
                                 "height": undefined,
@@ -7120,7 +7120,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                               </Text>
                             </InputLabel>
                             <Tooltip
-                              title="This is the tooltip"
+                              title="You can register your devices on your Account Settings page on Bitrise."
                             >
                               <PlacementManager>
                                 <Manager>
@@ -7153,23 +7153,23 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                         <Icon
                                           color="grape-3"
                                           innerRef={[Function]}
-                                          name="Coffee"
+                                          name="Info"
                                           onMouseEnter={[Function]}
                                           onMouseLeave={[Function]}
                                           paddingHorizontal="x1"
-                                          size="1.5rem"
+                                          size="2rem"
                                         >
                                           <Base
                                             Component="svg"
                                             className="Icon"
                                             color="grape-3"
-                                            height="1.5rem"
+                                            height="2rem"
                                             innerRef={[Function]}
                                             onMouseEnter={[Function]}
                                             onMouseLeave={[Function]}
                                             paddingHorizontal="x1"
                                             viewBox="0 0 24 24"
-                                            width="1.5rem"
+                                            width="2rem"
                                           >
                                             <svg
                                               className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
@@ -7177,12 +7177,12 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                               onMouseLeave={[Function]}
                                               style={
                                                 Object {
-                                                  "height": "1.5rem",
+                                                  "height": "2rem",
                                                   "maxHeight": undefined,
                                                   "maxWidth": undefined,
                                                   "minHeight": undefined,
                                                   "minWidth": undefined,
-                                                  "width": "1.5rem",
+                                                  "width": "2rem",
                                                 }
                                               }
                                               viewBox="0 0 24 24"
@@ -7196,16 +7196,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                                   viewBox="0 0 24 24"
                                                   width="100%"
                                                 >
-                                                  <defs>
-                                                    <path
-                                                      d="M4 20h16c1.1 0 2-.9 2-2H2c0 1.1.9 2 2 2zM20 4H6v10c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-4 8v2H8V6h8v6zm4-2h-2V6h2v4z"
-                                                      id="icons-coffee_svg__a"
-                                                    />
-                                                  </defs>
-                                                  <use
+                                                  <path
+                                                    d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 2C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm0-14a1 1 0 100-2 1 1 0 000 2zm-2.4 3.9L9 10l2.7-.9c.7-.2 1.4.4 1.3 1.1l-.8 5.3 1.5-.5.6 1.9-3 1c-.7.2-1.4-.4-1.3-1.1l.8-5.4-1.2.5z"
                                                     fill="currentColor"
                                                     fillRule="evenodd"
-                                                    xlinkHref="#icons-coffee_svg__a"
                                                   />
                                                 </svg>
                                               </Component>
@@ -7221,18 +7215,15 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           </div>
                         </Base>
                       </Flex>
-                      <Text
-                        color="gray-7"
-                        size="x3"
-                        weight="medium"
+                      <Flex
+                        direction="vertical"
+                        gap="x4"
                       >
                         <Base
-                          Component="div"
-                          className="Text Text--size-x3 Text--weight-medium"
-                          color="gray-7"
+                          className="Flex Flex--vertical Flex--gapped Flex--gap-x4"
                         >
                           <div
-                            className="Base Base--color-gray-7 Text Text--size-x3 Text--weight-medium"
+                            className="Base Flex Flex--vertical Flex--gapped Flex--gap-x4"
                             style={
                               Object {
                                 "height": undefined,
@@ -7244,17 +7235,18 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                               }
                             }
                           >
-                            The app was signed with a Development Provisioning Profile which means that it
-                             
                             <Text
-                              weight="bold"
+                              color="gray-7"
+                              size="x3"
+                              weight="medium"
                             >
                               <Base
                                 Component="div"
-                                className="Text Text--weight-bold"
+                                className="Text Text--size-x3 Text--weight-medium"
+                                color="gray-7"
                               >
                                 <div
-                                  className="Base Text Text--weight-bold"
+                                  className="Base Base--color-gray-7 Text Text--size-x3 Text--weight-medium"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -7266,13 +7258,164 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                     }
                                   }
                                 >
-                                  can only be installed on devices which are included in the Provisioning Profile
+                                  The app was signed with a Development Provisioning Profile which means that it
+                                   
+                                  <Text
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--weight-bold"
+                                    >
+                                      <div
+                                        className="Base Text Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "minHeight": undefined,
+                                            "minWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        can only be installed on devices which are included in the Provisioning Profile
+                                      </div>
+                                    </Base>
+                                  </Text>
                                 </div>
                               </Base>
                             </Text>
+                            <Notification
+                              icon="Lightbulb"
+                              type="inform"
+                            >
+                              <Flex
+                                alignChildrenVertical="middle"
+                                className="Notification Notification--type-inform"
+                                direction="horizontal"
+                                gap="x2"
+                                padding="x3"
+                              >
+                                <Base
+                                  className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                  padding="x3"
+                                >
+                                  <div
+                                    className="Base Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    <Flex>
+                                      <Base
+                                        className="Flex"
+                                      >
+                                        <div
+                                          className="Base Flex"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          <Icon
+                                            name="Lightbulb"
+                                            size="1.5rem"
+                                          >
+                                            <Base
+                                              Component="svg"
+                                              className="Icon"
+                                              height="1.5rem"
+                                              viewBox="0 0 24 24"
+                                              width="1.5rem"
+                                            >
+                                              <svg
+                                                className="Base Icon"
+                                                style={
+                                                  Object {
+                                                    "height": "1.5rem",
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": "1.5rem",
+                                                  }
+                                                }
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <Component
+                                                  height="100%"
+                                                  width="100%"
+                                                >
+                                                  <svg
+                                                    height="100%"
+                                                    viewBox="0 0 24 24"
+                                                    width="100%"
+                                                  >
+                                                    <defs>
+                                                      <path
+                                                        d="M12 6c-3.3 0-6 2.7-6 6 0 2 1 3.8 2.5 4.8l.2.6c.2.9 1 1.5 1.9 1.5h2.9c.9 0 1.7-.6 1.9-1.5l.2-.6C17 15.8 18 14 18 12c0-3.3-2.7-6-6-6zm2.4 9.2c-.4.3-.6.7-.8 1.1l-.2.7h-2.8l-.2-.6c-.1-.5-.4-.9-.8-1.1-1-.8-1.6-2-1.6-3.3 0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.3-.6 2.5-1.6 3.2zM12 22c1.4 0 2.7-.8 3-2H9c.3 1.1 1.6 2 3 2zM11 2h2v2h-2V2zm6.662 1.697l1.532 1.285-1.286 1.532-1.532-1.285 1.286-1.532zm4.012 5.582l.348 1.97-1.97.347-.347-1.97 1.97-.347zm-.514 6.855l-1 1.732-1.732-1 1-1.732 1.732 1zM3.84 17.866l-1-1.732 1.732-1 1 1.732-1.732 1zm-1.862-6.618l.348-1.97 1.97.348-.348 1.97-1.97-.348zm2.828-6.266l1.532-1.285 1.286 1.532-1.532 1.285-1.286-1.532z"
+                                                        id="icons-lightbulb_svg__a"
+                                                      />
+                                                    </defs>
+                                                    <use
+                                                      fill="currentColor"
+                                                      fillRule="evenodd"
+                                                      xlinkHref="#icons-lightbulb_svg__a"
+                                                    />
+                                                  </svg>
+                                                </Component>
+                                              </svg>
+                                            </Base>
+                                          </Icon>
+                                        </div>
+                                      </Base>
+                                    </Flex>
+                                    <Flex
+                                      grow={true}
+                                      initial="none"
+                                    >
+                                      <Base
+                                        className="Flex Flex--initial-none Flex--grow"
+                                      >
+                                        <div
+                                          className="Base Flex Flex--initial-none Flex--grow"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          You can find registered devices on the Devices tab.
+                                        </div>
+                                      </Base>
+                                    </Flex>
+                                  </div>
+                                </Base>
+                              </Flex>
+                            </Notification>
                           </div>
                         </Base>
-                      </Text>
+                      </Flex>
                       <Divider
                         color="gray-2"
                         direction="horizontal"
@@ -11333,14 +11476,14 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                         </Base>
                       </Divider>
                       <Flex
-                        alignChildrenVertical="middle"
+                        alignChildrenVertical="end"
                         direction="horizontal"
                       >
                         <Base
-                          className="Flex Flex--align-vert-middle Flex--horizontal"
+                          className="Flex Flex--align-vert-end Flex--horizontal"
                         >
                           <div
-                            className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                            className="Base Flex Flex--align-vert-end Flex--horizontal"
                             style={
                               Object {
                                 "height": undefined,
@@ -11385,7 +11528,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                               </Text>
                             </InputLabel>
                             <Tooltip
-                              title="This is the tooltip"
+                              title="You can register your devices on your Account Settings page on Bitrise."
                             >
                               <PlacementManager>
                                 <Manager>
@@ -11418,23 +11561,23 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                         <Icon
                                           color="grape-3"
                                           innerRef={[Function]}
-                                          name="Coffee"
+                                          name="Info"
                                           onMouseEnter={[Function]}
                                           onMouseLeave={[Function]}
                                           paddingHorizontal="x1"
-                                          size="1.5rem"
+                                          size="2rem"
                                         >
                                           <Base
                                             Component="svg"
                                             className="Icon"
                                             color="grape-3"
-                                            height="1.5rem"
+                                            height="2rem"
                                             innerRef={[Function]}
                                             onMouseEnter={[Function]}
                                             onMouseLeave={[Function]}
                                             paddingHorizontal="x1"
                                             viewBox="0 0 24 24"
-                                            width="1.5rem"
+                                            width="2rem"
                                           >
                                             <svg
                                               className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
@@ -11442,12 +11585,12 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                               onMouseLeave={[Function]}
                                               style={
                                                 Object {
-                                                  "height": "1.5rem",
+                                                  "height": "2rem",
                                                   "maxHeight": undefined,
                                                   "maxWidth": undefined,
                                                   "minHeight": undefined,
                                                   "minWidth": undefined,
-                                                  "width": "1.5rem",
+                                                  "width": "2rem",
                                                 }
                                               }
                                               viewBox="0 0 24 24"
@@ -11461,16 +11604,10 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                                   viewBox="0 0 24 24"
                                                   width="100%"
                                                 >
-                                                  <defs>
-                                                    <path
-                                                      d="M4 20h16c1.1 0 2-.9 2-2H2c0 1.1.9 2 2 2zM20 4H6v10c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-4 8v2H8V6h8v6zm4-2h-2V6h2v4z"
-                                                      id="icons-coffee_svg__a"
-                                                    />
-                                                  </defs>
-                                                  <use
+                                                  <path
+                                                    d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 2C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm0-14a1 1 0 100-2 1 1 0 000 2zm-2.4 3.9L9 10l2.7-.9c.7-.2 1.4.4 1.3 1.1l-.8 5.3 1.5-.5.6 1.9-3 1c-.7.2-1.4-.4-1.3-1.1l.8-5.4-1.2.5z"
                                                     fill="currentColor"
                                                     fillRule="evenodd"
-                                                    xlinkHref="#icons-coffee_svg__a"
                                                   />
                                                 </svg>
                                               </Component>
@@ -11486,18 +11623,15 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           </div>
                         </Base>
                       </Flex>
-                      <Text
-                        color="gray-7"
-                        size="x3"
-                        weight="medium"
+                      <Flex
+                        direction="vertical"
+                        gap="x4"
                       >
                         <Base
-                          Component="div"
-                          className="Text Text--size-x3 Text--weight-medium"
-                          color="gray-7"
+                          className="Flex Flex--vertical Flex--gapped Flex--gap-x4"
                         >
                           <div
-                            className="Base Base--color-gray-7 Text Text--size-x3 Text--weight-medium"
+                            className="Base Flex Flex--vertical Flex--gapped Flex--gap-x4"
                             style={
                               Object {
                                 "height": undefined,
@@ -11509,17 +11643,18 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                               }
                             }
                           >
-                            The app was signed with a Development Provisioning Profile which means that it
-                             
                             <Text
-                              weight="bold"
+                              color="gray-7"
+                              size="x3"
+                              weight="medium"
                             >
                               <Base
                                 Component="div"
-                                className="Text Text--weight-bold"
+                                className="Text Text--size-x3 Text--weight-medium"
+                                color="gray-7"
                               >
                                 <div
-                                  className="Base Text Text--weight-bold"
+                                  className="Base Base--color-gray-7 Text Text--size-x3 Text--weight-medium"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -11531,13 +11666,164 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                     }
                                   }
                                 >
-                                  can only be installed on devices which are included in the Provisioning Profile
+                                  The app was signed with a Development Provisioning Profile which means that it
+                                   
+                                  <Text
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--weight-bold"
+                                    >
+                                      <div
+                                        className="Base Text Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "minHeight": undefined,
+                                            "minWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        can only be installed on devices which are included in the Provisioning Profile
+                                      </div>
+                                    </Base>
+                                  </Text>
                                 </div>
                               </Base>
                             </Text>
+                            <Notification
+                              icon="Lightbulb"
+                              type="inform"
+                            >
+                              <Flex
+                                alignChildrenVertical="middle"
+                                className="Notification Notification--type-inform"
+                                direction="horizontal"
+                                gap="x2"
+                                padding="x3"
+                              >
+                                <Base
+                                  className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                  padding="x3"
+                                >
+                                  <div
+                                    className="Base Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    <Flex>
+                                      <Base
+                                        className="Flex"
+                                      >
+                                        <div
+                                          className="Base Flex"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          <Icon
+                                            name="Lightbulb"
+                                            size="1.5rem"
+                                          >
+                                            <Base
+                                              Component="svg"
+                                              className="Icon"
+                                              height="1.5rem"
+                                              viewBox="0 0 24 24"
+                                              width="1.5rem"
+                                            >
+                                              <svg
+                                                className="Base Icon"
+                                                style={
+                                                  Object {
+                                                    "height": "1.5rem",
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": "1.5rem",
+                                                  }
+                                                }
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <Component
+                                                  height="100%"
+                                                  width="100%"
+                                                >
+                                                  <svg
+                                                    height="100%"
+                                                    viewBox="0 0 24 24"
+                                                    width="100%"
+                                                  >
+                                                    <defs>
+                                                      <path
+                                                        d="M12 6c-3.3 0-6 2.7-6 6 0 2 1 3.8 2.5 4.8l.2.6c.2.9 1 1.5 1.9 1.5h2.9c.9 0 1.7-.6 1.9-1.5l.2-.6C17 15.8 18 14 18 12c0-3.3-2.7-6-6-6zm2.4 9.2c-.4.3-.6.7-.8 1.1l-.2.7h-2.8l-.2-.6c-.1-.5-.4-.9-.8-1.1-1-.8-1.6-2-1.6-3.3 0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.3-.6 2.5-1.6 3.2zM12 22c1.4 0 2.7-.8 3-2H9c.3 1.1 1.6 2 3 2zM11 2h2v2h-2V2zm6.662 1.697l1.532 1.285-1.286 1.532-1.532-1.285 1.286-1.532zm4.012 5.582l.348 1.97-1.97.347-.347-1.97 1.97-.347zm-.514 6.855l-1 1.732-1.732-1 1-1.732 1.732 1zM3.84 17.866l-1-1.732 1.732-1 1 1.732-1.732 1zm-1.862-6.618l.348-1.97 1.97.348-.348 1.97-1.97-.348zm2.828-6.266l1.532-1.285 1.286 1.532-1.532 1.285-1.286-1.532z"
+                                                        id="icons-lightbulb_svg__a"
+                                                      />
+                                                    </defs>
+                                                    <use
+                                                      fill="currentColor"
+                                                      fillRule="evenodd"
+                                                      xlinkHref="#icons-lightbulb_svg__a"
+                                                    />
+                                                  </svg>
+                                                </Component>
+                                              </svg>
+                                            </Base>
+                                          </Icon>
+                                        </div>
+                                      </Base>
+                                    </Flex>
+                                    <Flex
+                                      grow={true}
+                                      initial="none"
+                                    >
+                                      <Base
+                                        className="Flex Flex--initial-none Flex--grow"
+                                      >
+                                        <div
+                                          className="Base Flex Flex--initial-none Flex--grow"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          You can find registered devices on the Devices tab.
+                                        </div>
+                                      </Base>
+                                    </Flex>
+                                  </div>
+                                </Base>
+                              </Flex>
+                            </Notification>
                           </div>
                         </Base>
-                      </Text>
+                      </Flex>
                       <Divider
                         color="gray-2"
                         direction="horizontal"
@@ -15566,14 +15852,14 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                         </Base>
                       </Divider>
                       <Flex
-                        alignChildrenVertical="middle"
+                        alignChildrenVertical="end"
                         direction="horizontal"
                       >
                         <Base
-                          className="Flex Flex--align-vert-middle Flex--horizontal"
+                          className="Flex Flex--align-vert-end Flex--horizontal"
                         >
                           <div
-                            className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                            className="Base Flex Flex--align-vert-end Flex--horizontal"
                             style={
                               Object {
                                 "height": undefined,
@@ -15618,7 +15904,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                               </Text>
                             </InputLabel>
                             <Tooltip
-                              title="This is the tooltip"
+                              title="You can register your devices on your Account Settings page on Bitrise."
                             >
                               <PlacementManager>
                                 <Manager>
@@ -15651,23 +15937,23 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                         <Icon
                                           color="grape-3"
                                           innerRef={[Function]}
-                                          name="Coffee"
+                                          name="Info"
                                           onMouseEnter={[Function]}
                                           onMouseLeave={[Function]}
                                           paddingHorizontal="x1"
-                                          size="1.5rem"
+                                          size="2rem"
                                         >
                                           <Base
                                             Component="svg"
                                             className="Icon"
                                             color="grape-3"
-                                            height="1.5rem"
+                                            height="2rem"
                                             innerRef={[Function]}
                                             onMouseEnter={[Function]}
                                             onMouseLeave={[Function]}
                                             paddingHorizontal="x1"
                                             viewBox="0 0 24 24"
-                                            width="1.5rem"
+                                            width="2rem"
                                           >
                                             <svg
                                               className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
@@ -15675,12 +15961,12 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                               onMouseLeave={[Function]}
                                               style={
                                                 Object {
-                                                  "height": "1.5rem",
+                                                  "height": "2rem",
                                                   "maxHeight": undefined,
                                                   "maxWidth": undefined,
                                                   "minHeight": undefined,
                                                   "minWidth": undefined,
-                                                  "width": "1.5rem",
+                                                  "width": "2rem",
                                                 }
                                               }
                                               viewBox="0 0 24 24"
@@ -15694,16 +15980,10 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                                   viewBox="0 0 24 24"
                                                   width="100%"
                                                 >
-                                                  <defs>
-                                                    <path
-                                                      d="M4 20h16c1.1 0 2-.9 2-2H2c0 1.1.9 2 2 2zM20 4H6v10c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-4 8v2H8V6h8v6zm4-2h-2V6h2v4z"
-                                                      id="icons-coffee_svg__a"
-                                                    />
-                                                  </defs>
-                                                  <use
+                                                  <path
+                                                    d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 2C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm0-14a1 1 0 100-2 1 1 0 000 2zm-2.4 3.9L9 10l2.7-.9c.7-.2 1.4.4 1.3 1.1l-.8 5.3 1.5-.5.6 1.9-3 1c-.7.2-1.4-.4-1.3-1.1l.8-5.4-1.2.5z"
                                                     fill="currentColor"
                                                     fillRule="evenodd"
-                                                    xlinkHref="#icons-coffee_svg__a"
                                                   />
                                                 </svg>
                                               </Component>
@@ -15719,18 +15999,15 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           </div>
                         </Base>
                       </Flex>
-                      <Text
-                        color="gray-7"
-                        size="x3"
-                        weight="medium"
+                      <Flex
+                        direction="vertical"
+                        gap="x4"
                       >
                         <Base
-                          Component="div"
-                          className="Text Text--size-x3 Text--weight-medium"
-                          color="gray-7"
+                          className="Flex Flex--vertical Flex--gapped Flex--gap-x4"
                         >
                           <div
-                            className="Base Base--color-gray-7 Text Text--size-x3 Text--weight-medium"
+                            className="Base Flex Flex--vertical Flex--gapped Flex--gap-x4"
                             style={
                               Object {
                                 "height": undefined,
@@ -15742,17 +16019,18 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                               }
                             }
                           >
-                            The app was signed with a Development Provisioning Profile which means that it
-                             
                             <Text
-                              weight="bold"
+                              color="gray-7"
+                              size="x3"
+                              weight="medium"
                             >
                               <Base
                                 Component="div"
-                                className="Text Text--weight-bold"
+                                className="Text Text--size-x3 Text--weight-medium"
+                                color="gray-7"
                               >
                                 <div
-                                  className="Base Text Text--weight-bold"
+                                  className="Base Base--color-gray-7 Text Text--size-x3 Text--weight-medium"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -15764,13 +16042,164 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                     }
                                   }
                                 >
-                                  can only be installed on devices which are included in the Provisioning Profile
+                                  The app was signed with a Development Provisioning Profile which means that it
+                                   
+                                  <Text
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--weight-bold"
+                                    >
+                                      <div
+                                        className="Base Text Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "minHeight": undefined,
+                                            "minWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        can only be installed on devices which are included in the Provisioning Profile
+                                      </div>
+                                    </Base>
+                                  </Text>
                                 </div>
                               </Base>
                             </Text>
+                            <Notification
+                              icon="Lightbulb"
+                              type="inform"
+                            >
+                              <Flex
+                                alignChildrenVertical="middle"
+                                className="Notification Notification--type-inform"
+                                direction="horizontal"
+                                gap="x2"
+                                padding="x3"
+                              >
+                                <Base
+                                  className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                  padding="x3"
+                                >
+                                  <div
+                                    className="Base Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    <Flex>
+                                      <Base
+                                        className="Flex"
+                                      >
+                                        <div
+                                          className="Base Flex"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          <Icon
+                                            name="Lightbulb"
+                                            size="1.5rem"
+                                          >
+                                            <Base
+                                              Component="svg"
+                                              className="Icon"
+                                              height="1.5rem"
+                                              viewBox="0 0 24 24"
+                                              width="1.5rem"
+                                            >
+                                              <svg
+                                                className="Base Icon"
+                                                style={
+                                                  Object {
+                                                    "height": "1.5rem",
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": "1.5rem",
+                                                  }
+                                                }
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <Component
+                                                  height="100%"
+                                                  width="100%"
+                                                >
+                                                  <svg
+                                                    height="100%"
+                                                    viewBox="0 0 24 24"
+                                                    width="100%"
+                                                  >
+                                                    <defs>
+                                                      <path
+                                                        d="M12 6c-3.3 0-6 2.7-6 6 0 2 1 3.8 2.5 4.8l.2.6c.2.9 1 1.5 1.9 1.5h2.9c.9 0 1.7-.6 1.9-1.5l.2-.6C17 15.8 18 14 18 12c0-3.3-2.7-6-6-6zm2.4 9.2c-.4.3-.6.7-.8 1.1l-.2.7h-2.8l-.2-.6c-.1-.5-.4-.9-.8-1.1-1-.8-1.6-2-1.6-3.3 0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.3-.6 2.5-1.6 3.2zM12 22c1.4 0 2.7-.8 3-2H9c.3 1.1 1.6 2 3 2zM11 2h2v2h-2V2zm6.662 1.697l1.532 1.285-1.286 1.532-1.532-1.285 1.286-1.532zm4.012 5.582l.348 1.97-1.97.347-.347-1.97 1.97-.347zm-.514 6.855l-1 1.732-1.732-1 1-1.732 1.732 1zM3.84 17.866l-1-1.732 1.732-1 1 1.732-1.732 1zm-1.862-6.618l.348-1.97 1.97.348-.348 1.97-1.97-.348zm2.828-6.266l1.532-1.285 1.286 1.532-1.532 1.285-1.286-1.532z"
+                                                        id="icons-lightbulb_svg__a"
+                                                      />
+                                                    </defs>
+                                                    <use
+                                                      fill="currentColor"
+                                                      fillRule="evenodd"
+                                                      xlinkHref="#icons-lightbulb_svg__a"
+                                                    />
+                                                  </svg>
+                                                </Component>
+                                              </svg>
+                                            </Base>
+                                          </Icon>
+                                        </div>
+                                      </Base>
+                                    </Flex>
+                                    <Flex
+                                      grow={true}
+                                      initial="none"
+                                    >
+                                      <Base
+                                        className="Flex Flex--initial-none Flex--grow"
+                                      >
+                                        <div
+                                          className="Base Flex Flex--initial-none Flex--grow"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          You can find registered devices on the Devices tab.
+                                        </div>
+                                      </Base>
+                                    </Flex>
+                                  </div>
+                                </Base>
+                              </Flex>
+                            </Notification>
                           </div>
                         </Base>
-                      </Text>
+                      </Flex>
                       <Divider
                         color="gray-2"
                         direction="horizontal"
@@ -19894,14 +20323,14 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                         </Base>
                       </Divider>
                       <Flex
-                        alignChildrenVertical="middle"
+                        alignChildrenVertical="end"
                         direction="horizontal"
                       >
                         <Base
-                          className="Flex Flex--align-vert-middle Flex--horizontal"
+                          className="Flex Flex--align-vert-end Flex--horizontal"
                         >
                           <div
-                            className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                            className="Base Flex Flex--align-vert-end Flex--horizontal"
                             style={
                               Object {
                                 "height": undefined,
@@ -19946,7 +20375,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                               </Text>
                             </InputLabel>
                             <Tooltip
-                              title="This is the tooltip"
+                              title="You can register your devices on your Account Settings page on Bitrise."
                             >
                               <PlacementManager>
                                 <Manager>
@@ -19979,23 +20408,23 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                         <Icon
                                           color="grape-3"
                                           innerRef={[Function]}
-                                          name="Coffee"
+                                          name="Info"
                                           onMouseEnter={[Function]}
                                           onMouseLeave={[Function]}
                                           paddingHorizontal="x1"
-                                          size="1.5rem"
+                                          size="2rem"
                                         >
                                           <Base
                                             Component="svg"
                                             className="Icon"
                                             color="grape-3"
-                                            height="1.5rem"
+                                            height="2rem"
                                             innerRef={[Function]}
                                             onMouseEnter={[Function]}
                                             onMouseLeave={[Function]}
                                             paddingHorizontal="x1"
                                             viewBox="0 0 24 24"
-                                            width="1.5rem"
+                                            width="2rem"
                                           >
                                             <svg
                                               className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
@@ -20003,12 +20432,12 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                               onMouseLeave={[Function]}
                                               style={
                                                 Object {
-                                                  "height": "1.5rem",
+                                                  "height": "2rem",
                                                   "maxHeight": undefined,
                                                   "maxWidth": undefined,
                                                   "minHeight": undefined,
                                                   "minWidth": undefined,
-                                                  "width": "1.5rem",
+                                                  "width": "2rem",
                                                 }
                                               }
                                               viewBox="0 0 24 24"
@@ -20022,16 +20451,10 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                                   viewBox="0 0 24 24"
                                                   width="100%"
                                                 >
-                                                  <defs>
-                                                    <path
-                                                      d="M4 20h16c1.1 0 2-.9 2-2H2c0 1.1.9 2 2 2zM20 4H6v10c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-4 8v2H8V6h8v6zm4-2h-2V6h2v4z"
-                                                      id="icons-coffee_svg__a"
-                                                    />
-                                                  </defs>
-                                                  <use
+                                                  <path
+                                                    d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 2C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm0-14a1 1 0 100-2 1 1 0 000 2zm-2.4 3.9L9 10l2.7-.9c.7-.2 1.4.4 1.3 1.1l-.8 5.3 1.5-.5.6 1.9-3 1c-.7.2-1.4-.4-1.3-1.1l.8-5.4-1.2.5z"
                                                     fill="currentColor"
                                                     fillRule="evenodd"
-                                                    xlinkHref="#icons-coffee_svg__a"
                                                   />
                                                 </svg>
                                               </Component>
@@ -20047,18 +20470,15 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           </div>
                         </Base>
                       </Flex>
-                      <Text
-                        color="gray-7"
-                        size="x3"
-                        weight="medium"
+                      <Flex
+                        direction="vertical"
+                        gap="x4"
                       >
                         <Base
-                          Component="div"
-                          className="Text Text--size-x3 Text--weight-medium"
-                          color="gray-7"
+                          className="Flex Flex--vertical Flex--gapped Flex--gap-x4"
                         >
                           <div
-                            className="Base Base--color-gray-7 Text Text--size-x3 Text--weight-medium"
+                            className="Base Flex Flex--vertical Flex--gapped Flex--gap-x4"
                             style={
                               Object {
                                 "height": undefined,
@@ -20070,17 +20490,18 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                               }
                             }
                           >
-                            The app was signed with a Development Provisioning Profile which means that it
-                             
                             <Text
-                              weight="bold"
+                              color="gray-7"
+                              size="x3"
+                              weight="medium"
                             >
                               <Base
                                 Component="div"
-                                className="Text Text--weight-bold"
+                                className="Text Text--size-x3 Text--weight-medium"
+                                color="gray-7"
                               >
                                 <div
-                                  className="Base Text Text--weight-bold"
+                                  className="Base Base--color-gray-7 Text Text--size-x3 Text--weight-medium"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -20092,13 +20513,164 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                     }
                                   }
                                 >
-                                  can only be installed on devices which are included in the Provisioning Profile
+                                  The app was signed with a Development Provisioning Profile which means that it
+                                   
+                                  <Text
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--weight-bold"
+                                    >
+                                      <div
+                                        className="Base Text Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "minHeight": undefined,
+                                            "minWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        can only be installed on devices which are included in the Provisioning Profile
+                                      </div>
+                                    </Base>
+                                  </Text>
                                 </div>
                               </Base>
                             </Text>
+                            <Notification
+                              icon="Lightbulb"
+                              type="inform"
+                            >
+                              <Flex
+                                alignChildrenVertical="middle"
+                                className="Notification Notification--type-inform"
+                                direction="horizontal"
+                                gap="x2"
+                                padding="x3"
+                              >
+                                <Base
+                                  className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                  padding="x3"
+                                >
+                                  <div
+                                    className="Base Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    <Flex>
+                                      <Base
+                                        className="Flex"
+                                      >
+                                        <div
+                                          className="Base Flex"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          <Icon
+                                            name="Lightbulb"
+                                            size="1.5rem"
+                                          >
+                                            <Base
+                                              Component="svg"
+                                              className="Icon"
+                                              height="1.5rem"
+                                              viewBox="0 0 24 24"
+                                              width="1.5rem"
+                                            >
+                                              <svg
+                                                className="Base Icon"
+                                                style={
+                                                  Object {
+                                                    "height": "1.5rem",
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": "1.5rem",
+                                                  }
+                                                }
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <Component
+                                                  height="100%"
+                                                  width="100%"
+                                                >
+                                                  <svg
+                                                    height="100%"
+                                                    viewBox="0 0 24 24"
+                                                    width="100%"
+                                                  >
+                                                    <defs>
+                                                      <path
+                                                        d="M12 6c-3.3 0-6 2.7-6 6 0 2 1 3.8 2.5 4.8l.2.6c.2.9 1 1.5 1.9 1.5h2.9c.9 0 1.7-.6 1.9-1.5l.2-.6C17 15.8 18 14 18 12c0-3.3-2.7-6-6-6zm2.4 9.2c-.4.3-.6.7-.8 1.1l-.2.7h-2.8l-.2-.6c-.1-.5-.4-.9-.8-1.1-1-.8-1.6-2-1.6-3.3 0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.3-.6 2.5-1.6 3.2zM12 22c1.4 0 2.7-.8 3-2H9c.3 1.1 1.6 2 3 2zM11 2h2v2h-2V2zm6.662 1.697l1.532 1.285-1.286 1.532-1.532-1.285 1.286-1.532zm4.012 5.582l.348 1.97-1.97.347-.347-1.97 1.97-.347zm-.514 6.855l-1 1.732-1.732-1 1-1.732 1.732 1zM3.84 17.866l-1-1.732 1.732-1 1 1.732-1.732 1zm-1.862-6.618l.348-1.97 1.97.348-.348 1.97-1.97-.348zm2.828-6.266l1.532-1.285 1.286 1.532-1.532 1.285-1.286-1.532z"
+                                                        id="icons-lightbulb_svg__a"
+                                                      />
+                                                    </defs>
+                                                    <use
+                                                      fill="currentColor"
+                                                      fillRule="evenodd"
+                                                      xlinkHref="#icons-lightbulb_svg__a"
+                                                    />
+                                                  </svg>
+                                                </Component>
+                                              </svg>
+                                            </Base>
+                                          </Icon>
+                                        </div>
+                                      </Base>
+                                    </Flex>
+                                    <Flex
+                                      grow={true}
+                                      initial="none"
+                                    >
+                                      <Base
+                                        className="Flex Flex--initial-none Flex--grow"
+                                      >
+                                        <div
+                                          className="Base Flex Flex--initial-none Flex--grow"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          You can find registered devices on the Devices tab.
+                                        </div>
+                                      </Base>
+                                    </Flex>
+                                  </div>
+                                </Base>
+                              </Flex>
+                            </Notification>
                           </div>
                         </Base>
-                      </Text>
+                      </Flex>
                       <Divider
                         color="gray-2"
                         direction="horizontal"
@@ -24363,14 +24935,14 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                         </Base>
                       </Divider>
                       <Flex
-                        alignChildrenVertical="middle"
+                        alignChildrenVertical="end"
                         direction="horizontal"
                       >
                         <Base
-                          className="Flex Flex--align-vert-middle Flex--horizontal"
+                          className="Flex Flex--align-vert-end Flex--horizontal"
                         >
                           <div
-                            className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                            className="Base Flex Flex--align-vert-end Flex--horizontal"
                             style={
                               Object {
                                 "height": undefined,
@@ -24415,7 +24987,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                               </Text>
                             </InputLabel>
                             <Tooltip
-                              title="This is the tooltip"
+                              title="You can register your devices on your Account Settings page on Bitrise."
                             >
                               <PlacementManager>
                                 <Manager>
@@ -24448,23 +25020,23 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                         <Icon
                                           color="grape-3"
                                           innerRef={[Function]}
-                                          name="Coffee"
+                                          name="Info"
                                           onMouseEnter={[Function]}
                                           onMouseLeave={[Function]}
                                           paddingHorizontal="x1"
-                                          size="1.5rem"
+                                          size="2rem"
                                         >
                                           <Base
                                             Component="svg"
                                             className="Icon"
                                             color="grape-3"
-                                            height="1.5rem"
+                                            height="2rem"
                                             innerRef={[Function]}
                                             onMouseEnter={[Function]}
                                             onMouseLeave={[Function]}
                                             paddingHorizontal="x1"
                                             viewBox="0 0 24 24"
-                                            width="1.5rem"
+                                            width="2rem"
                                           >
                                             <svg
                                               className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
@@ -24472,12 +25044,12 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                               onMouseLeave={[Function]}
                                               style={
                                                 Object {
-                                                  "height": "1.5rem",
+                                                  "height": "2rem",
                                                   "maxHeight": undefined,
                                                   "maxWidth": undefined,
                                                   "minHeight": undefined,
                                                   "minWidth": undefined,
-                                                  "width": "1.5rem",
+                                                  "width": "2rem",
                                                 }
                                               }
                                               viewBox="0 0 24 24"
@@ -24491,16 +25063,10 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                                   viewBox="0 0 24 24"
                                                   width="100%"
                                                 >
-                                                  <defs>
-                                                    <path
-                                                      d="M4 20h16c1.1 0 2-.9 2-2H2c0 1.1.9 2 2 2zM20 4H6v10c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-4 8v2H8V6h8v6zm4-2h-2V6h2v4z"
-                                                      id="icons-coffee_svg__a"
-                                                    />
-                                                  </defs>
-                                                  <use
+                                                  <path
+                                                    d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 2C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm0-14a1 1 0 100-2 1 1 0 000 2zm-2.4 3.9L9 10l2.7-.9c.7-.2 1.4.4 1.3 1.1l-.8 5.3 1.5-.5.6 1.9-3 1c-.7.2-1.4-.4-1.3-1.1l.8-5.4-1.2.5z"
                                                     fill="currentColor"
                                                     fillRule="evenodd"
-                                                    xlinkHref="#icons-coffee_svg__a"
                                                   />
                                                 </svg>
                                               </Component>
@@ -24516,18 +25082,15 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           </div>
                         </Base>
                       </Flex>
-                      <Text
-                        color="gray-7"
-                        size="x3"
-                        weight="medium"
+                      <Flex
+                        direction="vertical"
+                        gap="x4"
                       >
                         <Base
-                          Component="div"
-                          className="Text Text--size-x3 Text--weight-medium"
-                          color="gray-7"
+                          className="Flex Flex--vertical Flex--gapped Flex--gap-x4"
                         >
                           <div
-                            className="Base Base--color-gray-7 Text Text--size-x3 Text--weight-medium"
+                            className="Base Flex Flex--vertical Flex--gapped Flex--gap-x4"
                             style={
                               Object {
                                 "height": undefined,
@@ -24539,17 +25102,18 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                               }
                             }
                           >
-                            The app was signed with a Development Provisioning Profile which means that it
-                             
                             <Text
-                              weight="bold"
+                              color="gray-7"
+                              size="x3"
+                              weight="medium"
                             >
                               <Base
                                 Component="div"
-                                className="Text Text--weight-bold"
+                                className="Text Text--size-x3 Text--weight-medium"
+                                color="gray-7"
                               >
                                 <div
-                                  className="Base Text Text--weight-bold"
+                                  className="Base Base--color-gray-7 Text Text--size-x3 Text--weight-medium"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -24561,13 +25125,164 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                     }
                                   }
                                 >
-                                  can only be installed on devices which are included in the Provisioning Profile
+                                  The app was signed with a Development Provisioning Profile which means that it
+                                   
+                                  <Text
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="div"
+                                      className="Text Text--weight-bold"
+                                    >
+                                      <div
+                                        className="Base Text Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "minHeight": undefined,
+                                            "minWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        can only be installed on devices which are included in the Provisioning Profile
+                                      </div>
+                                    </Base>
+                                  </Text>
                                 </div>
                               </Base>
                             </Text>
+                            <Notification
+                              icon="Lightbulb"
+                              type="inform"
+                            >
+                              <Flex
+                                alignChildrenVertical="middle"
+                                className="Notification Notification--type-inform"
+                                direction="horizontal"
+                                gap="x2"
+                                padding="x3"
+                              >
+                                <Base
+                                  className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                  padding="x3"
+                                >
+                                  <div
+                                    className="Base Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    <Flex>
+                                      <Base
+                                        className="Flex"
+                                      >
+                                        <div
+                                          className="Base Flex"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          <Icon
+                                            name="Lightbulb"
+                                            size="1.5rem"
+                                          >
+                                            <Base
+                                              Component="svg"
+                                              className="Icon"
+                                              height="1.5rem"
+                                              viewBox="0 0 24 24"
+                                              width="1.5rem"
+                                            >
+                                              <svg
+                                                className="Base Icon"
+                                                style={
+                                                  Object {
+                                                    "height": "1.5rem",
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": "1.5rem",
+                                                  }
+                                                }
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <Component
+                                                  height="100%"
+                                                  width="100%"
+                                                >
+                                                  <svg
+                                                    height="100%"
+                                                    viewBox="0 0 24 24"
+                                                    width="100%"
+                                                  >
+                                                    <defs>
+                                                      <path
+                                                        d="M12 6c-3.3 0-6 2.7-6 6 0 2 1 3.8 2.5 4.8l.2.6c.2.9 1 1.5 1.9 1.5h2.9c.9 0 1.7-.6 1.9-1.5l.2-.6C17 15.8 18 14 18 12c0-3.3-2.7-6-6-6zm2.4 9.2c-.4.3-.6.7-.8 1.1l-.2.7h-2.8l-.2-.6c-.1-.5-.4-.9-.8-1.1-1-.8-1.6-2-1.6-3.3 0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.3-.6 2.5-1.6 3.2zM12 22c1.4 0 2.7-.8 3-2H9c.3 1.1 1.6 2 3 2zM11 2h2v2h-2V2zm6.662 1.697l1.532 1.285-1.286 1.532-1.532-1.285 1.286-1.532zm4.012 5.582l.348 1.97-1.97.347-.347-1.97 1.97-.347zm-.514 6.855l-1 1.732-1.732-1 1-1.732 1.732 1zM3.84 17.866l-1-1.732 1.732-1 1 1.732-1.732 1zm-1.862-6.618l.348-1.97 1.97.348-.348 1.97-1.97-.348zm2.828-6.266l1.532-1.285 1.286 1.532-1.532 1.285-1.286-1.532z"
+                                                        id="icons-lightbulb_svg__a"
+                                                      />
+                                                    </defs>
+                                                    <use
+                                                      fill="currentColor"
+                                                      fillRule="evenodd"
+                                                      xlinkHref="#icons-lightbulb_svg__a"
+                                                    />
+                                                  </svg>
+                                                </Component>
+                                              </svg>
+                                            </Base>
+                                          </Icon>
+                                        </div>
+                                      </Base>
+                                    </Flex>
+                                    <Flex
+                                      grow={true}
+                                      initial="none"
+                                    >
+                                      <Base
+                                        className="Flex Flex--initial-none Flex--grow"
+                                      >
+                                        <div
+                                          className="Base Flex Flex--initial-none Flex--grow"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          You can find registered devices on the Devices tab.
+                                        </div>
+                                      </Base>
+                                    </Flex>
+                                  </div>
+                                </Base>
+                              </Flex>
+                            </Notification>
                           </div>
                         </Base>
-                      </Text>
+                      </Flex>
                       <Divider
                         color="gray-2"
                         direction="horizontal"
