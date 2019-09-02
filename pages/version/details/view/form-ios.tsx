@@ -48,9 +48,6 @@ export default ({
   <Fragment>
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>Description</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="description" defaultValue={appVersion.description} />
 
@@ -77,9 +74,6 @@ export default ({
 
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>What's new</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="whatsNew" defaultValue={appVersion.whatsNew} />
 
@@ -87,9 +81,6 @@ export default ({
 
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>Promotional Text</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="promotionalText" defaultValue={appVersion.promotionalText} />
 
@@ -97,9 +88,6 @@ export default ({
 
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>Keywords</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="keywords" defaultValue={appVersion.keywords} />
 
@@ -107,9 +95,6 @@ export default ({
 
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>Review Notes</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="reviewNotes" defaultValue={appVersion.reviewNotes} />
 

@@ -1678,34 +1678,6 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -1813,34 +1785,6 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                     </Base>
                                   </Text>
                                 </InputLabel>
-                                <Text
-                                  align="end"
-                                  color="gray-7"
-                                  size="x2"
-                                  weight="medium"
-                                >
-                                  <Base
-                                    Component="div"
-                                    className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                    color="gray-7"
-                                  >
-                                    <div
-                                      className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "minHeight": undefined,
-                                          "minWidth": undefined,
-                                          "width": undefined,
-                                        }
-                                      }
-                                    >
-                                      1235
-                                    </div>
-                                  </Base>
-                                </Text>
                               </div>
                             </Base>
                           </Flex>
@@ -1934,34 +1878,6 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -5701,34 +5617,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -6806,34 +6694,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -6958,34 +6818,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -7110,34 +6942,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -7262,34 +7066,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -10072,34 +9848,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -11177,34 +10925,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -11329,34 +11049,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -11481,34 +11173,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -11633,34 +11297,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -14434,34 +14070,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -15539,34 +15147,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -15691,34 +15271,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -15843,34 +15395,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -15995,34 +15519,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -18929,34 +18425,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -20034,34 +19502,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -20186,34 +19626,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -20338,34 +19750,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -20490,34 +19874,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -23527,34 +22883,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -24632,34 +23960,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -24784,34 +24084,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -24936,34 +24208,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>
@@ -25088,34 +24332,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 </Base>
                               </Text>
                             </InputLabel>
-                            <Text
-                              align="end"
-                              color="gray-7"
-                              size="x2"
-                              weight="medium"
-                            >
-                              <Base
-                                Component="div"
-                                className="Text Text--align-end Text--size-x2 Text--weight-medium"
-                                color="gray-7"
-                              >
-                                <div
-                                  className="Base Base--color-gray-7 Text Text--align-end Text--size-x2 Text--weight-medium"
-                                  style={
-                                    Object {
-                                      "height": undefined,
-                                      "maxHeight": undefined,
-                                      "maxWidth": undefined,
-                                      "minHeight": undefined,
-                                      "minWidth": undefined,
-                                      "width": undefined,
-                                    }
-                                  }
-                                >
-                                  1235
-                                </div>
-                              </Base>
-                            </Text>
                           </div>
                         </Base>
                       </Flex>

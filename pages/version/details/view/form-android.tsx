@@ -43,27 +43,18 @@ export default ({
   <Fragment>
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>What's new</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="whatsNew" defaultValue={appVersion.whatsNew} />
 
     <Base paddingVertical="x4">
       <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
         <InputLabel>Short Description</InputLabel>
-        <Text size="x2" weight="medium" color="gray-7" align="end">
-          1235
-        </Text>
       </Flex>
       <Textarea name="shortDescription" defaultValue={appVersion.shortDescription} />
     </Base>
 
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>Full Description</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="description" defaultValue={appVersion.description} />
 
