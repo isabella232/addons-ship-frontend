@@ -14,7 +14,8 @@ import {
   Link,
   RadioButton,
   Text,
-  Tooltip
+  Tooltip,
+  ProgressBitbot
 } from '@bitrise/bitkit';
 
 import { Certificate, KeystoreFile, ProvProfile, ServiceAccountJsonFile, Settings } from '@/models/settings';
@@ -24,6 +25,7 @@ import { Platform } from '@/models';
 import css from './style.scss';
 
 interface Props extends Settings {
+  hasLoaded: boolean;
   appSlug: string;
   maximumNumberOfCertificates: number;
   hasMounted: boolean;
@@ -44,6 +46,7 @@ interface Props extends Settings {
 }
 
 export default ({
+  hasLoaded,
   appSlug,
   maximumNumberOfCertificates,
   hasMounted,
@@ -64,6 +67,13 @@ export default ({
   hasAndroidSettings
 }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
+
+  if (!hasLoaded)
+    return (
+      <Base absolute="center">
+        <ProgressBitbot color="grape-3" />
+      </Base>
+    );
 
   return (
     <Base paddingVertical="x8" maxWidth={isDesktop ? '100%' : 660} className={css.container}>

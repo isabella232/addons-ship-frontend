@@ -39,7 +39,8 @@ describe('GeneralView', () => {
     onCancel: jest.fn(),
     onSave: jest.fn(),
     hasIosSettings: true,
-    hasAndroidSettings: true
+    hasAndroidSettings: true,
+    hasLoaded: true
   };
 
   describe('when viewed on desktop', () => {
@@ -49,6 +50,11 @@ describe('GeneralView', () => {
 
     it('renders the view correctly', () => {
       const tree = toJSON(shallow(<GeneralView {...defaultProps} />));
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('renders the loading state', () => {
+      const tree = toJSON(shallow(<GeneralView {...defaultProps} hasLoaded={false} />));
       expect(tree).toMatchSnapshot();
     });
   });
@@ -192,12 +198,20 @@ describe('General', () => {
     appSlug: 'some-app-slug',
     appVersion: mockAppVersion,
     settings: mockSettings,
-    updateSettings: jest.fn() as any
+    updateSettings: jest.fn() as any,
+    fetchSettings: jest.fn() as any,
+    hasLoaded: true
   };
 
   it('renders correctly', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
     const tree = toJSON(shallow(<General {...defaultProps} />));
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders correctly when loading', () => {
+    (mediaQuery as jest.Mock).mockReturnValue([true]);
+    const tree = toJSON(shallow(<General {...defaultProps} hasLoaded={false} />));
     expect(tree).toMatchSnapshot();
   });
 
