@@ -14,7 +14,7 @@ import { analyticsConfig } from '@/config';
 import { initializeSegment } from '@/utils/analytics';
 
 import '@/assets/style/index.scss';
-import makeStore from '../store';
+import makeStore, { RootState } from '../store';
 
 export interface ShipAppProps extends DefaultAppIProps {
   store: Store;
@@ -53,7 +53,10 @@ export class ShipApp extends App<ShipAppProps> {
     }
 
     if (appSlug) {
-      await ctx.store.dispatch(fetchApp(appSlug as string) as any);
+      const { app } = ctx.store.getState() as RootState;
+      if (!app) {
+        await ctx.store.dispatch(fetchApp(appSlug as string) as any);
+      }
     } else {
       console.log('No app slug provided');
     }
