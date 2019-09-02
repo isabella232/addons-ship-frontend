@@ -27,6 +27,7 @@ exports[`Squircle renders without issues 1`] = `
     style={
       Object {
         "clipPath": "url(#squircle-0.05)",
+        "marginTop": "-25%",
         "objectFit": "covver",
       }
     }

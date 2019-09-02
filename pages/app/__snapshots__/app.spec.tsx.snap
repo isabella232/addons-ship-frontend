@@ -950,15 +950,16 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
               }
             >
               <Base
+                maxWidth={960}
                 width="100%"
               >
                 <div
-                  className="Base"
+                  className="Base Base--max-width"
                   style={
                     Object {
                       "height": undefined,
                       "maxHeight": undefined,
-                      "maxWidth": undefined,
+                      "maxWidth": 960,
                       "minHeight": undefined,
                       "minWidth": undefined,
                       "width": "100%",
@@ -983,6 +984,11 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       >
                         <div
                           className="colorBar"
+                          style={
+                            Object {
+                              "backgroundImage": "url('/static/latest-version-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
+                            }
+                          }
                         />
                         <div
                           className="body"
@@ -1024,6 +1030,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
+                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -1038,6 +1045,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
+                                        "marginTop": "-25%",
                                         "objectFit": "covver",
                                       }
                                     }
@@ -1050,6 +1058,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                         Object {
                                           "clipPath": "url(#squircle-0.05)",
                                           "height": undefined,
+                                          "marginTop": "-25%",
                                           "maxHeight": undefined,
                                           "maxWidth": undefined,
                                           "minHeight": undefined,

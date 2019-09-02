@@ -1320,6 +1320,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
+                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -1334,6 +1335,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
+                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -1346,6 +1348,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
+                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
@@ -1404,26 +1407,26 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                       <Icon
                                         color="grape-4"
                                         name="PlatformsAndroid"
-                                        size="1.5rem"
+                                        size="2rem"
                                       >
                                         <Base
                                           Component="svg"
                                           className="Icon"
                                           color="grape-4"
-                                          height="1.5rem"
+                                          height="2rem"
                                           viewBox="0 0 24 24"
-                                          width="1.5rem"
+                                          width="2rem"
                                         >
                                           <svg
                                             className="Base Base--color-grape-4 Icon"
                                             style={
                                               Object {
-                                                "height": "1.5rem",
+                                                "height": "2rem",
                                                 "maxHeight": undefined,
                                                 "maxWidth": undefined,
                                                 "minHeight": undefined,
                                                 "minWidth": undefined,
-                                                "width": "1.5rem",
+                                                "width": "2rem",
                                               }
                                             }
                                             viewBox="0 0 24 24"
@@ -5210,6 +5213,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
+                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -5224,6 +5228,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
+                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -5236,6 +5241,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
+                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
@@ -5294,26 +5300,26 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                       <Icon
                                         color="grape-4"
                                         name="PlatformsApple"
-                                        size="1.5rem"
+                                        size="2rem"
                                       >
                                         <Base
                                           Component="svg"
                                           className="Icon"
                                           color="grape-4"
-                                          height="1.5rem"
+                                          height="2rem"
                                           viewBox="0 0 24 24"
-                                          width="1.5rem"
+                                          width="2rem"
                                         >
                                           <svg
                                             className="Base Base--color-grape-4 Icon"
                                             style={
                                               Object {
-                                                "height": "1.5rem",
+                                                "height": "2rem",
                                                 "maxHeight": undefined,
                                                 "maxWidth": undefined,
                                                 "minHeight": undefined,
                                                 "minWidth": undefined,
-                                                "width": "1.5rem",
+                                                "width": "2rem",
                                               }
                                             }
                                             viewBox="0 0 24 24"
@@ -9503,6 +9509,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
+                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -9517,6 +9524,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
+                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -9529,6 +9537,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
+                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
@@ -9587,26 +9596,26 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                       <Icon
                                         color="grape-4"
                                         name="PlatformsApple"
-                                        size="1.5rem"
+                                        size="2rem"
                                       >
                                         <Base
                                           Component="svg"
                                           className="Icon"
                                           color="grape-4"
-                                          height="1.5rem"
+                                          height="2rem"
                                           viewBox="0 0 24 24"
-                                          width="1.5rem"
+                                          width="2rem"
                                         >
                                           <svg
                                             className="Base Base--color-grape-4 Icon"
                                             style={
                                               Object {
-                                                "height": "1.5rem",
+                                                "height": "2rem",
                                                 "maxHeight": undefined,
                                                 "maxWidth": undefined,
                                                 "minHeight": undefined,
                                                 "minWidth": undefined,
-                                                "width": "1.5rem",
+                                                "width": "2rem",
                                               }
                                             }
                                             viewBox="0 0 24 24"
@@ -13787,6 +13796,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
+                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -13801,6 +13811,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
+                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -13813,6 +13824,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
+                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
@@ -13871,26 +13883,26 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                       <Icon
                                         color="grape-4"
                                         name="PlatformsApple"
-                                        size="1.5rem"
+                                        size="2rem"
                                       >
                                         <Base
                                           Component="svg"
                                           className="Icon"
                                           color="grape-4"
-                                          height="1.5rem"
+                                          height="2rem"
                                           viewBox="0 0 24 24"
-                                          width="1.5rem"
+                                          width="2rem"
                                         >
                                           <svg
                                             className="Base Base--color-grape-4 Icon"
                                             style={
                                               Object {
-                                                "height": "1.5rem",
+                                                "height": "2rem",
                                                 "maxHeight": undefined,
                                                 "maxWidth": undefined,
                                                 "minHeight": undefined,
                                                 "minWidth": undefined,
-                                                "width": "1.5rem",
+                                                "width": "2rem",
                                               }
                                             }
                                             viewBox="0 0 24 24"
@@ -17549,7 +17561,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
               <Icon
                 color="grape-4"
                 name="PlatformsApple"
-                size="1.5rem"
+                size="2rem"
               />
               <Text
                 color="grape-4"
@@ -17716,7 +17728,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
               <Icon
                 color="grape-4"
                 name="PlatformsApple"
-                size="1.5rem"
+                size="2rem"
               />
               <Text
                 color="grape-4"
@@ -18202,6 +18214,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
+                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -18216,6 +18229,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
+                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -18228,6 +18242,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
+                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
@@ -18286,26 +18301,26 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                       <Icon
                                         color="grape-4"
                                         name="PlatformsApple"
-                                        size="1.5rem"
+                                        size="2rem"
                                       >
                                         <Base
                                           Component="svg"
                                           className="Icon"
                                           color="grape-4"
-                                          height="1.5rem"
+                                          height="2rem"
                                           viewBox="0 0 24 24"
-                                          width="1.5rem"
+                                          width="2rem"
                                         >
                                           <svg
                                             className="Base Base--color-grape-4 Icon"
                                             style={
                                               Object {
-                                                "height": "1.5rem",
+                                                "height": "2rem",
                                                 "maxHeight": undefined,
                                                 "maxWidth": undefined,
                                                 "minHeight": undefined,
                                                 "minWidth": undefined,
-                                                "width": "1.5rem",
+                                                "width": "2rem",
                                               }
                                             }
                                             viewBox="0 0 24 24"
@@ -22486,6 +22501,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.05)",
+                                    "marginTop": "-25%",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -22500,6 +22516,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.05)",
+                                      "marginTop": "-25%",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -22512,6 +22529,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                       Object {
                                         "clipPath": "url(#squircle-0.05)",
                                         "height": undefined,
+                                        "marginTop": "-25%",
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
                                         "minHeight": undefined,
@@ -22570,26 +22588,26 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                       <Icon
                                         color="grape-4"
                                         name="PlatformsApple"
-                                        size="1.5rem"
+                                        size="2rem"
                                       >
                                         <Base
                                           Component="svg"
                                           className="Icon"
                                           color="grape-4"
-                                          height="1.5rem"
+                                          height="2rem"
                                           viewBox="0 0 24 24"
-                                          width="1.5rem"
+                                          width="2rem"
                                         >
                                           <svg
                                             className="Base Base--color-grape-4 Icon"
                                             style={
                                               Object {
-                                                "height": "1.5rem",
+                                                "height": "2rem",
                                                 "maxHeight": undefined,
                                                 "maxWidth": undefined,
                                                 "minHeight": undefined,
                                                 "minWidth": undefined,
-                                                "width": "1.5rem",
+                                                "width": "2rem",
                                               }
                                             }
                                             viewBox="0 0 24 24"
