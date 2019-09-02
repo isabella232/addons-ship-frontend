@@ -950,15 +950,16 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
               }
             >
               <Base
+                maxWidth={960}
                 width="100%"
               >
                 <div
-                  className="Base"
+                  className="Base Base--max-width"
                   style={
                     Object {
                       "height": undefined,
                       "maxHeight": undefined,
-                      "maxWidth": undefined,
+                      "maxWidth": 960,
                       "minHeight": undefined,
                       "minWidth": undefined,
                       "width": "100%",
@@ -983,6 +984,11 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       >
                         <div
                           className="colorBar"
+                          style={
+                            Object {
+                              "backgroundImage": "url('/static/latest-version-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
+                            }
+                          }
                         />
                         <div
                           className="body"
@@ -999,6 +1005,11 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                               <div>
                                 <svg
                                   height="0"
+                                  style={
+                                    Object {
+                                      "display": "block",
+                                    }
+                                  }
                                   width="0"
                                 >
                                   <defs>

@@ -18,11 +18,18 @@ interface AppSummaryProps {
 
 export default ({ detailsPagePath, title, description, note, iconUrl, platformIconUrl }: AppSummaryProps) => {
   const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
+  const primaryColor = '#0D83CD';
+  const secondaryColor = '#0DD3C5';
 
   return (
     <Link href={detailsPagePath}>
       <a className={css.appSummary}>
-        <div className={css.colorBar} />
+        <div
+          className={css.colorBar}
+          style={{
+            backgroundImage: `url('/static/latest-version-bg.svg'), linear-gradient(90deg, ${primaryColor}, ${secondaryColor})`
+          }}
+        />
         <div className={css.body}>
           <div className={css.iconWrapper}>
             <Squircle src={iconUrl} borderRadius="x2" width="96px" margin="x0" />
@@ -40,7 +47,7 @@ export default ({ detailsPagePath, title, description, note, iconUrl, platformIc
               {title}
             </Text>
           </div>
-          <div className={css.description}>{description}</div>
+          {description && <div className={css.description}>{description}</div>}
         </div>
       </a>
     </Link>

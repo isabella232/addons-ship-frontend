@@ -33,6 +33,11 @@ exports[`Header on desktop renders correctly 1`] = `
     direction="vertical"
     gap="x2"
     paddingVertical="x8"
+    style={
+      Object {
+        "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
+      }
+    }
   >
     <_default
       projectType="other"
@@ -177,6 +182,11 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
     direction="vertical"
     gap="x2"
     paddingVertical="x8"
+    style={
+      Object {
+        "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
+      }
+    }
   >
     <_default
       projectType="other"
@@ -321,6 +331,11 @@ exports[`Header routes /app for desktop 1`] = `
     direction="vertical"
     gap="x2"
     paddingVertical="x8"
+    style={
+      Object {
+        "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
+      }
+    }
   >
     <_default
       projectType="other"
@@ -430,6 +445,11 @@ exports[`Header routes /app for mobile 1`] = `
     direction="vertical"
     gap="x2"
     paddingVertical="x8"
+    style={
+      Object {
+        "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
+      }
+    }
   >
     <_default
       projectType="other"
@@ -539,6 +559,11 @@ exports[`Header routes /settings for desktop 1`] = `
     direction="vertical"
     gap="x2"
     paddingVertical="x5"
+    style={
+      Object {
+        "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
+      }
+    }
   >
     <Flex
       direction="horizontal"
@@ -667,6 +692,11 @@ exports[`Header routes /settings for mobile 1`] = `
     direction="vertical"
     gap="x2"
     paddingVertical="x5"
+    style={
+      Object {
+        "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
+      }
+    }
   >
     <Flex
       direction="horizontal"
@@ -795,6 +825,11 @@ exports[`Header routes /version for desktop 1`] = `
     direction="vertical"
     gap="x2"
     paddingVertical="x5"
+    style={
+      Object {
+        "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
+      }
+    }
   >
     <Flex
       direction="horizontal"
@@ -923,6 +958,11 @@ exports[`Header routes /version for mobile 1`] = `
     direction="vertical"
     gap="x2"
     paddingVertical="x5"
+    style={
+      Object {
+        "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
+      }
+    }
   >
     <Flex
       direction="horizontal"
@@ -1051,6 +1091,11 @@ exports[`Header when settings onboarding should be shown shows the notification 
     direction="vertical"
     gap="x2"
     paddingVertical="x8"
+    style={
+      Object {
+        "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
+      }
+    }
   >
     <_default
       projectType="other"

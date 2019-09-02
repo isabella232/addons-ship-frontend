@@ -138,7 +138,7 @@ export default ({
 
               <Flex direction="vertical" alignChildrenVertical="middle" paddingHorizontal="x6">
                 <Flex direction="horizontal" alignChildren="middle">
-                  <Icon color="grape-4" name={iconName} size="1.5rem" />
+                  <Icon color="grape-4" name={iconName} size="2rem" />
                   <Text letterSpacing="x2" size="x6" weight="bold" color="grape-4" paddingHorizontal="x2">
                     {appVersion.appName}
                   </Text>

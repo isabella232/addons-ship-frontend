@@ -4,6 +4,11 @@ exports[`Squircle renders without issues 1`] = `
 <div>
   <svg
     height="0"
+    style={
+      Object {
+        "display": "block",
+      }
+    }
     width="0"
   >
     <defs>

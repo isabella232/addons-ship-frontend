@@ -41,6 +41,8 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding }: Props)
     shouldShowSettingsOnboarding
   );
   const { route } = useRouter();
+  const primaryColor = '#0D83CD';
+  const secondaryColor = '#0DD3C5';
 
   useEffect(() => {
     const handleRouteChange = () => setHamburgerIconActive(false);
@@ -169,7 +171,15 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding }: Props)
         </AddonBeam>
       </PlacementManager>
 
-      <Flex className={css.header} direction="vertical" paddingVertical={breadcrumbs ? 'x5' : 'x8'} gap="x2">
+      <Flex
+        className={css.header}
+        direction="vertical"
+        paddingVertical={breadcrumbs ? 'x5' : 'x8'}
+        gap="x2"
+        style={{
+          backgroundImage: `url('/static/header-bg.svg'), linear-gradient(90deg, ${primaryColor}, ${secondaryColor})`
+        }}
+      >
         {breadcrumbs}
         <PageTitle projectType={projectType} title={pageTitle} smaller={!!breadcrumbs} />
       </Flex>

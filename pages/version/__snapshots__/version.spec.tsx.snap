@@ -41,368 +41,403 @@ Object {
 `;
 
 exports[`AppVersion renders the activity tab correctly 1`] = `
-<Base
-  paddingVertical="x10"
->
-  <Base
-    maxWidth={960}
-  >
-    <Tabs
-      gap="x10"
+<Fragment>
+  <Base>
+    <Base
+      maxWidth={960}
     >
-      <Tab
-        active={false}
+      <Tabs
+        gap="x10"
       >
-        <Link
-          as="some/path/details"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+        <Tab
+          active={false}
         >
-          <a>
-            Details
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/devices"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          <Link
+            as="some/path/details"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+          >
+            <a>
+              Details
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Devices
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/qa"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          <Link
+            as="some/path/devices"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          >
+            <a>
+              Devices
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Qa
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={true}
-      >
-        <Link
-          as="some/path/activity"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          <Link
+            as="some/path/qa"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          >
+            <a>
+              Qa
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={true}
         >
-          <a>
-            Activity
-          </a>
-        </Link>
-      </Tab>
-    </Tabs>
+          <Link
+            as="some/path/activity"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          >
+            <a>
+              Activity
+            </a>
+          </Link>
+        </Tab>
+      </Tabs>
+    </Base>
+    <Divider
+      color="gray-2"
+      direction="horizontal"
+      width="0.125rem"
+    />
+    <Base
+      maxWidth={960}
+    >
+      <Connect(Activity) />
+    </Base>
   </Base>
-  <Divider
-    color="gray-2"
-    direction="horizontal"
-    width="0.125rem"
-  />
-  <Base
-    maxWidth={960}
+  <Flex
+    className="footerWrapper"
   >
-    <Connect(Activity) />
-  </Base>
-</Base>
+    <AddonFooter
+      addonName="Ship"
+    />
+  </Flex>
+</Fragment>
 `;
 
 exports[`AppVersion renders the details tab correctly 1`] = `
-<Base
-  paddingVertical="x10"
->
-  <Base
-    maxWidth={960}
-  >
-    <Tabs
-      gap="x10"
+<Fragment>
+  <Base>
+    <Base
+      maxWidth={960}
     >
-      <Tab
-        active={true}
+      <Tabs
+        gap="x10"
       >
-        <Link
-          as="some/path/details"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+        <Tab
+          active={true}
         >
-          <a>
-            Details
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/devices"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          <Link
+            as="some/path/details"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+          >
+            <a>
+              Details
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Devices
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/qa"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          <Link
+            as="some/path/devices"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          >
+            <a>
+              Devices
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Qa
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/activity"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          <Link
+            as="some/path/qa"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          >
+            <a>
+              Qa
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Activity
-          </a>
-        </Link>
-      </Tab>
-    </Tabs>
+          <Link
+            as="some/path/activity"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          >
+            <a>
+              Activity
+            </a>
+          </Link>
+        </Tab>
+      </Tabs>
+    </Base>
+    <Divider
+      color="gray-2"
+      direction="horizontal"
+      width="0.125rem"
+    />
+    <Base
+      maxWidth={960}
+    >
+      <Connect(AppVersionDetails) />
+    </Base>
   </Base>
-  <Divider
-    color="gray-2"
-    direction="horizontal"
-    width="0.125rem"
-  />
-  <Base
-    maxWidth={960}
+  <Flex
+    className="footerWrapper"
   >
-    <Connect(AppVersionDetails) />
-  </Base>
-</Base>
+    <AddonFooter
+      addonName="Ship"
+    />
+  </Flex>
+</Fragment>
 `;
 
 exports[`AppVersion renders the devices tab correctly 1`] = `
-<Base
-  paddingVertical="x10"
->
-  <Base
-    maxWidth={960}
-  >
-    <Tabs
-      gap="x10"
+<Fragment>
+  <Base>
+    <Base
+      maxWidth={960}
     >
-      <Tab
-        active={false}
+      <Tabs
+        gap="x10"
       >
-        <Link
-          as="some/path/details"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+        <Tab
+          active={false}
         >
-          <a>
-            Details
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={true}
-      >
-        <Link
-          as="some/path/devices"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          <Link
+            as="some/path/details"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+          >
+            <a>
+              Details
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={true}
         >
-          <a>
-            Devices
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/qa"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          <Link
+            as="some/path/devices"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          >
+            <a>
+              Devices
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Qa
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/activity"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          <Link
+            as="some/path/qa"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          >
+            <a>
+              Qa
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Activity
-          </a>
-        </Link>
-      </Tab>
-    </Tabs>
+          <Link
+            as="some/path/activity"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          >
+            <a>
+              Activity
+            </a>
+          </Link>
+        </Tab>
+      </Tabs>
+    </Base>
+    <Divider
+      color="gray-2"
+      direction="horizontal"
+      width="0.125rem"
+    />
+    <Base
+      maxWidth={960}
+    >
+      <Connect(AppVersionDevices) />
+    </Base>
   </Base>
-  <Divider
-    color="gray-2"
-    direction="horizontal"
-    width="0.125rem"
-  />
-  <Base
-    maxWidth={960}
+  <Flex
+    className="footerWrapper"
   >
-    <Connect(AppVersionDevices) />
-  </Base>
-</Base>
+    <AddonFooter
+      addonName="Ship"
+    />
+  </Flex>
+</Fragment>
 `;
 
 exports[`AppVersion renders the other tabs correctly 1`] = `
-<Base
-  paddingVertical="x10"
->
-  <Base
-    maxWidth={960}
-  >
-    <Tabs
-      gap="x10"
+<Fragment>
+  <Base>
+    <Base
+      maxWidth={960}
     >
-      <Tab
-        active={false}
+      <Tabs
+        gap="x10"
       >
-        <Link
-          as="some/path/details"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+        <Tab
+          active={false}
         >
-          <a>
-            Details
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/devices"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          <Link
+            as="some/path/details"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+          >
+            <a>
+              Details
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Devices
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/qa"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          <Link
+            as="some/path/devices"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          >
+            <a>
+              Devices
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Qa
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/activity"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          <Link
+            as="some/path/qa"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          >
+            <a>
+              Qa
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Activity
-          </a>
-        </Link>
-      </Tab>
-    </Tabs>
+          <Link
+            as="some/path/activity"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          >
+            <a>
+              Activity
+            </a>
+          </Link>
+        </Tab>
+      </Tabs>
+    </Base>
+    <Divider
+      color="gray-2"
+      direction="horizontal"
+      width="0.125rem"
+    />
+    <Base
+      maxWidth={960}
+    >
+      <h1>
+        whateever
+      </h1>
+    </Base>
   </Base>
-  <Divider
-    color="gray-2"
-    direction="horizontal"
-    width="0.125rem"
-  />
-  <Base
-    maxWidth={960}
+  <Flex
+    className="footerWrapper"
   >
-    <h1>
-      whateever
-    </h1>
-  </Base>
-</Base>
+    <AddonFooter
+      addonName="Ship"
+    />
+  </Flex>
+</Fragment>
 `;
 
 exports[`AppVersion renders the qa tab correctly 1`] = `
-<Base
-  paddingVertical="x10"
->
-  <Base
-    maxWidth={960}
-  >
-    <Tabs
-      gap="x10"
+<Fragment>
+  <Base>
+    <Base
+      maxWidth={960}
     >
-      <Tab
-        active={false}
+      <Tabs
+        gap="x10"
       >
-        <Link
-          as="some/path/details"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+        <Tab
+          active={false}
         >
-          <a>
-            Details
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/devices"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          <Link
+            as="some/path/details"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+          >
+            <a>
+              Details
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Devices
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={true}
-      >
-        <Link
-          as="some/path/qa"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          <Link
+            as="some/path/devices"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          >
+            <a>
+              Devices
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={true}
         >
-          <a>
-            Qa
-          </a>
-        </Link>
-      </Tab>
-      <Tab
-        active={false}
-      >
-        <Link
-          as="some/path/activity"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          <Link
+            as="some/path/qa"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          >
+            <a>
+              Qa
+            </a>
+          </Link>
+        </Tab>
+        <Tab
+          active={false}
         >
-          <a>
-            Activity
-          </a>
-        </Link>
-      </Tab>
-    </Tabs>
+          <Link
+            as="some/path/activity"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          >
+            <a>
+              Activity
+            </a>
+          </Link>
+        </Tab>
+      </Tabs>
+    </Base>
+    <Divider
+      color="gray-2"
+      direction="horizontal"
+      width="0.125rem"
+    />
+    <Base
+      maxWidth={960}
+    >
+      <_default />
+    </Base>
   </Base>
-  <Divider
-    color="gray-2"
-    direction="horizontal"
-    width="0.125rem"
-  />
-  <Base
-    maxWidth={960}
+  <Flex
+    className="footerWrapper"
   >
-    <_default />
-  </Base>
-</Base>
+    <AddonFooter
+      addonName="Ship"
+    />
+  </Flex>
+</Fragment>
 `;

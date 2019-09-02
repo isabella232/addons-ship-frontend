@@ -1,7 +1,7 @@
-import { Component } from 'react';
+import { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import Link from 'next/link';
-import { Base, Tabs, Tab, Divider } from '@bitrise/bitkit';
+import { Base, Tabs, Tab, Divider, Flex, AddonFooter } from '@bitrise/bitkit';
 import startCase from 'lodash/startCase';
 
 import { AppVersionPageQuery, PageContext, AppVersion, AppVersionPageTabs } from '@/models';
@@ -15,6 +15,8 @@ import Details from './details';
 import Devices from './devices';
 import Activity from './activity';
 import QA from './qa';
+
+import css from './style.scss';
 
 interface VersionPageProps extends AppVersionPageQuery {
   appVersion: AppVersion;
@@ -95,18 +97,23 @@ export class VersionPage extends Component<VersionPageProps> {
     );
 
     return (
-      <Base paddingVertical="x10">
-        <Base maxWidth={960}>
-          <Tabs gap="x10">
-            {tab('details')}
-            {tab('devices')}
-            {tab('qa')}
-            {tab('activity')}
-          </Tabs>
+      <Fragment>
+        <Base>
+          <Base maxWidth={960}>
+            <Tabs gap="x10">
+              {tab('details')}
+              {tab('devices')}
+              {tab('qa')}
+              {tab('activity')}
+            </Tabs>
+          </Base>
+          <Divider color="gray-2" direction="horizontal" />
+          <Base maxWidth={960}>{this.tabContent()}</Base>
         </Base>
-        <Divider color="gray-2" direction="horizontal" />
-        <Base maxWidth={960}>{this.tabContent()}</Base>
-      </Base>
+        <Flex className={css.footerWrapper}>
+          <AddonFooter addonName="Ship" />
+        </Flex>
+      </Fragment>
     );
   }
 }

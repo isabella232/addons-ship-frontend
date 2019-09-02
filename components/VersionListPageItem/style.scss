@@ -21,7 +21,8 @@
       text-decoration: none;
 
       .platformIcon {
-        margin-right: 2 * $grid;
+        margin-right: $grid;
+        margin-bottom: 3px;
 
         svg {
           display: block;
@@ -40,7 +41,7 @@
         font-style: normal;
         font-stretch: normal;
         font-size: 19px;
-        font-weight: 500;
+        font-weight: 700;
       }
 
       .note {
@@ -89,37 +90,6 @@
 
         .showMore {
           display: none;
-        }
-
-        &:hover,
-        &:focus {
-          .showMore {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            margin-left: 2 * $grid;
-
-            .text {
-              color: $grape-3;
-              // TODO: replace with element from UI library
-              font-size: 13px;
-              line-height: 4 * $grid;
-              letter-spacing: normal;
-              font-weight: 500;
-              font-style: normal;
-              font-stretch: normal;
-            }
-
-            .arrow {
-              flex-shrink: 0;
-
-              svg {
-                display: block;
-                @include size(4 * $grid);
-                fill: $grape-3;
-              }
-            }
-          }
         }
       }
 
@@ -179,6 +149,34 @@
       .descriptionWrapper {
         .description {
           color: $grape-3;
+        }
+
+        &:not(.isOpen) .showMore {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          margin-left: 2 * $grid;
+
+          .text {
+            color: $grape-3;
+            // TODO: replace with element from UI library
+            font-size: 13px;
+            line-height: 4 * $grid;
+            letter-spacing: normal;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+          }
+
+          .arrow {
+            flex-shrink: 0;
+
+            svg {
+              display: block;
+              @include size(4 * $grid);
+              fill: $grape-3;
+            }
+          }
         }
 
         &.isOpen {
