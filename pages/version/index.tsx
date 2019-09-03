@@ -91,7 +91,7 @@ export class VersionPage extends Component<VersionPageProps> {
     const tab = (key: string) => (
       <Tab active={selectedTab === key} paddingHorizontal="x2">
         <Link as={`${pagePath}/${key}`} href={`/version?appSlug=${appSlug}&versionId=${id}&selectedTab=${key}`}>
-          <a>{startCase(key)}</a>
+          <a className={css.tabAnchor}>{startCase(key)}</a>
         </Link>
       </Tab>
     );
