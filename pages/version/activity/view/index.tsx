@@ -33,7 +33,7 @@ const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
   }
 
   return (
-    <Flex direction="horizontal" gap="x4">
+    <Flex direction="horizontal" gap="x4" height="2rem" alignChildrenVertical="middle">
       <Icon name={iconName} color={iconColor} />
       <Text size="x3" color={textColor}>
         {message}

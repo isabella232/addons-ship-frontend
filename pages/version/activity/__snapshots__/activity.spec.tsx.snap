@@ -61,8 +61,10 @@ exports[`ActivityView when a test failed renders entry with download log button 
         </TableCell>
         <TableCell>
           <Flex
+            alignChildrenVertical="middle"
             direction="horizontal"
             gap="x4"
+            height="2rem"
           >
             <Icon
               color="red-3"
@@ -130,8 +132,10 @@ exports[`ActivityView when a test is in progress renders entry without download 
         </TableCell>
         <TableCell>
           <Flex
+            alignChildrenVertical="middle"
             direction="horizontal"
             gap="x4"
+            height="2rem"
           >
             <Icon
               color="green-4"
@@ -183,8 +187,10 @@ exports[`ActivityView when a test is successful renders entry without download l
         </TableCell>
         <TableCell>
           <Flex
+            alignChildrenVertical="middle"
             direction="horizontal"
             gap="x4"
+            height="2rem"
           >
             <Icon
               color="green-4"
@@ -236,8 +242,10 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
         </TableCell>
         <TableCell>
           <Flex
+            alignChildrenVertical="middle"
             direction="horizontal"
             gap="x4"
+            height="2rem"
           >
             <Icon
               color="green-4"
@@ -266,8 +274,10 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
         </TableCell>
         <TableCell>
           <Flex
+            alignChildrenVertical="middle"
             direction="horizontal"
             gap="x4"
+            height="2rem"
           >
             <Icon
               color="green-4"
@@ -296,8 +306,10 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
         </TableCell>
         <TableCell>
           <Flex
+            alignChildrenVertical="middle"
             direction="horizontal"
             gap="x4"
+            height="2rem"
           >
             <Icon
               color="red-3"
@@ -365,8 +377,10 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
         </TableCell>
         <TableCell>
           <Flex
+            alignChildrenVertical="middle"
             direction="horizontal"
             gap="x4"
+            height="2rem"
           >
             <Icon
               color="green-4"
@@ -395,8 +409,10 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
         </TableCell>
         <TableCell>
           <Flex
+            alignChildrenVertical="middle"
             direction="horizontal"
             gap="x4"
+            height="2rem"
           >
             <Icon
               color="green-4"
@@ -425,8 +441,10 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
         </TableCell>
         <TableCell>
           <Flex
+            alignChildrenVertical="middle"
             direction="horizontal"
             gap="x4"
+            height="2rem"
           >
             <Icon
               color="red-3"
