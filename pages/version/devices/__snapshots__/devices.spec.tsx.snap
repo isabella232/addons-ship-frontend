@@ -21,10 +21,11 @@ exports[`AppVersion AppVersionDevices 1`] = `
       },
     ]
   }
+  projectType="other"
 />
 `;
 
-exports[`AppVersion renders the details tab correctly 1`] = `
+exports[`AppVersion renders the details tab correctly with UDID 1`] = `
 <Table
   type="card"
 >
@@ -38,6 +39,128 @@ exports[`AppVersion renders the details tab correctly 1`] = `
       </TableHeaderCell>
       <TableHeaderCell>
         UDID
+      </TableHeaderCell>
+    </TableHeaderRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow
+      key="some-device-id-01"
+    >
+      <TableCell>
+        test-user-1
+      </TableCell>
+      <TableCell>
+        ios
+      </TableCell>
+      <TableCell>
+        some-device-id-01
+      </TableCell>
+    </TableRow>
+    <TableRow
+      key="some-device-id-02"
+    >
+      <TableCell>
+        test-user-1
+      </TableCell>
+      <TableCell>
+        android
+      </TableCell>
+      <TableCell>
+        some-device-id-02
+      </TableCell>
+    </TableRow>
+    <TableRow
+      key="some-device-id-03"
+    >
+      <TableCell>
+        test-user-2
+      </TableCell>
+      <TableCell>
+        ios
+      </TableCell>
+      <TableCell>
+        some-device-id-03
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+`;
+
+exports[`AppVersion renders the details tab correctly with UUID 1`] = `
+<Table
+  type="card"
+>
+  <TableHeader>
+    <TableHeaderRow>
+      <TableHeaderCell>
+        User
+      </TableHeaderCell>
+      <TableHeaderCell>
+        Device
+      </TableHeaderCell>
+      <TableHeaderCell>
+        UUID
+      </TableHeaderCell>
+    </TableHeaderRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow
+      key="some-device-id-01"
+    >
+      <TableCell>
+        test-user-1
+      </TableCell>
+      <TableCell>
+        ios
+      </TableCell>
+      <TableCell>
+        some-device-id-01
+      </TableCell>
+    </TableRow>
+    <TableRow
+      key="some-device-id-02"
+    >
+      <TableCell>
+        test-user-1
+      </TableCell>
+      <TableCell>
+        android
+      </TableCell>
+      <TableCell>
+        some-device-id-02
+      </TableCell>
+    </TableRow>
+    <TableRow
+      key="some-device-id-03"
+    >
+      <TableCell>
+        test-user-2
+      </TableCell>
+      <TableCell>
+        ios
+      </TableCell>
+      <TableCell>
+        some-device-id-03
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+`;
+
+exports[`AppVersion renders the details tab correctly with device ID 1`] = `
+<Table
+  type="card"
+>
+  <TableHeader>
+    <TableHeaderRow>
+      <TableHeaderCell>
+        User
+      </TableHeaderCell>
+      <TableHeaderCell>
+        Device
+      </TableHeaderCell>
+      <TableHeaderCell>
+        Device ID
       </TableHeaderCell>
     </TableHeaderRow>
   </TableHeader>

@@ -3,16 +3,19 @@ import { Table, TableHeader, TableHeaderRow, TableHeaderCell, TableBody, TableRo
 import { TestDevice } from '@/models/test-device';
 
 type Props = {
+  projectType: string;
   devices: TestDevice[];
 };
 
-export default ({ devices }: Props) => (
+export default ({ projectType, devices }: Props) => (
   <Table type="card">
     <TableHeader>
       <TableHeaderRow>
         <TableHeaderCell>User</TableHeaderCell>
         <TableHeaderCell>Device</TableHeaderCell>
-        <TableHeaderCell>UDID</TableHeaderCell>
+        {projectType === 'ios' && <TableHeaderCell>UDID</TableHeaderCell>}
+        {projectType === 'android' && <TableHeaderCell>UUID</TableHeaderCell>}
+        {projectType !== 'ios' && projectType !== 'android' && <TableHeaderCell>Device ID</TableHeaderCell>}
       </TableHeaderRow>
     </TableHeader>
 
