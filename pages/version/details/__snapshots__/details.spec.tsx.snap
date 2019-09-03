@@ -1933,15 +1933,18 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                             }
                           }
                         >
-                          <Flex
-                            alignChildrenVertical="middle"
-                            direction="horizontal"
+                          <Text
+                            color="grape-4"
+                            size="x3"
+                            weight="bold"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--horizontal"
+                              Component="div"
+                              className="Text Text--size-x3 Text--weight-bold"
+                              color="grape-4"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                                className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -1953,50 +1956,44 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                   }
                                 }
                               >
-                                <Text
-                                  color="grape-4"
-                                  size="x3"
-                                  weight="bold"
+                                Screenshots
+                              </div>
+                            </Base>
+                          </Text>
+                          <Notification
+                            icon="Info"
+                            type="inform"
+                          >
+                            <Flex
+                              alignChildrenVertical="middle"
+                              className="Notification Notification--type-inform"
+                              direction="horizontal"
+                              gap="x2"
+                              padding="x3"
+                            >
+                              <Base
+                                className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                padding="x3"
+                              >
+                                <div
+                                  className="Base Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
                                 >
-                                  <Base
-                                    Component="div"
-                                    className="Text Text--size-x3 Text--weight-bold"
-                                    color="grape-4"
-                                  >
-                                    <div
-                                      className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "minHeight": undefined,
-                                          "minWidth": undefined,
-                                          "width": undefined,
-                                        }
-                                      }
-                                    >
-                                      Screenshots
-                                    </div>
-                                  </Base>
-                                </Text>
-                                <Notification
-                                  icon="Info"
-                                  type="inform"
-                                >
-                                  <Flex
-                                    alignChildrenVertical="middle"
-                                    className="Notification Notification--type-inform"
-                                    direction="horizontal"
-                                    gap="x2"
-                                    padding="x3"
-                                  >
+                                  <Flex>
                                     <Base
-                                      className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
-                                      padding="x3"
+                                      className="Flex"
                                     >
                                       <div
-                                        className="Base Base--padding-horizontal-x3 Base--padding-vertical-x3 Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Notification Notification--type-inform"
+                                        className="Base Flex"
                                         style={
                                           Object {
                                             "height": undefined,
@@ -2008,184 +2005,113 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                           }
                                         }
                                       >
-                                        <Flex>
-                                          <Base
-                                            className="Flex"
-                                          >
-                                            <div
-                                              className="Base Flex"
-                                              style={
-                                                Object {
-                                                  "height": undefined,
-                                                  "maxHeight": undefined,
-                                                  "maxWidth": undefined,
-                                                  "minHeight": undefined,
-                                                  "minWidth": undefined,
-                                                  "width": undefined,
-                                                }
-                                              }
-                                            >
-                                              <Icon
-                                                name="Info"
-                                                size="1.5rem"
-                                              >
-                                                <Base
-                                                  Component="svg"
-                                                  className="Icon"
-                                                  height="1.5rem"
-                                                  viewBox="0 0 24 24"
-                                                  width="1.5rem"
-                                                >
-                                                  <svg
-                                                    className="Base Icon"
-                                                    style={
-                                                      Object {
-                                                        "height": "1.5rem",
-                                                        "maxHeight": undefined,
-                                                        "maxWidth": undefined,
-                                                        "minHeight": undefined,
-                                                        "minWidth": undefined,
-                                                        "width": "1.5rem",
-                                                      }
-                                                    }
-                                                    viewBox="0 0 24 24"
-                                                  >
-                                                    <Component
-                                                      height="100%"
-                                                      width="100%"
-                                                    >
-                                                      <svg
-                                                        height="100%"
-                                                        viewBox="0 0 24 24"
-                                                        width="100%"
-                                                      >
-                                                        <path
-                                                          d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 2C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm0-14a1 1 0 100-2 1 1 0 000 2zm-2.4 3.9L9 10l2.7-.9c.7-.2 1.4.4 1.3 1.1l-.8 5.3 1.5-.5.6 1.9-3 1c-.7.2-1.4-.4-1.3-1.1l.8-5.4-1.2.5z"
-                                                          fill="currentColor"
-                                                          fillRule="evenodd"
-                                                        />
-                                                      </svg>
-                                                    </Component>
-                                                  </svg>
-                                                </Base>
-                                              </Icon>
-                                            </div>
-                                          </Base>
-                                        </Flex>
-                                        <Flex
-                                          grow={true}
-                                          initial="none"
+                                        <Icon
+                                          name="Info"
+                                          size="1.5rem"
                                         >
                                           <Base
-                                            className="Flex Flex--initial-none Flex--grow"
+                                            Component="svg"
+                                            className="Icon"
+                                            height="1.5rem"
+                                            viewBox="0 0 24 24"
+                                            width="1.5rem"
                                           >
-                                            <div
-                                              className="Base Flex Flex--initial-none Flex--grow"
+                                            <svg
+                                              className="Base Icon"
                                               style={
                                                 Object {
-                                                  "height": undefined,
+                                                  "height": "1.5rem",
                                                   "maxHeight": undefined,
                                                   "maxWidth": undefined,
                                                   "minHeight": undefined,
                                                   "minWidth": undefined,
-                                                  "width": undefined,
+                                                  "width": "1.5rem",
                                                 }
                                               }
+                                              viewBox="0 0 24 24"
                                             >
-                                              Screenshots must be in the JPG or PNG format, and in the RGB color space. You can add up to 8 screenshots for each supported device type. To learn more,
-                                               
-                                              <Link
-                                                href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en"
-                                                underline={true}
+                                              <Component
+                                                height="100%"
+                                                width="100%"
                                               >
-                                                <Base
-                                                  Component="a"
-                                                  className="Link Link--color-undefined Link--clickable Link--underline"
-                                                  href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en"
+                                                <svg
+                                                  height="100%"
+                                                  viewBox="0 0 24 24"
+                                                  width="100%"
                                                 >
-                                                  <a
-                                                    className="Base Link Link--color-undefined Link--clickable Link--underline"
-                                                    href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en"
-                                                    style={
-                                                      Object {
-                                                        "height": undefined,
-                                                        "maxHeight": undefined,
-                                                        "maxWidth": undefined,
-                                                        "minHeight": undefined,
-                                                        "minWidth": undefined,
-                                                        "width": undefined,
-                                                      }
-                                                    }
-                                                  >
-                                                    click here
-                                                  </a>
-                                                </Base>
-                                              </Link>
-                                              .
-                                            </div>
+                                                  <path
+                                                    d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 2C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm0-14a1 1 0 100-2 1 1 0 000 2zm-2.4 3.9L9 10l2.7-.9c.7-.2 1.4.4 1.3 1.1l-.8 5.3 1.5-.5.6 1.9-3 1c-.7.2-1.4-.4-1.3-1.1l.8-5.4-1.2.5z"
+                                                    fill="currentColor"
+                                                    fillRule="evenodd"
+                                                  />
+                                                </svg>
+                                              </Component>
+                                            </svg>
                                           </Base>
-                                        </Flex>
+                                        </Icon>
                                       </div>
                                     </Base>
                                   </Flex>
-                                </Notification>
-                                <Icon
-                                  color="grape-3"
-                                  name="Support"
-                                  paddingHorizontal="x1"
-                                  size="2rem"
-                                >
-                                  <Base
-                                    Component="svg"
-                                    className="Icon"
-                                    color="grape-3"
-                                    height="2rem"
-                                    paddingHorizontal="x1"
-                                    viewBox="0 0 24 24"
-                                    width="2rem"
+                                  <Flex
+                                    grow={true}
+                                    initial="none"
                                   >
-                                    <svg
-                                      className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
-                                      style={
-                                        Object {
-                                          "height": "2rem",
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "minHeight": undefined,
-                                          "minWidth": undefined,
-                                          "width": "2rem",
-                                        }
-                                      }
-                                      viewBox="0 0 24 24"
+                                    <Base
+                                      className="Flex Flex--initial-none Flex--grow"
                                     >
-                                      <Component
-                                        height="100%"
-                                        width="100%"
+                                      <div
+                                        className="Base Flex Flex--initial-none Flex--grow"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "minHeight": undefined,
+                                            "minWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
                                       >
-                                        <svg
-                                          height="100%"
-                                          viewBox="0 0 24 24"
-                                          width="100%"
+                                        Screenshots must be in the JPG or PNG format, and in the RGB color space. You can add up to 8 screenshots for each supported device type. To learn more,
+                                         
+                                        <Link
+                                          href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en"
+                                          target="_blank"
+                                          underline={true}
                                         >
-                                          <defs>
-                                            <path
-                                              d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 2C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm-1.2-8.5c0-2 2.3-2 2.3-3.4 0-.6-.5-1-1.2-1-1.3-.1-1.7 1-1.7 1l-1.7-.8S9.2 7 11.9 7c2 0 3.3 1.3 3.3 2.8 0 2.6-2.5 2.6-2.5 4.3h-1.8s-.1-.3-.1-.6zm-.2 2.5c0-.6.5-1 1.1-1 .6 0 1.1.5 1.1 1 0 .6-.5 1-1.1 1-.6 0-1.1-.5-1.1-1z"
-                                              id="icons-support_svg__a"
-                                            />
-                                          </defs>
-                                          <use
-                                            fill="currentColor"
-                                            fillRule="evenodd"
-                                            xlinkHref="#icons-support_svg__a"
-                                          />
-                                        </svg>
-                                      </Component>
-                                    </svg>
-                                  </Base>
-                                </Icon>
-                              </div>
-                            </Base>
-                          </Flex>
+                                          <Base
+                                            Component="a"
+                                            className="Link Link--color-undefined Link--clickable Link--underline"
+                                            href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en"
+                                            target="_blank"
+                                          >
+                                            <a
+                                              className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                              href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en"
+                                              style={
+                                                Object {
+                                                  "height": undefined,
+                                                  "maxHeight": undefined,
+                                                  "maxWidth": undefined,
+                                                  "minHeight": undefined,
+                                                  "minWidth": undefined,
+                                                  "width": undefined,
+                                                }
+                                              }
+                                              target="_blank"
+                                            >
+                                              click here
+                                            </a>
+                                          </Base>
+                                        </Link>
+                                        .
+                                      </div>
+                                    </Base>
+                                  </Flex>
+                                </div>
+                              </Base>
+                            </Flex>
+                          </Notification>
                           <_default
                             items={
                               Array [
@@ -5631,15 +5557,18 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                             }
                           }
                         >
-                          <Flex
-                            alignChildrenVertical="middle"
-                            direction="horizontal"
+                          <Text
+                            color="grape-4"
+                            size="x3"
+                            weight="bold"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--horizontal"
+                              Component="div"
+                              className="Text Text--size-x3 Text--weight-bold"
+                              color="grape-4"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                                className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -5651,36 +5580,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                   }
                                 }
                               >
-                                <Text
-                                  color="grape-4"
-                                  size="x3"
-                                  weight="bold"
-                                >
-                                  <Base
-                                    Component="div"
-                                    className="Text Text--size-x3 Text--weight-bold"
-                                    color="grape-4"
-                                  >
-                                    <div
-                                      className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "minHeight": undefined,
-                                          "minWidth": undefined,
-                                          "width": undefined,
-                                        }
-                                      }
-                                    >
-                                      Screenshots
-                                    </div>
-                                  </Base>
-                                </Text>
+                                Screenshots
                               </div>
                             </Base>
-                          </Flex>
+                          </Text>
                           <Notification
                             icon="Info"
                             type="inform"
@@ -5797,12 +5700,14 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                          
                                         <Link
                                           href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          target="_blank"
                                           underline={true}
                                         >
                                           <Base
                                             Component="a"
                                             className="Link Link--color-undefined Link--clickable Link--underline"
                                             href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                            target="_blank"
                                           >
                                             <a
                                               className="Base Link Link--color-undefined Link--clickable Link--underline"
@@ -5817,6 +5722,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                                   "width": undefined,
                                                 }
                                               }
+                                              target="_blank"
                                             >
                                               click here
                                             </a>
@@ -9487,17 +9393,14 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 You need to setup publishing at the
                                  
                                 <Link
-                                  href="/path"
                                   underline={true}
                                 >
                                   <Base
                                     Component="a"
-                                    className="Link Link--color-undefined Link--clickable Link--underline"
-                                    href="/path"
+                                    className="Link Link--color-undefined Link--underline"
                                   >
                                     <a
-                                      className="Base Link Link--color-undefined Link--clickable Link--underline"
-                                      href="/path"
+                                      className="Base Link Link--color-undefined Link--underline"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -9509,10 +9412,21 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                         }
                                       }
                                     >
-                                      Settings page.
+                                      <Link
+                                        as="/path"
+                                        href="/settings?appSlug=app-slug-123"
+                                      >
+                                        <a
+                                          href="/path"
+                                          onClick={[Function]}
+                                        >
+                                          Settings page
+                                        </a>
+                                      </Link>
                                     </a>
                                   </Base>
                                 </Link>
+                                .
                               </div>
                             </Base>
                           </Flex>
@@ -10039,15 +9953,18 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                             }
                           }
                         >
-                          <Flex
-                            alignChildrenVertical="middle"
-                            direction="horizontal"
+                          <Text
+                            color="grape-4"
+                            size="x3"
+                            weight="bold"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--horizontal"
+                              Component="div"
+                              className="Text Text--size-x3 Text--weight-bold"
+                              color="grape-4"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                                className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -10059,36 +9976,10 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                   }
                                 }
                               >
-                                <Text
-                                  color="grape-4"
-                                  size="x3"
-                                  weight="bold"
-                                >
-                                  <Base
-                                    Component="div"
-                                    className="Text Text--size-x3 Text--weight-bold"
-                                    color="grape-4"
-                                  >
-                                    <div
-                                      className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "minHeight": undefined,
-                                          "minWidth": undefined,
-                                          "width": undefined,
-                                        }
-                                      }
-                                    >
-                                      Screenshots
-                                    </div>
-                                  </Base>
-                                </Text>
+                                Screenshots
                               </div>
                             </Base>
-                          </Flex>
+                          </Text>
                           <Notification
                             icon="Info"
                             type="inform"
@@ -10205,12 +10096,14 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                          
                                         <Link
                                           href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          target="_blank"
                                           underline={true}
                                         >
                                           <Base
                                             Component="a"
                                             className="Link Link--color-undefined Link--clickable Link--underline"
                                             href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                            target="_blank"
                                           >
                                             <a
                                               className="Base Link Link--color-undefined Link--clickable Link--underline"
@@ -10225,6 +10118,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                                   "width": undefined,
                                                 }
                                               }
+                                              target="_blank"
                                             >
                                               click here
                                             </a>
@@ -14415,15 +14309,18 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                             }
                           }
                         >
-                          <Flex
-                            alignChildrenVertical="middle"
-                            direction="horizontal"
+                          <Text
+                            color="grape-4"
+                            size="x3"
+                            weight="bold"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--horizontal"
+                              Component="div"
+                              className="Text Text--size-x3 Text--weight-bold"
+                              color="grape-4"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                                className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -14435,36 +14332,10 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                   }
                                 }
                               >
-                                <Text
-                                  color="grape-4"
-                                  size="x3"
-                                  weight="bold"
-                                >
-                                  <Base
-                                    Component="div"
-                                    className="Text Text--size-x3 Text--weight-bold"
-                                    color="grape-4"
-                                  >
-                                    <div
-                                      className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "minHeight": undefined,
-                                          "minWidth": undefined,
-                                          "width": undefined,
-                                        }
-                                      }
-                                    >
-                                      Screenshots
-                                    </div>
-                                  </Base>
-                                </Text>
+                                Screenshots
                               </div>
                             </Base>
-                          </Flex>
+                          </Text>
                           <Notification
                             icon="Info"
                             type="inform"
@@ -14581,12 +14452,14 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                          
                                         <Link
                                           href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          target="_blank"
                                           underline={true}
                                         >
                                           <Base
                                             Component="a"
                                             className="Link Link--color-undefined Link--clickable Link--underline"
                                             href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                            target="_blank"
                                           >
                                             <a
                                               className="Base Link Link--color-undefined Link--clickable Link--underline"
@@ -14601,6 +14474,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                                   "width": undefined,
                                                 }
                                               }
+                                              target="_blank"
                                             >
                                               click here
                                             </a>
@@ -17771,12 +17645,16 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
         Publish has failed. See the error log at the
          
         <Link
-          as="/path"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          underline={true}
         >
-          <a>
-            Activity tab
-          </a>
+          <Link
+            as="/path"
+            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          >
+            <a>
+              Activity tab
+            </a>
+          </Link>
         </Link>
         .
       </Notification>
@@ -18886,15 +18764,18 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                             }
                           }
                         >
-                          <Flex
-                            alignChildrenVertical="middle"
-                            direction="horizontal"
+                          <Text
+                            color="grape-4"
+                            size="x3"
+                            weight="bold"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--horizontal"
+                              Component="div"
+                              className="Text Text--size-x3 Text--weight-bold"
+                              color="grape-4"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                                className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -18906,36 +18787,10 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                   }
                                 }
                               >
-                                <Text
-                                  color="grape-4"
-                                  size="x3"
-                                  weight="bold"
-                                >
-                                  <Base
-                                    Component="div"
-                                    className="Text Text--size-x3 Text--weight-bold"
-                                    color="grape-4"
-                                  >
-                                    <div
-                                      className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "minHeight": undefined,
-                                          "minWidth": undefined,
-                                          "width": undefined,
-                                        }
-                                      }
-                                    >
-                                      Screenshots
-                                    </div>
-                                  </Base>
-                                </Text>
+                                Screenshots
                               </div>
                             </Base>
-                          </Flex>
+                          </Text>
                           <Notification
                             icon="Info"
                             type="inform"
@@ -19052,12 +18907,14 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                          
                                         <Link
                                           href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          target="_blank"
                                           underline={true}
                                         >
                                           <Base
                                             Component="a"
                                             className="Link Link--color-undefined Link--clickable Link--underline"
                                             href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                            target="_blank"
                                           >
                                             <a
                                               className="Base Link Link--color-undefined Link--clickable Link--underline"
@@ -19072,6 +18929,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                                   "width": undefined,
                                                 }
                                               }
+                                              target="_blank"
                                             >
                                               click here
                                             </a>
@@ -23498,15 +23356,18 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                             }
                           }
                         >
-                          <Flex
-                            alignChildrenVertical="middle"
-                            direction="horizontal"
+                          <Text
+                            color="grape-4"
+                            size="x3"
+                            weight="bold"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--horizontal"
+                              Component="div"
+                              className="Text Text--size-x3 Text--weight-bold"
+                              color="grape-4"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--horizontal"
+                                className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -23518,36 +23379,10 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                   }
                                 }
                               >
-                                <Text
-                                  color="grape-4"
-                                  size="x3"
-                                  weight="bold"
-                                >
-                                  <Base
-                                    Component="div"
-                                    className="Text Text--size-x3 Text--weight-bold"
-                                    color="grape-4"
-                                  >
-                                    <div
-                                      className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "minHeight": undefined,
-                                          "minWidth": undefined,
-                                          "width": undefined,
-                                        }
-                                      }
-                                    >
-                                      Screenshots
-                                    </div>
-                                  </Base>
-                                </Text>
+                                Screenshots
                               </div>
                             </Base>
-                          </Flex>
+                          </Text>
                           <Notification
                             icon="Info"
                             type="inform"
@@ -23664,12 +23499,14 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                          
                                         <Link
                                           href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                          target="_blank"
                                           underline={true}
                                         >
                                           <Base
                                             Component="a"
                                             className="Link Link--color-undefined Link--clickable Link--underline"
                                             href="https://help.apple.com/app-store-connect/#/devd274dd925"
+                                            target="_blank"
                                           >
                                             <a
                                               className="Base Link Link--color-undefined Link--clickable Link--underline"
@@ -23684,6 +23521,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                                   "width": undefined,
                                                 }
                                               }
+                                              target="_blank"
                                             >
                                               click here
                                             </a>
