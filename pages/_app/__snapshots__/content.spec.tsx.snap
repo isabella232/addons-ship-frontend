@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppContent renders an error page 1`] = `
+<Fragment>
+  <Connect(Header) />
+  <Error
+    statusCode={404}
+  />
+</Fragment>
+`;
+
+exports[`AppContent renders correclty without errors 1`] = `
+<Fragment>
+  Boaty McBoatface
+</Fragment>
+`;

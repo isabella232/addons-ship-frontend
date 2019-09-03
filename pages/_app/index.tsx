@@ -14,7 +14,8 @@ import { analyticsConfig } from '@/config';
 import { initializeSegment } from '@/utils/analytics';
 
 import '@/assets/style/index.scss';
-import makeStore, { RootState } from '../store';
+import makeStore, { RootState } from '../../store';
+import AppContent from './content';
 
 export interface ShipAppProps extends DefaultAppIProps {
   store: Store;
@@ -121,8 +122,10 @@ export class ShipApp extends App<ShipAppProps> {
     return (
       <Container>
         <Provider store={store}>
-          <Header shouldShowSettingsOnboarding={!settingsOnboardingSeen} />
-          <Component {...pageProps} />
+          <AppContent>
+            <Header shouldShowSettingsOnboarding={!settingsOnboardingSeen} />
+            <Component {...pageProps} />
+          </AppContent>
         </Provider>
       </Container>
     );
