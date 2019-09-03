@@ -243,6 +243,8 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
 />
 `;
 
+exports[`AppPage renders the loading placeholder 1`] = `<_default />`;
+
 exports[`AppPage when user selects sort by build numbers renders the list of app version grouped by build number 1`] = `
 <_default
   groupedAppVersionList={

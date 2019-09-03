@@ -9,6 +9,7 @@ import { testDevices, TestDevicesState } from '@/ducks/testDevices';
 import settings, { SettingsState } from '@/ducks/settings';
 import { appVersionList, AppVersionListState } from '@/ducks/appVersionList';
 import auth, { AuthState } from '@/ducks/auth';
+import error, { ErrorsState } from '@/ducks/error';
 import shipApi from '@/services/ship-api';
 
 const rootReducer = combineReducers({
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   testDevices,
   settings,
   appVersionList,
-  auth
+  auth,
+  error
 });
 
 const rootEpic = combineEpics(pollPublishStatusEpic) as Epic<Action>;
@@ -29,6 +31,7 @@ export type RootState = {
   settings: SettingsState;
   appVersionList: AppVersionListState;
   auth: AuthState;
+  error: ErrorsState;
 };
 
 /**
