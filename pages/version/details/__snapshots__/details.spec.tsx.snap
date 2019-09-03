@@ -1388,15 +1388,15 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 }
                               >
                                 <Flex
-                                  alignChildren="start"
+                                  alignChildren="middle"
                                   direction="horizontal"
-                                  gap="x2"
+                                  gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -1408,58 +1408,76 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                         }
                                       }
                                     >
-                                      <Icon
-                                        color="grape-4"
-                                        name="PlatformsAndroid"
-                                        size="2rem"
+                                      <Base
+                                        className="platformIcon"
                                       >
-                                        <Base
-                                          Component="svg"
-                                          className="Icon"
-                                          color="grape-4"
-                                          height="2rem"
-                                          viewBox="0 0 24 24"
-                                          width="2rem"
-                                        >
-                                          <svg
-                                            className="Base Base--color-grape-4 Icon"
-                                            style={
-                                              Object {
-                                                "height": "2rem",
-                                                "maxHeight": undefined,
-                                                "maxWidth": undefined,
-                                                "minHeight": undefined,
-                                                "minWidth": undefined,
-                                                "width": "2rem",
-                                              }
+                                        <div
+                                          className="Base platformIcon"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
                                             }
-                                            viewBox="0 0 24 24"
+                                          }
+                                        >
+                                          <Icon
+                                            color="grape-4"
+                                            name="PlatformsAndroid"
+                                            size="2rem"
                                           >
-                                            <Component
-                                              height="100%"
-                                              width="100%"
+                                            <Base
+                                              Component="svg"
+                                              className="Icon"
+                                              color="grape-4"
+                                              height="2rem"
+                                              viewBox="0 0 24 24"
+                                              width="2rem"
                                             >
                                               <svg
-                                                height="100%"
+                                                className="Base Base--color-grape-4 Icon"
+                                                style={
+                                                  Object {
+                                                    "height": "2rem",
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": "2rem",
+                                                  }
+                                                }
                                                 viewBox="0 0 24 24"
-                                                width="100%"
                                               >
-                                                <defs>
-                                                  <path
-                                                    d="M9.8 4.999c.7-.3 1.4-.4 2.2-.4.7 0 1.3.1 1.9.3l1.6-1.6c.4-.399 1-.399 1.4 0 .4.4.4 1 0 1.4l-1.2 1.2a5.966 5.966 0 012.3 4.697H6c0-1.8.8-3.398 2.1-4.498L6.7 4.7c-.4-.4-.4-1 0-1.4.4-.399 1-.399 1.4 0L9.8 5zM8 16.592H7c-.6 0-1-.4-1-1v-3.997h12v3.998c0 .6-.4 1-1 1h-1v2.998c0 .5-.4.999-1 .999s-1-.4-1-1v-2.998h-4v2.999c0 .5-.4.999-1 .999s-1-.4-1-1v-2.998zm13-4.997v4.098c0 .5-.4 1-1 1s-1-.4-1-1v-4.098c0-.5.4-1 1-1s1 .4 1 1zm-17-1c.6 0 1 .4 1 1v3.998c0 .5-.4 1-1 1s-1-.4-1-1v-3.998c0-.6.4-1 1-1zm11-.999c.6 0 1-.4 1-1 0-.499-.4-.999-1-.999s-1 .5-1 1c0 .6.4 1 1 1zm-6 0c.6 0 1-.4 1-1 0-.499-.4-.999-1-.999s-1 .5-1 1c0 .6.4 1 1 1z"
-                                                    id="icons-platforms-android_svg__a"
-                                                  />
-                                                </defs>
-                                                <use
-                                                  fill="currentColor"
-                                                  fillRule="evenodd"
-                                                  xlinkHref="#icons-platforms-android_svg__a"
-                                                />
+                                                <Component
+                                                  height="100%"
+                                                  width="100%"
+                                                >
+                                                  <svg
+                                                    height="100%"
+                                                    viewBox="0 0 24 24"
+                                                    width="100%"
+                                                  >
+                                                    <defs>
+                                                      <path
+                                                        d="M9.8 4.999c.7-.3 1.4-.4 2.2-.4.7 0 1.3.1 1.9.3l1.6-1.6c.4-.399 1-.399 1.4 0 .4.4.4 1 0 1.4l-1.2 1.2a5.966 5.966 0 012.3 4.697H6c0-1.8.8-3.398 2.1-4.498L6.7 4.7c-.4-.4-.4-1 0-1.4.4-.399 1-.399 1.4 0L9.8 5zM8 16.592H7c-.6 0-1-.4-1-1v-3.997h12v3.998c0 .6-.4 1-1 1h-1v2.998c0 .5-.4.999-1 .999s-1-.4-1-1v-2.998h-4v2.999c0 .5-.4.999-1 .999s-1-.4-1-1v-2.998zm13-4.997v4.098c0 .5-.4 1-1 1s-1-.4-1-1v-4.098c0-.5.4-1 1-1s1 .4 1 1zm-17-1c.6 0 1 .4 1 1v3.998c0 .5-.4 1-1 1s-1-.4-1-1v-3.998c0-.6.4-1 1-1zm11-.999c.6 0 1-.4 1-1 0-.499-.4-.999-1-.999s-1 .5-1 1c0 .6.4 1 1 1zm-6 0c.6 0 1-.4 1-1 0-.499-.4-.999-1-.999s-1 .5-1 1c0 .6.4 1 1 1z"
+                                                        id="icons-platforms-android_svg__a"
+                                                      />
+                                                    </defs>
+                                                    <use
+                                                      fill="currentColor"
+                                                      fillRule="evenodd"
+                                                      xlinkHref="#icons-platforms-android_svg__a"
+                                                    />
+                                                  </svg>
+                                                </Component>
                                               </svg>
-                                            </Component>
-                                          </svg>
-                                        </Base>
-                                      </Icon>
+                                            </Base>
+                                          </Icon>
+                                        </div>
+                                      </Base>
                                       <Text
                                         color="grape-4"
                                         letterSpacing="x2"
@@ -5211,15 +5229,15 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 }
                               >
                                 <Flex
-                                  alignChildren="start"
+                                  alignChildren="middle"
                                   direction="horizontal"
-                                  gap="x2"
+                                  gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -5231,58 +5249,76 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                         }
                                       }
                                     >
-                                      <Icon
-                                        color="grape-4"
-                                        name="PlatformsApple"
-                                        size="2rem"
+                                      <Base
+                                        className="platformIcon"
                                       >
-                                        <Base
-                                          Component="svg"
-                                          className="Icon"
-                                          color="grape-4"
-                                          height="2rem"
-                                          viewBox="0 0 24 24"
-                                          width="2rem"
-                                        >
-                                          <svg
-                                            className="Base Base--color-grape-4 Icon"
-                                            style={
-                                              Object {
-                                                "height": "2rem",
-                                                "maxHeight": undefined,
-                                                "maxWidth": undefined,
-                                                "minHeight": undefined,
-                                                "minWidth": undefined,
-                                                "width": "2rem",
-                                              }
+                                        <div
+                                          className="Base platformIcon"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
                                             }
-                                            viewBox="0 0 24 24"
+                                          }
+                                        >
+                                          <Icon
+                                            color="grape-4"
+                                            name="PlatformsApple"
+                                            size="2rem"
                                           >
-                                            <Component
-                                              height="100%"
-                                              width="100%"
+                                            <Base
+                                              Component="svg"
+                                              className="Icon"
+                                              color="grape-4"
+                                              height="2rem"
+                                              viewBox="0 0 24 24"
+                                              width="2rem"
                                             >
                                               <svg
-                                                height="100%"
+                                                className="Base Base--color-grape-4 Icon"
+                                                style={
+                                                  Object {
+                                                    "height": "2rem",
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": "2rem",
+                                                  }
+                                                }
                                                 viewBox="0 0 24 24"
-                                                width="100%"
                                               >
-                                                <defs>
-                                                  <path
-                                                    d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
-                                                    id="icons-platforms-apple_svg__a"
-                                                  />
-                                                </defs>
-                                                <use
-                                                  fill="currentColor"
-                                                  fillRule="evenodd"
-                                                  xlinkHref="#icons-platforms-apple_svg__a"
-                                                />
+                                                <Component
+                                                  height="100%"
+                                                  width="100%"
+                                                >
+                                                  <svg
+                                                    height="100%"
+                                                    viewBox="0 0 24 24"
+                                                    width="100%"
+                                                  >
+                                                    <defs>
+                                                      <path
+                                                        d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
+                                                        id="icons-platforms-apple_svg__a"
+                                                      />
+                                                    </defs>
+                                                    <use
+                                                      fill="currentColor"
+                                                      fillRule="evenodd"
+                                                      xlinkHref="#icons-platforms-apple_svg__a"
+                                                    />
+                                                  </svg>
+                                                </Component>
                                               </svg>
-                                            </Component>
-                                          </svg>
-                                        </Base>
-                                      </Icon>
+                                            </Base>
+                                          </Icon>
+                                        </div>
+                                      </Base>
                                       <Text
                                         color="grape-4"
                                         letterSpacing="x2"
@@ -9607,15 +9643,15 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 }
                               >
                                 <Flex
-                                  alignChildren="start"
+                                  alignChildren="middle"
                                   direction="horizontal"
-                                  gap="x2"
+                                  gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -9627,58 +9663,76 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                         }
                                       }
                                     >
-                                      <Icon
-                                        color="grape-4"
-                                        name="PlatformsApple"
-                                        size="2rem"
+                                      <Base
+                                        className="platformIcon"
                                       >
-                                        <Base
-                                          Component="svg"
-                                          className="Icon"
-                                          color="grape-4"
-                                          height="2rem"
-                                          viewBox="0 0 24 24"
-                                          width="2rem"
-                                        >
-                                          <svg
-                                            className="Base Base--color-grape-4 Icon"
-                                            style={
-                                              Object {
-                                                "height": "2rem",
-                                                "maxHeight": undefined,
-                                                "maxWidth": undefined,
-                                                "minHeight": undefined,
-                                                "minWidth": undefined,
-                                                "width": "2rem",
-                                              }
+                                        <div
+                                          className="Base platformIcon"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
                                             }
-                                            viewBox="0 0 24 24"
+                                          }
+                                        >
+                                          <Icon
+                                            color="grape-4"
+                                            name="PlatformsApple"
+                                            size="2rem"
                                           >
-                                            <Component
-                                              height="100%"
-                                              width="100%"
+                                            <Base
+                                              Component="svg"
+                                              className="Icon"
+                                              color="grape-4"
+                                              height="2rem"
+                                              viewBox="0 0 24 24"
+                                              width="2rem"
                                             >
                                               <svg
-                                                height="100%"
+                                                className="Base Base--color-grape-4 Icon"
+                                                style={
+                                                  Object {
+                                                    "height": "2rem",
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": "2rem",
+                                                  }
+                                                }
                                                 viewBox="0 0 24 24"
-                                                width="100%"
                                               >
-                                                <defs>
-                                                  <path
-                                                    d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
-                                                    id="icons-platforms-apple_svg__a"
-                                                  />
-                                                </defs>
-                                                <use
-                                                  fill="currentColor"
-                                                  fillRule="evenodd"
-                                                  xlinkHref="#icons-platforms-apple_svg__a"
-                                                />
+                                                <Component
+                                                  height="100%"
+                                                  width="100%"
+                                                >
+                                                  <svg
+                                                    height="100%"
+                                                    viewBox="0 0 24 24"
+                                                    width="100%"
+                                                  >
+                                                    <defs>
+                                                      <path
+                                                        d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
+                                                        id="icons-platforms-apple_svg__a"
+                                                      />
+                                                    </defs>
+                                                    <use
+                                                      fill="currentColor"
+                                                      fillRule="evenodd"
+                                                      xlinkHref="#icons-platforms-apple_svg__a"
+                                                    />
+                                                  </svg>
+                                                </Component>
                                               </svg>
-                                            </Component>
-                                          </svg>
-                                        </Base>
-                                      </Icon>
+                                            </Base>
+                                          </Icon>
+                                        </div>
+                                      </Base>
                                       <Text
                                         color="grape-4"
                                         letterSpacing="x2"
@@ -13963,15 +14017,15 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 }
                               >
                                 <Flex
-                                  alignChildren="start"
+                                  alignChildren="middle"
                                   direction="horizontal"
-                                  gap="x2"
+                                  gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -13983,58 +14037,76 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                         }
                                       }
                                     >
-                                      <Icon
-                                        color="grape-4"
-                                        name="PlatformsApple"
-                                        size="2rem"
+                                      <Base
+                                        className="platformIcon"
                                       >
-                                        <Base
-                                          Component="svg"
-                                          className="Icon"
-                                          color="grape-4"
-                                          height="2rem"
-                                          viewBox="0 0 24 24"
-                                          width="2rem"
-                                        >
-                                          <svg
-                                            className="Base Base--color-grape-4 Icon"
-                                            style={
-                                              Object {
-                                                "height": "2rem",
-                                                "maxHeight": undefined,
-                                                "maxWidth": undefined,
-                                                "minHeight": undefined,
-                                                "minWidth": undefined,
-                                                "width": "2rem",
-                                              }
+                                        <div
+                                          className="Base platformIcon"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
                                             }
-                                            viewBox="0 0 24 24"
+                                          }
+                                        >
+                                          <Icon
+                                            color="grape-4"
+                                            name="PlatformsApple"
+                                            size="2rem"
                                           >
-                                            <Component
-                                              height="100%"
-                                              width="100%"
+                                            <Base
+                                              Component="svg"
+                                              className="Icon"
+                                              color="grape-4"
+                                              height="2rem"
+                                              viewBox="0 0 24 24"
+                                              width="2rem"
                                             >
                                               <svg
-                                                height="100%"
+                                                className="Base Base--color-grape-4 Icon"
+                                                style={
+                                                  Object {
+                                                    "height": "2rem",
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": "2rem",
+                                                  }
+                                                }
                                                 viewBox="0 0 24 24"
-                                                width="100%"
                                               >
-                                                <defs>
-                                                  <path
-                                                    d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
-                                                    id="icons-platforms-apple_svg__a"
-                                                  />
-                                                </defs>
-                                                <use
-                                                  fill="currentColor"
-                                                  fillRule="evenodd"
-                                                  xlinkHref="#icons-platforms-apple_svg__a"
-                                                />
+                                                <Component
+                                                  height="100%"
+                                                  width="100%"
+                                                >
+                                                  <svg
+                                                    height="100%"
+                                                    viewBox="0 0 24 24"
+                                                    width="100%"
+                                                  >
+                                                    <defs>
+                                                      <path
+                                                        d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
+                                                        id="icons-platforms-apple_svg__a"
+                                                      />
+                                                    </defs>
+                                                    <use
+                                                      fill="currentColor"
+                                                      fillRule="evenodd"
+                                                      xlinkHref="#icons-platforms-apple_svg__a"
+                                                    />
+                                                  </svg>
+                                                </Component>
                                               </svg>
-                                            </Component>
-                                          </svg>
-                                        </Base>
-                                      </Icon>
+                                            </Base>
+                                          </Icon>
+                                        </div>
+                                      </Base>
                                       <Text
                                         color="grape-4"
                                         letterSpacing="x2"
@@ -17688,15 +17760,19 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
             direction="vertical"
           >
             <Flex
-              alignChildren="start"
+              alignChildren="middle"
               direction="horizontal"
-              gap="x2"
+              gap="x1"
             >
-              <Icon
-                color="grape-4"
-                name="PlatformsApple"
-                size="2rem"
-              />
+              <Base
+                className="platformIcon"
+              >
+                <Icon
+                  color="grape-4"
+                  name="PlatformsApple"
+                  size="2rem"
+                />
+              </Base>
               <Text
                 color="grape-4"
                 letterSpacing="x2"
@@ -17857,15 +17933,19 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
             direction="vertical"
           >
             <Flex
-              alignChildren="start"
+              alignChildren="middle"
               direction="horizontal"
-              gap="x2"
+              gap="x1"
             >
-              <Icon
-                color="grape-4"
-                name="PlatformsApple"
-                size="2rem"
-              />
+              <Base
+                className="platformIcon"
+              >
+                <Icon
+                  color="grape-4"
+                  name="PlatformsApple"
+                  size="2rem"
+                />
+              </Base>
               <Text
                 color="grape-4"
                 letterSpacing="x2"
@@ -18418,15 +18498,15 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 }
                               >
                                 <Flex
-                                  alignChildren="start"
+                                  alignChildren="middle"
                                   direction="horizontal"
-                                  gap="x2"
+                                  gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -18438,58 +18518,76 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                         }
                                       }
                                     >
-                                      <Icon
-                                        color="grape-4"
-                                        name="PlatformsApple"
-                                        size="2rem"
+                                      <Base
+                                        className="platformIcon"
                                       >
-                                        <Base
-                                          Component="svg"
-                                          className="Icon"
-                                          color="grape-4"
-                                          height="2rem"
-                                          viewBox="0 0 24 24"
-                                          width="2rem"
-                                        >
-                                          <svg
-                                            className="Base Base--color-grape-4 Icon"
-                                            style={
-                                              Object {
-                                                "height": "2rem",
-                                                "maxHeight": undefined,
-                                                "maxWidth": undefined,
-                                                "minHeight": undefined,
-                                                "minWidth": undefined,
-                                                "width": "2rem",
-                                              }
+                                        <div
+                                          className="Base platformIcon"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
                                             }
-                                            viewBox="0 0 24 24"
+                                          }
+                                        >
+                                          <Icon
+                                            color="grape-4"
+                                            name="PlatformsApple"
+                                            size="2rem"
                                           >
-                                            <Component
-                                              height="100%"
-                                              width="100%"
+                                            <Base
+                                              Component="svg"
+                                              className="Icon"
+                                              color="grape-4"
+                                              height="2rem"
+                                              viewBox="0 0 24 24"
+                                              width="2rem"
                                             >
                                               <svg
-                                                height="100%"
+                                                className="Base Base--color-grape-4 Icon"
+                                                style={
+                                                  Object {
+                                                    "height": "2rem",
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": "2rem",
+                                                  }
+                                                }
                                                 viewBox="0 0 24 24"
-                                                width="100%"
                                               >
-                                                <defs>
-                                                  <path
-                                                    d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
-                                                    id="icons-platforms-apple_svg__a"
-                                                  />
-                                                </defs>
-                                                <use
-                                                  fill="currentColor"
-                                                  fillRule="evenodd"
-                                                  xlinkHref="#icons-platforms-apple_svg__a"
-                                                />
+                                                <Component
+                                                  height="100%"
+                                                  width="100%"
+                                                >
+                                                  <svg
+                                                    height="100%"
+                                                    viewBox="0 0 24 24"
+                                                    width="100%"
+                                                  >
+                                                    <defs>
+                                                      <path
+                                                        d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
+                                                        id="icons-platforms-apple_svg__a"
+                                                      />
+                                                    </defs>
+                                                    <use
+                                                      fill="currentColor"
+                                                      fillRule="evenodd"
+                                                      xlinkHref="#icons-platforms-apple_svg__a"
+                                                    />
+                                                  </svg>
+                                                </Component>
                                               </svg>
-                                            </Component>
-                                          </svg>
-                                        </Base>
-                                      </Icon>
+                                            </Base>
+                                          </Icon>
+                                        </div>
+                                      </Base>
                                       <Text
                                         color="grape-4"
                                         letterSpacing="x2"
@@ -22774,15 +22872,15 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 }
                               >
                                 <Flex
-                                  alignChildren="start"
+                                  alignChildren="middle"
                                   direction="horizontal"
-                                  gap="x2"
+                                  gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-start Flex--align-vert-start Flex--horizontal Flex--gapped Flex--gap-x2"
+                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -22794,58 +22892,76 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                         }
                                       }
                                     >
-                                      <Icon
-                                        color="grape-4"
-                                        name="PlatformsApple"
-                                        size="2rem"
+                                      <Base
+                                        className="platformIcon"
                                       >
-                                        <Base
-                                          Component="svg"
-                                          className="Icon"
-                                          color="grape-4"
-                                          height="2rem"
-                                          viewBox="0 0 24 24"
-                                          width="2rem"
-                                        >
-                                          <svg
-                                            className="Base Base--color-grape-4 Icon"
-                                            style={
-                                              Object {
-                                                "height": "2rem",
-                                                "maxHeight": undefined,
-                                                "maxWidth": undefined,
-                                                "minHeight": undefined,
-                                                "minWidth": undefined,
-                                                "width": "2rem",
-                                              }
+                                        <div
+                                          className="Base platformIcon"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
                                             }
-                                            viewBox="0 0 24 24"
+                                          }
+                                        >
+                                          <Icon
+                                            color="grape-4"
+                                            name="PlatformsApple"
+                                            size="2rem"
                                           >
-                                            <Component
-                                              height="100%"
-                                              width="100%"
+                                            <Base
+                                              Component="svg"
+                                              className="Icon"
+                                              color="grape-4"
+                                              height="2rem"
+                                              viewBox="0 0 24 24"
+                                              width="2rem"
                                             >
                                               <svg
-                                                height="100%"
+                                                className="Base Base--color-grape-4 Icon"
+                                                style={
+                                                  Object {
+                                                    "height": "2rem",
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": "2rem",
+                                                  }
+                                                }
                                                 viewBox="0 0 24 24"
-                                                width="100%"
                                               >
-                                                <defs>
-                                                  <path
-                                                    d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
-                                                    id="icons-platforms-apple_svg__a"
-                                                  />
-                                                </defs>
-                                                <use
-                                                  fill="currentColor"
-                                                  fillRule="evenodd"
-                                                  xlinkHref="#icons-platforms-apple_svg__a"
-                                                />
+                                                <Component
+                                                  height="100%"
+                                                  width="100%"
+                                                >
+                                                  <svg
+                                                    height="100%"
+                                                    viewBox="0 0 24 24"
+                                                    width="100%"
+                                                  >
+                                                    <defs>
+                                                      <path
+                                                        d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
+                                                        id="icons-platforms-apple_svg__a"
+                                                      />
+                                                    </defs>
+                                                    <use
+                                                      fill="currentColor"
+                                                      fillRule="evenodd"
+                                                      xlinkHref="#icons-platforms-apple_svg__a"
+                                                    />
+                                                  </svg>
+                                                </Component>
                                               </svg>
-                                            </Component>
-                                          </svg>
-                                        </Base>
-                                      </Icon>
+                                            </Base>
+                                          </Icon>
+                                        </div>
+                                      </Base>
                                       <Text
                                         color="grape-4"
                                         letterSpacing="x2"
