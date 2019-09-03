@@ -2,10 +2,11 @@ import { Component } from 'react';
 import css from './style.scss';
 import SVG from 'react-svg';
 import Link from 'next/link';
+import { Icon, TypeIconName, Base } from '@bitrise/bitkit';
 
 interface VersionListPageItemProps {
+  platform: string;
   detailsPagePath: string;
-  platformIconUrl: string;
   title: string;
   description: string;
   note: string;
@@ -26,8 +27,9 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
   };
 
   render() {
-    const { detailsPagePath, platformIconUrl, title, description, note } = this.props;
+    const { platform, detailsPagePath, title, description, note } = this.props;
     const { isOpen } = this.state;
+    const iconName: TypeIconName = platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
     const descriptionWrapperClasses = [css.descriptionWrapper];
     if (isOpen) {
@@ -39,7 +41,9 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
         <div className={css.versionListPageItemInner}>
           <Link href={detailsPagePath}>
             <a className={css.topWrapper}>
-              <SVG src={platformIconUrl} className={css.platformIcon} />
+              <Base className={css.platformIconWrapper}>
+                <Icon color="grape-4" name={iconName} size="1.5rem" />
+              </Base>
               <div className={css.title}>{title}</div>
               <div className={css.note}>{note}</div>
             </a>

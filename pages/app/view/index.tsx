@@ -47,7 +47,7 @@ export default ({
               description={latestAppVersion.description}
               note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
               iconUrl={latestAppVersion.iconUrl}
-              platformIconUrl="/static/icon-apple.svg"
+              platform={latestAppVersion.platform}
             />
           )}
           <Base className={css.sectionHeadingWrapper}>
@@ -84,7 +84,7 @@ export default ({
                     <VersionListPageItem
                       key={`${i}-${j}`}
                       detailsPagePath={`/apps/${appVersion.appSlug}/versions/${appVersion.id}/details`}
-                      platformIconUrl="/static/icon-apple.svg"
+                      platform={appVersion.platform}
                       title={`${appVersion.appName} (${appVersion.buildNumber})`}
                       description={appVersion.description}
                       note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}`}
