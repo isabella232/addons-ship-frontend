@@ -59,18 +59,17 @@ export default ({
     <Textarea name="description" defaultValue={appVersion.description} />
 
     <Base paddingVertical="x4">
-      <Flex direction="horizontal" alignChildrenVertical="middle">
-        <Text color="grape-4" size="x3" weight="bold">
-          Screenshots
-        </Text>
-        <Notification type="inform" icon="Info">
-          Screenshots must be in the JPG or PNG format, and in the RGB color space. You can add up to 8 screenshots for
-          each supported device type. To learn more,{' '}
-          <Link href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en" underline>click here</Link>.
-        </Notification>
-        <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
-      </Flex>
-
+      <Text color="grape-4" size="x3" weight="bold">
+        Screenshots
+      </Text>
+      <Notification type="inform" icon="Info">
+        Screenshots must be in the JPG or PNG format, and in the RGB color space. You can add up to 8 screenshots for
+        each supported device type. To learn more,{' '}
+        <Link href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en" target="_blank" underline>
+          click here
+        </Link>
+        .
+      </Notification>
       {hasMounted && <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />}
       <Dropzone
         screenshots={screenshots}

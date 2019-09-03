@@ -53,15 +53,12 @@ export default ({
     <Textarea name="description" defaultValue={appVersion.description} />
 
     <Base paddingVertical="x4">
-      <Flex direction="horizontal" alignChildrenVertical="middle">
-        <Text color="grape-4" size="x3" weight="bold">
-          Screenshots
-        </Text>
-      </Flex>
-
+      <Text color="grape-4" size="x3" weight="bold">
+        Screenshots
+      </Text>
       <Notification type="inform" icon="Info">
         Screenshots must be in the JPG or PNG format, and in the RGB color space. To learn more,{' '}
-        <Link href="https://help.apple.com/app-store-connect/#/devd274dd925" underline>
+        <Link href="https://help.apple.com/app-store-connect/#/devd274dd925" target="_blank" underline>
           click here
         </Link>
         .
