@@ -5486,61 +5486,37 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
                     >
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Description
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Description
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Some semi-long description"
                         name="description"
@@ -5593,33 +5569,37 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                             }
                           }
                         >
-                          <Text
-                            color="grape-4"
-                            size="x3"
-                            weight="bold"
-                          >
-                            <Base
-                              Component="div"
-                              className="Text Text--size-x3 Text--weight-bold"
+                          <InputLabel>
+                            <Text
                               color="grape-4"
+                              margin="x1"
+                              size="x3"
+                              weight="bold"
                             >
-                              <div
-                                className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
-                                style={
-                                  Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": undefined,
-                                    "minHeight": undefined,
-                                    "minWidth": undefined,
-                                    "width": undefined,
-                                  }
-                                }
+                              <Base
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
+                                color="grape-4"
+                                margin="x1"
                               >
-                                Screenshots
-                              </div>
-                            </Base>
-                          </Text>
+                                <div
+                                  className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Screenshots
+                                </div>
+                              </Base>
+                            </Text>
+                          </InputLabel>
                           <Notification
                             icon="Info"
                             type="inform"
@@ -6513,61 +6493,37 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           </_default>
                         </div>
                       </Base>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    What's new
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              What's new
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Some longer whats-new"
                         name="whatsNew"
@@ -6637,61 +6593,37 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Promotional Text
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Promotional Text
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Promotional Text"
                         name="promotionalText"
@@ -6761,61 +6693,37 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Keywords
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Keywords
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Keywords"
                         name="keywords"
@@ -6885,61 +6793,37 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Review Notes
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Review Notes
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Review Notes"
                         name="reviewNotes"
@@ -9900,61 +9784,37 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
                     >
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Description
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Description
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Some semi-long description"
                         name="description"
@@ -10007,33 +9867,37 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                             }
                           }
                         >
-                          <Text
-                            color="grape-4"
-                            size="x3"
-                            weight="bold"
-                          >
-                            <Base
-                              Component="div"
-                              className="Text Text--size-x3 Text--weight-bold"
+                          <InputLabel>
+                            <Text
                               color="grape-4"
+                              margin="x1"
+                              size="x3"
+                              weight="bold"
                             >
-                              <div
-                                className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
-                                style={
-                                  Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": undefined,
-                                    "minHeight": undefined,
-                                    "minWidth": undefined,
-                                    "width": undefined,
-                                  }
-                                }
+                              <Base
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
+                                color="grape-4"
+                                margin="x1"
                               >
-                                Screenshots
-                              </div>
-                            </Base>
-                          </Text>
+                                <div
+                                  className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Screenshots
+                                </div>
+                              </Base>
+                            </Text>
+                          </InputLabel>
                           <Notification
                             icon="Info"
                             type="inform"
@@ -10927,61 +10791,37 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           </_default>
                         </div>
                       </Base>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    What's new
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              What's new
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Some longer whats-new"
                         name="whatsNew"
@@ -11051,61 +10891,37 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Promotional Text
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Promotional Text
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Promotional Text"
                         name="promotionalText"
@@ -11175,61 +10991,37 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Keywords
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Keywords
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Keywords"
                         name="keywords"
@@ -11299,61 +11091,37 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Review Notes
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Review Notes
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Review Notes"
                         name="reviewNotes"
@@ -14274,61 +14042,37 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
                     >
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Description
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Description
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Some semi-long description"
                         name="description"
@@ -14381,33 +14125,37 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                             }
                           }
                         >
-                          <Text
-                            color="grape-4"
-                            size="x3"
-                            weight="bold"
-                          >
-                            <Base
-                              Component="div"
-                              className="Text Text--size-x3 Text--weight-bold"
+                          <InputLabel>
+                            <Text
                               color="grape-4"
+                              margin="x1"
+                              size="x3"
+                              weight="bold"
                             >
-                              <div
-                                className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
-                                style={
-                                  Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": undefined,
-                                    "minHeight": undefined,
-                                    "minWidth": undefined,
-                                    "width": undefined,
-                                  }
-                                }
+                              <Base
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
+                                color="grape-4"
+                                margin="x1"
                               >
-                                Screenshots
-                              </div>
-                            </Base>
-                          </Text>
+                                <div
+                                  className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Screenshots
+                                </div>
+                              </Base>
+                            </Text>
+                          </InputLabel>
                           <Notification
                             icon="Info"
                             type="inform"
@@ -15301,61 +15049,37 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           </_default>
                         </div>
                       </Base>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    What's new
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              What's new
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Some longer whats-new"
                         name="whatsNew"
@@ -15425,61 +15149,37 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Promotional Text
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Promotional Text
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Promotional Text"
                         name="promotionalText"
@@ -15549,61 +15249,37 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Keywords
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Keywords
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Keywords"
                         name="keywords"
@@ -15673,61 +15349,37 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Review Notes
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Review Notes
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Review Notes"
                         name="reviewNotes"
@@ -18755,61 +18407,37 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
                     >
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Description
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Description
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Some semi-long description"
                         name="description"
@@ -18862,33 +18490,37 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                             }
                           }
                         >
-                          <Text
-                            color="grape-4"
-                            size="x3"
-                            weight="bold"
-                          >
-                            <Base
-                              Component="div"
-                              className="Text Text--size-x3 Text--weight-bold"
+                          <InputLabel>
+                            <Text
                               color="grape-4"
+                              margin="x1"
+                              size="x3"
+                              weight="bold"
                             >
-                              <div
-                                className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
-                                style={
-                                  Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": undefined,
-                                    "minHeight": undefined,
-                                    "minWidth": undefined,
-                                    "width": undefined,
-                                  }
-                                }
+                              <Base
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
+                                color="grape-4"
+                                margin="x1"
                               >
-                                Screenshots
-                              </div>
-                            </Base>
-                          </Text>
+                                <div
+                                  className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Screenshots
+                                </div>
+                              </Base>
+                            </Text>
+                          </InputLabel>
                           <Notification
                             icon="Info"
                             type="inform"
@@ -19782,61 +19414,37 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           </_default>
                         </div>
                       </Base>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    What's new
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              What's new
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Some longer whats-new"
                         name="whatsNew"
@@ -19906,61 +19514,37 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Promotional Text
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Promotional Text
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Promotional Text"
                         name="promotionalText"
@@ -20030,61 +19614,37 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Keywords
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Keywords
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Keywords"
                         name="keywords"
@@ -20154,61 +19714,37 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Review Notes
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Review Notes
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Review Notes"
                         name="reviewNotes"
@@ -23365,61 +22901,37 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                       removeFeatureGraphic={[MockFunction]}
                       removeScreenshot={[MockFunction]}
                     >
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Description
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Description
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Some semi-long description"
                         name="description"
@@ -23472,33 +22984,37 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                             }
                           }
                         >
-                          <Text
-                            color="grape-4"
-                            size="x3"
-                            weight="bold"
-                          >
-                            <Base
-                              Component="div"
-                              className="Text Text--size-x3 Text--weight-bold"
+                          <InputLabel>
+                            <Text
                               color="grape-4"
+                              margin="x1"
+                              size="x3"
+                              weight="bold"
                             >
-                              <div
-                                className="Base Base--color-grape-4 Text Text--size-x3 Text--weight-bold"
-                                style={
-                                  Object {
-                                    "height": undefined,
-                                    "maxHeight": undefined,
-                                    "maxWidth": undefined,
-                                    "minHeight": undefined,
-                                    "minWidth": undefined,
-                                    "width": undefined,
-                                  }
-                                }
+                              <Base
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
+                                color="grape-4"
+                                margin="x1"
                               >
-                                Screenshots
-                              </div>
-                            </Base>
-                          </Text>
+                                <div
+                                  className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Screenshots
+                                </div>
+                              </Base>
+                            </Text>
+                          </InputLabel>
                           <Notification
                             icon="Info"
                             type="inform"
@@ -24392,61 +23908,37 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           </_default>
                         </div>
                       </Base>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    What's new
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              What's new
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Some longer whats-new"
                         name="whatsNew"
@@ -24516,61 +24008,37 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Promotional Text
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Promotional Text
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Promotional Text"
                         name="promotionalText"
@@ -24640,61 +24108,37 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Keywords
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Keywords
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Keywords"
                         name="keywords"
@@ -24764,61 +24208,37 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           />
                         </Base>
                       </Divider>
-                      <Flex
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        direction="horizontal"
-                      >
-                        <Base
-                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
+                      <InputLabel>
+                        <Text
+                          color="grape-4"
+                          margin="x1"
+                          size="x3"
+                          weight="bold"
                         >
-                          <div
-                            className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
+                          <Base
+                            Component="div"
+                            className="Text Text--size-x3 Text--weight-bold"
+                            color="grape-4"
+                            margin="x1"
                           >
-                            <InputLabel>
-                              <Text
-                                color="grape-4"
-                                margin="x1"
-                                size="x3"
-                                weight="bold"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x3 Text--weight-bold"
-                                  color="grape-4"
-                                  margin="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Review Notes
-                                  </div>
-                                </Base>
-                              </Text>
-                            </InputLabel>
-                          </div>
-                        </Base>
-                      </Flex>
+                            <div
+                              className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "maxHeight": undefined,
+                                  "maxWidth": undefined,
+                                  "minHeight": undefined,
+                                  "minWidth": undefined,
+                                  "width": undefined,
+                                }
+                              }
+                            >
+                              Review Notes
+                            </div>
+                          </Base>
+                        </Text>
+                      </InputLabel>
                       <TextArea
                         defaultValue="Review Notes"
                         name="reviewNotes"
