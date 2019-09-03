@@ -1,6 +1,5 @@
-import SVG from 'react-svg';
 import Link from 'next/link';
-import { Base, Text } from '@bitrise/bitkit';
+import { Base, Text, TypeIconName, Icon } from '@bitrise/bitkit';
 
 import Squircle from '@/components/Squircle';
 import { mediaQuery } from '@/utils/media';
@@ -8,18 +7,19 @@ import { mediaQuery } from '@/utils/media';
 import css from './style.scss';
 
 interface AppSummaryProps {
+  platform: string;
   detailsPagePath: string;
   title: string;
   description: string;
   note: string;
   iconUrl: string;
-  platformIconUrl: string;
 }
 
-export default ({ detailsPagePath, title, description, note, iconUrl, platformIconUrl }: AppSummaryProps) => {
+export default ({ platform, detailsPagePath, title, description, note, iconUrl }: AppSummaryProps) => {
   const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
   const primaryColor = '#0D83CD';
   const secondaryColor = '#0DD3C5';
+  const iconName: TypeIconName = platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   return (
     <Link href={detailsPagePath}>
@@ -42,7 +42,9 @@ export default ({ detailsPagePath, title, description, note, iconUrl, platformIc
             <div className={css.note} />
           </div>
           <div className={css.titleWrapper}>
-            <SVG src={platformIconUrl} />
+            <Base className={css.platformIconWrapper}>
+              <Icon color="grape-4" name={iconName} size="1.5rem" />
+            </Base>
             <Text size={isDesktop ? 'x5' : 'x4'} color="grape-4" weight="bold" letterSpacing="x1">
               {title}
             </Text>

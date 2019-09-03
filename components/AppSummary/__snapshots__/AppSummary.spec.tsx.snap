@@ -47,16 +47,15 @@ exports[`AppSummary renders correctly on desktop 1`] = `
       <div
         className="titleWrapper"
       >
-        <ReactSVG
-          afterInjection={[Function]}
-          beforeInjection={[Function]}
-          evalScripts="never"
-          fallback={null}
-          loading={null}
-          renumerateIRIElements={true}
-          src="/static/icon-apple.svg"
-          wrapper="div"
-        />
+        <Base
+          className="platformIconWrapper"
+        >
+          <Icon
+            color="grape-4"
+            name="PlatformsApple"
+            size="1.5rem"
+          />
+        </Base>
         <Text
           color="grape-4"
           letterSpacing="x1"
@@ -123,16 +122,15 @@ exports[`AppSummary renders correctly on mobile 1`] = `
       <div
         className="titleWrapper"
       >
-        <ReactSVG
-          afterInjection={[Function]}
-          beforeInjection={[Function]}
-          evalScripts="never"
-          fallback={null}
-          loading={null}
-          renumerateIRIElements={true}
-          src="/static/icon-apple.svg"
-          wrapper="div"
-        />
+        <Base
+          className="platformIconWrapper"
+        >
+          <Icon
+            color="grape-4"
+            name="PlatformsApple"
+            size="1.5rem"
+          />
+        </Base>
         <Text
           color="grape-4"
           letterSpacing="x1"
@@ -199,16 +197,15 @@ exports[`AppSummary renders correctly on tablet 1`] = `
       <div
         className="titleWrapper"
       >
-        <ReactSVG
-          afterInjection={[Function]}
-          beforeInjection={[Function]}
-          evalScripts="never"
-          fallback={null}
-          loading={null}
-          renumerateIRIElements={true}
-          src="/static/icon-apple.svg"
-          wrapper="div"
-        />
+        <Base
+          className="platformIconWrapper"
+        >
+          <Icon
+            color="grape-4"
+            name="PlatformsApple"
+            size="1.5rem"
+          />
+        </Base>
         <Text
           color="grape-4"
           letterSpacing="x1"

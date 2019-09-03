@@ -8,7 +8,7 @@ describe('VersionListPageItem', () => {
     const component = shallow(
       <VersionListPageItem
         detailsPagePath='/v1-1-0/details'
-        platformIconUrl="/static/icon-apple.svg"
+        platform="ios"
         title='My app v1.1.0 (28)'
         description='This is a short description about my 1. app. It is a good app. End of description.'
         note='Updated on January 1, 2008'
@@ -21,7 +21,7 @@ describe('VersionListPageItem', () => {
     const component = shallow(
       <VersionListPageItem
         detailsPagePath='/v1-1-0/details'
-        platformIconUrl="/static/icon-apple.svg"
+        platform="ios"
         title='My app v1.1.0 (28)'
         description='This is a short description about my 1. app. It is a good app. End of description.'
         note='Updated on January 1, 2008'

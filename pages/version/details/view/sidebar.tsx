@@ -39,12 +39,12 @@ export default ({ publicInstallPageURL, shouldEnablePublish, onSave, onPublish, 
         </Button>
       </Base>
       {publicInstallPageURL ? (
-        <Fragment>
+        <Base paddingVertical="x6">
           <Flex
             direction="horizontal"
             alignChildrenHorizontal="between"
             alignChildrenVertical="middle"
-            paddingVertical="x4"
+            paddingVertical="x2"
             gap="x3"
           >
             <Text weight="bold" size="x3">
@@ -94,7 +94,7 @@ export default ({ publicInstallPageURL, shouldEnablePublish, onSave, onPublish, 
               </Text>
             </Flex>
           </Flex>
-        </Fragment>
+        </Base>
       ) : (
         <Flex
           direction="vertical"

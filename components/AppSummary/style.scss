@@ -51,11 +51,13 @@
       align-items: center;
       margin-top: 4 * $grid;
 
-      svg {
-        display: block;
+      .platformIconWrapper {
         margin-right: $grid;
-        margin-bottom: 3px;
-        fill: $grape-5;
+        margin-bottom: 4px;
+
+        svg {
+          color: $grape-5;
+        }
       }
 
       .title {

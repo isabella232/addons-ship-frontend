@@ -47,15 +47,11 @@ export default ({
   onDeviceSelected
 }: Props) => (
   <Fragment>
-    <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-      <InputLabel>Description</InputLabel>
-    </Flex>
+    <InputLabel>Description</InputLabel>
     <Textarea name="description" defaultValue={appVersion.description} />
 
     <Base paddingVertical="x4">
-      <Text color="grape-4" size="x3" weight="bold">
-        Screenshots
-      </Text>
+      <InputLabel>Screenshots</InputLabel>
       <Notification type="inform" icon="Info">
         Screenshots must be in the JPG or PNG format, and in the RGB color space. To learn more,{' '}
         <Link href="https://help.apple.com/app-store-connect/#/devd274dd925" target="_blank" underline>
@@ -73,30 +69,22 @@ export default ({
       />
     </Base>
 
-    <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-      <InputLabel>What's new</InputLabel>
-    </Flex>
+    <InputLabel>What's new</InputLabel>
     <Textarea name="whatsNew" defaultValue={appVersion.whatsNew} />
 
     <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-    <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-      <InputLabel>Promotional Text</InputLabel>
-    </Flex>
+    <InputLabel>Promotional Text</InputLabel>
     <Textarea name="promotionalText" defaultValue={appVersion.promotionalText} />
 
     <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-    <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-      <InputLabel>Keywords</InputLabel>
-    </Flex>
+    <InputLabel>Keywords</InputLabel>
     <Textarea name="keywords" defaultValue={appVersion.keywords} />
 
     <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-    <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-      <InputLabel>Review Notes</InputLabel>
-    </Flex>
+    <InputLabel>Review Notes</InputLabel>
     <Textarea name="reviewNotes" defaultValue={appVersion.reviewNotes} />
 
     <Divider color="gray-2" direction="horizontal" margin="x4" />

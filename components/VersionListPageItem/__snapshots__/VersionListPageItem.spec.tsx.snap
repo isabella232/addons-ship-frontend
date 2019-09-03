@@ -13,17 +13,15 @@ exports[`VersionListPageItem renders correctly 1`] = `
       <a
         className="topWrapper"
       >
-        <ReactSVG
-          afterInjection={[Function]}
-          beforeInjection={[Function]}
-          className="platformIcon"
-          evalScripts="never"
-          fallback={null}
-          loading={null}
-          renumerateIRIElements={true}
-          src="/static/icon-apple.svg"
-          wrapper="div"
-        />
+        <Base
+          className="platformIconWrapper"
+        >
+          <Icon
+            color="grape-4"
+            name="PlatformsApple"
+            size="1.5rem"
+          />
+        </Base>
         <div
           className="title"
         >
@@ -83,17 +81,15 @@ exports[`VersionListPageItem shows more description 1`] = `
       <a
         className="topWrapper"
       >
-        <ReactSVG
-          afterInjection={[Function]}
-          beforeInjection={[Function]}
-          className="platformIcon"
-          evalScripts="never"
-          fallback={null}
-          loading={null}
-          renumerateIRIElements={true}
-          src="/static/icon-apple.svg"
-          wrapper="div"
-        />
+        <Base
+          className="platformIconWrapper"
+        >
+          <Icon
+            color="grape-4"
+            name="PlatformsApple"
+            size="1.5rem"
+          />
+        </Base>
         <div
           className="title"
         >

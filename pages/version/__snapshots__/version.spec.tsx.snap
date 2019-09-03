@@ -57,7 +57,9 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
             as="some/path/details"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Details
             </a>
           </Link>
@@ -70,7 +72,9 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
             as="some/path/devices"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Devices
             </a>
           </Link>
@@ -83,7 +87,9 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
             as="some/path/qa"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Qa
             </a>
           </Link>
@@ -96,7 +102,9 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
             as="some/path/activity"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Activity
             </a>
           </Link>
@@ -141,7 +149,9 @@ exports[`AppVersion renders the details tab correctly 1`] = `
             as="some/path/details"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Details
             </a>
           </Link>
@@ -154,7 +164,9 @@ exports[`AppVersion renders the details tab correctly 1`] = `
             as="some/path/devices"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Devices
             </a>
           </Link>
@@ -167,7 +179,9 @@ exports[`AppVersion renders the details tab correctly 1`] = `
             as="some/path/qa"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Qa
             </a>
           </Link>
@@ -180,7 +194,9 @@ exports[`AppVersion renders the details tab correctly 1`] = `
             as="some/path/activity"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Activity
             </a>
           </Link>
@@ -225,7 +241,9 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
             as="some/path/details"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Details
             </a>
           </Link>
@@ -238,7 +256,9 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
             as="some/path/devices"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Devices
             </a>
           </Link>
@@ -251,7 +271,9 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
             as="some/path/qa"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Qa
             </a>
           </Link>
@@ -264,7 +286,9 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
             as="some/path/activity"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Activity
             </a>
           </Link>
@@ -309,7 +333,9 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
             as="some/path/details"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Details
             </a>
           </Link>
@@ -322,7 +348,9 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
             as="some/path/devices"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Devices
             </a>
           </Link>
@@ -335,7 +363,9 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
             as="some/path/qa"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Qa
             </a>
           </Link>
@@ -348,7 +378,9 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
             as="some/path/activity"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Activity
             </a>
           </Link>
@@ -395,7 +427,9 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
             as="some/path/details"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Details
             </a>
           </Link>
@@ -408,7 +442,9 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
             as="some/path/devices"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Devices
             </a>
           </Link>
@@ -421,7 +457,9 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
             as="some/path/qa"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Qa
             </a>
           </Link>
@@ -434,7 +472,9 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
             as="some/path/activity"
             href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
           >
-            <a>
+            <a
+              className="tabAnchor"
+            >
               Activity
             </a>
           </Link>
