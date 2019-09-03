@@ -1308,14 +1308,14 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 <defs>
                                   <clipPath
                                     clipPathUnits="objectBoundingBox"
-                                    id="squircle-0.05"
+                                    id="squircle-0.02"
                                   >
                                     <path
                                       d="M .5,0
-    C 0.05,0 0,0.05 0,.5
-    0,0.95 0.05,1 .5,1
-    0.95,1 1,0.95 1,.5
-    1,0.05 0.95,0 .5,0
+    C 0.02,0 0,0.02 0,.5
+    0,0.98 0.02,1 .5,1
+    0.98,1 1,0.98 1,.5
+    1,0.02 0.98,0 .5,0
     Z"
                                     />
                                   </clipPath>
@@ -1327,7 +1327,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "clipPath": "url(#squircle-0.05)",
+                                    "clipPath": "url(#squircle-0.02)",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -1341,7 +1341,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
-                                      "clipPath": "url(#squircle-0.05)",
+                                      "clipPath": "url(#squircle-0.02)",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -1352,7 +1352,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
-                                        "clipPath": "url(#squircle-0.05)",
+                                        "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
@@ -5131,14 +5131,14 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 <defs>
                                   <clipPath
                                     clipPathUnits="objectBoundingBox"
-                                    id="squircle-0.05"
+                                    id="squircle-0.02"
                                   >
                                     <path
                                       d="M .5,0
-    C 0.05,0 0,0.05 0,.5
-    0,0.95 0.05,1 .5,1
-    0.95,1 1,0.95 1,.5
-    1,0.05 0.95,0 .5,0
+    C 0.02,0 0,0.02 0,.5
+    0,0.98 0.02,1 .5,1
+    0.98,1 1,0.98 1,.5
+    1,0.02 0.98,0 .5,0
     Z"
                                     />
                                   </clipPath>
@@ -5150,7 +5150,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "clipPath": "url(#squircle-0.05)",
+                                    "clipPath": "url(#squircle-0.02)",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -5164,7 +5164,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
-                                      "clipPath": "url(#squircle-0.05)",
+                                      "clipPath": "url(#squircle-0.02)",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -5175,7 +5175,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
-                                        "clipPath": "url(#squircle-0.05)",
+                                        "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
@@ -9527,14 +9527,14 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 <defs>
                                   <clipPath
                                     clipPathUnits="objectBoundingBox"
-                                    id="squircle-0.05"
+                                    id="squircle-0.02"
                                   >
                                     <path
                                       d="M .5,0
-    C 0.05,0 0,0.05 0,.5
-    0,0.95 0.05,1 .5,1
-    0.95,1 1,0.95 1,.5
-    1,0.05 0.95,0 .5,0
+    C 0.02,0 0,0.02 0,.5
+    0,0.98 0.02,1 .5,1
+    0.98,1 1,0.98 1,.5
+    1,0.02 0.98,0 .5,0
     Z"
                                     />
                                   </clipPath>
@@ -9546,7 +9546,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "clipPath": "url(#squircle-0.05)",
+                                    "clipPath": "url(#squircle-0.02)",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -9560,7 +9560,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
-                                      "clipPath": "url(#squircle-0.05)",
+                                      "clipPath": "url(#squircle-0.02)",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -9571,7 +9571,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
-                                        "clipPath": "url(#squircle-0.05)",
+                                        "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
@@ -13883,14 +13883,14 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 <defs>
                                   <clipPath
                                     clipPathUnits="objectBoundingBox"
-                                    id="squircle-0.05"
+                                    id="squircle-0.02"
                                   >
                                     <path
                                       d="M .5,0
-    C 0.05,0 0,0.05 0,.5
-    0,0.95 0.05,1 .5,1
-    0.95,1 1,0.95 1,.5
-    1,0.05 0.95,0 .5,0
+    C 0.02,0 0,0.02 0,.5
+    0,0.98 0.02,1 .5,1
+    0.98,1 1,0.98 1,.5
+    1,0.02 0.98,0 .5,0
     Z"
                                     />
                                   </clipPath>
@@ -13902,7 +13902,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "clipPath": "url(#squircle-0.05)",
+                                    "clipPath": "url(#squircle-0.02)",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -13916,7 +13916,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
-                                      "clipPath": "url(#squircle-0.05)",
+                                      "clipPath": "url(#squircle-0.02)",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -13927,7 +13927,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
-                                        "clipPath": "url(#squircle-0.05)",
+                                        "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
@@ -18338,14 +18338,14 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 <defs>
                                   <clipPath
                                     clipPathUnits="objectBoundingBox"
-                                    id="squircle-0.05"
+                                    id="squircle-0.02"
                                   >
                                     <path
                                       d="M .5,0
-    C 0.05,0 0,0.05 0,.5
-    0,0.95 0.05,1 .5,1
-    0.95,1 1,0.95 1,.5
-    1,0.05 0.95,0 .5,0
+    C 0.02,0 0,0.02 0,.5
+    0,0.98 0.02,1 .5,1
+    0.98,1 1,0.98 1,.5
+    1,0.02 0.98,0 .5,0
     Z"
                                     />
                                   </clipPath>
@@ -18357,7 +18357,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "clipPath": "url(#squircle-0.05)",
+                                    "clipPath": "url(#squircle-0.02)",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -18371,7 +18371,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
-                                      "clipPath": "url(#squircle-0.05)",
+                                      "clipPath": "url(#squircle-0.02)",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -18382,7 +18382,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
-                                        "clipPath": "url(#squircle-0.05)",
+                                        "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
@@ -22694,14 +22694,14 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 <defs>
                                   <clipPath
                                     clipPathUnits="objectBoundingBox"
-                                    id="squircle-0.05"
+                                    id="squircle-0.02"
                                   >
                                     <path
                                       d="M .5,0
-    C 0.05,0 0,0.05 0,.5
-    0,0.95 0.05,1 .5,1
-    0.95,1 1,0.95 1,.5
-    1,0.05 0.95,0 .5,0
+    C 0.02,0 0,0.02 0,.5
+    0,0.98 0.02,1 .5,1
+    0.98,1 1,0.98 1,.5
+    1,0.02 0.98,0 .5,0
     Z"
                                     />
                                   </clipPath>
@@ -22713,7 +22713,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
-                                    "clipPath": "url(#squircle-0.05)",
+                                    "clipPath": "url(#squircle-0.02)",
                                     "objectFit": "covver",
                                   }
                                 }
@@ -22727,7 +22727,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
-                                      "clipPath": "url(#squircle-0.05)",
+                                      "clipPath": "url(#squircle-0.02)",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -22738,7 +22738,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
-                                        "clipPath": "url(#squircle-0.05)",
+                                        "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
                                         "maxWidth": undefined,
