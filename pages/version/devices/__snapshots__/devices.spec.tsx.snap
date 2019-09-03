@@ -62,7 +62,9 @@ exports[`AppVersion renders the details tab correctly with UDID 1`] = `
         <TableCell>
           ios
         </TableCell>
-        <TableCell>
+        <TableCell
+          shrink={true}
+        >
           some-device-id-01
         </TableCell>
       </TableRow>
@@ -75,7 +77,9 @@ exports[`AppVersion renders the details tab correctly with UDID 1`] = `
         <TableCell>
           android
         </TableCell>
-        <TableCell>
+        <TableCell
+          shrink={true}
+        >
           some-device-id-02
         </TableCell>
       </TableRow>
@@ -88,7 +92,9 @@ exports[`AppVersion renders the details tab correctly with UDID 1`] = `
         <TableCell>
           ios
         </TableCell>
-        <TableCell>
+        <TableCell
+          shrink={true}
+        >
           some-device-id-03
         </TableCell>
       </TableRow>
@@ -134,7 +140,9 @@ exports[`AppVersion renders the details tab correctly with UUID 1`] = `
         <TableCell>
           ios
         </TableCell>
-        <TableCell>
+        <TableCell
+          shrink={true}
+        >
           some-device-id-01
         </TableCell>
       </TableRow>
@@ -147,7 +155,9 @@ exports[`AppVersion renders the details tab correctly with UUID 1`] = `
         <TableCell>
           android
         </TableCell>
-        <TableCell>
+        <TableCell
+          shrink={true}
+        >
           some-device-id-02
         </TableCell>
       </TableRow>
@@ -160,7 +170,9 @@ exports[`AppVersion renders the details tab correctly with UUID 1`] = `
         <TableCell>
           ios
         </TableCell>
-        <TableCell>
+        <TableCell
+          shrink={true}
+        >
           some-device-id-03
         </TableCell>
       </TableRow>
@@ -206,7 +218,9 @@ exports[`AppVersion renders the details tab correctly with device ID 1`] = `
         <TableCell>
           ios
         </TableCell>
-        <TableCell>
+        <TableCell
+          shrink={true}
+        >
           some-device-id-01
         </TableCell>
       </TableRow>
@@ -219,7 +233,9 @@ exports[`AppVersion renders the details tab correctly with device ID 1`] = `
         <TableCell>
           android
         </TableCell>
-        <TableCell>
+        <TableCell
+          shrink={true}
+        >
           some-device-id-02
         </TableCell>
       </TableRow>
@@ -232,7 +248,9 @@ exports[`AppVersion renders the details tab correctly with device ID 1`] = `
         <TableCell>
           ios
         </TableCell>
-        <TableCell>
+        <TableCell
+          shrink={true}
+        >
           some-device-id-03
         </TableCell>
       </TableRow>

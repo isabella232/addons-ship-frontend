@@ -38,7 +38,7 @@ export default ({ projectType, devices }: Props) => (
           <TableRow key={deviceId}>
             <TableCell>{owner}</TableCell>
             <TableCell>{deviceType}</TableCell>
-            <TableCell>{deviceId}</TableCell>
+            <TableCell shrink>{deviceId}</TableCell>
           </TableRow>
         ))}
       </TableBody>
