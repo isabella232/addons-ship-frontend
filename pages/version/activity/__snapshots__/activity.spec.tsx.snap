@@ -40,7 +40,7 @@ exports[`ActivityView when a test failed renders entry with download log button 
   <Table
     type="flat"
   >
-    <TableBody>
+    <TableHeader>
       <TableHeaderRow>
         <TableHeaderCell>
           Date
@@ -51,6 +51,8 @@ exports[`ActivityView when a test failed renders entry with download log button 
           Activity
         </TableHeaderCell>
       </TableHeaderRow>
+    </TableHeader>
+    <TableBody>
       <TableRow
         key="0"
       >
@@ -111,7 +113,7 @@ exports[`ActivityView when a test is in progress renders entry without download 
   <Table
     type="flat"
   >
-    <TableBody>
+    <TableHeader>
       <TableHeaderRow>
         <TableHeaderCell>
           Date
@@ -122,6 +124,8 @@ exports[`ActivityView when a test is in progress renders entry without download 
           Activity
         </TableHeaderCell>
       </TableHeaderRow>
+    </TableHeader>
+    <TableBody>
       <TableRow
         key="0"
       >
@@ -166,7 +170,7 @@ exports[`ActivityView when a test is successful renders entry without download l
   <Table
     type="flat"
   >
-    <TableBody>
+    <TableHeader>
       <TableHeaderRow>
         <TableHeaderCell>
           Date
@@ -177,6 +181,8 @@ exports[`ActivityView when a test is successful renders entry without download l
           Activity
         </TableHeaderCell>
       </TableHeaderRow>
+    </TableHeader>
+    <TableBody>
       <TableRow
         key="0"
       >
@@ -221,7 +227,7 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
   <Table
     type="flat"
   >
-    <TableBody>
+    <TableHeader>
       <TableHeaderRow>
         <TableHeaderCell>
           Date
@@ -232,6 +238,8 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
           Activity
         </TableHeaderCell>
       </TableHeaderRow>
+    </TableHeader>
+    <TableBody>
       <TableRow
         key="0"
       >
@@ -356,7 +364,7 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
   <Table
     type="flat"
   >
-    <TableBody>
+    <TableHeader>
       <TableHeaderRow>
         <TableHeaderCell>
           Date
@@ -367,6 +375,8 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
           Activity
         </TableHeaderCell>
       </TableHeaderRow>
+    </TableHeader>
+    <TableBody>
       <TableRow
         key="0"
       >

@@ -12,7 +12,8 @@ import {
   Table,
   TableRow,
   TableHeaderRow,
-  TableHeaderCell
+  TableHeaderCell,
+  TableHeader
 } from '@bitrise/bitkit';
 import { TypeIconName } from '@bitrise/bitkit/lib/esm/Icon/tsx';
 import { AppVersionEvent } from '@/models';
@@ -45,11 +46,13 @@ const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
 export default ({ appVersionEvents }: Props) => (
   <Base paddingVertical="x8">
     <Table type="flat">
-      <TableBody>
+      <TableHeader>
         <TableHeaderRow>
           <TableHeaderCell>Date</TableHeaderCell>
           <TableHeaderCell colSpan="2">Activity</TableHeaderCell>
         </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
         {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
           <TableRow key={index}>
             <TableCell width="200px">{formatDate(appVersionEvent.createdAt, 'YYYY MM DD HH:mm:ss')}</TableCell>
