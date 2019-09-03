@@ -15,7 +15,7 @@ import { setToken } from '@/ducks/auth';
 import { fetchApp } from '@/ducks/app';
 import { initializeSegment } from '@/utils/analytics';
 
-import { ShipApp, ShipAppProps } from './_app';
+import { ShipApp, ShipAppProps } from '.';
 import { PageContext } from '@/models';
 
 describe('ShipApp', () => {

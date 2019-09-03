@@ -243,6 +243,8 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
 />
 `;
 
+exports[`AppPage renders the loading placeholder 1`] = `<_default />`;
+
 exports[`AppPage when user selects sort by build numbers renders the list of app version grouped by build number 1`] = `
 <_default
   groupedAppVersionList={
@@ -1014,14 +1016,14 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                   <defs>
                                     <clipPath
                                       clipPathUnits="objectBoundingBox"
-                                      id="squircle-0.05"
+                                      id="squircle-0.02"
                                     >
                                       <path
                                         d="M .5,0
-    C 0.05,0 0,0.05 0,.5
-    0,0.95 0.05,1 .5,1
-    0.95,1 1,0.95 1,.5
-    1,0.05 0.95,0 .5,0
+    C 0.02,0 0,0.02 0,.5
+    0,0.98 0.02,1 .5,1
+    0.98,1 1,0.98 1,.5
+    1,0.02 0.98,0 .5,0
     Z"
                                       />
                                     </clipPath>
@@ -1033,7 +1035,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
-                                      "clipPath": "url(#squircle-0.05)",
+                                      "clipPath": "url(#squircle-0.02)",
                                       "objectFit": "covver",
                                     }
                                   }
@@ -1047,7 +1049,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
-                                        "clipPath": "url(#squircle-0.05)",
+                                        "clipPath": "url(#squircle-0.02)",
                                         "objectFit": "covver",
                                       }
                                     }
@@ -1058,7 +1060,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                       src="http://placekitten.com/160/160"
                                       style={
                                         Object {
-                                          "clipPath": "url(#squircle-0.05)",
+                                          "clipPath": "url(#squircle-0.02)",
                                           "height": undefined,
                                           "maxHeight": undefined,
                                           "maxWidth": undefined,
