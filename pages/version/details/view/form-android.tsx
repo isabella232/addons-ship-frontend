@@ -41,31 +41,27 @@ export default ({
   hasMounted
 }: Props) => (
   <Fragment>
-    <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-      <InputLabel>What's new</InputLabel>
-    </Flex>
+    <InputLabel>What's new</InputLabel>
     <Textarea name="whatsNew" defaultValue={appVersion.whatsNew} />
 
     <Base paddingVertical="x4">
-      <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-        <InputLabel>Short Description</InputLabel>
-      </Flex>
+      <InputLabel>Short Description</InputLabel>
       <Textarea name="shortDescription" defaultValue={appVersion.shortDescription} />
     </Base>
 
-    <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-      <InputLabel>Full Description</InputLabel>
-    </Flex>
+    <InputLabel>Full Description</InputLabel>
     <Textarea name="description" defaultValue={appVersion.description} />
 
     <Base paddingVertical="x4">
-      <Text color="grape-4" size="x3" weight="bold">
-        Screenshots
-      </Text>
+      <InputLabel>Screenshots</InputLabel>
       <Notification type="inform" icon="Info">
         Screenshots must be in the JPG or PNG format, and in the RGB color space. You can add up to 8 screenshots for
         each supported device type. To learn more,{' '}
-        <Link href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en" target="_blank" underline>
+        <Link
+          href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en"
+          target="_blank"
+          underline
+        >
           click here
         </Link>
         .
@@ -81,12 +77,12 @@ export default ({
 
     <Base paddingVertical="x4">
       <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-        <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-          <Text color="grape-4" size="x3" weight="bold">
+        <InputLabel>
+          <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
             Feature Graphic
-          </Text>
-          <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
-        </Flex>
+            <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
+          </Flex>
+        </InputLabel>
         <Text size="x2" weight="medium" color="gray-7" align="end">
           1024 x 500px
         </Text>
