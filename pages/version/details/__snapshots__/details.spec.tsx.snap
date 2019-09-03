@@ -4286,201 +4286,11 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                       </Button>
                     </div>
                   </Base>
-                  <Flex
-                    alignChildrenHorizontal="between"
-                    alignChildrenVertical="middle"
-                    direction="horizontal"
-                    gap="x3"
-                    paddingVertical="x4"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
-                      paddingVertical="x4"
-                    >
-                      <div
-                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Text
-                          size="x3"
-                          weight="bold"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3 Text--weight-bold"
-                          >
-                            <div
-                              className="Base Text Text--size-x3 Text--weight-bold"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "minHeight": undefined,
-                                  "minWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              Public Install Page link
-                            </div>
-                          </Base>
-                        </Text>
-                        <Base>
-                          <div
-                            className="Base"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
-                          >
-                            <Tooltip
-                              title="✓ Copied"
-                              visible={false}
-                            >
-                              <PlacementManager>
-                                <Manager>
-                                  <Placement
-                                    backgroundColor="black"
-                                    borderRadius="x1"
-                                    color="gray-1"
-                                    placement="top"
-                                    visible={false}
-                                  >
-                                    <PlacementPopper
-                                      backgroundColor="black"
-                                      borderRadius="x1"
-                                      closeElement={null}
-                                      color="gray-1"
-                                      flip={true}
-                                      isInsideModal={false}
-                                      placement="top"
-                                      visible={false}
-                                    />
-                                  </Placement>
-                                  <PlacementReference>
-                                    <Reference
-                                      innerRef={[Function]}
-                                    >
-                                      <InnerReference
-                                        innerRef={[Function]}
-                                        setReferenceNode={[Function]}
-                                      >
-                                        <ClipboardButton
-                                          className="clipboard-button"
-                                          data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                          onClick={[Function]}
-                                          onSuccess={[Function]}
-                                        >
-                                          <button
-                                            className="clipboard-button"
-                                            data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                            onClick={[Function]}
-                                            style={Object {}}
-                                            title=""
-                                            type="button"
-                                          >
-                                            <Base
-                                              borderRadius="x1"
-                                              className="icon-container"
-                                              innerRef={[Function]}
-                                              padding="x1"
-                                            >
-                                              <div
-                                                className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
-                                                style={
-                                                  Object {
-                                                    "height": undefined,
-                                                    "maxHeight": undefined,
-                                                    "maxWidth": undefined,
-                                                    "minHeight": undefined,
-                                                    "minWidth": undefined,
-                                                    "width": undefined,
-                                                  }
-                                                }
-                                              >
-                                                <Icon
-                                                  name="Duplicate"
-                                                  size="1.5rem"
-                                                >
-                                                  <Base
-                                                    Component="svg"
-                                                    className="Icon"
-                                                    height="1.5rem"
-                                                    viewBox="0 0 24 24"
-                                                    width="1.5rem"
-                                                  >
-                                                    <svg
-                                                      className="Base Icon"
-                                                      style={
-                                                        Object {
-                                                          "height": "1.5rem",
-                                                          "maxHeight": undefined,
-                                                          "maxWidth": undefined,
-                                                          "minHeight": undefined,
-                                                          "minWidth": undefined,
-                                                          "width": "1.5rem",
-                                                        }
-                                                      }
-                                                      viewBox="0 0 24 24"
-                                                    >
-                                                      <Component
-                                                        height="100%"
-                                                        width="100%"
-                                                      >
-                                                        <svg
-                                                          height="100%"
-                                                          viewBox="0 0 24 24"
-                                                          width="100%"
-                                                        >
-                                                          <path
-                                                            d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
-                                                            fill="currentColor"
-                                                            fillRule="evenodd"
-                                                          />
-                                                        </svg>
-                                                      </Component>
-                                                    </svg>
-                                                  </Base>
-                                                </Icon>
-                                              </div>
-                                            </Base>
-                                          </button>
-                                        </ClipboardButton>
-                                      </InnerReference>
-                                    </Reference>
-                                  </PlacementReference>
-                                </Manager>
-                              </PlacementManager>
-                            </Tooltip>
-                          </div>
-                        </Base>
-                      </div>
-                    </Base>
-                  </Flex>
                   <Base
-                    backgroundColor="grape-1"
-                    borderRadius="x1"
-                    paddingHorizontal="x4"
-                    paddingVertical="x3"
+                    paddingVertical="x6"
                   >
                     <div
-                      className="Base Base--background-color-grape-1 Base--border-radius-x1 Base--padding-horizontal-x4 Base--padding-vertical-x3"
+                      className="Base Base--padding-vertical-x6"
                       style={
                         Object {
                           "height": undefined,
@@ -4492,23 +4302,19 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                         }
                       }
                     >
-                      <Text
-                        Component="a"
-                        breakOn="word"
-                        className="public-instal-page-link"
-                        color="grape-3"
-                        href="https://bitrise.io/app/8b334705d8e78276"
-                        weight="medium"
+                      <Flex
+                        alignChildrenHorizontal="between"
+                        alignChildrenVertical="middle"
+                        direction="horizontal"
+                        gap="x3"
+                        paddingVertical="x2"
                       >
                         <Base
-                          Component="a"
-                          className="public-instal-page-link Text Text--break-word Text--weight-medium"
-                          color="grape-3"
-                          href="https://bitrise.io/app/8b334705d8e78276"
+                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
+                          paddingVertical="x2"
                         >
-                          <a
-                            className="Base Base--color-grape-3 public-instal-page-link Text Text--break-word Text--weight-medium"
-                            href="https://bitrise.io/app/8b334705d8e78276"
+                          <div
+                            className="Base Base--padding-vertical-x2 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                             style={
                               Object {
                                 "height": undefined,
@@ -4520,112 +4326,16 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                               }
                             }
                           >
-                            https://bitrise.io/app/8b334705d8e78276
-                          </a>
-                        </Base>
-                      </Text>
-                    </div>
-                  </Base>
-                  <Flex
-                    alignChildrenHorizontal="middle"
-                    direction="vertical"
-                    paddingVertical="x10"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-middle Flex--vertical"
-                      paddingVertical="x10"
-                    >
-                      <div
-                        className="Base Base--padding-vertical-x10 Flex Flex--align-horz-middle Flex--vertical"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <QRCode
-                          bgColor="#FFFFFF"
-                          fgColor="#000000"
-                          includeMargin={false}
-                          level="L"
-                          renderAs="canvas"
-                          size={180}
-                          value="https://bitrise.io/app/8b334705d8e78276"
-                        >
-                          <QRCodeCanvas
-                            bgColor="#FFFFFF"
-                            fgColor="#000000"
-                            includeMargin={false}
-                            level="L"
-                            size={180}
-                            value="https://bitrise.io/app/8b334705d8e78276"
-                          >
-                            <canvas
-                              height={180}
-                              style={
-                                Object {
-                                  "height": 180,
-                                  "width": 180,
-                                }
-                              }
-                              width={180}
-                            />
-                          </QRCodeCanvas>
-                        </QRCode>
-                      </div>
-                    </Base>
-                  </Flex>
-                  <Flex
-                    alignChildrenHorizontal="middle"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-middle"
-                    >
-                      <div
-                        className="Base Flex Flex--align-horz-middle"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Flex
-                          alignChildrenVertical="middle"
-                          direction="horizontal"
-                          paddingHorizontal="x6"
-                        >
-                          <Base
-                            className="Flex Flex--align-vert-middle Flex--horizontal"
-                            paddingHorizontal="x6"
-                          >
-                            <div
-                              className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--horizontal"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "minHeight": undefined,
-                                  "minWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
+                            <Text
+                              size="x3"
+                              weight="bold"
                             >
                               <Base
-                                paddingHorizontal="x2"
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
                               >
                                 <div
-                                  className="Base Base--padding-horizontal-x2"
+                                  className="Base Text Text--size-x3 Text--weight-bold"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -4637,95 +4347,403 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                     }
                                   }
                                 >
-                                  <Icon
-                                    color="grape-4"
-                                    name="Mobile"
-                                    size="1.5rem"
+                                  Public Install Page link
+                                </div>
+                              </Base>
+                            </Text>
+                            <Base>
+                              <div
+                                className="Base"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <Tooltip
+                                  title="✓ Copied"
+                                  visible={false}
+                                >
+                                  <PlacementManager>
+                                    <Manager>
+                                      <Placement
+                                        backgroundColor="black"
+                                        borderRadius="x1"
+                                        color="gray-1"
+                                        placement="top"
+                                        visible={false}
+                                      >
+                                        <PlacementPopper
+                                          backgroundColor="black"
+                                          borderRadius="x1"
+                                          closeElement={null}
+                                          color="gray-1"
+                                          flip={true}
+                                          isInsideModal={false}
+                                          placement="top"
+                                          visible={false}
+                                        />
+                                      </Placement>
+                                      <PlacementReference>
+                                        <Reference
+                                          innerRef={[Function]}
+                                        >
+                                          <InnerReference
+                                            innerRef={[Function]}
+                                            setReferenceNode={[Function]}
+                                          >
+                                            <ClipboardButton
+                                              className="clipboard-button"
+                                              data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                              onClick={[Function]}
+                                              onSuccess={[Function]}
+                                            >
+                                              <button
+                                                className="clipboard-button"
+                                                data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                                onClick={[Function]}
+                                                style={Object {}}
+                                                title=""
+                                                type="button"
+                                              >
+                                                <Base
+                                                  borderRadius="x1"
+                                                  className="icon-container"
+                                                  innerRef={[Function]}
+                                                  padding="x1"
+                                                >
+                                                  <div
+                                                    className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
+                                                    style={
+                                                      Object {
+                                                        "height": undefined,
+                                                        "maxHeight": undefined,
+                                                        "maxWidth": undefined,
+                                                        "minHeight": undefined,
+                                                        "minWidth": undefined,
+                                                        "width": undefined,
+                                                      }
+                                                    }
+                                                  >
+                                                    <Icon
+                                                      name="Duplicate"
+                                                      size="1.5rem"
+                                                    >
+                                                      <Base
+                                                        Component="svg"
+                                                        className="Icon"
+                                                        height="1.5rem"
+                                                        viewBox="0 0 24 24"
+                                                        width="1.5rem"
+                                                      >
+                                                        <svg
+                                                          className="Base Icon"
+                                                          style={
+                                                            Object {
+                                                              "height": "1.5rem",
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": "1.5rem",
+                                                            }
+                                                          }
+                                                          viewBox="0 0 24 24"
+                                                        >
+                                                          <Component
+                                                            height="100%"
+                                                            width="100%"
+                                                          >
+                                                            <svg
+                                                              height="100%"
+                                                              viewBox="0 0 24 24"
+                                                              width="100%"
+                                                            >
+                                                              <path
+                                                                d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
+                                                                fill="currentColor"
+                                                                fillRule="evenodd"
+                                                              />
+                                                            </svg>
+                                                          </Component>
+                                                        </svg>
+                                                      </Base>
+                                                    </Icon>
+                                                  </div>
+                                                </Base>
+                                              </button>
+                                            </ClipboardButton>
+                                          </InnerReference>
+                                        </Reference>
+                                      </PlacementReference>
+                                    </Manager>
+                                  </PlacementManager>
+                                </Tooltip>
+                              </div>
+                            </Base>
+                          </div>
+                        </Base>
+                      </Flex>
+                      <Base
+                        backgroundColor="grape-1"
+                        borderRadius="x1"
+                        paddingHorizontal="x4"
+                        paddingVertical="x3"
+                      >
+                        <div
+                          className="Base Base--background-color-grape-1 Base--border-radius-x1 Base--padding-horizontal-x4 Base--padding-vertical-x3"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "minHeight": undefined,
+                              "minWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <Text
+                            Component="a"
+                            breakOn="word"
+                            className="public-instal-page-link"
+                            color="grape-3"
+                            href="https://bitrise.io/app/8b334705d8e78276"
+                            weight="medium"
+                          >
+                            <Base
+                              Component="a"
+                              className="public-instal-page-link Text Text--break-word Text--weight-medium"
+                              color="grape-3"
+                              href="https://bitrise.io/app/8b334705d8e78276"
+                            >
+                              <a
+                                className="Base Base--color-grape-3 public-instal-page-link Text Text--break-word Text--weight-medium"
+                                href="https://bitrise.io/app/8b334705d8e78276"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                https://bitrise.io/app/8b334705d8e78276
+                              </a>
+                            </Base>
+                          </Text>
+                        </div>
+                      </Base>
+                      <Flex
+                        alignChildrenHorizontal="middle"
+                        direction="vertical"
+                        paddingVertical="x10"
+                      >
+                        <Base
+                          className="Flex Flex--align-horz-middle Flex--vertical"
+                          paddingVertical="x10"
+                        >
+                          <div
+                            className="Base Base--padding-vertical-x10 Flex Flex--align-horz-middle Flex--vertical"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "minHeight": undefined,
+                                "minWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <QRCode
+                              bgColor="#FFFFFF"
+                              fgColor="#000000"
+                              includeMargin={false}
+                              level="L"
+                              renderAs="canvas"
+                              size={180}
+                              value="https://bitrise.io/app/8b334705d8e78276"
+                            >
+                              <QRCodeCanvas
+                                bgColor="#FFFFFF"
+                                fgColor="#000000"
+                                includeMargin={false}
+                                level="L"
+                                size={180}
+                                value="https://bitrise.io/app/8b334705d8e78276"
+                              >
+                                <canvas
+                                  height={180}
+                                  style={
+                                    Object {
+                                      "height": 180,
+                                      "width": 180,
+                                    }
+                                  }
+                                  width={180}
+                                />
+                              </QRCodeCanvas>
+                            </QRCode>
+                          </div>
+                        </Base>
+                      </Flex>
+                      <Flex
+                        alignChildrenHorizontal="middle"
+                      >
+                        <Base
+                          className="Flex Flex--align-horz-middle"
+                        >
+                          <div
+                            className="Base Flex Flex--align-horz-middle"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "minHeight": undefined,
+                                "minWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <Flex
+                              alignChildrenVertical="middle"
+                              direction="horizontal"
+                              paddingHorizontal="x6"
+                            >
+                              <Base
+                                className="Flex Flex--align-vert-middle Flex--horizontal"
+                                paddingHorizontal="x6"
+                              >
+                                <div
+                                  className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--horizontal"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Base
+                                    paddingHorizontal="x2"
+                                  >
+                                    <div
+                                      className="Base Base--padding-horizontal-x2"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Icon
+                                        color="grape-4"
+                                        name="Mobile"
+                                        size="1.5rem"
+                                      >
+                                        <Base
+                                          Component="svg"
+                                          className="Icon"
+                                          color="grape-4"
+                                          height="1.5rem"
+                                          viewBox="0 0 24 24"
+                                          width="1.5rem"
+                                        >
+                                          <svg
+                                            className="Base Base--color-grape-4 Icon"
+                                            style={
+                                              Object {
+                                                "height": "1.5rem",
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": "1.5rem",
+                                              }
+                                            }
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <Component
+                                              height="100%"
+                                              width="100%"
+                                            >
+                                              <svg
+                                                height="100%"
+                                                viewBox="0 0 24 24"
+                                                width="100%"
+                                              >
+                                                <defs>
+                                                  <path
+                                                    d="M8 4v16h8V4H8zm0-2h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm3 15h2v2h-2v-2z"
+                                                    id="icons-mobile_svg__a"
+                                                  />
+                                                </defs>
+                                                <use
+                                                  fill="currentColor"
+                                                  fillRule="evenodd"
+                                                  xlinkHref="#icons-mobile_svg__a"
+                                                />
+                                              </svg>
+                                            </Component>
+                                          </svg>
+                                        </Base>
+                                      </Icon>
+                                    </div>
+                                  </Base>
+                                  <Text
+                                    color="gray-7"
+                                    paddingHorizontal="x1"
+                                    size="x2"
+                                    weight="medium"
                                   >
                                     <Base
-                                      Component="svg"
-                                      className="Icon"
-                                      color="grape-4"
-                                      height="1.5rem"
-                                      viewBox="0 0 24 24"
-                                      width="1.5rem"
+                                      Component="div"
+                                      className="Text Text--size-x2 Text--weight-medium"
+                                      color="gray-7"
+                                      paddingHorizontal="x1"
                                     >
-                                      <svg
-                                        className="Base Base--color-grape-4 Icon"
+                                      <div
+                                        className="Base Base--color-gray-7 Base--padding-horizontal-x1 Text Text--size-x2 Text--weight-medium"
                                         style={
                                           Object {
-                                            "height": "1.5rem",
+                                            "height": undefined,
                                             "maxHeight": undefined,
                                             "maxWidth": undefined,
                                             "minHeight": undefined,
                                             "minWidth": undefined,
-                                            "width": "1.5rem",
+                                            "width": undefined,
                                           }
                                         }
-                                        viewBox="0 0 24 24"
                                       >
-                                        <Component
-                                          height="100%"
-                                          width="100%"
-                                        >
-                                          <svg
-                                            height="100%"
-                                            viewBox="0 0 24 24"
-                                            width="100%"
-                                          >
-                                            <defs>
-                                              <path
-                                                d="M8 4v16h8V4H8zm0-2h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm3 15h2v2h-2v-2z"
-                                                id="icons-mobile_svg__a"
-                                              />
-                                            </defs>
-                                            <use
-                                              fill="currentColor"
-                                              fillRule="evenodd"
-                                              xlinkHref="#icons-mobile_svg__a"
-                                            />
-                                          </svg>
-                                        </Component>
-                                      </svg>
+                                        Scan this code to reach Public Install Page
+                                      </div>
                                     </Base>
-                                  </Icon>
+                                  </Text>
                                 </div>
                               </Base>
-                              <Text
-                                color="gray-7"
-                                paddingHorizontal="x1"
-                                size="x2"
-                                weight="medium"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x2 Text--weight-medium"
-                                  color="gray-7"
-                                  paddingHorizontal="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-gray-7 Base--padding-horizontal-x1 Text Text--size-x2 Text--weight-medium"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Scan this code to reach Public Install Page
-                                  </div>
-                                </Base>
-                              </Text>
-                            </div>
-                          </Base>
-                        </Flex>
-                      </div>
-                    </Base>
-                  </Flex>
+                            </Flex>
+                          </div>
+                        </Base>
+                      </Flex>
+                    </div>
+                  </Base>
                 </div>
               </Base>
             </_default>
@@ -8544,201 +8562,11 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                       </Button>
                     </div>
                   </Base>
-                  <Flex
-                    alignChildrenHorizontal="between"
-                    alignChildrenVertical="middle"
-                    direction="horizontal"
-                    gap="x3"
-                    paddingVertical="x4"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
-                      paddingVertical="x4"
-                    >
-                      <div
-                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Text
-                          size="x3"
-                          weight="bold"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3 Text--weight-bold"
-                          >
-                            <div
-                              className="Base Text Text--size-x3 Text--weight-bold"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "minHeight": undefined,
-                                  "minWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              Public Install Page link
-                            </div>
-                          </Base>
-                        </Text>
-                        <Base>
-                          <div
-                            className="Base"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
-                          >
-                            <Tooltip
-                              title="✓ Copied"
-                              visible={false}
-                            >
-                              <PlacementManager>
-                                <Manager>
-                                  <Placement
-                                    backgroundColor="black"
-                                    borderRadius="x1"
-                                    color="gray-1"
-                                    placement="top"
-                                    visible={false}
-                                  >
-                                    <PlacementPopper
-                                      backgroundColor="black"
-                                      borderRadius="x1"
-                                      closeElement={null}
-                                      color="gray-1"
-                                      flip={true}
-                                      isInsideModal={false}
-                                      placement="top"
-                                      visible={false}
-                                    />
-                                  </Placement>
-                                  <PlacementReference>
-                                    <Reference
-                                      innerRef={[Function]}
-                                    >
-                                      <InnerReference
-                                        innerRef={[Function]}
-                                        setReferenceNode={[Function]}
-                                      >
-                                        <ClipboardButton
-                                          className="clipboard-button"
-                                          data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                          onClick={[Function]}
-                                          onSuccess={[Function]}
-                                        >
-                                          <button
-                                            className="clipboard-button"
-                                            data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                            onClick={[Function]}
-                                            style={Object {}}
-                                            title=""
-                                            type="button"
-                                          >
-                                            <Base
-                                              borderRadius="x1"
-                                              className="icon-container"
-                                              innerRef={[Function]}
-                                              padding="x1"
-                                            >
-                                              <div
-                                                className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
-                                                style={
-                                                  Object {
-                                                    "height": undefined,
-                                                    "maxHeight": undefined,
-                                                    "maxWidth": undefined,
-                                                    "minHeight": undefined,
-                                                    "minWidth": undefined,
-                                                    "width": undefined,
-                                                  }
-                                                }
-                                              >
-                                                <Icon
-                                                  name="Duplicate"
-                                                  size="1.5rem"
-                                                >
-                                                  <Base
-                                                    Component="svg"
-                                                    className="Icon"
-                                                    height="1.5rem"
-                                                    viewBox="0 0 24 24"
-                                                    width="1.5rem"
-                                                  >
-                                                    <svg
-                                                      className="Base Icon"
-                                                      style={
-                                                        Object {
-                                                          "height": "1.5rem",
-                                                          "maxHeight": undefined,
-                                                          "maxWidth": undefined,
-                                                          "minHeight": undefined,
-                                                          "minWidth": undefined,
-                                                          "width": "1.5rem",
-                                                        }
-                                                      }
-                                                      viewBox="0 0 24 24"
-                                                    >
-                                                      <Component
-                                                        height="100%"
-                                                        width="100%"
-                                                      >
-                                                        <svg
-                                                          height="100%"
-                                                          viewBox="0 0 24 24"
-                                                          width="100%"
-                                                        >
-                                                          <path
-                                                            d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
-                                                            fill="currentColor"
-                                                            fillRule="evenodd"
-                                                          />
-                                                        </svg>
-                                                      </Component>
-                                                    </svg>
-                                                  </Base>
-                                                </Icon>
-                                              </div>
-                                            </Base>
-                                          </button>
-                                        </ClipboardButton>
-                                      </InnerReference>
-                                    </Reference>
-                                  </PlacementReference>
-                                </Manager>
-                              </PlacementManager>
-                            </Tooltip>
-                          </div>
-                        </Base>
-                      </div>
-                    </Base>
-                  </Flex>
                   <Base
-                    backgroundColor="grape-1"
-                    borderRadius="x1"
-                    paddingHorizontal="x4"
-                    paddingVertical="x3"
+                    paddingVertical="x6"
                   >
                     <div
-                      className="Base Base--background-color-grape-1 Base--border-radius-x1 Base--padding-horizontal-x4 Base--padding-vertical-x3"
+                      className="Base Base--padding-vertical-x6"
                       style={
                         Object {
                           "height": undefined,
@@ -8750,23 +8578,19 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                         }
                       }
                     >
-                      <Text
-                        Component="a"
-                        breakOn="word"
-                        className="public-instal-page-link"
-                        color="grape-3"
-                        href="https://bitrise.io/app/8b334705d8e78276"
-                        weight="medium"
+                      <Flex
+                        alignChildrenHorizontal="between"
+                        alignChildrenVertical="middle"
+                        direction="horizontal"
+                        gap="x3"
+                        paddingVertical="x2"
                       >
                         <Base
-                          Component="a"
-                          className="public-instal-page-link Text Text--break-word Text--weight-medium"
-                          color="grape-3"
-                          href="https://bitrise.io/app/8b334705d8e78276"
+                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
+                          paddingVertical="x2"
                         >
-                          <a
-                            className="Base Base--color-grape-3 public-instal-page-link Text Text--break-word Text--weight-medium"
-                            href="https://bitrise.io/app/8b334705d8e78276"
+                          <div
+                            className="Base Base--padding-vertical-x2 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                             style={
                               Object {
                                 "height": undefined,
@@ -8778,112 +8602,16 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                               }
                             }
                           >
-                            https://bitrise.io/app/8b334705d8e78276
-                          </a>
-                        </Base>
-                      </Text>
-                    </div>
-                  </Base>
-                  <Flex
-                    alignChildrenHorizontal="middle"
-                    direction="vertical"
-                    paddingVertical="x10"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-middle Flex--vertical"
-                      paddingVertical="x10"
-                    >
-                      <div
-                        className="Base Base--padding-vertical-x10 Flex Flex--align-horz-middle Flex--vertical"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <QRCode
-                          bgColor="#FFFFFF"
-                          fgColor="#000000"
-                          includeMargin={false}
-                          level="L"
-                          renderAs="canvas"
-                          size={180}
-                          value="https://bitrise.io/app/8b334705d8e78276"
-                        >
-                          <QRCodeCanvas
-                            bgColor="#FFFFFF"
-                            fgColor="#000000"
-                            includeMargin={false}
-                            level="L"
-                            size={180}
-                            value="https://bitrise.io/app/8b334705d8e78276"
-                          >
-                            <canvas
-                              height={180}
-                              style={
-                                Object {
-                                  "height": 180,
-                                  "width": 180,
-                                }
-                              }
-                              width={180}
-                            />
-                          </QRCodeCanvas>
-                        </QRCode>
-                      </div>
-                    </Base>
-                  </Flex>
-                  <Flex
-                    alignChildrenHorizontal="middle"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-middle"
-                    >
-                      <div
-                        className="Base Flex Flex--align-horz-middle"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Flex
-                          alignChildrenVertical="middle"
-                          direction="horizontal"
-                          paddingHorizontal="x6"
-                        >
-                          <Base
-                            className="Flex Flex--align-vert-middle Flex--horizontal"
-                            paddingHorizontal="x6"
-                          >
-                            <div
-                              className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--horizontal"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "minHeight": undefined,
-                                  "minWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
+                            <Text
+                              size="x3"
+                              weight="bold"
                             >
                               <Base
-                                paddingHorizontal="x2"
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
                               >
                                 <div
-                                  className="Base Base--padding-horizontal-x2"
+                                  className="Base Text Text--size-x3 Text--weight-bold"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -8895,95 +8623,403 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                     }
                                   }
                                 >
-                                  <Icon
-                                    color="grape-4"
-                                    name="Mobile"
-                                    size="1.5rem"
+                                  Public Install Page link
+                                </div>
+                              </Base>
+                            </Text>
+                            <Base>
+                              <div
+                                className="Base"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <Tooltip
+                                  title="✓ Copied"
+                                  visible={false}
+                                >
+                                  <PlacementManager>
+                                    <Manager>
+                                      <Placement
+                                        backgroundColor="black"
+                                        borderRadius="x1"
+                                        color="gray-1"
+                                        placement="top"
+                                        visible={false}
+                                      >
+                                        <PlacementPopper
+                                          backgroundColor="black"
+                                          borderRadius="x1"
+                                          closeElement={null}
+                                          color="gray-1"
+                                          flip={true}
+                                          isInsideModal={false}
+                                          placement="top"
+                                          visible={false}
+                                        />
+                                      </Placement>
+                                      <PlacementReference>
+                                        <Reference
+                                          innerRef={[Function]}
+                                        >
+                                          <InnerReference
+                                            innerRef={[Function]}
+                                            setReferenceNode={[Function]}
+                                          >
+                                            <ClipboardButton
+                                              className="clipboard-button"
+                                              data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                              onClick={[Function]}
+                                              onSuccess={[Function]}
+                                            >
+                                              <button
+                                                className="clipboard-button"
+                                                data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                                onClick={[Function]}
+                                                style={Object {}}
+                                                title=""
+                                                type="button"
+                                              >
+                                                <Base
+                                                  borderRadius="x1"
+                                                  className="icon-container"
+                                                  innerRef={[Function]}
+                                                  padding="x1"
+                                                >
+                                                  <div
+                                                    className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
+                                                    style={
+                                                      Object {
+                                                        "height": undefined,
+                                                        "maxHeight": undefined,
+                                                        "maxWidth": undefined,
+                                                        "minHeight": undefined,
+                                                        "minWidth": undefined,
+                                                        "width": undefined,
+                                                      }
+                                                    }
+                                                  >
+                                                    <Icon
+                                                      name="Duplicate"
+                                                      size="1.5rem"
+                                                    >
+                                                      <Base
+                                                        Component="svg"
+                                                        className="Icon"
+                                                        height="1.5rem"
+                                                        viewBox="0 0 24 24"
+                                                        width="1.5rem"
+                                                      >
+                                                        <svg
+                                                          className="Base Icon"
+                                                          style={
+                                                            Object {
+                                                              "height": "1.5rem",
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": "1.5rem",
+                                                            }
+                                                          }
+                                                          viewBox="0 0 24 24"
+                                                        >
+                                                          <Component
+                                                            height="100%"
+                                                            width="100%"
+                                                          >
+                                                            <svg
+                                                              height="100%"
+                                                              viewBox="0 0 24 24"
+                                                              width="100%"
+                                                            >
+                                                              <path
+                                                                d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
+                                                                fill="currentColor"
+                                                                fillRule="evenodd"
+                                                              />
+                                                            </svg>
+                                                          </Component>
+                                                        </svg>
+                                                      </Base>
+                                                    </Icon>
+                                                  </div>
+                                                </Base>
+                                              </button>
+                                            </ClipboardButton>
+                                          </InnerReference>
+                                        </Reference>
+                                      </PlacementReference>
+                                    </Manager>
+                                  </PlacementManager>
+                                </Tooltip>
+                              </div>
+                            </Base>
+                          </div>
+                        </Base>
+                      </Flex>
+                      <Base
+                        backgroundColor="grape-1"
+                        borderRadius="x1"
+                        paddingHorizontal="x4"
+                        paddingVertical="x3"
+                      >
+                        <div
+                          className="Base Base--background-color-grape-1 Base--border-radius-x1 Base--padding-horizontal-x4 Base--padding-vertical-x3"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "minHeight": undefined,
+                              "minWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <Text
+                            Component="a"
+                            breakOn="word"
+                            className="public-instal-page-link"
+                            color="grape-3"
+                            href="https://bitrise.io/app/8b334705d8e78276"
+                            weight="medium"
+                          >
+                            <Base
+                              Component="a"
+                              className="public-instal-page-link Text Text--break-word Text--weight-medium"
+                              color="grape-3"
+                              href="https://bitrise.io/app/8b334705d8e78276"
+                            >
+                              <a
+                                className="Base Base--color-grape-3 public-instal-page-link Text Text--break-word Text--weight-medium"
+                                href="https://bitrise.io/app/8b334705d8e78276"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                https://bitrise.io/app/8b334705d8e78276
+                              </a>
+                            </Base>
+                          </Text>
+                        </div>
+                      </Base>
+                      <Flex
+                        alignChildrenHorizontal="middle"
+                        direction="vertical"
+                        paddingVertical="x10"
+                      >
+                        <Base
+                          className="Flex Flex--align-horz-middle Flex--vertical"
+                          paddingVertical="x10"
+                        >
+                          <div
+                            className="Base Base--padding-vertical-x10 Flex Flex--align-horz-middle Flex--vertical"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "minHeight": undefined,
+                                "minWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <QRCode
+                              bgColor="#FFFFFF"
+                              fgColor="#000000"
+                              includeMargin={false}
+                              level="L"
+                              renderAs="canvas"
+                              size={180}
+                              value="https://bitrise.io/app/8b334705d8e78276"
+                            >
+                              <QRCodeCanvas
+                                bgColor="#FFFFFF"
+                                fgColor="#000000"
+                                includeMargin={false}
+                                level="L"
+                                size={180}
+                                value="https://bitrise.io/app/8b334705d8e78276"
+                              >
+                                <canvas
+                                  height={180}
+                                  style={
+                                    Object {
+                                      "height": 180,
+                                      "width": 180,
+                                    }
+                                  }
+                                  width={180}
+                                />
+                              </QRCodeCanvas>
+                            </QRCode>
+                          </div>
+                        </Base>
+                      </Flex>
+                      <Flex
+                        alignChildrenHorizontal="middle"
+                      >
+                        <Base
+                          className="Flex Flex--align-horz-middle"
+                        >
+                          <div
+                            className="Base Flex Flex--align-horz-middle"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "minHeight": undefined,
+                                "minWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <Flex
+                              alignChildrenVertical="middle"
+                              direction="horizontal"
+                              paddingHorizontal="x6"
+                            >
+                              <Base
+                                className="Flex Flex--align-vert-middle Flex--horizontal"
+                                paddingHorizontal="x6"
+                              >
+                                <div
+                                  className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--horizontal"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Base
+                                    paddingHorizontal="x2"
+                                  >
+                                    <div
+                                      className="Base Base--padding-horizontal-x2"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Icon
+                                        color="grape-4"
+                                        name="Mobile"
+                                        size="1.5rem"
+                                      >
+                                        <Base
+                                          Component="svg"
+                                          className="Icon"
+                                          color="grape-4"
+                                          height="1.5rem"
+                                          viewBox="0 0 24 24"
+                                          width="1.5rem"
+                                        >
+                                          <svg
+                                            className="Base Base--color-grape-4 Icon"
+                                            style={
+                                              Object {
+                                                "height": "1.5rem",
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": "1.5rem",
+                                              }
+                                            }
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <Component
+                                              height="100%"
+                                              width="100%"
+                                            >
+                                              <svg
+                                                height="100%"
+                                                viewBox="0 0 24 24"
+                                                width="100%"
+                                              >
+                                                <defs>
+                                                  <path
+                                                    d="M8 4v16h8V4H8zm0-2h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm3 15h2v2h-2v-2z"
+                                                    id="icons-mobile_svg__a"
+                                                  />
+                                                </defs>
+                                                <use
+                                                  fill="currentColor"
+                                                  fillRule="evenodd"
+                                                  xlinkHref="#icons-mobile_svg__a"
+                                                />
+                                              </svg>
+                                            </Component>
+                                          </svg>
+                                        </Base>
+                                      </Icon>
+                                    </div>
+                                  </Base>
+                                  <Text
+                                    color="gray-7"
+                                    paddingHorizontal="x1"
+                                    size="x2"
+                                    weight="medium"
                                   >
                                     <Base
-                                      Component="svg"
-                                      className="Icon"
-                                      color="grape-4"
-                                      height="1.5rem"
-                                      viewBox="0 0 24 24"
-                                      width="1.5rem"
+                                      Component="div"
+                                      className="Text Text--size-x2 Text--weight-medium"
+                                      color="gray-7"
+                                      paddingHorizontal="x1"
                                     >
-                                      <svg
-                                        className="Base Base--color-grape-4 Icon"
+                                      <div
+                                        className="Base Base--color-gray-7 Base--padding-horizontal-x1 Text Text--size-x2 Text--weight-medium"
                                         style={
                                           Object {
-                                            "height": "1.5rem",
+                                            "height": undefined,
                                             "maxHeight": undefined,
                                             "maxWidth": undefined,
                                             "minHeight": undefined,
                                             "minWidth": undefined,
-                                            "width": "1.5rem",
+                                            "width": undefined,
                                           }
                                         }
-                                        viewBox="0 0 24 24"
                                       >
-                                        <Component
-                                          height="100%"
-                                          width="100%"
-                                        >
-                                          <svg
-                                            height="100%"
-                                            viewBox="0 0 24 24"
-                                            width="100%"
-                                          >
-                                            <defs>
-                                              <path
-                                                d="M8 4v16h8V4H8zm0-2h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm3 15h2v2h-2v-2z"
-                                                id="icons-mobile_svg__a"
-                                              />
-                                            </defs>
-                                            <use
-                                              fill="currentColor"
-                                              fillRule="evenodd"
-                                              xlinkHref="#icons-mobile_svg__a"
-                                            />
-                                          </svg>
-                                        </Component>
-                                      </svg>
+                                        Scan this code to reach Public Install Page
+                                      </div>
                                     </Base>
-                                  </Icon>
+                                  </Text>
                                 </div>
                               </Base>
-                              <Text
-                                color="gray-7"
-                                paddingHorizontal="x1"
-                                size="x2"
-                                weight="medium"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x2 Text--weight-medium"
-                                  color="gray-7"
-                                  paddingHorizontal="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-gray-7 Base--padding-horizontal-x1 Text Text--size-x2 Text--weight-medium"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Scan this code to reach Public Install Page
-                                  </div>
-                                </Base>
-                              </Text>
-                            </div>
-                          </Base>
-                        </Flex>
-                      </div>
-                    </Base>
-                  </Flex>
+                            </Flex>
+                          </div>
+                        </Base>
+                      </Flex>
+                    </div>
+                  </Base>
                 </div>
               </Base>
             </_default>
@@ -12842,201 +12878,11 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                       </Button>
                     </div>
                   </Base>
-                  <Flex
-                    alignChildrenHorizontal="between"
-                    alignChildrenVertical="middle"
-                    direction="horizontal"
-                    gap="x3"
-                    paddingVertical="x4"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
-                      paddingVertical="x4"
-                    >
-                      <div
-                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Text
-                          size="x3"
-                          weight="bold"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3 Text--weight-bold"
-                          >
-                            <div
-                              className="Base Text Text--size-x3 Text--weight-bold"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "minHeight": undefined,
-                                  "minWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              Public Install Page link
-                            </div>
-                          </Base>
-                        </Text>
-                        <Base>
-                          <div
-                            className="Base"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
-                          >
-                            <Tooltip
-                              title="✓ Copied"
-                              visible={false}
-                            >
-                              <PlacementManager>
-                                <Manager>
-                                  <Placement
-                                    backgroundColor="black"
-                                    borderRadius="x1"
-                                    color="gray-1"
-                                    placement="top"
-                                    visible={false}
-                                  >
-                                    <PlacementPopper
-                                      backgroundColor="black"
-                                      borderRadius="x1"
-                                      closeElement={null}
-                                      color="gray-1"
-                                      flip={true}
-                                      isInsideModal={false}
-                                      placement="top"
-                                      visible={false}
-                                    />
-                                  </Placement>
-                                  <PlacementReference>
-                                    <Reference
-                                      innerRef={[Function]}
-                                    >
-                                      <InnerReference
-                                        innerRef={[Function]}
-                                        setReferenceNode={[Function]}
-                                      >
-                                        <ClipboardButton
-                                          className="clipboard-button"
-                                          data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                          onClick={[Function]}
-                                          onSuccess={[Function]}
-                                        >
-                                          <button
-                                            className="clipboard-button"
-                                            data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                            onClick={[Function]}
-                                            style={Object {}}
-                                            title=""
-                                            type="button"
-                                          >
-                                            <Base
-                                              borderRadius="x1"
-                                              className="icon-container"
-                                              innerRef={[Function]}
-                                              padding="x1"
-                                            >
-                                              <div
-                                                className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
-                                                style={
-                                                  Object {
-                                                    "height": undefined,
-                                                    "maxHeight": undefined,
-                                                    "maxWidth": undefined,
-                                                    "minHeight": undefined,
-                                                    "minWidth": undefined,
-                                                    "width": undefined,
-                                                  }
-                                                }
-                                              >
-                                                <Icon
-                                                  name="Duplicate"
-                                                  size="1.5rem"
-                                                >
-                                                  <Base
-                                                    Component="svg"
-                                                    className="Icon"
-                                                    height="1.5rem"
-                                                    viewBox="0 0 24 24"
-                                                    width="1.5rem"
-                                                  >
-                                                    <svg
-                                                      className="Base Icon"
-                                                      style={
-                                                        Object {
-                                                          "height": "1.5rem",
-                                                          "maxHeight": undefined,
-                                                          "maxWidth": undefined,
-                                                          "minHeight": undefined,
-                                                          "minWidth": undefined,
-                                                          "width": "1.5rem",
-                                                        }
-                                                      }
-                                                      viewBox="0 0 24 24"
-                                                    >
-                                                      <Component
-                                                        height="100%"
-                                                        width="100%"
-                                                      >
-                                                        <svg
-                                                          height="100%"
-                                                          viewBox="0 0 24 24"
-                                                          width="100%"
-                                                        >
-                                                          <path
-                                                            d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
-                                                            fill="currentColor"
-                                                            fillRule="evenodd"
-                                                          />
-                                                        </svg>
-                                                      </Component>
-                                                    </svg>
-                                                  </Base>
-                                                </Icon>
-                                              </div>
-                                            </Base>
-                                          </button>
-                                        </ClipboardButton>
-                                      </InnerReference>
-                                    </Reference>
-                                  </PlacementReference>
-                                </Manager>
-                              </PlacementManager>
-                            </Tooltip>
-                          </div>
-                        </Base>
-                      </div>
-                    </Base>
-                  </Flex>
                   <Base
-                    backgroundColor="grape-1"
-                    borderRadius="x1"
-                    paddingHorizontal="x4"
-                    paddingVertical="x3"
+                    paddingVertical="x6"
                   >
                     <div
-                      className="Base Base--background-color-grape-1 Base--border-radius-x1 Base--padding-horizontal-x4 Base--padding-vertical-x3"
+                      className="Base Base--padding-vertical-x6"
                       style={
                         Object {
                           "height": undefined,
@@ -13048,23 +12894,19 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                         }
                       }
                     >
-                      <Text
-                        Component="a"
-                        breakOn="word"
-                        className="public-instal-page-link"
-                        color="grape-3"
-                        href="https://bitrise.io/app/8b334705d8e78276"
-                        weight="medium"
+                      <Flex
+                        alignChildrenHorizontal="between"
+                        alignChildrenVertical="middle"
+                        direction="horizontal"
+                        gap="x3"
+                        paddingVertical="x2"
                       >
                         <Base
-                          Component="a"
-                          className="public-instal-page-link Text Text--break-word Text--weight-medium"
-                          color="grape-3"
-                          href="https://bitrise.io/app/8b334705d8e78276"
+                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
+                          paddingVertical="x2"
                         >
-                          <a
-                            className="Base Base--color-grape-3 public-instal-page-link Text Text--break-word Text--weight-medium"
-                            href="https://bitrise.io/app/8b334705d8e78276"
+                          <div
+                            className="Base Base--padding-vertical-x2 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                             style={
                               Object {
                                 "height": undefined,
@@ -13076,112 +12918,16 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                               }
                             }
                           >
-                            https://bitrise.io/app/8b334705d8e78276
-                          </a>
-                        </Base>
-                      </Text>
-                    </div>
-                  </Base>
-                  <Flex
-                    alignChildrenHorizontal="middle"
-                    direction="vertical"
-                    paddingVertical="x10"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-middle Flex--vertical"
-                      paddingVertical="x10"
-                    >
-                      <div
-                        className="Base Base--padding-vertical-x10 Flex Flex--align-horz-middle Flex--vertical"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <QRCode
-                          bgColor="#FFFFFF"
-                          fgColor="#000000"
-                          includeMargin={false}
-                          level="L"
-                          renderAs="canvas"
-                          size={180}
-                          value="https://bitrise.io/app/8b334705d8e78276"
-                        >
-                          <QRCodeCanvas
-                            bgColor="#FFFFFF"
-                            fgColor="#000000"
-                            includeMargin={false}
-                            level="L"
-                            size={180}
-                            value="https://bitrise.io/app/8b334705d8e78276"
-                          >
-                            <canvas
-                              height={180}
-                              style={
-                                Object {
-                                  "height": 180,
-                                  "width": 180,
-                                }
-                              }
-                              width={180}
-                            />
-                          </QRCodeCanvas>
-                        </QRCode>
-                      </div>
-                    </Base>
-                  </Flex>
-                  <Flex
-                    alignChildrenHorizontal="middle"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-middle"
-                    >
-                      <div
-                        className="Base Flex Flex--align-horz-middle"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Flex
-                          alignChildrenVertical="middle"
-                          direction="horizontal"
-                          paddingHorizontal="x6"
-                        >
-                          <Base
-                            className="Flex Flex--align-vert-middle Flex--horizontal"
-                            paddingHorizontal="x6"
-                          >
-                            <div
-                              className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--horizontal"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "minHeight": undefined,
-                                  "minWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
+                            <Text
+                              size="x3"
+                              weight="bold"
                             >
                               <Base
-                                paddingHorizontal="x2"
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
                               >
                                 <div
-                                  className="Base Base--padding-horizontal-x2"
+                                  className="Base Text Text--size-x3 Text--weight-bold"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -13193,95 +12939,403 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                     }
                                   }
                                 >
-                                  <Icon
-                                    color="grape-4"
-                                    name="Mobile"
-                                    size="1.5rem"
+                                  Public Install Page link
+                                </div>
+                              </Base>
+                            </Text>
+                            <Base>
+                              <div
+                                className="Base"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <Tooltip
+                                  title="✓ Copied"
+                                  visible={false}
+                                >
+                                  <PlacementManager>
+                                    <Manager>
+                                      <Placement
+                                        backgroundColor="black"
+                                        borderRadius="x1"
+                                        color="gray-1"
+                                        placement="top"
+                                        visible={false}
+                                      >
+                                        <PlacementPopper
+                                          backgroundColor="black"
+                                          borderRadius="x1"
+                                          closeElement={null}
+                                          color="gray-1"
+                                          flip={true}
+                                          isInsideModal={false}
+                                          placement="top"
+                                          visible={false}
+                                        />
+                                      </Placement>
+                                      <PlacementReference>
+                                        <Reference
+                                          innerRef={[Function]}
+                                        >
+                                          <InnerReference
+                                            innerRef={[Function]}
+                                            setReferenceNode={[Function]}
+                                          >
+                                            <ClipboardButton
+                                              className="clipboard-button"
+                                              data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                              onClick={[Function]}
+                                              onSuccess={[Function]}
+                                            >
+                                              <button
+                                                className="clipboard-button"
+                                                data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                                onClick={[Function]}
+                                                style={Object {}}
+                                                title=""
+                                                type="button"
+                                              >
+                                                <Base
+                                                  borderRadius="x1"
+                                                  className="icon-container"
+                                                  innerRef={[Function]}
+                                                  padding="x1"
+                                                >
+                                                  <div
+                                                    className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
+                                                    style={
+                                                      Object {
+                                                        "height": undefined,
+                                                        "maxHeight": undefined,
+                                                        "maxWidth": undefined,
+                                                        "minHeight": undefined,
+                                                        "minWidth": undefined,
+                                                        "width": undefined,
+                                                      }
+                                                    }
+                                                  >
+                                                    <Icon
+                                                      name="Duplicate"
+                                                      size="1.5rem"
+                                                    >
+                                                      <Base
+                                                        Component="svg"
+                                                        className="Icon"
+                                                        height="1.5rem"
+                                                        viewBox="0 0 24 24"
+                                                        width="1.5rem"
+                                                      >
+                                                        <svg
+                                                          className="Base Icon"
+                                                          style={
+                                                            Object {
+                                                              "height": "1.5rem",
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": "1.5rem",
+                                                            }
+                                                          }
+                                                          viewBox="0 0 24 24"
+                                                        >
+                                                          <Component
+                                                            height="100%"
+                                                            width="100%"
+                                                          >
+                                                            <svg
+                                                              height="100%"
+                                                              viewBox="0 0 24 24"
+                                                              width="100%"
+                                                            >
+                                                              <path
+                                                                d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
+                                                                fill="currentColor"
+                                                                fillRule="evenodd"
+                                                              />
+                                                            </svg>
+                                                          </Component>
+                                                        </svg>
+                                                      </Base>
+                                                    </Icon>
+                                                  </div>
+                                                </Base>
+                                              </button>
+                                            </ClipboardButton>
+                                          </InnerReference>
+                                        </Reference>
+                                      </PlacementReference>
+                                    </Manager>
+                                  </PlacementManager>
+                                </Tooltip>
+                              </div>
+                            </Base>
+                          </div>
+                        </Base>
+                      </Flex>
+                      <Base
+                        backgroundColor="grape-1"
+                        borderRadius="x1"
+                        paddingHorizontal="x4"
+                        paddingVertical="x3"
+                      >
+                        <div
+                          className="Base Base--background-color-grape-1 Base--border-radius-x1 Base--padding-horizontal-x4 Base--padding-vertical-x3"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "minHeight": undefined,
+                              "minWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <Text
+                            Component="a"
+                            breakOn="word"
+                            className="public-instal-page-link"
+                            color="grape-3"
+                            href="https://bitrise.io/app/8b334705d8e78276"
+                            weight="medium"
+                          >
+                            <Base
+                              Component="a"
+                              className="public-instal-page-link Text Text--break-word Text--weight-medium"
+                              color="grape-3"
+                              href="https://bitrise.io/app/8b334705d8e78276"
+                            >
+                              <a
+                                className="Base Base--color-grape-3 public-instal-page-link Text Text--break-word Text--weight-medium"
+                                href="https://bitrise.io/app/8b334705d8e78276"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                https://bitrise.io/app/8b334705d8e78276
+                              </a>
+                            </Base>
+                          </Text>
+                        </div>
+                      </Base>
+                      <Flex
+                        alignChildrenHorizontal="middle"
+                        direction="vertical"
+                        paddingVertical="x10"
+                      >
+                        <Base
+                          className="Flex Flex--align-horz-middle Flex--vertical"
+                          paddingVertical="x10"
+                        >
+                          <div
+                            className="Base Base--padding-vertical-x10 Flex Flex--align-horz-middle Flex--vertical"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "minHeight": undefined,
+                                "minWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <QRCode
+                              bgColor="#FFFFFF"
+                              fgColor="#000000"
+                              includeMargin={false}
+                              level="L"
+                              renderAs="canvas"
+                              size={180}
+                              value="https://bitrise.io/app/8b334705d8e78276"
+                            >
+                              <QRCodeCanvas
+                                bgColor="#FFFFFF"
+                                fgColor="#000000"
+                                includeMargin={false}
+                                level="L"
+                                size={180}
+                                value="https://bitrise.io/app/8b334705d8e78276"
+                              >
+                                <canvas
+                                  height={180}
+                                  style={
+                                    Object {
+                                      "height": 180,
+                                      "width": 180,
+                                    }
+                                  }
+                                  width={180}
+                                />
+                              </QRCodeCanvas>
+                            </QRCode>
+                          </div>
+                        </Base>
+                      </Flex>
+                      <Flex
+                        alignChildrenHorizontal="middle"
+                      >
+                        <Base
+                          className="Flex Flex--align-horz-middle"
+                        >
+                          <div
+                            className="Base Flex Flex--align-horz-middle"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "minHeight": undefined,
+                                "minWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <Flex
+                              alignChildrenVertical="middle"
+                              direction="horizontal"
+                              paddingHorizontal="x6"
+                            >
+                              <Base
+                                className="Flex Flex--align-vert-middle Flex--horizontal"
+                                paddingHorizontal="x6"
+                              >
+                                <div
+                                  className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--horizontal"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Base
+                                    paddingHorizontal="x2"
+                                  >
+                                    <div
+                                      className="Base Base--padding-horizontal-x2"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Icon
+                                        color="grape-4"
+                                        name="Mobile"
+                                        size="1.5rem"
+                                      >
+                                        <Base
+                                          Component="svg"
+                                          className="Icon"
+                                          color="grape-4"
+                                          height="1.5rem"
+                                          viewBox="0 0 24 24"
+                                          width="1.5rem"
+                                        >
+                                          <svg
+                                            className="Base Base--color-grape-4 Icon"
+                                            style={
+                                              Object {
+                                                "height": "1.5rem",
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": "1.5rem",
+                                              }
+                                            }
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <Component
+                                              height="100%"
+                                              width="100%"
+                                            >
+                                              <svg
+                                                height="100%"
+                                                viewBox="0 0 24 24"
+                                                width="100%"
+                                              >
+                                                <defs>
+                                                  <path
+                                                    d="M8 4v16h8V4H8zm0-2h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm3 15h2v2h-2v-2z"
+                                                    id="icons-mobile_svg__a"
+                                                  />
+                                                </defs>
+                                                <use
+                                                  fill="currentColor"
+                                                  fillRule="evenodd"
+                                                  xlinkHref="#icons-mobile_svg__a"
+                                                />
+                                              </svg>
+                                            </Component>
+                                          </svg>
+                                        </Base>
+                                      </Icon>
+                                    </div>
+                                  </Base>
+                                  <Text
+                                    color="gray-7"
+                                    paddingHorizontal="x1"
+                                    size="x2"
+                                    weight="medium"
                                   >
                                     <Base
-                                      Component="svg"
-                                      className="Icon"
-                                      color="grape-4"
-                                      height="1.5rem"
-                                      viewBox="0 0 24 24"
-                                      width="1.5rem"
+                                      Component="div"
+                                      className="Text Text--size-x2 Text--weight-medium"
+                                      color="gray-7"
+                                      paddingHorizontal="x1"
                                     >
-                                      <svg
-                                        className="Base Base--color-grape-4 Icon"
+                                      <div
+                                        className="Base Base--color-gray-7 Base--padding-horizontal-x1 Text Text--size-x2 Text--weight-medium"
                                         style={
                                           Object {
-                                            "height": "1.5rem",
+                                            "height": undefined,
                                             "maxHeight": undefined,
                                             "maxWidth": undefined,
                                             "minHeight": undefined,
                                             "minWidth": undefined,
-                                            "width": "1.5rem",
+                                            "width": undefined,
                                           }
                                         }
-                                        viewBox="0 0 24 24"
                                       >
-                                        <Component
-                                          height="100%"
-                                          width="100%"
-                                        >
-                                          <svg
-                                            height="100%"
-                                            viewBox="0 0 24 24"
-                                            width="100%"
-                                          >
-                                            <defs>
-                                              <path
-                                                d="M8 4v16h8V4H8zm0-2h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm3 15h2v2h-2v-2z"
-                                                id="icons-mobile_svg__a"
-                                              />
-                                            </defs>
-                                            <use
-                                              fill="currentColor"
-                                              fillRule="evenodd"
-                                              xlinkHref="#icons-mobile_svg__a"
-                                            />
-                                          </svg>
-                                        </Component>
-                                      </svg>
+                                        Scan this code to reach Public Install Page
+                                      </div>
                                     </Base>
-                                  </Icon>
+                                  </Text>
                                 </div>
                               </Base>
-                              <Text
-                                color="gray-7"
-                                paddingHorizontal="x1"
-                                size="x2"
-                                weight="medium"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x2 Text--weight-medium"
-                                  color="gray-7"
-                                  paddingHorizontal="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-gray-7 Base--padding-horizontal-x1 Text Text--size-x2 Text--weight-medium"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Scan this code to reach Public Install Page
-                                  </div>
-                                </Base>
-                              </Text>
-                            </div>
-                          </Base>
-                        </Flex>
-                      </div>
-                    </Base>
-                  </Flex>
+                            </Flex>
+                          </div>
+                        </Base>
+                      </Flex>
+                    </div>
+                  </Base>
                 </div>
               </Base>
             </_default>
@@ -21465,201 +21519,11 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                       </Button>
                     </div>
                   </Base>
-                  <Flex
-                    alignChildrenHorizontal="between"
-                    alignChildrenVertical="middle"
-                    direction="horizontal"
-                    gap="x3"
-                    paddingVertical="x4"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
-                      paddingVertical="x4"
-                    >
-                      <div
-                        className="Base Base--padding-vertical-x4 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Text
-                          size="x3"
-                          weight="bold"
-                        >
-                          <Base
-                            Component="div"
-                            className="Text Text--size-x3 Text--weight-bold"
-                          >
-                            <div
-                              className="Base Text Text--size-x3 Text--weight-bold"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "minHeight": undefined,
-                                  "minWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              Public Install Page link
-                            </div>
-                          </Base>
-                        </Text>
-                        <Base>
-                          <div
-                            className="Base"
-                            style={
-                              Object {
-                                "height": undefined,
-                                "maxHeight": undefined,
-                                "maxWidth": undefined,
-                                "minHeight": undefined,
-                                "minWidth": undefined,
-                                "width": undefined,
-                              }
-                            }
-                          >
-                            <Tooltip
-                              title="✓ Copied"
-                              visible={false}
-                            >
-                              <PlacementManager>
-                                <Manager>
-                                  <Placement
-                                    backgroundColor="black"
-                                    borderRadius="x1"
-                                    color="gray-1"
-                                    placement="top"
-                                    visible={false}
-                                  >
-                                    <PlacementPopper
-                                      backgroundColor="black"
-                                      borderRadius="x1"
-                                      closeElement={null}
-                                      color="gray-1"
-                                      flip={true}
-                                      isInsideModal={false}
-                                      placement="top"
-                                      visible={false}
-                                    />
-                                  </Placement>
-                                  <PlacementReference>
-                                    <Reference
-                                      innerRef={[Function]}
-                                    >
-                                      <InnerReference
-                                        innerRef={[Function]}
-                                        setReferenceNode={[Function]}
-                                      >
-                                        <ClipboardButton
-                                          className="clipboard-button"
-                                          data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                          onClick={[Function]}
-                                          onSuccess={[Function]}
-                                        >
-                                          <button
-                                            className="clipboard-button"
-                                            data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
-                                            onClick={[Function]}
-                                            style={Object {}}
-                                            title=""
-                                            type="button"
-                                          >
-                                            <Base
-                                              borderRadius="x1"
-                                              className="icon-container"
-                                              innerRef={[Function]}
-                                              padding="x1"
-                                            >
-                                              <div
-                                                className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
-                                                style={
-                                                  Object {
-                                                    "height": undefined,
-                                                    "maxHeight": undefined,
-                                                    "maxWidth": undefined,
-                                                    "minHeight": undefined,
-                                                    "minWidth": undefined,
-                                                    "width": undefined,
-                                                  }
-                                                }
-                                              >
-                                                <Icon
-                                                  name="Duplicate"
-                                                  size="1.5rem"
-                                                >
-                                                  <Base
-                                                    Component="svg"
-                                                    className="Icon"
-                                                    height="1.5rem"
-                                                    viewBox="0 0 24 24"
-                                                    width="1.5rem"
-                                                  >
-                                                    <svg
-                                                      className="Base Icon"
-                                                      style={
-                                                        Object {
-                                                          "height": "1.5rem",
-                                                          "maxHeight": undefined,
-                                                          "maxWidth": undefined,
-                                                          "minHeight": undefined,
-                                                          "minWidth": undefined,
-                                                          "width": "1.5rem",
-                                                        }
-                                                      }
-                                                      viewBox="0 0 24 24"
-                                                    >
-                                                      <Component
-                                                        height="100%"
-                                                        width="100%"
-                                                      >
-                                                        <svg
-                                                          height="100%"
-                                                          viewBox="0 0 24 24"
-                                                          width="100%"
-                                                        >
-                                                          <path
-                                                            d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
-                                                            fill="currentColor"
-                                                            fillRule="evenodd"
-                                                          />
-                                                        </svg>
-                                                      </Component>
-                                                    </svg>
-                                                  </Base>
-                                                </Icon>
-                                              </div>
-                                            </Base>
-                                          </button>
-                                        </ClipboardButton>
-                                      </InnerReference>
-                                    </Reference>
-                                  </PlacementReference>
-                                </Manager>
-                              </PlacementManager>
-                            </Tooltip>
-                          </div>
-                        </Base>
-                      </div>
-                    </Base>
-                  </Flex>
                   <Base
-                    backgroundColor="grape-1"
-                    borderRadius="x1"
-                    paddingHorizontal="x4"
-                    paddingVertical="x3"
+                    paddingVertical="x6"
                   >
                     <div
-                      className="Base Base--background-color-grape-1 Base--border-radius-x1 Base--padding-horizontal-x4 Base--padding-vertical-x3"
+                      className="Base Base--padding-vertical-x6"
                       style={
                         Object {
                           "height": undefined,
@@ -21671,23 +21535,19 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                         }
                       }
                     >
-                      <Text
-                        Component="a"
-                        breakOn="word"
-                        className="public-instal-page-link"
-                        color="grape-3"
-                        href="https://bitrise.io/app/8b334705d8e78276"
-                        weight="medium"
+                      <Flex
+                        alignChildrenHorizontal="between"
+                        alignChildrenVertical="middle"
+                        direction="horizontal"
+                        gap="x3"
+                        paddingVertical="x2"
                       >
                         <Base
-                          Component="a"
-                          className="public-instal-page-link Text Text--break-word Text--weight-medium"
-                          color="grape-3"
-                          href="https://bitrise.io/app/8b334705d8e78276"
+                          className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
+                          paddingVertical="x2"
                         >
-                          <a
-                            className="Base Base--color-grape-3 public-instal-page-link Text Text--break-word Text--weight-medium"
-                            href="https://bitrise.io/app/8b334705d8e78276"
+                          <div
+                            className="Base Base--padding-vertical-x2 Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3"
                             style={
                               Object {
                                 "height": undefined,
@@ -21699,112 +21559,16 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                               }
                             }
                           >
-                            https://bitrise.io/app/8b334705d8e78276
-                          </a>
-                        </Base>
-                      </Text>
-                    </div>
-                  </Base>
-                  <Flex
-                    alignChildrenHorizontal="middle"
-                    direction="vertical"
-                    paddingVertical="x10"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-middle Flex--vertical"
-                      paddingVertical="x10"
-                    >
-                      <div
-                        className="Base Base--padding-vertical-x10 Flex Flex--align-horz-middle Flex--vertical"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <QRCode
-                          bgColor="#FFFFFF"
-                          fgColor="#000000"
-                          includeMargin={false}
-                          level="L"
-                          renderAs="canvas"
-                          size={180}
-                          value="https://bitrise.io/app/8b334705d8e78276"
-                        >
-                          <QRCodeCanvas
-                            bgColor="#FFFFFF"
-                            fgColor="#000000"
-                            includeMargin={false}
-                            level="L"
-                            size={180}
-                            value="https://bitrise.io/app/8b334705d8e78276"
-                          >
-                            <canvas
-                              height={180}
-                              style={
-                                Object {
-                                  "height": 180,
-                                  "width": 180,
-                                }
-                              }
-                              width={180}
-                            />
-                          </QRCodeCanvas>
-                        </QRCode>
-                      </div>
-                    </Base>
-                  </Flex>
-                  <Flex
-                    alignChildrenHorizontal="middle"
-                  >
-                    <Base
-                      className="Flex Flex--align-horz-middle"
-                    >
-                      <div
-                        className="Base Flex Flex--align-horz-middle"
-                        style={
-                          Object {
-                            "height": undefined,
-                            "maxHeight": undefined,
-                            "maxWidth": undefined,
-                            "minHeight": undefined,
-                            "minWidth": undefined,
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <Flex
-                          alignChildrenVertical="middle"
-                          direction="horizontal"
-                          paddingHorizontal="x6"
-                        >
-                          <Base
-                            className="Flex Flex--align-vert-middle Flex--horizontal"
-                            paddingHorizontal="x6"
-                          >
-                            <div
-                              className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--horizontal"
-                              style={
-                                Object {
-                                  "height": undefined,
-                                  "maxHeight": undefined,
-                                  "maxWidth": undefined,
-                                  "minHeight": undefined,
-                                  "minWidth": undefined,
-                                  "width": undefined,
-                                }
-                              }
+                            <Text
+                              size="x3"
+                              weight="bold"
                             >
                               <Base
-                                paddingHorizontal="x2"
+                                Component="div"
+                                className="Text Text--size-x3 Text--weight-bold"
                               >
                                 <div
-                                  className="Base Base--padding-horizontal-x2"
+                                  className="Base Text Text--size-x3 Text--weight-bold"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -21816,95 +21580,403 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                     }
                                   }
                                 >
-                                  <Icon
-                                    color="grape-4"
-                                    name="Mobile"
-                                    size="1.5rem"
+                                  Public Install Page link
+                                </div>
+                              </Base>
+                            </Text>
+                            <Base>
+                              <div
+                                className="Base"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <Tooltip
+                                  title="✓ Copied"
+                                  visible={false}
+                                >
+                                  <PlacementManager>
+                                    <Manager>
+                                      <Placement
+                                        backgroundColor="black"
+                                        borderRadius="x1"
+                                        color="gray-1"
+                                        placement="top"
+                                        visible={false}
+                                      >
+                                        <PlacementPopper
+                                          backgroundColor="black"
+                                          borderRadius="x1"
+                                          closeElement={null}
+                                          color="gray-1"
+                                          flip={true}
+                                          isInsideModal={false}
+                                          placement="top"
+                                          visible={false}
+                                        />
+                                      </Placement>
+                                      <PlacementReference>
+                                        <Reference
+                                          innerRef={[Function]}
+                                        >
+                                          <InnerReference
+                                            innerRef={[Function]}
+                                            setReferenceNode={[Function]}
+                                          >
+                                            <ClipboardButton
+                                              className="clipboard-button"
+                                              data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                              onClick={[Function]}
+                                              onSuccess={[Function]}
+                                            >
+                                              <button
+                                                className="clipboard-button"
+                                                data-clipboard-text="https://bitrise.io/app/8b334705d8e78276"
+                                                onClick={[Function]}
+                                                style={Object {}}
+                                                title=""
+                                                type="button"
+                                              >
+                                                <Base
+                                                  borderRadius="x1"
+                                                  className="icon-container"
+                                                  innerRef={[Function]}
+                                                  padding="x1"
+                                                >
+                                                  <div
+                                                    className="Base Base--border-radius-x1 Base--padding-horizontal-x1 Base--padding-vertical-x1 icon-container"
+                                                    style={
+                                                      Object {
+                                                        "height": undefined,
+                                                        "maxHeight": undefined,
+                                                        "maxWidth": undefined,
+                                                        "minHeight": undefined,
+                                                        "minWidth": undefined,
+                                                        "width": undefined,
+                                                      }
+                                                    }
+                                                  >
+                                                    <Icon
+                                                      name="Duplicate"
+                                                      size="1.5rem"
+                                                    >
+                                                      <Base
+                                                        Component="svg"
+                                                        className="Icon"
+                                                        height="1.5rem"
+                                                        viewBox="0 0 24 24"
+                                                        width="1.5rem"
+                                                      >
+                                                        <svg
+                                                          className="Base Icon"
+                                                          style={
+                                                            Object {
+                                                              "height": "1.5rem",
+                                                              "maxHeight": undefined,
+                                                              "maxWidth": undefined,
+                                                              "minHeight": undefined,
+                                                              "minWidth": undefined,
+                                                              "width": "1.5rem",
+                                                            }
+                                                          }
+                                                          viewBox="0 0 24 24"
+                                                        >
+                                                          <Component
+                                                            height="100%"
+                                                            width="100%"
+                                                          >
+                                                            <svg
+                                                              height="100%"
+                                                              viewBox="0 0 24 24"
+                                                              width="100%"
+                                                            >
+                                                              <path
+                                                                d="M18 18v1a3 3 0 01-3 3H5a3 3 0 01-3-3V9a3 3 0 013-3h1V5a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3h-1zm-2 0H9a3 3 0 01-3-3V8H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-1zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
+                                                                fill="currentColor"
+                                                                fillRule="evenodd"
+                                                              />
+                                                            </svg>
+                                                          </Component>
+                                                        </svg>
+                                                      </Base>
+                                                    </Icon>
+                                                  </div>
+                                                </Base>
+                                              </button>
+                                            </ClipboardButton>
+                                          </InnerReference>
+                                        </Reference>
+                                      </PlacementReference>
+                                    </Manager>
+                                  </PlacementManager>
+                                </Tooltip>
+                              </div>
+                            </Base>
+                          </div>
+                        </Base>
+                      </Flex>
+                      <Base
+                        backgroundColor="grape-1"
+                        borderRadius="x1"
+                        paddingHorizontal="x4"
+                        paddingVertical="x3"
+                      >
+                        <div
+                          className="Base Base--background-color-grape-1 Base--border-radius-x1 Base--padding-horizontal-x4 Base--padding-vertical-x3"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "maxHeight": undefined,
+                              "maxWidth": undefined,
+                              "minHeight": undefined,
+                              "minWidth": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <Text
+                            Component="a"
+                            breakOn="word"
+                            className="public-instal-page-link"
+                            color="grape-3"
+                            href="https://bitrise.io/app/8b334705d8e78276"
+                            weight="medium"
+                          >
+                            <Base
+                              Component="a"
+                              className="public-instal-page-link Text Text--break-word Text--weight-medium"
+                              color="grape-3"
+                              href="https://bitrise.io/app/8b334705d8e78276"
+                            >
+                              <a
+                                className="Base Base--color-grape-3 public-instal-page-link Text Text--break-word Text--weight-medium"
+                                href="https://bitrise.io/app/8b334705d8e78276"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                https://bitrise.io/app/8b334705d8e78276
+                              </a>
+                            </Base>
+                          </Text>
+                        </div>
+                      </Base>
+                      <Flex
+                        alignChildrenHorizontal="middle"
+                        direction="vertical"
+                        paddingVertical="x10"
+                      >
+                        <Base
+                          className="Flex Flex--align-horz-middle Flex--vertical"
+                          paddingVertical="x10"
+                        >
+                          <div
+                            className="Base Base--padding-vertical-x10 Flex Flex--align-horz-middle Flex--vertical"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "minHeight": undefined,
+                                "minWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <QRCode
+                              bgColor="#FFFFFF"
+                              fgColor="#000000"
+                              includeMargin={false}
+                              level="L"
+                              renderAs="canvas"
+                              size={180}
+                              value="https://bitrise.io/app/8b334705d8e78276"
+                            >
+                              <QRCodeCanvas
+                                bgColor="#FFFFFF"
+                                fgColor="#000000"
+                                includeMargin={false}
+                                level="L"
+                                size={180}
+                                value="https://bitrise.io/app/8b334705d8e78276"
+                              >
+                                <canvas
+                                  height={180}
+                                  style={
+                                    Object {
+                                      "height": 180,
+                                      "width": 180,
+                                    }
+                                  }
+                                  width={180}
+                                />
+                              </QRCodeCanvas>
+                            </QRCode>
+                          </div>
+                        </Base>
+                      </Flex>
+                      <Flex
+                        alignChildrenHorizontal="middle"
+                      >
+                        <Base
+                          className="Flex Flex--align-horz-middle"
+                        >
+                          <div
+                            className="Base Flex Flex--align-horz-middle"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "minHeight": undefined,
+                                "minWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <Flex
+                              alignChildrenVertical="middle"
+                              direction="horizontal"
+                              paddingHorizontal="x6"
+                            >
+                              <Base
+                                className="Flex Flex--align-vert-middle Flex--horizontal"
+                                paddingHorizontal="x6"
+                              >
+                                <div
+                                  className="Base Base--padding-horizontal-x6 Flex Flex--align-vert-middle Flex--horizontal"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Base
+                                    paddingHorizontal="x2"
+                                  >
+                                    <div
+                                      className="Base Base--padding-horizontal-x2"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Icon
+                                        color="grape-4"
+                                        name="Mobile"
+                                        size="1.5rem"
+                                      >
+                                        <Base
+                                          Component="svg"
+                                          className="Icon"
+                                          color="grape-4"
+                                          height="1.5rem"
+                                          viewBox="0 0 24 24"
+                                          width="1.5rem"
+                                        >
+                                          <svg
+                                            className="Base Base--color-grape-4 Icon"
+                                            style={
+                                              Object {
+                                                "height": "1.5rem",
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": "1.5rem",
+                                              }
+                                            }
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <Component
+                                              height="100%"
+                                              width="100%"
+                                            >
+                                              <svg
+                                                height="100%"
+                                                viewBox="0 0 24 24"
+                                                width="100%"
+                                              >
+                                                <defs>
+                                                  <path
+                                                    d="M8 4v16h8V4H8zm0-2h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm3 15h2v2h-2v-2z"
+                                                    id="icons-mobile_svg__a"
+                                                  />
+                                                </defs>
+                                                <use
+                                                  fill="currentColor"
+                                                  fillRule="evenodd"
+                                                  xlinkHref="#icons-mobile_svg__a"
+                                                />
+                                              </svg>
+                                            </Component>
+                                          </svg>
+                                        </Base>
+                                      </Icon>
+                                    </div>
+                                  </Base>
+                                  <Text
+                                    color="gray-7"
+                                    paddingHorizontal="x1"
+                                    size="x2"
+                                    weight="medium"
                                   >
                                     <Base
-                                      Component="svg"
-                                      className="Icon"
-                                      color="grape-4"
-                                      height="1.5rem"
-                                      viewBox="0 0 24 24"
-                                      width="1.5rem"
+                                      Component="div"
+                                      className="Text Text--size-x2 Text--weight-medium"
+                                      color="gray-7"
+                                      paddingHorizontal="x1"
                                     >
-                                      <svg
-                                        className="Base Base--color-grape-4 Icon"
+                                      <div
+                                        className="Base Base--color-gray-7 Base--padding-horizontal-x1 Text Text--size-x2 Text--weight-medium"
                                         style={
                                           Object {
-                                            "height": "1.5rem",
+                                            "height": undefined,
                                             "maxHeight": undefined,
                                             "maxWidth": undefined,
                                             "minHeight": undefined,
                                             "minWidth": undefined,
-                                            "width": "1.5rem",
+                                            "width": undefined,
                                           }
                                         }
-                                        viewBox="0 0 24 24"
                                       >
-                                        <Component
-                                          height="100%"
-                                          width="100%"
-                                        >
-                                          <svg
-                                            height="100%"
-                                            viewBox="0 0 24 24"
-                                            width="100%"
-                                          >
-                                            <defs>
-                                              <path
-                                                d="M8 4v16h8V4H8zm0-2h8c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm3 15h2v2h-2v-2z"
-                                                id="icons-mobile_svg__a"
-                                              />
-                                            </defs>
-                                            <use
-                                              fill="currentColor"
-                                              fillRule="evenodd"
-                                              xlinkHref="#icons-mobile_svg__a"
-                                            />
-                                          </svg>
-                                        </Component>
-                                      </svg>
+                                        Scan this code to reach Public Install Page
+                                      </div>
                                     </Base>
-                                  </Icon>
+                                  </Text>
                                 </div>
                               </Base>
-                              <Text
-                                color="gray-7"
-                                paddingHorizontal="x1"
-                                size="x2"
-                                weight="medium"
-                              >
-                                <Base
-                                  Component="div"
-                                  className="Text Text--size-x2 Text--weight-medium"
-                                  color="gray-7"
-                                  paddingHorizontal="x1"
-                                >
-                                  <div
-                                    className="Base Base--color-gray-7 Base--padding-horizontal-x1 Text Text--size-x2 Text--weight-medium"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Scan this code to reach Public Install Page
-                                  </div>
-                                </Base>
-                              </Text>
-                            </div>
-                          </Base>
-                        </Flex>
-                      </div>
-                    </Base>
-                  </Flex>
+                            </Flex>
+                          </div>
+                        </Base>
+                      </Flex>
+                    </div>
+                  </Base>
                 </div>
               </Base>
             </_default>
