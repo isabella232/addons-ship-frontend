@@ -15,8 +15,10 @@ import {
   TableHeaderCell,
   TableHeader
 } from '@bitrise/bitkit';
-import { TypeIconName } from '@bitrise/bitkit/lib/esm/Icon/tsx';
+import { TypeIconName } from '@bitrise/bitkit';
 import { AppVersionEvent } from '@/models';
+
+import css from './style.scss';
 
 type Props = {
   appVersionEvents: AppVersionEvent[];
@@ -45,6 +47,7 @@ const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
 
 export default ({ appVersionEvents }: Props) => (
   <Base paddingVertical="x8">
+    <Base className={css.expandedTableWrapper}>
     <Table type="flat">
       <TableHeader>
         <TableHeaderRow>
@@ -71,5 +74,6 @@ export default ({ appVersionEvents }: Props) => (
         ))}
       </TableBody>
     </Table>
+    </Base>
   </Base>
 );

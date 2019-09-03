@@ -37,72 +37,76 @@ exports[`ActivityView when a test failed renders entry with download log button 
 <Base
   paddingVertical="x8"
 >
-  <Table
-    type="flat"
+  <Base
+    className="expandedTableWrapper"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          Date
-        </TableHeaderCell>
-        <TableHeaderCell
-          colSpan="2"
-        >
-          Activity
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
-    <TableBody>
-      <TableRow
-        key="0"
-      >
-        <TableCell
-          width="200px"
-        >
-          2018 09 26 12:42:31
-        </TableCell>
-        <TableCell>
-          <Flex
-            alignChildrenVertical="middle"
-            direction="horizontal"
-            gap="x4"
-            height="2rem"
+    <Table
+      type="flat"
+    >
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>
+            Date
+          </TableHeaderCell>
+          <TableHeaderCell
+            colSpan="2"
           >
-            <Icon
-              color="red-3"
-              name="CloseSmall"
-              size="1.5rem"
-            />
-            <Text
-              color="red-3"
-              size="x3"
-            >
-              An error occured.
-            </Text>
-          </Flex>
-        </TableCell>
-        <TableCell
-          width="200px"
+            Activity
+          </TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow
+          key="0"
         >
-          <a
-            href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+          <TableCell
+            width="200px"
           >
-            <Button
-              level="secondary"
-              size="small"
+            2018 09 26 12:42:31
+          </TableCell>
+          <TableCell>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x4"
+              height="2rem"
             >
               <Icon
-                color="grape-4"
-                name="Download"
+                color="red-3"
+                name="CloseSmall"
                 size="1.5rem"
               />
-              Download Build Log
-            </Button>
-          </a>
-        </TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
+              <Text
+                color="red-3"
+                size="x3"
+              >
+                An error occured.
+              </Text>
+            </Flex>
+          </TableCell>
+          <TableCell
+            width="200px"
+          >
+            <a
+              href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+            >
+              <Button
+                level="secondary"
+                size="small"
+              >
+                <Icon
+                  color="grape-4"
+                  name="Download"
+                  size="1.5rem"
+                />
+                Download Build Log
+              </Button>
+            </a>
+          </TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  </Base>
 </Base>
 `;
 
@@ -110,56 +114,60 @@ exports[`ActivityView when a test is in progress renders entry without download 
 <Base
   paddingVertical="x8"
 >
-  <Table
-    type="flat"
+  <Base
+    className="expandedTableWrapper"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          Date
-        </TableHeaderCell>
-        <TableHeaderCell
-          colSpan="2"
-        >
-          Activity
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
-    <TableBody>
-      <TableRow
-        key="0"
-      >
-        <TableCell
-          width="200px"
-        >
-          2018 09 22 12:42:31
-        </TableCell>
-        <TableCell>
-          <Flex
-            alignChildrenVertical="middle"
-            direction="horizontal"
-            gap="x4"
-            height="2rem"
+    <Table
+      type="flat"
+    >
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>
+            Date
+          </TableHeaderCell>
+          <TableHeaderCell
+            colSpan="2"
           >
-            <Icon
-              color="green-4"
-              name="Tick"
-              size="1.5rem"
-            />
-            <Text
-              color="grape-4"
-              size="x3"
+            Activity
+          </TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow
+          key="0"
+        >
+          <TableCell
+            width="200px"
+          >
+            2018 09 22 12:42:31
+          </TableCell>
+          <TableCell>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x4"
+              height="2rem"
             >
-              Doing something...
-            </Text>
-          </Flex>
-        </TableCell>
-        <TableCell
-          width="200px"
-        />
-      </TableRow>
-    </TableBody>
-  </Table>
+              <Icon
+                color="green-4"
+                name="Tick"
+                size="1.5rem"
+              />
+              <Text
+                color="grape-4"
+                size="x3"
+              >
+                Doing something...
+              </Text>
+            </Flex>
+          </TableCell>
+          <TableCell
+            width="200px"
+          />
+        </TableRow>
+      </TableBody>
+    </Table>
+  </Base>
 </Base>
 `;
 
@@ -167,56 +175,60 @@ exports[`ActivityView when a test is successful renders entry without download l
 <Base
   paddingVertical="x8"
 >
-  <Table
-    type="flat"
+  <Base
+    className="expandedTableWrapper"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          Date
-        </TableHeaderCell>
-        <TableHeaderCell
-          colSpan="2"
-        >
-          Activity
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
-    <TableBody>
-      <TableRow
-        key="0"
-      >
-        <TableCell
-          width="200px"
-        >
-          2018 09 20 12:42:31
-        </TableCell>
-        <TableCell>
-          <Flex
-            alignChildrenVertical="middle"
-            direction="horizontal"
-            gap="x4"
-            height="2rem"
+    <Table
+      type="flat"
+    >
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>
+            Date
+          </TableHeaderCell>
+          <TableHeaderCell
+            colSpan="2"
           >
-            <Icon
-              color="green-4"
-              name="Tick"
-              size="1.5rem"
-            />
-            <Text
-              color="grape-4"
-              size="x3"
+            Activity
+          </TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow
+          key="0"
+        >
+          <TableCell
+            width="200px"
+          >
+            2018 09 20 12:42:31
+          </TableCell>
+          <TableCell>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x4"
+              height="2rem"
             >
-              Event finished successfully!
-            </Text>
-          </Flex>
-        </TableCell>
-        <TableCell
-          width="200px"
-        />
-      </TableRow>
-    </TableBody>
-  </Table>
+              <Icon
+                color="green-4"
+                name="Tick"
+                size="1.5rem"
+              />
+              <Text
+                color="grape-4"
+                size="x3"
+              >
+                Event finished successfully!
+              </Text>
+            </Flex>
+          </TableCell>
+          <TableCell
+            width="200px"
+          />
+        </TableRow>
+      </TableBody>
+    </Table>
+  </Base>
 </Base>
 `;
 
@@ -224,136 +236,140 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
 <Base
   paddingVertical="x8"
 >
-  <Table
-    type="flat"
+  <Base
+    className="expandedTableWrapper"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          Date
-        </TableHeaderCell>
-        <TableHeaderCell
-          colSpan="2"
-        >
-          Activity
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
-    <TableBody>
-      <TableRow
-        key="0"
-      >
-        <TableCell
-          width="200px"
-        >
-          2018 09 20 12:42:31
-        </TableCell>
-        <TableCell>
-          <Flex
-            alignChildrenVertical="middle"
-            direction="horizontal"
-            gap="x4"
-            height="2rem"
+    <Table
+      type="flat"
+    >
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>
+            Date
+          </TableHeaderCell>
+          <TableHeaderCell
+            colSpan="2"
           >
-            <Icon
-              color="green-4"
-              name="Tick"
-              size="1.5rem"
-            />
-            <Text
-              color="grape-4"
-              size="x3"
-            >
-              Event finished successfully!
-            </Text>
-          </Flex>
-        </TableCell>
-        <TableCell
-          width="200px"
-        />
-      </TableRow>
-      <TableRow
-        key="1"
-      >
-        <TableCell
-          width="200px"
+            Activity
+          </TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow
+          key="0"
         >
-          2018 09 22 12:42:31
-        </TableCell>
-        <TableCell>
-          <Flex
-            alignChildrenVertical="middle"
-            direction="horizontal"
-            gap="x4"
-            height="2rem"
+          <TableCell
+            width="200px"
           >
-            <Icon
-              color="green-4"
-              name="Tick"
-              size="1.5rem"
-            />
-            <Text
-              color="grape-4"
-              size="x3"
-            >
-              Doing something...
-            </Text>
-          </Flex>
-        </TableCell>
-        <TableCell
-          width="200px"
-        />
-      </TableRow>
-      <TableRow
-        key="2"
-      >
-        <TableCell
-          width="200px"
-        >
-          2018 09 26 12:42:31
-        </TableCell>
-        <TableCell>
-          <Flex
-            alignChildrenVertical="middle"
-            direction="horizontal"
-            gap="x4"
-            height="2rem"
-          >
-            <Icon
-              color="red-3"
-              name="CloseSmall"
-              size="1.5rem"
-            />
-            <Text
-              color="red-3"
-              size="x3"
-            >
-              An error occured.
-            </Text>
-          </Flex>
-        </TableCell>
-        <TableCell
-          width="200px"
-        >
-          <a
-            href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-          >
-            <Button
-              level="secondary"
-              size="small"
+            2018 09 20 12:42:31
+          </TableCell>
+          <TableCell>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x4"
+              height="2rem"
             >
               <Icon
-                color="grape-4"
-                name="Download"
+                color="green-4"
+                name="Tick"
                 size="1.5rem"
               />
-              Download Build Log
-            </Button>
-          </a>
-        </TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
+              <Text
+                color="grape-4"
+                size="x3"
+              >
+                Event finished successfully!
+              </Text>
+            </Flex>
+          </TableCell>
+          <TableCell
+            width="200px"
+          />
+        </TableRow>
+        <TableRow
+          key="1"
+        >
+          <TableCell
+            width="200px"
+          >
+            2018 09 22 12:42:31
+          </TableCell>
+          <TableCell>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x4"
+              height="2rem"
+            >
+              <Icon
+                color="green-4"
+                name="Tick"
+                size="1.5rem"
+              />
+              <Text
+                color="grape-4"
+                size="x3"
+              >
+                Doing something...
+              </Text>
+            </Flex>
+          </TableCell>
+          <TableCell
+            width="200px"
+          />
+        </TableRow>
+        <TableRow
+          key="2"
+        >
+          <TableCell
+            width="200px"
+          >
+            2018 09 26 12:42:31
+          </TableCell>
+          <TableCell>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x4"
+              height="2rem"
+            >
+              <Icon
+                color="red-3"
+                name="CloseSmall"
+                size="1.5rem"
+              />
+              <Text
+                color="red-3"
+                size="x3"
+              >
+                An error occured.
+              </Text>
+            </Flex>
+          </TableCell>
+          <TableCell
+            width="200px"
+          >
+            <a
+              href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+            >
+              <Button
+                level="secondary"
+                size="small"
+              >
+                <Icon
+                  color="grape-4"
+                  name="Download"
+                  size="1.5rem"
+                />
+                Download Build Log
+              </Button>
+            </a>
+          </TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  </Base>
 </Base>
 `;
 
@@ -361,135 +377,139 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
 <Base
   paddingVertical="x8"
 >
-  <Table
-    type="flat"
+  <Base
+    className="expandedTableWrapper"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          Date
-        </TableHeaderCell>
-        <TableHeaderCell
-          colSpan="2"
-        >
-          Activity
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
-    <TableBody>
-      <TableRow
-        key="0"
-      >
-        <TableCell
-          width="200px"
-        >
-          2018 09 20 12:42:31
-        </TableCell>
-        <TableCell>
-          <Flex
-            alignChildrenVertical="middle"
-            direction="horizontal"
-            gap="x4"
-            height="2rem"
+    <Table
+      type="flat"
+    >
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>
+            Date
+          </TableHeaderCell>
+          <TableHeaderCell
+            colSpan="2"
           >
-            <Icon
-              color="green-4"
-              name="Tick"
-              size="1.5rem"
-            />
-            <Text
-              color="grape-4"
-              size="x3"
-            >
-              Event finished successfully!
-            </Text>
-          </Flex>
-        </TableCell>
-        <TableCell
-          width="200px"
-        />
-      </TableRow>
-      <TableRow
-        key="1"
-      >
-        <TableCell
-          width="200px"
+            Activity
+          </TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow
+          key="0"
         >
-          2018 09 22 12:42:31
-        </TableCell>
-        <TableCell>
-          <Flex
-            alignChildrenVertical="middle"
-            direction="horizontal"
-            gap="x4"
-            height="2rem"
+          <TableCell
+            width="200px"
           >
-            <Icon
-              color="green-4"
-              name="Tick"
-              size="1.5rem"
-            />
-            <Text
-              color="grape-4"
-              size="x3"
-            >
-              Doing something...
-            </Text>
-          </Flex>
-        </TableCell>
-        <TableCell
-          width="200px"
-        />
-      </TableRow>
-      <TableRow
-        key="2"
-      >
-        <TableCell
-          width="200px"
-        >
-          2018 09 26 12:42:31
-        </TableCell>
-        <TableCell>
-          <Flex
-            alignChildrenVertical="middle"
-            direction="horizontal"
-            gap="x4"
-            height="2rem"
-          >
-            <Icon
-              color="red-3"
-              name="CloseSmall"
-              size="1.5rem"
-            />
-            <Text
-              color="red-3"
-              size="x3"
-            >
-              An error occured.
-            </Text>
-          </Flex>
-        </TableCell>
-        <TableCell
-          width="200px"
-        >
-          <a
-            href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-          >
-            <Button
-              level="secondary"
-              size="small"
+            2018 09 20 12:42:31
+          </TableCell>
+          <TableCell>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x4"
+              height="2rem"
             >
               <Icon
-                color="grape-4"
-                name="Download"
+                color="green-4"
+                name="Tick"
                 size="1.5rem"
               />
-              Download Build Log
-            </Button>
-          </a>
-        </TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
+              <Text
+                color="grape-4"
+                size="x3"
+              >
+                Event finished successfully!
+              </Text>
+            </Flex>
+          </TableCell>
+          <TableCell
+            width="200px"
+          />
+        </TableRow>
+        <TableRow
+          key="1"
+        >
+          <TableCell
+            width="200px"
+          >
+            2018 09 22 12:42:31
+          </TableCell>
+          <TableCell>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x4"
+              height="2rem"
+            >
+              <Icon
+                color="green-4"
+                name="Tick"
+                size="1.5rem"
+              />
+              <Text
+                color="grape-4"
+                size="x3"
+              >
+                Doing something...
+              </Text>
+            </Flex>
+          </TableCell>
+          <TableCell
+            width="200px"
+          />
+        </TableRow>
+        <TableRow
+          key="2"
+        >
+          <TableCell
+            width="200px"
+          >
+            2018 09 26 12:42:31
+          </TableCell>
+          <TableCell>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x4"
+              height="2rem"
+            >
+              <Icon
+                color="red-3"
+                name="CloseSmall"
+                size="1.5rem"
+              />
+              <Text
+                color="red-3"
+                size="x3"
+              >
+                An error occured.
+              </Text>
+            </Flex>
+          </TableCell>
+          <TableCell
+            width="200px"
+          >
+            <a
+              href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+            >
+              <Button
+                level="secondary"
+                size="small"
+              >
+                <Icon
+                  color="grape-4"
+                  name="Download"
+                  size="1.5rem"
+                />
+                Download Build Log
+              </Button>
+            </a>
+          </TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  </Base>
 </Base>
 `;
