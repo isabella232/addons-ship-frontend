@@ -22,7 +22,7 @@ export default ({ projectType, devices }: Props) => (
     <Notification type="inform" icon="Lightbulb">
       You can register your devices on your Account Settings page on Bitrise.
     </Notification>
-    <Table type="card">
+    <Table type="flat" paddingVertical="x6">
       <TableHeader>
         <TableHeaderRow>
           <TableHeaderCell>User</TableHeaderCell>
