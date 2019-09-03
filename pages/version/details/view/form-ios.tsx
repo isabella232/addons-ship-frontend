@@ -10,7 +10,9 @@ import {
   Tooltip,
   InputContainer,
   InputContent,
-  Input
+  Input,
+  Notification,
+  Link
 } from '@bitrise/bitkit';
 
 import { AppVersion, Screenshot } from '@/models';
@@ -47,19 +49,20 @@ export default ({
   <Fragment>
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>Description</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="description" defaultValue={appVersion.description} />
 
     <Base paddingVertical="x4">
-      <Flex direction="horizontal" alignChildrenVertical="middle">
-        <Text color="grape-4" size="x3" weight="bold">
-          Screenshots
-        </Text>
-        <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
-      </Flex>
+      <Text color="grape-4" size="x3" weight="bold">
+        Screenshots
+      </Text>
+      <Notification type="inform" icon="Info">
+        Screenshots must be in the JPG or PNG format, and in the RGB color space. To learn more,{' '}
+        <Link href="https://help.apple.com/app-store-connect/#/devd274dd925" target="_blank" underline>
+          click here
+        </Link>
+        .
+      </Notification>
 
       {hasMounted && <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />}
       <Dropzone
@@ -72,9 +75,6 @@ export default ({
 
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>What's new</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="whatsNew" defaultValue={appVersion.whatsNew} />
 
@@ -82,9 +82,6 @@ export default ({
 
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>Promotional Text</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="promotionalText" defaultValue={appVersion.promotionalText} />
 
@@ -92,9 +89,6 @@ export default ({
 
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>Keywords</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="keywords" defaultValue={appVersion.keywords} />
 
@@ -102,29 +96,31 @@ export default ({
 
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>Review Notes</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="reviewNotes" defaultValue={appVersion.reviewNotes} />
 
     <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-    <Flex direction="horizontal" alignChildrenVertical="middle">
+    <Flex direction="horizontal" alignChildrenVertical="end">
       <InputLabel>Distribution Type: {appVersion.distributionType}</InputLabel>
-      {hasMounted && (
-        <Tooltip title="This is the tooltip">
+      {hasMounted && appVersion.distributionType === 'development' && (
+        <Tooltip title="You can register your devices on your Account Settings page on Bitrise.">
           {({ ref, ...rest }) => (
-            <Icon {...rest} paddingHorizontal="x1" innerRef={ref} color="grape-3" name="Coffee" size="1.5rem" />
+            <Icon {...rest} paddingHorizontal="x1" innerRef={ref} color="grape-3" name="Info" size="2rem" />
           )}
         </Tooltip>
       )}
     </Flex>
     {appVersion.distributionType === 'development' && (
-      <Text size="x3" weight="medium" color="gray-7">
-        The app was signed with a Development Provisioning Profile which means that it{' '}
-        <Text weight="bold">can only be installed on devices which are included in the Provisioning Profile</Text>
-      </Text>
+      <Flex direction="vertical" gap="x4">
+        <Text size="x3" weight="medium" color="gray-7">
+          The app was signed with a Development Provisioning Profile which means that it{' '}
+          <Text weight="bold">can only be installed on devices which are included in the Provisioning Profile</Text>
+        </Text>
+        <Notification type="inform" icon="Lightbulb">
+          You can find registered devices on the Devices tab.
+        </Notification>
+      </Flex>
     )}
 
     <Divider color="gray-2" direction="horizontal" margin="x4" />

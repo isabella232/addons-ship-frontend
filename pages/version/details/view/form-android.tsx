@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import formatDate from 'date-fns/format';
 import prettyBytes from 'pretty-bytes';
-import { Base, Flex, Text, Icon, InputLabel, Textarea, Divider } from '@bitrise/bitkit';
+import { Base, Flex, Text, Icon, InputLabel, Textarea, Divider, Notification, Link } from '@bitrise/bitkit';
 
 import { AppVersion, Screenshot } from '@/models';
 import Dropzone from '@/components/Dropzone';
@@ -43,38 +43,33 @@ export default ({
   <Fragment>
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>What's new</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="whatsNew" defaultValue={appVersion.whatsNew} />
 
     <Base paddingVertical="x4">
       <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
         <InputLabel>Short Description</InputLabel>
-        <Text size="x2" weight="medium" color="gray-7" align="end">
-          1235
-        </Text>
       </Flex>
       <Textarea name="shortDescription" defaultValue={appVersion.shortDescription} />
     </Base>
 
     <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
       <InputLabel>Full Description</InputLabel>
-      <Text size="x2" weight="medium" color="gray-7" align="end">
-        1235
-      </Text>
     </Flex>
     <Textarea name="description" defaultValue={appVersion.description} />
 
     <Base paddingVertical="x4">
-      <Flex direction="horizontal" alignChildrenVertical="middle">
-        <Text color="grape-4" size="x3" weight="bold">
-          Screenshots
-        </Text>
-        <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
-      </Flex>
-
+      <Text color="grape-4" size="x3" weight="bold">
+        Screenshots
+      </Text>
+      <Notification type="inform" icon="Info">
+        Screenshots must be in the JPG or PNG format, and in the RGB color space. You can add up to 8 screenshots for
+        each supported device type. To learn more,{' '}
+        <Link href="https://support.google.com/googleplay/android-developer/answer/1078870?hl=en" target="_blank" underline>
+          click here
+        </Link>
+        .
+      </Notification>
       {hasMounted && <SmallTabs items={availableDevices} selected={deviceId} onSelect={onDeviceSelected} />}
       <Dropzone
         screenshots={screenshots}

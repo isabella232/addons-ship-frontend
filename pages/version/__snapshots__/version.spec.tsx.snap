@@ -47,10 +47,11 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
       maxWidth={960}
     >
       <Tabs
-        gap="x10"
+        gap="x12"
       >
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/details"
@@ -63,6 +64,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/devices"
@@ -75,6 +77,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/qa"
@@ -87,6 +90,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
         </Tab>
         <Tab
           active={true}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/activity"
@@ -127,10 +131,11 @@ exports[`AppVersion renders the details tab correctly 1`] = `
       maxWidth={960}
     >
       <Tabs
-        gap="x10"
+        gap="x12"
       >
         <Tab
           active={true}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/details"
@@ -143,6 +148,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/devices"
@@ -155,6 +161,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/qa"
@@ -167,6 +174,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/activity"
@@ -207,10 +215,11 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
       maxWidth={960}
     >
       <Tabs
-        gap="x10"
+        gap="x12"
       >
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/details"
@@ -223,6 +232,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
         </Tab>
         <Tab
           active={true}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/devices"
@@ -235,6 +245,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/qa"
@@ -247,6 +258,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/activity"
@@ -287,10 +299,11 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
       maxWidth={960}
     >
       <Tabs
-        gap="x10"
+        gap="x12"
       >
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/details"
@@ -303,6 +316,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/devices"
@@ -315,6 +329,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/qa"
@@ -327,6 +342,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/activity"
@@ -369,10 +385,11 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
       maxWidth={960}
     >
       <Tabs
-        gap="x10"
+        gap="x12"
       >
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/details"
@@ -385,6 +402,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/devices"
@@ -397,6 +415,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
         </Tab>
         <Tab
           active={true}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/qa"
@@ -409,6 +428,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
         </Tab>
         <Tab
           active={false}
+          paddingHorizontal="x2"
         >
           <Link
             as="some/path/activity"

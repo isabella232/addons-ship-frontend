@@ -89,7 +89,7 @@ export class VersionPage extends Component<VersionPageProps> {
     } = this.props;
 
     const tab = (key: string) => (
-      <Tab active={selectedTab === key}>
+      <Tab active={selectedTab === key} paddingHorizontal="x2">
         <Link as={`${pagePath}/${key}`} href={`/version?appSlug=${appSlug}&versionId=${id}&selectedTab=${key}`}>
           <a>{startCase(key)}</a>
         </Link>
@@ -100,7 +100,7 @@ export class VersionPage extends Component<VersionPageProps> {
       <Fragment>
         <Base>
           <Base maxWidth={960}>
-            <Tabs gap="x10">
+            <Tabs gap="x12">
               {tab('details')}
               {tab('devices')}
               {tab('qa')}

@@ -22,61 +22,48 @@ exports[`Dropzone renders correctly with files 1`] = `
       type="file"
     />
     <Flex
-      className="scrollableWrapper"
+      className="scrollable"
       direction="horizontal"
-      height={384}
     >
-      <Flex
-        className="scrollable"
-        direction="horizontal"
-        height={400}
+      <div
+        className="dropzone dropzoneHasFiles"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragEnter={[Function]}
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
       >
-        <Flex
-          className="scrollableInner"
-          direction="horizontal"
-          height={384}
+        <Icon
+          color="grape-3"
+          name="PlusAdd"
+          size="1.5rem"
+        />
+      </div>
+      <Base
+        className="thumbnailContainer"
+        container={true}
+        key="0"
+        paddingHorizontal="x3"
+      >
+        <div
+          className="removeIcon"
+          onClick={[Function]}
         >
-          <div
-            className="dropzone dropzoneHasFiles"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onDragEnter={[Function]}
-            onDragLeave={[Function]}
-            onDragOver={[Function]}
-            onDrop={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={0}
-          >
-            <Icon
-              color="grape-3"
-              name="PlusAdd"
-              size="1.5rem"
-            />
-          </div>
-          <Base
-            className="thumbnailContainer"
-            container={true}
-            key="0"
-            paddingHorizontal="x3"
-          >
-            <div
-              className="removeIcon"
-              onClick={[Function]}
-            >
-              <Icon
-                color="white"
-                name="CloseSmall"
-                size="1.5rem"
-              />
-            </div>
-            <Base
-              Component="img"
-              className="thumbnail"
-            />
-          </Base>
-        </Flex>
-      </Flex>
+          <Icon
+            color="white"
+            name="CloseSmall"
+            size="1.5rem"
+          />
+        </div>
+        <Base
+          Component="img"
+          className="thumbnail"
+        />
+      </Base>
     </Flex>
   </Base>
 </Card>
@@ -104,70 +91,57 @@ exports[`Dropzone renders correctly without files 1`] = `
       type="file"
     />
     <Flex
-      className="scrollableWrapper"
+      className="scrollable"
       direction="horizontal"
-      height={384}
     >
-      <Flex
-        className="scrollable"
-        direction="horizontal"
-        height={400}
+      <div
+        className="dropzone"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragEnter={[Function]}
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
       >
         <Flex
-          className="scrollableInner"
-          direction="horizontal"
-          height={384}
+          alignChildrenHorizontal="middle"
+          direction="vertical"
         >
-          <div
-            className="dropzone"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onDragEnter={[Function]}
-            onDragLeave={[Function]}
-            onDragOver={[Function]}
-            onDrop={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={0}
+          <Text
+            align="middle"
+            color="gray-7"
+            size="x5"
+            weight="medium"
           >
-            <Flex
-              alignChildrenHorizontal="middle"
-              direction="vertical"
+            Drag & Drop
+             
+            <br />
+            or
+          </Text>
+          <Flex
+            alignChildrenVertical="middle"
+            direction="horizontal"
+          >
+            <Icon
+              color="grape-3"
+              name="PlusAdd"
+              paddingHorizontal="x1"
+              size="1.5rem"
+            />
+            <Text
+              align="middle"
+              color="grape-3"
+              size="x3"
+              weight="medium"
             >
-              <Text
-                align="middle"
-                color="gray-7"
-                size="x5"
-                weight="medium"
-              >
-                Drag & Drop
-                 
-                <br />
-                or
-              </Text>
-              <Flex
-                alignChildrenVertical="middle"
-                direction="horizontal"
-              >
-                <Icon
-                  color="grape-3"
-                  name="PlusAdd"
-                  paddingHorizontal="x1"
-                  size="1.5rem"
-                />
-                <Text
-                  align="middle"
-                  color="grape-3"
-                  size="x3"
-                  weight="medium"
-                >
-                  Browse Files
-                </Text>
-              </Flex>
-            </Flex>
-          </div>
+              Browse Files
+            </Text>
+          </Flex>
         </Flex>
-      </Flex>
+      </div>
     </Flex>
   </Base>
 </Card>

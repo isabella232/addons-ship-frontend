@@ -1,5 +1,5 @@
 import formatDate from 'date-fns/format';
-import { Base, Flex, Text, Icon, Notification, Button, TypeIconName } from '@bitrise/bitkit';
+import { Base, Flex, Text, Icon, Notification, Button, TypeIconName, Link } from '@bitrise/bitkit';
 
 import { AppVersion, AppVersionEvent, Screenshot } from '@/models';
 import { mediaQuery } from '@/utils/media';
@@ -7,7 +7,7 @@ import { mediaQuery } from '@/utils/media';
 import Sidebar from './sidebar';
 import FormIos from './form-ios';
 import FormAndroid from './form-android';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import Squircle from '@/components/Squircle';
 
 type DeviceInfo = {
@@ -52,7 +52,13 @@ const publishNotification = (
   if (!readyForPublish) {
     return (
       <Notification margin="x2" type="alert" icon="Warning">
-        You need to setup publishing at the <a href={settingsPath}>Settings page.</a>
+        You need to setup publishing at the{' '}
+        <Link underline>
+          <NextLink as={settingsPath} href={`/settings?appSlug=${appSlug}`}>
+            <a>Settings page</a>
+          </NextLink>
+        </Link>
+        .
       </Notification>
     );
   }
@@ -74,8 +80,13 @@ const publishNotification = (
       return (
         <Notification margin="x2" type="alert">
           Publish has failed. See the error log at the{' '}
-          <Link as={activityPath} href={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=activity`}>
-            <a>Activity tab</a>
+          <Link underline>
+            <NextLink
+              as={activityPath}
+              href={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=activity`}
+            >
+              <a>Activity tab</a>
+            </NextLink>
           </Link>
           .
         </Notification>
@@ -130,16 +141,21 @@ export default ({
           )}
         </Flex>
       </Flex>
-      <Flex direction="horizontal" alignChildrenHorizontal={isDesktop ? 'start' : 'middle'} gap="x4">
-        <Flex maxWidth={688}>
+      <Flex
+        direction="horizontal"
+        alignChildrenHorizontal={isDesktop ? 'between' : 'middle'}
+        gap="x4"
+        paddingVertical="x4"
+      >
+        <Flex maxWidth={660}>
           <form onChange={onFormChange}>
-            <Flex direction="horizontal" margin="x4">
+            <Flex direction={isDesktop ? 'horizontal' : 'vertical'} margin="x4" gap="x6">
               <Squircle src={appVersion.iconUrl} borderRadius="x2" width="160px" margin="x0" />
 
-              <Flex direction="vertical" alignChildrenVertical="middle" paddingHorizontal="x6">
-                <Flex direction="horizontal" alignChildren="middle">
+              <Flex direction="vertical" alignChildrenVertical="middle">
+                <Flex direction="horizontal" alignChildren="start" gap="x2">
                   <Icon color="grape-4" name={iconName} size="2rem" />
-                  <Text letterSpacing="x2" size="x6" weight="bold" color="grape-4" paddingHorizontal="x2">
+                  <Text letterSpacing="x2" size="x6" weight="bold" color="grape-4">
                     {appVersion.appName}
                   </Text>
                 </Flex>
@@ -197,6 +213,7 @@ export default ({
             onSave={onSave}
             onPublish={onPublish}
             buildSlug={appVersion.buildSlug}
+            hasMounted
           />
         )}
       </Flex>
