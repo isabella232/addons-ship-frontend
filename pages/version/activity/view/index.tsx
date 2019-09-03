@@ -52,7 +52,7 @@ export default ({ appVersionEvents }: Props) => (
         </TableHeaderRow>
         {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
           <TableRow key={index}>
-            <TableCell width="200px">{formatDate(appVersionEvent.createdAt, 'YYYY MM DD hh:mm:ss')}</TableCell>
+            <TableCell width="200px">{formatDate(appVersionEvent.createdAt, 'YYYY MM DD HH:mm:ss')}</TableCell>
             <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
             <TableCell width="200px">
               {appVersionEvent.status === 'failed' && (
