@@ -1,5 +1,5 @@
 import formatDate from 'date-fns/format';
-import { Base, Flex, Text, Icon, Notification, Button, TypeIconName, Link as a, Link } from '@bitrise/bitkit';
+import { Base, Flex, Text, Icon, Notification, Button, TypeIconName, Link } from '@bitrise/bitkit';
 
 import { AppVersion, AppVersionEvent, Screenshot } from '@/models';
 import { mediaQuery } from '@/utils/media';
