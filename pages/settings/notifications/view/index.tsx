@@ -40,10 +40,10 @@ export default ({
     </Base>
     <Flex margin="x12" direction="horizontal" alignChildrenHorizontal="end">
       <Buttons>
-        <Button level="secondary" onClick={onCancel}>
+        <Button level="secondary" width="8rem" onClick={onCancel}>
           Cancel
         </Button>
-        <Button disabled={!onSave} level="primary" onClick={onSave}>
+        <Button disabled={!onSave} level="primary" width="8rem" onClick={onSave}>
           Save
         </Button>
       </Buttons>

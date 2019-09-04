@@ -44,6 +44,7 @@ exports[`NotificationSettings View has an enabled save button 1`] = `
         level="secondary"
         onClick={[MockFunction]}
         size="medium"
+        width="8rem"
       >
         Cancel
       </Button>
@@ -52,6 +53,7 @@ exports[`NotificationSettings View has an enabled save button 1`] = `
         level="primary"
         onClick={[MockFunction]}
         size="medium"
+        width="8rem"
       >
         Save
       </Button>
@@ -104,6 +106,7 @@ exports[`NotificationSettings View renders correctly 1`] = `
         level="secondary"
         onClick={[MockFunction]}
         size="medium"
+        width="8rem"
       >
         Cancel
       </Button>
@@ -111,6 +114,7 @@ exports[`NotificationSettings View renders correctly 1`] = `
         disabled={true}
         level="primary"
         size="medium"
+        width="8rem"
       >
         Save
       </Button>
@@ -169,6 +173,7 @@ exports[`NotificationSettings View renders correctly with error message 1`] = `
         level="secondary"
         onClick={[MockFunction]}
         size="medium"
+        width="8rem"
       >
         Cancel
       </Button>
@@ -176,6 +181,7 @@ exports[`NotificationSettings View renders correctly with error message 1`] = `
         disabled={true}
         level="primary"
         size="medium"
+        width="8rem"
       >
         Save
       </Button>
