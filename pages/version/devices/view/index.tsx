@@ -38,7 +38,7 @@ export default ({ projectType, devices }: Props) => (
 
         <TableBody>
           {devices.map(({ deviceId, deviceType, owner }) => (
-            <TableRow key={deviceId}>
+            <TableRow key={`${owner}-${deviceId}`}>
               <TableCell>{owner}</TableCell>
               <TableCell>{deviceType}</TableCell>
               <TableCell>{deviceId}</TableCell>
