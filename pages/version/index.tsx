@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react';
+import { Component } from 'react';
 import { connect } from 'react-redux';
 import Link from 'next/link';
 import { Base, Tabs, Tab, Divider, Flex, AddonFooter, Dot } from '@bitrise/bitkit';
@@ -118,7 +118,7 @@ export class VersionPage extends Component<VersionPageProps> {
     );
 
     return (
-      <Fragment>
+      <Base>
         <Base>
           <Base maxWidth={960}>
             <Tabs gap="x12">
@@ -131,10 +131,10 @@ export class VersionPage extends Component<VersionPageProps> {
           <Divider color="gray-2" direction="horizontal" width="1px" />
           <Base maxWidth={960}>{this.tabContent()}</Base>
         </Base>
-        <Flex className={css.footerWrapper}>
+        <Flex paddingVertical="x16">
           <AddonFooter addonName="Ship" />
         </Flex>
-      </Fragment>
+      </Base>
     );
   }
 }

@@ -5,7 +5,6 @@ exports[`NotificationSettings View has an enabled save button 1`] = `
   paddingVertical="x8"
 >
   <Text
-    paddingVertical="x3"
     size="x5"
     weight="bold"
   >
@@ -14,10 +13,11 @@ exports[`NotificationSettings View has an enabled save button 1`] = `
   <Divider
     color="gray-2"
     direction="horizontal"
+    margin="x4"
     width="0.125rem"
   />
   <Base
-    paddingVertical="x6"
+    margin="x6"
   >
     <_default
       onAddEmail={[MockFunction]}
@@ -35,29 +35,26 @@ exports[`NotificationSettings View has an enabled save button 1`] = `
   <Flex
     alignChildrenHorizontal="end"
     direction="horizontal"
+    gap="x4"
     margin="x12"
   >
-    <Buttons
-      gap="x2"
+    <Button
+      level="secondary"
+      onClick={[MockFunction]}
+      size="medium"
+      width="8rem"
     >
-      <Button
-        level="secondary"
-        onClick={[MockFunction]}
-        size="medium"
-        width="8rem"
-      >
-        Cancel
-      </Button>
-      <Button
-        disabled={false}
-        level="primary"
-        onClick={[MockFunction]}
-        size="medium"
-        width="8rem"
-      >
-        Save
-      </Button>
-    </Buttons>
+      Cancel
+    </Button>
+    <Button
+      disabled={false}
+      level="primary"
+      onClick={[MockFunction]}
+      size="medium"
+      width="8rem"
+    >
+      Save
+    </Button>
   </Flex>
 </Base>
 `;
@@ -67,7 +64,6 @@ exports[`NotificationSettings View renders correctly 1`] = `
   paddingVertical="x8"
 >
   <Text
-    paddingVertical="x3"
     size="x5"
     weight="bold"
   >
@@ -76,10 +72,11 @@ exports[`NotificationSettings View renders correctly 1`] = `
   <Divider
     color="gray-2"
     direction="horizontal"
+    margin="x4"
     width="0.125rem"
   />
   <Base
-    paddingVertical="x6"
+    margin="x6"
   >
     <_default
       onAddEmail={[MockFunction]}
@@ -97,28 +94,25 @@ exports[`NotificationSettings View renders correctly 1`] = `
   <Flex
     alignChildrenHorizontal="end"
     direction="horizontal"
+    gap="x4"
     margin="x12"
   >
-    <Buttons
-      gap="x2"
+    <Button
+      level="secondary"
+      onClick={[MockFunction]}
+      size="medium"
+      width="8rem"
     >
-      <Button
-        level="secondary"
-        onClick={[MockFunction]}
-        size="medium"
-        width="8rem"
-      >
-        Cancel
-      </Button>
-      <Button
-        disabled={true}
-        level="primary"
-        size="medium"
-        width="8rem"
-      >
-        Save
-      </Button>
-    </Buttons>
+      Cancel
+    </Button>
+    <Button
+      disabled={true}
+      level="primary"
+      size="medium"
+      width="8rem"
+    >
+      Save
+    </Button>
   </Flex>
 </Base>
 `;
@@ -128,7 +122,6 @@ exports[`NotificationSettings View renders correctly with error message 1`] = `
   paddingVertical="x8"
 >
   <Text
-    paddingVertical="x3"
     size="x5"
     weight="bold"
   >
@@ -137,6 +130,7 @@ exports[`NotificationSettings View renders correctly with error message 1`] = `
   <Divider
     color="gray-2"
     direction="horizontal"
+    margin="x4"
     width="0.125rem"
   />
   <Notification
@@ -146,7 +140,7 @@ exports[`NotificationSettings View renders correctly with error message 1`] = `
     Something went wrong
   </Notification>
   <Base
-    paddingVertical="x6"
+    margin="x6"
   >
     <_default
       onAddEmail={[MockFunction]}
@@ -164,28 +158,25 @@ exports[`NotificationSettings View renders correctly with error message 1`] = `
   <Flex
     alignChildrenHorizontal="end"
     direction="horizontal"
+    gap="x4"
     margin="x12"
   >
-    <Buttons
-      gap="x2"
+    <Button
+      level="secondary"
+      onClick={[MockFunction]}
+      size="medium"
+      width="8rem"
     >
-      <Button
-        level="secondary"
-        onClick={[MockFunction]}
-        size="medium"
-        width="8rem"
-      >
-        Cancel
-      </Button>
-      <Button
-        disabled={true}
-        level="primary"
-        size="medium"
-        width="8rem"
-      >
-        Save
-      </Button>
-    </Buttons>
+      Cancel
+    </Button>
+    <Button
+      disabled={true}
+      level="primary"
+      size="medium"
+      width="8rem"
+    >
+      Save
+    </Button>
   </Flex>
 </Base>
 `;

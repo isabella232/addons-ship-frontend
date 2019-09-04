@@ -45,7 +45,7 @@ Object {
 `;
 
 exports[`AppVersion displays a new activity marker badge 1`] = `
-<Fragment>
+<Base>
   <Base>
     <Base
       maxWidth={960}
@@ -163,17 +163,17 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
     </Base>
   </Base>
   <Flex
-    className="footerWrapper"
+    paddingVertical="x16"
   >
     <AddonFooter
       addonName="Ship"
     />
   </Flex>
-</Fragment>
+</Base>
 `;
 
 exports[`AppVersion renders the activity tab correctly 1`] = `
-<Fragment>
+<Base>
   <Base>
     <Base
       maxWidth={960}
@@ -287,17 +287,17 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
     </Base>
   </Base>
   <Flex
-    className="footerWrapper"
+    paddingVertical="x16"
   >
     <AddonFooter
       addonName="Ship"
     />
   </Flex>
-</Fragment>
+</Base>
 `;
 
 exports[`AppVersion renders the details tab correctly 1`] = `
-<Fragment>
+<Base>
   <Base>
     <Base
       maxWidth={960}
@@ -411,17 +411,17 @@ exports[`AppVersion renders the details tab correctly 1`] = `
     </Base>
   </Base>
   <Flex
-    className="footerWrapper"
+    paddingVertical="x16"
   >
     <AddonFooter
       addonName="Ship"
     />
   </Flex>
-</Fragment>
+</Base>
 `;
 
 exports[`AppVersion renders the devices tab correctly 1`] = `
-<Fragment>
+<Base>
   <Base>
     <Base
       maxWidth={960}
@@ -535,17 +535,17 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
     </Base>
   </Base>
   <Flex
-    className="footerWrapper"
+    paddingVertical="x16"
   >
     <AddonFooter
       addonName="Ship"
     />
   </Flex>
-</Fragment>
+</Base>
 `;
 
 exports[`AppVersion renders the other tabs correctly 1`] = `
-<Fragment>
+<Base>
   <Base>
     <Base
       maxWidth={960}
@@ -661,17 +661,17 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
     </Base>
   </Base>
   <Flex
-    className="footerWrapper"
+    paddingVertical="x16"
   >
     <AddonFooter
       addonName="Ship"
     />
   </Flex>
-</Fragment>
+</Base>
 `;
 
 exports[`AppVersion renders the qa tab correctly 1`] = `
-<Fragment>
+<Base>
   <Base>
     <Base
       maxWidth={960}
@@ -785,11 +785,11 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
     </Base>
   </Base>
   <Flex
-    className="footerWrapper"
+    paddingVertical="x16"
   >
     <AddonFooter
       addonName="Ship"
     />
   </Flex>
-</Fragment>
+</Base>
 `;
