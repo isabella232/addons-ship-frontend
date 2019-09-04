@@ -59,11 +59,11 @@ export default ({ appVersionEvents }: Props) => (
         <TableBody>
           {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
             <TableRow key={index}>
-              <TableCell width="240px" title={formatDate(appVersionEvent.createdAt, 'YYYY-MM-DD HH:mm:ss')}>
+              <TableCell shrink title={formatDate(appVersionEvent.createdAt, 'YYYY-MM-DD HH:mm:ss')}>
                 {dayInWords(appVersionEvent.createdAt)} at {formatDate(appVersionEvent.createdAt, 'HH:mm:ss')}
               </TableCell>
               <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
-              <TableCell width="200px">
+              <TableCell shrink>
                 {appVersionEvent.status === 'failed' && (
                   <a href={appVersionEvent.logDownloadUrl}>
                     <Button level="secondary" size="small">

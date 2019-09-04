@@ -66,8 +66,8 @@ exports[`ActivityView when a test failed renders entry with download log button 
           key="0"
         >
           <TableCell
+            shrink={true}
             title="2018-09-26 12:42:31"
-            width="240px"
           >
             September 26, 2018
              at 
@@ -94,7 +94,7 @@ exports[`ActivityView when a test failed renders entry with download log button 
             </Flex>
           </TableCell>
           <TableCell
-            width="200px"
+            shrink={true}
           >
             <a
               href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
@@ -146,8 +146,8 @@ exports[`ActivityView when a test is in progress renders entry without download 
           key="0"
         >
           <TableCell
+            shrink={true}
             title="2018-09-22 12:42:31"
-            width="240px"
           >
             September 22, 2018
              at 
@@ -174,7 +174,7 @@ exports[`ActivityView when a test is in progress renders entry without download 
             </Flex>
           </TableCell>
           <TableCell
-            width="200px"
+            shrink={true}
           />
         </TableRow>
       </TableBody>
@@ -210,8 +210,8 @@ exports[`ActivityView when a test is successful renders entry without download l
           key="0"
         >
           <TableCell
+            shrink={true}
             title="2018-09-20 12:42:31"
-            width="240px"
           >
             September 20, 2018
              at 
@@ -238,7 +238,7 @@ exports[`ActivityView when a test is successful renders entry without download l
             </Flex>
           </TableCell>
           <TableCell
-            width="200px"
+            shrink={true}
           />
         </TableRow>
       </TableBody>
@@ -274,8 +274,8 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
           key="0"
         >
           <TableCell
+            shrink={true}
             title="2018-09-20 12:42:31"
-            width="240px"
           >
             September 20, 2018
              at 
@@ -302,15 +302,15 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
             </Flex>
           </TableCell>
           <TableCell
-            width="200px"
+            shrink={true}
           />
         </TableRow>
         <TableRow
           key="1"
         >
           <TableCell
+            shrink={true}
             title="2018-09-22 12:42:31"
-            width="240px"
           >
             September 22, 2018
              at 
@@ -337,15 +337,15 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
             </Flex>
           </TableCell>
           <TableCell
-            width="200px"
+            shrink={true}
           />
         </TableRow>
         <TableRow
           key="2"
         >
           <TableCell
+            shrink={true}
             title="2018-09-26 12:42:31"
-            width="240px"
           >
             September 26, 2018
              at 
@@ -372,7 +372,7 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
             </Flex>
           </TableCell>
           <TableCell
-            width="200px"
+            shrink={true}
           >
             <a
               href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
@@ -424,8 +424,8 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
           key="0"
         >
           <TableCell
+            shrink={true}
             title="2018-09-20 12:42:31"
-            width="240px"
           >
             September 20, 2018
              at 
@@ -452,15 +452,15 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
             </Flex>
           </TableCell>
           <TableCell
-            width="200px"
+            shrink={true}
           />
         </TableRow>
         <TableRow
           key="1"
         >
           <TableCell
+            shrink={true}
             title="2018-09-22 12:42:31"
-            width="240px"
           >
             September 22, 2018
              at 
@@ -487,15 +487,15 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
             </Flex>
           </TableCell>
           <TableCell
-            width="200px"
+            shrink={true}
           />
         </TableRow>
         <TableRow
           key="2"
         >
           <TableCell
+            shrink={true}
             title="2018-09-26 12:42:31"
-            width="240px"
           >
             September 26, 2018
              at 
@@ -522,7 +522,7 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
             </Flex>
           </TableCell>
           <TableCell
-            width="200px"
+            shrink={true}
           >
             <a
               href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
