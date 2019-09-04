@@ -21,4 +21,4 @@ export const getAppVersionsByBuildNumber = ({ appVersionList }: RootState) =>
     : null;
 
 export const orderedAppVersionEvents = (events: AppVersionEvent[]) =>
-  [...events].sort(({ createdAt: c1 }, { createdAt: c2 }) => +c2 - +c1);
+  [...events].sort(({ createdAtTimestamp: c1 }, { createdAtTimestamp: c2 }) => c2 - c1);
