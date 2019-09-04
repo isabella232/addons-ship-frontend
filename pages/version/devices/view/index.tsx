@@ -6,7 +6,8 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  Base
+  Base,
+  Notification
 } from '@bitrise/bitkit';
 
 import { TestDevice } from '@/models/test-device';
@@ -18,25 +19,32 @@ type Props = {
 };
 
 export default ({ devices }: Props) => (
-  <Base className={css.expandedTableWrapper}>
-    <Table type="card">
-      <TableHeader>
-        <TableHeaderRow>
-          <TableHeaderCell>User</TableHeaderCell>
-          <TableHeaderCell>Device</TableHeaderCell>
-          <TableHeaderCell>UDID</TableHeaderCell>
-        </TableHeaderRow>
-      </TableHeader>
+  <Base paddingVertical="x6">
+    <Base className={css.expandedTableWrapper}>
+      <Notification type="inform" icon="Lightbulb">
+        You can register your devices on your Account Settings page on Bitrise.
+      </Notification>
+      <Base paddingVertical="x6">
+        <Table type="flat">
+          <TableHeader>
+            <TableHeaderRow>
+              <TableHeaderCell>User</TableHeaderCell>
+              <TableHeaderCell>Device</TableHeaderCell>
+              <TableHeaderCell>UDID</TableHeaderCell>
+            </TableHeaderRow>
+          </TableHeader>
 
-      <TableBody>
-        {devices.map(({ deviceId, deviceType, owner }) => (
-          <TableRow key={deviceId}>
-            <TableCell>{owner}</TableCell>
-            <TableCell>{deviceType}</TableCell>
-            <TableCell>{deviceId}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+          <TableBody>
+            {devices.map(({ deviceId, deviceType, owner }) => (
+              <TableRow key={deviceId}>
+                <TableCell>{owner}</TableCell>
+                <TableCell>{deviceType}</TableCell>
+                <TableCell>{deviceId}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </Base>
+    </Base>
   </Base>
 );
