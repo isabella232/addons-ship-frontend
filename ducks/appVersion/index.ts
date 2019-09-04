@@ -48,6 +48,11 @@ export default createReducer(defaultState, handleAction => [
   })),
   handleAction([pollPublishStatus.complete, fetchAppVersionEvents.complete], (state, { payload }) => ({
     ...state,
-    events: payload
+    events: payload.map((appVersionEvent: AppVersionEvent) => {
+      appVersionEvent.createdAt = new Date(appVersionEvent.createdAtTimestamp);
+      appVersionEvent.updatedAt = appVersionEvent.updatedAtTimestamp ? new Date(appVersionEvent.updatedAtTimestamp) : null;
+
+      return appVersionEvent;
+    })
   }))
 ]);

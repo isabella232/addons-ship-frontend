@@ -162,11 +162,15 @@ Object {
   "events": Array [
     Object {
       "createdAt": 2019-07-08T00:00:00.000Z,
+      "createdAtTimestamp": 1562544000000,
       "status": "in-progress",
+      "updatedAt": null,
     },
     Object {
       "createdAt": 2019-07-09T00:00:00.000Z,
+      "createdAtTimestamp": 1562630400000,
       "status": "finished",
+      "updatedAt": null,
     },
   ],
   "isPublishInProgress": false,

@@ -36,9 +36,9 @@ describe('getAppVersionsByBuildNumber', () => {
 describe('orderedAppVersionEvents', () => {
   it('orders events in descending creation time', () => {
     const events = ([
-      { createdAt: new Date('2019-07-08') },
-      { createdAt: new Date('2019-06-20') },
-      { createdAt: new Date('2019-08-01') }
+      { createdAtTimestamp: new Date('2019-07-08').getTime() },
+      { createdAtTimestamp: new Date('2019-06-20').getTime() },
+      { createdAtTimestamp: new Date('2019-08-01').getTime() }
     ] as unknown) as AppVersionEvent[];
 
     expect(orderedAppVersionEvents(events)).toMatchSnapshot();

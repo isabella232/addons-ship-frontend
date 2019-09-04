@@ -60,8 +60,8 @@ describe('appVersion', () => {
       const state = reducer(
         undefined,
         pollPublishStatus.complete([
-          { status: 'in-progress', createdAt: new Date('2019-07-08') },
-          { status: 'finished', createdAt: new Date('2019-07-09') }
+          { status: 'in-progress', createdAtTimestamp: new Date('2019-07-08').getTime() },
+          { status: 'finished', createdAtTimestamp: new Date('2019-07-09').getTime() }
         ] as AppVersionEvent[])
       );
 
