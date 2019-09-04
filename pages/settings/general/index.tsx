@@ -15,7 +15,7 @@ import {
 import { updateSettings, fetchSettings } from '@/ducks/settings';
 
 import View from './view';
-import _ from 'lodash';
+import { some, isEqual } from 'lodash';
 
 type Props = {
   appSlug: string;
@@ -133,11 +133,13 @@ export class General extends Component<Props> {
   updateHasModifications = () => {
     let hasModifications = false;
 
-    if (_.some(
-      ['iosSettings', 'androidSettings'],
-      (platformSettingsKey: string) =>
-        !_.isEqual(this.state[platformSettingsKey], this.props.settings[platformSettingsKey])
-    )) {
+    if (
+      some(
+        ['iosSettings', 'androidSettings'],
+        (platformSettingsKey: string) =>
+          !isEqual(this.state[platformSettingsKey], this.props.settings[platformSettingsKey])
+      )
+    ) {
       hasModifications = true;
     }
 
@@ -151,7 +153,7 @@ export class General extends Component<Props> {
     if (this.state.hasModifications !== hasModifications) {
       this.setState({ hasModifications });
     }
-  }
+  };
 
   onSelectedFileChange = (
     type: 'ProvProfile' | 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
@@ -198,9 +200,7 @@ export class General extends Component<Props> {
       isSaving
     } = this.props;
 
-    const {
-      hasModifications
-    } = this.state;
+    const { hasModifications } = this.state;
 
     const viewProps = {
       appSlug,
