@@ -1,5 +1,5 @@
 import formatDate from 'date-fns/format';
-import { Base, Flex, Text, Icon, Notification, Button, TypeIconName, Link } from '@bitrise/bitkit';
+import { Base, Flex, Text, Icon, Notification, Button, TypeIconName, Link, ProgressSpinner } from '@bitrise/bitkit';
 
 import { AppVersion, AppVersionEvent, Screenshot } from '@/models';
 import { mediaQuery } from '@/utils/media';
@@ -11,6 +11,7 @@ import NextLink from 'next/link';
 import Squircle from '@/components/Squircle';
 
 import css from './style.scss';
+import { Fragment } from 'react';
 
 type DeviceInfo = {
   key: string;
@@ -40,6 +41,7 @@ export type Props = {
   settingsPath: string;
   activityPath: string;
   latestEventStatus: AppVersionEvent['status'] | null;
+  isSaving: boolean;
 };
 
 const publishNotification = (
@@ -116,6 +118,7 @@ export default ({
   activityPath,
   availableDevices,
   latestEventStatus,
+  isSaving,
   ...props
 }: Props) => {
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
@@ -157,7 +160,7 @@ export default ({
               <Flex direction="vertical" alignChildrenVertical="middle">
                 <Flex direction="horizontal" alignChildren="middle" gap="x1">
                   <Base className={css.platformIcon}>
-                    <Icon color="grape-4" name={iconName} size="2rem"/>
+                    <Icon color="grape-4" name={iconName} size="2rem" />
                   </Base>
                   <Text letterSpacing="x2" size="x6" weight="bold" color="grape-4">
                     {appVersion.appName}
@@ -175,13 +178,22 @@ export default ({
               <Flex direction="horizontal" alignChildren="start" gap="x4" margin="x8">
                 <Button
                   level="primary"
+                  disabled={isSaving}
                   onClick={(evt: Event) => {
                     evt.preventDefault();
                     onSave && onSave();
                   }}
                 >
-                  <Icon name="Save" />
-                  <Text>Save</Text>
+                  {isSaving ? (
+                    <Fragment>
+                      <ProgressSpinner /> &nbsp; Saving...
+                    </Fragment>
+                  ) : (
+                    <Fragment>
+                      <Icon name="Save" />
+                      <Text>Save</Text>
+                    </Fragment>
+                  )}
                 </Button>
                 <Button level="secondary" disabled={!shouldEnableInstall}>
                   <Icon name="Download" />
@@ -218,6 +230,7 @@ export default ({
             onPublish={onPublish}
             buildSlug={appVersion.buildSlug}
             hasMounted
+            isSaving={isSaving}
           />
         )}
       </Flex>

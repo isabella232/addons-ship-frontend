@@ -4,14 +4,14 @@ jest.mock('@/ducks/appVersion');
 jest.mock('@/services/settings');
 
 import { shallow, mount, ShallowWrapper } from 'enzyme';
-import toJSON, { shallowToJson } from 'enzyme-to-json';
+import toJSON, { shallowToJson, mountToJson } from 'enzyme-to-json';
 
 import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion, mockSettings } from '@/mocks';
 import { mediaQuery } from '@/utils/media';
 import { isAndroid, osVersion, mobileModel, compareVersions } from '@/utils/device';
 import settingService from '@/services/settings';
 import Dropzone from '@/components/Dropzone';
-import { AppVersionEvent, Screenshot, FeatureGraphic } from '@/models';
+import { AppVersionEvent, Screenshot, FeatureGraphic, AppVersion } from '@/models';
 
 import DetailsView, { Props as AppVersionDetailsViewProps } from './view';
 import { AppVersionDetails, State, Props as AppVersionDetailsProps } from './';
@@ -38,7 +38,8 @@ describe('AppVersionDetailsView', () => {
     publishTarget: 'App Store Connect',
     settingsPath: '/path',
     activityPath: '/path',
-    latestEventStatus: null
+    latestEventStatus: null,
+    isSaving: false
   };
 
   beforeAll(() => {
@@ -105,6 +106,11 @@ describe('AppVersionDetailsView', () => {
         expect(mockPublish).toHaveBeenCalled();
       });
     });
+
+    test('while saving', () => {
+      const tree = mountToJson(mount(<DetailsView {...defaultProps} isSaving />));
+      expect(tree).toMatchSnapshot();
+    });
   });
 
   describe('when viewed on mobile', () => {
@@ -114,6 +120,11 @@ describe('AppVersionDetailsView', () => {
 
     it('renders the details view correctly', () => {
       const tree = toJSON(mount(<DetailsView {...defaultProps} />));
+      expect(tree).toMatchSnapshot();
+    });
+
+    test('while saving', () => {
+      const tree = mountToJson(mount(<DetailsView {...defaultProps} isSaving />));
       expect(tree).toMatchSnapshot();
     });
   });
@@ -144,7 +155,8 @@ describe('AppVersionDetails', () => {
     publishAppVersion: jest.fn() as any,
     startPollPublishStatus: jest.fn() as any,
     cancelPollPublishStatus: jest.fn() as any,
-    appVersionEvents: []
+    appVersionEvents: [],
+    isSaving: false
   };
 
   it('renders correctly', () => {
@@ -385,10 +397,8 @@ describe('AppVersionDetails', () => {
       });
 
       it('deletes sscreenshots', () => {
-        const {
-            deleteScreenshot,
-            appVersion: { appSlug, id }
-          } = defaultProps,
+        const { deleteScreenshot, appVersion } = defaultProps,
+          { appSlug, id } = appVersion as AppVersion,
           screenshotId = 'screenshot-to-delete';
         wrap.setState({ screenshotIdsToDelete: [screenshotId] });
         (wrap.instance() as AppVersionDetails).onSave();
@@ -397,10 +407,8 @@ describe('AppVersionDetails', () => {
       });
 
       it('deletes the feature graphic', () => {
-        const {
-          deleteFeatureGraphic,
-          appVersion: { appSlug, id }
-        } = defaultProps;
+        const { deleteFeatureGraphic, appVersion } = defaultProps,
+          { appSlug, id } = appVersion as AppVersion;
 
         wrap.setState({ isFeatureGraphicMarkedForDelete: true });
 

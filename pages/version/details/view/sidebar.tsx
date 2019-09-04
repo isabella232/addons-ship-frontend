@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import QRCode from 'qrcode.react';
 import SVG from 'react-svg';
 import Clipboard from 'react-clipboard.js';
-import { Base, Flex, Text, Icon, Button, Tooltip } from '@bitrise/bitkit';
+import { Base, Flex, Text, Icon, Button, Tooltip, ProgressSpinner } from '@bitrise/bitkit';
 
 import css from './style.scss';
 
@@ -13,9 +13,18 @@ type Props = {
   onPublish?: () => void;
   buildSlug: string;
   hasMounted: boolean;
+  isSaving: boolean;
 };
 
-export default ({ publicInstallPageURL, shouldEnablePublish, onSave, onPublish, buildSlug, hasMounted }: Props) => {
+export default ({
+  publicInstallPageURL,
+  shouldEnablePublish,
+  onSave,
+  onPublish,
+  buildSlug,
+  hasMounted,
+  isSaving
+}: Props) => {
   const [isPublicInstallPageURLCopiedTooltipVisible, setIsPublicInstallPageURLCopiedTooltipVisible] = useState(false);
 
   const onPublisInstallPageURLCopySuccess = () => {
@@ -29,9 +38,17 @@ export default ({ publicInstallPageURL, shouldEnablePublish, onSave, onPublish, 
   return (
     <Base maxWidth="16rem" className={css.sidebar}>
       <Base>
-        <Button level="primary" fullWidth margin="x4" onClick={onSave}>
-          <Icon name="Save" />
-          <Text>Save</Text>
+        <Button level="primary" fullWidth margin="x4" disabled={isSaving} onClick={onSave}>
+          {isSaving ? (
+            <Fragment>
+              <ProgressSpinner /> &nbsp; Saving...
+            </Fragment>
+          ) : (
+            <Fragment>
+              <Icon name="Save" />
+              <Text>Save</Text>
+            </Fragment>
+          )}
         </Button>
         <Button level="secondary" fullWidth margin="x4" disabled={!shouldEnablePublish} onClick={onPublish}>
           <Icon name="Deployment" />

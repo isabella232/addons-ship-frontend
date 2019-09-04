@@ -17,9 +17,10 @@ export type AppVersionState = {
   appVersion: AppVersion | null;
   isPublishInProgress?: boolean;
   events: AppVersionEvent[];
+  isSaving: number;
 };
 
-const defaultState: AppVersionState = { appVersion: null, isPublishInProgress: false, events: [] };
+const defaultState: AppVersionState = { appVersion: null, isPublishInProgress: false, events: [], isSaving: 0 };
 
 export {
   fetchAppVersion,
@@ -50,9 +51,32 @@ export default createReducer(defaultState, handleAction => [
     ...state,
     events: payload.map((appVersionEvent: AppVersionEvent) => {
       appVersionEvent.createdAt = new Date(appVersionEvent.createdAtTimestamp);
-      appVersionEvent.updatedAt = appVersionEvent.updatedAtTimestamp ? new Date(appVersionEvent.updatedAtTimestamp) : null;
+      appVersionEvent.updatedAt = appVersionEvent.updatedAtTimestamp
+        ? new Date(appVersionEvent.updatedAtTimestamp)
+        : null;
 
       return appVersionEvent;
     })
-  }))
+  })),
+  handleAction(
+    [updateAppVersion.next, uploadScreenshots.next, uploadFeatureGraphic.next],
+    ({ isSaving, ...state }) => ({
+      ...state,
+      isSaving: isSaving + 1
+    })
+  ),
+  handleAction(
+    [
+      updateAppVersion.complete,
+      uploadScreenshots.complete,
+      uploadFeatureGraphic.complete,
+      updateAppVersion.error,
+      uploadScreenshots.error,
+      uploadFeatureGraphic.error
+    ],
+    ({ isSaving, ...state }) => ({
+      ...state,
+      isSaving: isSaving - 1
+    })
+  )
 ]);
