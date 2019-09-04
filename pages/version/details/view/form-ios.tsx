@@ -168,11 +168,6 @@ export default ({
         <Text size="x3">{appVersion.supportedDeviceTypes && appVersion.supportedDeviceTypes.join(', ')}</Text>
 
         <Divider color="gray-2" direction="horizontal" margin="x4" />
-
-        <InputLabel>Configuration</InputLabel>
-        <Text size="x3">{appVersion.configuration}</Text>
-
-        <Divider color="gray-2" direction="horizontal" margin="x4" />
       </Flex>
     </Flex>
   </Fragment>
