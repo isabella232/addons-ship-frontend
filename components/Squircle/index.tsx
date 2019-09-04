@@ -6,7 +6,7 @@ interface Props extends BaseProps {
   objectFit?: string;
 }
 
-export default ({ objectFit = 'covver', fatness = 0.05, ...props }: Props) => {
+export default ({ objectFit = 'covver', fatness = 0.02, ...props }: Props) => {
   const s = Math.min(Math.max(fatness, 0), 0.5);
 
   const path = `M .5,0

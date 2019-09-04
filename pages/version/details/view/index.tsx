@@ -10,6 +10,8 @@ import FormAndroid from './form-android';
 import NextLink from 'next/link';
 import Squircle from '@/components/Squircle';
 
+import css from './style.scss';
+
 type DeviceInfo = {
   key: string;
   value: string;
@@ -153,8 +155,10 @@ export default ({
               <Squircle src={appVersion.iconUrl} borderRadius="x2" width="160px" margin="x0" />
 
               <Flex direction="vertical" alignChildrenVertical="middle">
-                <Flex direction="horizontal" alignChildren="start" gap="x2">
-                  <Icon color="grape-4" name={iconName} size="2rem" />
+                <Flex direction="horizontal" alignChildren="middle" gap="x1">
+                  <Base className={css.platformIcon}>
+                    <Icon color="grape-4" name={iconName} size="2rem"/>
+                  </Base>
                   <Text letterSpacing="x2" size="x6" weight="bold" color="grape-4">
                     {appVersion.appName}
                   </Text>

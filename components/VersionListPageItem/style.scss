@@ -20,14 +20,13 @@
       @include padding-x(4 * $grid);
       text-decoration: none;
 
-      .platformIcon {
+      .platformIconWrapper {
         margin-right: $grid;
         margin-bottom: 3px;
 
         svg {
-          display: block;
-          fill: $grape-5;
-          transition: fill $medium-hovertime;
+          color: $grape-5;
+          transition: color $medium-hovertime;
         }
       }
 
@@ -131,9 +130,9 @@
       background-color: $gray-1;
 
       .topWrapper {
-        .platformIcon {
+        .platformIconWrapper {
           svg {
-            fill: $grape-3;
+            color: $grape-3;
           }
         }
 
