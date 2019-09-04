@@ -17,9 +17,10 @@ export type AppVersionState = {
   appVersion: AppVersion | null;
   isPublishInProgress?: boolean;
   events: AppVersionEvent[];
+  isSaving: boolean;
 };
 
-const defaultState: AppVersionState = { appVersion: null, isPublishInProgress: false, events: [] };
+const defaultState: AppVersionState = { appVersion: null, isPublishInProgress: false, events: [], isSaving: false };
 
 export {
   fetchAppVersion,
@@ -39,7 +40,8 @@ export default createReducer(defaultState, handleAction => [
       ...appVersion,
       ...payload,
       iconUrl: (appVersion && appVersion.iconUrl) || payload.iconUrl || placeholderAppIcon
-    }
+    },
+    isSaving: false
   })),
   handleAction(publishAppVersion.next, state => ({ ...state, isPublishInProgress: true })),
   handleAction([publishAppVersion.complete, publishAppVersion.error], state => ({
@@ -50,9 +52,15 @@ export default createReducer(defaultState, handleAction => [
     ...state,
     events: payload.map((appVersionEvent: AppVersionEvent) => {
       appVersionEvent.createdAt = new Date(appVersionEvent.createdAtTimestamp);
-      appVersionEvent.updatedAt = appVersionEvent.updatedAtTimestamp ? new Date(appVersionEvent.updatedAtTimestamp) : null;
+      appVersionEvent.updatedAt = appVersionEvent.updatedAtTimestamp
+        ? new Date(appVersionEvent.updatedAtTimestamp)
+        : null;
 
       return appVersionEvent;
     })
+  })),
+  handleAction(updateAppVersion.next, state => ({
+    ...state,
+    isSaving: true
   }))
 ]);

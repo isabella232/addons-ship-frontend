@@ -67,6 +67,11 @@ describe('appVersion', () => {
 
       expect(state).toMatchSnapshot();
     });
+
+    test('when updating an app version', () => {
+      const { isSaving } = reducer(undefined, updateAppVersion.next() as any);
+      expect(isSaving).toBe(true);
+    });
   });
 
   describe('fetchAppVersion', () => {
