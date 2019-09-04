@@ -121,15 +121,14 @@ export class ShipAPIService {
 
     const { data } = await get(url, this.token).then(res => res.json());
 
-    return data.map(camelizeKeys).map(
-      ({ createdAt, updatedAt, eventText, ...event }: any) =>
-        ({
-          ...event,
-          text: eventText,
-          createdAt: new Date(createdAt),
-          updatedAt: new Date(updatedAt)
-        } as AppVersionEvent)
-    );
+    return data.map(camelizeKeys).map(({ createdAt, updatedAt, eventText, ...event }: any) => {
+      return {
+        ...event,
+        text: eventText,
+        createdAtTimestamp: new Date(createdAt).getTime(),
+        updatedAtTimestamp: updatedAt ? new Date(updatedAt).getTime() : null
+      } as AppVersionEvent;
+    });
   }
 
   // GET /apps/{app-slug}/versions/{version-id}/screenshots
