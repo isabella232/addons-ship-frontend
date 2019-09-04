@@ -9,7 +9,6 @@ import { AppVersionPageQuery, PageContext, AppVersion, AppVersionPageTabs } from
 import { RootState } from '@/store';
 import { fetchAppVersion } from '@/ducks/appVersion';
 import { fetchTestDevices } from '@/ducks/testDevices';
-import { fetchSettings } from '@/ducks/settings';
 import fetchAppVersionEvents from '@/ducks/appVersion/fetchAppVersionEvents';
 import { orderedAppVersionEvents } from '@/ducks/selectors';
 
@@ -20,11 +19,12 @@ import QA from './qa';
 
 import css from './style.scss';
 
-interface VersionPageProps extends AppVersionPageQuery {
-  appVersion: AppVersion;
+export interface VersionPageProps extends AppVersionPageQuery {
+  appVersion: AppVersion | null;
   pagePath: string;
   activityLastSeen: number;
   lastEventTimestamp: number;
+  fetchAppVersion: typeof fetchAppVersion;
 }
 
 export class VersionPage extends Component<VersionPageProps> {
@@ -43,7 +43,7 @@ export class VersionPage extends Component<VersionPageProps> {
     const path = isServer ? req.path : location.pathname;
     const pagePath = path.replace(new RegExp(`/(${AppVersionPageTabs.join('|')})?$`), '');
 
-    const promises = [store.dispatch(fetchAppVersion(appSlug, versionId) as any)];
+    const promises = [];
 
     const activityLastSeenKey = `activity_${appSlug}_${versionId}`;
     const cookies = nookies.get(ctx);
@@ -52,7 +52,6 @@ export class VersionPage extends Component<VersionPageProps> {
     switch (selectedTab) {
       case 'details':
         Connected.displayName = 'AppVersionDetails';
-        promises.push(store.dispatch(fetchSettings(appSlug) as any));
         break;
       case 'devices':
         Connected.displayName = 'AppVersionDevices';
@@ -76,12 +75,17 @@ export class VersionPage extends Component<VersionPageProps> {
     return { appSlug, versionId, isPublic, selectedTab, pagePath, activityLastSeen };
   }
 
+  componentDidMount() {
+    const { appSlug, versionId, fetchAppVersion } = this.props;
+    fetchAppVersion(appSlug, versionId);
+  }
+
   tabContent = () => {
-    const { selectedTab } = this.props;
+    const { selectedTab, appSlug, versionId } = this.props;
 
     switch (selectedTab) {
       case 'details':
-        return <Details />;
+        return <Details appSlug={appSlug} versionId={versionId} />;
       case 'devices':
         return <Devices />;
       case 'activity':
@@ -94,18 +98,12 @@ export class VersionPage extends Component<VersionPageProps> {
   };
 
   render() {
-    const {
-      pagePath,
-      selectedTab,
-      appVersion: { appSlug, id },
-      activityLastSeen,
-      lastEventTimestamp
-    } = this.props;
+    const { pagePath, selectedTab, appSlug, versionId, activityLastSeen, lastEventTimestamp } = this.props;
 
     const showActivityBadge = selectedTab === 'activity' ? false : activityLastSeen < lastEventTimestamp;
 
     const tab = (key: string) => (
-      <Link as={`${pagePath}/${key}`} href={`/version?appSlug=${appSlug}&versionId=${id}&selectedTab=${key}`}>
+      <Link as={`${pagePath}/${key}`} href={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=${key}`}>
         <a>
           <Tab active={selectedTab === key} paddingHorizontal="x2">
             <Flex direction="horizontal" alignChildren="middle" gap="x1">
@@ -119,7 +117,7 @@ export class VersionPage extends Component<VersionPageProps> {
 
     return (
       <Fragment>
-        <Base>
+        <Flex direction="vertical" grow>
           <Base maxWidth={960}>
             <Tabs gap="x12">
               {tab('details')}
@@ -129,8 +127,10 @@ export class VersionPage extends Component<VersionPageProps> {
             </Tabs>
           </Base>
           <Divider color="gray-2" direction="horizontal" width="1px" />
-          <Base maxWidth={960}>{this.tabContent()}</Base>
-        </Base>
+          <Flex direction="vertical" maxWidth={960} grow>
+            {this.tabContent()}
+          </Flex>
+        </Flex>
         <Flex className={css.footerWrapper}>
           <AddonFooter addonName="Ship" />
         </Flex>
@@ -144,7 +144,14 @@ const mapStateToProps = ({ appVersion: { appVersion, events } }: RootState) => (
   lastEventTimestamp: events.length > 0 ? new Date(orderedAppVersionEvents(events)[0].createdAt).getTime() : -1
 });
 
-const Connected = connect(mapStateToProps)(VersionPage as any);
+const mapDispatchToProps = {
+  fetchAppVersion
+};
+
+const Connected = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(VersionPage as any);
 Connected.displayName = 'AppVersionPage';
 
 export default Connected;

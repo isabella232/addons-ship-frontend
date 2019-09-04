@@ -11,17 +11,6 @@ Object {
 }
 `;
 
-exports[`AppVersion dispatches the proper actions dispatches fetchAppVersion and fetchSettings 1`] = `
-Object {
-  "activityLastSeen": 0,
-  "appSlug": undefined,
-  "isPublic": undefined,
-  "pagePath": "some/path",
-  "selectedTab": "details",
-  "versionId": undefined,
-}
-`;
-
 exports[`AppVersion dispatches the proper actions dispatches fetchAppVersionEvents 1`] = `
 Object {
   "activityLastSeen": 0,
@@ -46,7 +35,10 @@ Object {
 
 exports[`AppVersion displays a new activity marker badge 1`] = `
 <Fragment>
-  <Base>
+  <Flex
+    direction="vertical"
+    grow={true}
+  >
     <Base
       maxWidth={960}
     >
@@ -55,7 +47,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
       >
         <Link
           as="some/path/details"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
             <Tab
@@ -78,7 +70,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
         </Link>
         <Link
           as="some/path/devices"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
             <Tab
@@ -101,7 +93,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
         </Link>
         <Link
           as="some/path/qa"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
             <Tab
@@ -124,7 +116,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
         </Link>
         <Link
           as="some/path/activity"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
             <Tab
@@ -156,12 +148,17 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
       direction="horizontal"
       width="1px"
     />
-    <Base
+    <Flex
+      direction="vertical"
+      grow={true}
       maxWidth={960}
     >
-      <Connect(AppVersionDetails) />
-    </Base>
-  </Base>
+      <Connect(AppVersionDetails)
+        appSlug="some-app"
+        versionId="a-version-id"
+      />
+    </Flex>
+  </Flex>
   <Flex
     className="footerWrapper"
   >
@@ -174,7 +171,10 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
 
 exports[`AppVersion renders the activity tab correctly 1`] = `
 <Fragment>
-  <Base>
+  <Flex
+    direction="vertical"
+    grow={true}
+  >
     <Base
       maxWidth={960}
     >
@@ -183,7 +183,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
       >
         <Link
           as="some/path/details"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
             <Tab
@@ -206,7 +206,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/devices"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
             <Tab
@@ -229,7 +229,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/qa"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
             <Tab
@@ -252,7 +252,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/activity"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
             <Tab
@@ -280,12 +280,14 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
       direction="horizontal"
       width="1px"
     />
-    <Base
+    <Flex
+      direction="vertical"
+      grow={true}
       maxWidth={960}
     >
       <Connect(Activity) />
-    </Base>
-  </Base>
+    </Flex>
+  </Flex>
   <Flex
     className="footerWrapper"
   >
@@ -298,7 +300,10 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
 
 exports[`AppVersion renders the details tab correctly 1`] = `
 <Fragment>
-  <Base>
+  <Flex
+    direction="vertical"
+    grow={true}
+  >
     <Base
       maxWidth={960}
     >
@@ -307,7 +312,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
       >
         <Link
           as="some/path/details"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
             <Tab
@@ -330,7 +335,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/devices"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
             <Tab
@@ -353,7 +358,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/qa"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
             <Tab
@@ -376,7 +381,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/activity"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
             <Tab
@@ -404,12 +409,17 @@ exports[`AppVersion renders the details tab correctly 1`] = `
       direction="horizontal"
       width="1px"
     />
-    <Base
+    <Flex
+      direction="vertical"
+      grow={true}
       maxWidth={960}
     >
-      <Connect(AppVersionDetails) />
-    </Base>
-  </Base>
+      <Connect(AppVersionDetails)
+        appSlug="some-app"
+        versionId="a-version-id"
+      />
+    </Flex>
+  </Flex>
   <Flex
     className="footerWrapper"
   >
@@ -422,7 +432,10 @@ exports[`AppVersion renders the details tab correctly 1`] = `
 
 exports[`AppVersion renders the devices tab correctly 1`] = `
 <Fragment>
-  <Base>
+  <Flex
+    direction="vertical"
+    grow={true}
+  >
     <Base
       maxWidth={960}
     >
@@ -431,7 +444,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
       >
         <Link
           as="some/path/details"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
             <Tab
@@ -454,7 +467,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/devices"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
             <Tab
@@ -477,7 +490,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/qa"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
             <Tab
@@ -500,7 +513,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/activity"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
             <Tab
@@ -528,12 +541,14 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
       direction="horizontal"
       width="1px"
     />
-    <Base
+    <Flex
+      direction="vertical"
+      grow={true}
       maxWidth={960}
     >
       <Connect(AppVersionDevices) />
-    </Base>
-  </Base>
+    </Flex>
+  </Flex>
   <Flex
     className="footerWrapper"
   >
@@ -546,7 +561,10 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
 
 exports[`AppVersion renders the other tabs correctly 1`] = `
 <Fragment>
-  <Base>
+  <Flex
+    direction="vertical"
+    grow={true}
+  >
     <Base
       maxWidth={960}
     >
@@ -555,7 +573,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
       >
         <Link
           as="some/path/details"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
             <Tab
@@ -578,7 +596,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
         </Link>
         <Link
           as="some/path/devices"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
             <Tab
@@ -601,7 +619,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
         </Link>
         <Link
           as="some/path/qa"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
             <Tab
@@ -624,7 +642,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
         </Link>
         <Link
           as="some/path/activity"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
             <Tab
@@ -652,14 +670,16 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
       direction="horizontal"
       width="1px"
     />
-    <Base
+    <Flex
+      direction="vertical"
+      grow={true}
       maxWidth={960}
     >
       <h1>
         whateever
       </h1>
-    </Base>
-  </Base>
+    </Flex>
+  </Flex>
   <Flex
     className="footerWrapper"
   >
@@ -672,7 +692,10 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
 
 exports[`AppVersion renders the qa tab correctly 1`] = `
 <Fragment>
-  <Base>
+  <Flex
+    direction="vertical"
+    grow={true}
+  >
     <Base
       maxWidth={960}
     >
@@ -681,7 +704,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
       >
         <Link
           as="some/path/details"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
             <Tab
@@ -704,7 +727,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/devices"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
             <Tab
@@ -727,7 +750,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/qa"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
             <Tab
@@ -750,7 +773,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
         </Link>
         <Link
           as="some/path/activity"
-          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
             <Tab
@@ -778,12 +801,14 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
       direction="horizontal"
       width="1px"
     />
-    <Base
+    <Flex
+      direction="vertical"
+      grow={true}
       maxWidth={960}
     >
       <_default />
-    </Base>
-  </Base>
+    </Flex>
+  </Flex>
   <Flex
     className="footerWrapper"
   >

@@ -14,17 +14,18 @@ import { mockAppVersion } from '@/mocks';
 import { fetchAppVersion } from '@/ducks/appVersion';
 import { fetchSettings } from '@/ducks/settings';
 import { fetchTestDevices } from '@/ducks/testDevices';
-import { VersionPage } from '.';
+import { VersionPage, VersionPageProps } from '.';
 import fetchAppVersionEvents from '@/ducks/appVersion/fetchAppVersionEvents';
 
 describe('AppVersion', () => {
-  const defaultProps = {
+  const defaultProps: VersionPageProps = {
     appVersion: mockAppVersion,
     appSlug: 'some-app',
     versionId: 'a-version-id',
     pagePath: 'some/path',
     activityLastSeen: 0,
-    lastEventTimestamp: 0
+    lastEventTimestamp: 0,
+    fetchAppVersion: jest.fn() as any
   };
   it('renders the details tab correctly', () => {
     const tree = toJSON(shallow(<VersionPage {...defaultProps} />));
@@ -53,19 +54,6 @@ describe('AppVersion', () => {
 
   describe('dispatches the proper actions', () => {
     const req = { path: 'some/path' };
-
-    it('dispatches fetchAppVersion and fetchSettings', async () => {
-      const props = await VersionPage.getInitialProps({
-        query: {},
-        req,
-        store: { dispatch: jest.fn() },
-        isServer: true
-      } as any);
-
-      expect(fetchAppVersion).toHaveBeenCalled();
-      expect(fetchSettings).toHaveBeenCalled();
-      expect(props).toMatchSnapshot();
-    });
 
     it('dispatches fetchTestDevices', async () => {
       const props = await VersionPage.getInitialProps({

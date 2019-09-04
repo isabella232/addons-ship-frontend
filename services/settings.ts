@@ -10,6 +10,7 @@ export class SettingsService {
   ) => {
     switch (appVersion.platform) {
       case 'ios': {
+        if (!iosSettings) return false;
         return ![
           'appleDeveloperAccountEmail',
           'appSku',
@@ -19,6 +20,7 @@ export class SettingsService {
         ].find(key => !iosSettings[key]);
       }
       case 'android': {
+        if (!androidSettings) return false;
         return !['track', 'selectedKeystoreFile', 'selectedServiceAccount'].find(key => !androidSettings[key]);
       }
     }
