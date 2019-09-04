@@ -1,4 +1,5 @@
 import formatDate from 'date-fns/format';
+import { dayInWords } from '@/utils/time';
 
 import {
   Base,
@@ -12,10 +13,13 @@ import {
   Table,
   TableRow,
   TableHeaderRow,
-  TableHeaderCell
+  TableHeaderCell,
+  TableHeader
 } from '@bitrise/bitkit';
-import { TypeIconName } from '@bitrise/bitkit/lib/esm/Icon/tsx';
+import { TypeIconName } from '@bitrise/bitkit';
 import { AppVersionEvent } from '@/models';
+
+import css from './style.scss';
 
 type Props = {
   appVersionEvents: AppVersionEvent[];
@@ -33,7 +37,7 @@ const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
   }
 
   return (
-    <Flex direction="horizontal" gap="x4">
+    <Flex direction="horizontal" gap="x4" height="2rem" alignChildrenVertical="middle">
       <Icon name={iconName} color={iconColor} />
       <Text size="x3" color={textColor}>
         {message}
@@ -44,29 +48,35 @@ const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
 
 export default ({ appVersionEvents }: Props) => (
   <Base paddingVertical="x8">
-    <Table type="flat">
-      <TableBody>
-        <TableHeaderRow>
-          <TableHeaderCell>Date</TableHeaderCell>
-          <TableHeaderCell colSpan="2">Activity</TableHeaderCell>
-        </TableHeaderRow>
-        {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
-          <TableRow key={index}>
-            <TableCell width="200px">{formatDate(appVersionEvent.createdAt, 'YYYY MM DD hh:mm:ss')}</TableCell>
-            <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
-            <TableCell width="200px">
-              {appVersionEvent.status === 'failed' && (
-                <a href={appVersionEvent.logDownloadUrl}>
-                  <Button level="secondary" size="small">
-                    <Icon name="Download" color="grape-4" />
-                    Download Build Log
-                  </Button>
-                </a>
-              )}
-            </TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+    <Base className={css.expandedTableWrapper}>
+      <Table type="flat">
+        <TableHeader>
+          <TableHeaderRow>
+            <TableHeaderCell>Date</TableHeaderCell>
+            <TableHeaderCell colSpan="2">Activity</TableHeaderCell>
+          </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+          {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
+            <TableRow key={index}>
+              <TableCell shrink title={formatDate(appVersionEvent.createdAt, 'YYYY-MM-DD HH:mm:ss')}>
+                {dayInWords(appVersionEvent.createdAt)} at {formatDate(appVersionEvent.createdAt, 'HH:mm:ss')}
+              </TableCell>
+              <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
+              <TableCell shrink>
+                {appVersionEvent.status === 'failed' && (
+                  <a href={appVersionEvent.logDownloadUrl}>
+                    <Button level="secondary" size="small">
+                      <Icon name="Download" color="grape-4" />
+                      Download Build Log
+                    </Button>
+                  </a>
+                )}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </Base>
   </Base>
 );

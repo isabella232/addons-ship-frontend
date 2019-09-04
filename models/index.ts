@@ -104,8 +104,10 @@ export type AppVersionEvent = {
   id: string;
   status: 'in-progress' | 'finished' | 'failed';
   text: string;
-  createdAt: number | Date;
-  updatedAt: number | Date;
+  createdAtTimestamp: number;
+  createdAt: Date;
+  updatedAtTimestamp: number | null;
+  updatedAt: Date | null;
   logDownloadUrl: string;
 };
 

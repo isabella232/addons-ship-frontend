@@ -60,8 +60,8 @@ describe('appVersion', () => {
       const state = reducer(
         undefined,
         pollPublishStatus.complete([
-          { status: 'in-progress', createdAt: new Date('2019-07-08') },
-          { status: 'finished', createdAt: new Date('2019-07-09') }
+          { status: 'in-progress', createdAtTimestamp: new Date('2019-07-08').getTime() },
+          { status: 'finished', createdAtTimestamp: new Date('2019-07-09').getTime() }
         ] as AppVersionEvent[])
       );
 
@@ -235,7 +235,7 @@ describe('appVersion', () => {
           b: pollPublishStatus.cancel
         });
 
-        const expected = '1s b 999ms b 999ms b';
+        const expected = 'b 999ms b 999ms b 999ms b';
         const values = {
           a: { type: getType(pollPublishStatus.start) },
           b: { type: getType(pollPublishStatus.complete), payload: ['event1', 'event2'] }

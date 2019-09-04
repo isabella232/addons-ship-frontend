@@ -1,3 +1,7 @@
+jest.mock('nookies', () => ({
+  get: () => ({}),
+  set: () => ({})
+}));
 jest.mock('@/ducks/appVersion');
 jest.mock('@/ducks/settings');
 jest.mock('@/ducks/testDevices');
@@ -18,7 +22,9 @@ describe('AppVersion', () => {
     appVersion: mockAppVersion,
     appSlug: 'some-app',
     versionId: 'a-version-id',
-    pagePath: 'some/path'
+    pagePath: 'some/path',
+    activityLastSeen: 0,
+    lastEventTimestamp: 0
   };
   it('renders the details tab correctly', () => {
     const tree = toJSON(shallow(<VersionPage {...defaultProps} />));
@@ -96,5 +102,10 @@ describe('AppVersion', () => {
 
       expect(props).toMatchSnapshot();
     });
+  });
+
+  it('displays a new activity marker badge', () => {
+    const tree = toJSON(shallow(<VersionPage {...defaultProps} lastEventTimestamp={1} />));
+    expect(tree).toMatchSnapshot();
   });
 });

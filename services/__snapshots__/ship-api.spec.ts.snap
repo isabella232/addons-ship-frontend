@@ -59,12 +59,12 @@ Object {
 exports[`Ship API service getAppVersionEvents fetches the events for an app version 1`] = `
 Array [
   Object {
-    "createdAt": 2019-10-10T00:00:00.000Z,
+    "createdAtTimestamp": 1570665600000,
     "id": "an-id",
     "logDownloadUrl": "http://log.url",
     "status": "in-progress",
     "text": "some-string",
-    "updatedAt": 2019-10-11T00:00:00.000Z,
+    "updatedAtTimestamp": 1570752000000,
   },
 ]
 `;

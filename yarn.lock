@@ -766,10 +766,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@bitrise/bitkit@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@bitrise/bitkit/-/bitkit-2.0.1.tgz#1b16ae5874a6dafe0f568f7796a6955a2c77168e"
-  integrity sha512-xFpLBuN3wNHzWiXoX9/CjvYzakQiAO5CEav5p7DxAmMBEWpiOK4BDCvXUubx4GvPj3Gy3Vq+m1Gn2VgI1zaSKQ==
+"@bitrise/bitkit@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@bitrise/bitkit/-/bitkit-2.0.4.tgz#5d7ee69889e0a1c81c9a382a6952e9373c645807"
+  integrity sha512-0EWuzXzyEZIcuD5eS+SizT/68ilweJkEyNCaczxYYWznuhDnuxGILa8GP/cx3kLvUIx/pp0kR9GFXcsExNDfPA==
   dependencies:
     classnames "^2.2.6"
     clipboard "^2.0.4"
@@ -4845,6 +4845,11 @@ jest-config@^24.8.0:
     micromatch "^3.1.10"
     pretty-format "^24.8.0"
     realpath-native "^1.1.0"
+
+jest-date-mock@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/jest-date-mock/-/jest-date-mock-1.0.7.tgz#b1e5071beb314cbfcfb0a21d8560a2122519f5c3"
+  integrity sha512-ZgbYlURRhVpf52Jho4tlyUgpJJ+nYvhxIWhIIEdarmsSuTxFZlC9DmKCyQXsuEljfxK+7HsqdBX/L6rxwWraYw==
 
 jest-diff@^24.8.0:
   version "24.8.0"
