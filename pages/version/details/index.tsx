@@ -4,6 +4,7 @@ import map from 'lodash/map';
 import get from 'lodash/get';
 import update from 'lodash/update';
 import filter from 'lodash/filter';
+import { Flex, ProgressBitbot } from '@bitrise/bitkit';
 
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
 import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot } from '@/models';
@@ -19,13 +20,16 @@ import {
   publishAppVersion,
   pollPublishStatus
 } from '@/ducks/appVersion';
+import { fetchSettings } from '@/ducks/settings';
 import { orderedAppVersionEvents } from '@/ducks/selectors';
 import settingService from '@/services/settings';
 
 import View from './view';
 
 export type Props = {
-  appVersion: AppVersion;
+  appSlug: string;
+  versionId: string;
+  appVersion: AppVersion | null;
   settings: Settings;
   appVersionEvents: AppVersionEvent[];
   updateAppVersion: typeof updateAppVersion;
@@ -37,6 +41,7 @@ export type Props = {
   publishAppVersion: typeof publishAppVersion;
   startPollPublishStatus: typeof pollPublishStatus.start;
   cancelPollPublishStatus: typeof pollPublishStatus.cancel;
+  fetchSettings: typeof fetchSettings;
 };
 
 export type State = {
@@ -105,45 +110,49 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   componentDidMount() {
-    const { appVersion, startPollPublishStatus } = this.props;
+    const { appSlug, appVersion, startPollPublishStatus, fetchSettings } = this.props;
     const { screenshotList } = this.state;
 
     const newScreenshotList = { ...screenshotList };
 
-    this.setState({
-      hasMounted: true,
-      updatedAppVersion: appVersion
-    });
-    startPollPublishStatus(appVersion);
+    fetchSettings(appSlug);
 
-    appVersion.screenshotDatas.forEach(({ id, filename, downloadUrl, filesize, deviceType }: ScreenshotResponse) => {
-      const screenshot = new Screenshot(id, filename, downloadUrl, filesize, deviceType);
+    if (appVersion) {
+      this.setState({
+        hasMounted: true,
+        updatedAppVersion: appVersion
+      });
+      startPollPublishStatus(appVersion);
 
-      let deviceId = Object.keys(newScreenshotList).find(
-        key => newScreenshotList[key].deviceName === screenshot.deviceType
-      ) as string;
-      if (!deviceId) {
-        deviceId = screenshot.deviceType as string;
+      appVersion.screenshotDatas.forEach(({ id, filename, downloadUrl, filesize, deviceType }: ScreenshotResponse) => {
+        const screenshot = new Screenshot(id, filename, downloadUrl, filesize, deviceType);
+
+        let deviceId = Object.keys(newScreenshotList).find(
+          key => newScreenshotList[key].deviceName === screenshot.deviceType
+        ) as string;
+        if (!deviceId) {
+          deviceId = screenshot.deviceType as string;
+        }
+
+        if (!newScreenshotList[deviceId]) {
+          newScreenshotList[deviceId] = {
+            deviceName: deviceId
+          };
+        }
+        if (!newScreenshotList[deviceId].screenshots) {
+          newScreenshotList[deviceId].screenshots = [];
+        }
+
+        (newScreenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
+      });
+      this.setState({
+        screenshotList: newScreenshotList
+      });
+
+      if (appVersion.featureGraphicData) {
+        const { id, filename, downloadUrl } = appVersion.featureGraphicData;
+        this.setState({ featureGraphic: new FeatureGraphic(id, filename, downloadUrl) });
       }
-
-      if (!newScreenshotList[deviceId]) {
-        newScreenshotList[deviceId] = {
-          deviceName: deviceId
-        };
-      }
-      if (!newScreenshotList[deviceId].screenshots) {
-        newScreenshotList[deviceId].screenshots = [];
-      }
-
-      (newScreenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
-    });
-    this.setState({
-      screenshotList: newScreenshotList
-    });
-
-    if (appVersion.featureGraphicData) {
-      const { id, filename, downloadUrl } = appVersion.featureGraphicData;
-      this.setState({ featureGraphic: new FeatureGraphic(id, filename, downloadUrl) });
     }
   }
 
@@ -206,13 +215,19 @@ export class AppVersionDetails extends Component<Props, State> {
 
   onSave = () => {
     const {
-      appVersion: { appSlug, id },
+      appVersion,
       updateAppVersion,
       uploadScreenshots,
       deleteScreenshot,
       uploadFeatureGraphic,
       deleteFeatureGraphic
     } = this.props;
+
+    if (!appVersion) {
+      return;
+    }
+
+    const { appSlug, id } = appVersion;
     const { updatedAppVersion, screenshotIdsToDelete, featureGraphic, isFeatureGraphicMarkedForDelete } = this.state;
 
     if (window.analytics) {
@@ -240,6 +255,11 @@ export class AppVersionDetails extends Component<Props, State> {
 
   onPublish = async () => {
     const { appVersion, publishAppVersion } = this.props;
+
+    if (!appVersion) {
+      return;
+    }
+
     const { appSlug, id } = appVersion;
 
     if (window.analytics) {
@@ -250,9 +270,14 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   onScreenshotAdded = (deviceId: string, files: File[]) => {
-    const {
-      appVersion: { appSlug, id }
-    } = this.props;
+    const { appVersion } = this.props;
+
+    if (!appVersion) {
+      return;
+    }
+
+    const { appSlug, id } = appVersion;
+
     if (window.analytics) {
       window.analytics.track('AppVersionDetails Added Screenshot', {
         addonId: 'addons-ship',
@@ -327,8 +352,12 @@ export class AppVersionDetails extends Component<Props, State> {
     return true;
   };
 
-  readyForPublish = () => {
+  readyForPublish = (): boolean => {
     const { appVersion, settings } = this.props;
+
+    if (!appVersion) {
+      return false;
+    }
 
     return settingService.isComplete(appVersion, settings as {
       iosSettings: IosSettings;
@@ -338,6 +367,15 @@ export class AppVersionDetails extends Component<Props, State> {
 
   render() {
     const { appVersion } = this.props;
+
+    if (!appVersion) {
+      return (
+        <Flex direction="horizontal" container grow>
+          <ProgressBitbot color="grape-3" absolute="center" />
+        </Flex>
+      );
+    }
+
     const {
       hasMounted,
       selectedDeviceIdForScreenshots,
@@ -395,10 +433,12 @@ const mapDispatchToProps = {
   deleteFeatureGraphic,
   publishAppVersion,
   startPollPublishStatus: pollPublishStatus.start,
-  cancelPollPublishStatus: pollPublishStatus.cancel
+  cancelPollPublishStatus: pollPublishStatus.cancel,
+  fetchSettings
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AppVersionDetails as any);
+  // @ts-ignore
+)(AppVersionDetails);
