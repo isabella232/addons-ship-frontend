@@ -43,7 +43,7 @@ interface Props extends Settings {
     file: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
   ) => void;
   onCancel: () => void;
-  onSave: () => void;
+  onSave?: () => void;
   isSaving?: boolean;
 }
 
@@ -451,7 +451,7 @@ export default ({
           <Button level="secondary" width="8rem" onClick={onCancel}>
             Cancel
           </Button>
-          <Button disabled={isSaving} level="primary" width="8rem" onClick={onSave}>
+          <Button disabled={!onSave || isSaving} level="primary" width="8rem" onClick={onSave}>
             {isSaving ? (
               <Fragment>
                 <ProgressSpinner /> &nbsp; Saving...

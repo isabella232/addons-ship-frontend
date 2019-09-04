@@ -4,12 +4,13 @@ exports[`General configureSettingsFromProps sets the state correctly for android
 Object {
   "androidSettings": Object {
     "selectedKeystoreFile": "keystore-1",
-    "selectedServiceAccount": "service-accoun-1",
+    "selectedServiceAccount": "service-accoun-2",
     "track": "Release",
   },
   "androidWorkflow": "All",
   "hasAndroidSettings": true,
   "hasIosSettings": false,
+  "hasModifications": false,
   "hasMounted": true,
   "iosSettings": Object {
     "appSku": "Fill",
@@ -27,12 +28,13 @@ exports[`General configureSettingsFromProps sets the state correctly for ios 1`]
 Object {
   "androidSettings": Object {
     "selectedKeystoreFile": "keystore-1",
-    "selectedServiceAccount": "service-accoun-1",
+    "selectedServiceAccount": "service-accoun-2",
     "track": "Release",
   },
   "androidWorkflow": "All",
   "hasAndroidSettings": false,
   "hasIosSettings": true,
+  "hasModifications": false,
   "hasMounted": true,
   "iosSettings": Object {
     "appSku": "Fill",
@@ -50,12 +52,13 @@ exports[`General configureSettingsFromProps sets the state correctly for other p
 Object {
   "androidSettings": Object {
     "selectedKeystoreFile": "keystore-1",
-    "selectedServiceAccount": "service-accoun-1",
+    "selectedServiceAccount": "service-accoun-2",
     "track": "Release",
   },
   "androidWorkflow": "All",
   "hasAndroidSettings": true,
   "hasIosSettings": true,
+  "hasModifications": false,
   "hasMounted": true,
   "iosSettings": Object {
     "appSku": "Fill",
@@ -73,12 +76,13 @@ exports[`General onSettingsPropertyChange 1`] = `
 Object {
   "androidSettings": Object {
     "selectedKeystoreFile": "keystore-1",
-    "selectedServiceAccount": "service-accoun-1",
+    "selectedServiceAccount": "service-accoun-2",
     "track": "Release",
   },
   "androidWorkflow": "All",
   "hasAndroidSettings": true,
   "hasIosSettings": true,
+  "hasModifications": true,
   "hasMounted": true,
   "iosSettings": Object {
     "appSku": "some-vlaue",
@@ -97,7 +101,7 @@ exports[`General renders correctly 1`] = `
   androidSettings={
     Object {
       "selectedKeystoreFile": "keystore-1",
-      "selectedServiceAccount": "service-accoun-1",
+      "selectedServiceAccount": "service-accoun-2",
       "track": "Release",
     }
   }
@@ -118,6 +122,7 @@ exports[`General renders correctly 1`] = `
   hasAndroidSettings={true}
   hasIosSettings={true}
   hasLoaded={true}
+  hasModifications={false}
   hasMounted={true}
   iosSettings={
     Object {
@@ -144,7 +149,6 @@ exports[`General renders correctly 1`] = `
   }
   maximumNumberOfCertificates={30}
   onCancel={[Function]}
-  onSave={[Function]}
   onSelectedFileChange={[Function]}
   onSettingsPropertyChange={[Function]}
   onWorkflowChange={[Function]}
@@ -168,7 +172,7 @@ exports[`General renders correctly 1`] = `
       },
       Object {
         "name": "abcdefghijkl12345671566",
-        "slug": "service-accoun-1",
+        "slug": "service-accoun-2",
       },
     ]
   }
@@ -201,6 +205,7 @@ exports[`General renders correctly when loading 1`] = `
   hasAndroidSettings={false}
   hasIosSettings={false}
   hasLoaded={false}
+  hasModifications={false}
   hasMounted={true}
   iosSettings={
     Object {
@@ -227,7 +232,6 @@ exports[`General renders correctly when loading 1`] = `
   }
   maximumNumberOfCertificates={30}
   onCancel={[Function]}
-  onSave={[Function]}
   onSelectedFileChange={[Function]}
   onSettingsPropertyChange={[Function]}
   onWorkflowChange={[Function]}
@@ -251,7 +255,7 @@ exports[`General renders correctly when loading 1`] = `
       },
       Object {
         "name": "abcdefghijkl12345671566",
-        "slug": "service-accoun-1",
+        "slug": "service-accoun-2",
       },
     ]
   }
@@ -811,7 +815,7 @@ exports[`GeneralView when the settings are being saved 1`] = `
           key="0"
         >
           <RadioButton
-            checked={true}
+            checked={false}
             onChange={[Function]}
           >
             <Flex
@@ -1895,7 +1899,7 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
           key="0"
         >
           <RadioButton
-            checked={true}
+            checked={false}
             onChange={[Function]}
           >
             <Flex
@@ -2552,7 +2556,7 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
           key="0"
         >
           <RadioButton
-            checked={true}
+            checked={false}
             onChange={[Function]}
           >
             <Flex
@@ -3198,7 +3202,7 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
           key="0"
         >
           <RadioButton
-            checked={true}
+            checked={false}
             onChange={[Function]}
           >
             <Flex
