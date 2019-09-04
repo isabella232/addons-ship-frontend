@@ -29,6 +29,7 @@ import View from './view';
 export type Props = {
   appSlug: string;
   versionId: string;
+  isSaving: boolean;
   appVersion: AppVersion | null;
   settings: Settings;
   appVersionEvents: AppVersionEvent[];
@@ -110,14 +111,46 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   componentDidMount() {
-    const { appSlug, appVersion, startPollPublishStatus, fetchSettings } = this.props;
-    const { screenshotList } = this.state;
-
-    const newScreenshotList = { ...screenshotList };
+    const { appSlug, fetchSettings } = this.props;
 
     fetchSettings(appSlug);
+    this.init();
+  }
 
+  componentDidUpdate({ appVersionEvents: prevEvents, appVersion: prevAppVersion }: Props) {
+    const { appVersionEvents: events, cancelPollPublishStatus, appVersion } = this.props;
+
+    if (events.length && prevEvents.length !== events.length) {
+      const latestEvent = events[0];
+
+      if (latestEvent) {
+        const isPublishInProgress = latestEvent.status === 'in-progress';
+
+        this.setState({ latestEvent, isPublishInProgress });
+
+        if (!isPublishInProgress) {
+          cancelPollPublishStatus();
+        }
+      }
+    }
+
+    if (prevAppVersion === null && appVersion) {
+      this.init();
+    }
+  }
+
+  componentWillUnmount() {
+    const { cancelPollPublishStatus } = this.props;
+
+    cancelPollPublishStatus();
+  }
+
+  init = () => {
+    const { appVersion, startPollPublishStatus } = this.props;
+    const { screenshotList } = this.state;
     if (appVersion) {
+      const newScreenshotList = { ...screenshotList };
+
       this.setState({
         hasMounted: true,
         updatedAppVersion: appVersion
@@ -154,31 +187,7 @@ export class AppVersionDetails extends Component<Props, State> {
         this.setState({ featureGraphic: new FeatureGraphic(id, filename, downloadUrl) });
       }
     }
-  }
-
-  componentDidUpdate({ appVersionEvents: prevEvents }: Props) {
-    const { appVersionEvents: events, cancelPollPublishStatus } = this.props;
-
-    if (events.length && prevEvents.length !== events.length) {
-      const latestEvent = events[0];
-
-      if (latestEvent) {
-        const isPublishInProgress = latestEvent.status === 'in-progress';
-
-        this.setState({ latestEvent, isPublishInProgress });
-
-        if (!isPublishInProgress) {
-          cancelPollPublishStatus();
-        }
-      }
-    }
-  }
-
-  componentWillUnmount() {
-    const { cancelPollPublishStatus } = this.props;
-
-    cancelPollPublishStatus();
-  }
+  };
 
   onChange = (key: string, newValue: string) => {
     if (!key) return;
@@ -366,7 +375,7 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   render() {
-    const { appVersion } = this.props;
+    const { appVersion, isSaving } = this.props;
 
     if (!appVersion) {
       return (
@@ -388,6 +397,7 @@ export class AppVersionDetails extends Component<Props, State> {
     const viewProps = {
       appVersion,
       hasMounted,
+      isSaving,
       onChange: this.onChange,
       onSave: this.onSave,
       onPublish: this.onPublish,
@@ -420,10 +430,11 @@ export class AppVersionDetails extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ appVersion: { appVersion, events }, settings: { settings } }: RootState) => ({
+const mapStateToProps = ({ appVersion: { appVersion, events, isSaving }, settings: { settings } }: RootState) => ({
   appVersion,
   settings,
-  appVersionEvents: orderedAppVersionEvents(events)
+  appVersionEvents: orderedAppVersionEvents(events),
+  isSaving: isSaving > 0
 });
 const mapDispatchToProps = {
   updateAppVersion,

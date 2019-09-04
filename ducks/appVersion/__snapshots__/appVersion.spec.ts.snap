@@ -153,7 +153,7 @@ Object {
   },
   "events": Array [],
   "isPublishInProgress": false,
-  "isSaving": false,
+  "isSaving": 0,
 }
 `;
 
@@ -175,7 +175,7 @@ Object {
     },
   ],
   "isPublishInProgress": false,
-  "isSaving": false,
+  "isSaving": 0,
 }
 `;
 
@@ -184,7 +184,7 @@ Object {
   "appVersion": null,
   "events": Array [],
   "isPublishInProgress": false,
-  "isSaving": false,
+  "isSaving": 0,
 }
 `;
 
@@ -193,7 +193,7 @@ Object {
   "appVersion": null,
   "events": Array [],
   "isPublishInProgress": false,
-  "isSaving": false,
+  "isSaving": 0,
 }
 `;
 
@@ -202,7 +202,7 @@ Object {
   "appVersion": null,
   "events": Array [],
   "isPublishInProgress": true,
-  "isSaving": false,
+  "isSaving": 0,
 }
 `;
 

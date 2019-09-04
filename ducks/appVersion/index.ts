@@ -17,10 +17,10 @@ export type AppVersionState = {
   appVersion: AppVersion | null;
   isPublishInProgress?: boolean;
   events: AppVersionEvent[];
-  isSaving: boolean;
+  isSaving: number;
 };
 
-const defaultState: AppVersionState = { appVersion: null, isPublishInProgress: false, events: [], isSaving: false };
+const defaultState: AppVersionState = { appVersion: null, isPublishInProgress: false, events: [], isSaving: 0 };
 
 export {
   fetchAppVersion,
@@ -40,8 +40,7 @@ export default createReducer(defaultState, handleAction => [
       ...appVersion,
       ...payload,
       iconUrl: (appVersion && appVersion.iconUrl) || payload.iconUrl || placeholderAppIcon
-    },
-    isSaving: false
+    }
   })),
   handleAction(publishAppVersion.next, state => ({ ...state, isPublishInProgress: true })),
   handleAction([publishAppVersion.complete, publishAppVersion.error], state => ({
@@ -59,8 +58,25 @@ export default createReducer(defaultState, handleAction => [
       return appVersionEvent;
     })
   })),
-  handleAction(updateAppVersion.next, state => ({
-    ...state,
-    isSaving: true
-  }))
+  handleAction(
+    [updateAppVersion.next, uploadScreenshots.next, uploadFeatureGraphic.next],
+    ({ isSaving, ...state }) => ({
+      ...state,
+      isSaving: isSaving + 1
+    })
+  ),
+  handleAction(
+    [
+      updateAppVersion.complete,
+      uploadScreenshots.complete,
+      uploadFeatureGraphic.complete,
+      updateAppVersion.error,
+      uploadScreenshots.error,
+      uploadFeatureGraphic.error
+    ],
+    ({ isSaving, ...state }) => ({
+      ...state,
+      isSaving: isSaving - 1
+    })
+  )
 ]);
