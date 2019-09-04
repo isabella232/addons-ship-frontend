@@ -18,6 +18,7 @@ import {
   ProgressBitbot,
   ProgressSpinner
 } from '@bitrise/bitkit';
+import SVG from 'react-svg';
 
 import { Certificate, KeystoreFile, ProvProfile, ServiceAccountJsonFile, Settings } from '@/models/settings';
 import { mediaQuery } from '@/utils/media';
@@ -233,11 +234,11 @@ export default ({
                           direction="horizontal"
                           alignChildrenHorizontal="between"
                           alignChildrenVertical="middle"
-                          gap="x1"
-                          margin="x1"
+                          gap="x3"
+                          paddingHorizontal="x1"
                           paddingVertical="x3"
                         >
-                          <Icon name="Doc" size="2rem" color="grape-4" />
+                          <SVG src="/static/sheet-cog.svg" className={css.sheet} />
                           <Text size="x3">{provProfile.name}</Text>
                         </Flex>
                       </RadioButton>
@@ -268,11 +269,11 @@ export default ({
                           direction="horizontal"
                           alignChildrenHorizontal="between"
                           alignChildrenVertical="middle"
-                          gap="x1"
-                          margin="x1"
+                          gap="x3"
+                          paddingHorizontal="x1"
                           paddingVertical="x3"
                         >
-                          <Icon name="Doc" size="2rem" color="grape-4" />
+                          <SVG src="/static/sheet-badge.svg" className={css.sheet} />
                           <Text size="x3">{certificate.name}</Text>
                         </Flex>
                       </RadioButton>
@@ -390,11 +391,11 @@ export default ({
                           direction="horizontal"
                           alignChildrenHorizontal="between"
                           alignChildrenVertical="middle"
-                          gap="x1"
-                          margin="x1"
+                          gap="x3"
+                          paddingHorizontal="x1"
                           paddingVertical="x3"
                         >
-                          <Icon name="Doc" size="2rem" color="grape-4" />
+                          <SVG src="/static/sheet-key.svg" className={css.sheet} />
                           <Text size="x3">{keystoreFile.name}</Text>
                         </Flex>
                       </RadioButton>
@@ -426,11 +427,11 @@ export default ({
                             direction="horizontal"
                             alignChildrenHorizontal="between"
                             alignChildrenVertical="middle"
-                            gap="x1"
-                            margin="x1"
+                            gap="x3"
+                            paddingHorizontal="x1"
                             paddingVertical="x3"
                           >
-                            <Icon name="Doc" size="2rem" color="grape-4" />
+                            <SVG src="/static/sheet-cog.svg" className={css.sheet} />
                             <Text size="x3">{serviceAccountJsonFile.name}</Text>
                           </Flex>
                         </RadioButton>
