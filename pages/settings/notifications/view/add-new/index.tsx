@@ -1,15 +1,16 @@
-import { useState, ChangeEvent } from 'react';
-import { InputLabel, InputContainer, InputContent, Input, Button } from '@bitrise/bitkit';
+import { Fragment } from 'react';
+import { InputLabel, InputContainer, InputContent, Input, Button, ProgressSpinner } from '@bitrise/bitkit';
 
 import css from './style.scss';
 
 export type Props = {
+  email: string;
+  onEmailChange: (email: string) => void;
   onAddEmail: (email: string) => void;
+  isAddingEmail: boolean;
 };
 
-export default ({ onAddEmail }: Props) => {
-  const [email, setEmail] = useState('');
-
+export default ({ email, onEmailChange, onAddEmail, isAddingEmail }: Props) => {
   return (
     <form
       className={css.container}
@@ -24,15 +25,20 @@ export default ({ onAddEmail }: Props) => {
           <Input
             placeholder="Email address"
             value={email}
-            onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setEmail(value)}
+            onChange={(event: any) => onEmailChange(event.target.value)}
             type="email"
+            disabled={isAddingEmail}
           />
         </InputContent>
-        <InputContent outside>
-          <Button level="secondary" disabled={!email}>
-            Add
-          </Button>
-        </InputContent>
+        <Button level="secondary" disabled={!email || isAddingEmail}>
+          {isAddingEmail ? (
+            <Fragment>
+              <ProgressSpinner /> &nbsp; Adding...
+            </Fragment>
+          ) : (
+            'Add'
+          )}
+        </Button>
       </InputContainer>
     </form>
   );

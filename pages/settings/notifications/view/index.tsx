@@ -10,7 +10,10 @@ export interface Props extends AddNewProps, ListProps {
 }
 
 export default ({
+  email,
+  onEmailChange,
   onAddEmail,
+  isAddingEmail,
   appContacts,
   onNotificationPreferenceChanged,
   onDeleteContact,
@@ -29,7 +32,7 @@ export default ({
       </Notification>
     )}
     <Base margin="x6">
-      <AddNew onAddEmail={onAddEmail} />
+      <AddNew email={email} onEmailChange={onEmailChange} onAddEmail={onAddEmail} isAddingEmail={isAddingEmail} />
     </Base>
     <Base margin="x4">
       <List

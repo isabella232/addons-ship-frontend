@@ -17,6 +17,8 @@ type Props = {
 };
 
 type State = {
+  email: string;
+  isAddingEmail: boolean;
   hasModifications: boolean;
   updatedAppContacts: AppContact[];
   error?: string;
@@ -24,6 +26,8 @@ type State = {
 
 export class NotificationSettings extends React.Component<Props, State> {
   state: State = {
+    email: '',
+    isAddingEmail: false,
     hasModifications: false,
     updatedAppContacts: this.props.appContacts
   };
@@ -32,9 +36,16 @@ export class NotificationSettings extends React.Component<Props, State> {
     const { appContacts } = this.props;
 
     if (prevAppContacts.length !== appContacts.length) {
-      this.setState({ updatedAppContacts: appContacts, hasModifications: false });
+      if (this.state.isAddingEmail) {
+        this.setState({ email: '' });
+      }
+      this.setState({ updatedAppContacts: appContacts, hasModifications: false, isAddingEmail: false });
     }
   }
+
+  onEmailChange = (email: string) => {
+    this.setState({ email });
+  };
 
   onAddEmail = (email: string) => {
     const { appSlug, addAppContact, appContacts } = this.props;
@@ -45,7 +56,7 @@ export class NotificationSettings extends React.Component<Props, State> {
       return;
     }
 
-    this.setState({ error: undefined });
+    this.setState({ error: undefined, isAddingEmail: true });
 
     addAppContact(appSlug, email);
   };
@@ -115,11 +126,14 @@ export class NotificationSettings extends React.Component<Props, State> {
   };
 
   render() {
-    const { updatedAppContacts, hasModifications, error } = this.state;
+    const { email, isAddingEmail, updatedAppContacts, hasModifications, error } = this.state;
 
     const props = {
       appContacts: updatedAppContacts,
+      email: email,
+      onEmailChange: this.onEmailChange,
       onAddEmail: this.onAddEmail,
+      isAddingEmail: isAddingEmail,
       onNotificationPreferenceChanged: this.onNotificationPreferenceChanged,
       onDeleteContact: this.onDeleteContact,
       onSave: hasModifications ? this.onSave : undefined,

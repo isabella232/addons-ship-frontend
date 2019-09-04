@@ -1,9 +1,11 @@
+@import '~@/assets/style/mixins';
 @import '~@/assets/style/dimensions';
 
 .container {
-  max-width: 26rem;
-  :global(.Input__content--outside .Button) {
-    margin: 0 $grid * -3;
+  max-width: 28rem;
+  :global(.Input__container .Button) {
     border: none;
+    border-radius: 0;
+    width: 8.25rem;
   }
 }

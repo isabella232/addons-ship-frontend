@@ -14,20 +14,15 @@ exports[`NotificationSettings View AddNew renders correctly 1`] = `
         onChange={[Function]}
         placeholder="Email address"
         type="email"
-        value=""
       />
     </InputContent>
-    <InputContent
-      outside={true}
+    <Button
+      disabled={true}
+      level="secondary"
+      size="medium"
     >
-      <Button
-        disabled={true}
-        level="secondary"
-        size="medium"
-      >
-        Add
-      </Button>
-    </InputContent>
+      Add
+    </Button>
   </InputContainer>
 </form>
 `;
