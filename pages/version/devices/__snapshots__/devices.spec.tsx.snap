@@ -57,7 +57,7 @@ exports[`AppVersion renders the details tab correctly with UDID 1`] = `
       </TableHeader>
       <TableBody>
         <TableRow
-          key="some-device-id-01"
+          key="test-user-1-some-device-id-01"
         >
           <TableCell>
             test-user-1
@@ -70,7 +70,7 @@ exports[`AppVersion renders the details tab correctly with UDID 1`] = `
           </TableCell>
         </TableRow>
         <TableRow
-          key="some-device-id-02"
+          key="test-user-1-some-device-id-02"
         >
           <TableCell>
             test-user-1
@@ -83,7 +83,7 @@ exports[`AppVersion renders the details tab correctly with UDID 1`] = `
           </TableCell>
         </TableRow>
         <TableRow
-          key="some-device-id-03"
+          key="test-user-2-some-device-id-03"
         >
           <TableCell>
             test-user-2
@@ -133,7 +133,7 @@ exports[`AppVersion renders the details tab correctly with UUID 1`] = `
       </TableHeader>
       <TableBody>
         <TableRow
-          key="some-device-id-01"
+          key="test-user-1-some-device-id-01"
         >
           <TableCell>
             test-user-1
@@ -146,7 +146,7 @@ exports[`AppVersion renders the details tab correctly with UUID 1`] = `
           </TableCell>
         </TableRow>
         <TableRow
-          key="some-device-id-02"
+          key="test-user-1-some-device-id-02"
         >
           <TableCell>
             test-user-1
@@ -159,7 +159,7 @@ exports[`AppVersion renders the details tab correctly with UUID 1`] = `
           </TableCell>
         </TableRow>
         <TableRow
-          key="some-device-id-03"
+          key="test-user-2-some-device-id-03"
         >
           <TableCell>
             test-user-2
@@ -209,7 +209,7 @@ exports[`AppVersion renders the details tab correctly with device ID 1`] = `
       </TableHeader>
       <TableBody>
         <TableRow
-          key="some-device-id-01"
+          key="test-user-1-some-device-id-01"
         >
           <TableCell>
             test-user-1
@@ -222,7 +222,7 @@ exports[`AppVersion renders the details tab correctly with device ID 1`] = `
           </TableCell>
         </TableRow>
         <TableRow
-          key="some-device-id-02"
+          key="test-user-1-some-device-id-02"
         >
           <TableCell>
             test-user-1
@@ -235,7 +235,7 @@ exports[`AppVersion renders the details tab correctly with device ID 1`] = `
           </TableCell>
         </TableRow>
         <TableRow
-          key="some-device-id-03"
+          key="test-user-2-some-device-id-03"
         >
           <TableCell>
             test-user-2
