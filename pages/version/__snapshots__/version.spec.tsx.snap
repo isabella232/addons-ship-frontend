@@ -2,6 +2,7 @@
 
 exports[`AppVersion dispatches the proper actions calculates path correctly on the client too 1`] = `
 Object {
+  "activityLastSeen": 0,
   "appSlug": undefined,
   "isPublic": undefined,
   "pagePath": "/such/path",
@@ -12,6 +13,7 @@ Object {
 
 exports[`AppVersion dispatches the proper actions dispatches fetchAppVersion and fetchSettings 1`] = `
 Object {
+  "activityLastSeen": 0,
   "appSlug": undefined,
   "isPublic": undefined,
   "pagePath": "some/path",
@@ -22,6 +24,7 @@ Object {
 
 exports[`AppVersion dispatches the proper actions dispatches fetchAppVersionEvents 1`] = `
 Object {
+  "activityLastSeen": 0,
   "appSlug": undefined,
   "isPublic": undefined,
   "pagePath": "some/path",
@@ -32,12 +35,141 @@ Object {
 
 exports[`AppVersion dispatches the proper actions dispatches fetchTestDevices 1`] = `
 Object {
+  "activityLastSeen": 0,
   "appSlug": undefined,
   "isPublic": undefined,
   "pagePath": "some/path",
   "selectedTab": "devices",
   "versionId": undefined,
 }
+`;
+
+exports[`AppVersion displays a new activity marker badge 1`] = `
+<Fragment>
+  <Base>
+    <Base
+      maxWidth={960}
+    >
+      <Tabs
+        gap="x12"
+      >
+        <Link
+          as="some/path/details"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
+        >
+          <a>
+            <Tab
+              active={true}
+              paddingHorizontal="x2"
+            >
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Details
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/devices"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
+        >
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
+            >
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Devices
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/qa"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
+        >
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
+            >
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Qa
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/activity"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+        >
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
+            >
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <Dot
+                  backgroundColor="red-3"
+                  size=".5rem"
+                />
+                <span
+                  className="tabAnchor"
+                >
+                  Activity
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+      </Tabs>
+    </Base>
+    <Divider
+      color="gray-2"
+      direction="horizontal"
+      width="1px"
+    />
+    <Base
+      maxWidth={960}
+    >
+      <Connect(AppVersionDetails) />
+    </Base>
+  </Base>
+  <Flex
+    className="footerWrapper"
+  >
+    <AddonFooter
+      addonName="Ship"
+    />
+  </Flex>
+</Fragment>
 `;
 
 exports[`AppVersion renders the activity tab correctly 1`] = `
@@ -49,72 +181,104 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
       <Tabs
         gap="x12"
       >
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+        <Link
+          as="some/path/details"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
         >
-          <Link
-            as="some/path/details"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Details
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Details
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/devices"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
         >
-          <Link
-            as="some/path/devices"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Devices
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Devices
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/qa"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
         >
-          <Link
-            as="some/path/qa"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Qa
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={true}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Qa
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/activity"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
         >
-          <Link
-            as="some/path/activity"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={true}
+              paddingHorizontal="x2"
             >
-              Activity
-            </a>
-          </Link>
-        </Tab>
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Activity
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
       </Tabs>
     </Base>
     <Divider
       color="gray-2"
       direction="horizontal"
-      width="0.125rem"
+      width="1px"
     />
     <Base
       maxWidth={960}
@@ -141,72 +305,104 @@ exports[`AppVersion renders the details tab correctly 1`] = `
       <Tabs
         gap="x12"
       >
-        <Tab
-          active={true}
-          paddingHorizontal="x2"
+        <Link
+          as="some/path/details"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
         >
-          <Link
-            as="some/path/details"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={true}
+              paddingHorizontal="x2"
             >
-              Details
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Details
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/devices"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
         >
-          <Link
-            as="some/path/devices"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Devices
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Devices
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/qa"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
         >
-          <Link
-            as="some/path/qa"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Qa
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Qa
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/activity"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
         >
-          <Link
-            as="some/path/activity"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Activity
-            </a>
-          </Link>
-        </Tab>
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Activity
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
       </Tabs>
     </Base>
     <Divider
       color="gray-2"
       direction="horizontal"
-      width="0.125rem"
+      width="1px"
     />
     <Base
       maxWidth={960}
@@ -233,72 +429,104 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
       <Tabs
         gap="x12"
       >
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+        <Link
+          as="some/path/details"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
         >
-          <Link
-            as="some/path/details"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Details
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={true}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Details
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/devices"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
         >
-          <Link
-            as="some/path/devices"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={true}
+              paddingHorizontal="x2"
             >
-              Devices
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Devices
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/qa"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
         >
-          <Link
-            as="some/path/qa"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Qa
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Qa
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/activity"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
         >
-          <Link
-            as="some/path/activity"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Activity
-            </a>
-          </Link>
-        </Tab>
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Activity
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
       </Tabs>
     </Base>
     <Divider
       color="gray-2"
       direction="horizontal"
-      width="0.125rem"
+      width="1px"
     />
     <Base
       maxWidth={960}
@@ -325,72 +553,104 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
       <Tabs
         gap="x12"
       >
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+        <Link
+          as="some/path/details"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
         >
-          <Link
-            as="some/path/details"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Details
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Details
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/devices"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
         >
-          <Link
-            as="some/path/devices"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Devices
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Devices
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/qa"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
         >
-          <Link
-            as="some/path/qa"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Qa
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Qa
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/activity"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
         >
-          <Link
-            as="some/path/activity"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Activity
-            </a>
-          </Link>
-        </Tab>
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Activity
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
       </Tabs>
     </Base>
     <Divider
       color="gray-2"
       direction="horizontal"
-      width="0.125rem"
+      width="1px"
     />
     <Base
       maxWidth={960}
@@ -419,72 +679,104 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
       <Tabs
         gap="x12"
       >
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+        <Link
+          as="some/path/details"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
         >
-          <Link
-            as="some/path/details"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=details"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Details
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Details
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/devices"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
         >
-          <Link
-            as="some/path/devices"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=devices"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Devices
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={true}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Devices
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/qa"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
         >
-          <Link
-            as="some/path/qa"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=qa"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={true}
+              paddingHorizontal="x2"
             >
-              Qa
-            </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
-          paddingHorizontal="x2"
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Qa
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
+        <Link
+          as="some/path/activity"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
         >
-          <Link
-            as="some/path/activity"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
-          >
-            <a
-              className="tabAnchor"
+          <a>
+            <Tab
+              active={false}
+              paddingHorizontal="x2"
             >
-              Activity
-            </a>
-          </Link>
-        </Tab>
+              <Flex
+                alignChildren="middle"
+                direction="horizontal"
+                gap="x1"
+              >
+                <span
+                  className="tabAnchor"
+                >
+                  Activity
+                </span>
+              </Flex>
+            </Tab>
+          </a>
+        </Link>
       </Tabs>
     </Base>
     <Divider
       color="gray-2"
       direction="horizontal"
-      width="0.125rem"
+      width="1px"
     />
     <Base
       maxWidth={960}
