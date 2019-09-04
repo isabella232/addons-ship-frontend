@@ -30,7 +30,7 @@ import PageTitle from './PageTitle';
 
 export type Props = {
   app?: App;
-  appVersion: AppVersion;
+  appVersion: AppVersion | null;
   shouldShowSettingsOnboarding: boolean;
 };
 
@@ -94,8 +94,10 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding }: Props)
       pageTitle = 'Settings';
       break;
     case 'version':
-      const { version, buildNumber } = appVersion;
-      pageTitle = `${title} v${version} (${buildNumber})`;
+      if (appVersion) {
+        const { version, buildNumber } = appVersion;
+        pageTitle = `${title} v${version} (${buildNumber})`;
+      }
       break;
     case 'app':
     default:

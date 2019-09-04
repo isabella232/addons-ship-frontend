@@ -3,7 +3,7 @@ jest.mock('@/utils/device');
 jest.mock('@/ducks/appVersion');
 jest.mock('@/services/settings');
 
-import { shallow, mount } from 'enzyme';
+import { shallow, mount, ShallowWrapper } from 'enzyme';
 import toJSON, { shallowToJson } from 'enzyme-to-json';
 
 import { mockAppVersion, mockAppVersionWithoutPublicPage, mockAndroidAppVersion, mockSettings } from '@/mocks';
@@ -131,8 +131,11 @@ describe('AppVersionDetailsView', () => {
 
 describe('AppVersionDetails', () => {
   const defaultProps: AppVersionDetailsProps = {
+    appSlug: 'an-app-slug',
+    versionId: 'the-version-id',
     appVersion: mockAppVersion,
     settings: mockSettings,
+    fetchSettings: jest.fn() as any,
     updateAppVersion: jest.fn() as any,
     uploadScreenshots: jest.fn() as any,
     deleteScreenshot: jest.fn() as any,
@@ -147,6 +150,12 @@ describe('AppVersionDetails', () => {
   it('renders correctly', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
     const tree = toJSON(shallow(<AppVersionDetails {...defaultProps} />));
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders the loading state correctly', () => {
+    (mediaQuery as jest.Mock).mockReturnValue([true]);
+    const tree = toJSON(shallow(<AppVersionDetails {...defaultProps} appVersion={null} />));
     expect(tree).toMatchSnapshot();
   });
 
@@ -234,22 +243,6 @@ describe('AppVersionDetails', () => {
     });
   });
 
-  describe('readyForPublish', () => {
-    describe('when settings are filled out', () => {
-      (settingService.isComplete as jest.Mock).mockReturnValue(true);
-      const wrap = shallow(<AppVersionDetails {...defaultProps} />);
-
-      expect((wrap.instance() as AppVersionDetails).readyForPublish()).toBeTruthy();
-    });
-
-    describe('when settings are incomplete', () => {
-      (settingService.isComplete as jest.Mock).mockReturnValue(false);
-      const wrap = shallow(<AppVersionDetails {...defaultProps} />);
-
-      expect((wrap.instance() as AppVersionDetails).readyForPublish()).toBeFalsy();
-    });
-  });
-
   it('triggers a state update when a form item is modified', () => {
     const tree = mount(<AppVersionDetails {...defaultProps} />);
 
@@ -307,7 +300,7 @@ describe('AppVersionDetails', () => {
   });
 
   describe('Component methods', () => {
-    const wrap = shallow(<AppVersionDetails {...defaultProps} />);
+    let wrap: ShallowWrapper;
     const deviceId = 'iphone65',
       otherDeviceId = 'other-iphone65',
       screenshot = new Screenshot('screenshot-id', 'image.png', new File([], 'image.png'), 1000, 'iPhone 6.5”');
@@ -319,6 +312,7 @@ describe('AppVersionDetails', () => {
         [otherDeviceId]: { deviceName: 'iPhone 5.8”', screenshots: [new Screenshot('screenshot-2', 'image2.png', new File([], 'image2.jpg'))]},
         'device-without-screenshots': { deviceName: 'whatever', screenshots: null }
       };
+      wrap = shallow(<AppVersionDetails {...defaultProps} />);
 
       wrap.setState({
         screenshotList,
@@ -413,6 +407,35 @@ describe('AppVersionDetails', () => {
         (wrap.instance() as AppVersionDetails).onSave();
 
         expect(deleteFeatureGraphic).toHaveBeenCalledWith(appSlug, id);
+      });
+    });
+
+    test('shouldEnableInstall', () => {
+      wrap.setProps({ appVersion: null });
+      expect((wrap.instance() as AppVersionDetails).shouldEnableInstall()).toBe(false);
+    });
+
+    describe('readyForPublish', () => {
+      test('when settings are filled out', () => {
+        (settingService.isComplete as jest.Mock).mockReturnValue(true);
+        expect((wrap.instance() as AppVersionDetails).readyForPublish()).toBeTruthy();
+      });
+
+      test('when settings are incomplete', () => {
+        (settingService.isComplete as jest.Mock).mockReturnValue(false);
+        expect((wrap.instance() as AppVersionDetails).readyForPublish()).toBeFalsy();
+      });
+
+      test('when appVersion is null', () => {
+        wrap.setProps({ appVersion: null });
+        expect((wrap.instance() as AppVersionDetails).readyForPublish()).toBe(false);
+      });
+    });
+
+    describe('onScreenshotAdded', () => {
+      test('when appVersion is null', () => {
+        wrap.setProps({ appVersion: null });
+        expect((wrap.instance() as AppVersionDetails).onScreenshotAdded('x', [])).toBeUndefined();
       });
     });
   });
