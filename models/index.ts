@@ -48,7 +48,6 @@ export type AppVersion = {
   supportUrl?: string;
   marketingUrl?: string;
   scheme?: string;
-  configuration?: string;
   module?: string;
   variant?: string;
   buildType?: string;

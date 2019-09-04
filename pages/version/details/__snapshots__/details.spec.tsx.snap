@@ -140,7 +140,6 @@ Object {
     "buildNumber": 32,
     "buildSlug": "13245ads",
     "bundleId": "bundle-id",
-    "configuration": "canary",
     "description": "Some semi-long description",
     "distributionType": "development",
     "iconUrl": "http://placekitten.com/160/160",
@@ -517,7 +516,6 @@ exports[`AppVersionDetails disables install button when there is no public insta
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
-      "configuration": "canary",
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
@@ -857,7 +855,6 @@ exports[`AppVersionDetails renders correctly 1`] = `
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
-      "configuration": "canary",
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
@@ -4779,7 +4776,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
-      "configuration": "canary",
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
@@ -5395,7 +5391,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
-                          "configuration": "canary",
                           "description": "Some semi-long description",
                           "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
@@ -8194,94 +8189,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                         }
                                       >
                                         iphone, ipad
-                                      </div>
-                                    </Base>
-                                  </Text>
-                                  <Divider
-                                    color="gray-2"
-                                    direction="horizontal"
-                                    margin="x4"
-                                    width="0.125rem"
-                                  >
-                                    <Base
-                                      Component="hr"
-                                      className="Divider"
-                                      color="gray-2"
-                                      margin="x4"
-                                      style={
-                                        Object {
-                                          "borderTopWidth": "0.125rem",
-                                        }
-                                      }
-                                    >
-                                      <hr
-                                        className="Base Base--color-gray-2 Base--margin-x4 Divider"
-                                        style={
-                                          Object {
-                                            "borderTopWidth": "0.125rem",
-                                            "height": undefined,
-                                            "maxHeight": undefined,
-                                            "maxWidth": undefined,
-                                            "minHeight": undefined,
-                                            "minWidth": undefined,
-                                            "width": undefined,
-                                          }
-                                        }
-                                      />
-                                    </Base>
-                                  </Divider>
-                                  <InputLabel>
-                                    <Text
-                                      color="grape-4"
-                                      margin="x1"
-                                      size="x3"
-                                      weight="bold"
-                                    >
-                                      <Base
-                                        Component="div"
-                                        className="Text Text--size-x3 Text--weight-bold"
-                                        color="grape-4"
-                                        margin="x1"
-                                      >
-                                        <div
-                                          className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                          style={
-                                            Object {
-                                              "height": undefined,
-                                              "maxHeight": undefined,
-                                              "maxWidth": undefined,
-                                              "minHeight": undefined,
-                                              "minWidth": undefined,
-                                              "width": undefined,
-                                            }
-                                          }
-                                        >
-                                          Configuration
-                                        </div>
-                                      </Base>
-                                    </Text>
-                                  </InputLabel>
-                                  <Text
-                                    size="x3"
-                                  >
-                                    <Base
-                                      Component="div"
-                                      className="Text Text--size-x3"
-                                    >
-                                      <div
-                                        className="Base Text Text--size-x3"
-                                        style={
-                                          Object {
-                                            "height": undefined,
-                                            "maxHeight": undefined,
-                                            "maxWidth": undefined,
-                                            "minHeight": undefined,
-                                            "minWidth": undefined,
-                                            "width": undefined,
-                                          }
-                                        }
-                                      >
-                                        canary
                                       </div>
                                     </Base>
                                   </Text>
@@ -9055,7 +8962,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
-      "configuration": "canary",
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
@@ -9711,7 +9617,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
-                          "configuration": "canary",
                           "description": "Some semi-long description",
                           "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
@@ -12546,94 +12451,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                       />
                                     </Base>
                                   </Divider>
-                                  <InputLabel>
-                                    <Text
-                                      color="grape-4"
-                                      margin="x1"
-                                      size="x3"
-                                      weight="bold"
-                                    >
-                                      <Base
-                                        Component="div"
-                                        className="Text Text--size-x3 Text--weight-bold"
-                                        color="grape-4"
-                                        margin="x1"
-                                      >
-                                        <div
-                                          className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                          style={
-                                            Object {
-                                              "height": undefined,
-                                              "maxHeight": undefined,
-                                              "maxWidth": undefined,
-                                              "minHeight": undefined,
-                                              "minWidth": undefined,
-                                              "width": undefined,
-                                            }
-                                          }
-                                        >
-                                          Configuration
-                                        </div>
-                                      </Base>
-                                    </Text>
-                                  </InputLabel>
-                                  <Text
-                                    size="x3"
-                                  >
-                                    <Base
-                                      Component="div"
-                                      className="Text Text--size-x3"
-                                    >
-                                      <div
-                                        className="Base Text Text--size-x3"
-                                        style={
-                                          Object {
-                                            "height": undefined,
-                                            "maxHeight": undefined,
-                                            "maxWidth": undefined,
-                                            "minHeight": undefined,
-                                            "minWidth": undefined,
-                                            "width": undefined,
-                                          }
-                                        }
-                                      >
-                                        canary
-                                      </div>
-                                    </Base>
-                                  </Text>
-                                  <Divider
-                                    color="gray-2"
-                                    direction="horizontal"
-                                    margin="x4"
-                                    width="0.125rem"
-                                  >
-                                    <Base
-                                      Component="hr"
-                                      className="Divider"
-                                      color="gray-2"
-                                      margin="x4"
-                                      style={
-                                        Object {
-                                          "borderTopWidth": "0.125rem",
-                                        }
-                                      }
-                                    >
-                                      <hr
-                                        className="Base Base--color-gray-2 Base--margin-x4 Divider"
-                                        style={
-                                          Object {
-                                            "borderTopWidth": "0.125rem",
-                                            "height": undefined,
-                                            "maxHeight": undefined,
-                                            "maxWidth": undefined,
-                                            "minHeight": undefined,
-                                            "minWidth": undefined,
-                                            "width": undefined,
-                                          }
-                                        }
-                                      />
-                                    </Base>
-                                  </Divider>
                                 </div>
                               </Base>
                             </Flex>
@@ -13371,7 +13188,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
-      "configuration": "canary",
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
@@ -13987,7 +13803,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
-                          "configuration": "canary",
                           "description": "Some semi-long description",
                           "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
@@ -16822,94 +16637,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                       />
                                     </Base>
                                   </Divider>
-                                  <InputLabel>
-                                    <Text
-                                      color="grape-4"
-                                      margin="x1"
-                                      size="x3"
-                                      weight="bold"
-                                    >
-                                      <Base
-                                        Component="div"
-                                        className="Text Text--size-x3 Text--weight-bold"
-                                        color="grape-4"
-                                        margin="x1"
-                                      >
-                                        <div
-                                          className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                          style={
-                                            Object {
-                                              "height": undefined,
-                                              "maxHeight": undefined,
-                                              "maxWidth": undefined,
-                                              "minHeight": undefined,
-                                              "minWidth": undefined,
-                                              "width": undefined,
-                                            }
-                                          }
-                                        >
-                                          Configuration
-                                        </div>
-                                      </Base>
-                                    </Text>
-                                  </InputLabel>
-                                  <Text
-                                    size="x3"
-                                  >
-                                    <Base
-                                      Component="div"
-                                      className="Text Text--size-x3"
-                                    >
-                                      <div
-                                        className="Base Text Text--size-x3"
-                                        style={
-                                          Object {
-                                            "height": undefined,
-                                            "maxHeight": undefined,
-                                            "maxWidth": undefined,
-                                            "minHeight": undefined,
-                                            "minWidth": undefined,
-                                            "width": undefined,
-                                          }
-                                        }
-                                      >
-                                        canary
-                                      </div>
-                                    </Base>
-                                  </Text>
-                                  <Divider
-                                    color="gray-2"
-                                    direction="horizontal"
-                                    margin="x4"
-                                    width="0.125rem"
-                                  >
-                                    <Base
-                                      Component="hr"
-                                      className="Divider"
-                                      color="gray-2"
-                                      margin="x4"
-                                      style={
-                                        Object {
-                                          "borderTopWidth": "0.125rem",
-                                        }
-                                      }
-                                    >
-                                      <hr
-                                        className="Base Base--color-gray-2 Base--margin-x4 Divider"
-                                        style={
-                                          Object {
-                                            "borderTopWidth": "0.125rem",
-                                            "height": undefined,
-                                            "maxHeight": undefined,
-                                            "maxWidth": undefined,
-                                            "minHeight": undefined,
-                                            "minWidth": undefined,
-                                            "width": undefined,
-                                          }
-                                        }
-                                      />
-                                    </Base>
-                                  </Divider>
                                 </div>
                               </Base>
                             </Flex>
@@ -17470,7 +17197,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
               "buildNumber": 32,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
-              "configuration": "canary",
               "description": "Some semi-long description",
               "distributionType": "development",
               "iconUrl": "http://placekitten.com/160/160",
@@ -17643,7 +17369,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
               "buildNumber": 32,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
-              "configuration": "canary",
               "description": "Some semi-long description",
               "distributionType": "development",
               "iconUrl": "http://placekitten.com/160/160",
@@ -17724,7 +17449,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
-      "configuration": "canary",
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
@@ -18352,7 +18076,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
-                          "configuration": "canary",
                           "description": "Some semi-long description",
                           "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
@@ -21187,94 +20910,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                       />
                                     </Base>
                                   </Divider>
-                                  <InputLabel>
-                                    <Text
-                                      color="grape-4"
-                                      margin="x1"
-                                      size="x3"
-                                      weight="bold"
-                                    >
-                                      <Base
-                                        Component="div"
-                                        className="Text Text--size-x3 Text--weight-bold"
-                                        color="grape-4"
-                                        margin="x1"
-                                      >
-                                        <div
-                                          className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                          style={
-                                            Object {
-                                              "height": undefined,
-                                              "maxHeight": undefined,
-                                              "maxWidth": undefined,
-                                              "minHeight": undefined,
-                                              "minWidth": undefined,
-                                              "width": undefined,
-                                            }
-                                          }
-                                        >
-                                          Configuration
-                                        </div>
-                                      </Base>
-                                    </Text>
-                                  </InputLabel>
-                                  <Text
-                                    size="x3"
-                                  >
-                                    <Base
-                                      Component="div"
-                                      className="Text Text--size-x3"
-                                    >
-                                      <div
-                                        className="Base Text Text--size-x3"
-                                        style={
-                                          Object {
-                                            "height": undefined,
-                                            "maxHeight": undefined,
-                                            "maxWidth": undefined,
-                                            "minHeight": undefined,
-                                            "minWidth": undefined,
-                                            "width": undefined,
-                                          }
-                                        }
-                                      >
-                                        canary
-                                      </div>
-                                    </Base>
-                                  </Text>
-                                  <Divider
-                                    color="gray-2"
-                                    direction="horizontal"
-                                    margin="x4"
-                                    width="0.125rem"
-                                  >
-                                    <Base
-                                      Component="hr"
-                                      className="Divider"
-                                      color="gray-2"
-                                      margin="x4"
-                                      style={
-                                        Object {
-                                          "borderTopWidth": "0.125rem",
-                                        }
-                                      }
-                                    >
-                                      <hr
-                                        className="Base Base--color-gray-2 Base--margin-x4 Divider"
-                                        style={
-                                          Object {
-                                            "borderTopWidth": "0.125rem",
-                                            "height": undefined,
-                                            "maxHeight": undefined,
-                                            "maxWidth": undefined,
-                                            "minHeight": undefined,
-                                            "minWidth": undefined,
-                                            "width": undefined,
-                                          }
-                                        }
-                                      />
-                                    </Base>
-                                  </Divider>
                                 </div>
                               </Base>
                             </Flex>
@@ -22012,7 +21647,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
-      "configuration": "canary",
       "description": "Some semi-long description",
       "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
@@ -22864,7 +22498,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
-                          "configuration": "canary",
                           "description": "Some semi-long description",
                           "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
@@ -25663,94 +25296,6 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                         }
                                       >
                                         iphone, ipad
-                                      </div>
-                                    </Base>
-                                  </Text>
-                                  <Divider
-                                    color="gray-2"
-                                    direction="horizontal"
-                                    margin="x4"
-                                    width="0.125rem"
-                                  >
-                                    <Base
-                                      Component="hr"
-                                      className="Divider"
-                                      color="gray-2"
-                                      margin="x4"
-                                      style={
-                                        Object {
-                                          "borderTopWidth": "0.125rem",
-                                        }
-                                      }
-                                    >
-                                      <hr
-                                        className="Base Base--color-gray-2 Base--margin-x4 Divider"
-                                        style={
-                                          Object {
-                                            "borderTopWidth": "0.125rem",
-                                            "height": undefined,
-                                            "maxHeight": undefined,
-                                            "maxWidth": undefined,
-                                            "minHeight": undefined,
-                                            "minWidth": undefined,
-                                            "width": undefined,
-                                          }
-                                        }
-                                      />
-                                    </Base>
-                                  </Divider>
-                                  <InputLabel>
-                                    <Text
-                                      color="grape-4"
-                                      margin="x1"
-                                      size="x3"
-                                      weight="bold"
-                                    >
-                                      <Base
-                                        Component="div"
-                                        className="Text Text--size-x3 Text--weight-bold"
-                                        color="grape-4"
-                                        margin="x1"
-                                      >
-                                        <div
-                                          className="Base Base--color-grape-4 Base--margin-x1 Text Text--size-x3 Text--weight-bold"
-                                          style={
-                                            Object {
-                                              "height": undefined,
-                                              "maxHeight": undefined,
-                                              "maxWidth": undefined,
-                                              "minHeight": undefined,
-                                              "minWidth": undefined,
-                                              "width": undefined,
-                                            }
-                                          }
-                                        >
-                                          Configuration
-                                        </div>
-                                      </Base>
-                                    </Text>
-                                  </InputLabel>
-                                  <Text
-                                    size="x3"
-                                  >
-                                    <Base
-                                      Component="div"
-                                      className="Text Text--size-x3"
-                                    >
-                                      <div
-                                        className="Base Text Text--size-x3"
-                                        style={
-                                          Object {
-                                            "height": undefined,
-                                            "maxHeight": undefined,
-                                            "maxWidth": undefined,
-                                            "minHeight": undefined,
-                                            "minWidth": undefined,
-                                            "width": undefined,
-                                          }
-                                        }
-                                      >
-                                        canary
                                       </div>
                                     </Base>
                                   </Text>
