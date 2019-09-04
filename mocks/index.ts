@@ -253,9 +253,9 @@ export const mockFinishedAppVersionEvent: AppVersionEvent = {
   id: '1234',
   status: 'finished',
   text: 'Event finished successfully!',
-  createdAtTimestamp: new Date('2018-09-20T12:42:31Z').getDate(),
+  createdAtTimestamp: new Date('2018-09-20T12:42:31Z').getTime(),
   createdAt: new Date('2018-09-20T12:42:31Z'),
-  updatedAtTimestamp: new Date('2018-09-21T12:42:31Z').getDate(),
+  updatedAtTimestamp: new Date('2018-09-21T12:42:31Z').getTime(),
   updatedAt: new Date('2018-09-21T12:42:31Z'),
   logDownloadUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg'
 };
@@ -264,9 +264,9 @@ export const mockInProgressAppVersionEvent: AppVersionEvent = {
   id: '1234',
   status: 'in-progress',
   text: 'Doing something...',
-  createdAtTimestamp: new Date('2018-09-22T12:42:31Z').getDate(),
+  createdAtTimestamp: new Date('2018-09-22T12:42:31Z').getTime(),
   createdAt: new Date('2018-09-22T12:42:31Z'),
-  updatedAtTimestamp: new Date('2018-09-25T12:42:31Z').getDate(),
+  updatedAtTimestamp: new Date('2018-09-25T12:42:31Z').getTime(),
   updatedAt: new Date('2018-09-25T12:42:31Z'),
   logDownloadUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg'
 };
@@ -275,9 +275,9 @@ export const mockFailedAppVersionEvent: AppVersionEvent = {
   id: '1234',
   status: 'failed',
   text: 'An error occured.',
-  createdAtTimestamp: new Date('2018-09-26T12:42:31Z').getDate(),
+  createdAtTimestamp: new Date('2018-09-26T12:42:31Z').getTime(),
   createdAt: new Date('2018-09-26T12:42:31Z'),
-  updatedAtTimestamp: new Date('2018-09-27T12:42:31Z').getDate(),
+  updatedAtTimestamp: new Date('2018-09-27T12:42:31Z').getTime(),
   updatedAt: new Date('2018-09-27T12:42:31Z'),
   logDownloadUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg'
 };
