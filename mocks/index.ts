@@ -29,7 +29,6 @@ export const mockAppVersions: AppVersion[] = [
     supportUrl: 'https://bitrise.io/support',
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
-    configuration: 'canary',
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
     screenshotDatas: []
   },
@@ -57,7 +56,6 @@ export const mockAppVersions: AppVersion[] = [
     supportUrl: 'https://bitrise.io/support',
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
-    configuration: 'canary',
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
     screenshotDatas: []
   },
@@ -85,7 +83,6 @@ export const mockAppVersions: AppVersion[] = [
     supportUrl: 'https://bitrise.io/support',
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
-    configuration: 'canary',
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
     screenshotDatas: []
   },
@@ -113,7 +110,6 @@ export const mockAppVersions: AppVersion[] = [
     supportUrl: 'https://bitrise.io/support',
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
-    configuration: 'canary',
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
     screenshotDatas: []
   },
@@ -141,7 +137,6 @@ export const mockAppVersions: AppVersion[] = [
     supportUrl: 'https://bitrise.io/support',
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
-    configuration: 'canary',
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
     screenshotDatas: []
   }
@@ -172,7 +167,6 @@ export const mockAppVersionWithoutPublicPage = {
   supportUrl: 'https://bitrise.io/support',
   marketingUrl: 'https://bitrise.io/marketing',
   scheme: 'piramid',
-  configuration: 'canary',
   publicInstallPageURL: undefined,
   screenshotDatas: []
 };
