@@ -60,9 +60,12 @@ exports[`ActivityView when a test failed renders entry with download log button 
           key="0"
         >
           <TableCell
-            width="200px"
+            title={2018-09-26T12:42:31.000Z}
+            width="240px"
           >
-            2018 09 26 12:42:31
+            September 26, 2018
+             at 
+            12:42:31
           </TableCell>
           <TableCell>
             <Flex
@@ -137,9 +140,12 @@ exports[`ActivityView when a test is in progress renders entry without download 
           key="0"
         >
           <TableCell
-            width="200px"
+            title={2018-09-22T12:42:31.000Z}
+            width="240px"
           >
-            2018 09 22 12:42:31
+            September 22, 2018
+             at 
+            12:42:31
           </TableCell>
           <TableCell>
             <Flex
@@ -198,9 +204,12 @@ exports[`ActivityView when a test is successful renders entry without download l
           key="0"
         >
           <TableCell
-            width="200px"
+            title={2018-09-20T12:42:31.000Z}
+            width="240px"
           >
-            2018 09 20 12:42:31
+            September 20, 2018
+             at 
+            12:42:31
           </TableCell>
           <TableCell>
             <Flex
@@ -259,9 +268,12 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
           key="0"
         >
           <TableCell
-            width="200px"
+            title={2018-09-20T12:42:31.000Z}
+            width="240px"
           >
-            2018 09 20 12:42:31
+            September 20, 2018
+             at 
+            12:42:31
           </TableCell>
           <TableCell>
             <Flex
@@ -291,9 +303,12 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
           key="1"
         >
           <TableCell
-            width="200px"
+            title={2018-09-22T12:42:31.000Z}
+            width="240px"
           >
-            2018 09 22 12:42:31
+            September 22, 2018
+             at 
+            12:42:31
           </TableCell>
           <TableCell>
             <Flex
@@ -323,9 +338,12 @@ exports[`ActivityView when viewed on desktop renders the details view correctly 
           key="2"
         >
           <TableCell
-            width="200px"
+            title={2018-09-26T12:42:31.000Z}
+            width="240px"
           >
-            2018 09 26 12:42:31
+            September 26, 2018
+             at 
+            12:42:31
           </TableCell>
           <TableCell>
             <Flex
@@ -400,9 +418,12 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
           key="0"
         >
           <TableCell
-            width="200px"
+            title={2018-09-20T12:42:31.000Z}
+            width="240px"
           >
-            2018 09 20 12:42:31
+            September 20, 2018
+             at 
+            12:42:31
           </TableCell>
           <TableCell>
             <Flex
@@ -432,9 +453,12 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
           key="1"
         >
           <TableCell
-            width="200px"
+            title={2018-09-22T12:42:31.000Z}
+            width="240px"
           >
-            2018 09 22 12:42:31
+            September 22, 2018
+             at 
+            12:42:31
           </TableCell>
           <TableCell>
             <Flex
@@ -464,9 +488,12 @@ exports[`ActivityView when viewed on mobile renders the details view correctly 1
           key="2"
         >
           <TableCell
-            width="200px"
+            title={2018-09-26T12:42:31.000Z}
+            width="240px"
           >
-            2018 09 26 12:42:31
+            September 26, 2018
+             at 
+            12:42:31
           </TableCell>
           <TableCell>
             <Flex

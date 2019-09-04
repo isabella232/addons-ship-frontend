@@ -1,4 +1,5 @@
 import formatDate from 'date-fns/format';
+import { dayInWords } from '@/utils/time';
 
 import {
   Base,
@@ -48,32 +49,34 @@ const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
 export default ({ appVersionEvents }: Props) => (
   <Base paddingVertical="x8">
     <Base className={css.expandedTableWrapper}>
-    <Table type="flat">
-      <TableHeader>
-        <TableHeaderRow>
-          <TableHeaderCell>Date</TableHeaderCell>
-          <TableHeaderCell colSpan="2">Activity</TableHeaderCell>
-        </TableHeaderRow>
-      </TableHeader>
-      <TableBody>
-        {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
-          <TableRow key={index}>
-            <TableCell width="200px">{formatDate(appVersionEvent.createdAt, 'YYYY MM DD HH:mm:ss')}</TableCell>
-            <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
-            <TableCell width="200px">
-              {appVersionEvent.status === 'failed' && (
-                <a href={appVersionEvent.logDownloadUrl}>
-                  <Button level="secondary" size="small">
-                    <Icon name="Download" color="grape-4" />
-                    Download Build Log
-                  </Button>
-                </a>
-              )}
-            </TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+      <Table type="flat">
+        <TableHeader>
+          <TableHeaderRow>
+            <TableHeaderCell>Date</TableHeaderCell>
+            <TableHeaderCell colSpan="2">Activity</TableHeaderCell>
+          </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+          {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
+            <TableRow key={index}>
+              <TableCell width="240px" title={appVersionEvent.createdAt}>
+                {dayInWords(appVersionEvent.createdAt)} at {formatDate(appVersionEvent.createdAt, 'HH:mm:ss')}
+              </TableCell>
+              <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
+              <TableCell width="200px">
+                {appVersionEvent.status === 'failed' && (
+                  <a href={appVersionEvent.logDownloadUrl}>
+                    <Button level="secondary" size="small">
+                      <Icon name="Download" color="grape-4" />
+                      Download Build Log
+                    </Button>
+                  </a>
+                )}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </Base>
   </Base>
 );
