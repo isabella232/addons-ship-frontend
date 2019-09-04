@@ -67,6 +67,31 @@ describe('appVersion', () => {
 
       expect(state).toMatchSnapshot();
     });
+
+    [
+      ['updateAppVersion', updateAppVersion.next],
+      ['uploadScreenshots', uploadScreenshots.next],
+      ['uploadFeatureGraphic', uploadFeatureGraphic.next]
+    ].map(([key, fn]) => {
+      test(`cosuming ${key}.next`, () => {
+        const { isSaving } = reducer(undefined, (fn as Function)() as any);
+        expect(isSaving).toBe(1);
+      });
+    });
+
+    [
+      ['updateAppVersion.complete', updateAppVersion.complete],
+      ['uploadScreenshots.complete', uploadScreenshots.complete],
+      ['uploadFeatureGraphic.complete', uploadFeatureGraphic.complete],
+      ['updateAppVersion.error', updateAppVersion.error],
+      ['uploadScreenshots.error', uploadScreenshots.error],
+      ['uploadFeatureGraphic.error', uploadFeatureGraphic.error]
+    ].map(([key, fn]) => {
+      test(`cosuming ${key}`, () => {
+        const { isSaving } = reducer({ isSaving: 1 } as any, (fn as Function)() as any);
+        expect(isSaving).toBe(0);
+      });
+    });
   });
 
   describe('fetchAppVersion', () => {
