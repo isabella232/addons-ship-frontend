@@ -235,7 +235,7 @@ describe('appVersion', () => {
           b: pollPublishStatus.cancel
         });
 
-        const expected = '1s b 999ms b 999ms b';
+        const expected = 'b 999ms b 999ms b 999ms b';
         const values = {
           a: { type: getType(pollPublishStatus.start) },
           b: { type: getType(pollPublishStatus.complete), payload: ['event1', 'event2'] }
