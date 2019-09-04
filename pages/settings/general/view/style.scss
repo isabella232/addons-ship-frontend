@@ -6,5 +6,8 @@
 }
 
 .sheet {
-  fill: $grape-4;
+  svg {
+    display: block;
+    fill: $grape-4;
+  }
 }
