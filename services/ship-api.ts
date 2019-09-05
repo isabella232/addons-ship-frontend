@@ -24,6 +24,50 @@ export class ShipAPIService {
     }
   }
 
+  mapSettingsResponse(settingsResponse: any) {
+    let settings = settingsResponse;
+
+    settings.iosSettings = settingsResponse.iosSettings;
+    settings.androidSettings = settingsResponse.androidSettings;
+
+    const provProfileResponses = lodashGet(settingsResponse, 'iosSettings.availableProvisioningProfiles', []);
+    const certificateResponses = lodashGet(settingsResponse, 'iosSettings.availableCodeSigningIdentities', []);
+    const keystoreFileResponses = lodashGet(settingsResponse, 'androidSettings.availableKeystoreFiles', []);
+    const serviceAccountJsonFileResponses = lodashGet(
+      settingsResponse,
+      'androidSettings.availableServiceAccountFiles',
+      []
+    );
+
+    settings.provProfiles = provProfileResponses.map(({ upload_file_name: name, slug }: any) => ({
+      name,
+      slug
+    }));
+    settings.certificates = certificateResponses.map(({ upload_file_name: name, slug }: any) => ({
+      name,
+      slug
+    }));
+    settings.keystoreFiles = keystoreFileResponses.map(({ upload_file_name: name, slug }: any) => ({
+      name,
+      slug
+    }));
+    settings.serviceAccountJsonFiles = serviceAccountJsonFileResponses.map(({ upload_file_name: name, slug }: any) => ({
+      name,
+      slug
+    }));
+
+    if (settings.iosSettings) {
+      delete settings.iosSettings['availableProvisioningProfiles'];
+      delete settings.iosSettings['availableCodeSigningIdentities'];
+    }
+    if (settings.androidSettings) {
+      delete settings.androidSettings['availableKeystoreFiles'];
+      delete settings.androidSettings['availableServiceAccountFiles'];
+    }
+
+    return settings;
+  }
+
   // GET /apps/{app-slug}/versions
   async getAppVersionList(appSlug: string): Promise<AppVersion[]> {
     this.checkToken();
@@ -244,41 +288,7 @@ export class ShipAPIService {
 
     const { data } = await get(url, this.token).then(res => res.json());
 
-    let settings: any = camelizeKeysDeep(data);
-    settings.provProfiles = lodashGet(settings, 'iosSettings.availableProvisioningProfiles', []);
-    settings.certificates = lodashGet(settings, 'iosSettings.availableCodeSigningIdentities', []);
-    settings.keystoreFiles = lodashGet(settings, 'androidSettings.availableKeystoreFiles', []);
-    settings.serviceAccountJsonFiles = lodashGet(settings, 'androidSettings.availableServiceAccountFiles', []);
-
-    settings.provProfiles = settings.provProfiles.map(({ upload_file_name: name, slug }: any) => ({
-      name,
-      slug
-    }));
-    settings.certificates = settings.certificates.map(({ upload_file_name: name, slug }: any) => ({
-      name,
-      slug
-    }));
-    settings.keystoreFiles = settings.keystoreFiles.map(({ upload_file_name: name, slug }: any) => ({
-      name,
-      slug
-    }));
-    settings.serviceAccountJsonFiles = settings.serviceAccountJsonFiles.map(
-      ({ upload_file_name: name, slug }: any) => ({
-        name,
-        slug
-      })
-    );
-
-    if (settings.iosSettings) {
-      delete settings.iosSettings['availableProvisioningProfiles'];
-      delete settings.iosSettings['availableCodeSigningIdentities'];
-    }
-    if (settings.androidSettings) {
-      delete settings.androidSettings['availableKeystoreFiles'];
-      delete settings.androidSettings['availableServiceAccountFiles'];
-    }
-
-    return settings;
+    return this.mapSettingsResponse(camelizeKeysDeep(data));
   }
 
   // PATCH /apps/{app-slug}/settings
@@ -299,7 +309,7 @@ export class ShipAPIService {
 
     const { data } = await patch(url, this.token, body).then(res => res.json());
 
-    return camelizeKeysDeep(data);
+    return this.mapSettingsResponse(camelizeKeysDeep(data));
   }
 
   // POST /apps/{app-slug}/contacts

@@ -254,6 +254,7 @@ Object {
     "track": "Release",
   },
   "androidWorkflow": "All",
+  "certificates": Array [],
   "iosSettings": Object {
     "appSku": "Fill",
     "appSpecificPassword": "Fill",
@@ -263,6 +264,9 @@ Object {
     "selectedCodeSigningIdentity": "code-signing-identity-id",
   },
   "iosWorkflow": "All",
+  "keystoreFiles": Array [],
+  "provProfiles": Array [],
+  "serviceAccountJsonFiles": Array [],
 }
 `;
 

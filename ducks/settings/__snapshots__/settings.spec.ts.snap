@@ -130,9 +130,62 @@ Object {
   ],
   "isSavingSettings": false,
   "settings": Object {
-    "androidWorkflow": "",
-    "iosWorkflow": "",
+    "androidSettings": Object {
+      "selectedKeystoreFile": "keystore-1",
+      "selectedServiceAccount": "service-accoun-2",
+      "track": "Release",
+    },
+    "androidWorkflow": "All",
+    "certificates": Array [
+      Object {
+        "name": "iPhone Developer: John Doe (ABCD1234)",
+        "slug": "cert-1",
+      },
+      Object {
+        "name": "iPhone Developer: John Doe (ABCD5678)",
+        "slug": "cert-2",
+      },
+    ],
+    "iosSettings": Object {
+      "appSku": "Fill",
+      "appSpecificPassword": "Fill",
+      "appleDeveloperAccountEmail": "Fill",
+      "includeBitCode": true,
+      "selectedAppStoreProvisioningProfile": "prov-profile-1",
+      "selectedCodeSigningIdentity": "cert-2",
+    },
+    "iosWorkflow": "All",
+    "keystoreFiles": Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+        "slug": "keystore-1",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+        "slug": "keystore-2",
+      },
+    ],
     "projectType": "other",
+    "provProfiles": Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+        "slug": "prov-profile-1",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+        "slug": "prov-profile-2",
+      },
+    ],
+    "serviceAccountJsonFiles": Array [
+      Object {
+        "name": "abcdefghijkl1234567",
+        "slug": "service-accoun-1",
+      },
+      Object {
+        "name": "abcdefghijkl12345671566",
+        "slug": "service-accoun-2",
+      },
+    ],
   },
 }
 `;

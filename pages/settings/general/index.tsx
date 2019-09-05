@@ -75,12 +75,12 @@ export class General extends Component<Props> {
     fetchSettings(appSlug);
   }
 
-  componentDidUpdate({ hasLoaded }: Props) {
-    if (!hasLoaded && this.props.hasLoaded) {
+  componentDidUpdate({ hasLoaded, isSaving }: Props) {
+    if ((!hasLoaded && this.props.hasLoaded) || (isSaving && !this.props.isSaving)) {
       this.configureSettingsFromProps();
     }
 
-    if (hasLoaded) {
+    if (this.props.hasLoaded) {
       this.updateHasModifications();
     }
   }
