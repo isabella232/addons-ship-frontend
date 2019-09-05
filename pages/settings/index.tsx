@@ -5,7 +5,6 @@ import startCase from 'lodash/startCase';
 
 import { PageContext } from '@/models';
 import { AppSettingsPageQuery, AppSettingsPageTabs } from '@/models/settings';
-import { listAppContacts } from '@/ducks/settings';
 
 import General from './general';
 import Notifications from './notifications';
@@ -16,13 +15,12 @@ export class SettingsPage extends Component<AppSettingsPageQuery> {
     selectedTab: 'general'
   };
 
-  static async getInitialProps({ query, store, req, isServer }: PageContext) {
+  static getInitialProps({ query }: PageContext) {
     const { appSlug, selectedTab = AppSettingsPageTabs[0] } = (query as unknown) as AppSettingsPageQuery;
 
     switch (selectedTab) {
       case 'notifications':
         SettingsPage.displayName = 'NotificationSettings';
-        await store.dispatch(listAppContacts(appSlug) as any);
         break;
     }
 
@@ -46,11 +44,11 @@ export class SettingsPage extends Component<AppSettingsPageQuery> {
     const { appSlug, selectedTab } = this.props;
 
     const tab = (key: string) => (
-      <Tab active={selectedTab === key}>
-        <Link as={`/apps/${appSlug}/settings/${key}`} href={`/settings?appSlug=${appSlug}&selectedTab=${key}`}>
+      <Link as={`/apps/${appSlug}/settings/${key}`} href={`/settings?appSlug=${appSlug}&selectedTab=${key}`}>
+        <Tab active={selectedTab === key}>
           <a>{startCase(key)}</a>
-        </Link>
-      </Tab>
+        </Tab>
+      </Link>
     );
 
     return (

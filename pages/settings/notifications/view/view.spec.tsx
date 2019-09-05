@@ -5,15 +5,32 @@ import View, { Props } from '.';
 
 describe('NotificationSettings View', () => {
   const defaultProps: Props = {
+    hasLoaded: true,
+    isSaving: false,
+    isAddingEmail: false,
+    email: '',
     onAddEmail: jest.fn(),
     onCancel: jest.fn(),
     onDeleteContact: jest.fn(),
     appContacts: [],
-    onNotificationPreferenceChanged: jest.fn()
+    onNotificationPreferenceChanged: jest.fn(),
+    onEmailChange: jest.fn()
   };
 
   it('renders correctly', () => {
     const tree = shallowToJson(shallow(<View {...defaultProps} />));
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders correctly while loading', () => {
+    const tree = shallowToJson(shallow(<View {...defaultProps} hasLoaded={false} />));
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders correctly while saving', () => {
+    const tree = shallowToJson(shallow(<View {...defaultProps} isSaving />));
 
     expect(tree).toMatchSnapshot();
   });
