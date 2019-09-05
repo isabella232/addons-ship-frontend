@@ -55,7 +55,6 @@ export class VersionPage extends Component<VersionPageProps> {
         break;
       case 'devices':
         Connected.displayName = 'AppVersionDevices';
-        promises.push(store.dispatch(fetchTestDevices(appSlug) as any));
         break;
       case 'activity':
         nookies.set(ctx, activityLastSeenKey, Date.now().toString(), {
