@@ -9,30 +9,30 @@ exports[`Settings renders tabs correctly general 1`] = `
       <Tabs
         gap="x10"
       >
-        <Tab
-          active={true}
+        <Link
+          as="/apps/some-app/settings/general"
+          href="/settings?appSlug=some-app&selectedTab=general"
         >
-          <Link
-            as="/apps/some-app/settings/general"
-            href="/settings?appSlug=some-app&selectedTab=general"
+          <Tab
+            active={true}
           >
             <a>
               General
             </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
+          </Tab>
+        </Link>
+        <Link
+          as="/apps/some-app/settings/notifications"
+          href="/settings?appSlug=some-app&selectedTab=notifications"
         >
-          <Link
-            as="/apps/some-app/settings/notifications"
-            href="/settings?appSlug=some-app&selectedTab=notifications"
+          <Tab
+            active={false}
           >
             <a>
               Notifications
             </a>
-          </Link>
-        </Tab>
+          </Tab>
+        </Link>
       </Tabs>
     </Base>
     <Divider
@@ -67,30 +67,30 @@ exports[`Settings renders tabs correctly notifications 1`] = `
       <Tabs
         gap="x10"
       >
-        <Tab
-          active={false}
+        <Link
+          as="/apps/some-app/settings/general"
+          href="/settings?appSlug=some-app&selectedTab=general"
         >
-          <Link
-            as="/apps/some-app/settings/general"
-            href="/settings?appSlug=some-app&selectedTab=general"
+          <Tab
+            active={false}
           >
             <a>
               General
             </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={true}
+          </Tab>
+        </Link>
+        <Link
+          as="/apps/some-app/settings/notifications"
+          href="/settings?appSlug=some-app&selectedTab=notifications"
         >
-          <Link
-            as="/apps/some-app/settings/notifications"
-            href="/settings?appSlug=some-app&selectedTab=notifications"
+          <Tab
+            active={true}
           >
             <a>
               Notifications
             </a>
-          </Link>
-        </Tab>
+          </Tab>
+        </Link>
       </Tabs>
     </Base>
     <Divider
@@ -125,30 +125,30 @@ exports[`Settings renders tabs correctly other 1`] = `
       <Tabs
         gap="x10"
       >
-        <Tab
-          active={false}
+        <Link
+          as="/apps/some-app/settings/general"
+          href="/settings?appSlug=some-app&selectedTab=general"
         >
-          <Link
-            as="/apps/some-app/settings/general"
-            href="/settings?appSlug=some-app&selectedTab=general"
+          <Tab
+            active={false}
           >
             <a>
               General
             </a>
-          </Link>
-        </Tab>
-        <Tab
-          active={false}
+          </Tab>
+        </Link>
+        <Link
+          as="/apps/some-app/settings/notifications"
+          href="/settings?appSlug=some-app&selectedTab=notifications"
         >
-          <Link
-            as="/apps/some-app/settings/notifications"
-            href="/settings?appSlug=some-app&selectedTab=notifications"
+          <Tab
+            active={false}
           >
             <a>
               Notifications
             </a>
-          </Link>
-        </Tab>
+          </Tab>
+        </Link>
       </Tabs>
     </Base>
     <Divider

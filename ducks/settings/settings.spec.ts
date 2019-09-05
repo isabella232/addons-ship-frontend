@@ -50,7 +50,8 @@ describe('settings', () => {
       const state = settings(
         {
           settings: { projectType: 'other', iosWorkflow: 'all', androidWorkflow: 'all' },
-          appContacts: [mockAppContact]
+          appContacts: [mockAppContact],
+          savingAppContacts: 2
         },
         addAppContact.complete({ email: 'bit@bot' } as AppContact)
       );
@@ -77,7 +78,8 @@ describe('settings', () => {
               id: '456-asd',
               notificationPreferences: { newVersion: true, failedPublish: true, successfulPublish: false }
             } as AppContact
-          ]
+          ],
+          savingAppContacts: 3
         },
         updateAppContact.complete({
           ...mockAppContact,
@@ -98,7 +100,8 @@ describe('settings', () => {
               id: '456-asd',
               notificationPreferences: { newVersion: true, failedPublish: true, successfulPublish: false }
             } as AppContact
-          ]
+          ],
+          savingAppContacts: 4
         },
         deleteAppContact.complete('456-asd')
       );

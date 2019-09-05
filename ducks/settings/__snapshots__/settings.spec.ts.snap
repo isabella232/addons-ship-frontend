@@ -110,6 +110,7 @@ Object {
       "email": "bit@bot",
     },
   ],
+  "savingAppContacts": 1,
   "settings": Object {
     "androidWorkflow": "all",
     "iosWorkflow": "all",
@@ -128,7 +129,9 @@ Object {
       "email": "bit@bot.io",
     },
   ],
+  "hasAppContactsLoaded": true,
   "isSavingSettings": false,
+  "savingAppContacts": 0,
   "settings": Object {
     "androidSettings": Object {
       "selectedKeystoreFile": "keystore-1",
@@ -193,7 +196,9 @@ Object {
 exports[`settings reducer loads settings 1`] = `
 Object {
   "appContacts": Array [],
+  "hasAppContactsLoaded": false,
   "isSavingSettings": false,
+  "savingAppContacts": 0,
   "settings": Object {
     "androidSettings": Object {
       "selectedKeystoreFile": "keystore-1",
@@ -269,6 +274,7 @@ Object {
       },
     },
   ],
+  "savingAppContacts": 4,
   "settings": Object {
     "androidWorkflow": "all",
     "iosWorkflow": "all",
@@ -299,6 +305,7 @@ Object {
       },
     },
   ],
+  "savingAppContacts": 2,
   "settings": Object {
     "androidWorkflow": "all",
     "iosWorkflow": "all",
