@@ -15,7 +15,8 @@ import {
 import { updateSettings, fetchSettings } from '@/ducks/settings';
 
 import View from './view';
-import { some, isEqual } from 'lodash';
+import some from 'lodash/some';
+import isEqual from 'lodash/isEqual';
 
 type Props = {
   appSlug: string;
