@@ -309,8 +309,6 @@ export class ShipAPIService {
 
     const { data } = await patch(url, this.token, body).then(res => res.json());
 
-    console.log(data);
-
     return this.mapSettingsResponse(camelizeKeysDeep(data));
   }
 
