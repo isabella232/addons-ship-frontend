@@ -247,12 +247,18 @@ describe('General', () => {
     (wrapper.instance() as General).onSettingsPropertyChange('iosSettings', 'appSku', 'some-vlaue');
 
     expect(wrapper.state()).toMatchSnapshot();
+    expect(wrapper.state('hasModifications')).toBe(true);
   });
 
   it('triggers a save', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
     const mockUpdateSettings = jest.fn() as any;
     const tree = mount(<General {...defaultProps} updateSettings={mockUpdateSettings} />);
+
+    tree
+      .find('input[name="iosWorkflow"]')
+      .first()
+      .simulate('change', { target: { value: 'Primary' } });
 
     tree
       .find('button')
@@ -271,6 +277,7 @@ describe('General', () => {
       .simulate('change', { target: { value: 'Primary' } });
 
     expect(tree.state('iosWorkflow')).toEqual('Primary');
+    expect(tree.state('hasModifications')).toBe(true);
   });
 
   it('triggers a state update when a form item is modified for android', () => {
@@ -282,6 +289,7 @@ describe('General', () => {
       .simulate('change', { target: { value: 'Primary' } });
 
     expect(tree.state('androidWorkflow')).toEqual('Primary');
+    expect(tree.state('hasModifications')).toBe(true);
   });
 
   it('triggers a state reset when cancel is selected', () => {
@@ -301,7 +309,7 @@ describe('General', () => {
   });
 
   it('triggers a state update when selected prov profile changes', () => {
-    const selectedProvProfile = (mockSettings.provProfiles as ProvProfile[])[0];
+    const selectedProvProfile = (mockSettings.provProfiles as ProvProfile[])[1];
 
     const tree = shallow(<General {...defaultProps} />);
     (tree.instance() as General).onSelectedFileChange('ProvProfile', selectedProvProfile);
@@ -309,6 +317,7 @@ describe('General', () => {
     expect((tree.state('iosSettings') as IosSettings).selectedAppStoreProvisioningProfile).toEqual(
       selectedProvProfile.slug
     );
+    expect(tree.state('hasModifications')).toBe(true);
   });
 
   it('triggers a state update when selected certificate changes', () => {
@@ -318,15 +327,17 @@ describe('General', () => {
     (tree.instance() as General).onSelectedFileChange('Certificate', selectedCertificate);
 
     expect((tree.state('iosSettings') as IosSettings).selectedCodeSigningIdentity).toEqual(selectedCertificate.slug);
+    expect(tree.state('hasModifications')).toBe(true);
   });
 
   it('triggers a state update when selected keystore file changes', () => {
-    const selectedKeystoreFile = (mockSettings.keystoreFiles as KeystoreFile[])[0];
+    const selectedKeystoreFile = (mockSettings.keystoreFiles as KeystoreFile[])[1];
 
     const tree = shallow(<General {...defaultProps} />);
     (tree.instance() as General).onSelectedFileChange('KeystoreFile', selectedKeystoreFile);
 
     expect((tree.state('androidSettings') as AndroidSettings).selectedKeystoreFile).toEqual(selectedKeystoreFile.slug);
+    expect(tree.state('hasModifications')).toBe(true);
   });
 
   it('triggers a state update when selected service account JSON file changes', () => {
@@ -338,5 +349,6 @@ describe('General', () => {
     expect((tree.state('androidSettings') as AndroidSettings).selectedServiceAccount).toEqual(
       selectedServiceAccountJsonFile.slug
     );
+    expect(tree.state('hasModifications')).toBe(true);
   });
 });

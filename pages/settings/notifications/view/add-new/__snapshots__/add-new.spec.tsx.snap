@@ -11,23 +11,52 @@ exports[`NotificationSettings View AddNew renders correctly 1`] = `
   <InputContainer>
     <InputContent>
       <Input
+        disabled={false}
         onChange={[Function]}
         placeholder="Email address"
         type="email"
-        value=""
+        value="old@email.value"
       />
     </InputContent>
-    <InputContent
-      outside={true}
+    <Button
+      disabled={false}
+      level="secondary"
+      size="medium"
     >
-      <Button
+      Add
+    </Button>
+  </InputContainer>
+</form>
+`;
+
+exports[`NotificationSettings View AddNew shows adding in progress 1`] = `
+<form
+  className="container"
+  onSubmit={[Function]}
+>
+  <InputLabel>
+    Add New
+  </InputLabel>
+  <InputContainer>
+    <InputContent>
+      <Input
         disabled={true}
-        level="secondary"
-        size="medium"
-      >
-        Add
-      </Button>
+        onChange={[Function]}
+        placeholder="Email address"
+        type="email"
+        value="old@email.value"
+      />
     </InputContent>
+    <Button
+      disabled={true}
+      level="secondary"
+      size="medium"
+    >
+      <ProgressSpinner
+        size="1.5rem"
+      />
+         Adding...
+    </Button>
   </InputContainer>
 </form>
 `;

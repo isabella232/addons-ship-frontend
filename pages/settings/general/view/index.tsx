@@ -18,6 +18,7 @@ import {
   ProgressBitbot,
   ProgressSpinner
 } from '@bitrise/bitkit';
+import SVG from 'react-svg';
 
 import { Certificate, KeystoreFile, ProvProfile, ServiceAccountJsonFile, Settings } from '@/models/settings';
 import { mediaQuery } from '@/utils/media';
@@ -43,7 +44,7 @@ interface Props extends Settings {
     file: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
   ) => void;
   onCancel: () => void;
-  onSave: () => void;
+  onSave?: () => void;
   isSaving?: boolean;
 }
 
@@ -108,7 +109,9 @@ export default ({
                       <InputLabel>Expose Artifacts From the Selected Workflow to Ship</InputLabel>
                       {hasMounted && (
                         <Tooltip title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy">
-                          {() => <Icon color="grape-3" name="Support" size="1.5rem" />}
+                          {({ ref, ...rest }) => (
+                            <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                          )}
                         </Tooltip>
                       )}
                     </Flex>
@@ -231,11 +234,11 @@ export default ({
                           direction="horizontal"
                           alignChildrenHorizontal="between"
                           alignChildrenVertical="middle"
-                          gap="x1"
-                          margin="x1"
+                          gap="x3"
+                          paddingHorizontal="x1"
                           paddingVertical="x3"
                         >
-                          <Icon name="Doc" size="2rem" color="grape-4" />
+                          <SVG src="/static/sheet-cog.svg" className={css.sheet} />
                           <Text size="x3">{provProfile.name}</Text>
                         </Flex>
                       </RadioButton>
@@ -266,11 +269,11 @@ export default ({
                           direction="horizontal"
                           alignChildrenHorizontal="between"
                           alignChildrenVertical="middle"
-                          gap="x1"
-                          margin="x1"
+                          gap="x3"
+                          paddingHorizontal="x1"
                           paddingVertical="x3"
                         >
-                          <Icon name="Doc" size="2rem" color="grape-4" />
+                          <SVG src="/static/sheet-badge.svg" className={css.sheet} />
                           <Text size="x3">{certificate.name}</Text>
                         </Flex>
                       </RadioButton>
@@ -388,11 +391,11 @@ export default ({
                           direction="horizontal"
                           alignChildrenHorizontal="between"
                           alignChildrenVertical="middle"
-                          gap="x1"
-                          margin="x1"
+                          gap="x3"
+                          paddingHorizontal="x1"
                           paddingVertical="x3"
                         >
-                          <Icon name="Doc" size="2rem" color="grape-4" />
+                          <SVG src="/static/sheet-key.svg" className={css.sheet} />
                           <Text size="x3">{keystoreFile.name}</Text>
                         </Flex>
                       </RadioButton>
@@ -424,11 +427,11 @@ export default ({
                             direction="horizontal"
                             alignChildrenHorizontal="between"
                             alignChildrenVertical="middle"
-                            gap="x1"
-                            margin="x1"
+                            gap="x3"
+                            paddingHorizontal="x1"
                             paddingVertical="x3"
                           >
-                            <Icon name="Doc" size="2rem" color="grape-4" />
+                            <SVG src="/static/sheet-cog.svg" className={css.sheet} />
                             <Text size="x3">{serviceAccountJsonFile.name}</Text>
                           </Flex>
                         </RadioButton>
@@ -451,7 +454,7 @@ export default ({
           <Button level="secondary" width="8rem" onClick={onCancel}>
             Cancel
           </Button>
-          <Button disabled={isSaving} level="primary" width="8rem" onClick={onSave}>
+          <Button disabled={!onSave || isSaving} level="primary" width="8rem" onClick={onSave}>
             {isSaving ? (
               <Fragment>
                 <ProgressSpinner /> &nbsp; Saving...

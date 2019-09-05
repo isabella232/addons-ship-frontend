@@ -144,7 +144,7 @@ Object {
   "settings": Object {
     "androidSettings": Object {
       "selectedKeystoreFile": "keystore-1",
-      "selectedServiceAccount": "service-accoun-1",
+      "selectedServiceAccount": "service-accoun-2",
       "track": "Release",
     },
     "androidWorkflow": "All",
@@ -195,7 +195,7 @@ Object {
       },
       Object {
         "name": "abcdefghijkl12345671566",
-        "slug": "service-accoun-1",
+        "slug": "service-accoun-2",
       },
     ],
   },

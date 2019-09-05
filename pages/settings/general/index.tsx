@@ -15,6 +15,8 @@ import {
 import { updateSettings, fetchSettings } from '@/ducks/settings';
 
 import View from './view';
+import some from 'lodash/some';
+import isEqual from 'lodash/isEqual';
 
 type Props = {
   appSlug: string;
@@ -27,6 +29,7 @@ type Props = {
 
 export type State = {
   hasMounted: boolean;
+  hasModifications: boolean;
   hasIosSettings: boolean;
   hasAndroidSettings: boolean;
   iosSettings: IosSettings;
@@ -43,6 +46,7 @@ export class General extends Component<Props> {
     hasIosSettings: false,
     hasAndroidSettings: false,
     hasMounted: false,
+    hasModifications: false,
     iosSettings: {
       appleDeveloperAccountEmail: '',
       appSku: '',
@@ -74,6 +78,10 @@ export class General extends Component<Props> {
   componentDidUpdate({ hasLoaded }: Props) {
     if (!hasLoaded && this.props.hasLoaded) {
       this.configureSettingsFromProps();
+    }
+
+    if (hasLoaded) {
+      this.updateHasModifications();
     }
   }
 
@@ -123,6 +131,31 @@ export class General extends Component<Props> {
     }
   };
 
+  updateHasModifications = () => {
+    let hasModifications = false;
+
+    if (
+      some(
+        ['iosSettings', 'androidSettings'],
+        (platformSettingsKey: string) =>
+          !isEqual(this.state[platformSettingsKey], this.props.settings[platformSettingsKey])
+      )
+    ) {
+      hasModifications = true;
+    }
+
+    if (this.state.iosWorkflow !== this.props.settings.iosWorkflow) {
+      hasModifications = true;
+    }
+    if (this.state.androidWorkflow !== this.props.settings.androidWorkflow) {
+      hasModifications = true;
+    }
+
+    if (this.state.hasModifications !== hasModifications) {
+      this.setState({ hasModifications });
+    }
+  };
+
   onSelectedFileChange = (
     type: 'ProvProfile' | 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
     { slug }: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
@@ -156,6 +189,8 @@ export class General extends Component<Props> {
     const { iosWorkflow, androidWorkflow, iosSettings, androidSettings } = this.state;
 
     updateSettings(appSlug, { iosWorkflow, androidWorkflow, iosSettings, androidSettings } as Settings);
+
+    this.setState({ hasModifications: false });
   };
 
   render() {
@@ -165,6 +200,8 @@ export class General extends Component<Props> {
       hasLoaded,
       isSaving
     } = this.props;
+
+    const { hasModifications } = this.state;
 
     const viewProps = {
       appSlug,
@@ -179,7 +216,7 @@ export class General extends Component<Props> {
       onSelectedFileChange: this.onSelectedFileChange,
       onWorkflowChange: this.onWorkflowChange,
       onCancel: this.onCancel,
-      onSave: this.onSave,
+      onSave: hasModifications ? this.onSave : undefined,
       isSaving
     };
 

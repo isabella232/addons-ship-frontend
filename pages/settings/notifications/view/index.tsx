@@ -1,4 +1,4 @@
-import { Base, Text, Divider, Buttons, Button, Flex, Notification } from '@bitrise/bitkit';
+import { Base, Text, Divider, Button, Flex, Notification } from '@bitrise/bitkit';
 
 import AddNew, { Props as AddNewProps } from './add-new';
 import List, { Props as ListProps } from './contact-list';
@@ -10,7 +10,10 @@ export interface Props extends AddNewProps, ListProps {
 }
 
 export default ({
+  email,
+  onEmailChange,
   onAddEmail,
+  isAddingEmail,
   appContacts,
   onNotificationPreferenceChanged,
   onDeleteContact,
@@ -19,17 +22,17 @@ export default ({
   error
 }: Props) => (
   <Base paddingVertical="x8">
-    <Text size="x5" weight="bold" paddingVertical="x3">
+    <Text size="x5" weight="bold">
       Email Notifications
     </Text>
-    <Divider color="gray-2" />
+    <Divider color="gray-2" margin="x4" />
     {error && (
       <Notification margin="x4" type="alert">
         {error}
       </Notification>
     )}
-    <Base paddingVertical="x6">
-      <AddNew onAddEmail={onAddEmail} />
+    <Base margin="x6">
+      <AddNew email={email} onEmailChange={onEmailChange} onAddEmail={onAddEmail} isAddingEmail={isAddingEmail} />
     </Base>
     <Base margin="x4">
       <List
@@ -38,15 +41,13 @@ export default ({
         onDeleteContact={onDeleteContact}
       />
     </Base>
-    <Flex margin="x12" direction="horizontal" alignChildrenHorizontal="end">
-      <Buttons>
-        <Button level="secondary" onClick={onCancel}>
-          Cancel
-        </Button>
-        <Button disabled={!onSave} level="primary" onClick={onSave}>
-          Save
-        </Button>
-      </Buttons>
+    <Flex margin="x12" direction="horizontal" alignChildrenHorizontal="end" gap="x4">
+      <Button level="secondary" width="8rem" onClick={onCancel}>
+        Cancel
+      </Button>
+      <Button disabled={!onSave} level="primary" width="8rem" onClick={onSave}>
+        Save
+      </Button>
     </Flex>
   </Base>
 );

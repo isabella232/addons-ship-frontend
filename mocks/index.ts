@@ -217,7 +217,7 @@ const keystoreFiles = [
 ];
 const serviceAccountJsonFiles = [
   { name: 'abcdefghijkl1234567', slug: 'service-accoun-1' },
-  { name: 'abcdefghijkl12345671566', slug: 'service-accoun-1' }
+  { name: 'abcdefghijkl12345671566', slug: 'service-accoun-2' }
 ];
 
 export const mockSettings: Settings = {

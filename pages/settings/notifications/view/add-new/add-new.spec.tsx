@@ -12,6 +12,9 @@ import AddNew, { Props } from '.';
 
 describe('NotificationSettings View AddNew', () => {
   const defaultProps: Props = {
+    email: 'old@email.value',
+    isAddingEmail: false,
+    onEmailChange: jest.fn(),
     onAddEmail: jest.fn()
   };
 
@@ -21,25 +24,29 @@ describe('NotificationSettings View AddNew', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('shows adding in progress', () => {
+    const tree = shallowToJson(shallow(<AddNew {...defaultProps} isAddingEmail={true} />));
+
+    expect(tree).toMatchSnapshot();
+  });
+
   it('updates the email value', () => {
-    const setEmail = jest.fn();
-    (useState as jest.Mock).mockReturnValueOnce(['', setEmail]);
+    const onEmailChange = jest.fn();
 
     const email = 'new@email.value';
 
-    const wrapper = shallow(<AddNew {...defaultProps} />);
-
+    const wrapper = shallow(<AddNew {...defaultProps} onEmailChange={onEmailChange} />);
     wrapper.find(Input).simulate('change', { target: { value: email } });
 
-    expect(setEmail).toHaveBeenCalledWith(email);
+    expect(onEmailChange).toHaveBeenCalledWith(email);
   });
 
   it('calls onAddEmail', () => {
-    const email = 'new@email.value';
-    (useState as jest.Mock).mockReturnValueOnce([email, jest.fn()]);
     const onAddEmail = jest.fn();
 
-    const wrapper = shallow(<AddNew onAddEmail={onAddEmail} />);
+    const email = 'new@email.value';
+
+    const wrapper = shallow(<AddNew {...defaultProps} onAddEmail={onAddEmail} email={email} />);
     const preventDefault = jest.fn();
     wrapper.find('form').simulate('submit', { preventDefault });
 

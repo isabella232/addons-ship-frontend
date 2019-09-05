@@ -131,7 +131,7 @@ export class VersionPage extends Component<VersionPageProps> {
             {this.tabContent()}
           </Flex>
         </Flex>
-        <Flex className={css.footerWrapper}>
+        <Flex paddingVertical="x16">
           <AddonFooter addonName="Ship" />
         </Flex>
       </Fragment>

@@ -2,7 +2,9 @@
 
 exports[`NotificationSettings componentDidUpdate 1`] = `
 Object {
+  "email": "",
   "hasModifications": false,
+  "isAddingEmail": false,
   "updatedAppContacts": Array [
     Object {
       "email": "bit.bot@bitrise.io",
@@ -136,9 +138,12 @@ exports[`NotificationSettings renders correctly 1`] = `
       },
     ]
   }
+  email=""
+  isAddingEmail={false}
   onAddEmail={[Function]}
   onCancel={[Function]}
   onDeleteContact={[Function]}
+  onEmailChange={[Function]}
   onNotificationPreferenceChanged={[Function]}
 />
 `;

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import Link from 'next/link';
-import { Base, Tabs, Tab, Divider } from '@bitrise/bitkit';
+import { Base, Tabs, Tab, Divider, AddonFooter, Flex } from '@bitrise/bitkit';
 import startCase from 'lodash/startCase';
 
 import { PageContext } from '@/models';
@@ -54,15 +54,20 @@ export class SettingsPage extends Component<AppSettingsPageQuery> {
     );
 
     return (
-      <Base paddingVertical="x10">
-        <Base maxWidth={960}>
-          <Tabs gap="x10">
-            {tab('general')}
-            {tab('notifications')}
-          </Tabs>
+      <Base>
+        <Base>
+          <Base maxWidth={960}>
+            <Tabs gap="x10">
+              {tab('general')}
+              {tab('notifications')}
+            </Tabs>
+          </Base>
+          <Divider color="gray-2" direction="horizontal" />
+          <Base maxWidth={960}>{this.tabContent()}</Base>
         </Base>
-        <Divider color="gray-2" direction="horizontal" />
-        <Base maxWidth={960}>{this.tabContent()}</Base>
+        <Flex paddingVertical="x16">
+          <AddonFooter addonName="Ship" />
+        </Flex>
       </Base>
     );
   }
