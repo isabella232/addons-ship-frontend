@@ -3,11 +3,12 @@ import { shallowToJson } from 'enzyme-to-json';
 
 import { AppContact } from '@/models/settings';
 
-import { NotificationSettings } from '.';
+import { NotificationSettings, Props } from '.';
 
 describe('NotificationSettings', () => {
-  const defaultProps = {
+  const defaultProps: Props = {
     appSlug: 'some-app',
+    hasLoaded: true,
     appContacts: [
       {
         id: 'bit-bot',
@@ -30,15 +31,18 @@ describe('NotificationSettings', () => {
         }
       }
     ],
+    listAppContacts: jest.fn() as any,
     addAppContact: jest.fn() as any,
     updateAppContact: jest.fn() as any,
     deleteAppContact: jest.fn() as any
   };
 
   beforeEach(() => {
-    const { addAppContact, updateAppContact, deleteAppContact } = defaultProps;
+    const { listAppContacts, addAppContact, updateAppContact, deleteAppContact } = defaultProps;
 
-    ([addAppContact, updateAppContact, deleteAppContact] as jest.Mock[]).forEach(mock => mock.mockReset());
+    (([listAppContacts, addAppContact, updateAppContact, deleteAppContact] as any) as jest.Mock[]).forEach(mock =>
+      mock.mockReset()
+    );
   });
 
   it('renders correctly', () => {
@@ -117,8 +121,8 @@ describe('NotificationSettings', () => {
   });
 
   describe('onSave', () => {
-    let updateAppContact: jest.Mock,
-      deleteAppContact: jest.Mock,
+    let updateAppContact: any,
+      deleteAppContact: any,
       appContacts: AppContact[],
       appSlug: string,
       wrapper: ShallowWrapper;

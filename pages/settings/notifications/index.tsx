@@ -5,12 +5,15 @@ import isEqual from 'lodash/isEqual';
 import { AppContact } from '@/models/settings';
 import { RootState } from '@/store';
 import { addAppContact, updateAppContact, deleteAppContact } from '@/ducks/settings';
+import { listAppContacts } from '@/ducks/settings';
 
 import View from './view';
 
-type Props = {
+export type Props = {
   appSlug: string;
   appContacts: AppContact[];
+  hasLoaded: boolean;
+  listAppContacts: typeof listAppContacts;
   addAppContact: typeof addAppContact;
   updateAppContact: typeof updateAppContact;
   deleteAppContact: typeof deleteAppContact;
@@ -31,6 +34,12 @@ export class NotificationSettings extends React.Component<Props, State> {
     hasModifications: false,
     updatedAppContacts: this.props.appContacts
   };
+
+  componentDidMount() {
+    const { appSlug, listAppContacts } = this.props;
+
+    listAppContacts(appSlug);
+  }
 
   componentDidUpdate({ appContacts: prevAppContacts }: Props) {
     const { appContacts } = this.props;
@@ -126,11 +135,13 @@ export class NotificationSettings extends React.Component<Props, State> {
   };
 
   render() {
+    const { hasLoaded } = this.props;
     const { email, isAddingEmail, updatedAppContacts, hasModifications, error } = this.state;
 
     const props = {
+      hasLoaded,
       appContacts: updatedAppContacts,
-      email: email,
+      email,
       onEmailChange: this.onEmailChange,
       onAddEmail: this.onAddEmail,
       isAddingEmail: isAddingEmail,
@@ -145,8 +156,11 @@ export class NotificationSettings extends React.Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ settings: { appContacts } }: RootState) => ({ appContacts }),
-  mapDispatchToProps = { addAppContact, updateAppContact, deleteAppContact };
+const mapStateToProps = ({ settings: { appContacts, hasAppContactsLoaded } }: RootState) => ({
+    appContacts,
+    hasLoaded: hasAppContactsLoaded
+  }),
+  mapDispatchToProps = { listAppContacts, addAppContact, updateAppContact, deleteAppContact };
 
 export default connect(
   mapStateToProps,

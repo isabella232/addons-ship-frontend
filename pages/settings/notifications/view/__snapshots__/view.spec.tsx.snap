@@ -20,7 +20,10 @@ exports[`NotificationSettings View has an enabled save button 1`] = `
     margin="x6"
   >
     <_default
+      email=""
+      isAddingEmail={false}
       onAddEmail={[MockFunction]}
+      onEmailChange={[MockFunction]}
     />
   </Base>
   <Base
@@ -79,7 +82,10 @@ exports[`NotificationSettings View renders correctly 1`] = `
     margin="x6"
   >
     <_default
+      email=""
+      isAddingEmail={false}
       onAddEmail={[MockFunction]}
+      onEmailChange={[MockFunction]}
     />
   </Base>
   <Base
@@ -117,6 +123,120 @@ exports[`NotificationSettings View renders correctly 1`] = `
 </Base>
 `;
 
+exports[`NotificationSettings View renders correctly while loading 1`] = `
+<Base
+  paddingVertical="x8"
+>
+  <Text
+    size="x5"
+    weight="bold"
+  >
+    Email Notifications
+  </Text>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    margin="x4"
+    width="0.125rem"
+  />
+  <Base
+    margin="x6"
+  >
+    <_default
+      email=""
+      isAddingEmail={false}
+      onAddEmail={[MockFunction]}
+      onEmailChange={[MockFunction]}
+    />
+  </Base>
+  <Base
+    margin="x16"
+  >
+    <Skeleton
+      active={true}
+      color="white"
+      maxWidth="60rem"
+    >
+      <Base
+        paddingHorizontal="x4"
+        paddingVertical="x3"
+      >
+        <SkeletonBox
+          backgroundColor="gray-2"
+          height="1.5rem"
+          margin="x2"
+        />
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="1px"
+      />
+      <Base
+        paddingHorizontal="x4"
+        paddingVertical="x3"
+      >
+        <SkeletonBox
+          backgroundColor="gray-2"
+          height="1.5rem"
+          margin="x2"
+        />
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="1px"
+      />
+      <Base
+        paddingHorizontal="x4"
+        paddingVertical="x3"
+      >
+        <SkeletonBox
+          backgroundColor="gray-2"
+          height="1.5rem"
+          margin="x2"
+        />
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="1px"
+      />
+      <Base
+        paddingHorizontal="x4"
+        paddingVertical="x3"
+      >
+        <SkeletonBox
+          backgroundColor="gray-2"
+          height="1.5rem"
+          margin="x2"
+        />
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="1px"
+      />
+      <Base
+        paddingHorizontal="x4"
+        paddingVertical="x3"
+      >
+        <SkeletonBox
+          backgroundColor="gray-2"
+          height="1.5rem"
+          margin="x2"
+        />
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="1px"
+      />
+    </Skeleton>
+  </Base>
+</Base>
+`;
+
 exports[`NotificationSettings View renders correctly with error message 1`] = `
 <Base
   paddingVertical="x8"
@@ -143,7 +263,10 @@ exports[`NotificationSettings View renders correctly with error message 1`] = `
     margin="x6"
   >
     <_default
+      email=""
+      isAddingEmail={false}
       onAddEmail={[MockFunction]}
+      onEmailChange={[MockFunction]}
     />
   </Base>
   <Base

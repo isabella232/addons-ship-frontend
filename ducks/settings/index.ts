@@ -11,6 +11,15 @@ import deleteAppContact from './deleteAppContact';
 
 import merge from 'lodash/merge';
 
+export type SettingsState = {
+  settings: Settings;
+  appContacts: AppContact[];
+  isSavingSettings?: boolean;
+  hasAppContactsLoaded?: boolean;
+};
+
+export { fetchSettings, updateSettings, addAppContact, listAppContacts, updateAppContact, deleteAppContact };
+
 const defaultState: SettingsState = {
   settings: {
     projectType: 'other',
@@ -18,12 +27,9 @@ const defaultState: SettingsState = {
     androidWorkflow: ''
   },
   appContacts: [],
-  isSavingSettings: false
+  isSavingSettings: false,
+  hasAppContactsLoaded: false
 };
-
-export { fetchSettings, updateSettings, addAppContact, listAppContacts, updateAppContact, deleteAppContact };
-
-export type SettingsState = { settings: Settings; appContacts: AppContact[]; isSavingSettings?: boolean };
 export default createReducer(defaultState, handleAction => [
   handleAction([fetchSettings.complete, updateSettings.complete], (state, { payload }) => ({
     ...state,
@@ -34,8 +40,13 @@ export default createReducer(defaultState, handleAction => [
     ...state,
     appContacts: state.appContacts.concat(payload)
   })),
+  handleAction(listAppContacts.next, state => ({
+    ...state,
+    hasAppContactsLoaded: false
+  })),
   handleAction(listAppContacts.complete, (state, { payload }) => ({
     ...state,
+    hasAppContactsLoaded: true,
     appContacts: payload
   })),
   handleAction(updateAppContact.complete, ({ appContacts, ...state }, { payload }) => ({

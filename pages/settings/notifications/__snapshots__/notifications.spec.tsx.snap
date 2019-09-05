@@ -139,6 +139,7 @@ exports[`NotificationSettings renders correctly 1`] = `
     ]
   }
   email=""
+  hasLoaded={true}
   isAddingEmail={false}
   onAddEmail={[Function]}
   onCancel={[Function]}

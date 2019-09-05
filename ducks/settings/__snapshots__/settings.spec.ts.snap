@@ -128,6 +128,7 @@ Object {
       "email": "bit@bot.io",
     },
   ],
+  "hasAppContactsLoaded": true,
   "isSavingSettings": false,
   "settings": Object {
     "androidSettings": Object {
@@ -193,6 +194,7 @@ Object {
 exports[`settings reducer loads settings 1`] = `
 Object {
   "appContacts": Array [],
+  "hasAppContactsLoaded": false,
   "isSavingSettings": false,
   "settings": Object {
     "androidSettings": Object {
