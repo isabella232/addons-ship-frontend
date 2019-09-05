@@ -9,20 +9,29 @@ import css from './style.scss';
 interface AppSummaryProps {
   platform: string;
   detailsPagePath: string;
+  detailsPagePathHref: string;
   title: string;
   description: string;
   note: string;
   iconUrl: string;
 }
 
-export default ({ platform, detailsPagePath, title, description, note, iconUrl }: AppSummaryProps) => {
+export default ({
+  platform,
+  detailsPagePath,
+  detailsPagePathHref,
+  title,
+  description,
+  note,
+  iconUrl
+}: AppSummaryProps) => {
   const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
   const primaryColor = '#0D83CD';
   const secondaryColor = '#0DD3C5';
   const iconName: TypeIconName = platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   return (
-    <Link href={detailsPagePath}>
+    <Link href={detailsPagePathHref} as={detailsPagePath}>
       <a className={css.appSummary}>
         <div
           className={css.colorBar}

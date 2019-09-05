@@ -8,6 +8,7 @@ exports[`VersionListPageItem renders correctly 1`] = `
     className="versionListPageItemInner"
   >
     <Link
+      as="/v1-1-0/details"
       href="/v1-1-0/details"
     >
       <a
@@ -76,6 +77,7 @@ exports[`VersionListPageItem shows more description 1`] = `
     className="versionListPageItemInner"
   >
     <Link
+      as="/v1-1-0/details"
       href="/v1-1-0/details"
     >
       <a

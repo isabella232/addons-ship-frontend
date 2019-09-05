@@ -2,6 +2,7 @@
 
 exports[`AppSummary renders correctly on desktop 1`] = `
 <Link
+  as="/details"
   href="/details"
 >
   <a
@@ -77,6 +78,7 @@ exports[`AppSummary renders correctly on desktop 1`] = `
 
 exports[`AppSummary renders correctly on mobile 1`] = `
 <Link
+  as="/details"
   href="/details"
 >
   <a
@@ -152,6 +154,7 @@ exports[`AppSummary renders correctly on mobile 1`] = `
 
 exports[`AppSummary renders correctly on tablet 1`] = `
 <Link
+  as="/details"
   href="/details"
 >
   <a

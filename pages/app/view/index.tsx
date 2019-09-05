@@ -43,6 +43,7 @@ export default ({
           {latestAppVersion && (
             <AppSummary
               detailsPagePath={`/apps/${latestAppVersion.appSlug}/versions/${latestAppVersion.id}/details`}
+              detailsPagePathHref={`/version?appSlug=${latestAppVersion.appSlug}&versionId=${latestAppVersion.id}`}
               title={`${latestAppVersion.appName} v${latestAppVersion.version} (${latestAppVersion.buildNumber})`}
               description={latestAppVersion.description}
               note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
@@ -84,6 +85,7 @@ export default ({
                     <VersionListPageItem
                       key={`${i}-${j}`}
                       detailsPagePath={`/apps/${appVersion.appSlug}/versions/${appVersion.id}/details`}
+                      detailsPagePathHref={`/version?appSlug=${appVersion.appSlug}&versionId=${appVersion.id}`}
                       platform={appVersion.platform}
                       title={`${appVersion.appName} (${appVersion.buildNumber})`}
                       description={appVersion.description}

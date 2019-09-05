@@ -7,6 +7,7 @@ import { Icon, TypeIconName, Base } from '@bitrise/bitkit';
 interface VersionListPageItemProps {
   platform: string;
   detailsPagePath: string;
+  detailsPagePathHref: string;
   title: string;
   description: string;
   note: string;
@@ -27,7 +28,7 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
   };
 
   render() {
-    const { platform, detailsPagePath, title, description, note } = this.props;
+    const { platform, detailsPagePath, detailsPagePathHref, title, description, note } = this.props;
     const { isOpen } = this.state;
     const iconName: TypeIconName = platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
@@ -39,7 +40,7 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
     return (
       <div className={css.versionListPageItem}>
         <div className={css.versionListPageItemInner}>
-          <Link href={detailsPagePath}>
+          <Link href={detailsPagePathHref} as={detailsPagePath}>
             <a className={css.topWrapper}>
               <Base className={css.platformIconWrapper}>
                 <Icon color="grape-4" name={iconName} size="1.5rem" />
