@@ -143,7 +143,7 @@ describe('AppVersionDetailsView', () => {
 describe('AppVersionDetails', () => {
   const defaultProps: AppVersionDetailsProps = {
     appSlug: 'an-app-slug',
-    versionId: 'the-version-id',
+    versionId: '123',
     appVersion: mockAppVersion,
     settings: mockSettings,
     fetchSettings: jest.fn() as any,

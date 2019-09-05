@@ -375,9 +375,9 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   render() {
-    const { appVersion, isSaving } = this.props;
+    const { versionId, appVersion, isSaving } = this.props;
 
-    if (!appVersion) {
+    if (!appVersion || versionId !== appVersion.id) {
       return (
         <Flex direction="horizontal" container grow>
           <ProgressBitbot color="grape-3" absolute="center" />
