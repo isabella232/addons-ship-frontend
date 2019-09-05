@@ -1,4 +1,4 @@
-import { AppVersion, AppVersionEvent } from '@/models';
+import { AppVersion, AppVersionEvent, AppVersionEventStatus } from '@/models';
 import { ScreenshotResponse } from '@/models/uploadable';
 import { Settings } from '@/models/settings';
 import { TestDevice } from '@/models/test-device';
@@ -245,7 +245,7 @@ export const mockSettings: Settings = {
 
 export const mockFinishedAppVersionEvent: AppVersionEvent = {
   id: '1234',
-  status: 'finished',
+  status: AppVersionEventStatus.Finished,
   text: 'Event finished successfully!',
   createdAtTimestamp: new Date('2018-09-20T12:42:31Z').getTime(),
   createdAt: new Date('2018-09-20T12:42:31Z'),
@@ -256,7 +256,7 @@ export const mockFinishedAppVersionEvent: AppVersionEvent = {
 
 export const mockInProgressAppVersionEvent: AppVersionEvent = {
   id: '1234',
-  status: 'in-progress',
+  status: AppVersionEventStatus.InProgress,
   text: 'Doing something...',
   createdAtTimestamp: new Date('2018-09-22T12:42:31Z').getTime(),
   createdAt: new Date('2018-09-22T12:42:31Z'),
@@ -267,7 +267,7 @@ export const mockInProgressAppVersionEvent: AppVersionEvent = {
 
 export const mockFailedAppVersionEvent: AppVersionEvent = {
   id: '1234',
-  status: 'failed',
+  status: AppVersionEventStatus.Failed,
   text: 'An error occured.',
   createdAtTimestamp: new Date('2018-09-26T12:42:31Z').getTime(),
   createdAt: new Date('2018-09-26T12:42:31Z'),

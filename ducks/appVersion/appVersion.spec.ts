@@ -7,7 +7,7 @@ import { TestScheduler } from 'rxjs/testing';
 import { getType } from 'deox';
 
 import { mockAppVersion, mockUploadedScreenshotResponse } from '@/mocks';
-import { AppVersion, AppVersionEvent } from '@/models';
+import { AppVersion, AppVersionEvent, AppVersionEventStatus } from '@/models';
 import api, { ShipAPIService } from '@/services/ship-api';
 import { uploadFileToS3 } from '@/utils/file';
 import { Uploadable } from '@/models/uploadable';
@@ -60,8 +60,8 @@ describe('appVersion', () => {
       const state = reducer(
         undefined,
         pollPublishStatus.complete([
-          { status: 'in-progress', createdAtTimestamp: new Date('2019-07-08').getTime() },
-          { status: 'finished', createdAtTimestamp: new Date('2019-07-09').getTime() }
+          { status: AppVersionEventStatus.InProgress, createdAtTimestamp: new Date('2019-07-08').getTime() },
+          { status: AppVersionEventStatus.Finished, createdAtTimestamp: new Date('2019-07-09').getTime() }
         ] as AppVersionEvent[])
       );
 

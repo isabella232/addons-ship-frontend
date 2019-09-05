@@ -11,7 +11,7 @@ import { mediaQuery } from '@/utils/media';
 import { isAndroid, osVersion, mobileModel, compareVersions } from '@/utils/device';
 import settingService from '@/services/settings';
 import Dropzone from '@/components/Dropzone';
-import { AppVersionEvent, Screenshot, FeatureGraphic, AppVersion } from '@/models';
+import { AppVersionEvent, Screenshot, FeatureGraphic, AppVersion, AppVersionEventStatus } from '@/models';
 
 import DetailsView, { Props as AppVersionDetailsViewProps } from './view';
 import { AppVersionDetails, State, Props as AppVersionDetailsProps } from './';
@@ -74,20 +74,26 @@ describe('AppVersionDetailsView', () => {
     describe('when publish is in progress', () => {
       it('renders the details view with notification, and the publish button disabled', () => {
         const tree = toJSON(
-          mount(<DetailsView {...defaultProps} latestEventStatus={'in-progress'} isPublishInProgress />)
+          mount(
+            <DetailsView {...defaultProps} latestEventStatus={AppVersionEventStatus.InProgress} isPublishInProgress />
+          )
         );
         expect(tree).toMatchSnapshot();
       });
     });
 
     test('when publish has finished successfully', () => {
-      const tree = shallowToJson(shallow(<DetailsView {...defaultProps} latestEventStatus={'finished'} />));
+      const tree = shallowToJson(
+        shallow(<DetailsView {...defaultProps} latestEventStatus={AppVersionEventStatus.Finished} />)
+      );
 
       expect(tree).toMatchSnapshot();
     });
 
     test('when publish has failed', () => {
-      const tree = shallowToJson(shallow(<DetailsView {...defaultProps} latestEventStatus={'failed'} />));
+      const tree = shallowToJson(
+        shallow(<DetailsView {...defaultProps} latestEventStatus={AppVersionEventStatus.Failed} />)
+      );
 
       expect(tree).toMatchSnapshot();
     });
@@ -464,7 +470,7 @@ describe('AppVersionDetails', () => {
 
       const event = {
         id: 'some-id',
-        status: 'in-progress'
+        status: AppVersionEventStatus.InProgress
       } as AppVersionEvent;
 
       wrapper.setProps({ appVersionEvents: [event] });
@@ -481,7 +487,7 @@ describe('AppVersionDetails', () => {
         <AppVersionDetails {...defaultProps} cancelPollPublishStatus={cancelPollPublishStatus} />
       );
 
-      const event = { status: 'finished' } as AppVersionEvent;
+      const event = { status: AppVersionEventStatus.Finished } as AppVersionEvent;
 
       wrapper.setProps({ appVersionEvents: [event] });
       expect(cancelPollPublishStatus).toHaveBeenCalled();

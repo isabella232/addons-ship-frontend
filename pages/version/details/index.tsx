@@ -7,7 +7,7 @@ import filter from 'lodash/filter';
 import { Flex, ProgressBitbot } from '@bitrise/bitkit';
 
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
-import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot } from '@/models';
+import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot, AppVersionEventStatus } from '@/models';
 import { Settings, IosSettings, AndroidSettings } from '@/models/settings';
 import { Uploadable, ScreenshotResponse } from '@/models/uploadable';
 import { RootState } from '@/store';
@@ -124,7 +124,7 @@ export class AppVersionDetails extends Component<Props, State> {
       const latestEvent = events[0];
 
       if (latestEvent) {
-        const isPublishInProgress = latestEvent.status === 'in-progress';
+        const isPublishInProgress = latestEvent.status === AppVersionEventStatus.InProgress;
 
         this.setState({ latestEvent, isPublishInProgress });
 

@@ -95,7 +95,7 @@ Object {
   "isPublishInProgress": true,
   "latestEvent": Object {
     "id": "some-id",
-    "status": "in-progress",
+    "status": "in_progress",
   },
   "screenshotIdsToDelete": Array [],
   "screenshotList": Object {
@@ -17534,7 +17534,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
   hasMounted={true}
   isPublishInProgress={true}
   isSaving={false}
-  latestEventStatus="in-progress"
+  latestEventStatus="in_progress"
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
