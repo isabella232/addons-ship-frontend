@@ -23,7 +23,11 @@ export { fetchSettings, updateSettings, addAppContact, listAppContacts, updateAp
 
 export type SettingsState = { settings: Settings; appContacts: AppContact[]; isSavingSettings?: boolean };
 export default createReducer(defaultState, handleAction => [
-  handleAction(fetchSettings.complete, (state, { payload }) => ({ ...state, settings: payload })),
+  handleAction([fetchSettings.complete, updateSettings.complete], (state, { payload }) => ({
+    ...state,
+    settings: {...state.settings, ...payload},
+    isSavingSettings: false
+  })),
   handleAction(addAppContact.complete, (state, { payload }) => ({
     ...state,
     appContacts: state.appContacts.concat(payload)
@@ -46,6 +50,5 @@ export default createReducer(defaultState, handleAction => [
     ...state,
     appContacts: appContacts.filter(({ id }) => id !== payload)
   })),
-  handleAction(updateSettings.next, state => ({ ...state, isSavingSettings: true })),
-  handleAction(updateSettings.complete, state => ({ ...state, isSavingSettings: false }))
+  handleAction(updateSettings.next, state => ({ ...state, isSavingSettings: true }))
 ]);
