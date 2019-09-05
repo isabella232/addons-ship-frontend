@@ -9,6 +9,8 @@ import listAppContacts from './listAppContacts';
 import updateAppContact from './updateAppContact';
 import deleteAppContact from './deleteAppContact';
 
+import merge from 'lodash/merge';
+
 const defaultState: SettingsState = {
   settings: {
     projectType: 'other',
@@ -25,7 +27,7 @@ export type SettingsState = { settings: Settings; appContacts: AppContact[]; isS
 export default createReducer(defaultState, handleAction => [
   handleAction([fetchSettings.complete, updateSettings.complete], (state, { payload }) => ({
     ...state,
-    settings: {...state.settings, ...payload},
+    settings: merge(state.settings, payload),
     isSavingSettings: false
   })),
   handleAction(addAppContact.complete, (state, { payload }) => ({
