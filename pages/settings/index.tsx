@@ -46,11 +46,11 @@ export class SettingsPage extends Component<AppSettingsPageQuery> {
     const { appSlug, selectedTab } = this.props;
 
     const tab = (key: string) => (
-      <Tab active={selectedTab === key}>
-        <Link as={`/apps/${appSlug}/settings/${key}`} href={`/settings?appSlug=${appSlug}&selectedTab=${key}`}>
+      <Link as={`/apps/${appSlug}/settings/${key}`} href={`/settings?appSlug=${appSlug}&selectedTab=${key}`}>
+        <Tab active={selectedTab === key}>
           <a>{startCase(key)}</a>
-        </Link>
-      </Tab>
+        </Tab>
+      </Link>
     );
 
     return (
