@@ -237,6 +237,70 @@ exports[`NotificationSettings View renders correctly while loading 1`] = `
 </Base>
 `;
 
+exports[`NotificationSettings View renders correctly while saving 1`] = `
+<Base
+  paddingVertical="x8"
+>
+  <Text
+    size="x5"
+    weight="bold"
+  >
+    Email Notifications
+  </Text>
+  <Divider
+    color="gray-2"
+    direction="horizontal"
+    margin="x4"
+    width="0.125rem"
+  />
+  <Base
+    margin="x6"
+  >
+    <_default
+      email=""
+      isAddingEmail={false}
+      onAddEmail={[MockFunction]}
+      onEmailChange={[MockFunction]}
+    />
+  </Base>
+  <Base
+    margin="x4"
+  >
+    <_default
+      appContacts={Array []}
+      onDeleteContact={[MockFunction]}
+      onNotificationPreferenceChanged={[MockFunction]}
+    />
+  </Base>
+  <Flex
+    alignChildrenHorizontal="end"
+    direction="horizontal"
+    gap="x4"
+    margin="x12"
+  >
+    <Button
+      level="secondary"
+      onClick={[MockFunction]}
+      size="medium"
+      width="8rem"
+    >
+      Cancel
+    </Button>
+    <Button
+      disabled={true}
+      level="primary"
+      size="medium"
+      width="8rem"
+    >
+      <ProgressSpinner
+        size="1.5rem"
+      />
+         Saving...
+    </Button>
+  </Flex>
+</Base>
+`;
+
 exports[`NotificationSettings View renders correctly with error message 1`] = `
 <Base
   paddingVertical="x8"

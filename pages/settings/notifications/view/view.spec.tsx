@@ -6,6 +6,7 @@ import View, { Props } from '.';
 describe('NotificationSettings View', () => {
   const defaultProps: Props = {
     hasLoaded: true,
+    isSaving: false,
     isAddingEmail: false,
     email: '',
     onAddEmail: jest.fn(),
@@ -24,6 +25,12 @@ describe('NotificationSettings View', () => {
 
   it('renders correctly while loading', () => {
     const tree = shallowToJson(shallow(<View {...defaultProps} hasLoaded={false} />));
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders correctly while saving', () => {
+    const tree = shallowToJson(shallow(<View {...defaultProps} isSaving />));
 
     expect(tree).toMatchSnapshot();
   });

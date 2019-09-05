@@ -13,6 +13,7 @@ export type Props = {
   appSlug: string;
   appContacts: AppContact[];
   hasLoaded: boolean;
+  isSaving: boolean;
   listAppContacts: typeof listAppContacts;
   addAppContact: typeof addAppContact;
   updateAppContact: typeof updateAppContact;
@@ -135,11 +136,12 @@ export class NotificationSettings extends React.Component<Props, State> {
   };
 
   render() {
-    const { hasLoaded } = this.props;
+    const { hasLoaded, isSaving } = this.props;
     const { email, isAddingEmail, updatedAppContacts, hasModifications, error } = this.state;
 
     const props = {
       hasLoaded,
+      isSaving,
       appContacts: updatedAppContacts,
       email,
       onEmailChange: this.onEmailChange,
@@ -156,9 +158,10 @@ export class NotificationSettings extends React.Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ settings: { appContacts, hasAppContactsLoaded } }: RootState) => ({
+const mapStateToProps = ({ settings: { appContacts, hasAppContactsLoaded, savingAppContacts } }: RootState) => ({
     appContacts,
-    hasLoaded: hasAppContactsLoaded
+    hasLoaded: hasAppContactsLoaded,
+    isSaving: savingAppContacts
   }),
   mapDispatchToProps = { listAppContacts, addAppContact, updateAppContact, deleteAppContact };
 

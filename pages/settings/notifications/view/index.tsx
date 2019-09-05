@@ -1,5 +1,15 @@
 import { Fragment } from 'react';
-import { Base, Text, Divider, Button, Flex, Notification, SkeletonBox, Skeleton } from '@bitrise/bitkit';
+import {
+  Base,
+  Text,
+  Divider,
+  Button,
+  Flex,
+  Notification,
+  SkeletonBox,
+  Skeleton,
+  ProgressSpinner
+} from '@bitrise/bitkit';
 
 import AddNew, { Props as AddNewProps } from './add-new';
 import List, { Props as ListProps } from './contact-list';
@@ -9,10 +19,12 @@ export interface Props extends AddNewProps, ListProps {
   onCancel: () => void;
   error?: string;
   hasLoaded: boolean;
+  isSaving: boolean;
 }
 
 export default ({
   hasLoaded,
+  isSaving,
   email,
   onEmailChange,
   onAddEmail,
@@ -51,8 +63,14 @@ export default ({
           <Button level="secondary" width="8rem" onClick={onCancel}>
             Cancel
           </Button>
-          <Button disabled={!onSave} level="primary" width="8rem" onClick={onSave}>
-            Save
+          <Button disabled={!onSave || isSaving} level="primary" width="8rem" onClick={onSave}>
+            {isSaving ? (
+              <Fragment>
+                <ProgressSpinner /> &nbsp; Saving...
+              </Fragment>
+            ) : (
+              'Save'
+            )}
           </Button>
         </Flex>
       </Fragment>

@@ -9,6 +9,7 @@ describe('NotificationSettings', () => {
   const defaultProps: Props = {
     appSlug: 'some-app',
     hasLoaded: true,
+    isSaving: false,
     appContacts: [
       {
         id: 'bit-bot',
