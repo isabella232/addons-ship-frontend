@@ -948,12 +948,14 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                   <_default
                     description="Some semi-long description"
                     detailsPagePath="/apps/undefined/versions/123/details"
+                    detailsPagePathHref="/version?appSlug=undefined&versionId=123"
                     iconUrl="http://placekitten.com/160/160"
                     note="Updated on September 22, 2018"
                     title="Standup Timer v1.0.3 (32)"
                   >
                     <Link
-                      href="/apps/undefined/versions/123/details"
+                      as="/apps/undefined/versions/123/details"
+                      href="/version?appSlug=undefined&versionId=123"
                     >
                       <a
                         className="appSummary"
@@ -1542,6 +1544,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       <VersionListPageItem
                         description="Some semi-long description"
                         detailsPagePath="/apps/app-slug-123/versions/123/details"
+                        detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
                         key="0-0"
                         note="Updated on September 22, 2018"
                         platform="ios"
@@ -1554,7 +1557,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             className="versionListPageItemInner"
                           >
                             <Link
-                              href="/apps/app-slug-123/versions/123/details"
+                              as="/apps/app-slug-123/versions/123/details"
+                              href="/version?appSlug=app-slug-123&versionId=123"
                             >
                               <a
                                 className="topWrapper"
@@ -1683,6 +1687,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       <VersionListPageItem
                         description="Some semi-long description"
                         detailsPagePath="/apps/app-slug-456/versions/456/details"
+                        detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
                         key="0-1"
                         note="Updated on September 22, 2018"
                         platform="ios"
@@ -1695,7 +1700,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             className="versionListPageItemInner"
                           >
                             <Link
-                              href="/apps/app-slug-456/versions/456/details"
+                              as="/apps/app-slug-456/versions/456/details"
+                              href="/version?appSlug=app-slug-456&versionId=456"
                             >
                               <a
                                 className="topWrapper"
@@ -1824,6 +1830,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       <VersionListPageItem
                         description="Some semi-long description"
                         detailsPagePath="/apps/app-slug-789/versions/789/details"
+                        detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
                         key="0-2"
                         note="Updated on September 22, 2018"
                         platform="ios"
@@ -1836,7 +1843,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             className="versionListPageItemInner"
                           >
                             <Link
-                              href="/apps/app-slug-789/versions/789/details"
+                              as="/apps/app-slug-789/versions/789/details"
+                              href="/version?appSlug=app-slug-789&versionId=789"
                             >
                               <a
                                 className="topWrapper"
@@ -1965,6 +1973,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       <VersionListPageItem
                         description="Some semi-long description"
                         detailsPagePath="/apps/app-slug-135/versions/135/details"
+                        detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
                         key="0-3"
                         note="Updated on September 22, 2018"
                         platform="ios"
@@ -1977,7 +1986,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             className="versionListPageItemInner"
                           >
                             <Link
-                              href="/apps/app-slug-135/versions/135/details"
+                              as="/apps/app-slug-135/versions/135/details"
+                              href="/version?appSlug=app-slug-135&versionId=135"
                             >
                               <a
                                 className="topWrapper"
@@ -2106,6 +2116,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                       <VersionListPageItem
                         description="Some semi-long description"
                         detailsPagePath="/apps/app-slug-246/versions/246/details"
+                        detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
                         key="0-4"
                         note="Updated on September 22, 2018"
                         platform="ios"
@@ -2118,7 +2129,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                             className="versionListPageItemInner"
                           >
                             <Link
-                              href="/apps/app-slug-246/versions/246/details"
+                              as="/apps/app-slug-246/versions/246/details"
+                              href="/version?appSlug=app-slug-246&versionId=246"
                             >
                               <a
                                 className="topWrapper"

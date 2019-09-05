@@ -11,7 +11,7 @@ import { mediaQuery } from '@/utils/media';
 import { isAndroid, osVersion, mobileModel, compareVersions } from '@/utils/device';
 import settingService from '@/services/settings';
 import Dropzone from '@/components/Dropzone';
-import { AppVersionEvent, Screenshot, FeatureGraphic, AppVersion } from '@/models';
+import { AppVersionEvent, Screenshot, FeatureGraphic, AppVersion, AppVersionEventStatus } from '@/models';
 
 import DetailsView, { Props as AppVersionDetailsViewProps } from './view';
 import { AppVersionDetails, State, Props as AppVersionDetailsProps } from './';
@@ -74,20 +74,26 @@ describe('AppVersionDetailsView', () => {
     describe('when publish is in progress', () => {
       it('renders the details view with notification, and the publish button disabled', () => {
         const tree = toJSON(
-          mount(<DetailsView {...defaultProps} latestEventStatus={'in-progress'} isPublishInProgress />)
+          mount(
+            <DetailsView {...defaultProps} latestEventStatus={AppVersionEventStatus.InProgress} isPublishInProgress />
+          )
         );
         expect(tree).toMatchSnapshot();
       });
     });
 
     test('when publish has finished successfully', () => {
-      const tree = shallowToJson(shallow(<DetailsView {...defaultProps} latestEventStatus={'finished'} />));
+      const tree = shallowToJson(
+        shallow(<DetailsView {...defaultProps} latestEventStatus={AppVersionEventStatus.Finished} />)
+      );
 
       expect(tree).toMatchSnapshot();
     });
 
     test('when publish has failed', () => {
-      const tree = shallowToJson(shallow(<DetailsView {...defaultProps} latestEventStatus={'failed'} />));
+      const tree = shallowToJson(
+        shallow(<DetailsView {...defaultProps} latestEventStatus={AppVersionEventStatus.Failed} />)
+      );
 
       expect(tree).toMatchSnapshot();
     });
@@ -143,7 +149,7 @@ describe('AppVersionDetailsView', () => {
 describe('AppVersionDetails', () => {
   const defaultProps: AppVersionDetailsProps = {
     appSlug: 'an-app-slug',
-    versionId: 'the-version-id',
+    versionId: '123',
     appVersion: mockAppVersion,
     settings: mockSettings,
     fetchSettings: jest.fn() as any,
@@ -158,6 +164,32 @@ describe('AppVersionDetails', () => {
     appVersionEvents: [],
     isSaving: false
   };
+
+  beforeEach(() => {
+    const {
+      fetchSettings,
+      updateAppVersion,
+      uploadScreenshots,
+      deleteScreenshot,
+      uploadFeatureGraphic,
+      deleteFeatureGraphic,
+      publishAppVersion,
+      startPollPublishStatus,
+      cancelPollPublishStatus
+    } = defaultProps;
+
+    (([
+      fetchSettings,
+      updateAppVersion,
+      uploadScreenshots,
+      deleteScreenshot,
+      uploadFeatureGraphic,
+      deleteFeatureGraphic,
+      publishAppVersion,
+      startPollPublishStatus,
+      cancelPollPublishStatus
+    ] as any) as jest.Mock[]).forEach(mock => mock.mockReset());
+  });
 
   it('renders correctly', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
@@ -246,12 +278,23 @@ describe('AppVersionDetails', () => {
     it('triggers publish, updates then resets state', async () => {
       (mediaQuery as jest.Mock).mockReturnValue([true]);
       const mockPublishAppVersion = jest.fn() as any;
+      const { startPollPublishStatus } = defaultProps;
       const wrap = shallow(<AppVersionDetails {...defaultProps} publishAppVersion={mockPublishAppVersion} />);
       const onPublish = (wrap.instance() as AppVersionDetails).onPublish();
 
       await onPublish;
 
       expect(mockPublishAppVersion).toHaveBeenCalled();
+      expect(startPollPublishStatus).toHaveBeenCalled();
+    });
+
+    test('without a loaded appVersion', () => {
+      const { publishAppVersion } = defaultProps;
+
+      const wrap = shallow(<AppVersionDetails {...defaultProps} appVersion={null} />);
+      (wrap.instance() as AppVersionDetails).onPublish();
+
+      expect(publishAppVersion).not.toHaveBeenCalled();
     });
   });
 
@@ -416,6 +459,15 @@ describe('AppVersionDetails', () => {
 
         expect(deleteFeatureGraphic).toHaveBeenCalledWith(appSlug, id);
       });
+
+      test('without a loaded appVersion', () => {
+        const { updateAppVersion } = defaultProps;
+
+        const wrap = shallow(<AppVersionDetails {...defaultProps} appVersion={null} />);
+        (wrap.instance() as AppVersionDetails).onSave();
+
+        expect(updateAppVersion).not.toHaveBeenCalled();
+      });
     });
 
     test('shouldEnableInstall', () => {
@@ -464,7 +516,7 @@ describe('AppVersionDetails', () => {
 
       const event = {
         id: 'some-id',
-        status: 'in-progress'
+        status: AppVersionEventStatus.InProgress
       } as AppVersionEvent;
 
       wrapper.setProps({ appVersionEvents: [event] });
@@ -481,7 +533,7 @@ describe('AppVersionDetails', () => {
         <AppVersionDetails {...defaultProps} cancelPollPublishStatus={cancelPollPublishStatus} />
       );
 
-      const event = { status: 'finished' } as AppVersionEvent;
+      const event = { status: AppVersionEventStatus.Finished } as AppVersionEvent;
 
       wrapper.setProps({ appVersionEvents: [event] });
       expect(cancelPollPublishStatus).toHaveBeenCalled();

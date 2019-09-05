@@ -1,7 +1,7 @@
 import formatDate from 'date-fns/format';
 import { Base, Flex, Text, Icon, Notification, Button, TypeIconName, Link, ProgressSpinner } from '@bitrise/bitkit';
 
-import { AppVersion, AppVersionEvent, Screenshot } from '@/models';
+import { AppVersion, AppVersionEvent, Screenshot, AppVersionEventStatus } from '@/models';
 import { mediaQuery } from '@/utils/media';
 
 import Sidebar from './sidebar';
@@ -68,19 +68,19 @@ const publishNotification = (
   }
 
   switch (publishStatus) {
-    case 'in-progress':
+    case AppVersionEventStatus.InProgress:
       return (
         <Notification margin="x2" type="progress">
           Publishing to {publishTarget} is in progress.
         </Notification>
       );
-    case 'finished':
+    case AppVersionEventStatus.Finished:
       return (
         <Notification margin="x2" type="success">
           Your app has been successfully published to {publishTarget}.
         </Notification>
       );
-    case 'failed':
+    case AppVersionEventStatus.Failed:
       return (
         <Notification margin="x2" type="alert">
           Publish has failed. See the error log at the{' '}
@@ -138,7 +138,7 @@ export default ({
           {publishNotification(
             appVersion.appSlug,
             appVersion.id,
-            latestEventStatus,
+            isPublishInProgress ? AppVersionEventStatus.InProgress : latestEventStatus,
             readyForPublish,
             publishTarget,
             settingsPath,
@@ -226,6 +226,7 @@ export default ({
           <Sidebar
             publicInstallPageURL={appVersion.publicInstallPageURL}
             shouldEnablePublish={readyForPublish && !isPublishInProgress}
+            isPublishInProgress={isPublishInProgress}
             onSave={onSave}
             onPublish={onPublish}
             buildSlug={appVersion.buildSlug}

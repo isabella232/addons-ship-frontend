@@ -41,7 +41,7 @@ Array [
     "createdAtTimestamp": 1537620151000,
     "id": "1234",
     "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-    "status": "in-progress",
+    "status": "in_progress",
     "text": "Doing something...",
     "updatedAt": 2018-09-25T12:42:31.000Z,
     "updatedAtTimestamp": 1537879351000,

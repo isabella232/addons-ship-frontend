@@ -101,7 +101,7 @@ export class Screenshot extends ImageAsset {
 
 export type AppVersionEvent = {
   id: string;
-  status: 'in-progress' | 'finished' | 'failed';
+  status: AppVersionEventStatus;
   text: string;
   createdAtTimestamp: number;
   createdAt: Date;
@@ -109,6 +109,12 @@ export type AppVersionEvent = {
   updatedAt: Date | null;
   logDownloadUrl: string;
 };
+
+export enum AppVersionEventStatus {
+  InProgress = 'in_progress',
+  Finished = 'finished',
+  Failed = 'failed'
+}
 
 export interface PageContext extends NextContext {
   store: Store;

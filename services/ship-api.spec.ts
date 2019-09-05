@@ -6,7 +6,7 @@ import { mockAppVersion } from '@/mocks';
 import { Settings, AppContact } from '@/models/settings';
 
 import { ShipAPIService } from './ship-api';
-import { FeatureGraphic } from '@/models';
+import { FeatureGraphic, AppVersionEventStatus } from '@/models';
 
 describe('Ship API service', () => {
   const apiUrl = 'http://ship.api',
@@ -490,7 +490,7 @@ describe('Ship API service', () => {
           data: [
             {
               id: 'an-id',
-              status: 'in-progress',
+              status: AppVersionEventStatus.InProgress,
               event_text: 'some-string',
               created_at: '2019-10-10',
               updated_at: '2019-10-11',

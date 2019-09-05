@@ -95,7 +95,7 @@ Object {
   "isPublishInProgress": true,
   "latestEvent": Object {
     "id": "some-id",
-    "status": "in-progress",
+    "status": "in_progress",
   },
   "screenshotIdsToDelete": Array [],
   "screenshotList": Object {
@@ -4061,6 +4061,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
             <_default
               buildSlug="13245ads"
               hasMounted={true}
+              isPublishInProgress={false}
               isSaving={false}
               publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
               shouldEnablePublish={true}
@@ -8253,6 +8254,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
             <_default
               buildSlug="13245ads"
               hasMounted={true}
+              isPublishInProgress={false}
               isSaving={false}
               publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
               shouldEnablePublish={true}
@@ -12485,6 +12487,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
             <_default
               buildSlug="13245ads"
               hasMounted={true}
+              isPublishInProgress={false}
               isSaving={false}
               publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
               shouldEnablePublish={false}
@@ -16677,6 +16680,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
             <_default
               buildSlug="13245ads"
               hasMounted={true}
+              isPublishInProgress={false}
               isSaving={false}
               shouldEnablePublish={true}
             >
@@ -17291,6 +17295,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
     <_default
       buildSlug="13245ads"
       hasMounted={true}
+      isPublishInProgress={false}
       isSaving={false}
       publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
       shouldEnablePublish={true}
@@ -17464,6 +17469,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
     <_default
       buildSlug="13245ads"
       hasMounted={true}
+      isPublishInProgress={false}
       isSaving={false}
       publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
       shouldEnablePublish={true}
@@ -17534,7 +17540,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
   hasMounted={true}
   isPublishInProgress={true}
   isSaving={false}
-  latestEventStatus="in-progress"
+  latestEventStatus="in_progress"
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
@@ -20958,6 +20964,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
             <_default
               buildSlug="13245ads"
               hasMounted={true}
+              isPublishInProgress={true}
               isSaving={false}
               publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
               shouldEnablePublish={false}
@@ -21135,19 +21142,18 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 }
                               }
                             >
-                              <Icon
-                                name="Deployment"
+                              <ProgressSpinner
                                 size="1.5rem"
                               >
                                 <Base
                                   Component="svg"
-                                  className="Icon"
+                                  className="ProgressSpinner"
                                   height="1.5rem"
                                   viewBox="0 0 24 24"
                                   width="1.5rem"
                                 >
                                   <svg
-                                    className="Base Icon"
+                                    className="Base ProgressSpinner"
                                     style={
                                       Object {
                                         "height": "1.5rem",
@@ -21160,47 +21166,40 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                     }
                                     viewBox="0 0 24 24"
                                   >
-                                    <Component
-                                      height="100%"
-                                      width="100%"
+                                    <circle
+                                      cx={12}
+                                      cy={12}
+                                      fill="transparent"
+                                      r={8}
+                                      stroke="currentColor"
+                                      strokeDasharray={50.26548245743669}
+                                      strokeWidth="2px"
+                                      transform="rotate(-90 12 12)"
                                     >
-                                      <svg
-                                        height="100%"
-                                        viewBox="0 0 24 24"
-                                        width="100%"
-                                      >
-                                        <path
-                                          d="M13.67 19.27l-3.366 3.368-1.698-1.697 1.253-3.799-2.545-2.545-3.799 1.252-1.697-1.697 3.367-3.367.135-.135a1 1 0 011.414 0l1.015 1.015c1.43-2.433 4.037-5.792 4.682-6.428 2.454-2.42 8.32-2.457 8.782-1.994.463.463.44 6.348-1.994 8.782-.64.64-3.77 3.478-6.2 4.91l.786.786a1 1 0 010 1.415l-.134.134zm-2.12-3.804c.584-.303 1.325-.785 2.163-1.405 1.505-1.112 3.346-2.704 4.092-3.45.714-.714 1.27-2.2 1.516-3.989.077-.56.118-1.118.125-1.609-.49.007-1.044.05-1.602.127-1.789.248-3.283.805-4.01 1.521-.441.436-2.028 2.488-3.204 4.212a28.106 28.106 0 00-1.414 2.259l.205.205 2.129 2.129zm-4.654.397l1.697 1.697-2.525 2.525c-.39.39-.955.389-1.695-.002-.391-.74-.392-1.305-.002-1.695l2.525-2.525zM15.85 10a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-                                          fill="currentColor"
-                                          fillRule="evenodd"
-                                        />
-                                      </svg>
-                                    </Component>
+                                      <animate
+                                        attributeName="stroke-dashoffset"
+                                        calcMode="spline"
+                                        dur="2000ms"
+                                        fill="freeze"
+                                        keySplines="0.4 0 0.2 1"
+                                        repeatCount="indefinite"
+                                        values="150.79644737231007;50.26548245743669"
+                                      />
+                                      <animateTransform
+                                        attributeName="transform"
+                                        calcMode="spline"
+                                        dur="2000ms"
+                                        fill="freeze"
+                                        keySplines="0.4 0 0.2 1"
+                                        repeatCount="indefinite"
+                                        type="rotate"
+                                        values="-90 12 12;270 12 12"
+                                      />
+                                    </circle>
                                   </svg>
                                 </Base>
-                              </Icon>
-                              <Text>
-                                <Base
-                                  Component="div"
-                                  className="Text"
-                                >
-                                  <div
-                                    className="Base Text"
-                                    style={
-                                      Object {
-                                        "height": undefined,
-                                        "maxHeight": undefined,
-                                        "maxWidth": undefined,
-                                        "minHeight": undefined,
-                                        "minWidth": undefined,
-                                        "width": undefined,
-                                      }
-                                    }
-                                  >
-                                    Publish
-                                  </div>
-                                </Base>
-                              </Text>
+                              </ProgressSpinner>
+                                 Publishing...
                             </button>
                           </Base>
                         </Flex>
@@ -25150,6 +25149,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
             <_default
               buildSlug="13245ads"
               hasMounted={true}
+              isPublishInProgress={false}
               isSaving={true}
               publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
               shouldEnablePublish={true}

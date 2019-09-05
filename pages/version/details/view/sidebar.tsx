@@ -14,6 +14,7 @@ type Props = {
   buildSlug: string;
   hasMounted: boolean;
   isSaving: boolean;
+  isPublishInProgress: boolean;
 };
 
 export default ({
@@ -23,7 +24,8 @@ export default ({
   onPublish,
   buildSlug,
   hasMounted,
-  isSaving
+  isSaving,
+  isPublishInProgress
 }: Props) => {
   const [isPublicInstallPageURLCopiedTooltipVisible, setIsPublicInstallPageURLCopiedTooltipVisible] = useState(false);
 
@@ -51,8 +53,16 @@ export default ({
           )}
         </Button>
         <Button level="secondary" fullWidth margin="x4" disabled={!shouldEnablePublish} onClick={onPublish}>
-          <Icon name="Deployment" />
-          <Text>Publish</Text>
+          {isPublishInProgress ? (
+            <Fragment>
+              <ProgressSpinner /> &nbsp; Publishing...
+            </Fragment>
+          ) : (
+            <Fragment>
+              <Icon name="Deployment" />
+              <Text>Publish</Text>
+            </Fragment>
+          )}
         </Button>
       </Base>
       {publicInstallPageURL ? (

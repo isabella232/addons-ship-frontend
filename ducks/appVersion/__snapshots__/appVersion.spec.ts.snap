@@ -162,7 +162,7 @@ Object {
     Object {
       "createdAt": 2019-07-08T00:00:00.000Z,
       "createdAtTimestamp": 1562544000000,
-      "status": "in-progress",
+      "status": "in_progress",
       "updatedAt": null,
     },
     Object {

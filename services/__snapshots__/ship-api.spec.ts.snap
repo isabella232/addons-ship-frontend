@@ -62,7 +62,7 @@ Array [
     "createdAtTimestamp": 1570665600000,
     "id": "an-id",
     "logDownloadUrl": "http://log.url",
-    "status": "in-progress",
+    "status": "in_progress",
     "text": "some-string",
     "updatedAtTimestamp": 1570752000000,
   },
