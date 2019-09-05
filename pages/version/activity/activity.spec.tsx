@@ -6,13 +6,14 @@ jest.mock('@/services/settings');
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 import { mediaQuery } from '@/utils/media';
-import { Activity } from '.';
+import { Props as ActivityProps, Activity } from '.';
 import ActivityView from './view';
 import {
   mockAppVersionEvents,
   mockFailedAppVersionEvent,
   mockFinishedAppVersionEvent,
-  mockInProgressAppVersionEvent
+  mockInProgressAppVersionEvent,
+  mockAppVersion
 } from '@/mocks';
 
 describe('ActivityView', () => {
@@ -65,13 +66,47 @@ describe('ActivityView', () => {
 });
 
 describe('Activity', () => {
-  const defaultProps = {
-    appVersionEvents: mockAppVersionEvents
+  const defaultProps: ActivityProps = {
+    appVersionEvents: mockAppVersionEvents,
+    versionId: mockAppVersion.id,
+    appVersion: mockAppVersion,
+    cancelPollPublishStatus: jest.fn() as any,
+    startPollPublishStatus: jest.fn() as any
   };
+
+  beforeEach(() => {
+    const { startPollPublishStatus, cancelPollPublishStatus } = defaultProps;
+
+    (([startPollPublishStatus, cancelPollPublishStatus] as any) as jest.Mock[]).forEach(mock => mock.mockReset());
+  });
 
   it('renders correctly', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
     const tree = toJSON(shallow(<Activity {...defaultProps} />));
     expect(tree).toMatchSnapshot();
+  });
+
+  describe('componentDidMount', () => {
+    it('does not start polling if the appVersion is invalid', () => {
+      const { startPollPublishStatus } = defaultProps;
+      shallow(<Activity {...defaultProps} appVersion={null} />);
+
+      expect(startPollPublishStatus).not.toHaveBeenCalled();
+    });
+
+    it('starts polling', () => {
+      const { appVersion, startPollPublishStatus } = defaultProps;
+      shallow(<Activity {...defaultProps} />);
+
+      expect(startPollPublishStatus).toHaveBeenCalledWith(appVersion);
+    });
+  });
+
+  it('stops polling', () => {
+    const { cancelPollPublishStatus } = defaultProps;
+    const wrapper = shallow(<Activity {...defaultProps} />);
+
+    wrapper.unmount();
+    expect(cancelPollPublishStatus).toHaveBeenCalled();
   });
 });

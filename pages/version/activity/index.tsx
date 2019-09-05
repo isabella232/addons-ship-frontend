@@ -2,15 +2,35 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { RootState } from '@/store';
-import View from './view';
 import { orderedAppVersionEvents } from '@/ducks/selectors';
-import { AppVersionEvent } from '@/models';
+import { AppVersionEvent, AppVersion } from '@/models';
+import { pollPublishStatus } from '@/ducks/appVersion';
 
-type Props = {
+import View from './view';
+
+export type Props = {
+  versionId: string;
+  appVersion: AppVersion | null;
   appVersionEvents: AppVersionEvent[];
+  startPollPublishStatus: typeof pollPublishStatus.start;
+  cancelPollPublishStatus: typeof pollPublishStatus.cancel;
 };
 
 export class Activity extends Component<Props> {
+  componentDidMount() {
+    const { versionId, appVersion, startPollPublishStatus } = this.props;
+
+    if (appVersion && appVersion.id === versionId) {
+      startPollPublishStatus(appVersion);
+    }
+  }
+
+  componentWillUnmount() {
+    const { cancelPollPublishStatus } = this.props;
+
+    cancelPollPublishStatus();
+  }
+
   render() {
     const { appVersionEvents } = this.props;
     const viewProps = {
@@ -21,8 +41,17 @@ export class Activity extends Component<Props> {
   }
 }
 
-const mapStateToProps = ({ appVersion: { events } }: RootState) => ({
-  appVersionEvents: orderedAppVersionEvents(events)
+const mapStateToProps = ({ appVersion: { appVersion, events } }: RootState) => ({
+  appVersionEvents: orderedAppVersionEvents(events),
+  appVersion
 });
 
-export default connect(mapStateToProps)(Activity as any);
+const mapDispatchToProps = {
+  startPollPublishStatus: pollPublishStatus.start,
+  cancelPollPublishStatus: pollPublishStatus.cancel
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Activity);

@@ -89,7 +89,7 @@ export class VersionPage extends Component<VersionPageProps> {
       case 'devices':
         return <Devices />;
       case 'activity':
-        return <Activity />;
+        return <Activity versionId={versionId} />;
       case 'qa':
         return <QA />;
       default:
