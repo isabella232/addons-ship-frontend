@@ -239,6 +239,7 @@ export class AppVersionDetails extends Component<Props, State> {
     const { appSlug, id } = appVersion;
     const { updatedAppVersion, screenshotIdsToDelete, featureGraphic, isFeatureGraphicMarkedForDelete } = this.state;
 
+    /* istanbul ignore next */
     if (window.analytics) {
       window.analytics.track('AppVersionDetails Save', { addonId: 'addons-ship', appSlug, appVersionId: id });
     }
@@ -263,7 +264,7 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   onPublish = async () => {
-    const { appVersion, publishAppVersion } = this.props;
+    const { appVersion, publishAppVersion, startPollPublishStatus } = this.props;
 
     if (!appVersion) {
       return;
@@ -271,11 +272,15 @@ export class AppVersionDetails extends Component<Props, State> {
 
     const { appSlug, id } = appVersion;
 
+    /* istanbul ignore next */
     if (window.analytics) {
       window.analytics.track('AppVersionDetails Publish', { addonId: 'addons-ship', appSlug, appVersionId: id });
     }
 
     await publishAppVersion(appVersion);
+    this.setState({ isPublishInProgress: true });
+
+    startPollPublishStatus(appVersion);
   };
 
   onScreenshotAdded = (deviceId: string, files: File[]) => {
@@ -287,6 +292,7 @@ export class AppVersionDetails extends Component<Props, State> {
 
     const { appSlug, id } = appVersion;
 
+    /* istanbul ignore next */
     if (window.analytics) {
       window.analytics.track('AppVersionDetails Added Screenshot', {
         addonId: 'addons-ship',
@@ -375,7 +381,7 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   render() {
-    const { versionId, appVersion, isSaving } = this.props;
+    const { versionId, appVersion, isSaving, appVersionEvents } = this.props;
 
     if (!appVersion || versionId !== appVersion.id) {
       return (
@@ -390,9 +396,10 @@ export class AppVersionDetails extends Component<Props, State> {
       selectedDeviceIdForScreenshots,
       screenshotList,
       featureGraphic,
-      latestEvent,
       isPublishInProgress
     } = this.state;
+
+    const latestEventStatus = appVersionEvents.length > 0 ? appVersionEvents[0].status : null;
 
     const viewProps = {
       appVersion,
@@ -416,14 +423,14 @@ export class AppVersionDetails extends Component<Props, State> {
       onDeviceSelected: this.onDeviceSelected,
       shouldEnableInstall: this.shouldEnableInstall(),
       readyForPublish: this.readyForPublish(),
-      isPublishInProgress,
+      isPublishInProgress: isPublishInProgress || latestEventStatus === AppVersionEventStatus.InProgress,
       publishTarget:
         (appVersion.platform === 'ios' && 'App Store Connect') ||
         (appVersion.platform === 'android' && 'Google Play Store') ||
         'production',
       settingsPath: `/apps/${appVersion.appSlug}/settings`,
       activityPath: `/apps/${appVersion.appSlug}/versions/${appVersion.id}/activity`,
-      latestEventStatus: get(latestEvent, 'status', null)
+      latestEventStatus
     };
 
     return <View {...viewProps} />;

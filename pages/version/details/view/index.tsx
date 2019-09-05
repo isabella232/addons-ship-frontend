@@ -138,7 +138,7 @@ export default ({
           {publishNotification(
             appVersion.appSlug,
             appVersion.id,
-            latestEventStatus,
+            isPublishInProgress ? AppVersionEventStatus.InProgress : latestEventStatus,
             readyForPublish,
             publishTarget,
             settingsPath,
@@ -226,6 +226,7 @@ export default ({
           <Sidebar
             publicInstallPageURL={appVersion.publicInstallPageURL}
             shouldEnablePublish={readyForPublish && !isPublishInProgress}
+            isPublishInProgress={isPublishInProgress}
             onSave={onSave}
             onPublish={onPublish}
             buildSlug={appVersion.buildSlug}

@@ -165,6 +165,32 @@ describe('AppVersionDetails', () => {
     isSaving: false
   };
 
+  beforeEach(() => {
+    const {
+      fetchSettings,
+      updateAppVersion,
+      uploadScreenshots,
+      deleteScreenshot,
+      uploadFeatureGraphic,
+      deleteFeatureGraphic,
+      publishAppVersion,
+      startPollPublishStatus,
+      cancelPollPublishStatus
+    } = defaultProps;
+
+    (([
+      fetchSettings,
+      updateAppVersion,
+      uploadScreenshots,
+      deleteScreenshot,
+      uploadFeatureGraphic,
+      deleteFeatureGraphic,
+      publishAppVersion,
+      startPollPublishStatus,
+      cancelPollPublishStatus
+    ] as any) as jest.Mock[]).forEach(mock => mock.mockReset());
+  });
+
   it('renders correctly', () => {
     (mediaQuery as jest.Mock).mockReturnValue([true]);
     const tree = toJSON(shallow(<AppVersionDetails {...defaultProps} />));
@@ -252,12 +278,23 @@ describe('AppVersionDetails', () => {
     it('triggers publish, updates then resets state', async () => {
       (mediaQuery as jest.Mock).mockReturnValue([true]);
       const mockPublishAppVersion = jest.fn() as any;
+      const { startPollPublishStatus } = defaultProps;
       const wrap = shallow(<AppVersionDetails {...defaultProps} publishAppVersion={mockPublishAppVersion} />);
       const onPublish = (wrap.instance() as AppVersionDetails).onPublish();
 
       await onPublish;
 
       expect(mockPublishAppVersion).toHaveBeenCalled();
+      expect(startPollPublishStatus).toHaveBeenCalled();
+    });
+
+    test('without a loaded appVersion', () => {
+      const { publishAppVersion } = defaultProps;
+
+      const wrap = shallow(<AppVersionDetails {...defaultProps} appVersion={null} />);
+      (wrap.instance() as AppVersionDetails).onPublish();
+
+      expect(publishAppVersion).not.toHaveBeenCalled();
     });
   });
 
@@ -421,6 +458,15 @@ describe('AppVersionDetails', () => {
         (wrap.instance() as AppVersionDetails).onSave();
 
         expect(deleteFeatureGraphic).toHaveBeenCalledWith(appSlug, id);
+      });
+
+      test('without a loaded appVersion', () => {
+        const { updateAppVersion } = defaultProps;
+
+        const wrap = shallow(<AppVersionDetails {...defaultProps} appVersion={null} />);
+        (wrap.instance() as AppVersionDetails).onSave();
+
+        expect(updateAppVersion).not.toHaveBeenCalled();
       });
     });
 
