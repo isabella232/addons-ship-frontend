@@ -11,7 +11,14 @@ import { mediaQuery } from '@/utils/media';
 import { isAndroid, osVersion, mobileModel, compareVersions } from '@/utils/device';
 import settingService from '@/services/settings';
 import Dropzone from '@/components/Dropzone';
-import { AppVersionEvent, Screenshot, FeatureGraphic, AppVersion, AppVersionEventStatus } from '@/models';
+import {
+  AppVersionEvent,
+  Screenshot,
+  FeatureGraphic,
+  AppVersion,
+  AppVersionEventStatus,
+  DistributionType
+} from '@/models';
 
 import DetailsView, { Props as AppVersionDetailsViewProps } from './view';
 import { AppVersionDetails, State, Props as AppVersionDetailsProps } from './';
@@ -63,6 +70,17 @@ describe('AppVersionDetailsView', () => {
         expect(tree).toMatchSnapshot();
       });
     });
+
+    (['app-store', 'development', 'enterprise', 'ad-hoc'] as DistributionType[]).forEach(
+      (distributionType: DistributionType) => {
+        it(`renders ${distributionType} distribution type info in sidebar`, () => {
+          let appVersion = mockAppVersion;
+          appVersion.distributionType = distributionType;
+          const tree = toJSON(mount(<DetailsView {...defaultProps} appVersion={appVersion} />));
+          expect(tree).toMatchSnapshot();
+        });
+      }
+    );
 
     describe('when not ready for publish', () => {
       it('renders the details view with warning, and the publish button disabled', () => {

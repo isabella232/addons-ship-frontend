@@ -89,30 +89,6 @@ export default ({
 
     <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-    <Flex direction="horizontal" alignChildrenVertical="end">
-      <InputLabel>Distribution Type: {appVersion.distributionType}</InputLabel>
-      {hasMounted && appVersion.distributionType === 'development' && (
-        <Tooltip title="You can register your devices on your Account Settings page on Bitrise.">
-          {({ ref, ...rest }) => (
-            <Icon {...rest} paddingHorizontal="x1" innerRef={ref} color="grape-3" name="Info" size="2rem" />
-          )}
-        </Tooltip>
-      )}
-    </Flex>
-    {appVersion.distributionType === 'development' && (
-      <Flex direction="vertical" gap="x4">
-        <Text size="x3" weight="medium" color="gray-7">
-          The app was signed with a Development Provisioning Profile which means that it{' '}
-          <Text weight="bold">can only be installed on devices which are included in the Provisioning Profile</Text>
-        </Text>
-        <Notification type="inform" icon="Lightbulb">
-          You can find registered devices on the Devices tab.
-        </Notification>
-      </Flex>
-    )}
-
-    <Divider color="gray-2" direction="horizontal" margin="x4" />
-
     <Flex direction="horizontal" grow gap="x6">
       <Flex grow>
         <InputLabel>Support URL</InputLabel>
