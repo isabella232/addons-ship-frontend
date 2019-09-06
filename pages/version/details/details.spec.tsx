@@ -363,9 +363,9 @@ describe('AppVersionDetails', () => {
     beforeEach(() => {
       // prettier-ignore
       const screenshotList = {
-        [deviceId]: { deviceName: 'iPhone 6.5”', screenshots: [screenshot]},
-        [otherDeviceId]: { deviceName: 'iPhone 5.8”', screenshots: [new Screenshot('screenshot-2', 'image2.png', new File([], 'image2.jpg'))]},
-        'device-without-screenshots': { deviceName: 'whatever', screenshots: null }
+        [deviceId]: { deviceName: 'iPhone 6.5”', deviceId, screenshots: [screenshot]},
+        [otherDeviceId]: { deviceName: 'iPhone 5.8”', deviceId: otherDeviceId, screenshots: [new Screenshot('screenshot-2', 'image2.png', new File([], 'image2.jpg'))]},
+        'device-without-screenshots': { deviceName: 'whatever', deviceId:'device-without-screenshots', screenshots: null }
       };
       wrap = shallow(<AppVersionDetails {...defaultProps} />);
 
