@@ -16,7 +16,7 @@ describe('appVersion', () => {
 
   describe('reducer', () => {
     it('loads devices', () => {
-      const state = testDevices(undefined, fetchTestDevices.complete({ list: mockTestDevices, isLoading: false }));
+      const state = testDevices(undefined, fetchTestDevices.complete(mockTestDevices));
 
       expect(state).toMatchSnapshot();
     });
