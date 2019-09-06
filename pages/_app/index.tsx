@@ -38,13 +38,14 @@ export class ShipApp extends App<ShipAppProps> {
     const cookies = nookies.get(ctx);
 
     let { appSlug, token } = ctx.query;
+    const tokenKey = `token-${appSlug}`;
     if (token && Component.displayName !== ConfirmEmail.displayName) {
-      nookies.set(ctx, 'auth-token', token as string, {
+      nookies.set(ctx, tokenKey, token as string, {
         maxAge: 1000 * 24 * 60 * 60,
         path: '/'
       });
     }
-    token = token || cookies['auth-token'] || 'test-api-token-1';
+    token = token || cookies[tokenKey];
 
     let { 'settings-onboarding-seen': settingsOnboardingSeen } = cookies;
     settingsOnboardingSeen = settingsOnboardingSeen || 'false';

@@ -112,7 +112,7 @@ describe('ShipApp', () => {
       });
 
       expect(result).toMatchSnapshot();
-      expect(nookies.set).toHaveBeenCalledWith(ctx, 'auth-token', 'a-token-from-query', {
+      expect(nookies.set).toHaveBeenCalledWith(ctx, 'token-an-app-slug', 'a-token-from-query', {
         maxAge: 1000 * 24 * 60 * 60,
         path: '/'
       });
@@ -130,7 +130,7 @@ describe('ShipApp', () => {
 
     test('when token is not included in query, included in cookie', async () => {
       nookies.get = jest.fn().mockImplementation(() => ({
-        'auth-token': 'a-token-from-cookie'
+        'token-an-app-slug': 'a-token-from-cookie'
       }));
       nookies.set = jest.fn().mockImplementation(() => {});
 

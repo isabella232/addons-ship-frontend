@@ -43,7 +43,7 @@ Object {
     "page": "props",
   },
   "settingsOnboardingSeen": false,
-  "token": "test-api-token-1",
+  "token": undefined,
 }
 `;
 
@@ -96,7 +96,7 @@ Object {
     "page": "props",
   },
   "settingsOnboardingSeen": false,
-  "token": "test-api-token-1",
+  "token": undefined,
 }
 `;
 
