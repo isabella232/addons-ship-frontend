@@ -1,10 +1,11 @@
-import { Component } from 'react';
+import { Component, Fragment } from 'react';
 import Link from 'next/link';
 import { Base, Tabs, Tab, Divider, AddonFooter, Flex } from '@bitrise/bitkit';
 import startCase from 'lodash/startCase';
 
 import { PageContext } from '@/models';
 import { AppSettingsPageQuery, AppSettingsPageTabs } from '@/models/settings';
+import ShipHead from '@/components/ShipHead';
 
 import General from './general';
 import Notifications from './notifications';
@@ -52,21 +53,24 @@ export class SettingsPage extends Component<AppSettingsPageQuery> {
     );
 
     return (
-      <Base>
+      <Fragment>
+        <ShipHead>{selectedTab === 'general' ? 'Settings' : 'Notifications'}</ShipHead>
         <Base>
-          <Base maxWidth={960}>
-            <Tabs gap="x10">
-              {tab('general')}
-              {tab('notifications')}
-            </Tabs>
+          <Base>
+            <Base maxWidth={960}>
+              <Tabs gap="x10">
+                {tab('general')}
+                {tab('notifications')}
+              </Tabs>
+            </Base>
+            <Divider color="gray-2" direction="horizontal" />
+            <Base maxWidth={960}>{this.tabContent()}</Base>
           </Base>
-          <Divider color="gray-2" direction="horizontal" />
-          <Base maxWidth={960}>{this.tabContent()}</Base>
+          <Flex paddingVertical="x16">
+            <AddonFooter addonName="Ship" />
+          </Flex>
         </Base>
-        <Flex paddingVertical="x16">
-          <AddonFooter addonName="Ship" />
-        </Flex>
-      </Base>
+      </Fragment>
     );
   }
 }

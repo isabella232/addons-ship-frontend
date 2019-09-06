@@ -1,36 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Confirm Email it renders without exceptions when it has everything loaded 1`] = `
-<_default
-  appIconUrl="avatarl.url"
-  appSlug="app-slug"
-  appTitle="The Best App Ever"
-  avatarUrl="avatarl.url"
-  email="bit.bot@bitrise.io"
-  id="bit-bot"
-  isConfirmed={true}
-  notificationPreferences={
-    Object {
-      "failedPublish": true,
-      "newVersion": true,
-      "successfulPublish": true,
+<Fragment>
+  <Connect(ShipHead)>
+    Confirm Email
+  </Connect(ShipHead)>
+  <_default
+    appIconUrl="avatarl.url"
+    appSlug="app-slug"
+    appTitle="The Best App Ever"
+    avatarUrl="avatarl.url"
+    email="bit.bot@bitrise.io"
+    id="bit-bot"
+    isConfirmed={true}
+    notificationPreferences={
+      Object {
+        "failedPublish": true,
+        "newVersion": true,
+        "successfulPublish": true,
+      }
     }
-  }
-  plan="gold"
-  projectType="ios"
-  title="The Best App Ever"
-/>
+    plan="gold"
+    projectType="ios"
+    title="The Best App Ever"
+  />
+</Fragment>
 `;
 
 exports[`Confirm Email it renders without exceptions when there is an error message to show 1`] = `
-<Flex
-  alignChildrenHorizontal="middle"
-  padding="x16"
->
-  <Notification
-    type="alert"
+<Fragment>
+  <Connect(ShipHead)>
+    Confirm Email
+  </Connect(ShipHead)>
+  <Flex
+    alignChildrenHorizontal="middle"
+    padding="x16"
   >
-    Ouchie!
-  </Notification>
-</Flex>
+    <Notification
+      type="alert"
+    >
+      Ouchie!
+    </Notification>
+  </Flex>
+</Fragment>
 `;
