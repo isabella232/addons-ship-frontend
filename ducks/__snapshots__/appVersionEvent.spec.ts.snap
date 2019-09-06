@@ -31,7 +31,7 @@ Array [
     "createdAtTimestamp": 1537447351000,
     "id": "1234",
     "logDownloadUrl": "https://www.bitrise.io/assets/svg/logo-bitrise.svg",
-    "status": "finished",
+    "status": "success",
     "text": "Event finished successfully!",
     "updatedAt": 2018-09-21T12:42:31.000Z,
     "updatedAtTimestamp": 1537533751000,

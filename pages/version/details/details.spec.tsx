@@ -84,7 +84,7 @@ describe('AppVersionDetailsView', () => {
 
     test('when publish has finished successfully', () => {
       const tree = shallowToJson(
-        shallow(<DetailsView {...defaultProps} latestEventStatus={AppVersionEventStatus.Finished} />)
+        shallow(<DetailsView {...defaultProps} latestEventStatus={AppVersionEventStatus.Success} />)
       );
 
       expect(tree).toMatchSnapshot();
@@ -533,7 +533,7 @@ describe('AppVersionDetails', () => {
         <AppVersionDetails {...defaultProps} cancelPollPublishStatus={cancelPollPublishStatus} />
       );
 
-      const event = { status: AppVersionEventStatus.Finished } as AppVersionEvent;
+      const event = { status: AppVersionEventStatus.Success } as AppVersionEvent;
 
       wrapper.setProps({ appVersionEvents: [event] });
       expect(cancelPollPublishStatus).toHaveBeenCalled();
