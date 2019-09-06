@@ -50,7 +50,7 @@ export type State = {
   updatedAppVersion: AppVersion | null;
   screenshotList: { [deviceId: string]: DeviceScreenshots };
   featureGraphic?: FeatureGraphic;
-  selectedDeviceIdForScreenshots: string;
+  selectedDeviceIdForScreenshots: string | null;
   readyForPublish?: boolean;
   latestEvent: AppVersionEvent | null;
   isPublishInProgress: boolean;
@@ -59,51 +59,83 @@ export type State = {
 };
 
 type DeviceScreenshots = {
+  deviceId: string;
   deviceName: string;
   screenshots?: Screenshot[];
 };
+
+const iosDevices = {
+    'iOS-4-in': {
+      deviceName: 'iPhone 4"',
+      deviceId: 'iOS-4-in'
+    },
+    'iOS-4-7-in': {
+      deviceName: 'iPhone 4.7"',
+      deviceId: 'iOS-4-7-in'
+    },
+    'iOS-5-5-in': {
+      deviceName: 'iPhone 5.5"',
+      deviceId: 'iOS-5-5-in'
+    },
+    'iOS-5-8-in': {
+      deviceName: 'iPhone 5.8"',
+      deviceId: 'iOS-5-8-in'
+    },
+    'iOS-6-5-in': {
+      deviceName: 'iPhone 6.5"',
+      deviceId: 'iOS-6-5-in'
+    },
+    'iOS-iPad': {
+      deviceName: 'iPad',
+      deviceId: 'iOS-iPad'
+    },
+    'iOS-iPad-Pro': {
+      deviceName: 'iPad Pro',
+      deviceId: 'iOS-iPad-Pro'
+    },
+    'iOS-iPad-Pro-10-5-in': {
+      deviceName: 'iPad Pro 10.5"',
+      deviceId: 'iOS-iPad-Pro-10-5-in'
+    },
+    'iOS-iPad-Pro-11-in': {
+      deviceName: 'iPad Pro 11"',
+      deviceId: 'iOS-iPad-Pro-11-in'
+    },
+    'iOS-iPad-Pro-2018': {
+      deviceName: 'iPad Pro 2018"',
+      deviceId: 'iOS-iPad-Pro-2018'
+    },
+    tVOS: {
+      deviceName: 'tvOS',
+      deviceId: 'tVOS'
+    }
+  },
+  androidDevices = {
+    phone: {
+      deviceName: 'Phone',
+      deviceId: 'phone'
+    },
+    tablet: {
+      deviceName: 'Tablet',
+      deviceId: 'tablet'
+    },
+    androidTV: {
+      deviceName: 'Android TV',
+      deviceId: 'androidTV'
+    },
+    wearOS: {
+      deviceName: 'Wear OS',
+      deviceId: 'wearOS'
+    }
+  };
 
 export class AppVersionDetails extends Component<Props, State> {
   state: State = {
     hasMounted: false,
     updatedAppVersion: null,
-    screenshotList: {
-      iphone65: {
-        deviceName: 'iPhone 6.5”'
-      },
-      iphone58: {
-        deviceName: 'iPhone 5.8”'
-      },
-      iphone55: {
-        deviceName: 'iPhone 5.5”'
-      },
-      iphone47: {
-        deviceName: 'iPhone 4.7”'
-      },
-      iphone4: {
-        deviceName: 'iPhone 4”'
-      },
-      ipad: {
-        deviceName: 'iPad'
-      },
-      ipadpro: {
-        deviceName: 'iPad Pro'
-      },
-      ipadpro105: {
-        deviceName: 'iPad Pro 10.5”'
-      },
-      ipadpro129: {
-        deviceName: 'iPad Pro 12.9”'
-      },
-      applewatch: {
-        deviceName: 'Apple Watch'
-      },
-      applewatch4: {
-        deviceName: 'Apple Watch 4'
-      }
-    },
+    screenshotList: {},
     featureGraphic: undefined,
-    selectedDeviceIdForScreenshots: 'iphone65',
+    selectedDeviceIdForScreenshots: null,
     latestEvent: null,
     isPublishInProgress: false,
     screenshotIdsToDelete: [],
@@ -147,9 +179,8 @@ export class AppVersionDetails extends Component<Props, State> {
 
   init = () => {
     const { appVersion, startPollPublishStatus } = this.props;
-    const { screenshotList } = this.state;
     if (appVersion) {
-      const newScreenshotList = { ...screenshotList };
+      const newScreenshotList = appVersion.platform === 'ios' ? { ...iosDevices } : { ...androidDevices };
 
       this.setState({
         hasMounted: true,
@@ -162,7 +193,7 @@ export class AppVersionDetails extends Component<Props, State> {
 
         let deviceId = Object.keys(newScreenshotList).find(
           key => newScreenshotList[key].deviceName === screenshot.deviceType
-        ) as string;
+        ) as string; // TODO this is breaking probably
         if (!deviceId) {
           deviceId = screenshot.deviceType as string;
         }
@@ -178,8 +209,10 @@ export class AppVersionDetails extends Component<Props, State> {
 
         (newScreenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
       });
+
       this.setState({
-        screenshotList: newScreenshotList
+        screenshotList: newScreenshotList,
+        selectedDeviceIdForScreenshots: Object.keys(newScreenshotList)[0]
       });
 
       if (appVersion.featureGraphicData) {
@@ -205,14 +238,14 @@ export class AppVersionDetails extends Component<Props, State> {
     const uploadables: Uploadable[] = [],
       files: File[] = [];
 
-    filter(screenshotList, 'screenshots').forEach(({ deviceName, screenshots }) => {
+    filter(screenshotList, 'screenshots').forEach(({ deviceId, screenshots }) => {
       const pendingScreenshots = (screenshots as Screenshot[]).filter(screenshot => screenshot.type() === 'pending');
       uploadables.push(
         ...pendingScreenshots.map(s => ({
           filename: s.name,
           filesize: s.size as number,
-          deviceType: deviceName as string,
-          screenSize: deviceName as string
+          deviceType: deviceId,
+          screenSize: deviceId
         }))
       );
 
@@ -381,16 +414,6 @@ export class AppVersionDetails extends Component<Props, State> {
   };
 
   render() {
-    const { versionId, appVersion, isSaving, appVersionEvents } = this.props;
-
-    if (!appVersion || versionId !== appVersion.id) {
-      return (
-        <Flex direction="horizontal" container grow>
-          <ProgressBitbot color="grape-3" absolute="center" />
-        </Flex>
-      );
-    }
-
     const {
       hasMounted,
       selectedDeviceIdForScreenshots,
@@ -398,6 +421,15 @@ export class AppVersionDetails extends Component<Props, State> {
       featureGraphic,
       isPublishInProgress
     } = this.state;
+    const { versionId, appVersion, isSaving, appVersionEvents } = this.props;
+
+    if (!appVersion || versionId !== appVersion.id || !hasMounted) {
+      return (
+        <Flex direction="horizontal" container grow>
+          <ProgressBitbot color="grape-3" absolute="center" />
+        </Flex>
+      );
+    }
 
     const latestEventStatus = appVersionEvents.length > 0 ? appVersionEvents[0].status : null;
 
@@ -414,8 +446,8 @@ export class AppVersionDetails extends Component<Props, State> {
         value,
         isMarked: !!(((get(screenshotList, `${key}.screenshots`) as unknown) || []) as any[]).length
       })),
-      selectedDeviceIdForScreenshots,
-      screenshots: screenshotList[selectedDeviceIdForScreenshots].screenshots,
+      selectedDeviceIdForScreenshots: selectedDeviceIdForScreenshots as string,
+      screenshots: selectedDeviceIdForScreenshots ? screenshotList[selectedDeviceIdForScreenshots].screenshots : [],
       removeScreenshot: this.removeScreenshot,
       featureGraphic,
       onFeatureGraphicAdded: this.onFeatureGraphicAdded,
