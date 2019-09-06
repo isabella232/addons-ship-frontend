@@ -16,6 +16,8 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
+  server.get('/favicon.ico', (_req, res) => res.redirect('/static/icons/favicon.ico'));
+
   server.get('/', (req, res) => app.render(req, res, '/', req.params));
 
   const appPath = '/apps/:appSlug';

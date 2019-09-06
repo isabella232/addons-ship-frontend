@@ -53,20 +53,6 @@ describe('AppVersion', () => {
   });
 
   describe('dispatches the proper actions', () => {
-    const req = { path: 'some/path' };
-
-    it('dispatches fetchAppVersionEvents', async () => {
-      const props = await VersionPage.getInitialProps({
-        query: { selectedTab: 'activity' },
-        req,
-        store: { dispatch: jest.fn() },
-        isServer: true
-      } as any);
-
-      expect(fetchAppVersionEvents).toHaveBeenCalled();
-      expect(props).toMatchSnapshot();
-    });
-
     it('calculates path correctly on the client too', async () => {
       window.history.pushState({}, '', '/such/path');
 

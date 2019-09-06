@@ -11,19 +11,11 @@ Object {
 }
 `;
 
-exports[`AppVersion dispatches the proper actions dispatches fetchAppVersionEvents 1`] = `
-Object {
-  "activityLastSeen": 0,
-  "appSlug": undefined,
-  "isPublic": undefined,
-  "pagePath": "some/path",
-  "selectedTab": "activity",
-  "versionId": undefined,
-}
-`;
-
 exports[`AppVersion displays a new activity marker badge 1`] = `
 <Fragment>
+  <Connect(ShipHead)>
+    Version Details
+  </Connect(ShipHead)>
   <Flex
     direction="vertical"
     grow={true}
@@ -160,6 +152,9 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
 
 exports[`AppVersion renders the activity tab correctly 1`] = `
 <Fragment>
+  <Connect(ShipHead)>
+    Version Activity
+  </Connect(ShipHead)>
   <Flex
     direction="vertical"
     grow={true}
@@ -275,6 +270,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
       maxWidth={960}
     >
       <Connect(Activity)
+        appSlug="some-app"
         versionId="a-version-id"
       />
     </Flex>
@@ -291,6 +287,9 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
 
 exports[`AppVersion renders the details tab correctly 1`] = `
 <Fragment>
+  <Connect(ShipHead)>
+    Version Details
+  </Connect(ShipHead)>
   <Flex
     direction="vertical"
     grow={true}
@@ -423,6 +422,9 @@ exports[`AppVersion renders the details tab correctly 1`] = `
 
 exports[`AppVersion renders the devices tab correctly 1`] = `
 <Fragment>
+  <Connect(ShipHead)>
+    Test Devices
+  </Connect(ShipHead)>
   <Flex
     direction="vertical"
     grow={true}
@@ -552,6 +554,9 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
 
 exports[`AppVersion renders the other tabs correctly 1`] = `
 <Fragment>
+  <Connect(ShipHead)>
+    Version Details
+  </Connect(ShipHead)>
   <Flex
     direction="vertical"
     grow={true}
@@ -683,6 +688,9 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
 
 exports[`AppVersion renders the qa tab correctly 1`] = `
 <Fragment>
+  <Connect(ShipHead)>
+    QA
+  </Connect(ShipHead)>
   <Flex
     direction="vertical"
     grow={true}

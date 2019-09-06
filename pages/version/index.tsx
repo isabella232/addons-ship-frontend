@@ -17,6 +17,7 @@ import Activity from './activity';
 import QA from './qa';
 
 import css from './style.scss';
+import ShipHead from '@/components/ShipHead';
 
 export interface VersionPageProps extends AppVersionPageQuery {
   appVersion: AppVersion | null;
@@ -42,8 +43,6 @@ export class VersionPage extends Component<VersionPageProps> {
     const path = isServer ? req.path : location.pathname;
     const pagePath = path.replace(new RegExp(`/(${AppVersionPageTabs.join('|')})?$`), '');
 
-    const promises = [];
-
     const activityLastSeenKey = `activity_${appSlug}_${versionId}`;
     const cookies = nookies.get(ctx);
     const activityLastSeen = parseInt(cookies[activityLastSeenKey], 10) || 0;
@@ -61,14 +60,11 @@ export class VersionPage extends Component<VersionPageProps> {
         });
 
         Connected.displayName = 'AppVersionActivity';
-        promises.push(store.dispatch(fetchAppVersionEvents(appSlug, versionId) as any));
         break;
       case 'qa':
         Connected.displayName = 'AppVersionQA';
         break;
     }
-
-    await Promise.all(promises);
 
     return { appSlug, versionId, isPublic, selectedTab, pagePath, activityLastSeen };
   }
@@ -87,7 +83,7 @@ export class VersionPage extends Component<VersionPageProps> {
       case 'devices':
         return <Devices />;
       case 'activity':
-        return <Activity versionId={versionId} />;
+        return <Activity appSlug={appSlug} versionId={versionId} />;
       case 'qa':
         return <QA />;
       default:
@@ -113,8 +109,25 @@ export class VersionPage extends Component<VersionPageProps> {
       </Link>
     );
 
+    let title;
+    switch (selectedTab) {
+      case 'devices':
+        title = 'Test Devices';
+        break;
+      case 'activity':
+        title = 'Version Activity';
+        break;
+      case 'qa':
+        title = 'QA';
+        break;
+      case 'details':
+      default:
+        title = 'Version Details';
+    }
+
     return (
       <Fragment>
+        <ShipHead>{title}</ShipHead>
         <Flex direction="vertical" grow>
           <Base maxWidth={960}>
             <Tabs gap="x12">

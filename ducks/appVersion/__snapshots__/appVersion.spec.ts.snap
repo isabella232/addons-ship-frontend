@@ -149,6 +149,7 @@ Object {
     "whatsNew": "Some longer whats-new",
   },
   "events": Array [],
+  "isLoadingEvents": true,
   "isPublishInProgress": false,
   "isSaving": 0,
 }
@@ -171,6 +172,7 @@ Object {
       "updatedAt": null,
     },
   ],
+  "isLoadingEvents": false,
   "isPublishInProgress": false,
   "isSaving": 0,
 }
@@ -180,6 +182,7 @@ exports[`appVersion reducer when publishing had an error 1`] = `
 Object {
   "appVersion": null,
   "events": Array [],
+  "isLoadingEvents": true,
   "isPublishInProgress": false,
   "isSaving": 0,
 }
@@ -189,6 +192,7 @@ exports[`appVersion reducer when publishing is done 1`] = `
 Object {
   "appVersion": null,
   "events": Array [],
+  "isLoadingEvents": true,
   "isPublishInProgress": false,
   "isSaving": 0,
 }
@@ -198,6 +202,7 @@ exports[`appVersion reducer when publishing started 1`] = `
 Object {
   "appVersion": null,
   "events": Array [],
+  "isLoadingEvents": true,
   "isPublishInProgress": true,
   "isSaving": 0,
 }

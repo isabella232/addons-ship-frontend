@@ -18,7 +18,8 @@ import {
 
 describe('ActivityView', () => {
   const defaultProps = {
-    appVersionEvents: mockAppVersionEvents
+    appVersionEvents: mockAppVersionEvents,
+    isLoading: false
   };
 
   describe('when viewed on desktop', () => {
@@ -26,7 +27,12 @@ describe('ActivityView', () => {
       (mediaQuery as jest.Mock).mockReturnValue([true]);
     });
 
-    it('renders the details view correctly', () => {
+    it('renders the activity view correctly', () => {
+      const tree = toJSON(shallow(<ActivityView {...defaultProps} />));
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('renders the activity view correctly while loading', () => {
       const tree = toJSON(shallow(<ActivityView {...defaultProps} />));
       expect(tree).toMatchSnapshot();
     });
@@ -37,7 +43,7 @@ describe('ActivityView', () => {
       (mediaQuery as jest.Mock).mockReturnValue([false]);
     });
 
-    it('renders the details view correctly', () => {
+    it('renders the activity view correctly', () => {
       const tree = toJSON(shallow(<ActivityView {...defaultProps} />));
       expect(tree).toMatchSnapshot();
     });
@@ -45,21 +51,23 @@ describe('ActivityView', () => {
 
   describe('when a test failed', () => {
     it('renders entry with download log button', () => {
-      const tree = toJSON(shallow(<ActivityView appVersionEvents={[mockFailedAppVersionEvent]} />));
+      const tree = toJSON(shallow(<ActivityView isLoading={false} appVersionEvents={[mockFailedAppVersionEvent]} />));
       expect(tree).toMatchSnapshot();
     });
   });
 
   describe('when a test is successful', () => {
     it('renders entry without download log button', () => {
-      const tree = toJSON(shallow(<ActivityView appVersionEvents={[mockFinishedAppVersionEvent]} />));
+      const tree = toJSON(shallow(<ActivityView isLoading={false} appVersionEvents={[mockFinishedAppVersionEvent]} />));
       expect(tree).toMatchSnapshot();
     });
   });
 
   describe('when a test is in progress', () => {
     it('renders entry without download log button', () => {
-      const tree = toJSON(shallow(<ActivityView appVersionEvents={[mockInProgressAppVersionEvent]} />));
+      const tree = toJSON(
+        shallow(<ActivityView isLoading={false} appVersionEvents={[mockInProgressAppVersionEvent]} />)
+      );
       expect(tree).toMatchSnapshot();
     });
   });
@@ -67,17 +75,21 @@ describe('ActivityView', () => {
 
 describe('Activity', () => {
   const defaultProps: ActivityProps = {
+    appSlug: 'an-app-slug',
+    isLoading: false,
     appVersionEvents: mockAppVersionEvents,
     versionId: mockAppVersion.id,
-    appVersion: mockAppVersion,
+    fetchAppVersionEvents: jest.fn() as any,
     cancelPollPublishStatus: jest.fn() as any,
     startPollPublishStatus: jest.fn() as any
   };
 
   beforeEach(() => {
-    const { startPollPublishStatus, cancelPollPublishStatus } = defaultProps;
+    const { startPollPublishStatus, cancelPollPublishStatus, fetchAppVersionEvents } = defaultProps;
 
-    (([startPollPublishStatus, cancelPollPublishStatus] as any) as jest.Mock[]).forEach(mock => mock.mockReset());
+    (([startPollPublishStatus, cancelPollPublishStatus, fetchAppVersionEvents] as any) as jest.Mock[]).forEach(mock =>
+      mock.mockReset()
+    );
   });
 
   it('renders correctly', () => {
@@ -86,19 +98,18 @@ describe('Activity', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('renders correctly when loading', () => {
+    (mediaQuery as jest.Mock).mockReturnValue([true]);
+    const tree = toJSON(shallow(<Activity {...defaultProps} isLoading />));
+    expect(tree).toMatchSnapshot();
+  });
+
   describe('componentDidMount', () => {
-    it('does not start polling if the appVersion is invalid', () => {
-      const { startPollPublishStatus } = defaultProps;
-      shallow(<Activity {...defaultProps} appVersion={null} />);
-
-      expect(startPollPublishStatus).not.toHaveBeenCalled();
-    });
-
-    it('starts polling', () => {
-      const { appVersion, startPollPublishStatus } = defaultProps;
+    it('starts polling, fetches events', () => {
+      const { appSlug, versionId, startPollPublishStatus } = defaultProps;
       shallow(<Activity {...defaultProps} />);
 
-      expect(startPollPublishStatus).toHaveBeenCalledWith(appVersion);
+      expect(startPollPublishStatus).toHaveBeenCalledWith({ appSlug, id: versionId });
     });
   });
 
