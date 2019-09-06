@@ -8,7 +8,6 @@ import nookies from 'nookies';
 import { AppVersionPageQuery, PageContext, AppVersion, AppVersionPageTabs } from '@/models';
 import { RootState } from '@/store';
 import { fetchAppVersion } from '@/ducks/appVersion';
-import { fetchTestDevices } from '@/ducks/testDevices';
 import fetchAppVersionEvents from '@/ducks/appVersion/fetchAppVersionEvents';
 import { orderedAppVersionEvents } from '@/ducks/selectors';
 

@@ -24,21 +24,27 @@ Array [
 `;
 
 exports[`appVersion reducer loads devices 1`] = `
-Array [
-  Object {
-    "deviceId": "some-device-id-01",
-    "deviceType": "ios",
-    "owner": "test-user-1",
+Object {
+  "isLoading": false,
+  "list": Object {
+    "isLoading": false,
+    "list": Array [
+      Object {
+        "deviceId": "some-device-id-01",
+        "deviceType": "ios",
+        "owner": "test-user-1",
+      },
+      Object {
+        "deviceId": "some-device-id-02",
+        "deviceType": "android",
+        "owner": "test-user-1",
+      },
+      Object {
+        "deviceId": "some-device-id-03",
+        "deviceType": "ios",
+        "owner": "test-user-2",
+      },
+    ],
   },
-  Object {
-    "deviceId": "some-device-id-02",
-    "deviceType": "android",
-    "owner": "test-user-1",
-  },
-  Object {
-    "deviceId": "some-device-id-03",
-    "deviceType": "ios",
-    "owner": "test-user-2",
-  },
-]
+}
 `;

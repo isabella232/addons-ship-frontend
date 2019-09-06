@@ -35,10 +35,10 @@ export class AppVersionDevices extends Component<Props> {
   }
 }
 
-const mapStateToProps = (rootState: RootState) => ({
-  app: rootState.app,
-  testDevices: rootState.testDevices,
-  isLoading: rootState.testDevices.length === 0
+const mapStateToProps = ({ app, testDevices: { list: testDevices, isLoading } }: RootState) => ({
+  app,
+  testDevices,
+  isLoading
 });
 
 const mapDispatchToProps = {
