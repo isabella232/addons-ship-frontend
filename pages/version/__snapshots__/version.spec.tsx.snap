@@ -11,17 +11,6 @@ Object {
 }
 `;
 
-exports[`AppVersion dispatches the proper actions dispatches fetchAppVersionEvents 1`] = `
-Object {
-  "activityLastSeen": 0,
-  "appSlug": undefined,
-  "isPublic": undefined,
-  "pagePath": "some/path",
-  "selectedTab": "activity",
-  "versionId": undefined,
-}
-`;
-
 exports[`AppVersion displays a new activity marker badge 1`] = `
 <Fragment>
   <Flex
@@ -275,6 +264,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
       maxWidth={960}
     >
       <Connect(Activity)
+        appSlug="some-app"
         versionId="a-version-id"
       />
     </Flex>
