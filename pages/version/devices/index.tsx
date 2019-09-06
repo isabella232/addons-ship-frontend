@@ -28,12 +28,9 @@ export class AppVersionDevices extends Component<Props> {
 
     const viewProps = {
       projectType: app.projectType,
-      devices: testDevices
+      devices: testDevices,
+      isLoading
     };
-
-    if (isLoading) {
-      return <Text>Loading devices...</Text>;
-    }
 
     return <View {...viewProps} />;
   }
