@@ -61,7 +61,7 @@ describe('appVersion', () => {
         undefined,
         pollPublishStatus.complete([
           { status: AppVersionEventStatus.InProgress, createdAtTimestamp: new Date('2019-07-08').getTime() },
-          { status: AppVersionEventStatus.Finished, createdAtTimestamp: new Date('2019-07-09').getTime() }
+          { status: AppVersionEventStatus.Success, createdAtTimestamp: new Date('2019-07-09').getTime() }
         ] as AppVersionEvent[])
       );
 
