@@ -16,6 +16,58 @@ describe('getAppVersionsByVersion', () => {
 
     expect(groupedAppVersions).toMatchSnapshot();
   });
+
+  it('versions are ordered by build number inside version groups', () => {
+    const appVersions = [
+      {
+        version: '1.0',
+        buildNumber: 3
+      },
+      {
+        version: '1.0',
+        buildNumber: 9
+      },
+      {
+        version: '1.0',
+        buildNumber: 6
+      },
+      {
+        version: '2.0',
+        buildNumber: 16
+      }
+    ] as AppVersion[];
+
+    const groupped = getAppVersionsByVersion({ appVersionList: appVersions } as RootState);
+
+    expect(groupped).toEqual([
+      {
+        groupName: '1.0',
+        appVersions: [
+          {
+            version: '1.0',
+            buildNumber: 9
+          },
+          {
+            version: '1.0',
+            buildNumber: 6
+          },
+          {
+            version: '1.0',
+            buildNumber: 3
+          }
+        ]
+      },
+      {
+        groupName: '2.0',
+        appVersions: [
+          {
+            version: '2.0',
+            buildNumber: 16
+          }
+        ]
+      }
+    ]);
+  });
 });
 
 describe('getAppVersionsByBuildNumber', () => {
