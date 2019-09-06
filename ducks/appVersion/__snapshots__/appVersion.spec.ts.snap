@@ -54,7 +54,6 @@ Array [
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
       "distributionType": "development",
-      "featureGraphicData": undefined,
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
       "keywords": "Keywords",
