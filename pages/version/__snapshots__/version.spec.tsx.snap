@@ -22,17 +22,6 @@ Object {
 }
 `;
 
-exports[`AppVersion dispatches the proper actions dispatches fetchTestDevices 1`] = `
-Object {
-  "activityLastSeen": 0,
-  "appSlug": undefined,
-  "isPublic": undefined,
-  "pagePath": "some/path",
-  "selectedTab": "devices",
-  "versionId": undefined,
-}
-`;
-
 exports[`AppVersion displays a new activity marker badge 1`] = `
 <Fragment>
   <Flex

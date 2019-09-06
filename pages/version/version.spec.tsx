@@ -55,18 +55,6 @@ describe('AppVersion', () => {
   describe('dispatches the proper actions', () => {
     const req = { path: 'some/path' };
 
-    it('dispatches fetchTestDevices', async () => {
-      const props = await VersionPage.getInitialProps({
-        query: { selectedTab: 'devices' },
-        req,
-        store: { dispatch: jest.fn() },
-        isServer: true
-      } as any);
-
-      expect(fetchTestDevices).toHaveBeenCalled();
-      expect(props).toMatchSnapshot();
-    });
-
     it('dispatches fetchAppVersionEvents', async () => {
       const props = await VersionPage.getInitialProps({
         query: { selectedTab: 'activity' },

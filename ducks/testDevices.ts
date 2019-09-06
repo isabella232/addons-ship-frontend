@@ -30,9 +30,17 @@ export const fetchTestDevices = Object.assign(_fetchTestDevices, {
   error: createAction($`GET_ERROR`, resolve => (error: Error) => resolve(error))
 });
 
-const defaultState: TestDevicesState = [];
+const defaultState: TestDevicesState = {
+  list: [],
+  isLoading: false
+};
 
-export type TestDevicesState = TestDevice[];
+export type TestDevicesState = {
+  list: TestDevice[];
+  isLoading: boolean;
+};
 export const testDevices = createReducer(defaultState, handleAction => [
-  handleAction(fetchTestDevices.complete, (_, { payload }) => payload)
+  handleAction(fetchTestDevices.next, state => ({ ...state, isLoading: true })),
+  handleAction(fetchTestDevices.complete, (_, { payload }) => ({ list: payload, isLoading: false })),
+  handleAction(fetchTestDevices.error, state => ({ ...state, isLoading: false }))
 ]);
