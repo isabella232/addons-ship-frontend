@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Notification, Flex } from '@bitrise/bitkit';
 
 import shipApi from '@/services/ship-api';
 import { PageContext } from '@/models';
 import { App } from '@/models/app';
 import { AppContact } from '@/models/settings';
+import ShipHead from '@/components/ShipHead';
 
 import View, { Props as ViewProps } from './view';
 
@@ -39,20 +40,29 @@ export default class ConfirmEmail extends React.Component<Props> {
   render() {
     const { app, appContact, error } = this.props;
 
-    if (!app || !appContact)
-      return (
+    let content;
+    if (!app || !appContact) {
+      content = (
         <Flex alignChildrenHorizontal="middle" padding="x16">
           <Notification type="alert">{error}</Notification>
         </Flex>
       );
+    } else {
+      const viewProps: ViewProps = {
+        ...app,
+        ...appContact,
+        appIconUrl: app.avatarUrl,
+        appTitle: app.title
+      };
 
-    const viewProps: ViewProps = {
-      ...app,
-      ...appContact,
-      appIconUrl: app.avatarUrl,
-      appTitle: app.title
-    };
+      content = <View {...viewProps} />;
+    }
 
-    return <View {...viewProps} />;
+    return (
+      <Fragment>
+        <ShipHead>Confirm Email</ShipHead>
+        {content}
+      </Fragment>
+    );
   }
 }
