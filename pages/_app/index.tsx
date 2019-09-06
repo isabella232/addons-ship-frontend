@@ -16,6 +16,7 @@ import { initializeSegment } from '@/utils/analytics';
 import '@/assets/style/index.scss';
 import makeStore, { RootState } from '../../store';
 import AppContent from './content';
+import ConfirmEmail from '../confirm';
 
 export interface ShipAppProps extends DefaultAppIProps {
   store: Store;
@@ -37,7 +38,7 @@ export class ShipApp extends App<ShipAppProps> {
     const cookies = nookies.get(ctx);
 
     let { appSlug, token } = ctx.query;
-    if (token) {
+    if (token && Component.displayName !== ConfirmEmail.displayName) {
       nookies.set(ctx, 'auth-token', token as string, {
         maxAge: 1000 * 24 * 60 * 60,
         path: '/'

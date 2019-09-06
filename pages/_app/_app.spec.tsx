@@ -17,6 +17,7 @@ import { initializeSegment } from '@/utils/analytics';
 
 import { ShipApp, ShipAppProps } from '.';
 import { PageContext } from '@/models';
+import ConfirmEmail from '../confirm';
 
 describe('ShipApp', () => {
   let store: MockStoreEnhanced, defaultProps: ShipAppProps & AppProps;
@@ -26,6 +27,8 @@ describe('ShipApp', () => {
   beforeEach(() => {
     const mockStoreCreator: MockStoreCreator = configureMockStore([thunk]);
     store = mockStoreCreator();
+
+    (nookies.set as jest.Mock).mockReset();
 
     defaultProps = {
       store,
@@ -104,7 +107,7 @@ describe('ShipApp', () => {
 
       const result = await ShipApp.getInitialProps({
         Component,
-        ctx: ctx,
+        ctx,
         router: {} as RouterProps
       });
 
@@ -113,6 +116,16 @@ describe('ShipApp', () => {
         maxAge: 1000 * 24 * 60 * 60,
         path: '/'
       });
+    });
+
+    test('when token is included in query, on the confirm email page', async () => {
+      await ShipApp.getInitialProps({
+        Component: ConfirmEmail as any,
+        ctx,
+        router: {} as RouterProps
+      });
+
+      expect(nookies.set).not.toHaveBeenCalled();
     });
 
     test('when token is not included in query, included in cookie', async () => {
