@@ -17,7 +17,7 @@ import {
   FeatureGraphic,
   AppVersion,
   AppVersionEventStatus,
-  DistributionType
+  IPAExportMethod
 } from '@/models';
 
 import DetailsView, { Props as AppVersionDetailsViewProps } from './view';
@@ -71,11 +71,11 @@ describe('AppVersionDetailsView', () => {
       });
     });
 
-    (['app-store', 'development', 'enterprise', 'ad-hoc'] as DistributionType[]).forEach(
-      (distributionType: DistributionType) => {
-        it(`renders ${distributionType} distribution type info in sidebar`, () => {
+    (['app-store', 'development', 'enterprise', 'ad-hoc'] as IPAExportMethod[]).forEach(
+      (ipaExportMethod: IPAExportMethod) => {
+        it(`renders ${ipaExportMethod} distribution type info in sidebar`, () => {
           let appVersion = mockAppVersion;
-          appVersion.distributionType = distributionType;
+          appVersion.ipaExportMethod = ipaExportMethod;
           const tree = toJSON(mount(<DetailsView {...defaultProps} appVersion={appVersion} />));
           expect(tree).toMatchSnapshot();
         });

@@ -231,7 +231,7 @@ export default ({
             onSave={onSave}
             onPublish={onPublish}
             buildSlug={appVersion.buildSlug}
-            distributionType={appVersion.distributionType}
+            ipaExportMethod={appVersion.ipaExportMethod}
             hasMounted
             isSaving={isSaving}
           />

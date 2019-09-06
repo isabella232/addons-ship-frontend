@@ -176,9 +176,9 @@ Object {
     "buildSlug": "13245ads",
     "bundleId": "bundle-id",
     "description": "Some semi-long description",
-    "distributionType": "ad-hoc",
     "iconUrl": "http://placekitten.com/160/160",
     "id": "123",
+    "ipaExportMethod": "ad-hoc",
     "keywords": "Keywords",
     "lastUpdate": 2018-09-22T12:42:31.000Z,
     "marketingUrl": "https://bitrise.io/marketing",
@@ -450,9 +450,9 @@ exports[`AppVersionDetails disables install button when there is no public insta
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "development",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -722,9 +722,9 @@ exports[`AppVersionDetails renders correctly 1`] = `
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "ad-hoc",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "ad-hoc",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -4652,9 +4652,9 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "ad-hoc",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "ad-hoc",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -5268,9 +5268,9 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
                           "description": "Some semi-long description",
-                          "distributionType": "ad-hoc",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "ipaExportMethod": "ad-hoc",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -7732,8 +7732,8 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
             </Flex>
             <_default
               buildSlug="13245ads"
-              distributionType="ad-hoc"
               hasMounted={true}
+              ipaExportMethod="ad-hoc"
               isPublishInProgress={false}
               isPublished={false}
               isSaving={false}
@@ -8628,9 +8628,9 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "app-store",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "app-store",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -9244,9 +9244,9 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
                           "description": "Some semi-long description",
-                          "distributionType": "app-store",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "ipaExportMethod": "app-store",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -11708,8 +11708,8 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
             </Flex>
             <_default
               buildSlug="13245ads"
-              distributionType="app-store"
               hasMounted={true}
+              ipaExportMethod="app-store"
               isPublishInProgress={false}
               isPublished={false}
               isSaving={false}
@@ -12583,9 +12583,9 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "development",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -13199,9 +13199,9 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
                           "description": "Some semi-long description",
-                          "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "ipaExportMethod": "development",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -15663,8 +15663,8 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
             </Flex>
             <_default
               buildSlug="13245ads"
-              distributionType="development"
               hasMounted={true}
+              ipaExportMethod="development"
               isPublishInProgress={false}
               isPublished={false}
               isSaving={false}
@@ -16559,9 +16559,9 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "enterprise",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "enterprise",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -17175,9 +17175,9 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
                           "description": "Some semi-long description",
-                          "distributionType": "enterprise",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "ipaExportMethod": "enterprise",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -19639,8 +19639,8 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
             </Flex>
             <_default
               buildSlug="13245ads"
-              distributionType="enterprise"
               hasMounted={true}
+              ipaExportMethod="enterprise"
               isPublishInProgress={false}
               isPublished={false}
               isSaving={false}
@@ -20514,9 +20514,9 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "development",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -21130,9 +21130,9 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
                           "description": "Some semi-long description",
-                          "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "ipaExportMethod": "development",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -23594,8 +23594,8 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
             </Flex>
             <_default
               buildSlug="13245ads"
-              distributionType="development"
               hasMounted={true}
+              ipaExportMethod="development"
               isPublishInProgress={false}
               isPublished={false}
               isSaving={false}
@@ -24490,9 +24490,9 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "ad-hoc",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "ad-hoc",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -25146,9 +25146,9 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
                           "description": "Some semi-long description",
-                          "distributionType": "ad-hoc",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "ipaExportMethod": "ad-hoc",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -27610,8 +27610,8 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
             </Flex>
             <_default
               buildSlug="13245ads"
-              distributionType="ad-hoc"
               hasMounted={true}
+              ipaExportMethod="ad-hoc"
               isPublishInProgress={false}
               isPublished={false}
               isSaving={false}
@@ -28506,9 +28506,9 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "development",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "development",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -29122,9 +29122,9 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
                           "description": "Some semi-long description",
-                          "distributionType": "development",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "ipaExportMethod": "development",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -31586,8 +31586,8 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
             </Flex>
             <_default
               buildSlug="13245ads"
-              distributionType="development"
               hasMounted={true}
+              ipaExportMethod="development"
               isPublishInProgress={false}
               isPublished={false}
               isSaving={false}
@@ -32305,9 +32305,9 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
               "description": "Some semi-long description",
-              "distributionType": "ad-hoc",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "123",
+              "ipaExportMethod": "ad-hoc",
               "keywords": "Keywords",
               "lastUpdate": 2018-09-22T12:42:31.000Z,
               "marketingUrl": "https://bitrise.io/marketing",
@@ -32366,8 +32366,8 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
     </Flex>
     <_default
       buildSlug="13245ads"
-      distributionType="ad-hoc"
       hasMounted={true}
+      ipaExportMethod="ad-hoc"
       isPublishInProgress={false}
       isPublished={false}
       isSaving={false}
@@ -32481,9 +32481,9 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
               "description": "Some semi-long description",
-              "distributionType": "ad-hoc",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "123",
+              "ipaExportMethod": "ad-hoc",
               "keywords": "Keywords",
               "lastUpdate": 2018-09-22T12:42:31.000Z,
               "marketingUrl": "https://bitrise.io/marketing",
@@ -32542,8 +32542,8 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
     </Flex>
     <_default
       buildSlug="13245ads"
-      distributionType="ad-hoc"
       hasMounted={true}
+      ipaExportMethod="ad-hoc"
       isPublishInProgress={false}
       isPublished={true}
       isSaving={false}
@@ -32565,9 +32565,9 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "ad-hoc",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "ad-hoc",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -33193,9 +33193,9 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
                           "description": "Some semi-long description",
-                          "distributionType": "ad-hoc",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "ipaExportMethod": "ad-hoc",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -35657,8 +35657,8 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
             </Flex>
             <_default
               buildSlug="13245ads"
-              distributionType="ad-hoc"
               hasMounted={true}
+              ipaExportMethod="ad-hoc"
               isPublishInProgress={true}
               isPublished={false}
               isSaving={false}
@@ -36545,9 +36545,9 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "ad-hoc",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "ad-hoc",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -37161,9 +37161,9 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
                           "description": "Some semi-long description",
-                          "distributionType": "ad-hoc",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "ipaExportMethod": "ad-hoc",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -39625,8 +39625,8 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
             </Flex>
             <_default
               buildSlug="13245ads"
-              distributionType="ad-hoc"
               hasMounted={true}
+              ipaExportMethod="ad-hoc"
               isPublishInProgress={false}
               isPublished={false}
               isSaving={true}
@@ -40513,9 +40513,9 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "ad-hoc",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "ad-hoc",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -41369,9 +41369,9 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
                           "description": "Some semi-long description",
-                          "distributionType": "ad-hoc",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "ipaExportMethod": "ad-hoc",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
@@ -43850,9 +43850,9 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
-      "distributionType": "ad-hoc",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "ipaExportMethod": "ad-hoc",
       "keywords": "Keywords",
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
@@ -44698,9 +44698,9 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
                           "description": "Some semi-long description",
-                          "distributionType": "ad-hoc",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "ipaExportMethod": "ad-hoc",
                           "keywords": "Keywords",
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
