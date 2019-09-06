@@ -230,6 +230,7 @@ export default ({
             onSave={onSave}
             onPublish={onPublish}
             buildSlug={appVersion.buildSlug}
+            distributionType={appVersion.distributionType}
             hasMounted
             isSaving={isSaving}
           />

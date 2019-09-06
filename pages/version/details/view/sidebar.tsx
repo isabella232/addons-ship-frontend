@@ -4,6 +4,8 @@ import SVG from 'react-svg';
 import Clipboard from 'react-clipboard.js';
 import { Base, Flex, Text, Icon, Button, Tooltip, ProgressSpinner } from '@bitrise/bitkit';
 
+import { DistributionType } from '@/models';
+
 import css from './style.scss';
 
 type Props = {
@@ -12,6 +14,7 @@ type Props = {
   onSave?: () => void;
   onPublish?: () => void;
   buildSlug: string;
+  distributionType?: DistributionType;
   hasMounted: boolean;
   isSaving: boolean;
   isPublishInProgress: boolean;
@@ -22,6 +25,7 @@ export default ({
   shouldEnablePublish,
   onSave,
   onPublish,
+  distributionType,
   buildSlug,
   hasMounted,
   isSaving,
@@ -36,6 +40,19 @@ export default ({
       setIsPublicInstallPageURLCopiedTooltipVisible(false);
     }, 2000);
   };
+
+  const prettyDistributionType = (distributionType: DistributionType) => {
+    switch (distributionType) {
+      case 'appstore':
+        return 'App Store';
+      case 'development':
+        return 'Development';
+      case 'enterprise':
+        return 'Enterprise';
+      case 'adhoc':
+        return 'Ad-hoc';
+    }
+  }
 
   return (
     <Base maxWidth="16rem" className={css.sidebar}>
@@ -153,6 +170,64 @@ export default ({
           </Text>
           <SVG src={'/static/purr-request-head.svg'} />
         </Flex>
+      )}
+      {distributionType && (
+        <Base>
+          <Text color="grape-4" weight="bold" paddingVertical="x3">
+            Distribution Type: {prettyDistributionType(distributionType)}
+          </Text>
+
+          <Text size="x2" color="gray-7">
+            <Flex direction="vertical" gap="x3">
+              {distributionType === 'appstore' && (
+                <Text>
+                  The app was built for the iOS App Store,{' '}
+                  <Text weight="bold" inline>
+                    you can't install it on any device
+                  </Text>
+                  , but you can download the App's .ipa and upload it into the App Store.
+                </Text>
+              )}
+              {distributionType === 'development' && (
+                <Fragment>
+                  <Text>
+                    The app was signed with a Development Provisioning Profile which means that it{' '}
+                    <Text weight="bold" inline>
+                      can only be installed on devices which are included in the Provisioning Profile
+                    </Text>
+                  </Text>
+                  <Text>
+                    You can find registered devices on the Devices tab, or register your devices at your Account
+                    Settings page on Bitrise.
+                  </Text>
+                </Fragment>
+              )}
+              {distributionType === 'enterprise' && (
+                <Text>
+                  The app was signed with an Enterprise Provisioning Profile and so it{' '}
+                  <Text weight="bold" inline>
+                    can be installed by anyone
+                  </Text>
+                  .
+                </Text>
+              )}
+              {distributionType === 'adhoc' && (
+                <Fragment>
+                  <Text>
+                    The app was signed with an Ad Hoc Provisioning Profile which means that it{' '}
+                    <Text weight="bold" inline>
+                      can only be installed on devices which are included in the Provisioning Profile
+                    </Text>
+                  </Text>
+                  <Text>
+                    You can find registered devices on the Devices tab, or register your devices at your Account
+                    Settings page on Bitrise.
+                  </Text>
+                </Fragment>
+              )}
+            </Flex>
+          </Text>
+        </Base>
       )}
     </Base>
   );
