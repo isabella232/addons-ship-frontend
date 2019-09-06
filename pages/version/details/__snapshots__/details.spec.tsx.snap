@@ -4,16 +4,16 @@ exports[`AppVersionDetails Component methods getUploadableScreenshots 1`] = `
 Array [
   Array [
     Object {
-      "deviceType": "iPhone 6.5”",
+      "deviceType": "iphone65",
       "filename": "image.png",
       "filesize": 1000,
-      "screenSize": "iPhone 6.5”",
+      "screenSize": "iphone65",
     },
     Object {
-      "deviceType": "iPhone 5.8”",
+      "deviceType": "other-iphone65",
       "filename": "image2.png",
       "filesize": 0,
-      "screenSize": "iPhone 5.8”",
+      "screenSize": "other-iphone65",
     },
   ],
   Array [
@@ -38,41 +38,16 @@ FeatureGraphic {
 
 exports[`AppVersionDetails appends a screenshot 1`] = `
 Object {
-  "applewatch": Object {
-    "deviceName": "Apple Watch",
+  "iOS-4-7-in": Object {
+    "deviceId": "iOS-4-7-in",
+    "deviceName": "iPhone 4.7\\"",
   },
-  "applewatch4": Object {
-    "deviceName": "Apple Watch 4",
-  },
-  "ipad": Object {
-    "deviceName": "iPad",
-  },
-  "ipadpro": Object {
-    "deviceName": "iPad Pro",
-  },
-  "ipadpro105": Object {
-    "deviceName": "iPad Pro 10.5”",
-  },
-  "ipadpro129": Object {
-    "deviceName": "iPad Pro 12.9”",
-  },
-  "iphone4": Object {
-    "deviceName": "iPhone 4”",
-  },
-  "iphone47": Object {
-    "deviceName": "iPhone 4.7”",
-  },
-  "iphone55": Object {
-    "deviceName": "iPhone 5.5”",
-  },
-  "iphone58": Object {
-    "deviceName": "iPhone 5.8”",
-  },
-  "iphone65": Object {
-    "deviceName": "iPhone 6.5”",
+  "iOS-4-in": Object {
+    "deviceId": "iOS-4-in",
+    "deviceName": "iPhone 4\\"",
     "screenshots": Array [
       Screenshot {
-        "deviceType": "iPhone 6.5”",
+        "deviceType": "iPhone 4\\"",
         "file": File {
           "path": "file.png",
           "type": "image/png",
@@ -83,6 +58,42 @@ Object {
         "src": undefined,
       },
     ],
+  },
+  "iOS-5-5-in": Object {
+    "deviceId": "iOS-5-5-in",
+    "deviceName": "iPhone 5.5\\"",
+  },
+  "iOS-5-8-in": Object {
+    "deviceId": "iOS-5-8-in",
+    "deviceName": "iPhone 5.8\\"",
+  },
+  "iOS-6-5-in": Object {
+    "deviceId": "iOS-6-5-in",
+    "deviceName": "iPhone 6.5\\"",
+  },
+  "iOS-iPad": Object {
+    "deviceId": "iOS-iPad",
+    "deviceName": "iPad",
+  },
+  "iOS-iPad-Pro": Object {
+    "deviceId": "iOS-iPad-Pro",
+    "deviceName": "iPad Pro",
+  },
+  "iOS-iPad-Pro-10-5-in": Object {
+    "deviceId": "iOS-iPad-Pro-10-5-in",
+    "deviceName": "iPad Pro 10.5\\"",
+  },
+  "iOS-iPad-Pro-11-in": Object {
+    "deviceId": "iOS-iPad-Pro-11-in",
+    "deviceName": "iPad Pro 11\\"",
+  },
+  "iOS-iPad-Pro-2018": Object {
+    "deviceId": "iOS-iPad-Pro-2018",
+    "deviceName": "iPad Pro 2018\\"",
+  },
+  "tVOS": Object {
+    "deviceId": "tVOS",
+    "deviceName": "tvOS",
   },
 }
 `;
@@ -99,41 +110,65 @@ Object {
   },
   "screenshotIdsToDelete": Array [],
   "screenshotList": Object {
-    "applewatch": Object {
-      "deviceName": "Apple Watch",
+    "iOS-4-7-in": Object {
+      "deviceId": "iOS-4-7-in",
+      "deviceName": "iPhone 4.7\\"",
     },
-    "applewatch4": Object {
-      "deviceName": "Apple Watch 4",
+    "iOS-4-in": Object {
+      "deviceId": "iOS-4-in",
+      "deviceName": "iPhone 4\\"",
+      "screenshots": Array [
+        Screenshot {
+          "deviceType": "iPhone 4\\"",
+          "file": File {
+            "path": "file.png",
+            "type": "image/png",
+          },
+          "id": "",
+          "name": "file.png",
+          "size": 0,
+          "src": undefined,
+        },
+      ],
     },
-    "ipad": Object {
+    "iOS-5-5-in": Object {
+      "deviceId": "iOS-5-5-in",
+      "deviceName": "iPhone 5.5\\"",
+    },
+    "iOS-5-8-in": Object {
+      "deviceId": "iOS-5-8-in",
+      "deviceName": "iPhone 5.8\\"",
+    },
+    "iOS-6-5-in": Object {
+      "deviceId": "iOS-6-5-in",
+      "deviceName": "iPhone 6.5\\"",
+    },
+    "iOS-iPad": Object {
+      "deviceId": "iOS-iPad",
       "deviceName": "iPad",
     },
-    "ipadpro": Object {
+    "iOS-iPad-Pro": Object {
+      "deviceId": "iOS-iPad-Pro",
       "deviceName": "iPad Pro",
     },
-    "ipadpro105": Object {
-      "deviceName": "iPad Pro 10.5”",
+    "iOS-iPad-Pro-10-5-in": Object {
+      "deviceId": "iOS-iPad-Pro-10-5-in",
+      "deviceName": "iPad Pro 10.5\\"",
     },
-    "ipadpro129": Object {
-      "deviceName": "iPad Pro 12.9”",
+    "iOS-iPad-Pro-11-in": Object {
+      "deviceId": "iOS-iPad-Pro-11-in",
+      "deviceName": "iPad Pro 11\\"",
     },
-    "iphone4": Object {
-      "deviceName": "iPhone 4”",
+    "iOS-iPad-Pro-2018": Object {
+      "deviceId": "iOS-iPad-Pro-2018",
+      "deviceName": "iPad Pro 2018\\"",
     },
-    "iphone47": Object {
-      "deviceName": "iPhone 4.7”",
-    },
-    "iphone55": Object {
-      "deviceName": "iPhone 5.5”",
-    },
-    "iphone58": Object {
-      "deviceName": "iPhone 5.8”",
-    },
-    "iphone65": Object {
-      "deviceName": "iPhone 6.5”",
+    "tVOS": Object {
+      "deviceId": "tVOS",
+      "deviceName": "tvOS",
     },
   },
-  "selectedDeviceIdForScreenshots": "iphone65",
+  "selectedDeviceIdForScreenshots": "iOS-4-in",
   "updatedAppVersion": Object {
     "appName": "Standup Timer",
     "appSlug": "app-slug-123",
@@ -206,58 +241,23 @@ exports[`AppVersionDetails disables install button when device is from a lower v
     Array [
       Object {
         "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
+        "key": "phone",
+        "value": "Phone",
       },
       Object {
         "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
+        "key": "tablet",
+        "value": "Tablet",
       },
       Object {
         "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
+        "key": "androidTV",
+        "value": "Android TV",
       },
       Object {
         "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
+        "key": "wearOS",
+        "value": "Wear OS",
       },
     ]
   }
@@ -275,7 +275,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
+  selectedDeviceIdForScreenshots="phone"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={false}
 />
@@ -320,58 +320,23 @@ exports[`AppVersionDetails disables install button when device is from different
     Array [
       Object {
         "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
+        "key": "phone",
+        "value": "Phone",
       },
       Object {
         "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
+        "key": "tablet",
+        "value": "Tablet",
       },
       Object {
         "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
+        "key": "androidTV",
+        "value": "Android TV",
       },
       Object {
         "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
+        "key": "wearOS",
+        "value": "Wear OS",
       },
     ]
   }
@@ -389,7 +354,7 @@ exports[`AppVersionDetails disables install button when device is from different
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
+  selectedDeviceIdForScreenshots="phone"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={false}
 />
@@ -434,58 +399,23 @@ exports[`AppVersionDetails disables install button when device is not supported 
     Array [
       Object {
         "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
+        "key": "phone",
+        "value": "Phone",
       },
       Object {
         "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
+        "key": "tablet",
+        "value": "Tablet",
       },
       Object {
         "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
+        "key": "androidTV",
+        "value": "Android TV",
       },
       Object {
         "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
+        "key": "wearOS",
+        "value": "Wear OS",
       },
     ]
   }
@@ -503,7 +433,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
+  selectedDeviceIdForScreenshots="phone"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={false}
 />
@@ -548,58 +478,58 @@ exports[`AppVersionDetails disables install button when there is no public insta
     Array [
       Object {
         "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
+        "key": "iOS-4-in",
+        "value": "iPhone 4\\"",
       },
       Object {
         "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
+        "key": "iOS-4-7-in",
+        "value": "iPhone 4.7\\"",
       },
       Object {
         "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
+        "key": "iOS-5-5-in",
+        "value": "iPhone 5.5\\"",
       },
       Object {
         "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
+        "key": "iOS-5-8-in",
+        "value": "iPhone 5.8\\"",
       },
       Object {
         "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
+        "key": "iOS-6-5-in",
+        "value": "iPhone 6.5\\"",
       },
       Object {
         "isMarked": false,
-        "key": "ipad",
+        "key": "iOS-iPad",
         "value": "iPad",
       },
       Object {
         "isMarked": false,
-        "key": "ipadpro",
+        "key": "iOS-iPad-Pro",
         "value": "iPad Pro",
       },
       Object {
         "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
+        "key": "iOS-iPad-Pro-10-5-in",
+        "value": "iPad Pro 10.5\\"",
       },
       Object {
         "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
+        "key": "iOS-iPad-Pro-11-in",
+        "value": "iPad Pro 11\\"",
       },
       Object {
         "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
+        "key": "iOS-iPad-Pro-2018",
+        "value": "iPad Pro 2018\\"",
       },
       Object {
         "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
+        "key": "tVOS",
+        "value": "tvOS",
       },
     ]
   }
@@ -617,7 +547,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
+  selectedDeviceIdForScreenshots="iOS-4-in"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={false}
 />
@@ -662,58 +592,23 @@ exports[`AppVersionDetails enables install button when there is public install p
     Array [
       Object {
         "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
+        "key": "phone",
+        "value": "Phone",
       },
       Object {
         "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
+        "key": "tablet",
+        "value": "Tablet",
       },
       Object {
         "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
+        "key": "androidTV",
+        "value": "Android TV",
       },
       Object {
         "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
+        "key": "wearOS",
+        "value": "Wear OS",
       },
     ]
   }
@@ -731,7 +626,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
+  selectedDeviceIdForScreenshots="phone"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={true}
 />
@@ -776,58 +671,23 @@ exports[`AppVersionDetails enables install button when there is public install p
     Array [
       Object {
         "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
+        "key": "phone",
+        "value": "Phone",
       },
       Object {
         "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
+        "key": "tablet",
+        "value": "Tablet",
       },
       Object {
         "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
+        "key": "androidTV",
+        "value": "Android TV",
       },
       Object {
         "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipad",
-        "value": "iPad",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro",
-        "value": "iPad Pro",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
-      },
-      Object {
-        "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
+        "key": "wearOS",
+        "value": "Wear OS",
       },
     ]
   }
@@ -845,7 +705,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
+  selectedDeviceIdForScreenshots="phone"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={true}
 />
@@ -890,58 +750,58 @@ exports[`AppVersionDetails renders correctly 1`] = `
     Array [
       Object {
         "isMarked": false,
-        "key": "iphone65",
-        "value": "iPhone 6.5”",
+        "key": "iOS-4-in",
+        "value": "iPhone 4\\"",
       },
       Object {
         "isMarked": false,
-        "key": "iphone58",
-        "value": "iPhone 5.8”",
+        "key": "iOS-4-7-in",
+        "value": "iPhone 4.7\\"",
       },
       Object {
         "isMarked": false,
-        "key": "iphone55",
-        "value": "iPhone 5.5”",
+        "key": "iOS-5-5-in",
+        "value": "iPhone 5.5\\"",
       },
       Object {
         "isMarked": false,
-        "key": "iphone47",
-        "value": "iPhone 4.7”",
+        "key": "iOS-5-8-in",
+        "value": "iPhone 5.8\\"",
       },
       Object {
         "isMarked": false,
-        "key": "iphone4",
-        "value": "iPhone 4”",
+        "key": "iOS-6-5-in",
+        "value": "iPhone 6.5\\"",
       },
       Object {
         "isMarked": false,
-        "key": "ipad",
+        "key": "iOS-iPad",
         "value": "iPad",
       },
       Object {
         "isMarked": false,
-        "key": "ipadpro",
+        "key": "iOS-iPad-Pro",
         "value": "iPad Pro",
       },
       Object {
         "isMarked": false,
-        "key": "ipadpro105",
-        "value": "iPad Pro 10.5”",
+        "key": "iOS-iPad-Pro-10-5-in",
+        "value": "iPad Pro 10.5\\"",
       },
       Object {
         "isMarked": false,
-        "key": "ipadpro129",
-        "value": "iPad Pro 12.9”",
+        "key": "iOS-iPad-Pro-11-in",
+        "value": "iPad Pro 11\\"",
       },
       Object {
         "isMarked": false,
-        "key": "applewatch",
-        "value": "Apple Watch",
+        "key": "iOS-iPad-Pro-2018",
+        "value": "iPad Pro 2018\\"",
       },
       Object {
         "isMarked": false,
-        "key": "applewatch4",
-        "value": "Apple Watch 4",
+        "key": "tVOS",
+        "value": "tvOS",
       },
     ]
   }
@@ -959,7 +819,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
-  selectedDeviceIdForScreenshots="iphone65"
+  selectedDeviceIdForScreenshots="iOS-4-in"
   settingsPath="/apps/app-slug-123/settings"
   shouldEnableInstall={false}
 />
