@@ -112,8 +112,8 @@ export type AppVersionEvent = {
 
 export enum AppVersionEventStatus {
   InProgress = 'in_progress',
-  Finished = 'finished',
-  Failed = 'failed'
+  Failed = 'failed',
+  Success = 'success'
 }
 
 export interface PageContext extends NextContext {

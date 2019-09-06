@@ -19,11 +19,13 @@ const _fetchAppVersion = (appSlug: string, versionId: string) => async (
     const appVersion = await shipApi.getAppVersion(appSlug, versionId);
     appVersion.screenshotDatas = await shipApi.getScreenshots(appSlug, versionId);
 
-    try {
-      appVersion.featureGraphicData = await shipApi.getFeatureGraphic(appSlug, versionId);
-    } catch (error) {
-      if (!(error instanceof RequestError && error.status === 404)) {
-        throw error;
+    if (appVersion.platform === 'android') {
+      try {
+        appVersion.featureGraphicData = await shipApi.getFeatureGraphic(appSlug, versionId);
+      } catch (error) {
+        if (!(error instanceof RequestError && error.status === 404)) {
+          throw error;
+        }
       }
     }
 

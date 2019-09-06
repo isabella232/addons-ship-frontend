@@ -54,7 +54,6 @@ Array [
       "bundleId": "bundle-id",
       "description": "Some semi-long description",
       "distributionType": "development",
-      "featureGraphicData": undefined,
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
       "keywords": "Keywords",
@@ -168,7 +167,7 @@ Object {
     Object {
       "createdAt": 2019-07-09T00:00:00.000Z,
       "createdAtTimestamp": 1562630400000,
-      "status": "finished",
+      "status": "success",
       "updatedAt": null,
     },
   ],

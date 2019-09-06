@@ -18,6 +18,7 @@ type Props = {
   hasMounted: boolean;
   isSaving: boolean;
   isPublishInProgress: boolean;
+  isPublished: boolean;
 };
 
 export default ({
@@ -29,7 +30,8 @@ export default ({
   buildSlug,
   hasMounted,
   isSaving,
-  isPublishInProgress
+  isPublishInProgress,
+  isPublished
 }: Props) => {
   const [isPublicInstallPageURLCopiedTooltipVisible, setIsPublicInstallPageURLCopiedTooltipVisible] = useState(false);
 
@@ -40,6 +42,29 @@ export default ({
       setIsPublicInstallPageURLCopiedTooltipVisible(false);
     }, 2000);
   };
+
+  let publishButtonContent;
+  if (isPublished) {
+    publishButtonContent = (
+      <Fragment>
+        <Icon name="Tick" />
+        <Text>Published</Text>
+      </Fragment>
+    );
+  } else if (isPublishInProgress) {
+    publishButtonContent = (
+      <Fragment>
+        <ProgressSpinner /> &nbsp; Publishing...
+      </Fragment>
+    );
+  } else {
+    publishButtonContent = (
+      <Fragment>
+        <Icon name="Deployment" />
+        <Text>Publish</Text>
+      </Fragment>
+    );
+  }
 
   const prettyDistributionType = (distributionType: DistributionType) => {
     switch (distributionType) {
@@ -69,17 +94,14 @@ export default ({
             </Fragment>
           )}
         </Button>
-        <Button level="secondary" fullWidth margin="x4" disabled={!shouldEnablePublish} onClick={onPublish}>
-          {isPublishInProgress ? (
-            <Fragment>
-              <ProgressSpinner /> &nbsp; Publishing...
-            </Fragment>
-          ) : (
-            <Fragment>
-              <Icon name="Deployment" />
-              <Text>Publish</Text>
-            </Fragment>
-          )}
+        <Button
+          level="secondary"
+          fullWidth
+          margin="x4"
+          disabled={!shouldEnablePublish || isPublished}
+          onClick={onPublish}
+        >
+          {publishButtonContent}
         </Button>
       </Base>
       {publicInstallPageURL ? (

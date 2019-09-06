@@ -245,7 +245,7 @@ export const mockSettings: Settings = {
 
 export const mockFinishedAppVersionEvent: AppVersionEvent = {
   id: '1234',
-  status: AppVersionEventStatus.Finished,
+  status: AppVersionEventStatus.Success,
   text: 'Event finished successfully!',
   createdAtTimestamp: new Date('2018-09-20T12:42:31Z').getTime(),
   createdAt: new Date('2018-09-20T12:42:31Z'),
