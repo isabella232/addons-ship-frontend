@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import formatDate from 'date-fns/format';
 import { dayInWords } from '@/utils/time';
 
@@ -14,7 +15,10 @@ import {
   TableRow,
   TableHeaderRow,
   TableHeaderCell,
-  TableHeader
+  TableHeader,
+  Skeleton,
+  SkeletonBox,
+  Divider
 } from '@bitrise/bitkit';
 import { TypeIconName } from '@bitrise/bitkit';
 import { AppVersionEvent } from '@/models';
@@ -23,6 +27,7 @@ import css from './style.scss';
 
 type Props = {
   appVersionEvents: AppVersionEvent[];
+  isLoading: boolean;
 };
 
 const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
@@ -46,37 +51,52 @@ const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
   );
 };
 
-export default ({ appVersionEvents }: Props) => (
+export default ({ appVersionEvents, isLoading }: Props) => (
   <Base paddingVertical="x8">
     <Base className={css.expandedTableWrapper}>
-      <Table type="flat">
-        <TableHeader>
-          <TableHeaderRow>
-            <TableHeaderCell>Date</TableHeaderCell>
-            <TableHeaderCell colSpan="2">Activity</TableHeaderCell>
-          </TableHeaderRow>
-        </TableHeader>
-        <TableBody>
-          {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
-            <TableRow key={index}>
-              <TableCell shrink title={formatDate(appVersionEvent.createdAt, 'YYYY-MM-DD HH:mm:ss')}>
-                {dayInWords(appVersionEvent.createdAt)} at {formatDate(appVersionEvent.createdAt, 'HH:mm:ss')}
-              </TableCell>
-              <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
-              <TableCell shrink>
-                {appVersionEvent.status === 'failed' && (
-                  <a href={appVersionEvent.logDownloadUrl}>
-                    <Button level="secondary" size="small">
-                      <Icon name="Download" color="grape-4" />
-                      Download Build Log
-                    </Button>
-                  </a>
-                )}
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      {isLoading ? (
+        <Base margin="x8">
+          <Skeleton active>
+            {[...Array(5)].map((_, idx) => (
+              <Fragment key={idx}>
+                <Base paddingHorizontal="x4" paddingVertical="x3">
+                  <SkeletonBox height="1.5rem" margin="x2" />
+                </Base>
+                <Divider width="1px" color="gray-2" />
+              </Fragment>
+            ))}
+          </Skeleton>
+        </Base>
+      ) : (
+        <Table type="flat">
+          <TableHeader>
+            <TableHeaderRow>
+              <TableHeaderCell>Date</TableHeaderCell>
+              <TableHeaderCell colSpan="2">Activity</TableHeaderCell>
+            </TableHeaderRow>
+          </TableHeader>
+          <TableBody>
+            {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
+              <TableRow key={index}>
+                <TableCell shrink title={formatDate(appVersionEvent.createdAt, 'YYYY-MM-DD HH:mm:ss')}>
+                  {dayInWords(appVersionEvent.createdAt)} at {formatDate(appVersionEvent.createdAt, 'HH:mm:ss')}
+                </TableCell>
+                <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
+                <TableCell shrink>
+                  {appVersionEvent.status === 'failed' && (
+                    <a href={appVersionEvent.logDownloadUrl}>
+                      <Button level="secondary" size="small">
+                        <Icon name="Download" color="grape-4" />
+                        Download Build Log
+                      </Button>
+                    </a>
+                  )}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      )}
     </Base>
   </Base>
 );

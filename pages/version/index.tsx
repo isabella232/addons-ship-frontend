@@ -43,8 +43,6 @@ export class VersionPage extends Component<VersionPageProps> {
     const path = isServer ? req.path : location.pathname;
     const pagePath = path.replace(new RegExp(`/(${AppVersionPageTabs.join('|')})?$`), '');
 
-    const promises = [];
-
     const activityLastSeenKey = `activity_${appSlug}_${versionId}`;
     const cookies = nookies.get(ctx);
     const activityLastSeen = parseInt(cookies[activityLastSeenKey], 10) || 0;
@@ -62,14 +60,11 @@ export class VersionPage extends Component<VersionPageProps> {
         });
 
         Connected.displayName = 'AppVersionActivity';
-        promises.push(store.dispatch(fetchAppVersionEvents(appSlug, versionId) as any));
         break;
       case 'qa':
         Connected.displayName = 'AppVersionQA';
         break;
     }
-
-    await Promise.all(promises);
 
     return { appSlug, versionId, isPublic, selectedTab, pagePath, activityLastSeen };
   }
@@ -88,7 +83,7 @@ export class VersionPage extends Component<VersionPageProps> {
       case 'devices':
         return <Devices />;
       case 'activity':
-        return <Activity versionId={versionId} />;
+        return <Activity appSlug={appSlug} versionId={versionId} />;
       case 'qa':
         return <QA />;
       default:
