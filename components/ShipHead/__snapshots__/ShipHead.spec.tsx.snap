@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShipHead When app is loaded 1`] = `
+<Head>
+  <title>
+    Subpage
+     | An app title
+  </title>
+</Head>
+`;
+
+exports[`ShipHead When app is not present 1`] = `
+<Head>
+  <title>
+    Subpage
+  </title>
+</Head>
+`;
