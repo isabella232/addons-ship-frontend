@@ -39,7 +39,7 @@ export type AppVersion = {
   packageName?: string;
   bundleId?: string;
   supportedDeviceTypes: string[];
-  distributionType?: DistributionType;
+  ipaExportMethod?: IPAExportMethod;
   iconUrl: string;
   appName: string;
   promotionalText?: string;
@@ -124,4 +124,4 @@ export interface PageContext extends NextContext {
 
 export type Platform = 'ios' | 'android';
 
-export type DistributionType = 'app-store' | 'development' | 'enterprise' | 'ad-hoc';
+export type IPAExportMethod = 'app-store' | 'development' | 'enterprise' | 'ad-hoc';

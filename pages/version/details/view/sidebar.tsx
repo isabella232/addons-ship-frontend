@@ -4,7 +4,7 @@ import SVG from 'react-svg';
 import Clipboard from 'react-clipboard.js';
 import { Base, Flex, Text, Icon, Button, Tooltip, ProgressSpinner } from '@bitrise/bitkit';
 
-import { DistributionType } from '@/models';
+import { IPAExportMethod } from '@/models';
 
 import css from './style.scss';
 
@@ -14,7 +14,7 @@ type Props = {
   onSave?: () => void;
   onPublish?: () => void;
   buildSlug: string;
-  distributionType?: DistributionType;
+  ipaExportMethod?: IPAExportMethod;
   hasMounted: boolean;
   isSaving: boolean;
   isPublishInProgress: boolean;
@@ -26,7 +26,7 @@ export default ({
   shouldEnablePublish,
   onSave,
   onPublish,
-  distributionType,
+  ipaExportMethod,
   buildSlug,
   hasMounted,
   isSaving,
@@ -66,8 +66,8 @@ export default ({
     );
   }
 
-  const prettyDistributionType = (distributionType: DistributionType) => {
-    switch (distributionType) {
+  const prettyIPAExportMethod = (ipaExportMethod: IPAExportMethod) => {
+    switch (ipaExportMethod) {
       case 'app-store':
         return 'App Store';
       case 'development':
@@ -193,15 +193,15 @@ export default ({
           <SVG src={'/static/purr-request-head.svg'} />
         </Flex>
       )}
-      {distributionType && (
+      {ipaExportMethod && (
         <Base>
           <Text color="grape-4" weight="bold" paddingVertical="x3">
-            Distribution Type: {prettyDistributionType(distributionType)}
+            Distribution Type: {prettyIPAExportMethod(ipaExportMethod)}
           </Text>
 
           <Text size="x2" color="gray-7">
             <Flex direction="vertical" gap="x3">
-              {distributionType === 'app-store' && (
+              {ipaExportMethod === 'app-store' && (
                 <Text>
                   The app was built for the iOS App Store,{' '}
                   <Text weight="bold" inline>
@@ -210,7 +210,7 @@ export default ({
                   , but you can download the App's .ipa and upload it into the App Store.
                 </Text>
               )}
-              {distributionType === 'development' && (
+              {ipaExportMethod === 'development' && (
                 <Fragment>
                   <Text>
                     The app was signed with a Development Provisioning Profile which means that it{' '}
@@ -224,7 +224,7 @@ export default ({
                   </Text>
                 </Fragment>
               )}
-              {distributionType === 'enterprise' && (
+              {ipaExportMethod === 'enterprise' && (
                 <Text>
                   The app was signed with an Enterprise Provisioning Profile and so it{' '}
                   <Text weight="bold" inline>
@@ -233,7 +233,7 @@ export default ({
                   .
                 </Text>
               )}
-              {distributionType === 'ad-hoc' && (
+              {ipaExportMethod === 'ad-hoc' && (
                 <Fragment>
                   <Text>
                     The app was signed with an Ad Hoc Provisioning Profile which means that it{' '}
