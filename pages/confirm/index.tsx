@@ -15,6 +15,7 @@ export type Props = {
 };
 
 export default class ConfirmEmail extends React.Component<Props> {
+  static displayName = 'ConfirmEmail';
   static async getInitialProps({ query: { token } }: PageContext) {
     let app, appContact;
 

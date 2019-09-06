@@ -74,7 +74,7 @@ const publishNotification = (
           Publishing to {publishTarget} is in progress.
         </Notification>
       );
-    case AppVersionEventStatus.Finished:
+    case AppVersionEventStatus.Success:
       return (
         <Notification margin="x2" type="success">
           Your app has been successfully published to {publishTarget}.
@@ -226,6 +226,7 @@ export default ({
           <Sidebar
             publicInstallPageURL={appVersion.publicInstallPageURL}
             shouldEnablePublish={readyForPublish && !isPublishInProgress}
+            isPublished={latestEventStatus === AppVersionEventStatus.Success}
             isPublishInProgress={isPublishInProgress}
             onSave={onSave}
             onPublish={onPublish}

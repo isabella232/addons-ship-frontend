@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import { TestScheduler } from 'rxjs/testing';
 import { getType } from 'deox';
 
-import { mockAppVersion, mockUploadedScreenshotResponse } from '@/mocks';
+import { mockAppVersion, mockUploadedScreenshotResponse, mockAndroidAppVersion } from '@/mocks';
 import { AppVersion, AppVersionEvent, AppVersionEventStatus } from '@/models';
 import api, { ShipAPIService } from '@/services/ship-api';
 import { uploadFileToS3 } from '@/utils/file';
@@ -61,7 +61,7 @@ describe('appVersion', () => {
         undefined,
         pollPublishStatus.complete([
           { status: AppVersionEventStatus.InProgress, createdAtTimestamp: new Date('2019-07-08').getTime() },
-          { status: AppVersionEventStatus.Finished, createdAtTimestamp: new Date('2019-07-09').getTime() }
+          { status: AppVersionEventStatus.Success, createdAtTimestamp: new Date('2019-07-09').getTime() }
         ] as AppVersionEvent[])
       );
 
@@ -101,6 +101,14 @@ describe('appVersion', () => {
       await store.dispatch(fetchAppVersion('app-slug', 'version-id') as any);
 
       expect(store.getActions()).toMatchSnapshot();
+    });
+
+    it('fetches feature graphic for an android app version', async () => {
+      (api.getAppVersion as jest.Mock).mockResolvedValueOnce(mockAndroidAppVersion);
+      (api.getScreenshots as jest.Mock).mockResolvedValueOnce([mockUploadedScreenshotResponse]);
+      await store.dispatch(fetchAppVersion('app-slug', 'version-id') as any);
+
+      expect(api.getFeatureGraphic).toHaveBeenCalledWith('app-slug', 'version-id');
     });
 
     it("can't fetch an app version", async () => {

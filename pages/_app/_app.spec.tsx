@@ -17,6 +17,7 @@ import { initializeSegment } from '@/utils/analytics';
 
 import { ShipApp, ShipAppProps } from '.';
 import { PageContext } from '@/models';
+import ConfirmEmail from '../confirm';
 
 describe('ShipApp', () => {
   let store: MockStoreEnhanced, defaultProps: ShipAppProps & AppProps;
@@ -26,6 +27,8 @@ describe('ShipApp', () => {
   beforeEach(() => {
     const mockStoreCreator: MockStoreCreator = configureMockStore([thunk]);
     store = mockStoreCreator();
+
+    (nookies.set as jest.Mock).mockReset();
 
     defaultProps = {
       store,
@@ -104,20 +107,30 @@ describe('ShipApp', () => {
 
       const result = await ShipApp.getInitialProps({
         Component,
-        ctx: ctx,
+        ctx,
         router: {} as RouterProps
       });
 
       expect(result).toMatchSnapshot();
-      expect(nookies.set).toHaveBeenCalledWith(ctx, 'auth-token', 'a-token-from-query', {
+      expect(nookies.set).toHaveBeenCalledWith(ctx, 'token-an-app-slug', 'a-token-from-query', {
         maxAge: 1000 * 24 * 60 * 60,
         path: '/'
       });
     });
 
+    test('when token is included in query, on the confirm email page', async () => {
+      await ShipApp.getInitialProps({
+        Component: ConfirmEmail as any,
+        ctx,
+        router: {} as RouterProps
+      });
+
+      expect(nookies.set).not.toHaveBeenCalled();
+    });
+
     test('when token is not included in query, included in cookie', async () => {
       nookies.get = jest.fn().mockImplementation(() => ({
-        'auth-token': 'a-token-from-cookie'
+        'token-an-app-slug': 'a-token-from-cookie'
       }));
       nookies.set = jest.fn().mockImplementation(() => {});
 
