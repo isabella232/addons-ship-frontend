@@ -5,7 +5,6 @@ import { RootState } from '@/store';
 import { TestDevice } from '@/models/test-device';
 import View from './view';
 import { App } from '@/models/app';
-import { Text } from '@bitrise/bitkit';
 
 import { fetchTestDevices } from '@/ducks/testDevices';
 
@@ -13,7 +12,7 @@ type Props = {
   app: App;
   fetchTestDevices: typeof fetchTestDevices;
   testDevices: TestDevice[];
-  isLoading?: boolean;
+  isLoading: boolean;
 };
 
 export class AppVersionDevices extends Component<Props> {
