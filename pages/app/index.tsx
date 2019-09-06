@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import find from 'lodash/find';
 
@@ -7,6 +7,7 @@ import { RootState } from '@/store';
 import { fetchAppVersionList } from '@/ducks/appVersionList';
 import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
 import EmptyPage from '@/components/EmptyPage';
+import ShipHead from '@/components/ShipHead';
 
 import View from './view';
 import Placeholder from './view/placeholder-list';
@@ -67,29 +68,34 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
         ? appVersionsByVersion
         : appVersionsByBuildNumber;
 
+    let content;
     if (isLoading) {
-      return <Placeholder />;
+      content = <Placeholder />;
+    } else if (!groupedAppVersionList || groupedAppVersionList.length === 0) {
+      content = <EmptyPage />;
+    } else {
+      let {
+        appVersions: [latestAppVersion]
+      } = groupedAppVersionList[0];
+
+      const viewProps = {
+        latestAppVersion,
+        versionSortingOptions: this.versionSortingOptions,
+        versionSortOptionWithValueSelected: this.versionSortOptionWithValueSelected,
+        selectedVersionSortingOption: find(this.versionSortingOptions, {
+          value: selectedVersionSortingOptionValue as string
+        }),
+        groupedAppVersionList
+      };
+      content = <View {...viewProps} />;
     }
 
-    if (!groupedAppVersionList || groupedAppVersionList.length === 0) {
-      return <EmptyPage />;
-    }
-
-    let {
-      appVersions: [latestAppVersion]
-    } = groupedAppVersionList[0];
-
-    const viewProps = {
-      latestAppVersion,
-      versionSortingOptions: this.versionSortingOptions,
-      versionSortOptionWithValueSelected: this.versionSortOptionWithValueSelected,
-      selectedVersionSortingOption: find(this.versionSortingOptions, {
-        value: selectedVersionSortingOptionValue as string
-      }),
-      groupedAppVersionList
-    };
-
-    return <View {...viewProps} />;
+    return (
+      <Fragment>
+        <ShipHead>Versions</ShipHead>
+        {content}
+      </Fragment>
+    );
   }
 }
 
