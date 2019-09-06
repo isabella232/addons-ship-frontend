@@ -1,175 +1,190 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Settings renders tabs correctly general 1`] = `
-<Base>
+<Fragment>
+  <Connect(ShipHead)>
+    Settings
+  </Connect(ShipHead)>
   <Base>
-    <Base
-      maxWidth={960}
-    >
-      <Tabs
-        gap="x10"
+    <Base>
+      <Base
+        maxWidth={960}
       >
-        <Link
-          as="/apps/some-app/settings/general"
-          href="/settings?appSlug=some-app&selectedTab=general"
+        <Tabs
+          gap="x10"
         >
-          <Tab
-            active={true}
+          <Link
+            as="/apps/some-app/settings/general"
+            href="/settings?appSlug=some-app&selectedTab=general"
           >
-            <a>
-              General
-            </a>
-          </Tab>
-        </Link>
-        <Link
-          as="/apps/some-app/settings/notifications"
-          href="/settings?appSlug=some-app&selectedTab=notifications"
-        >
-          <Tab
-            active={false}
+            <Tab
+              active={true}
+            >
+              <a>
+                General
+              </a>
+            </Tab>
+          </Link>
+          <Link
+            as="/apps/some-app/settings/notifications"
+            href="/settings?appSlug=some-app&selectedTab=notifications"
           >
-            <a>
-              Notifications
-            </a>
-          </Tab>
-        </Link>
-      </Tabs>
-    </Base>
-    <Divider
-      color="gray-2"
-      direction="horizontal"
-      width="0.125rem"
-    />
-    <Base
-      maxWidth={960}
-    >
-      <Connect(GeneralSettings)
-        appSlug="some-app"
+            <Tab
+              active={false}
+            >
+              <a>
+                Notifications
+              </a>
+            </Tab>
+          </Link>
+        </Tabs>
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="0.125rem"
       />
+      <Base
+        maxWidth={960}
+      >
+        <Connect(GeneralSettings)
+          appSlug="some-app"
+        />
+      </Base>
     </Base>
+    <Flex
+      paddingVertical="x16"
+    >
+      <AddonFooter
+        addonName="Ship"
+      />
+    </Flex>
   </Base>
-  <Flex
-    paddingVertical="x16"
-  >
-    <AddonFooter
-      addonName="Ship"
-    />
-  </Flex>
-</Base>
+</Fragment>
 `;
 
 exports[`Settings renders tabs correctly notifications 1`] = `
-<Base>
+<Fragment>
+  <Connect(ShipHead)>
+    Notifications
+  </Connect(ShipHead)>
   <Base>
-    <Base
-      maxWidth={960}
-    >
-      <Tabs
-        gap="x10"
+    <Base>
+      <Base
+        maxWidth={960}
       >
-        <Link
-          as="/apps/some-app/settings/general"
-          href="/settings?appSlug=some-app&selectedTab=general"
+        <Tabs
+          gap="x10"
         >
-          <Tab
-            active={false}
+          <Link
+            as="/apps/some-app/settings/general"
+            href="/settings?appSlug=some-app&selectedTab=general"
           >
-            <a>
-              General
-            </a>
-          </Tab>
-        </Link>
-        <Link
-          as="/apps/some-app/settings/notifications"
-          href="/settings?appSlug=some-app&selectedTab=notifications"
-        >
-          <Tab
-            active={true}
+            <Tab
+              active={false}
+            >
+              <a>
+                General
+              </a>
+            </Tab>
+          </Link>
+          <Link
+            as="/apps/some-app/settings/notifications"
+            href="/settings?appSlug=some-app&selectedTab=notifications"
           >
-            <a>
-              Notifications
-            </a>
-          </Tab>
-        </Link>
-      </Tabs>
-    </Base>
-    <Divider
-      color="gray-2"
-      direction="horizontal"
-      width="0.125rem"
-    />
-    <Base
-      maxWidth={960}
-    >
-      <Connect(NotificationSettings)
-        appSlug="some-app"
+            <Tab
+              active={true}
+            >
+              <a>
+                Notifications
+              </a>
+            </Tab>
+          </Link>
+        </Tabs>
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="0.125rem"
       />
+      <Base
+        maxWidth={960}
+      >
+        <Connect(NotificationSettings)
+          appSlug="some-app"
+        />
+      </Base>
     </Base>
+    <Flex
+      paddingVertical="x16"
+    >
+      <AddonFooter
+        addonName="Ship"
+      />
+    </Flex>
   </Base>
-  <Flex
-    paddingVertical="x16"
-  >
-    <AddonFooter
-      addonName="Ship"
-    />
-  </Flex>
-</Base>
+</Fragment>
 `;
 
 exports[`Settings renders tabs correctly other 1`] = `
-<Base>
+<Fragment>
+  <Connect(ShipHead)>
+    Notifications
+  </Connect(ShipHead)>
   <Base>
-    <Base
-      maxWidth={960}
-    >
-      <Tabs
-        gap="x10"
+    <Base>
+      <Base
+        maxWidth={960}
       >
-        <Link
-          as="/apps/some-app/settings/general"
-          href="/settings?appSlug=some-app&selectedTab=general"
+        <Tabs
+          gap="x10"
         >
-          <Tab
-            active={false}
+          <Link
+            as="/apps/some-app/settings/general"
+            href="/settings?appSlug=some-app&selectedTab=general"
           >
-            <a>
-              General
-            </a>
-          </Tab>
-        </Link>
-        <Link
-          as="/apps/some-app/settings/notifications"
-          href="/settings?appSlug=some-app&selectedTab=notifications"
-        >
-          <Tab
-            active={false}
+            <Tab
+              active={false}
+            >
+              <a>
+                General
+              </a>
+            </Tab>
+          </Link>
+          <Link
+            as="/apps/some-app/settings/notifications"
+            href="/settings?appSlug=some-app&selectedTab=notifications"
           >
-            <a>
-              Notifications
-            </a>
-          </Tab>
-        </Link>
-      </Tabs>
+            <Tab
+              active={false}
+            >
+              <a>
+                Notifications
+              </a>
+            </Tab>
+          </Link>
+        </Tabs>
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="0.125rem"
+      />
+      <Base
+        maxWidth={960}
+      >
+        <h1>
+          other
+        </h1>
+      </Base>
     </Base>
-    <Divider
-      color="gray-2"
-      direction="horizontal"
-      width="0.125rem"
-    />
-    <Base
-      maxWidth={960}
+    <Flex
+      paddingVertical="x16"
     >
-      <h1>
-        other
-      </h1>
-    </Base>
+      <AddonFooter
+        addonName="Ship"
+      />
+    </Flex>
   </Base>
-  <Flex
-    paddingVertical="x16"
-  >
-    <AddonFooter
-      addonName="Ship"
-    />
-  </Flex>
-</Base>
+</Fragment>
 `;

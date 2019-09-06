@@ -17,6 +17,7 @@ import Activity from './activity';
 import QA from './qa';
 
 import css from './style.scss';
+import ShipHead from '@/components/ShipHead';
 
 export interface VersionPageProps extends AppVersionPageQuery {
   appVersion: AppVersion | null;
@@ -108,8 +109,25 @@ export class VersionPage extends Component<VersionPageProps> {
       </Link>
     );
 
+    let title;
+    switch (selectedTab) {
+      case 'devices':
+        title = 'Test Devices';
+        break;
+      case 'activity':
+        title = 'Version Activity';
+        break;
+      case 'qa':
+        title = 'QA';
+        break;
+      case 'details':
+      default:
+        title = 'Version Details';
+    }
+
     return (
       <Fragment>
+        <ShipHead>{title}</ShipHead>
         <Flex direction="vertical" grow>
           <Base maxWidth={960}>
             <Tabs gap="x12">
