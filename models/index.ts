@@ -124,4 +124,4 @@ export interface PageContext extends NextContext {
 
 export type Platform = 'ios' | 'android';
 
-export type DistributionType = 'appstore' | 'development' | 'enterprise' | 'adhoc'
+export type DistributionType = 'app-store' | 'development' | 'enterprise' | 'ad-hoc';

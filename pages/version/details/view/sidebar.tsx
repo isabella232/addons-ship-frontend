@@ -68,13 +68,13 @@ export default ({
 
   const prettyDistributionType = (distributionType: DistributionType) => {
     switch (distributionType) {
-      case 'appstore':
+      case 'app-store':
         return 'App Store';
       case 'development':
         return 'Development';
       case 'enterprise':
         return 'Enterprise';
-      case 'adhoc':
+      case 'ad-hoc':
         return 'Ad-hoc';
     }
   }
@@ -201,7 +201,7 @@ export default ({
 
           <Text size="x2" color="gray-7">
             <Flex direction="vertical" gap="x3">
-              {distributionType === 'appstore' && (
+              {distributionType === 'app-store' && (
                 <Text>
                   The app was built for the iOS App Store,{' '}
                   <Text weight="bold" inline>
@@ -233,7 +233,7 @@ export default ({
                   .
                 </Text>
               )}
-              {distributionType === 'adhoc' && (
+              {distributionType === 'ad-hoc' && (
                 <Fragment>
                   <Text>
                     The app was signed with an Ad Hoc Provisioning Profile which means that it{' '}
