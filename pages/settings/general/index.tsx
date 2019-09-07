@@ -215,7 +215,7 @@ export class General extends Component<Props> {
       onSettingsPropertyChange: this.onSettingsPropertyChange,
       onSelectedFileChange: this.onSelectedFileChange,
       onWorkflowChange: this.onWorkflowChange,
-      onCancel: this.onCancel,
+      onCancel: hasModifications ? this.onCancel : undefined,
       onSave: hasModifications ? this.onSave : undefined,
       isSaving
     };
