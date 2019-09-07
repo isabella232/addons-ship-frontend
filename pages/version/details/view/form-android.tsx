@@ -115,7 +115,7 @@ export default ({
           <Divider color="gray-2" direction="horizontal" margin="x4" />
 
           <InputLabel>Variant</InputLabel>
-          <Text size="x3">{appVersion.variant}</Text>
+          <Text size="x3">{appVersion.productFlavour}</Text>
 
           <Divider color="gray-2" direction="horizontal" margin="x4" />
         </Flex>

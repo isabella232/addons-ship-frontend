@@ -50,7 +50,7 @@ export type AppVersion = {
   marketingUrl?: string;
   scheme?: string;
   module?: string;
-  variant?: string;
+  productFlavour?: string;
   buildType?: string;
   publicInstallPageURL?: string;
   screenshotDatas: ScreenshotResponse[];
