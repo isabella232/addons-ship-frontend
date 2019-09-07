@@ -3,7 +3,10 @@ import groupBy from 'lodash/groupBy';
 import sortBy from 'lodash/sortBy';
 
 import { RootState } from '@/store';
-import { AppVersionEvent, AppVersion } from '@/models';
+import { AppVersionEvent, AppVersion, Platform } from '@/models';
+
+export const getAppVersionsByPlatform = (appVersionList: AppVersion[], platform: Platform): AppVersion[] =>
+  appVersionList.filter(({ platform: _platform }) => _platform === platform);
 
 export const getAppVersionsByVersion = ({ appVersionList }: RootState) =>
   appVersionList
@@ -13,12 +16,26 @@ export const getAppVersionsByVersion = ({ appVersionList }: RootState) =>
       }))
     : null;
 
+export const getPlatformAppVersionsByVersion = ({ appVersionList }: RootState, platform: Platform) =>
+  appVersionList
+    ? getAppVersionsByVersion({
+        appVersionList: getAppVersionsByPlatform(appVersionList, platform)
+      } as RootState)
+    : null;
+
 export const getAppVersionsByBuildNumber = ({ appVersionList }: RootState) =>
   appVersionList
     ? map(groupBy(appVersionList, 'buildNumber'), (appVersions, buildNumber) => ({
         appVersions,
         groupName: buildNumber
       })).reverse()
+    : null;
+
+export const getPlatformAppVersionsByBuildNumber = ({ appVersionList }: RootState, platform: Platform) =>
+  appVersionList
+    ? getAppVersionsByBuildNumber({
+        appVersionList: getAppVersionsByPlatform(appVersionList, platform)
+      } as RootState)
     : null;
 
 export const orderedAppVersionEvents = (events: AppVersionEvent[]) =>

@@ -2,7 +2,9 @@ import {
   getAppVersionsByVersion,
   getAppVersionsByBuildNumber,
   orderedAppVersionEvents,
-  isCrossPlatform
+  isCrossPlatform,
+  getPlatformAppVersionsByVersion,
+  getPlatformAppVersionsByBuildNumber
 } from './selectors';
 import { RootState } from '@/store';
 import { mockAppVersions } from '@/mocks';
@@ -72,6 +74,76 @@ describe('getAppVersionsByVersion', () => {
         ]
       }
     ]);
+  });
+});
+
+describe('getPlatformAppVersionsByVersion', () => {
+  it('selects versions by platfrom, groupped by versions', () => {
+    const appVersionList = [
+      {
+        version: '1.0',
+        buildNumber: 3,
+        platform: 'ios'
+      },
+      {
+        version: '1.0',
+        buildNumber: 9,
+        platform: 'ios'
+      },
+      {
+        version: '1.0',
+        buildNumber: 6,
+        platform: 'android'
+      },
+      {
+        version: '2.0',
+        buildNumber: 16,
+        platform: 'android'
+      }
+    ] as AppVersion[];
+
+    const versions = getPlatformAppVersionsByVersion({ appVersionList } as RootState, 'android');
+
+    expect(versions).toMatchSnapshot();
+  });
+
+  it('handles null', () => {
+    expect(getPlatformAppVersionsByVersion({ appVersionList: null } as RootState, 'ios')).toBeNull();
+  });
+});
+
+describe('getPlatformAppVersionsByBuildNumber', () => {
+  it('selects versions by platfrom, groupped by build number', () => {
+    const appVersionList = [
+      {
+        version: '1.0',
+        buildNumber: 3,
+        platform: 'ios'
+      },
+      {
+        version: '1.0',
+        buildNumber: 9,
+        platform: 'ios'
+      },
+      {
+        version: '1.0',
+        buildNumber: 6,
+        platform: 'android'
+      },
+      {
+        version: '2.0',
+        buildNumber: 16,
+        platform: 'android'
+      }
+    ] as AppVersion[];
+
+    const versions = getPlatformAppVersionsByBuildNumber({ appVersionList } as RootState, 'android');
+
+    expect(versions).toMatchSnapshot();
+  });
+
+  it('handles null', () => {
+    expect(getPlatformAppVersionsByBuildNumber({ appVersionList: null } as RootState, 'ios')).toBeNull();
   });
 });
 
