@@ -45,7 +45,7 @@ export default ({
               detailsPagePath={`/apps/${latestAppVersion.appSlug}/versions/${latestAppVersion.id}/details`}
               detailsPagePathHref={`/version?appSlug=${latestAppVersion.appSlug}&versionId=${latestAppVersion.id}`}
               title={`${latestAppVersion.appName} v${latestAppVersion.version} (${latestAppVersion.buildNumber})`}
-              description={latestAppVersion.description}
+              description={latestAppVersion.commitMessage}
               note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
               iconUrl={latestAppVersion.iconUrl}
               platform={latestAppVersion.platform}
@@ -88,7 +88,7 @@ export default ({
                       detailsPagePathHref={`/version?appSlug=${appVersion.appSlug}&versionId=${appVersion.id}`}
                       platform={appVersion.platform}
                       title={`${appVersion.appName} (${appVersion.buildNumber})`}
-                      description={appVersion.description}
+                      description={appVersion.commitMessage}
                       note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}`}
                     />
                   ))}
