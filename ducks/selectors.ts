@@ -23,3 +23,23 @@ export const getAppVersionsByBuildNumber = ({ appVersionList }: RootState) =>
 
 export const orderedAppVersionEvents = (events: AppVersionEvent[]) =>
   [...events].sort(({ createdAtTimestamp: c1 }, { createdAtTimestamp: c2 }) => c2 - c1);
+
+export const isCrossPlatform = ({ appVersionList }: RootState): boolean => {
+  if (!appVersionList) {
+    return false;
+  }
+
+  let hasAndroid = false,
+    hasIOS = false;
+  appVersionList.forEach(({ platform }) => {
+    if (platform === 'android') {
+      hasAndroid = true;
+    }
+
+    if (platform === 'ios') {
+      hasIOS = true;
+    }
+  });
+
+  return hasAndroid && hasIOS;
+};

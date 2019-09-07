@@ -1,4 +1,9 @@
-import { getAppVersionsByVersion, getAppVersionsByBuildNumber, orderedAppVersionEvents } from './selectors';
+import {
+  getAppVersionsByVersion,
+  getAppVersionsByBuildNumber,
+  orderedAppVersionEvents,
+  isCrossPlatform
+} from './selectors';
 import { RootState } from '@/store';
 import { mockAppVersions } from '@/mocks';
 import { AppVersion, AppVersionEvent } from '@/models';
@@ -94,5 +99,39 @@ describe('orderedAppVersionEvents', () => {
     ] as unknown) as AppVersionEvent[];
 
     expect(orderedAppVersionEvents(events)).toMatchSnapshot();
+  });
+});
+
+describe('isCrossPlatform', () => {
+  const androidVersions = [
+      {
+        id: 'version-1',
+        platform: 'android'
+      },
+      {
+        id: 'version-2',
+        platform: 'android'
+      }
+    ] as AppVersion[],
+    iosVersions = [
+      {
+        id: 'version-3',
+        platform: 'ios'
+      },
+      {
+        id: 'version-4',
+        platform: 'ios'
+      }
+    ] as AppVersion[];
+
+  it('returns false', () => {
+    expect(isCrossPlatform({ appVersionList: null } as RootState)).toBe(false);
+
+    expect(isCrossPlatform({ appVersionList: androidVersions } as RootState)).toBe(false);
+    expect(isCrossPlatform({ appVersionList: iosVersions } as RootState)).toBe(false);
+  });
+
+  it('detects cross platform apps', () => {
+    expect(isCrossPlatform({ appVersionList: [...iosVersions, ...androidVersions] } as RootState)).toBe(true);
   });
 });
