@@ -230,6 +230,7 @@ Array [
 exports[`Ship API service updateAppContactNotificationPreferences updates an app contact's notification preferences 1`] = `
 Object {
   "id": "abc-123",
+  "isConfirmed": false,
   "notificationPreferences": Object {
     "failedPublish": false,
     "newVersion": true,

@@ -68,6 +68,15 @@ export class ShipAPIService {
     return settings;
   }
 
+  mapAppContactResponse(appContactResponse: AppContact) {
+    const { confirmedAt, ...appContact } = appContactResponse;
+
+    return {
+      ...appContact,
+      isConfirmed: !!confirmedAt && !confirmedAt.startsWith('0001') && new Date(confirmedAt).getTime() > 0
+    };
+  }
+
   // GET /apps/{app-slug}/versions
   async getAppVersionList(appSlug: string): Promise<AppVersion[]> {
     this.checkToken();
@@ -341,12 +350,7 @@ export class ShipAPIService {
     const url = `${this.config.url}/apps/${appSlug}/contacts`;
     const { data } = await get(url, this.token).then(res => res.json());
 
-    const appContacts: AppContact[] = data.map(camelizeKeysDeep);
-
-    return appContacts.map(({ confirmedAt, ...contact }) => ({
-      ...contact,
-      isConfirmed: !!confirmedAt && !confirmedAt.startsWith('0001') && new Date(confirmedAt).getTime() > 0
-    }));
+    return data.map(camelizeKeysDeep).map(this.mapAppContactResponse);
   }
 
   // PUT /apps/{app-slug}/contacts/{contact-id}
@@ -358,7 +362,7 @@ export class ShipAPIService {
 
     const { data } = await put(url, this.token, body).then(res => res.json());
 
-    return camelizeKeysDeep(data);
+    return this.mapAppContactResponse(camelizeKeysDeep(data));
   }
 
   // DELETE /apps/{app-slug}/contacts/{contact-id}
