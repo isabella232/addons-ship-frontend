@@ -4,6 +4,7 @@ import map from 'lodash/map';
 import get from 'lodash/get';
 import update from 'lodash/update';
 import filter from 'lodash/filter';
+import isEqual from 'lodash/isEqual';
 import { Flex, ProgressBitbot } from '@bitrise/bitkit';
 
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
@@ -18,7 +19,8 @@ import {
   uploadFeatureGraphic,
   deleteFeatureGraphic,
   publishAppVersion,
-  pollPublishStatus
+  pollPublishStatus,
+  fetchAppVersionEvents
 } from '@/ducks/appVersion';
 import { fetchSettings } from '@/ducks/settings';
 import { orderedAppVersionEvents } from '@/ducks/selectors';
@@ -38,6 +40,7 @@ export type Props = {
   deleteScreenshot: typeof deleteScreenshot;
   uploadFeatureGraphic: typeof uploadFeatureGraphic;
   deleteFeatureGraphic: typeof deleteFeatureGraphic;
+  fetchAppVersionEvents: typeof fetchAppVersionEvents;
 
   publishAppVersion: typeof publishAppVersion;
   startPollPublishStatus: typeof pollPublishStatus.start;
@@ -152,7 +155,7 @@ export class AppVersionDetails extends Component<Props, State> {
   componentDidUpdate({ appVersionEvents: prevEvents, appVersion: prevAppVersion }: Props) {
     const { appVersionEvents: events, cancelPollPublishStatus, appVersion } = this.props;
 
-    if (events.length && prevEvents.length !== events.length) {
+    if (events.length && !isEqual(events, prevEvents)) {
       const latestEvent = events[0];
 
       if (latestEvent) {
@@ -178,8 +181,9 @@ export class AppVersionDetails extends Component<Props, State> {
   }
 
   init = () => {
-    const { appVersion, startPollPublishStatus } = this.props;
+    const { appSlug, versionId, appVersion, startPollPublishStatus, fetchAppVersionEvents } = this.props;
     if (appVersion) {
+      fetchAppVersionEvents(appSlug, versionId);
       const newScreenshotList = appVersion.platform === 'ios' ? { ...iosDevices } : { ...androidDevices };
 
       this.setState({
@@ -481,6 +485,7 @@ const mapDispatchToProps = {
   deleteScreenshot,
   uploadFeatureGraphic,
   deleteFeatureGraphic,
+  fetchAppVersionEvents,
   publishAppVersion,
   startPollPublishStatus: pollPublishStatus.start,
   cancelPollPublishStatus: pollPublishStatus.cancel,

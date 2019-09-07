@@ -27,7 +27,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
         gap="x12"
       >
         <Link
-          as="some/path/details"
+          as="/apps/some-app/versions/a-version-id/details"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
@@ -50,7 +50,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/devices"
+          as="/apps/some-app/versions/a-version-id/devices"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
@@ -73,7 +73,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/qa"
+          as="/apps/some-app/versions/a-version-id/qa"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
@@ -96,7 +96,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/activity"
+          as="/apps/some-app/versions/a-version-id/activity"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
@@ -166,7 +166,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
         gap="x12"
       >
         <Link
-          as="some/path/details"
+          as="/apps/some-app/versions/a-version-id/details"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
@@ -189,7 +189,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/devices"
+          as="/apps/some-app/versions/a-version-id/devices"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
@@ -212,7 +212,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/qa"
+          as="/apps/some-app/versions/a-version-id/qa"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
@@ -235,7 +235,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/activity"
+          as="/apps/some-app/versions/a-version-id/activity"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
@@ -301,7 +301,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
         gap="x12"
       >
         <Link
-          as="some/path/details"
+          as="/apps/some-app/versions/a-version-id/details"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
@@ -324,7 +324,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/devices"
+          as="/apps/some-app/versions/a-version-id/devices"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
@@ -347,7 +347,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/qa"
+          as="/apps/some-app/versions/a-version-id/qa"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
@@ -370,7 +370,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/activity"
+          as="/apps/some-app/versions/a-version-id/activity"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
@@ -436,7 +436,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
         gap="x12"
       >
         <Link
-          as="some/path/details"
+          as="/apps/some-app/versions/a-version-id/details"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
@@ -459,7 +459,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/devices"
+          as="/apps/some-app/versions/a-version-id/devices"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
@@ -482,7 +482,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/qa"
+          as="/apps/some-app/versions/a-version-id/qa"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
@@ -505,7 +505,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/activity"
+          as="/apps/some-app/versions/a-version-id/activity"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
@@ -568,7 +568,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
         gap="x12"
       >
         <Link
-          as="some/path/details"
+          as="/apps/some-app/versions/a-version-id/details"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
@@ -591,7 +591,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/devices"
+          as="/apps/some-app/versions/a-version-id/devices"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
@@ -614,7 +614,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/qa"
+          as="/apps/some-app/versions/a-version-id/qa"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
@@ -637,7 +637,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/activity"
+          as="/apps/some-app/versions/a-version-id/activity"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
@@ -702,7 +702,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
         gap="x12"
       >
         <Link
-          as="some/path/details"
+          as="/apps/some-app/versions/a-version-id/details"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
         >
           <a>
@@ -725,7 +725,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/devices"
+          as="/apps/some-app/versions/a-version-id/devices"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
         >
           <a>
@@ -748,7 +748,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/qa"
+          as="/apps/some-app/versions/a-version-id/qa"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
         >
           <a>
@@ -771,7 +771,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
           </a>
         </Link>
         <Link
-          as="some/path/activity"
+          as="/apps/some-app/versions/a-version-id/activity"
           href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
         >
           <a>
