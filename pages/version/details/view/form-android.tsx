@@ -114,7 +114,7 @@ export default ({
 
           <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-          <InputLabel>Variant</InputLabel>
+          <InputLabel>Product Flavour</InputLabel>
           <Text size="x3">{appVersion.productFlavour}</Text>
 
           <Divider color="gray-2" direction="horizontal" margin="x4" />
