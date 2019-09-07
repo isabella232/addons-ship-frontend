@@ -32,9 +32,10 @@ export type Props = {
   app?: App;
   appVersion: AppVersion | null;
   shouldShowSettingsOnboarding: boolean;
+  hideBreadcrumbs?: boolean;
 };
 
-export const Header = ({ app, appVersion, shouldShowSettingsOnboarding }: Props) => {
+export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBreadcrumbs = false }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
   const [isHamburgerIconActive, setHamburgerIconActive] = useState(false);
   const [isSettingsOnboardingNotificationVisible, setSettingsOnboardingNotificationVisible] = useState(
@@ -173,18 +174,20 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding }: Props)
         </AddonBeam>
       </PlacementManager>
 
-      <Flex
-        className={css.header}
-        direction="vertical"
-        paddingVertical={breadcrumbs ? 'x5' : 'x8'}
-        gap="x2"
-        style={{
-          backgroundImage: `url('/static/header-bg.svg'), linear-gradient(90deg, ${primaryColor}, ${secondaryColor})`
-        }}
-      >
-        {breadcrumbs}
-        <PageTitle projectType={projectType} title={pageTitle} smaller={!!breadcrumbs} />
-      </Flex>
+      {!hideBreadcrumbs && (
+        <Flex
+          className={css.header}
+          direction="vertical"
+          paddingVertical={breadcrumbs ? 'x5' : 'x8'}
+          gap="x2"
+          style={{
+            backgroundImage: `url('/static/header-bg.svg'), linear-gradient(90deg, ${primaryColor}, ${secondaryColor})`
+          }}
+        >
+          {breadcrumbs}
+          <PageTitle projectType={projectType} title={`${pageTitle}`} smaller={!!breadcrumbs} />
+        </Flex>
+      )}
       <Flex
         direction="vertical"
         alignChildrenVertical="end"

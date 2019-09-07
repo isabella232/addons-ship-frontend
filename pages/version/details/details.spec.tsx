@@ -157,7 +157,7 @@ describe('AppVersionDetailsView', () => {
     it('renders with Android version correctly', () => {
       (mediaQuery as jest.Mock).mockReturnValue([true]);
       const tree = toJSON(
-        mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} publishTarget="Google Play Store" />)
+        mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} publishTarget="Google Play Console" />)
       );
       expect(tree).toMatchSnapshot();
     });

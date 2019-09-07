@@ -271,7 +271,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishTarget="Google Play Store"
+  publishTarget="Google Play Console"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -350,7 +350,7 @@ exports[`AppVersionDetails disables install button when device is from different
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishTarget="Google Play Store"
+  publishTarget="Google Play Console"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -429,7 +429,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishTarget="Google Play Store"
+  publishTarget="Google Play Console"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -622,7 +622,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishTarget="Google Play Store"
+  publishTarget="Google Play Console"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -701,7 +701,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   onPublish={[Function]}
   onSave={[Function]}
   onScreenshotAdded={[Function]}
-  publishTarget="Google Play Store"
+  publishTarget="Google Play Console"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -905,7 +905,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
   onScreenshotAdded={[MockFunction]}
-  publishTarget="Google Play Store"
+  publishTarget="Google Play Console"
   readyForPublish={true}
   removeFeatureGraphic={[MockFunction]}
   removeScreenshot={[MockFunction]}
@@ -1085,7 +1085,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 }
                               >
                                 App is ready for publishing to 
-                                Google Play Store
+                                Google Play Console
                                 .
                               </div>
                             </Base>

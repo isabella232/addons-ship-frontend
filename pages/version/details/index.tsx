@@ -458,7 +458,7 @@ export class AppVersionDetails extends Component<Props, State> {
       isPublishInProgress: isPublishInProgress || latestEventStatus === AppVersionEventStatus.InProgress,
       publishTarget:
         (appVersion.platform === 'ios' && 'App Store Connect') ||
-        (appVersion.platform === 'android' && 'Google Play Store') ||
+        (appVersion.platform === 'android' && 'Google Play Console') ||
         'production',
       settingsPath: `/apps/${appVersion.appSlug}/settings`,
       activityPath: `/apps/${appVersion.appSlug}/versions/${appVersion.id}/activity`,

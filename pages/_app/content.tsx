@@ -16,7 +16,7 @@ export const AppContent = ({ error, children }: Props) => {
   if (error) {
     return (
       <Fragment>
-        <Header />
+        <Header hideBreadcrumbs />
         <ErrorPage statusCode={(error as RequestError).status || 500} />
       </Fragment>
     );
