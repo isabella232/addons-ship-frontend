@@ -16,7 +16,7 @@ import List, { Props as ListProps } from './contact-list';
 
 export interface Props extends AddNewProps, ListProps {
   onSave?: () => void;
-  onCancel: () => void;
+  onCancel?: () => void;
   error?: string;
   hasLoaded: boolean;
   isSaving: boolean;
@@ -60,7 +60,7 @@ export default ({
           />
         </Base>
         <Flex margin="x12" direction="horizontal" alignChildrenHorizontal="end" gap="x4">
-          <Button level="secondary" width="8rem" onClick={onCancel}>
+          <Button disabled={!onCancel || isSaving} level="secondary" width="8rem" onClick={onCancel}>
             Cancel
           </Button>
           <Button disabled={!onSave || isSaving} level="primary" width="8rem" onClick={onSave}>

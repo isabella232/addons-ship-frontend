@@ -150,7 +150,7 @@ export class NotificationSettings extends React.Component<Props, State> {
       onNotificationPreferenceChanged: this.onNotificationPreferenceChanged,
       onDeleteContact: this.onDeleteContact,
       onSave: hasModifications ? this.onSave : undefined,
-      onCancel: this.onCancel,
+      onCancel: hasModifications ? this.onCancel : undefined,
       error
     };
 
