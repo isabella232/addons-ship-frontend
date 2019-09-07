@@ -1,5 +1,18 @@
+import { Fragment, useState } from 'react';
 import formatDate from 'date-fns/format';
-import { Base, Flex, Text, Icon, Notification, Button, TypeIconName, Link, ProgressSpinner } from '@bitrise/bitkit';
+import {
+  Base,
+  Flex,
+  Text,
+  Icon,
+  Notification,
+  Button,
+  TypeIconName,
+  Link,
+  ProgressSpinner,
+  Modal,
+  ModalTitle
+} from '@bitrise/bitkit';
 
 import { AppVersion, AppVersionEvent, Screenshot, AppVersionEventStatus } from '@/models';
 import { mediaQuery } from '@/utils/media';
@@ -10,8 +23,8 @@ import FormAndroid from './form-android';
 import NextLink from 'next/link';
 import Squircle from '@/components/Squircle';
 
+import Share from './share';
 import css from './style.scss';
-import { Fragment } from 'react';
 
 type DeviceInfo = {
   key: string;
@@ -106,6 +119,7 @@ const publishNotification = (
 
 export default ({
   appVersion,
+  hasMounted,
   selectedDeviceIdForScreenshots: deviceId,
   onSave,
   onPublish,
@@ -121,6 +135,9 @@ export default ({
   isSaving,
   ...props
 }: Props) => {
+  const [isShareModalVisible, setIsShareModalVisible] = useState(false);
+  const handleCloseShareModal = () => setIsShareModalVisible(false);
+
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
   const [isDesktop] = mediaQuery('60rem');
@@ -199,6 +216,9 @@ export default ({
                   <Icon name="Download" />
                   <Text>Install</Text>
                 </Button>
+                <Button type="button" level="secondary" onClick={() => setIsShareModalVisible(true)}>
+                  Share
+                </Button>
               </Flex>
             )}
             {appVersion.platform === 'ios' && (
@@ -207,6 +227,7 @@ export default ({
                 deviceId={deviceId}
                 deviceName={deviceInfo.value}
                 availableDevices={availableDevices}
+                hasMounted={hasMounted}
                 {...props}
               />
             )}
@@ -216,6 +237,7 @@ export default ({
                 deviceId={deviceId}
                 deviceName={deviceInfo.value}
                 availableDevices={availableDevices}
+                hasMounted={hasMounted}
                 {...props}
               />
             )}
@@ -232,11 +254,20 @@ export default ({
             onPublish={onPublish}
             buildSlug={appVersion.buildSlug}
             ipaExportMethod={appVersion.ipaExportMethod}
-            hasMounted
+            hasMounted={hasMounted}
             isSaving={isSaving}
           />
         )}
       </Flex>
+      <Modal onClose={handleCloseShareModal} visible={isShareModalVisible} width="22rem">
+        <ModalTitle>Share this page</ModalTitle>
+        <Share
+          buildSlug={appVersion.buildSlug}
+          publicInstallPageURL={appVersion.publicInstallPageURL}
+          ipaExportMethod={appVersion.ipaExportMethod}
+          hasMounted={hasMounted}
+        ></Share>
+      </Modal>
     </Base>
   );
 };
