@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import shipApi from '@/services/ship-api';
 import { mockApp } from '@/mocks';
 
-import reducer, { fetchApp } from './app';
+import reducer, { fetchApp, selectPlatform } from '.';
 
 describe('app', () => {
   let mockStore: MockStoreCreator;
@@ -17,6 +17,12 @@ describe('app', () => {
   describe('reducer', () => {
     it('loads an app', () => {
       const state = reducer(undefined, fetchApp.complete(mockApp));
+
+      expect(state).toMatchSnapshot();
+    });
+
+    it('selects a platform', () => {
+      const state = reducer(undefined, selectPlatform('ios'));
 
       expect(state).toMatchSnapshot();
     });

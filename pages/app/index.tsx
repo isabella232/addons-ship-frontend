@@ -5,6 +5,7 @@ import find from 'lodash/find';
 import { AppPageQuery, PageContext, AppVersion, Platform } from '@/models';
 import { RootState } from '@/store';
 import { fetchAppVersionList } from '@/ducks/appVersionList';
+import { selectPlatform } from '@/ducks/app';
 import { getAppVersionsByVersion, getAppVersionsByBuildNumber, isCrossPlatform } from '@/ducks/selectors';
 import EmptyPage from '@/components/EmptyPage';
 import ShipHead from '@/components/ShipHead';
@@ -25,6 +26,7 @@ export interface AppPageProps extends AppPageQuery {
   isLoading?: boolean;
   isCrossPlatform: boolean;
   selectedPlatform?: Platform;
+  selectPlatform: typeof selectPlatform;
 }
 
 type AppPageState = {
@@ -62,7 +64,14 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
   };
 
   render() {
-    const { isLoading, appVersionsByVersion, appVersionsByBuildNumber, selectedPlatform, isCrossPlatform } = this.props;
+    const {
+      isLoading,
+      appVersionsByVersion,
+      appVersionsByBuildNumber,
+      selectedPlatform,
+      isCrossPlatform,
+      selectPlatform
+    } = this.props;
     const { selectedVersionSortingOptionValue } = this.state;
 
     const groupedAppVersionList =
@@ -89,7 +98,8 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
           value: selectedVersionSortingOptionValue as string
         }),
         groupedAppVersionList,
-        selectedPlatform
+        selectedPlatform,
+        onSelectPlatform: selectPlatform
       };
       content = <View {...viewProps} />;
     }
@@ -112,7 +122,8 @@ const mapStateToProps = (rootState: RootState) => ({
 });
 
 const mapDispatchToProps = {
-  fetchAppVersionList
+  fetchAppVersionList,
+  selectPlatform
 };
 
 const Connected = connect(

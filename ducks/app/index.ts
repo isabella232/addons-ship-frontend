@@ -2,12 +2,12 @@ import { Dispatch } from 'redux';
 import { createAction, createReducer } from 'deox';
 
 import { ShipAPIService } from '@/services/ship-api';
-import { actionTypeCreator } from '@/utils';
 import { App } from '@/models/app';
 import { placeholderAppIcon } from '@/config';
 import { Platform } from '@/models';
 
-const $ = actionTypeCreator('APP');
+import { $ } from './common';
+import { selectPlatform } from './selectPlatform';
 
 const _fetchApp = (appSlug: string) => async (
   dispatch: Dispatch,
@@ -32,6 +32,8 @@ export const fetchApp = Object.assign(_fetchApp, {
   error: createAction($`GET_ERROR`, resolve => (error: Error) => resolve(error))
 });
 
+export { selectPlatform };
+
 const defaultState: AppState = { app: null };
 
 export type AppState = { app: App | null; selectedPlatform?: Platform };
@@ -45,6 +47,8 @@ export default createReducer(defaultState, handleAction => [
         app: { ...payload, avatarUrl }
       } as any;
     }
+
     return null;
-  })
+  }),
+  handleAction(selectPlatform, (state, { payload }) => ({ ...state, selectedPlatform: payload }))
 ]);

@@ -28,6 +28,7 @@ type Props = {
   }>;
   isCrossPlatform: boolean;
   selectedPlatform?: Platform;
+  onSelectPlatform: (platform: Platform) => void;
 };
 
 export default ({
@@ -37,7 +38,8 @@ export default ({
   selectedVersionSortingOption,
   groupedAppVersionList,
   isCrossPlatform,
-  selectedPlatform
+  selectedPlatform,
+  onSelectPlatform
 }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
 
@@ -45,7 +47,7 @@ export default ({
     <Flex direction="vertical" className={css.wrapper}>
       {isCrossPlatform && (
         <Flex direction="horizontal" padding="x4" alignChildren="middle">
-          <PlatformSelector platform={selectedPlatform} onClick={() => {}} />
+          <PlatformSelector platform={selectedPlatform} onClick={onSelectPlatform} />
         </Flex>
       )}
       <Flex
