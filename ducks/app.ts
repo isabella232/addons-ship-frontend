@@ -5,6 +5,7 @@ import { ShipAPIService } from '@/services/ship-api';
 import { actionTypeCreator } from '@/utils';
 import { App } from '@/models/app';
 import { placeholderAppIcon } from '@/config';
+import { Platform } from '@/models';
 
 const $ = actionTypeCreator('APP');
 
@@ -31,14 +32,18 @@ export const fetchApp = Object.assign(_fetchApp, {
   error: createAction($`GET_ERROR`, resolve => (error: Error) => resolve(error))
 });
 
-const defaultState: AppState = null;
+const defaultState: AppState = { app: null };
 
-export type AppState = App | null;
+export type AppState = { app: App | null; selectedPlatform?: Platform };
 export default createReducer(defaultState, handleAction => [
-  handleAction(fetchApp.complete, (_, { payload }) => {
+  handleAction(fetchApp.complete, (state, { payload }) => {
     if (payload) {
       const avatarUrl = payload.avatarUrl || placeholderAppIcon;
-      return { ...payload, avatarUrl } as any;
+      return {
+        ...state,
+        selectedPlatform: 'ios',
+        app: { ...payload, avatarUrl }
+      } as any;
     }
     return null;
   })

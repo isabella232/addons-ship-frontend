@@ -2,10 +2,10 @@ import Head from 'next/head';
 import { connect } from 'react-redux';
 
 import { RootState } from '@/store';
-import { AppState } from '@/ducks/app';
+import { App } from '@/models/app';
 
 type Props = {
-  app: AppState;
+  app: App | null;
   children: string;
 };
 
@@ -21,7 +21,7 @@ export const ShipHead = ({ app, children }: Props) => {
   );
 };
 
-const mapStateToProps = ({ app }: RootState) => ({
+const mapStateToProps = ({ app: { app } }: RootState) => ({
   app
 });
 
