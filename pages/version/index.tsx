@@ -8,7 +8,6 @@ import nookies from 'nookies';
 import { AppVersionPageQuery, PageContext, AppVersion, AppVersionPageTabs } from '@/models';
 import { RootState } from '@/store';
 import { fetchAppVersion } from '@/ducks/appVersion';
-import fetchAppVersionEvents from '@/ducks/appVersion/fetchAppVersionEvents';
 import { orderedAppVersionEvents } from '@/ducks/selectors';
 
 import Details from './details';
@@ -33,7 +32,7 @@ export class VersionPage extends Component<VersionPageProps> {
   };
 
   static async getInitialProps(ctx: PageContext) {
-    const { query, store, req, isServer } = ctx;
+    const { query, req, isServer } = ctx;
     const {
       appSlug,
       versionId,
@@ -92,12 +91,15 @@ export class VersionPage extends Component<VersionPageProps> {
   };
 
   render() {
-    const { pagePath, selectedTab, appSlug, versionId, activityLastSeen, lastEventTimestamp } = this.props;
+    const { selectedTab, appSlug, versionId, activityLastSeen, lastEventTimestamp } = this.props;
 
     const showActivityBadge = selectedTab === 'activity' ? false : activityLastSeen < lastEventTimestamp;
 
     const tab = (key: string) => (
-      <Link as={`${pagePath}/${key}`} href={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=${key}`}>
+      <Link
+        as={`/apps/${appSlug}/versions/${versionId}/${key}`}
+        href={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=${key}`}
+      >
         <a>
           <Tab active={selectedTab === key} paddingHorizontal="x2">
             <Flex direction="horizontal" alignChildren="middle" gap="x1">

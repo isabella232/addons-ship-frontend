@@ -179,6 +179,7 @@ describe('AppVersionDetails', () => {
     publishAppVersion: jest.fn() as any,
     startPollPublishStatus: jest.fn() as any,
     cancelPollPublishStatus: jest.fn() as any,
+    fetchAppVersionEvents: jest.fn() as any,
     appVersionEvents: [],
     isSaving: false
   };
@@ -548,7 +549,7 @@ describe('AppVersionDetails', () => {
     it('stops polling', () => {
       const cancelPollPublishStatus = jest.fn() as any;
       const wrapper = shallow(
-        <AppVersionDetails {...defaultProps} cancelPollPublishStatus={cancelPollPublishStatus} />
+        <AppVersionDetails {...defaultProps} appVersionEvents={[]} cancelPollPublishStatus={cancelPollPublishStatus} />
       );
 
       const event = { status: AppVersionEventStatus.Success } as AppVersionEvent;
