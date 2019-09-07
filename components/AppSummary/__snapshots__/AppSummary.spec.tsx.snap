@@ -8,14 +8,14 @@ exports[`AppSummary renders correctly on desktop 1`] = `
   <a
     className="appSummary"
   >
-    <div
+    <Base
       className="colorBar"
-      style={
-        Object {
-          "backgroundImage": "url('/static/latest-version-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
-        }
-      }
-    />
+    >
+      <_default
+        endColor="#0dd3c5"
+        startColor="#0d83cd"
+      />
+    </Base>
     <div
       className="body"
     >
@@ -84,14 +84,14 @@ exports[`AppSummary renders correctly on mobile 1`] = `
   <a
     className="appSummary"
   >
-    <div
+    <Base
       className="colorBar"
-      style={
-        Object {
-          "backgroundImage": "url('/static/latest-version-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
-        }
-      }
-    />
+    >
+      <_default
+        endColor="#0dd3c5"
+        startColor="#0d83cd"
+      />
+    </Base>
     <div
       className="body"
     >
@@ -160,14 +160,14 @@ exports[`AppSummary renders correctly on tablet 1`] = `
   <a
     className="appSummary"
   >
-    <div
+    <Base
       className="colorBar"
-      style={
-        Object {
-          "backgroundImage": "url('/static/latest-version-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
-        }
-      }
-    />
+    >
+      <_default
+        endColor="#0dd3c5"
+        startColor="#0d83cd"
+      />
+    </Base>
     <div
       className="body"
     >

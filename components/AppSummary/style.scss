@@ -21,7 +21,7 @@
 
   .colorBar {
     height: 20 * $grid - $hover-border-width;
-    background-size: cover;
+    overflow: hidden;
   }
 
   .body {
