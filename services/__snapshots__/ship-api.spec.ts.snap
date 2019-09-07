@@ -37,6 +37,10 @@ exports[`Ship API service deleteScreenshot calls the api 1`] = `undefined`;
 exports[`Ship API service getApp fetches a version for an app 1`] = `
 Object {
   "appSlug": "such-a-nice-app",
+  "colors": Object {
+    "end": "blue",
+    "start": "red",
+  },
 }
 `;
 

@@ -29,6 +29,8 @@ type Props = {
   isCrossPlatform: boolean;
   selectedPlatform?: Platform;
   onSelectPlatform: (platform: Platform) => void;
+  startColor?: string;
+  endColor?: string;
 };
 
 export default ({
@@ -39,7 +41,9 @@ export default ({
   groupedAppVersionList,
   isCrossPlatform,
   selectedPlatform,
-  onSelectPlatform
+  onSelectPlatform,
+  startColor,
+  endColor
 }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
 
@@ -65,6 +69,8 @@ export default ({
               note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
               iconUrl={latestAppVersion.iconUrl}
               platform={latestAppVersion.platform}
+              startColor={startColor}
+              endColor={endColor}
             />
           )}
           <Base className={css.sectionHeadingWrapper}>

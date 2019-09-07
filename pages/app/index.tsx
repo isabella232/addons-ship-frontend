@@ -15,11 +15,13 @@ import {
 } from '@/ducks/selectors';
 import EmptyPage from '@/components/EmptyPage';
 import ShipHead from '@/components/ShipHead';
+import { App } from '@/models/app';
 
 import View from './view';
 import Placeholder from './view/placeholder-list';
 
 export interface AppPageProps extends AppPageQuery {
+  app: App | null;
   appVersionsByVersion: Array<{
     groupName: string;
     appVersions: AppVersion[];
@@ -71,6 +73,7 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
 
   render() {
     const {
+      app,
       isLoading,
       appVersionsByVersion,
       appVersionsByBuildNumber,
@@ -95,6 +98,11 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
         appVersions: [latestAppVersion]
       } = groupedAppVersionList[0];
 
+      let startColor, endColor;
+      if (app && app.colors) {
+        ({ start: startColor, end: endColor } = app.colors);
+      }
+
       const viewProps = {
         isCrossPlatform,
         latestAppVersion,
@@ -105,7 +113,9 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
         }),
         groupedAppVersionList,
         selectedPlatform,
-        onSelectPlatform: selectPlatform
+        onSelectPlatform: selectPlatform,
+        startColor,
+        endColor
       };
       content = <View {...viewProps} />;
     }
@@ -123,6 +133,7 @@ const mapStateToProps = (rootState: RootState) => {
   const _isCrossPlatform = isCrossPlatform(rootState);
 
   return {
+    app: rootState.app.app,
     isLoading: !rootState.appVersionList,
     appVersionsByVersion: _isCrossPlatform
       ? getPlatformAppVersionsByVersion(rootState, rootState.app.selectedPlatform!)

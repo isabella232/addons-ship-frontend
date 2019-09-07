@@ -4,4 +4,8 @@ export type App = {
   title: string;
   avatarUrl: string;
   projectType: string;
+  colors?: {
+    start?: string;
+    end?: string;
+  };
 };

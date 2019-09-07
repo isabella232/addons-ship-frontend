@@ -707,18 +707,27 @@ describe('Ship API service', () => {
       const appSlug = 'such-a-nice-app',
         token = 'very-token';
 
-      (get as jest.Mock).mockResolvedValueOnce({
-        json: () => ({
-          data: { app_slug: appSlug }
+      (get as jest.Mock)
+        .mockResolvedValueOnce({
+          json: () => ({
+            data: { app_slug: appSlug }
+          })
         })
-      });
+        .mockResolvedValueOnce({
+          json: () => ({
+            data: { header_color_1: 'red', header_color_2: 'blue' }
+          })
+        });
 
       api.setToken(token);
 
       const app = await api.getApp(appSlug);
 
-      const url = `${baseAppUrl}/api/resources?path=apps%2F${appSlug}`;
-      expect(get).toHaveBeenCalledWith(url, token);
+      let url = `${baseAppUrl}/api/resources?path=apps%2F${appSlug}`;
+      expect(get).toHaveBeenNthCalledWith(1, url, token);
+      url = `${apiUrl}/apps/${appSlug}`;
+      expect(get).toHaveBeenNthCalledWith(2, url, token);
+
       expect(app).toMatchSnapshot();
     });
   });

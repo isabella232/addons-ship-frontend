@@ -397,9 +397,16 @@ export class ShipAPIService {
   }
 
   async getApp(appSlug: string): Promise<App> {
-    const data = await this.getResource<any>(`apps/${appSlug}`);
+    const appPromise = this.getResource<any>(`apps/${appSlug}`),
+      shipAppPromise = get(`${this.config.url}/apps/${appSlug}`, this.token).then(res => res.json());
 
-    return camelizeKeysDeep({ ...data, appSlug });
+    const [appData, { data: shipAppData }] = await Promise.all([appPromise, shipAppPromise]);
+
+    return camelizeKeysDeep({
+      ...appData,
+      colors: { start: shipAppData.header_color_1, end: shipAppData.header_color_2 },
+      appSlug
+    });
   }
 
   async getTestDevices(appSlug: string): Promise<TestDevice[]> {
