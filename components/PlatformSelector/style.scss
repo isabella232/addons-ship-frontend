@@ -1,37 +1,42 @@
 @import '~@/assets/style/mixins';
 @import '~@/assets/style/colors';
+@import '~@/assets/style/dimensions';
 
-.platform {
-  border: 1px solid $eggplant;
+.container {
+  padding-top: 10 * $grid;
 
-  .Base {
-    cursor: pointer;
+  .platform {
+    border: 1px solid $eggplant;
 
-    &:first-child {
-      @include border-left-radius(6px);
-    }
-    &:last-child {
-      @include border-right-radius(6px);
-    }
-    &:not(.selected) {
-      &:hover {
-        background-color: $grape-1;
+    .Base {
+      cursor: pointer;
+
+      &:first-child {
+        @include border-left-radius(6px);
+      }
+      &:last-child {
+        @include border-right-radius(6px);
+      }
+      &:not(.selected) {
+        &:hover {
+          background-color: $grape-1;
+
+          svg {
+            color: $grape-3;
+          }
+        }
 
         svg {
-          color: $grape-3;
+          color: $eggplant;
         }
       }
 
-      svg {
-        color: $eggplant;
-      }
-    }
+      &.selected {
+        background-color: $grape-3;
 
-    &.selected {
-      background-color: $grape-3;
-
-      svg {
-        color: $white;
+        svg {
+          color: $white;
+        }
       }
     }
   }
