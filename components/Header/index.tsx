@@ -222,7 +222,7 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
   );
 };
 
-const mapStateToProps = ({ app, appVersion: { appVersion } }: RootState) => ({ app, appVersion });
+const mapStateToProps = ({ app: { app }, appVersion: { appVersion } }: RootState) => ({ app, appVersion });
 
 // @ts-ignore
 export default connect(mapStateToProps)(Header);

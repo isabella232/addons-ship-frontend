@@ -1,4 +1,11 @@
-import { getAppVersionsByVersion, getAppVersionsByBuildNumber, orderedAppVersionEvents } from './selectors';
+import {
+  getAppVersionsByVersion,
+  getAppVersionsByBuildNumber,
+  orderedAppVersionEvents,
+  isCrossPlatform,
+  getPlatformAppVersionsByVersion,
+  getPlatformAppVersionsByBuildNumber
+} from './selectors';
 import { RootState } from '@/store';
 import { mockAppVersions } from '@/mocks';
 import { AppVersion, AppVersionEvent } from '@/models';
@@ -70,6 +77,76 @@ describe('getAppVersionsByVersion', () => {
   });
 });
 
+describe('getPlatformAppVersionsByVersion', () => {
+  it('selects versions by platfrom, groupped by versions', () => {
+    const appVersionList = [
+      {
+        version: '1.0',
+        buildNumber: 3,
+        platform: 'ios'
+      },
+      {
+        version: '1.0',
+        buildNumber: 9,
+        platform: 'ios'
+      },
+      {
+        version: '1.0',
+        buildNumber: 6,
+        platform: 'android'
+      },
+      {
+        version: '2.0',
+        buildNumber: 16,
+        platform: 'android'
+      }
+    ] as AppVersion[];
+
+    const versions = getPlatformAppVersionsByVersion({ appVersionList } as RootState, 'android');
+
+    expect(versions).toMatchSnapshot();
+  });
+
+  it('handles null', () => {
+    expect(getPlatformAppVersionsByVersion({ appVersionList: null } as RootState, 'ios')).toBeNull();
+  });
+});
+
+describe('getPlatformAppVersionsByBuildNumber', () => {
+  it('selects versions by platfrom, groupped by build number', () => {
+    const appVersionList = [
+      {
+        version: '1.0',
+        buildNumber: 3,
+        platform: 'ios'
+      },
+      {
+        version: '1.0',
+        buildNumber: 9,
+        platform: 'ios'
+      },
+      {
+        version: '1.0',
+        buildNumber: 6,
+        platform: 'android'
+      },
+      {
+        version: '2.0',
+        buildNumber: 16,
+        platform: 'android'
+      }
+    ] as AppVersion[];
+
+    const versions = getPlatformAppVersionsByBuildNumber({ appVersionList } as RootState, 'android');
+
+    expect(versions).toMatchSnapshot();
+  });
+
+  it('handles null', () => {
+    expect(getPlatformAppVersionsByBuildNumber({ appVersionList: null } as RootState, 'ios')).toBeNull();
+  });
+});
+
 describe('getAppVersionsByBuildNumber', () => {
   it('returns null', () => {
     expect(getAppVersionsByBuildNumber({ appVersionList: null } as any)).toBeNull();
@@ -94,5 +171,39 @@ describe('orderedAppVersionEvents', () => {
     ] as unknown) as AppVersionEvent[];
 
     expect(orderedAppVersionEvents(events)).toMatchSnapshot();
+  });
+});
+
+describe('isCrossPlatform', () => {
+  const androidVersions = [
+      {
+        id: 'version-1',
+        platform: 'android'
+      },
+      {
+        id: 'version-2',
+        platform: 'android'
+      }
+    ] as AppVersion[],
+    iosVersions = [
+      {
+        id: 'version-3',
+        platform: 'ios'
+      },
+      {
+        id: 'version-4',
+        platform: 'ios'
+      }
+    ] as AppVersion[];
+
+  it('returns false', () => {
+    expect(isCrossPlatform({ appVersionList: null } as RootState)).toBe(false);
+
+    expect(isCrossPlatform({ appVersionList: androidVersions } as RootState)).toBe(false);
+    expect(isCrossPlatform({ appVersionList: iosVersions } as RootState)).toBe(false);
+  });
+
+  it('detects cross platform apps', () => {
+    expect(isCrossPlatform({ appVersionList: [...iosVersions, ...androidVersions] } as RootState)).toBe(true);
   });
 });

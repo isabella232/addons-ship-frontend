@@ -26,7 +26,9 @@ describe('ShipApp', () => {
 
   beforeEach(() => {
     const mockStoreCreator: MockStoreCreator = configureMockStore([thunk]);
-    store = mockStoreCreator();
+    store = mockStoreCreator({
+      app: {}
+    });
 
     (nookies.set as jest.Mock).mockReset();
 

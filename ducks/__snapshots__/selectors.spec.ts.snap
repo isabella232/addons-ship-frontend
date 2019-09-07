@@ -345,6 +345,56 @@ Array [
 ]
 `;
 
+exports[`getPlatformAppVersionsByBuildNumber selects versions by platfrom, groupped by build number 1`] = `
+Array [
+  Object {
+    "appVersions": Array [
+      Object {
+        "buildNumber": 16,
+        "platform": "android",
+        "version": "2.0",
+      },
+    ],
+    "groupName": "16",
+  },
+  Object {
+    "appVersions": Array [
+      Object {
+        "buildNumber": 6,
+        "platform": "android",
+        "version": "1.0",
+      },
+    ],
+    "groupName": "6",
+  },
+]
+`;
+
+exports[`getPlatformAppVersionsByVersion selects versions by platfrom, groupped by versions 1`] = `
+Array [
+  Object {
+    "appVersions": Array [
+      Object {
+        "buildNumber": 6,
+        "platform": "android",
+        "version": "1.0",
+      },
+    ],
+    "groupName": "1.0",
+  },
+  Object {
+    "appVersions": Array [
+      Object {
+        "buildNumber": 16,
+        "platform": "android",
+        "version": "2.0",
+      },
+    ],
+    "groupName": "2.0",
+  },
+]
+`;
+
 exports[`orderedAppVersionEvents orders events in descending creation time 1`] = `
 Array [
   Object {

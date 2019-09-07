@@ -6,13 +6,13 @@ import { Platform } from '@/models';
 import css from './style.scss';
 
 interface PlatformSelectorProps {
-  platform: Platform;
+  platform?: Platform;
   onClick: (platform: Platform) => void;
 }
 
-export default ({ platform, onClick }: PlatformSelectorProps) => {
+export default ({ platform = 'ios', onClick }: PlatformSelectorProps) => {
   return (
-    <Flex alignChildren="middle" direction="horizontal">
+    <Flex alignChildren="middle" direction="horizontal" className={css.container}>
       <Flex
         direction="horizontal"
         className={css.platform}

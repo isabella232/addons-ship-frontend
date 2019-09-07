@@ -56,7 +56,9 @@ export class ShipApp extends App<ShipAppProps> {
     }
 
     if (appSlug) {
-      const { app } = ctx.store.getState() as RootState;
+      const {
+        app: { app }
+      } = ctx.store.getState() as RootState;
       if (!app) {
         await ctx.store.dispatch(fetchApp(appSlug as string) as any);
       }

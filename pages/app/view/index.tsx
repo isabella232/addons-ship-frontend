@@ -5,10 +5,11 @@ import { Flex, Base, Text, Divider, Dropdown } from '@bitrise/bitkit';
 import AppSummary from '@/components/AppSummary';
 import VersionListPageItem from '@/components/VersionListPageItem';
 import Footer from '@/components/Footer';
-import { AppVersion } from '@/models';
+import { AppVersion, Platform } from '@/models';
+import { mediaQuery } from '@/utils/media';
+import PlatformSelector from '@/components/PlatformSelector';
 
 import css from '../style.scss';
-import { mediaQuery } from '@/utils/media';
 
 type Props = {
   latestAppVersion: AppVersion | null;
@@ -25,6 +26,9 @@ type Props = {
     groupName: string;
     appVersions: AppVersion[];
   }>;
+  isCrossPlatform: boolean;
+  selectedPlatform?: Platform;
+  onSelectPlatform: (platform: Platform) => void;
 };
 
 export default ({
@@ -32,13 +36,25 @@ export default ({
   versionSortingOptions,
   versionSortOptionWithValueSelected,
   selectedVersionSortingOption,
-  groupedAppVersionList
+  groupedAppVersionList,
+  isCrossPlatform,
+  selectedPlatform,
+  onSelectPlatform
 }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
 
   return (
     <Flex direction="vertical" className={css.wrapper}>
-      <Flex direction="vertical" alignChildrenHorizontal="middle" padding={isDesktop ? 'x16' : 'x4'}>
+      {isCrossPlatform && (
+        <Flex direction="horizontal" padding="x4" alignChildren="middle">
+          <PlatformSelector platform={selectedPlatform} onClick={onSelectPlatform} />
+        </Flex>
+      )}
+      <Flex
+        direction="vertical"
+        alignChildrenHorizontal="middle"
+        padding={isDesktop && !isCrossPlatform ? 'x16' : 'x4'}
+      >
         <Base width="100%" maxWidth={960}>
           {latestAppVersion && (
             <AppSummary

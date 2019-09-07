@@ -3,7 +3,10 @@ import groupBy from 'lodash/groupBy';
 import sortBy from 'lodash/sortBy';
 
 import { RootState } from '@/store';
-import { AppVersionEvent, AppVersion } from '@/models';
+import { AppVersionEvent, AppVersion, Platform } from '@/models';
+
+export const getAppVersionsByPlatform = (appVersionList: AppVersion[], platform: Platform): AppVersion[] =>
+  appVersionList.filter(({ platform: _platform }) => _platform === platform);
 
 export const getAppVersionsByVersion = ({ appVersionList }: RootState) =>
   appVersionList
@@ -11,6 +14,13 @@ export const getAppVersionsByVersion = ({ appVersionList }: RootState) =>
         appVersions: sortBy(appVersions, ({ buildNumber }: AppVersion) => -buildNumber),
         groupName: version
       }))
+    : null;
+
+export const getPlatformAppVersionsByVersion = ({ appVersionList }: RootState, platform: Platform) =>
+  appVersionList
+    ? getAppVersionsByVersion({
+        appVersionList: getAppVersionsByPlatform(appVersionList, platform)
+      } as RootState)
     : null;
 
 export const getAppVersionsByBuildNumber = ({ appVersionList }: RootState) =>
@@ -21,5 +31,32 @@ export const getAppVersionsByBuildNumber = ({ appVersionList }: RootState) =>
       })).reverse()
     : null;
 
+export const getPlatformAppVersionsByBuildNumber = ({ appVersionList }: RootState, platform: Platform) =>
+  appVersionList
+    ? getAppVersionsByBuildNumber({
+        appVersionList: getAppVersionsByPlatform(appVersionList, platform)
+      } as RootState)
+    : null;
+
 export const orderedAppVersionEvents = (events: AppVersionEvent[]) =>
   [...events].sort(({ createdAtTimestamp: c1 }, { createdAtTimestamp: c2 }) => c2 - c1);
+
+export const isCrossPlatform = ({ appVersionList }: RootState): boolean => {
+  if (!appVersionList) {
+    return false;
+  }
+
+  let hasAndroid = false,
+    hasIOS = false;
+  appVersionList.forEach(({ platform }) => {
+    if (platform === 'android') {
+      hasAndroid = true;
+    }
+
+    if (platform === 'ios') {
+      hasIOS = true;
+    }
+  });
+
+  return hasAndroid && hasIOS;
+};

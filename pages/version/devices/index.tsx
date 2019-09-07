@@ -35,7 +35,7 @@ export class AppVersionDevices extends Component<Props> {
   }
 }
 
-const mapStateToProps = ({ app, testDevices: { list: testDevices, isLoading } }: RootState) => ({
+const mapStateToProps = ({ app: { app }, testDevices: { list: testDevices, isLoading } }: RootState) => ({
   app,
   testDevices,
   isLoading

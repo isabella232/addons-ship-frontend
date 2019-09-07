@@ -3,6 +3,7 @@
 exports[`PlatformSelector renders correctly 1`] = `
 <Flex
   alignChildren="middle"
+  className="container"
   direction="horizontal"
 >
   <Flex

@@ -2,10 +2,17 @@ import { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import find from 'lodash/find';
 
-import { AppPageQuery, PageContext, AppVersion } from '@/models';
+import { AppPageQuery, PageContext, AppVersion, Platform } from '@/models';
 import { RootState } from '@/store';
 import { fetchAppVersionList } from '@/ducks/appVersionList';
-import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
+import { selectPlatform } from '@/ducks/app';
+import {
+  getAppVersionsByVersion,
+  getAppVersionsByBuildNumber,
+  isCrossPlatform,
+  getPlatformAppVersionsByVersion,
+  getPlatformAppVersionsByBuildNumber
+} from '@/ducks/selectors';
 import EmptyPage from '@/components/EmptyPage';
 import ShipHead from '@/components/ShipHead';
 
@@ -23,6 +30,9 @@ export interface AppPageProps extends AppPageQuery {
   }>;
   fetchAppVersionList: typeof fetchAppVersionList;
   isLoading?: boolean;
+  isCrossPlatform: boolean;
+  selectedPlatform?: Platform;
+  selectPlatform: typeof selectPlatform;
 }
 
 type AppPageState = {
@@ -60,7 +70,14 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
   };
 
   render() {
-    const { isLoading, appVersionsByVersion, appVersionsByBuildNumber } = this.props;
+    const {
+      isLoading,
+      appVersionsByVersion,
+      appVersionsByBuildNumber,
+      selectedPlatform,
+      isCrossPlatform,
+      selectPlatform
+    } = this.props;
     const { selectedVersionSortingOptionValue } = this.state;
 
     const groupedAppVersionList =
@@ -79,13 +96,16 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
       } = groupedAppVersionList[0];
 
       const viewProps = {
+        isCrossPlatform,
         latestAppVersion,
         versionSortingOptions: this.versionSortingOptions,
         versionSortOptionWithValueSelected: this.versionSortOptionWithValueSelected,
         selectedVersionSortingOption: find(this.versionSortingOptions, {
           value: selectedVersionSortingOptionValue as string
         }),
-        groupedAppVersionList
+        groupedAppVersionList,
+        selectedPlatform,
+        onSelectPlatform: selectPlatform
       };
       content = <View {...viewProps} />;
     }
@@ -99,14 +119,25 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
   }
 }
 
-const mapStateToProps = (rootState: RootState) => ({
-  isLoading: !rootState.appVersionList,
-  appVersionsByVersion: getAppVersionsByVersion(rootState),
-  appVersionsByBuildNumber: getAppVersionsByBuildNumber(rootState)
-});
+const mapStateToProps = (rootState: RootState) => {
+  const _isCrossPlatform = isCrossPlatform(rootState);
+
+  return {
+    isLoading: !rootState.appVersionList,
+    appVersionsByVersion: _isCrossPlatform
+      ? getPlatformAppVersionsByVersion(rootState, rootState.app.selectedPlatform!)
+      : getAppVersionsByVersion(rootState),
+    appVersionsByBuildNumber: _isCrossPlatform
+      ? getPlatformAppVersionsByBuildNumber(rootState, rootState.app.selectedPlatform!)
+      : getAppVersionsByBuildNumber(rootState),
+    isCrossPlatform: _isCrossPlatform,
+    selectedPlatform: rootState.app.selectedPlatform
+  };
+};
 
 const mapDispatchToProps = {
-  fetchAppVersionList
+  fetchAppVersionList,
+  selectPlatform
 };
 
 const Connected = connect(
