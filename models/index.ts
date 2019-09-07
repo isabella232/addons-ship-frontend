@@ -30,6 +30,7 @@ export type AppVersion = {
   buildNumber: number;
   buildSlug: string;
   lastUpdate: Date;
+  commitMessage: string;
   shortDescription?: string;
   description: string;
   whatsNew: string;
