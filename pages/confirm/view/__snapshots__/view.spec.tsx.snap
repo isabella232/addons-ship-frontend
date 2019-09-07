@@ -114,19 +114,15 @@ exports[`Confirm Email View it renders without errors on desktop 1`] = `
         Failed publish
       </NotificationSetting>
     </div>
-    <Link
-      as="/apps/test-app-slug-1"
-      href="/app?appSlug=test-app-slug-1"
+    <Button
+      Component="a"
+      href="/apps/test-app-slug-1"
+      level="primary"
+      margin="x10"
+      size="medium"
     >
-      <Button
-        Component="a"
-        level="primary"
-        margin="x10"
-        size="medium"
-      >
-        View App
-      </Button>
-    </Link>
+      View App
+    </Button>
   </Flex>
 </div>
 `;
@@ -207,19 +203,15 @@ exports[`Confirm Email View it renders without errors on mobile 1`] = `
         Failed publish
       </NotificationSetting>
     </div>
-    <Link
-      as="/apps/test-app-slug-1"
-      href="/app?appSlug=test-app-slug-1"
+    <Button
+      Component="a"
+      href="/apps/test-app-slug-1"
+      level="primary"
+      margin="x10"
+      size="medium"
     >
-      <Button
-        Component="a"
-        level="primary"
-        margin="x10"
-        size="medium"
-      >
-        View App
-      </Button>
-    </Link>
+      View App
+    </Button>
   </Flex>
 </div>
 `;

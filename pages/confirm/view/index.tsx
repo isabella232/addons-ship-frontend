@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Flex, Text, Card, CardContent, Image, Icon, Button } from '@bitrise/bitkit';
 
 import { AppContact } from '@/models/settings';
@@ -66,11 +65,9 @@ export default ({
           <NotificationSetting isEnabled={failedPublish}>Failed publish</NotificationSetting>
         </div>
 
-        <Link href={`/app?appSlug=${appSlug}`} as={`/apps/${appSlug}`}>
-          <Button Component="a" level="primary" margin="x10">
-            View App
-          </Button>
-        </Link>
+        <Button href={`/apps/${appSlug}`} Component="a" level="primary" margin="x10">
+          View App
+        </Button>
       </Flex>
     </div>
   );
