@@ -259,7 +259,7 @@ export default ({
           />
         )}
       </Flex>
-      <Modal onClose={handleCloseShareModal} visible={isShareModalVisible} width="22rem">
+      <Modal onClose={handleCloseShareModal} visible={isShareModalVisible} width="22rem" backgroundColor="white">
         <ModalTitle>Share this page</ModalTitle>
         <Share
           buildSlug={appVersion.buildSlug}
