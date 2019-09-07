@@ -31,7 +31,7 @@ export default class Error extends React.Component<Props> {
 
     return (
       <Flex direction="vertical" alignChildrenVertical="middle" grow backgroundColor="grape-5" color="aqua-1">
-        {statusCode === 404 && <Error404 />}
+        {[401, 404].includes(statusCode as number) && <Error404 />}
         {statusCode === 500 && <Error500 />}
         {(!statusCode || ![404, 500].includes(statusCode)) && (
           <Flex direction="vertical" grow alignChildrenVertical="middle">
