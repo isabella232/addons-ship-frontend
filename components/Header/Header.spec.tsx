@@ -57,6 +57,11 @@ describe('Header', () => {
       const tree = shallowToJson(shallow(<Header {...defaultProps} app={undefined} />));
       expect(tree).toMatchSnapshot();
     });
+
+    it('renders without breadcrumbs', () => {
+      const tree = shallowToJson(shallow(<Header {...defaultProps} hideBreadcrumbs />));
+      expect(tree).toMatchSnapshot();
+    });
   });
 
   describe('on mobile', () => {
