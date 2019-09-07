@@ -148,7 +148,6 @@ exports[`General renders correctly 1`] = `
     ]
   }
   maximumNumberOfCertificates={30}
-  onCancel={[Function]}
   onSelectedFileChange={[Function]}
   onSettingsPropertyChange={[Function]}
   onWorkflowChange={[Function]}
@@ -231,7 +230,6 @@ exports[`General renders correctly when loading 1`] = `
     ]
   }
   maximumNumberOfCertificates={30}
-  onCancel={[Function]}
   onSelectedFileChange={[Function]}
   onSettingsPropertyChange={[Function]}
   onWorkflowChange={[Function]}
@@ -936,6 +934,7 @@ exports[`GeneralView when the settings are being saved 1`] = `
       margin="x12"
     >
       <Button
+        disabled={true}
         level="secondary"
         onClick={[MockFunction]}
         size="medium"

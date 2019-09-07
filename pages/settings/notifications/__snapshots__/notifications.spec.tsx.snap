@@ -143,7 +143,6 @@ exports[`NotificationSettings renders correctly 1`] = `
   isAddingEmail={false}
   isSaving={false}
   onAddEmail={[Function]}
-  onCancel={[Function]}
   onDeleteContact={[Function]}
   onEmailChange={[Function]}
   onNotificationPreferenceChanged={[Function]}
