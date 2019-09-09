@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MagicTag simple 1`] = `
+<_default
+  color="blue-3"
+  textColor="white"
+>
+  magic ✨
+</_default>
+`;
+
+exports[`Tag large 1`] = `
+<Base
+  borderRadius="x1"
+  borderWidth="x1"
+  className="Tag"
+  paddingHorizontal="x3"
+  paddingVertical="x2"
+  style={
+    Object {
+      "borderColor": "#0D83CD",
+    }
+  }
+>
+  <Text
+    color="blue-3"
+    config="8"
+    uppercase={true}
+  >
+    Some text
+  </Text>
+</Base>
+`;
+
+exports[`Tag selected 1`] = `
+<Base
+  backgroundColor="blue-3"
+  borderRadius="x1"
+  className="Tag"
+  paddingHorizontal="x2"
+  paddingVertical="x1"
+>
+  <Text
+    color="white"
+    config="9"
+    uppercase={true}
+  >
+    Some text
+  </Text>
+</Base>
+`;
+
+exports[`Tag simple 1`] = `
+<Base
+  borderRadius="x1"
+  borderWidth="x1"
+  className="Tag"
+  paddingHorizontal="x2"
+  paddingVertical="x1"
+  style={
+    Object {
+      "borderColor": "#0D83CD",
+    }
+  }
+>
+  <Text
+    color="blue-3"
+    config="9"
+    uppercase={true}
+  >
+    Some text
+  </Text>
+</Base>
+`;

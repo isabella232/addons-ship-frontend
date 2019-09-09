@@ -194,6 +194,7 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
         },
       ]
     }
+    isCrossPlatform={false}
     latestAppVersion={
       Object {
         "appName": "Standup Timer",
@@ -226,6 +227,9 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
         "whatsNew": "Some longer whats-new",
       }
     }
+    onSelectPlatform={[MockFunction]}
+    productFlavours={Array []}
+    selectProductFalvour={[Function]}
     selectedVersionSortingOption={
       Object {
         "text": "Latest Build",
@@ -443,6 +447,7 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
         },
       ]
     }
+    isCrossPlatform={false}
     latestAppVersion={
       Object {
         "appName": "Standup Timer",
@@ -475,6 +480,9 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
         "whatsNew": "Some longer whats-new",
       }
     }
+    onSelectPlatform={[MockFunction]}
+    productFlavours={Array []}
+    selectProductFalvour={[Function]}
     selectedVersionSortingOption={
       Object {
         "text": "Latest Build",
@@ -668,6 +676,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
         },
       ]
     }
+    isCrossPlatform={false}
     latestAppVersion={
       Object {
         "appName": "Standup Timer",
@@ -700,6 +709,9 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
         "whatsNew": "Some longer whats-new",
       }
     }
+    onSelectPlatform={[MockFunction]}
+    productFlavours={Array []}
+    selectProductFalvour={[Function]}
     selectedVersionSortingOption={
       Object {
         "text": "Latest version",
@@ -884,6 +896,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
       },
     ]
   }
+  isCrossPlatform={false}
   latestAppVersion={
     Object {
       "appName": "Standup Timer",
@@ -895,6 +908,9 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
       "version": "1.0.3",
     }
   }
+  onSelectPlatform={[MockFunction]}
+  productFlavours={Array []}
+  selectProductFalvour={[MockFunction]}
   selectedVersionSortingOption={
     Object {
       "text": "Option 1",
@@ -1011,75 +1027,80 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                               startColor="#0d83cd"
                             >
                               <svg
-                                height="100%"
-                                preserveAspectRatio="none"
-                                viewBox="0 0 1660 152"
-                                width="100%"
+                                style={
+                                  Object {
+                                    "background": "linear-gradient(90deg, #0d83cd, #0dd3c5)",
+                                  }
+                                }
+                                viewBox="0 0 862 80"
                               >
                                 <defs>
-                                  <rect
-                                    height="152"
-                                    id="header-rect"
-                                    width="1660"
-                                    x="0"
-                                    y="0"
-                                  />
                                   <linearGradient
-                                    id="header-bg-main"
-                                    x1="100%"
-                                    x2="0%"
-                                    y1="50%"
-                                    y2="50%"
-                                  >
-                                    <stop
-                                      id="main-color-2"
-                                      offset="0%"
-                                      stopColor="#0dd3c5"
-                                    />
-                                    <stop
-                                      id="main-color-1"
-                                      offset="100%"
-                                      stopColor="#0d83cd"
-                                    />
-                                  </linearGradient>
-                                  <linearGradient
-                                    id="header-bg-bottom"
-                                    x1="96.609%"
-                                    x2="14.073%"
-                                    y1="48.146%"
-                                    y2="53.257%"
+                                    id="linearGradient-1"
+                                    x1="96.609239%"
+                                    x2="14.0733222%"
+                                    y1="49.6431115%"
+                                    y2="50.6271256%"
                                   >
                                     <stop
                                       offset="0%"
-                                      stopColor="#fff"
-                                      stopOpacity=".2155"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity="0"
                                     />
                                     <stop
-                                      offset="64.655%"
-                                      stopColor="#fff"
-                                      stopOpacity=".2155"
+                                      offset="64.6547264%"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity=".5"
                                     />
                                     <stop
                                       offset="100%"
-                                      stopColor="#fff"
+                                      stopColor="#D0FEFF"
                                       stopOpacity="0"
                                     />
                                   </linearGradient>
                                   <linearGradient
-                                    id="header-bg-right"
-                                    x1="114.011%"
-                                    x2="-19.114%"
-                                    y1="49.716%"
-                                    y2="49.864%"
+                                    id="linearGradient-2"
+                                    x1="96.609239%"
+                                    x2="-22.6276744%"
+                                    y1="49.381157%"
+                                    y2="52.5123108%"
                                   >
                                     <stop
                                       offset="0%"
-                                      stopColor="#fff"
-                                      stopOpacity=".577"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity="0"
+                                    />
+                                    <stop
+                                      offset="47.0001462%"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity=".8"
                                     />
                                     <stop
                                       offset="100%"
-                                      stopColor="#fff"
+                                      stopColor="#D0FEFF"
+                                      stopOpacity="0"
+                                    />
+                                  </linearGradient>
+                                  <linearGradient
+                                    id="linearGradient-3"
+                                    x1="88.6366729%"
+                                    x2="14.0733222%"
+                                    y1="49.8847704%"
+                                    y2="50.3332489%"
+                                  >
+                                    <stop
+                                      offset="0%"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity="0"
+                                    />
+                                    <stop
+                                      offset="52.3083683%"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity=".2"
+                                    />
+                                    <stop
+                                      offset="100%"
+                                      stopColor="#FFFFFF"
                                       stopOpacity="0"
                                     />
                                   </linearGradient>
@@ -1087,34 +1108,47 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                 <g
                                   fill="none"
                                   fillRule="evenodd"
+                                  id="1st-Iteration---Without-Testing,-QA,-Dashboard"
+                                  stroke="none"
+                                  strokeWidth="1"
                                 >
-                                  <mask
-                                    fill="#fff"
-                                    id="header-bg-c"
-                                  >
-                                    <use
-                                      href="#header-rect"
-                                    />
-                                  </mask>
-                                  <use
-                                    fill="url(#header-bg-main)"
-                                    fillRule="nonzero"
-                                    href="#header-rect"
-                                  />
                                   <g
-                                    mask="url(#header-bg-c)"
+                                    id="Latest-App-Copy-2"
+                                    transform="translate(-91.000000, 0.000000)"
                                   >
                                     <g
-                                      transform="translate(-225 -96.95)"
+                                      id="Group-3"
                                     >
-                                      <path
-                                        d="M2417.48361,195.218014 C2173.66491,166.180431 1953.57607,233.055396 1757.21708,395.84291 C1462.67859,640.02418 834.622877,893.158575 399.684163,856.184243 C-35.254551,819.209912 -162.467724,455.166157 259.525874,268.523521 C681.519472,81.8808861 1990.02351,270.695872 2146.32478,248.423471 C2302.62605,226.151069 2372.30208,168.747556 2417.48361,195.218014 Z"
-                                        fill="url(#header-bg-bottom)"
-                                      />
-                                      <path
-                                        d="M2447.71513,51.0612958 C2806.19527,107.307307 2359.00522,174.248701 2178.75829,244.655549 C1998.51136,315.062396 1845.18427,466.03868 1788.68752,489.57742 C1173.74469,745.786464 648.822877,716.793505 213.922068,402.598543 C786.897586,149.897328 1171.19581,17.0321354 1366.81675,4.0029639 C1833.1853,-27.0591286 2024.35932,137.836158 2447.71513,51.0612958 Z"
-                                        fill="url(#header-bg-right)"
-                                      />
+                                      <g
+                                        id="Group-8"
+                                      >
+                                        <g
+                                          id="Group-6"
+                                          transform="translate(-15.999624, -6.999236)"
+                                        >
+                                          <path
+                                            d="M881.735481,86.9990641 L210.156384,86.9978664 C218.71153,52.9875994 258.306013,22.8146204 333.594585,9.30207949 C448.470008,-11.3153767 695.406951,42.43158 881.735481,86.9990641 Z"
+                                            fill="url(#linearGradient-1)"
+                                            fill-opacity="0.5"
+                                            id="Combined-Shape"
+                                            opacity="0.430636"
+                                            transform="translate(545.945975, 45.880259) scale(-1, 1) translate(-545.945975, -45.880259) "
+                                          />
+                                          <path
+                                            d="M975.999624,7.00298921 L975.999624,86.9972046 L479.881688,87.0001375 C522.81394,59.2648802 567.029696,31.8415792 610.365803,7.00153703 L975.999624,7.00298921 Z"
+                                            fill="url(#linearGradient-2)"
+                                            fill-opacity="0.5"
+                                            id="Combined-Shape"
+                                            opacity="0.430636"
+                                          />
+                                          <path
+                                            d="M871.7687,87.0029988 L0.532462766,86.9976624 C26.9483975,25.2137692 111.220589,-23.3393292 246.79476,14.1075744 C423.760964,62.9873598 649.806848,31.4599363 798.08942,7.20277579 L963.958206,7.20043089 C965.226263,31.2899681 937.377576,70.049062 871.7687,87.0029988 Z"
+                                            fill="url(#linearGradient-3)"
+                                            id="Combined-Shape"
+                                            transform="translate(482.265999, 44.001117) scale(-1, 1) translate(-482.265999, -44.001117) "
+                                          />
+                                        </g>
+                                      </g>
                                     </g>
                                   </g>
                                 </g>
@@ -1781,11 +1815,58 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (32)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (32)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -1897,11 +1978,58 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (31)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (31)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -2013,11 +2141,58 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (30)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (30)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -2129,11 +2304,58 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (29)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (29)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -2245,11 +2467,2098 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (28)
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (28)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
+                                <div
+                                  className="note"
+                                >
+                                  Updated on September 22, 2018, 12:42
                                 </div>
+                              </a>
+                            </Link>
+                            <button
+                              className="descriptionWrapper"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="description"
+                              />
+                            </button>
+                          </div>
+                        </div>
+                      </VersionListPageItem>
+                    </div>
+                  </Base>
+                </div>
+              </Base>
+            </div>
+          </Base>
+        </Flex>
+        <Base
+          paddingVertical="x6"
+        >
+          <div
+            className="Base Base--padding-vertical-x6"
+            style={
+              Object {
+                "height": undefined,
+                "maxHeight": undefined,
+                "maxWidth": undefined,
+                "minHeight": undefined,
+                "minWidth": undefined,
+                "width": undefined,
+              }
+            }
+          >
+            <_default>
+              <div
+                className="footer"
+              >
+                <ReactSVG
+                  afterInjection={[Function]}
+                  beforeInjection={[Function]}
+                  className="icon"
+                  evalScripts="never"
+                  fallback={null}
+                  loading={null}
+                  renumerateIRIElements={true}
+                  src="/static/icon-bitrise-notext.svg"
+                  wrapper="div"
+                >
+                  <div
+                    className="icon"
+                  />
+                </ReactSVG>
+                <div
+                  className="text"
+                >
+                  Ship
+                </div>
+                <div
+                  className="text"
+                >
+                  An official Bitrise add-on
+                </div>
+              </div>
+            </_default>
+          </div>
+        </Base>
+      </div>
+    </Base>
+  </Flex>
+</_default>
+`;
+
+exports[`AppPageView when page has apps renders the product flavour tags 1`] = `
+<_default
+  groupedAppVersionList={
+    Array [
+      Object {
+        "appVersions": Array [
+          Object {
+            "appName": "Standup Timer",
+            "appSlug": "app-slug-123",
+            "buildNumber": 32,
+            "buildSlug": "13245ads",
+            "bundleId": "bundle-id",
+            "description": "Some semi-long description",
+            "iconUrl": "http://placekitten.com/160/160",
+            "id": "123",
+            "ipaExportMethod": "development",
+            "keywords": "Keywords",
+            "lastUpdate": 2018-09-22T12:42:31.000Z,
+            "marketingUrl": "https://bitrise.io/marketing",
+            "minimumOs": "10.2",
+            "minimumSdk": "dunno",
+            "packageName": "com.package.name",
+            "platform": "ios",
+            "promotionalText": "Promotional Text",
+            "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+            "reviewNotes": "Review Notes",
+            "scheme": "piramid",
+            "screenshotDatas": Array [],
+            "supportUrl": "https://bitrise.io/support",
+            "supportedDeviceTypes": Array [
+              "iphone",
+              "ipad",
+            ],
+            "version": "1.0.3",
+            "whatsNew": "Some longer whats-new",
+          },
+          Object {
+            "appName": "Standup Timer",
+            "appSlug": "app-slug-456",
+            "buildNumber": 31,
+            "buildSlug": "13245ads",
+            "bundleId": "bundle-id",
+            "description": "Some semi-long description",
+            "iconUrl": "http://placekitten.com/160/160",
+            "id": "456",
+            "ipaExportMethod": "development",
+            "keywords": "Keywords",
+            "lastUpdate": 2018-09-22T12:42:31.000Z,
+            "marketingUrl": "https://bitrise.io/marketing",
+            "minimumOs": "10.2",
+            "minimumSdk": "dunno",
+            "packageName": "com.package.name",
+            "platform": "ios",
+            "promotionalText": "Promotional Text",
+            "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+            "reviewNotes": "Review Notes",
+            "scheme": "piramid",
+            "screenshotDatas": Array [],
+            "supportUrl": "https://bitrise.io/support",
+            "supportedDeviceTypes": Array [
+              "iphone",
+              "ipad",
+            ],
+            "version": "1.0.3",
+            "whatsNew": "Some longer whats-new",
+          },
+          Object {
+            "appName": "Standup Timer",
+            "appSlug": "app-slug-789",
+            "buildNumber": 30,
+            "buildSlug": "13245ads",
+            "bundleId": "bundle-id",
+            "description": "Some semi-long description",
+            "iconUrl": "http://placekitten.com/160/160",
+            "id": "789",
+            "ipaExportMethod": "development",
+            "keywords": "Keywords",
+            "lastUpdate": 2018-09-22T12:42:31.000Z,
+            "marketingUrl": "https://bitrise.io/marketing",
+            "minimumOs": "10.2",
+            "minimumSdk": "dunno",
+            "packageName": "com.package.name",
+            "platform": "ios",
+            "promotionalText": "Promotional Text",
+            "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+            "reviewNotes": "Review Notes",
+            "scheme": "piramid",
+            "screenshotDatas": Array [],
+            "supportUrl": "https://bitrise.io/support",
+            "supportedDeviceTypes": Array [
+              "iphone",
+              "ipad",
+            ],
+            "version": "1.0.3",
+            "whatsNew": "Some longer whats-new",
+          },
+          Object {
+            "appName": "Standup Timer",
+            "appSlug": "app-slug-135",
+            "buildNumber": 29,
+            "buildSlug": "13245ads",
+            "bundleId": "bundle-id",
+            "description": "Some semi-long description",
+            "iconUrl": "http://placekitten.com/160/160",
+            "id": "135",
+            "ipaExportMethod": "development",
+            "keywords": "Keywords",
+            "lastUpdate": 2018-09-22T12:42:31.000Z,
+            "marketingUrl": "https://bitrise.io/marketing",
+            "minimumOs": "10.2",
+            "minimumSdk": "dunno",
+            "packageName": "com.package.name",
+            "platform": "ios",
+            "promotionalText": "Promotional Text",
+            "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+            "reviewNotes": "Review Notes",
+            "scheme": "piramid",
+            "screenshotDatas": Array [],
+            "supportUrl": "https://bitrise.io/support",
+            "supportedDeviceTypes": Array [
+              "iphone",
+              "ipad",
+            ],
+            "version": "1.0.2",
+            "whatsNew": "Some longer whats-new",
+          },
+          Object {
+            "appName": "Standup Timer",
+            "appSlug": "app-slug-246",
+            "buildNumber": 28,
+            "buildSlug": "13245ads",
+            "bundleId": "bundle-id",
+            "description": "Some semi-long description",
+            "iconUrl": "http://placekitten.com/160/160",
+            "id": "246",
+            "ipaExportMethod": "development",
+            "keywords": "Keywords",
+            "lastUpdate": 2018-09-22T12:42:31.000Z,
+            "marketingUrl": "https://bitrise.io/marketing",
+            "minimumOs": "10.2",
+            "minimumSdk": "dunno",
+            "packageName": "com.package.name",
+            "platform": "ios",
+            "promotionalText": "Promotional Text",
+            "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
+            "reviewNotes": "Review Notes",
+            "scheme": "piramid",
+            "screenshotDatas": Array [],
+            "supportUrl": "https://bitrise.io/support",
+            "supportedDeviceTypes": Array [
+              "iphone",
+              "ipad",
+            ],
+            "version": "1.0.2",
+            "whatsNew": "Some longer whats-new",
+          },
+        ],
+        "groupName": "group 1",
+      },
+    ]
+  }
+  isCrossPlatform={false}
+  latestAppVersion={
+    Object {
+      "appName": "Standup Timer",
+      "buildNumber": 32,
+      "description": "Some semi-long description",
+      "iconUrl": "http://placekitten.com/160/160",
+      "id": "123",
+      "lastUpdate": 2018-09-22T12:42:31.000Z,
+      "version": "1.0.3",
+    }
+  }
+  onSelectPlatform={[MockFunction]}
+  productFlavours={
+    Array [
+      "first",
+      "second",
+    ]
+  }
+  selectProductFalvour={[MockFunction]}
+  selectedVersionSortingOption={
+    Object {
+      "text": "Option 1",
+      "value": "option-1",
+    }
+  }
+  versionSortOptionWithValueSelected={[Function]}
+  versionSortingOptions={
+    Array [
+      Object {
+        "text": "Option 1",
+        "value": "option-1",
+      },
+      Object {
+        "text": "Option 2",
+        "value": "option-2",
+      },
+    ]
+  }
+>
+  <Flex
+    className="wrapper"
+    direction="vertical"
+  >
+    <Base
+      className="Flex Flex--vertical wrapper"
+    >
+      <div
+        className="Base Flex Flex--vertical wrapper"
+        style={
+          Object {
+            "height": undefined,
+            "maxHeight": undefined,
+            "maxWidth": undefined,
+            "minHeight": undefined,
+            "minWidth": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        <Flex
+          alignChildrenHorizontal="middle"
+          direction="vertical"
+          padding="x16"
+        >
+          <Base
+            className="Flex Flex--align-horz-middle Flex--vertical"
+            padding="x16"
+          >
+            <div
+              className="Base Base--padding-horizontal-x16 Base--padding-vertical-x16 Flex Flex--align-horz-middle Flex--vertical"
+              style={
+                Object {
+                  "height": undefined,
+                  "maxHeight": undefined,
+                  "maxWidth": undefined,
+                  "minHeight": undefined,
+                  "minWidth": undefined,
+                  "width": undefined,
+                }
+              }
+            >
+              <Base
+                maxWidth={960}
+                width="100%"
+              >
+                <div
+                  className="Base Base--max-width"
+                  style={
+                    Object {
+                      "height": undefined,
+                      "maxHeight": undefined,
+                      "maxWidth": 960,
+                      "minHeight": undefined,
+                      "minWidth": undefined,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Flex
+                    direction="horizontal"
+                    gap="x2"
+                    paddingHorizontal="x1"
+                    paddingVertical="x4"
+                  >
+                    <Base
+                      className="Flex Flex--horizontal Flex--gapped Flex--gap-x2"
+                      paddingHorizontal="x1"
+                      paddingVertical="x4"
+                    >
+                      <div
+                        className="Base Base--padding-horizontal-x1 Base--padding-vertical-x4 Flex Flex--horizontal Flex--gapped Flex--gap-x2"
+                        style={
+                          Object {
+                            "height": undefined,
+                            "maxHeight": undefined,
+                            "maxWidth": undefined,
+                            "minHeight": undefined,
+                            "minWidth": undefined,
+                            "width": undefined,
+                          }
+                        }
+                      >
+                        <_default
+                          key="0"
+                          large={true}
+                          onClick={[Function]}
+                          selected={false}
+                        >
+                          <_default
+                            color="orange-3"
+                            large={true}
+                            onClick={[Function]}
+                            selected={false}
+                            textColor="white"
+                          >
+                            <Base
+                              borderRadius="x1"
+                              borderWidth="x1"
+                              className="Tag"
+                              onClick={[Function]}
+                              paddingHorizontal="x3"
+                              paddingVertical="x2"
+                              style={
+                                Object {
+                                  "borderColor": "#FF4400",
+                                }
+                              }
+                            >
+                              <div
+                                className="Base Base--border-radius-x1 Base--border-width-x1 Base--padding-horizontal-x3 Base--padding-vertical-x2 Tag"
+                                onClick={[Function]}
+                                style={
+                                  Object {
+                                    "borderColor": "#FF4400",
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <Text
+                                  color="orange-3"
+                                  config="8"
+                                  uppercase={true}
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--uppercase Text--config-8"
+                                    color="orange-3"
+                                  >
+                                    <div
+                                      className="Base Base--color-orange-3 Text Text--uppercase Text--config-8"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      first
+                                    </div>
+                                  </Base>
+                                </Text>
+                              </div>
+                            </Base>
+                          </_default>
+                        </_default>
+                        <_default
+                          key="1"
+                          large={true}
+                          onClick={[Function]}
+                          selected={false}
+                        >
+                          <_default
+                            color="orange-3"
+                            large={true}
+                            onClick={[Function]}
+                            selected={false}
+                            textColor="white"
+                          >
+                            <Base
+                              borderRadius="x1"
+                              borderWidth="x1"
+                              className="Tag"
+                              onClick={[Function]}
+                              paddingHorizontal="x3"
+                              paddingVertical="x2"
+                              style={
+                                Object {
+                                  "borderColor": "#FF4400",
+                                }
+                              }
+                            >
+                              <div
+                                className="Base Base--border-radius-x1 Base--border-width-x1 Base--padding-horizontal-x3 Base--padding-vertical-x2 Tag"
+                                onClick={[Function]}
+                                style={
+                                  Object {
+                                    "borderColor": "#FF4400",
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <Text
+                                  color="orange-3"
+                                  config="8"
+                                  uppercase={true}
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--uppercase Text--config-8"
+                                    color="orange-3"
+                                  >
+                                    <div
+                                      className="Base Base--color-orange-3 Text Text--uppercase Text--config-8"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      second
+                                    </div>
+                                  </Base>
+                                </Text>
+                              </div>
+                            </Base>
+                          </_default>
+                        </_default>
+                      </div>
+                    </Base>
+                  </Flex>
+                  <_default
+                    detailsPagePath="/apps/undefined/versions/123/details"
+                    detailsPagePathHref="/version?appSlug=undefined&versionId=123"
+                    iconUrl="http://placekitten.com/160/160"
+                    note="Updated on September 22, 2018"
+                    title="Standup Timer v1.0.3 (32)"
+                  >
+                    <Link
+                      as="/apps/undefined/versions/123/details"
+                      href="/version?appSlug=undefined&versionId=123"
+                    >
+                      <a
+                        className="appSummary"
+                        href="/apps/undefined/versions/123/details"
+                        onClick={[Function]}
+                      >
+                        <Base
+                          className="colorBar"
+                        >
+                          <div
+                            className="Base colorBar"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "minHeight": undefined,
+                                "minWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <_default
+                              endColor="#0dd3c5"
+                              startColor="#0d83cd"
+                            >
+                              <svg
+                                style={
+                                  Object {
+                                    "background": "linear-gradient(90deg, #0d83cd, #0dd3c5)",
+                                  }
+                                }
+                                viewBox="0 0 862 80"
+                              >
+                                <defs>
+                                  <linearGradient
+                                    id="linearGradient-1"
+                                    x1="96.609239%"
+                                    x2="14.0733222%"
+                                    y1="49.6431115%"
+                                    y2="50.6271256%"
+                                  >
+                                    <stop
+                                      offset="0%"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity="0"
+                                    />
+                                    <stop
+                                      offset="64.6547264%"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity=".5"
+                                    />
+                                    <stop
+                                      offset="100%"
+                                      stopColor="#D0FEFF"
+                                      stopOpacity="0"
+                                    />
+                                  </linearGradient>
+                                  <linearGradient
+                                    id="linearGradient-2"
+                                    x1="96.609239%"
+                                    x2="-22.6276744%"
+                                    y1="49.381157%"
+                                    y2="52.5123108%"
+                                  >
+                                    <stop
+                                      offset="0%"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity="0"
+                                    />
+                                    <stop
+                                      offset="47.0001462%"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity=".8"
+                                    />
+                                    <stop
+                                      offset="100%"
+                                      stopColor="#D0FEFF"
+                                      stopOpacity="0"
+                                    />
+                                  </linearGradient>
+                                  <linearGradient
+                                    id="linearGradient-3"
+                                    x1="88.6366729%"
+                                    x2="14.0733222%"
+                                    y1="49.8847704%"
+                                    y2="50.3332489%"
+                                  >
+                                    <stop
+                                      offset="0%"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity="0"
+                                    />
+                                    <stop
+                                      offset="52.3083683%"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity=".2"
+                                    />
+                                    <stop
+                                      offset="100%"
+                                      stopColor="#FFFFFF"
+                                      stopOpacity="0"
+                                    />
+                                  </linearGradient>
+                                </defs>
+                                <g
+                                  fill="none"
+                                  fillRule="evenodd"
+                                  id="1st-Iteration---Without-Testing,-QA,-Dashboard"
+                                  stroke="none"
+                                  strokeWidth="1"
+                                >
+                                  <g
+                                    id="Latest-App-Copy-2"
+                                    transform="translate(-91.000000, 0.000000)"
+                                  >
+                                    <g
+                                      id="Group-3"
+                                    >
+                                      <g
+                                        id="Group-8"
+                                      >
+                                        <g
+                                          id="Group-6"
+                                          transform="translate(-15.999624, -6.999236)"
+                                        >
+                                          <path
+                                            d="M881.735481,86.9990641 L210.156384,86.9978664 C218.71153,52.9875994 258.306013,22.8146204 333.594585,9.30207949 C448.470008,-11.3153767 695.406951,42.43158 881.735481,86.9990641 Z"
+                                            fill="url(#linearGradient-1)"
+                                            fill-opacity="0.5"
+                                            id="Combined-Shape"
+                                            opacity="0.430636"
+                                            transform="translate(545.945975, 45.880259) scale(-1, 1) translate(-545.945975, -45.880259) "
+                                          />
+                                          <path
+                                            d="M975.999624,7.00298921 L975.999624,86.9972046 L479.881688,87.0001375 C522.81394,59.2648802 567.029696,31.8415792 610.365803,7.00153703 L975.999624,7.00298921 Z"
+                                            fill="url(#linearGradient-2)"
+                                            fill-opacity="0.5"
+                                            id="Combined-Shape"
+                                            opacity="0.430636"
+                                          />
+                                          <path
+                                            d="M871.7687,87.0029988 L0.532462766,86.9976624 C26.9483975,25.2137692 111.220589,-23.3393292 246.79476,14.1075744 C423.760964,62.9873598 649.806848,31.4599363 798.08942,7.20277579 L963.958206,7.20043089 C965.226263,31.2899681 937.377576,70.049062 871.7687,87.0029988 Z"
+                                            fill="url(#linearGradient-3)"
+                                            id="Combined-Shape"
+                                            transform="translate(482.265999, 44.001117) scale(-1, 1) translate(-482.265999, -44.001117) "
+                                          />
+                                        </g>
+                                      </g>
+                                    </g>
+                                  </g>
+                                </g>
+                              </svg>
+                            </_default>
+                          </div>
+                        </Base>
+                        <div
+                          className="body"
+                        >
+                          <div
+                            className="iconWrapper"
+                          >
+                            <_default
+                              borderRadius="x2"
+                              margin="x0"
+                              src="http://placekitten.com/160/160"
+                              width="96px"
+                            >
+                              <div>
+                                <svg
+                                  height="0"
+                                  style={
+                                    Object {
+                                      "display": "block",
+                                    }
+                                  }
+                                  width="0"
+                                >
+                                  <defs>
+                                    <clipPath
+                                      clipPathUnits="objectBoundingBox"
+                                      id="squircle-0.02"
+                                    >
+                                      <path
+                                        d="M .5,0
+    C 0.02,0 0,0.02 0,.5
+    0,0.98 0.02,1 .5,1
+    0.98,1 1,0.98 1,.5
+    1,0.02 0.98,0 .5,0
+    Z"
+                                      />
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                                <Image
+                                  borderRadius="x2"
+                                  margin="x0"
+                                  src="http://placekitten.com/160/160"
+                                  style={
+                                    Object {
+                                      "clipPath": "url(#squircle-0.02)",
+                                      "objectFit": "covver",
+                                    }
+                                  }
+                                  width="96px"
+                                >
+                                  <Base
+                                    Component="img"
+                                    borderRadius="x2"
+                                    className="Image"
+                                    margin="x0"
+                                    src="http://placekitten.com/160/160"
+                                    style={
+                                      Object {
+                                        "clipPath": "url(#squircle-0.02)",
+                                        "objectFit": "covver",
+                                      }
+                                    }
+                                    width="96px"
+                                  >
+                                    <img
+                                      className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                      src="http://placekitten.com/160/160"
+                                      style={
+                                        Object {
+                                          "clipPath": "url(#squircle-0.02)",
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "objectFit": "covver",
+                                          "width": "96px",
+                                        }
+                                      }
+                                    />
+                                  </Base>
+                                </Image>
+                              </div>
+                            </_default>
+                            <Base
+                              paddingHorizontal="x4"
+                              paddingVertical="x2"
+                            >
+                              <div
+                                className="Base Base--padding-horizontal-x4 Base--padding-vertical-x2"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <Text
+                                  color="gray-6"
+                                  letterSpacing="x1"
+                                  size="x3"
+                                  weight="medium"
+                                >
+                                  <Base
+                                    Component="div"
+                                    className="Text Text--letter-spacing-x1 Text--size-x3 Text--weight-medium"
+                                    color="gray-6"
+                                  >
+                                    <div
+                                      className="Base Base--color-gray-6 Text Text--letter-spacing-x1 Text--size-x3 Text--weight-medium"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      Updated on September 22, 2018
+                                    </div>
+                                  </Base>
+                                </Text>
+                              </div>
+                            </Base>
+                            <div
+                              className="note"
+                            />
+                          </div>
+                          <div
+                            className="titleWrapper"
+                          >
+                            <Base
+                              className="platformIconWrapper"
+                            >
+                              <div
+                                className="Base platformIconWrapper"
+                                style={
+                                  Object {
+                                    "height": undefined,
+                                    "maxHeight": undefined,
+                                    "maxWidth": undefined,
+                                    "minHeight": undefined,
+                                    "minWidth": undefined,
+                                    "width": undefined,
+                                  }
+                                }
+                              >
+                                <Icon
+                                  color="grape-4"
+                                  name="PlatformsAndroid"
+                                  size="1.5rem"
+                                >
+                                  <Base
+                                    Component="svg"
+                                    className="Icon"
+                                    color="grape-4"
+                                    height="1.5rem"
+                                    viewBox="0 0 24 24"
+                                    width="1.5rem"
+                                  >
+                                    <svg
+                                      className="Base Base--color-grape-4 Icon"
+                                      style={
+                                        Object {
+                                          "height": "1.5rem",
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": "1.5rem",
+                                        }
+                                      }
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <Component
+                                        height="100%"
+                                        width="100%"
+                                      >
+                                        <svg
+                                          height="100%"
+                                          viewBox="0 0 24 24"
+                                          width="100%"
+                                        >
+                                          <defs>
+                                            <path
+                                              d="M9.8 4.999c.7-.3 1.4-.4 2.2-.4.7 0 1.3.1 1.9.3l1.6-1.6c.4-.399 1-.399 1.4 0 .4.4.4 1 0 1.4l-1.2 1.2a5.966 5.966 0 012.3 4.697H6c0-1.8.8-3.398 2.1-4.498L6.7 4.7c-.4-.4-.4-1 0-1.4.4-.399 1-.399 1.4 0L9.8 5zM8 16.592H7c-.6 0-1-.4-1-1v-3.997h12v3.998c0 .6-.4 1-1 1h-1v2.998c0 .5-.4.999-1 .999s-1-.4-1-1v-2.998h-4v2.999c0 .5-.4.999-1 .999s-1-.4-1-1v-2.998zm13-4.997v4.098c0 .5-.4 1-1 1s-1-.4-1-1v-4.098c0-.5.4-1 1-1s1 .4 1 1zm-17-1c.6 0 1 .4 1 1v3.998c0 .5-.4 1-1 1s-1-.4-1-1v-3.998c0-.6.4-1 1-1zm11-.999c.6 0 1-.4 1-1 0-.499-.4-.999-1-.999s-1 .5-1 1c0 .6.4 1 1 1zm-6 0c.6 0 1-.4 1-1 0-.499-.4-.999-1-.999s-1 .5-1 1c0 .6.4 1 1 1z"
+                                              id="icons-platforms-android_svg__a"
+                                            />
+                                          </defs>
+                                          <use
+                                            fill="currentColor"
+                                            fillRule="evenodd"
+                                            xlinkHref="#icons-platforms-android_svg__a"
+                                          />
+                                        </svg>
+                                      </Component>
+                                    </svg>
+                                  </Base>
+                                </Icon>
+                              </div>
+                            </Base>
+                            <Text
+                              color="grape-4"
+                              letterSpacing="x1"
+                              size="x4"
+                              weight="bold"
+                            >
+                              <Base
+                                Component="h5"
+                                className="Text Text--letter-spacing-x1 Text--size-x4 Text--weight-bold"
+                                color="grape-4"
+                              >
+                                <h5
+                                  className="Base Base--color-grape-4 Text Text--letter-spacing-x1 Text--size-x4 Text--weight-bold"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  Standup Timer v1.0.3 (32)
+                                </h5>
+                              </Base>
+                            </Text>
+                          </div>
+                        </div>
+                      </a>
+                    </Link>
+                  </_default>
+                  <Base
+                    className="sectionHeadingWrapper"
+                  >
+                    <div
+                      className="Base sectionHeadingWrapper"
+                      style={
+                        Object {
+                          "height": undefined,
+                          "maxHeight": undefined,
+                          "maxWidth": undefined,
+                          "minHeight": undefined,
+                          "minWidth": undefined,
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      <Flex
+                        alignChildrenVertical="end"
+                        direction="horizontal"
+                        gap="x2"
+                      >
+                        <Base
+                          className="Flex Flex--align-vert-end Flex--horizontal Flex--gapped Flex--gap-x2"
+                        >
+                          <div
+                            className="Base Flex Flex--align-vert-end Flex--horizontal Flex--gapped Flex--gap-x2"
+                            style={
+                              Object {
+                                "height": undefined,
+                                "maxHeight": undefined,
+                                "maxWidth": undefined,
+                                "minHeight": undefined,
+                                "minWidth": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <Flex
+                              grow={true}
+                              shrink={true}
+                            >
+                              <Base
+                                className="Flex Flex--grow Flex--shrink"
+                              >
+                                <div
+                                  className="Base Flex Flex--grow Flex--shrink"
+                                  style={
+                                    Object {
+                                      "height": undefined,
+                                      "maxHeight": undefined,
+                                      "maxWidth": undefined,
+                                      "minHeight": undefined,
+                                      "minWidth": undefined,
+                                      "width": undefined,
+                                    }
+                                  }
+                                >
+                                  <Text
+                                    letterSpacing="x1"
+                                    size="x5"
+                                    weight="bold"
+                                  >
+                                    <Base
+                                      Component="h4"
+                                      className="Text Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
+                                    >
+                                      <h4
+                                        className="Base Text Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "minHeight": undefined,
+                                            "minWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      >
+                                        Version History
+                                      </h4>
+                                    </Base>
+                                  </Text>
+                                  <Divider
+                                    color="gray-2"
+                                    direction="horizontal"
+                                    margin="x2"
+                                    width="0.125rem"
+                                  >
+                                    <Base
+                                      Component="hr"
+                                      className="Divider"
+                                      color="gray-2"
+                                      margin="x2"
+                                      style={
+                                        Object {
+                                          "borderTopWidth": "0.125rem",
+                                        }
+                                      }
+                                    >
+                                      <hr
+                                        className="Base Base--color-gray-2 Base--margin-x2 Divider"
+                                        style={
+                                          Object {
+                                            "borderTopWidth": "0.125rem",
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "minHeight": undefined,
+                                            "minWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
+                                      />
+                                    </Base>
+                                  </Divider>
+                                </div>
+                              </Base>
+                            </Flex>
+                            <Dropdown
+                              elevation="x1"
+                              fullWidth={false}
+                              onChange={[Function]}
+                              options={
+                                Array [
+                                  Object {
+                                    "text": "Option 1",
+                                    "value": "option-1",
+                                  },
+                                  Object {
+                                    "text": "Option 2",
+                                    "value": "option-2",
+                                  },
+                                ]
+                              }
+                              selected="option-1"
+                              width={168}
+                            >
+                              <PlacementManager>
+                                <Manager>
+                                  <PlacementReference>
+                                    <Reference
+                                      innerRef={[Function]}
+                                    >
+                                      <InnerReference
+                                        innerRef={[Function]}
+                                        setReferenceNode={[Function]}
+                                      >
+                                        <DropdownButton
+                                          alignChildrenHorizontal="start"
+                                          elevation="x1"
+                                          fullWidth={false}
+                                          innerRef={[Function]}
+                                          onClick={[Function]}
+                                          width={168}
+                                        >
+                                          <Button
+                                            alignChildrenHorizontal="start"
+                                            elevation="x1"
+                                            fullWidth={true}
+                                            gap="x4"
+                                            innerRef={[Function]}
+                                            level="secondary"
+                                            onClick={[Function]}
+                                            size="medium"
+                                            width={168}
+                                          >
+                                            <Flex
+                                              Component="button"
+                                              alignChildren="middle"
+                                              alignChildrenHorizontal="start"
+                                              className="Button Button--level-secondary Button--size-medium Button--full-width"
+                                              direction="horizontal"
+                                              elevation="x1"
+                                              gap="x2"
+                                              innerRef={[Function]}
+                                              onClick={[Function]}
+                                              width={168}
+                                            >
+                                              <Base
+                                                Component="button"
+                                                className="Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                                                elevation="x1"
+                                                innerRef={[Function]}
+                                                onClick={[Function]}
+                                                width={168}
+                                              >
+                                                <button
+                                                  className="Base Base--elevation-x1 Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium Button--full-width"
+                                                  onClick={[Function]}
+                                                  style={
+                                                    Object {
+                                                      "height": undefined,
+                                                      "maxHeight": undefined,
+                                                      "maxWidth": undefined,
+                                                      "minHeight": undefined,
+                                                      "minWidth": undefined,
+                                                      "width": 168,
+                                                    }
+                                                  }
+                                                >
+                                                  <Flex
+                                                    alignChildrenVertical="middle"
+                                                    direction="horizontal"
+                                                    gap="x2"
+                                                    grow={true}
+                                                  >
+                                                    <Base
+                                                      className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow"
+                                                    >
+                                                      <div
+                                                        className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Flex--grow"
+                                                        style={
+                                                          Object {
+                                                            "height": undefined,
+                                                            "maxHeight": undefined,
+                                                            "maxWidth": undefined,
+                                                            "minHeight": undefined,
+                                                            "minWidth": undefined,
+                                                            "width": undefined,
+                                                          }
+                                                        }
+                                                      >
+                                                        Option 1
+                                                      </div>
+                                                    </Base>
+                                                  </Flex>
+                                                  <Flex>
+                                                    <Base
+                                                      className="Flex"
+                                                    >
+                                                      <div
+                                                        className="Base Flex"
+                                                        style={
+                                                          Object {
+                                                            "height": undefined,
+                                                            "maxHeight": undefined,
+                                                            "maxWidth": undefined,
+                                                            "minHeight": undefined,
+                                                            "minWidth": undefined,
+                                                            "width": undefined,
+                                                          }
+                                                        }
+                                                      >
+                                                        <Icon
+                                                          name="ChevronDown"
+                                                          size="1.5rem"
+                                                        >
+                                                          <Base
+                                                            Component="svg"
+                                                            className="Icon"
+                                                            height="1.5rem"
+                                                            viewBox="0 0 24 24"
+                                                            width="1.5rem"
+                                                          >
+                                                            <svg
+                                                              className="Base Icon"
+                                                              style={
+                                                                Object {
+                                                                  "height": "1.5rem",
+                                                                  "maxHeight": undefined,
+                                                                  "maxWidth": undefined,
+                                                                  "minHeight": undefined,
+                                                                  "minWidth": undefined,
+                                                                  "width": "1.5rem",
+                                                                }
+                                                              }
+                                                              viewBox="0 0 24 24"
+                                                            >
+                                                              <Component
+                                                                height="100%"
+                                                                width="100%"
+                                                              >
+                                                                <svg
+                                                                  height="100%"
+                                                                  viewBox="0 0 24 24"
+                                                                  width="100%"
+                                                                >
+                                                                  <defs>
+                                                                    <path
+                                                                      d="M16.25 9l1.414 1.414-5.657 5.657-5.657-5.657L7.764 9l4.243 4.243z"
+                                                                      id="icons-chevron-down_svg__a"
+                                                                    />
+                                                                  </defs>
+                                                                  <use
+                                                                    fill="currentColor"
+                                                                    fillRule="evenodd"
+                                                                    xlinkHref="#icons-chevron-down_svg__a"
+                                                                  />
+                                                                </svg>
+                                                              </Component>
+                                                            </svg>
+                                                          </Base>
+                                                        </Icon>
+                                                      </div>
+                                                    </Base>
+                                                  </Flex>
+                                                </button>
+                                              </Base>
+                                            </Flex>
+                                          </Button>
+                                        </DropdownButton>
+                                      </InnerReference>
+                                    </Reference>
+                                  </PlacementReference>
+                                  <Placement
+                                    onClose={[Function]}
+                                    visible={false}
+                                  >
+                                    <PlacementPopper
+                                      backgroundColor="white"
+                                      borderRadius="x2"
+                                      closeElement={null}
+                                      flip={true}
+                                      isInsideModal={false}
+                                      onClose={[Function]}
+                                      visible={false}
+                                    />
+                                  </Placement>
+                                </Manager>
+                              </PlacementManager>
+                            </Dropdown>
+                          </div>
+                        </Base>
+                      </Flex>
+                      <VersionListPageItem
+                        detailsPagePath="/apps/app-slug-123/versions/123/details"
+                        detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
+                        key="0-0"
+                        note="Updated on September 22, 2018, 12:42"
+                        platform="ios"
+                        title="Standup Timer (32)"
+                      >
+                        <div
+                          className="versionListPageItem"
+                        >
+                          <div
+                            className="versionListPageItemInner"
+                          >
+                            <Link
+                              as="/apps/app-slug-123/versions/123/details"
+                              href="/version?appSlug=app-slug-123&versionId=123"
+                            >
+                              <a
+                                className="topWrapper"
+                                href="/apps/app-slug-123/versions/123/details"
+                                onClick={[Function]}
+                              >
+                                <Base
+                                  className="platformIconWrapper"
+                                >
+                                  <div
+                                    className="Base platformIconWrapper"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    <Icon
+                                      color="grape-4"
+                                      name="PlatformsApple"
+                                      size="1.5rem"
+                                    >
+                                      <Base
+                                        Component="svg"
+                                        className="Icon"
+                                        color="grape-4"
+                                        height="1.5rem"
+                                        viewBox="0 0 24 24"
+                                        width="1.5rem"
+                                      >
+                                        <svg
+                                          className="Base Base--color-grape-4 Icon"
+                                          style={
+                                            Object {
+                                              "height": "1.5rem",
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": "1.5rem",
+                                            }
+                                          }
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <Component
+                                            height="100%"
+                                            width="100%"
+                                          >
+                                            <svg
+                                              height="100%"
+                                              viewBox="0 0 24 24"
+                                              width="100%"
+                                            >
+                                              <defs>
+                                                <path
+                                                  d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
+                                                  id="icons-platforms-apple_svg__a"
+                                                />
+                                              </defs>
+                                              <use
+                                                fill="currentColor"
+                                                fillRule="evenodd"
+                                                xlinkHref="#icons-platforms-apple_svg__a"
+                                              />
+                                            </svg>
+                                          </Component>
+                                        </svg>
+                                      </Base>
+                                    </Icon>
+                                  </div>
+                                </Base>
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
+                                >
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (32)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
+                                <div
+                                  className="note"
+                                >
+                                  Updated on September 22, 2018, 12:42
+                                </div>
+                              </a>
+                            </Link>
+                            <button
+                              className="descriptionWrapper"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="description"
+                              />
+                            </button>
+                          </div>
+                        </div>
+                      </VersionListPageItem>
+                      <VersionListPageItem
+                        detailsPagePath="/apps/app-slug-456/versions/456/details"
+                        detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
+                        key="0-1"
+                        note="Updated on September 22, 2018, 12:42"
+                        platform="ios"
+                        title="Standup Timer (31)"
+                      >
+                        <div
+                          className="versionListPageItem"
+                        >
+                          <div
+                            className="versionListPageItemInner"
+                          >
+                            <Link
+                              as="/apps/app-slug-456/versions/456/details"
+                              href="/version?appSlug=app-slug-456&versionId=456"
+                            >
+                              <a
+                                className="topWrapper"
+                                href="/apps/app-slug-456/versions/456/details"
+                                onClick={[Function]}
+                              >
+                                <Base
+                                  className="platformIconWrapper"
+                                >
+                                  <div
+                                    className="Base platformIconWrapper"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    <Icon
+                                      color="grape-4"
+                                      name="PlatformsApple"
+                                      size="1.5rem"
+                                    >
+                                      <Base
+                                        Component="svg"
+                                        className="Icon"
+                                        color="grape-4"
+                                        height="1.5rem"
+                                        viewBox="0 0 24 24"
+                                        width="1.5rem"
+                                      >
+                                        <svg
+                                          className="Base Base--color-grape-4 Icon"
+                                          style={
+                                            Object {
+                                              "height": "1.5rem",
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": "1.5rem",
+                                            }
+                                          }
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <Component
+                                            height="100%"
+                                            width="100%"
+                                          >
+                                            <svg
+                                              height="100%"
+                                              viewBox="0 0 24 24"
+                                              width="100%"
+                                            >
+                                              <defs>
+                                                <path
+                                                  d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
+                                                  id="icons-platforms-apple_svg__a"
+                                                />
+                                              </defs>
+                                              <use
+                                                fill="currentColor"
+                                                fillRule="evenodd"
+                                                xlinkHref="#icons-platforms-apple_svg__a"
+                                              />
+                                            </svg>
+                                          </Component>
+                                        </svg>
+                                      </Base>
+                                    </Icon>
+                                  </div>
+                                </Base>
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
+                                >
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (31)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
+                                <div
+                                  className="note"
+                                >
+                                  Updated on September 22, 2018, 12:42
+                                </div>
+                              </a>
+                            </Link>
+                            <button
+                              className="descriptionWrapper"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="description"
+                              />
+                            </button>
+                          </div>
+                        </div>
+                      </VersionListPageItem>
+                      <VersionListPageItem
+                        detailsPagePath="/apps/app-slug-789/versions/789/details"
+                        detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
+                        key="0-2"
+                        note="Updated on September 22, 2018, 12:42"
+                        platform="ios"
+                        title="Standup Timer (30)"
+                      >
+                        <div
+                          className="versionListPageItem"
+                        >
+                          <div
+                            className="versionListPageItemInner"
+                          >
+                            <Link
+                              as="/apps/app-slug-789/versions/789/details"
+                              href="/version?appSlug=app-slug-789&versionId=789"
+                            >
+                              <a
+                                className="topWrapper"
+                                href="/apps/app-slug-789/versions/789/details"
+                                onClick={[Function]}
+                              >
+                                <Base
+                                  className="platformIconWrapper"
+                                >
+                                  <div
+                                    className="Base platformIconWrapper"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    <Icon
+                                      color="grape-4"
+                                      name="PlatformsApple"
+                                      size="1.5rem"
+                                    >
+                                      <Base
+                                        Component="svg"
+                                        className="Icon"
+                                        color="grape-4"
+                                        height="1.5rem"
+                                        viewBox="0 0 24 24"
+                                        width="1.5rem"
+                                      >
+                                        <svg
+                                          className="Base Base--color-grape-4 Icon"
+                                          style={
+                                            Object {
+                                              "height": "1.5rem",
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": "1.5rem",
+                                            }
+                                          }
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <Component
+                                            height="100%"
+                                            width="100%"
+                                          >
+                                            <svg
+                                              height="100%"
+                                              viewBox="0 0 24 24"
+                                              width="100%"
+                                            >
+                                              <defs>
+                                                <path
+                                                  d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
+                                                  id="icons-platforms-apple_svg__a"
+                                                />
+                                              </defs>
+                                              <use
+                                                fill="currentColor"
+                                                fillRule="evenodd"
+                                                xlinkHref="#icons-platforms-apple_svg__a"
+                                              />
+                                            </svg>
+                                          </Component>
+                                        </svg>
+                                      </Base>
+                                    </Icon>
+                                  </div>
+                                </Base>
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
+                                >
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (30)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
+                                <div
+                                  className="note"
+                                >
+                                  Updated on September 22, 2018, 12:42
+                                </div>
+                              </a>
+                            </Link>
+                            <button
+                              className="descriptionWrapper"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="description"
+                              />
+                            </button>
+                          </div>
+                        </div>
+                      </VersionListPageItem>
+                      <VersionListPageItem
+                        detailsPagePath="/apps/app-slug-135/versions/135/details"
+                        detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
+                        key="0-3"
+                        note="Updated on September 22, 2018, 12:42"
+                        platform="ios"
+                        title="Standup Timer (29)"
+                      >
+                        <div
+                          className="versionListPageItem"
+                        >
+                          <div
+                            className="versionListPageItemInner"
+                          >
+                            <Link
+                              as="/apps/app-slug-135/versions/135/details"
+                              href="/version?appSlug=app-slug-135&versionId=135"
+                            >
+                              <a
+                                className="topWrapper"
+                                href="/apps/app-slug-135/versions/135/details"
+                                onClick={[Function]}
+                              >
+                                <Base
+                                  className="platformIconWrapper"
+                                >
+                                  <div
+                                    className="Base platformIconWrapper"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    <Icon
+                                      color="grape-4"
+                                      name="PlatformsApple"
+                                      size="1.5rem"
+                                    >
+                                      <Base
+                                        Component="svg"
+                                        className="Icon"
+                                        color="grape-4"
+                                        height="1.5rem"
+                                        viewBox="0 0 24 24"
+                                        width="1.5rem"
+                                      >
+                                        <svg
+                                          className="Base Base--color-grape-4 Icon"
+                                          style={
+                                            Object {
+                                              "height": "1.5rem",
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": "1.5rem",
+                                            }
+                                          }
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <Component
+                                            height="100%"
+                                            width="100%"
+                                          >
+                                            <svg
+                                              height="100%"
+                                              viewBox="0 0 24 24"
+                                              width="100%"
+                                            >
+                                              <defs>
+                                                <path
+                                                  d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
+                                                  id="icons-platforms-apple_svg__a"
+                                                />
+                                              </defs>
+                                              <use
+                                                fill="currentColor"
+                                                fillRule="evenodd"
+                                                xlinkHref="#icons-platforms-apple_svg__a"
+                                              />
+                                            </svg>
+                                          </Component>
+                                        </svg>
+                                      </Base>
+                                    </Icon>
+                                  </div>
+                                </Base>
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
+                                >
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (29)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
+                                <div
+                                  className="note"
+                                >
+                                  Updated on September 22, 2018, 12:42
+                                </div>
+                              </a>
+                            </Link>
+                            <button
+                              className="descriptionWrapper"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="description"
+                              />
+                            </button>
+                          </div>
+                        </div>
+                      </VersionListPageItem>
+                      <VersionListPageItem
+                        detailsPagePath="/apps/app-slug-246/versions/246/details"
+                        detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
+                        key="0-4"
+                        note="Updated on September 22, 2018, 12:42"
+                        platform="ios"
+                        title="Standup Timer (28)"
+                      >
+                        <div
+                          className="versionListPageItem"
+                        >
+                          <div
+                            className="versionListPageItemInner"
+                          >
+                            <Link
+                              as="/apps/app-slug-246/versions/246/details"
+                              href="/version?appSlug=app-slug-246&versionId=246"
+                            >
+                              <a
+                                className="topWrapper"
+                                href="/apps/app-slug-246/versions/246/details"
+                                onClick={[Function]}
+                              >
+                                <Base
+                                  className="platformIconWrapper"
+                                >
+                                  <div
+                                    className="Base platformIconWrapper"
+                                    style={
+                                      Object {
+                                        "height": undefined,
+                                        "maxHeight": undefined,
+                                        "maxWidth": undefined,
+                                        "minHeight": undefined,
+                                        "minWidth": undefined,
+                                        "width": undefined,
+                                      }
+                                    }
+                                  >
+                                    <Icon
+                                      color="grape-4"
+                                      name="PlatformsApple"
+                                      size="1.5rem"
+                                    >
+                                      <Base
+                                        Component="svg"
+                                        className="Icon"
+                                        color="grape-4"
+                                        height="1.5rem"
+                                        viewBox="0 0 24 24"
+                                        width="1.5rem"
+                                      >
+                                        <svg
+                                          className="Base Base--color-grape-4 Icon"
+                                          style={
+                                            Object {
+                                              "height": "1.5rem",
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": "1.5rem",
+                                            }
+                                          }
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <Component
+                                            height="100%"
+                                            width="100%"
+                                          >
+                                            <svg
+                                              height="100%"
+                                              viewBox="0 0 24 24"
+                                              width="100%"
+                                            >
+                                              <defs>
+                                                <path
+                                                  d="M15 2.8C16.2 1.4 16 0 16 0s-1.8 0-3.1 1.5C11.7 2.8 12 4 12 4s1.6.2 3-1.2zm2.4 8.1c0-2.6 2.1-3.7 2.1-3.7s-1.1-1.9-3.8-1.9c-1.6 0-2.8.9-3.5.9-.8 0-1.9-.8-3.4-.8-2.3 0-4.7 2-4.7 5.9C4 15.1 6.9 20 9.2 20c.8 0 2-.8 3.2-.8 1.2 0 2.1.8 3.2.8 2.5 0 4.3-5.1 4.3-5.1s-2.5-1.1-2.5-4zm-.3 5.5c-.6 1-1.2 1.6-1.4 1.6-.1 0-.3 0-.7-.2-.1 0-.1 0-.2-.1-1-.4-1.5-.5-2.3-.5-.8 0-1.5.2-2.5.5-.7.3-.9.3-.8.3-.9 0-3.2-3.8-3.2-6.8 0-2.4 1.3-3.9 2.7-3.9.3 0 .7.1 1.2.3-.1 0 .8.3 1 .4.5.1.8.2 1.3.2.4 0 .8-.1 1.3-.3.2-.1.8-.3.8-.3.6-.2 1-.3 1.4-.3.3 0 .6 0 .8.1-.7 1-1.1 2.2-1.1 3.5 0 1.9.7 3.4 2 4.5l.2.2c-.3.3-.4.5-.5.8z"
+                                                  id="icons-platforms-apple_svg__a"
+                                                />
+                                              </defs>
+                                              <use
+                                                fill="currentColor"
+                                                fillRule="evenodd"
+                                                xlinkHref="#icons-platforms-apple_svg__a"
+                                              />
+                                            </svg>
+                                          </Component>
+                                        </svg>
+                                      </Base>
+                                    </Icon>
+                                  </div>
+                                </Base>
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
+                                >
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (28)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >

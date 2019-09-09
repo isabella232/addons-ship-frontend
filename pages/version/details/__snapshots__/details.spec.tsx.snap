@@ -5500,26 +5500,28 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                           </h4>
                                         </Base>
                                       </Text>
-                                      <Badge
-                                        backgroundColor="grape-3"
-                                        color="white"
-                                      >
-                                        <Text
-                                          backgroundColor="grape-3"
-                                          className="Badge"
-                                          color="white"
-                                          config="9"
+                                      <_default>
+                                        <_default
+                                          color="yellow-4"
+                                          textColor="white"
                                         >
                                           <Base
-                                            Component="div"
-                                            backgroundColor="grape-3"
-                                            className="Badge Text Text--config-9"
-                                            color="white"
+                                            borderRadius="x1"
+                                            borderWidth="x1"
+                                            className="Tag"
+                                            paddingHorizontal="x2"
+                                            paddingVertical="x1"
+                                            style={
+                                              Object {
+                                                "borderColor": "#ECB600",
+                                              }
+                                            }
                                           >
                                             <div
-                                              className="Base Base--background-color-grape-3 Base--color-white Badge Text Text--config-9"
+                                              className="Base Base--border-radius-x1 Base--border-width-x1 Base--padding-horizontal-x2 Base--padding-vertical-x1 Tag"
                                               style={
                                                 Object {
+                                                  "borderColor": "#ECB600",
                                                   "height": undefined,
                                                   "maxHeight": undefined,
                                                   "maxWidth": undefined,
@@ -5529,11 +5531,37 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                                 }
                                               }
                                             >
-                                              Fennek
+                                              <Text
+                                                color="yellow-4"
+                                                config="9"
+                                                uppercase={true}
+                                              >
+                                                <Base
+                                                  Component="div"
+                                                  className="Text Text--uppercase Text--config-9"
+                                                  color="yellow-4"
+                                                >
+                                                  <div
+                                                    className="Base Base--color-yellow-4 Text Text--uppercase Text--config-9"
+                                                    style={
+                                                      Object {
+                                                        "height": undefined,
+                                                        "maxHeight": undefined,
+                                                        "maxWidth": undefined,
+                                                        "minHeight": undefined,
+                                                        "minWidth": undefined,
+                                                        "width": undefined,
+                                                      }
+                                                    }
+                                                  >
+                                                    Fennek
+                                                  </div>
+                                                </Base>
+                                              </Text>
                                             </div>
                                           </Base>
-                                        </Text>
-                                      </Badge>
+                                        </_default>
+                                      </_default>
                                     </div>
                                   </Base>
                                 </Flex>

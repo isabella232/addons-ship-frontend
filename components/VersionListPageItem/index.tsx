@@ -2,7 +2,9 @@ import { Component } from 'react';
 import css from './style.scss';
 import SVG from 'react-svg';
 import Link from 'next/link';
-import { Icon, TypeIconName, Base } from '@bitrise/bitkit';
+import { Icon, TypeIconName, Base, Flex, Text } from '@bitrise/bitkit';
+
+import MagicTag from '@/components/Tag/MagicTag';
 
 interface VersionListPageItemProps {
   platform: string;
@@ -11,6 +13,7 @@ interface VersionListPageItemProps {
   title: string;
   description: string;
   note: string;
+  productFlavour?: string;
 }
 
 type VersionListPageItemState = {
@@ -28,7 +31,7 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
   };
 
   render() {
-    const { platform, detailsPagePath, detailsPagePathHref, title, description, note } = this.props;
+    const { platform, detailsPagePath, detailsPagePathHref, title, description, note, productFlavour } = this.props;
     const { isOpen } = this.state;
     const iconName: TypeIconName = platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
@@ -45,7 +48,12 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
               <Base className={css.platformIconWrapper}>
                 <Icon color="grape-4" name={iconName} size="1.5rem" />
               </Base>
-              <div className={css.title}>{title}</div>
+              <Flex direction="horizontal" grow alignChildrenVertical="middle" gap="x3">
+                <Text config="5" color="grape-5" className={css.title}>
+                  {title}
+                </Text>
+                {productFlavour && <MagicTag selected>{productFlavour}</MagicTag>}
+              </Flex>
               <div className={css.note}>{note}</div>
             </a>
           </Link>
