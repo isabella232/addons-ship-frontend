@@ -24,7 +24,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
       maxWidth={960}
     >
       <Tabs
-        gap="x12"
+        gap="x4"
       >
         <Link
           as="/apps/some-app/versions/a-version-id/details"
@@ -33,7 +33,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
           <a>
             <Tab
               active={true}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -56,7 +56,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -79,7 +79,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -102,7 +102,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -163,7 +163,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
       maxWidth={960}
     >
       <Tabs
-        gap="x12"
+        gap="x4"
       >
         <Link
           as="/apps/some-app/versions/a-version-id/details"
@@ -172,7 +172,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -195,7 +195,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -218,7 +218,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -241,7 +241,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
           <a>
             <Tab
               active={true}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -298,7 +298,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
       maxWidth={960}
     >
       <Tabs
-        gap="x12"
+        gap="x4"
       >
         <Link
           as="/apps/some-app/versions/a-version-id/details"
@@ -307,7 +307,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
           <a>
             <Tab
               active={true}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -330,7 +330,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -353,7 +353,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -376,7 +376,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -433,7 +433,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
       maxWidth={960}
     >
       <Tabs
-        gap="x12"
+        gap="x4"
       >
         <Link
           as="/apps/some-app/versions/a-version-id/details"
@@ -442,7 +442,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -465,7 +465,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
           <a>
             <Tab
               active={true}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -488,7 +488,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -511,7 +511,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -565,7 +565,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
       maxWidth={960}
     >
       <Tabs
-        gap="x12"
+        gap="x4"
       >
         <Link
           as="/apps/some-app/versions/a-version-id/details"
@@ -574,7 +574,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -597,7 +597,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -620,7 +620,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -643,7 +643,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -699,7 +699,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
       maxWidth={960}
     >
       <Tabs
-        gap="x12"
+        gap="x4"
       >
         <Link
           as="/apps/some-app/versions/a-version-id/details"
@@ -708,7 +708,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -731,7 +731,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -754,7 +754,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
           <a>
             <Tab
               active={true}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"
@@ -777,7 +777,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
           <a>
             <Tab
               active={false}
-              paddingHorizontal="x2"
+              paddingHorizontal="x4"
             >
               <Flex
                 alignChildren="middle"

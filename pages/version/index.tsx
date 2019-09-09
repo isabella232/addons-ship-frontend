@@ -101,7 +101,7 @@ export class VersionPage extends Component<VersionPageProps> {
         href={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=${key}`}
       >
         <a>
-          <Tab active={selectedTab === key} paddingHorizontal="x2">
+          <Tab active={selectedTab === key} paddingHorizontal="x4">
             <Flex direction="horizontal" alignChildren="middle" gap="x1">
               {showActivityBadge && key === 'activity' && <Dot size=".5rem" backgroundColor="red-3" />}
               <span className={css.tabAnchor}>{startCase(key)}</span>
@@ -132,7 +132,7 @@ export class VersionPage extends Component<VersionPageProps> {
         <ShipHead>{title}</ShipHead>
         <Flex direction="vertical" grow>
           <Base maxWidth={960}>
-            <Tabs gap="x12">
+            <Tabs gap="x4">
               {tab('details')}
               {tab('devices')}
               {tab('qa')}
