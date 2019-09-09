@@ -3,39 +3,48 @@ import { Flex, Icon, Text, TypeIconName, TypeTextSize } from '@bitrise/bitkit';
 import { mediaQuery } from '@/utils/media';
 
 export type Props = {
-  projectType: string;
+  type: string;
   title: string;
   smaller?: boolean;
 };
 
-export default ({ projectType, title, smaller = false }: Props) => {
+export default ({ type, title, smaller = false }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
 
-  let platformIcon: TypeIconName;
-  switch (projectType) {
+  let iconName: TypeIconName;
+  switch (type) {
     case 'android':
-      platformIcon = 'PlatformsAndroid';
+      iconName = 'PlatformsAndroid';
       break;
     case 'ios':
-      platformIcon = 'PlatformsApple';
+      iconName = 'PlatformsApple';
       break;
     case 'cordova':
-      platformIcon = 'PlatformsCordova';
+      iconName = 'PlatformsCordova';
+      break;
+    case 'fastlane':
+      iconName = 'PlatformsFastlane';
+      break;
+    case 'flutter':
+      iconName = 'PlatformsFlutter';
+      break;
+    case 'macos':
+      iconName = 'PlatformsMacos';
       break;
     case 'ionic':
-      platformIcon = 'PlatformsIonic';
+      iconName = 'PlatformsIonic';
       break;
     case 'react':
-      platformIcon = 'PlatformsReact';
+      iconName = 'PlatformsReact';
       break;
     case 'xamarin':
-      platformIcon = 'PlatformsXamarin';
+      iconName = 'PlatformsXamarin';
       break;
     case 'settings':
-      platformIcon = 'Settings';
+      iconName = 'Settings';
       break;
     default:
-      platformIcon = 'Bitbot';
+      iconName = 'Bitbot';
       break;
   }
 
@@ -50,7 +59,7 @@ export default ({ projectType, title, smaller = false }: Props) => {
       gap="x2"
       color="white"
     >
-      <Icon name={platformIcon} size="2rem" />
+      <Icon name={iconName} size="2rem" />
       <Text size={fontSize} weight="bold">
         {title}
       </Text>

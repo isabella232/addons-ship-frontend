@@ -185,7 +185,7 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
           }}
         >
           {breadcrumbs}
-          <PageTitle projectType={projectType} title={`${pageTitle}`} smaller={!!breadcrumbs} />
+          <PageTitle type={projectType} title={`${pageTitle}`} smaller={!!breadcrumbs} />
         </Flex>
       )}
       <Flex
