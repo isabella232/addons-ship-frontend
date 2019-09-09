@@ -43,6 +43,7 @@ describe('AppVersionDetailsView', () => {
     readyForPublish: true,
     isPublishInProgress: false,
     publishTarget: 'App Store Connect',
+    publishTargetURL: 'link.to.app.store.connect',
     settingsPath: '/path',
     activityPath: '/path',
     latestEventStatus: null,
@@ -157,8 +158,23 @@ describe('AppVersionDetailsView', () => {
     it('renders with Android version correctly', () => {
       (mediaQuery as jest.Mock).mockReturnValue([true]);
       const tree = toJSON(
-        mount(<DetailsView {...defaultProps} appVersion={mockAndroidAppVersion} publishTarget="Google Play Console" />)
+        mount(
+          <DetailsView
+            {...defaultProps}
+            appVersion={mockAndroidAppVersion}
+            publishTarget="Google Play Console"
+            publishTargetURL="link.to.google.play.console"
+          />
+        )
       );
+      expect(tree).toMatchSnapshot();
+    });
+  });
+
+  describe('when a publish target without URL is used', () => {
+    it('renders correctly', () => {
+      (mediaQuery as jest.Mock).mockReturnValue([true]);
+      const tree = toJSON(mount(<DetailsView {...defaultProps} publishTargetURL={null} />));
       expect(tree).toMatchSnapshot();
     });
   });
