@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import QRCode from 'qrcode.react';
 import SVG from 'react-svg';
 import Clipboard from 'react-clipboard.js';
-import { Base, Flex, Text, Icon, Tooltip } from '@bitrise/bitkit';
+import { Base, Flex, Text, Icon, Tooltip, Link } from '@bitrise/bitkit';
 
 import { IPAExportMethod } from '@/models';
 
@@ -156,8 +156,11 @@ export default ({ buildSlug, publicInstallPageURL, ipaExportMethod, hasMounted }
                     </Text>
                   </Text>
                   <Text>
-                    You can find registered devices on the Devices tab, or register your devices at your Account
-                    Settings page on Bitrise.
+                    You can find registered devices on the Devices tab, or register your devices at your{' '}
+                    <Link href="https://app.bitrise.io/me/profile#/test_devices" target="_blank" underline>
+                      Account Settings
+                    </Link>{' '}
+                    page on Bitrise.
                   </Text>
                 </Fragment>
               )}
@@ -179,8 +182,11 @@ export default ({ buildSlug, publicInstallPageURL, ipaExportMethod, hasMounted }
                     </Text>
                   </Text>
                   <Text>
-                    You can find registered devices on the Devices tab, or register your devices at your Account
-                    Settings page on Bitrise.
+                    You can find registered devices on the Devices tab, or register your devices at your{' '}
+                    <Link href="https://app.bitrise.io/me/profile#/test_devices" target="_blank" underline>
+                      Account Settings
+                    </Link>{' '}
+                    page on Bitrise.
                   </Text>
                 </Fragment>
               )}
