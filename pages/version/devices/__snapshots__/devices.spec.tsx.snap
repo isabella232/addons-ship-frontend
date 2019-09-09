@@ -50,57 +50,251 @@ exports[`AppVersion renders the details tab correctly with UDID 1`] = `
     paddingVertical="x6"
     type="flat"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          User
-        </TableHeaderCell>
-        <TableHeaderCell>
-          Device
-        </TableHeaderCell>
-        <TableHeaderCell>
-          UDID
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
     <TableBody>
       <TableRow
         key="test-user-1-some-device-id-01"
       >
-        <TableCell>
-          test-user-1
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-1
+          </Text>
         </TableCell>
-        <TableCell>
-          ios
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            ios
+          </Text>
         </TableCell>
-        <TableCell>
-          some-device-id-01
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            UDID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-01
+          </Text>
         </TableCell>
       </TableRow>
       <TableRow
         key="test-user-1-some-device-id-02"
       >
-        <TableCell>
-          test-user-1
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-1
+          </Text>
         </TableCell>
-        <TableCell>
-          android
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            android
+          </Text>
         </TableCell>
-        <TableCell>
-          some-device-id-02
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            UDID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-02
+          </Text>
         </TableCell>
       </TableRow>
       <TableRow
         key="test-user-2-some-device-id-03"
       >
-        <TableCell>
-          test-user-2
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-2
+          </Text>
         </TableCell>
-        <TableCell>
-          ios
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            ios
+          </Text>
         </TableCell>
-        <TableCell>
-          some-device-id-03
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            UDID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-03
+          </Text>
         </TableCell>
       </TableRow>
     </TableBody>
@@ -132,57 +326,251 @@ exports[`AppVersion renders the details tab correctly with UUID 1`] = `
     paddingVertical="x6"
     type="flat"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          User
-        </TableHeaderCell>
-        <TableHeaderCell>
-          Device
-        </TableHeaderCell>
-        <TableHeaderCell>
-          UUID
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
     <TableBody>
       <TableRow
         key="test-user-1-some-device-id-01"
       >
-        <TableCell>
-          test-user-1
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-1
+          </Text>
         </TableCell>
-        <TableCell>
-          ios
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            ios
+          </Text>
         </TableCell>
-        <TableCell>
-          some-device-id-01
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            UUID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-01
+          </Text>
         </TableCell>
       </TableRow>
       <TableRow
         key="test-user-1-some-device-id-02"
       >
-        <TableCell>
-          test-user-1
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-1
+          </Text>
         </TableCell>
-        <TableCell>
-          android
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            android
+          </Text>
         </TableCell>
-        <TableCell>
-          some-device-id-02
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            UUID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-02
+          </Text>
         </TableCell>
       </TableRow>
       <TableRow
         key="test-user-2-some-device-id-03"
       >
-        <TableCell>
-          test-user-2
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-2
+          </Text>
         </TableCell>
-        <TableCell>
-          ios
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            ios
+          </Text>
         </TableCell>
-        <TableCell>
-          some-device-id-03
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            UUID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-03
+          </Text>
         </TableCell>
       </TableRow>
     </TableBody>
@@ -214,57 +602,251 @@ exports[`AppVersion renders the details tab correctly with device ID 1`] = `
     paddingVertical="x6"
     type="flat"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          User
-        </TableHeaderCell>
-        <TableHeaderCell>
-          Device
-        </TableHeaderCell>
-        <TableHeaderCell>
-          Device ID
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
     <TableBody>
       <TableRow
         key="test-user-1-some-device-id-01"
       >
-        <TableCell>
-          test-user-1
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-1
+          </Text>
         </TableCell>
-        <TableCell>
-          ios
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            ios
+          </Text>
         </TableCell>
-        <TableCell>
-          some-device-id-01
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device ID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-01
+          </Text>
         </TableCell>
       </TableRow>
       <TableRow
         key="test-user-1-some-device-id-02"
       >
-        <TableCell>
-          test-user-1
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-1
+          </Text>
         </TableCell>
-        <TableCell>
-          android
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            android
+          </Text>
         </TableCell>
-        <TableCell>
-          some-device-id-02
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device ID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-02
+          </Text>
         </TableCell>
       </TableRow>
       <TableRow
         key="test-user-2-some-device-id-03"
       >
-        <TableCell>
-          test-user-2
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-2
+          </Text>
         </TableCell>
-        <TableCell>
-          ios
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            ios
+          </Text>
         </TableCell>
-        <TableCell>
-          some-device-id-03
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device ID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-03
+          </Text>
         </TableCell>
       </TableRow>
     </TableBody>
