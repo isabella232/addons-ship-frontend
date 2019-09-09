@@ -35,7 +35,7 @@ export default ({ startColor, endColor }: Props) => (
               <path
                 d="M881.735481,86.9990641 L210.156384,86.9978664 C218.71153,52.9875994 258.306013,22.8146204 333.594585,9.30207949 C448.470008,-11.3153767 695.406951,42.43158 881.735481,86.9990641 Z"
                 id="Combined-Shape"
-                fill-opacity="0.5"
+                fillOpacity="0.5"
                 fill="url(#linearGradient-1)"
                 opacity="0.430636"
                 transform="translate(545.945975, 45.880259) scale(-1, 1) translate(-545.945975, -45.880259) "
@@ -43,7 +43,7 @@ export default ({ startColor, endColor }: Props) => (
               <path
                 d="M975.999624,7.00298921 L975.999624,86.9972046 L479.881688,87.0001375 C522.81394,59.2648802 567.029696,31.8415792 610.365803,7.00153703 L975.999624,7.00298921 Z"
                 id="Combined-Shape"
-                fill-opacity="0.5"
+                fillOpacity="0.5"
                 fill="url(#linearGradient-2)"
                 opacity="0.430636"
               ></path>
