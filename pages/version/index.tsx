@@ -1,8 +1,6 @@
 import { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import Link from 'next/link';
-import { Base, Tabs, Tab, Divider, Flex, AddonFooter, Dot } from '@bitrise/bitkit';
-import startCase from 'lodash/startCase';
+import { Base, Divider, Flex, AddonFooter } from '@bitrise/bitkit';
 import nookies from 'nookies';
 
 import { AppVersionPageQuery, PageContext, AppVersion, AppVersionPageTabs } from '@/models';
@@ -10,12 +8,12 @@ import { RootState } from '@/store';
 import { fetchAppVersion } from '@/ducks/appVersion';
 import { orderedAppVersionEvents } from '@/ducks/selectors';
 
+import Tabmenu from './tabmenu';
 import Details from './details';
 import Devices from './devices';
 import Activity from './activity';
 import QA from './qa';
 
-import css from './style.scss';
 import ShipHead from '@/components/ShipHead';
 
 export interface VersionPageProps extends AppVersionPageQuery {
@@ -95,22 +93,6 @@ export class VersionPage extends Component<VersionPageProps> {
 
     const showActivityBadge = selectedTab === 'activity' ? false : activityLastSeen < lastEventTimestamp;
 
-    const tab = (key: string) => (
-      <Link
-        as={`/apps/${appSlug}/versions/${versionId}/${key}`}
-        href={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=${key}`}
-      >
-        <a>
-          <Tab active={selectedTab === key} paddingHorizontal="x4">
-            <Flex direction="horizontal" alignChildren="middle" gap="x1">
-              {showActivityBadge && key === 'activity' && <Dot size=".5rem" backgroundColor="red-3" />}
-              <span className={css.tabAnchor}>{startCase(key)}</span>
-            </Flex>
-          </Tab>
-        </a>
-      </Link>
-    );
-
     let title;
     switch (selectedTab) {
       case 'devices':
@@ -132,20 +114,18 @@ export class VersionPage extends Component<VersionPageProps> {
         <ShipHead>{title}</ShipHead>
         <Flex direction="vertical" grow>
           <Base maxWidth={960}>
-            <Tabs gap="x4">
-              {tab('details')}
-              {tab('devices')}
-              {tab('qa')}
-              {tab('activity')}
-            </Tabs>
+            <Tabmenu
+              appSlug={appSlug}
+              versionId={versionId}
+              selectedTab={selectedTab}
+              showActivityBadge={showActivityBadge}
+            ></Tabmenu>
           </Base>
           <Divider color="gray-2" direction="horizontal" width="1px" />
-          <Flex direction="vertical" maxWidth={960} grow>
+          <Flex paddingHorizontal="x4" direction="vertical" maxWidth={960} grow>
             {this.tabContent()}
+            <AddonFooter addonName="Ship" paddingVertical="x16" />
           </Flex>
-        </Flex>
-        <Flex paddingVertical="x16">
-          <AddonFooter addonName="Ship" />
         </Flex>
       </Fragment>
     );
