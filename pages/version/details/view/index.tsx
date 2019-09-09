@@ -11,7 +11,8 @@ import {
   Link,
   ProgressSpinner,
   Modal,
-  ModalTitle
+  ModalTitle,
+  Badge
 } from '@bitrise/bitkit';
 
 import { AppVersion, AppVersionEvent, Screenshot, AppVersionEventStatus, Platform } from '@/models';
@@ -186,8 +187,8 @@ export default ({
             <Flex direction={isDesktop ? 'horizontal' : 'vertical'} margin="x4" gap="x6">
               <Squircle src={appVersion.iconUrl} borderRadius="x2" width="160px" margin="x0" />
 
-              <Flex direction="vertical" alignChildrenVertical="middle">
-                <Flex direction="horizontal" alignChildren="middle" gap="x1">
+              <Flex direction="vertical" alignChildrenVertical="middle" gap="x2">
+                <Flex direction="horizontal" alignChildrenVertical="middle" gap="x1">
                   <Base className={css.platformIcon}>
                     <Icon color="grape-4" name={iconName} size="2rem" />
                   </Base>
@@ -195,9 +196,16 @@ export default ({
                     {appVersion.appName}
                   </Text>
                 </Flex>
-                <Text letterSpacing="x2" size="x5" weight="bold" color="grape-4" margin="x2">
-                  v{appVersion.version} ({appVersion.buildNumber})
-                </Text>
+                <Flex direction="horizontal" alignChildrenVertical="middle" gap="x2">
+                  <Text letterSpacing="x2" size="x5" weight="bold" color="grape-4" margin="x2">
+                    v{appVersion.version} ({appVersion.buildNumber})
+                  </Text>
+                  {appVersion.productFlavour && (
+                    <Badge backgroundColor="grape-3" color="white">
+                      {appVersion.productFlavour}
+                    </Badge>
+                  )}
+                </Flex>
                 <Text letterSpacing="x1" size="x4" weight="medium" color="gray-6">
                   Updated on {formatDate(appVersion.lastUpdate, 'MMMM D, YYYY, HH:mm')}
                 </Text>
