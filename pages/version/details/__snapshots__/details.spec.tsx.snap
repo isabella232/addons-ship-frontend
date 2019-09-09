@@ -1455,7 +1455,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -5478,7 +5478,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -9293,7 +9293,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -13316,7 +13316,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -17285,7 +17285,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -21308,7 +21308,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -25277,7 +25277,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -29340,7 +29340,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -33363,7 +33363,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -36597,7 +36597,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
               weight="medium"
             >
               Updated on 
-              September 22, 2018
+              September 22, 2018, 12:42
             </Text>
           </Flex>
         </Flex>
@@ -36796,7 +36796,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
               weight="medium"
             >
               Updated on 
-              September 22, 2018
+              September 22, 2018, 12:42
             </Text>
           </Flex>
         </Flex>
@@ -37519,7 +37519,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -41534,7 +41534,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -45549,7 +45549,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -48934,7 +48934,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
