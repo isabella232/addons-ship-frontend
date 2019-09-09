@@ -63,6 +63,10 @@ export class ShipAPIService {
     if (settings.androidSettings) {
       delete settings.androidSettings['availableKeystoreFiles'];
       delete settings.androidSettings['availableServiceAccountFiles'];
+
+      if (!settings.androidSettings.module) {
+        settings.androidSettings.module = '';
+      }
     }
 
     return settings;

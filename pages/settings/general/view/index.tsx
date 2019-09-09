@@ -347,6 +347,20 @@ export default ({
                       </InputContent>
                     </InputContainer>
                   </Flex>
+                  <Flex>
+                    <InputLabel margin="x1">Module</InputLabel>
+                    <InputContainer>
+                      <InputContent>
+                        <Input
+                          name="module"
+                          onChange={(event: any) =>
+                            onSettingsPropertyChange('androidSettings', 'module', event.target.value)
+                          }
+                          value={androidSettings.module}
+                        />
+                      </InputContent>
+                    </InputContainer>
+                  </Flex>
                 </Grid>
               </Base>
             </Base>

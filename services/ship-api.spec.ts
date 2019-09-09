@@ -445,6 +445,7 @@ describe('Ship API service', () => {
         },
         androidSettings: {
           track: 'Release',
+          module: 'app',
           selectedKeystoreFile: 'keystore-filename',
           selectedServiceAccount: 'service-account-filename'
         }
@@ -453,7 +454,7 @@ describe('Ship API service', () => {
       expect(patch).toHaveBeenCalledWith(
         url,
         token,
-        '{"ios_workflow":"All","android_workflow":"All","ios_settings":{"apple_developer_account_email":"some.email@addr.ess","app_sku":"Fill","app_specific_password":"Fill","selected_app_store_provisioning_profile":"prov-profile-id","selected_code_signing_identity":"code-signing-identity-id","include_bit_code":true},"android_settings":{"track":"Release","selected_keystore_file":"keystore-filename","selected_service_account":"service-account-filename"}}'
+        '{"ios_workflow":"All","android_workflow":"All","ios_settings":{"apple_developer_account_email":"some.email@addr.ess","app_sku":"Fill","app_specific_password":"Fill","selected_app_store_provisioning_profile":"prov-profile-id","selected_code_signing_identity":"code-signing-identity-id","include_bit_code":true},"android_settings":{"track":"Release","module":"app","selected_keystore_file":"keystore-filename","selected_service_account":"service-account-filename"}}'
       );
 
       expect(settings).toMatchSnapshot();
