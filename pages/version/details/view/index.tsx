@@ -152,7 +152,7 @@ export default ({
 
   const iconName: TypeIconName = appVersion.platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
-  const [isDesktop] = mediaQuery('60rem');
+  const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
 
   const onFormChange = ({ target: { name, value } }: any) => {
     onChange && onChange(name, value);
@@ -179,20 +179,42 @@ export default ({
       <Flex
         direction="horizontal"
         alignChildrenHorizontal={isDesktop ? 'between' : 'middle'}
-        gap="x4"
+        gap="x16"
         paddingVertical="x4"
       >
         <Flex maxWidth={660}>
           <form onChange={onFormChange}>
-            <Flex direction={isDesktop ? 'horizontal' : 'vertical'} margin="x4" gap="x6">
+            <Flex
+              direction={isDesktop ? 'horizontal' : 'vertical'}
+              margin="x4"
+              gap="x6"
+              alignChildrenHorizontal={isTablet ? 'start' : 'middle'}
+            >
               <Squircle src={appVersion.iconUrl} borderRadius="x2" width="160px" margin="x0" />
 
-              <Flex direction="vertical" alignChildrenVertical="middle" gap="x2">
-                <Flex direction="horizontal" alignChildrenVertical="middle" gap="x1">
+              <Flex
+                direction="vertical"
+                alignChildrenVertical="middle"
+                alignChildrenHorizontal={isTablet ? 'start' : 'middle'}
+                gap="x2"
+              >
+                <Flex
+                  direction={isTablet ? 'horizontal' : 'vertical'}
+                  alignChildrenVertical="middle"
+                  alignChildrenHorizontal={isTablet ? 'start' : 'middle'}
+                  gap="x1"
+                >
                   <Base className={css.platformIcon}>
                     <Icon color="grape-4" name={iconName} size="2rem" />
                   </Base>
-                  <Text letterSpacing="x2" size="x6" weight="bold" color="grape-4">
+                  <Text
+                    letterSpacing="x2"
+                    size={isTablet ? 'x6' : 'x5'}
+                    weight="bold"
+                    color="grape-4"
+                    breakOn={isTablet ? 'word' : 'all'}
+                    align={isTablet ? 'start' : 'middle'}
+                  >
                     {appVersion.appName}
                   </Text>
                 </Flex>
@@ -202,13 +224,13 @@ export default ({
                   </Text>
                   {appVersion.productFlavour && <MagicTag>{appVersion.productFlavour}</MagicTag>}
                 </Flex>
-                <Text letterSpacing="x1" size="x4" weight="medium" color="gray-6">
+                <Text letterSpacing="x1" size={isTablet ? 'x4' : 'x3'} weight="medium" color="gray-6">
                   Updated on {formatDate(appVersion.lastUpdate, 'MMMM D, YYYY, HH:mm')}
                 </Text>
               </Flex>
             </Flex>
             {!isDesktop && (
-              <Flex direction="horizontal" alignChildren="start" gap="x4" margin="x8">
+              <Flex direction={isTablet ? 'horizontal' : 'vertical'} alignChildren="start" gap="x4" margin="x8">
                 <Button
                   level="primary"
                   disabled={isSaving}
@@ -216,6 +238,7 @@ export default ({
                     evt.preventDefault();
                     onSave && onSave();
                   }}
+                  width={isTablet ? 'auto' : '100%'}
                 >
                   {isSaving ? (
                     <Fragment>
@@ -228,12 +251,18 @@ export default ({
                     </Fragment>
                   )}
                 </Button>
-                <Button level="secondary" disabled={!shouldEnableInstall}>
+                <Button level="secondary" disabled={!shouldEnableInstall} width={isTablet ? 'auto' : '100%'}>
                   <Icon name="Download" />
                   <Text>Install</Text>
                 </Button>
-                <Button type="button" level="secondary" onClick={() => setIsShareModalVisible(true)}>
-                  Share
+                <Button
+                  type="button"
+                  level="secondary"
+                  onClick={() => setIsShareModalVisible(true)}
+                  width={isTablet ? 'auto' : '100%'}
+                >
+                  <Icon name="Chain" />
+                  <Text>Share</Text>
                 </Button>
               </Flex>
             )}
@@ -261,18 +290,20 @@ export default ({
         </Flex>
 
         {isDesktop && (
-          <Sidebar
-            publicInstallPageURL={appVersion.publicInstallPageURL}
-            shouldEnablePublish={readyForPublish && !isPublishInProgress}
-            isPublished={latestEventStatus === AppVersionEventStatus.Success}
-            isPublishInProgress={isPublishInProgress}
-            onSave={onSave}
-            onPublish={onPublish}
-            buildSlug={appVersion.buildSlug}
-            ipaExportMethod={appVersion.ipaExportMethod}
-            hasMounted={hasMounted}
-            isSaving={isSaving}
-          />
+          <Flex shrink>
+            <Sidebar
+              publicInstallPageURL={appVersion.publicInstallPageURL}
+              shouldEnablePublish={readyForPublish && !isPublishInProgress}
+              isPublished={latestEventStatus === AppVersionEventStatus.Success}
+              isPublishInProgress={isPublishInProgress}
+              onSave={onSave}
+              onPublish={onPublish}
+              buildSlug={appVersion.buildSlug}
+              ipaExportMethod={appVersion.ipaExportMethod}
+              hasMounted={hasMounted}
+              isSaving={isSaving}
+            />
+          </Flex>
         )}
       </Flex>
       <Modal onClose={handleCloseShareModal} visible={isShareModalVisible} width="22rem" backgroundColor="white">

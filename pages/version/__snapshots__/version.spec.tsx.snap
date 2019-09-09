@@ -21,7 +21,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
       <_default
         appSlug="some-app"
@@ -38,7 +38,7 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
       paddingHorizontal="x4"
     >
       <Connect(AppVersionDetails)
@@ -64,7 +64,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
       <_default
         appSlug="some-app"
@@ -81,7 +81,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
       paddingHorizontal="x4"
     >
       <Connect(Activity)
@@ -107,7 +107,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
       <_default
         appSlug="some-app"
@@ -124,7 +124,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
       paddingHorizontal="x4"
     >
       <Connect(AppVersionDetails)
@@ -150,7 +150,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
       <_default
         appSlug="some-app"
@@ -167,7 +167,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
       paddingHorizontal="x4"
     >
       <Connect(AppVersionDevices) />
@@ -190,7 +190,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
       <_default
         appSlug="some-app"
@@ -207,7 +207,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
       paddingHorizontal="x4"
     >
       <h1>
@@ -232,7 +232,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
       <_default
         appSlug="some-app"
@@ -249,7 +249,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
       paddingHorizontal="x4"
     >
       <_default />

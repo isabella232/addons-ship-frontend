@@ -113,7 +113,7 @@ export class VersionPage extends Component<VersionPageProps> {
       <Fragment>
         <ShipHead>{title}</ShipHead>
         <Flex direction="vertical" grow>
-          <Base maxWidth={960}>
+          <Base maxWidth={992}>
             <Tabmenu
               appSlug={appSlug}
               versionId={versionId}
@@ -122,7 +122,7 @@ export class VersionPage extends Component<VersionPageProps> {
             ></Tabmenu>
           </Base>
           <Divider color="gray-2" direction="horizontal" width="1px" />
-          <Flex paddingHorizontal="x4" direction="vertical" maxWidth={960} grow>
+          <Flex paddingHorizontal="x4" direction="vertical" maxWidth={992} grow>
             {this.tabContent()}
             <AddonFooter addonName="Ship" paddingVertical="x16" />
           </Flex>

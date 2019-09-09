@@ -57,7 +57,7 @@ describe('AppVersionDetailsView', () => {
 
   describe('when viewed on desktop', () => {
     beforeAll(() => {
-      (mediaQuery as jest.Mock).mockReturnValue([true]);
+      (mediaQuery as jest.Mock).mockReturnValue([true, true]);
     });
 
     it('renders the details view correctly', () => {
@@ -140,7 +140,7 @@ describe('AppVersionDetailsView', () => {
 
   describe('when viewed on mobile', () => {
     beforeAll(() => {
-      (mediaQuery as jest.Mock).mockReturnValue([false]);
+      (mediaQuery as jest.Mock).mockReturnValue([false, false]);
     });
 
     it('renders the details view correctly', () => {
