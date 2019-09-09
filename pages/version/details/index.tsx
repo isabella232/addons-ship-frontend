@@ -464,6 +464,10 @@ export class AppVersionDetails extends Component<Props, State> {
         (appVersion.platform === 'ios' && 'App Store Connect') ||
         (appVersion.platform === 'android' && 'Google Play Console') ||
         'production',
+      publishTargetURL:
+        (appVersion.platform === 'ios' && 'https://appstoreconnect.apple.com/') ||
+        (appVersion.platform === 'android' && 'https://play.google.com/apps/publish/') ||
+        null,
       settingsPath: `/apps/${appVersion.appSlug}/settings`,
       activityPath: `/apps/${appVersion.appSlug}/versions/${appVersion.id}/activity`,
       latestEventStatus
