@@ -8,6 +8,7 @@ export type Props = {
   children: string;
   selected?: boolean;
   large?: boolean;
+  onClick?: Function;
 };
 
 export const getStringSum = (s: string) => [...s.toLowerCase()].reduce((sum, char) => sum + char.charCodeAt(0), 0);
