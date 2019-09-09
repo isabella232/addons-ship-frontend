@@ -23,11 +23,103 @@ exports[`VersionListPageItem renders correctly 1`] = `
             size="1.5rem"
           />
         </Base>
-        <div
-          className="title"
+        <Flex
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x3"
+          grow={true}
         >
-          My app v1.1.0 (28)
+          <Text
+            className="title"
+            color="grape-5"
+            config="5"
+          >
+            My app v1.1.0 (28)
+          </Text>
+        </Flex>
+        <div
+          className="note"
+        >
+          Updated on January 1, 2008
         </div>
+      </a>
+    </Link>
+    <button
+      className="descriptionWrapper"
+      onClick={[Function]}
+    >
+      <div
+        className="description"
+      >
+        This is a short description about my 1. app. It is a good app. End of description.
+      </div>
+      <div
+        className="showMore"
+      >
+        <div
+          className="text"
+        >
+          Show more
+        </div>
+        <ReactSVG
+          afterInjection={[Function]}
+          beforeInjection={[Function]}
+          className="arrow"
+          evalScripts="never"
+          fallback={null}
+          loading={null}
+          renumerateIRIElements={true}
+          src="/static/arrow-down.svg"
+          wrapper="div"
+        />
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`VersionListPageItem renders correctly for android 1`] = `
+<div
+  className="versionListPageItem"
+>
+  <div
+    className="versionListPageItemInner"
+  >
+    <Link
+      as="/v1-1-0/details"
+      href="/v1-1-0/details"
+    >
+      <a
+        className="topWrapper"
+      >
+        <Base
+          className="platformIconWrapper"
+        >
+          <Icon
+            color="grape-4"
+            name="PlatformsAndroid"
+            size="1.5rem"
+          />
+        </Base>
+        <Flex
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x3"
+          grow={true}
+        >
+          <Text
+            className="title"
+            color="grape-5"
+            config="5"
+          >
+            My app v1.1.0 (28)
+          </Text>
+          <_default
+            selected={true}
+          >
+            banana
+          </_default>
+        </Flex>
         <div
           className="note"
         >
@@ -92,11 +184,20 @@ exports[`VersionListPageItem shows more description 1`] = `
             size="1.5rem"
           />
         </Base>
-        <div
-          className="title"
+        <Flex
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x3"
+          grow={true}
         >
-          My app v1.1.0 (28)
-        </div>
+          <Text
+            className="title"
+            color="grape-5"
+            config="5"
+          >
+            My app v1.1.0 (28)
+          </Text>
+        </Flex>
         <div
           className="note"
         >

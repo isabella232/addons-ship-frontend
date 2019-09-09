@@ -1797,11 +1797,58 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (32)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (32)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -1913,11 +1960,58 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (31)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (31)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -2029,11 +2123,58 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (30)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (30)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -2145,11 +2286,58 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (29)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (29)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -2261,11 +2449,58 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (28)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (28)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -3584,11 +3819,58 @@ exports[`AppPageView when page has apps renders the product flavour tags 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (32)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (32)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -3700,11 +3982,58 @@ exports[`AppPageView when page has apps renders the product flavour tags 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (31)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (31)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -3816,11 +4145,58 @@ exports[`AppPageView when page has apps renders the product flavour tags 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (30)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (30)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -3932,11 +4308,58 @@ exports[`AppPageView when page has apps renders the product flavour tags 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (29)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (29)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
@@ -4048,11 +4471,58 @@ exports[`AppPageView when page has apps renders the product flavour tags 1`] = `
                                     </Icon>
                                   </div>
                                 </Base>
-                                <div
-                                  className="title"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x3"
+                                  grow={true}
                                 >
-                                  Standup Timer (28)
-                                </div>
+                                  <Base
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                  >
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x3 Flex--grow"
+                                      style={
+                                        Object {
+                                          "height": undefined,
+                                          "maxHeight": undefined,
+                                          "maxWidth": undefined,
+                                          "minHeight": undefined,
+                                          "minWidth": undefined,
+                                          "width": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        className="title"
+                                        color="grape-5"
+                                        config="5"
+                                      >
+                                        <Base
+                                          Component="div"
+                                          className="title Text Text--config-5"
+                                          color="grape-5"
+                                        >
+                                          <div
+                                            className="Base Base--color-grape-5 title Text Text--config-5"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            Standup Timer (28)
+                                          </div>
+                                        </Base>
+                                      </Text>
+                                    </div>
+                                  </Base>
+                                </Flex>
                                 <div
                                   className="note"
                                 >
