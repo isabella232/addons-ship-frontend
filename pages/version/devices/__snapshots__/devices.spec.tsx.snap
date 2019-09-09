@@ -37,7 +37,17 @@ exports[`AppVersion renders the details tab correctly with UDID 1`] = `
       icon="Lightbulb"
       type="inform"
     >
-      You can register your devices on your Account Settings page on Bitrise.
+      You can register your devices on your
+       
+      <Link
+        href="https://app.bitrise.io/me/profile#/test_devices"
+        target="_blank"
+        underline={true}
+      >
+        Account Settings
+      </Link>
+       
+      page on Bitrise.
     </Notification>
     <Table
       paddingVertical="x6"
@@ -113,7 +123,17 @@ exports[`AppVersion renders the details tab correctly with UUID 1`] = `
       icon="Lightbulb"
       type="inform"
     >
-      You can register your devices on your Account Settings page on Bitrise.
+      You can register your devices on your
+       
+      <Link
+        href="https://app.bitrise.io/me/profile#/test_devices"
+        target="_blank"
+        underline={true}
+      >
+        Account Settings
+      </Link>
+       
+      page on Bitrise.
     </Notification>
     <Table
       paddingVertical="x6"
@@ -189,7 +209,17 @@ exports[`AppVersion renders the details tab correctly with device ID 1`] = `
       icon="Lightbulb"
       type="inform"
     >
-      You can register your devices on your Account Settings page on Bitrise.
+      You can register your devices on your
+       
+      <Link
+        href="https://app.bitrise.io/me/profile#/test_devices"
+        target="_blank"
+        underline={true}
+      >
+        Account Settings
+      </Link>
+       
+      page on Bitrise.
     </Notification>
     <Table
       paddingVertical="x6"
@@ -265,7 +295,17 @@ exports[`AppVersion renders the loading skeleton when loading 1`] = `
       icon="Lightbulb"
       type="inform"
     >
-      You can register your devices on your Account Settings page on Bitrise.
+      You can register your devices on your
+       
+      <Link
+        href="https://app.bitrise.io/me/profile#/test_devices"
+        target="_blank"
+        underline={true}
+      >
+        Account Settings
+      </Link>
+       
+      page on Bitrise.
     </Notification>
     <Base
       margin="x8"

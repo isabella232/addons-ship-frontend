@@ -14,7 +14,7 @@ import {
   ModalTitle
 } from '@bitrise/bitkit';
 
-import { AppVersion, AppVersionEvent, Screenshot, AppVersionEventStatus } from '@/models';
+import { AppVersion, AppVersionEvent, Screenshot, AppVersionEventStatus, Platform } from '@/models';
 import { mediaQuery } from '@/utils/media';
 
 import Sidebar from './sidebar';
@@ -51,6 +51,7 @@ export type Props = {
   readyForPublish: boolean;
   isPublishInProgress: boolean;
   publishTarget: string;
+  publishTargetURL: string | null;
   settingsPath: string;
   activityPath: string;
   latestEventStatus: AppVersionEvent['status'] | null;
@@ -63,6 +64,7 @@ const publishNotification = (
   publishStatus: AppVersionEvent['status'] | null,
   readyForPublish: boolean,
   publishTarget: string,
+  publishTargetURL: string | null,
   settingsPath: string,
   activityPath: string
 ) => {
@@ -90,7 +92,15 @@ const publishNotification = (
     case AppVersionEventStatus.Success:
       return (
         <Notification margin="x2" type="success">
-          Your app has been successfully published to {publishTarget}.
+          Your app has been successfully published to{' '}
+          {publishTargetURL ? (
+            <Link href={publishTargetURL} target="_blank" underline>
+              {publishTarget}
+            </Link>
+          ) : (
+            publishTarget
+          )}
+          .
         </Notification>
       );
     case AppVersionEventStatus.Failed:
@@ -128,6 +138,7 @@ export default ({
   readyForPublish,
   isPublishInProgress,
   publishTarget,
+  publishTargetURL,
   settingsPath,
   activityPath,
   availableDevices,
@@ -158,6 +169,7 @@ export default ({
             isPublishInProgress ? AppVersionEventStatus.InProgress : latestEventStatus,
             readyForPublish,
             publishTarget,
+            publishTargetURL,
             settingsPath,
             activityPath
           )}
