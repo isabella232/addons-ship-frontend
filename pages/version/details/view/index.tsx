@@ -199,7 +199,7 @@ export default ({
                   v{appVersion.version} ({appVersion.buildNumber})
                 </Text>
                 <Text letterSpacing="x1" size="x4" weight="medium" color="gray-6">
-                  Updated on {formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}
+                  Updated on {formatDate(appVersion.lastUpdate, 'MMMM D, YYYY, HH:mm')}
                 </Text>
               </Flex>
             </Flex>
