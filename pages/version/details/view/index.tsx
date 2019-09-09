@@ -11,11 +11,10 @@ import {
   Link,
   ProgressSpinner,
   Modal,
-  ModalTitle,
-  Badge
+  ModalTitle
 } from '@bitrise/bitkit';
 
-import { AppVersion, AppVersionEvent, Screenshot, AppVersionEventStatus, Platform } from '@/models';
+import { AppVersion, AppVersionEvent, Screenshot, AppVersionEventStatus } from '@/models';
 import { mediaQuery } from '@/utils/media';
 
 import Sidebar from './sidebar';
@@ -26,6 +25,7 @@ import Squircle from '@/components/Squircle';
 
 import Share from './share';
 import css from './style.scss';
+import MagicTag from '@/components/Tag/MagicTag';
 
 type DeviceInfo = {
   key: string;
@@ -200,11 +200,7 @@ export default ({
                   <Text letterSpacing="x2" size="x5" weight="bold" color="grape-4" margin="x2">
                     v{appVersion.version} ({appVersion.buildNumber})
                   </Text>
-                  {appVersion.productFlavour && (
-                    <Badge backgroundColor="grape-3" color="white">
-                      {appVersion.productFlavour}
-                    </Badge>
-                  )}
+                  {appVersion.productFlavour && <MagicTag>{appVersion.productFlavour}</MagicTag>}
                 </Flex>
                 <Text letterSpacing="x1" size="x4" weight="medium" color="gray-6">
                   Updated on {formatDate(appVersion.lastUpdate, 'MMMM D, YYYY, HH:mm')}

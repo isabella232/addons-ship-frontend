@@ -10,6 +10,7 @@ import { mediaQuery } from '@/utils/media';
 import PlatformSelector from '@/components/PlatformSelector';
 
 import css from '../style.scss';
+import MagicTag from '@/components/Tag/MagicTag';
 
 type Props = {
   latestAppVersion: AppVersion | null;
@@ -31,6 +32,9 @@ type Props = {
   onSelectPlatform: (platform: Platform) => void;
   startColor?: string;
   endColor?: string;
+  productFlavours: string[];
+  selectedProductFlavour?: string;
+  selectProductFalvour: (flavour: string) => void;
 };
 
 export default ({
@@ -43,7 +47,10 @@ export default ({
   selectedPlatform,
   onSelectPlatform,
   startColor,
-  endColor
+  endColor,
+  productFlavours,
+  selectedProductFlavour,
+  selectProductFalvour
 }: Props) => {
   const [isDesktop] = mediaQuery('60rem');
 
@@ -54,12 +61,27 @@ export default ({
           <PlatformSelector platform={selectedPlatform} onClick={onSelectPlatform} />
         </Flex>
       )}
+
       <Flex
         direction="vertical"
         alignChildrenHorizontal="middle"
         padding={isDesktop && !isCrossPlatform ? 'x16' : 'x4'}
       >
         <Base width="100%" maxWidth={960}>
+          {productFlavours.length > 0 && (
+            <Flex direction="horizontal" gap="x2" paddingVertical="x4" paddingHorizontal="x1">
+              {productFlavours.map((f, idx) => (
+                <MagicTag
+                  large
+                  key={idx}
+                  selected={f === selectedProductFlavour}
+                  onClick={() => selectProductFalvour(f)}
+                >
+                  {f}
+                </MagicTag>
+              ))}
+            </Flex>
+          )}
           {latestAppVersion && (
             <AppSummary
               detailsPagePath={`/apps/${latestAppVersion.appSlug}/versions/${latestAppVersion.id}/details`}
@@ -112,6 +134,7 @@ export default ({
                       title={`${appVersion.appName} (${appVersion.buildNumber})`}
                       description={appVersion.commitMessage}
                       note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY, HH:mm')}`}
+                      productFlavour={appVersion.productFlavour}
                     />
                   ))}
                 </Fragment>

@@ -4,7 +4,8 @@ import {
   orderedAppVersionEvents,
   isCrossPlatform,
   getPlatformAppVersionsByVersion,
-  getPlatformAppVersionsByBuildNumber
+  getPlatformAppVersionsByBuildNumber,
+  getVersionFlavours
 } from './selectors';
 import { RootState } from '@/store';
 import { mockAppVersions } from '@/mocks';
@@ -205,5 +206,35 @@ describe('isCrossPlatform', () => {
 
   it('detects cross platform apps', () => {
     expect(isCrossPlatform({ appVersionList: [...iosVersions, ...androidVersions] } as RootState)).toBe(true);
+  });
+});
+
+describe('getVersionFlavours', () => {
+  it('returns an empty array', () => {
+    expect(getVersionFlavours({ appVersionList: null } as RootState)).toEqual([]);
+  });
+
+  it('calculates version flavours', () => {
+    const appVersionList = [
+      {
+        id: 'version-1',
+        productFlavour: 'strawberry'
+      },
+      {
+        id: 'version-2',
+        productFlavour: 'vanilla'
+      },
+      {
+        id: 'flvaourless-version-3'
+      },
+      {
+        id: 'duplicated-version-4',
+        productFlavour: 'vanilla'
+      }
+    ] as AppVersion[];
+
+    const flvaours = getVersionFlavours({ appVersionList } as RootState);
+
+    expect(flvaours).toEqual(['strawberry', 'vanilla']);
   });
 });

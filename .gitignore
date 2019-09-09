@@ -65,3 +65,6 @@ dist
 
 # Jest coverage
 coverage
+
+# MacOS garbage
+.DS_Store

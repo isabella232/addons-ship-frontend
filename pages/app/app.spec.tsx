@@ -1,9 +1,9 @@
 jest.mock('@/utils/media');
 
-import { shallow, mount } from 'enzyme';
-import toJSON, { shallowToJson } from 'enzyme-to-json';
+import { shallow, mount, ReactWrapper } from 'enzyme';
+import toJSON, { shallowToJson, mountToJson } from 'enzyme-to-json';
 
-import { mockAppVersions, mockAppVersion } from '@/mocks';
+import { mockAppVersions, mockAppVersion, mockApp } from '@/mocks';
 import { AppPage, AppPageProps } from './';
 import AppView from './view';
 import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
@@ -14,7 +14,7 @@ describe('AppPageView', () => {
   (mediaQuery as jest.Mock).mockReturnValue([true]);
 
   describe('when page has apps', () => {
-    let appViewComponent: any;
+    let appViewComponent: ReactWrapper;
 
     beforeAll(() => {
       appViewComponent = mount(
@@ -51,6 +51,10 @@ describe('AppPageView', () => {
               appVersions: mockAppVersions
             }
           ]}
+          isCrossPlatform={false}
+          onSelectPlatform={jest.fn()}
+          productFlavours={[]}
+          selectProductFalvour={jest.fn()}
         />
       );
     });
@@ -59,16 +63,27 @@ describe('AppPageView', () => {
       const tree = toJSON(appViewComponent);
       expect(tree).toMatchSnapshot();
     });
+
+    it('renders the product flavour tags', () => {
+      appViewComponent.setProps({ productFlavours: ['first', 'second'] });
+
+      const tree = mountToJson(appViewComponent);
+      expect(tree).toMatchSnapshot();
+    });
   });
 });
 
 describe('AppPage', () => {
   const defaultProps = {
+    app: mockApp,
     fetchAppVersionList: jest.fn() as any,
     appSlug: 'app-slug-123',
     isLoading: false,
     appVersionsByVersion: null as any,
-    appVersionsByBuildNumber: null as any
+    appVersionsByBuildNumber: null as any,
+    isCrossPlatform: false,
+    selectPlatform: jest.fn() as any,
+    productFlavours: []
   };
 
   let appVersionsByVersion: AppPageProps['appVersionsByVersion'];
@@ -144,5 +159,13 @@ describe('AppPage', () => {
       const tree = shallowToJson(wrapper);
       expect(tree).toMatchSnapshot();
     });
+  });
+
+  test('selectProductFlavour', () => {
+    const wrapper = shallow(<AppPage {...defaultProps} />);
+
+    const flavour = 'whatever';
+    (wrapper.instance() as AppPage).selectProductFlavour(flavour);
+    expect(wrapper.state('selectedProductFlavour')).toEqual(flavour);
   });
 });

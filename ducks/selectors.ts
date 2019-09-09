@@ -1,6 +1,7 @@
 import map from 'lodash/map';
 import groupBy from 'lodash/groupBy';
 import sortBy from 'lodash/sortBy';
+import uniq from 'lodash/uniq';
 
 import { RootState } from '@/store';
 import { AppVersionEvent, AppVersion, Platform } from '@/models';
@@ -59,4 +60,17 @@ export const isCrossPlatform = ({ appVersionList }: RootState): boolean => {
   });
 
   return hasAndroid && hasIOS;
+};
+
+export const getVersionFlavours = ({ appVersionList }: RootState): string[] => {
+  if (!appVersionList) {
+    return [];
+  }
+
+  return uniq(
+    appVersionList.reduce(
+      (flavours: string[], { productFlavour }) => (productFlavour ? [...flavours, productFlavour] : flavours),
+      []
+    )
+  );
 };
