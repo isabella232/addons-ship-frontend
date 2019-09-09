@@ -87,68 +87,72 @@ exports[`ActivityView when a test failed renders entry with download log button 
   <Table
     type="flat"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          Date
-        </TableHeaderCell>
-        <TableHeaderCell
-          colSpan="2"
-        >
-          Activity
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
     <TableBody>
       <TableRow
         key="0"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
       >
         <TableCell
-          shrink={true}
+          style={
+            Object {
+              "display": "block",
+            }
+          }
           title="2018-09-26 12:42:31"
         >
-          September 26, 2018
-           at 
-          12:42:31
-        </TableCell>
-        <TableCell>
           <Flex
-            alignChildrenVertical="middle"
+            alignChildrenHorizontal="between"
+            alignChildrenVertical="end"
             direction="horizontal"
-            gap="x4"
-            height="2rem"
+            wrap={true}
           >
-            <Icon
-              color="red-3"
-              name="CloseSmall"
-              size="1.5rem"
-            />
-            <Text
-              color="red-3"
-              size="x3"
+            <Base>
+              <Base>
+                September 26, 2018
+                 at 
+                12:42:31
+              </Base>
+              <Base>
+                <Flex
+                  alignChildrenVertical="middle"
+                  direction="horizontal"
+                  gap="x4"
+                  height="2rem"
+                >
+                  <Icon
+                    color="red-3"
+                    name="CloseSmall"
+                    size="1.5rem"
+                  />
+                  <Text
+                    color="red-3"
+                    size="x3"
+                  >
+                    An error occured.
+                  </Text>
+                </Flex>
+              </Base>
+            </Base>
+            <a
+              href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
             >
-              An error occured.
-            </Text>
+              <Button
+                level="secondary"
+                size="small"
+              >
+                <Icon
+                  color="grape-4"
+                  name="Download"
+                  size="1.5rem"
+                />
+                Download Build Log
+              </Button>
+            </a>
           </Flex>
-        </TableCell>
-        <TableCell
-          shrink={true}
-        >
-          <a
-            href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-          >
-            <Button
-              level="secondary"
-              size="small"
-            >
-              <Icon
-                color="grape-4"
-                name="Download"
-                size="1.5rem"
-              />
-              Download Build Log
-            </Button>
-          </a>
         </TableCell>
       </TableRow>
     </TableBody>
@@ -163,53 +167,58 @@ exports[`ActivityView when a test is in progress renders entry without download 
   <Table
     type="flat"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          Date
-        </TableHeaderCell>
-        <TableHeaderCell
-          colSpan="2"
-        >
-          Activity
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
     <TableBody>
       <TableRow
         key="0"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
       >
         <TableCell
-          shrink={true}
+          style={
+            Object {
+              "display": "block",
+            }
+          }
           title="2018-09-22 12:42:31"
         >
-          September 22, 2018
-           at 
-          12:42:31
-        </TableCell>
-        <TableCell>
           <Flex
-            alignChildrenVertical="middle"
+            alignChildrenHorizontal="between"
+            alignChildrenVertical="end"
             direction="horizontal"
-            gap="x4"
-            height="2rem"
+            wrap={true}
           >
-            <Icon
-              color="green-4"
-              name="Tick"
-              size="1.5rem"
-            />
-            <Text
-              color="grape-4"
-              size="x3"
-            >
-              Doing something...
-            </Text>
+            <Base>
+              <Base>
+                September 22, 2018
+                 at 
+                12:42:31
+              </Base>
+              <Base>
+                <Flex
+                  alignChildrenVertical="middle"
+                  direction="horizontal"
+                  gap="x4"
+                  height="2rem"
+                >
+                  <Icon
+                    color="green-4"
+                    name="Tick"
+                    size="1.5rem"
+                  />
+                  <Text
+                    color="grape-4"
+                    size="x3"
+                  >
+                    Doing something...
+                  </Text>
+                </Flex>
+              </Base>
+            </Base>
           </Flex>
         </TableCell>
-        <TableCell
-          shrink={true}
-        />
       </TableRow>
     </TableBody>
   </Table>
@@ -223,53 +232,58 @@ exports[`ActivityView when a test is successful renders entry without download l
   <Table
     type="flat"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          Date
-        </TableHeaderCell>
-        <TableHeaderCell
-          colSpan="2"
-        >
-          Activity
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
     <TableBody>
       <TableRow
         key="0"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
       >
         <TableCell
-          shrink={true}
+          style={
+            Object {
+              "display": "block",
+            }
+          }
           title="2018-09-20 12:42:31"
         >
-          September 20, 2018
-           at 
-          12:42:31
-        </TableCell>
-        <TableCell>
           <Flex
-            alignChildrenVertical="middle"
+            alignChildrenHorizontal="between"
+            alignChildrenVertical="end"
             direction="horizontal"
-            gap="x4"
-            height="2rem"
+            wrap={true}
           >
-            <Icon
-              color="green-4"
-              name="Tick"
-              size="1.5rem"
-            />
-            <Text
-              color="grape-4"
-              size="x3"
-            >
-              Event finished successfully!
-            </Text>
+            <Base>
+              <Base>
+                September 20, 2018
+                 at 
+                12:42:31
+              </Base>
+              <Base>
+                <Flex
+                  alignChildrenVertical="middle"
+                  direction="horizontal"
+                  gap="x4"
+                  height="2rem"
+                >
+                  <Icon
+                    color="green-4"
+                    name="Tick"
+                    size="1.5rem"
+                  />
+                  <Text
+                    color="grape-4"
+                    size="x3"
+                  >
+                    Event finished successfully!
+                  </Text>
+                </Flex>
+              </Base>
+            </Base>
           </Flex>
         </TableCell>
-        <TableCell
-          shrink={true}
-        />
       </TableRow>
     </TableBody>
   </Table>
@@ -300,7 +314,6 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
         key="0"
       >
         <TableCell
-          shrink={true}
           title="2018-09-20 12:42:31"
         >
           September 20, 2018
@@ -335,7 +348,6 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
         key="1"
       >
         <TableCell
-          shrink={true}
           title="2018-09-22 12:42:31"
         >
           September 22, 2018
@@ -370,7 +382,6 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
         key="2"
       >
         <TableCell
-          shrink={true}
           title="2018-09-26 12:42:31"
         >
           September 26, 2018
@@ -446,7 +457,6 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
         key="0"
       >
         <TableCell
-          shrink={true}
           title="2018-09-20 12:42:31"
         >
           September 20, 2018
@@ -481,7 +491,6 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
         key="1"
       >
         <TableCell
-          shrink={true}
           title="2018-09-22 12:42:31"
         >
           September 22, 2018
@@ -516,7 +525,6 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
         key="2"
       >
         <TableCell
-          shrink={true}
           title="2018-09-26 12:42:31"
         >
           September 26, 2018
@@ -575,138 +583,176 @@ exports[`ActivityView when viewed on mobile renders the activity view correctly 
   <Table
     type="flat"
   >
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          Date
-        </TableHeaderCell>
-        <TableHeaderCell
-          colSpan="2"
-        >
-          Activity
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
     <TableBody>
       <TableRow
         key="0"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
       >
         <TableCell
-          shrink={true}
+          style={
+            Object {
+              "display": "block",
+            }
+          }
           title="2018-09-20 12:42:31"
         >
-          September 20, 2018
-           at 
-          12:42:31
-        </TableCell>
-        <TableCell>
           <Flex
-            alignChildrenVertical="middle"
+            alignChildrenHorizontal="between"
+            alignChildrenVertical="end"
             direction="horizontal"
-            gap="x4"
-            height="2rem"
+            wrap={true}
           >
-            <Icon
-              color="green-4"
-              name="Tick"
-              size="1.5rem"
-            />
-            <Text
-              color="grape-4"
-              size="x3"
-            >
-              Event finished successfully!
-            </Text>
+            <Base>
+              <Base>
+                September 20, 2018
+                 at 
+                12:42:31
+              </Base>
+              <Base>
+                <Flex
+                  alignChildrenVertical="middle"
+                  direction="horizontal"
+                  gap="x4"
+                  height="2rem"
+                >
+                  <Icon
+                    color="green-4"
+                    name="Tick"
+                    size="1.5rem"
+                  />
+                  <Text
+                    color="grape-4"
+                    size="x3"
+                  >
+                    Event finished successfully!
+                  </Text>
+                </Flex>
+              </Base>
+            </Base>
           </Flex>
         </TableCell>
-        <TableCell
-          shrink={true}
-        />
       </TableRow>
       <TableRow
         key="1"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
       >
         <TableCell
-          shrink={true}
+          style={
+            Object {
+              "display": "block",
+            }
+          }
           title="2018-09-22 12:42:31"
         >
-          September 22, 2018
-           at 
-          12:42:31
-        </TableCell>
-        <TableCell>
           <Flex
-            alignChildrenVertical="middle"
+            alignChildrenHorizontal="between"
+            alignChildrenVertical="end"
             direction="horizontal"
-            gap="x4"
-            height="2rem"
+            wrap={true}
           >
-            <Icon
-              color="green-4"
-              name="Tick"
-              size="1.5rem"
-            />
-            <Text
-              color="grape-4"
-              size="x3"
-            >
-              Doing something...
-            </Text>
+            <Base>
+              <Base>
+                September 22, 2018
+                 at 
+                12:42:31
+              </Base>
+              <Base>
+                <Flex
+                  alignChildrenVertical="middle"
+                  direction="horizontal"
+                  gap="x4"
+                  height="2rem"
+                >
+                  <Icon
+                    color="green-4"
+                    name="Tick"
+                    size="1.5rem"
+                  />
+                  <Text
+                    color="grape-4"
+                    size="x3"
+                  >
+                    Doing something...
+                  </Text>
+                </Flex>
+              </Base>
+            </Base>
           </Flex>
         </TableCell>
-        <TableCell
-          shrink={true}
-        />
       </TableRow>
       <TableRow
         key="2"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
       >
         <TableCell
-          shrink={true}
+          style={
+            Object {
+              "display": "block",
+            }
+          }
           title="2018-09-26 12:42:31"
         >
-          September 26, 2018
-           at 
-          12:42:31
-        </TableCell>
-        <TableCell>
           <Flex
-            alignChildrenVertical="middle"
+            alignChildrenHorizontal="between"
+            alignChildrenVertical="end"
             direction="horizontal"
-            gap="x4"
-            height="2rem"
+            wrap={true}
           >
-            <Icon
-              color="red-3"
-              name="CloseSmall"
-              size="1.5rem"
-            />
-            <Text
-              color="red-3"
-              size="x3"
+            <Base>
+              <Base>
+                September 26, 2018
+                 at 
+                12:42:31
+              </Base>
+              <Base>
+                <Flex
+                  alignChildrenVertical="middle"
+                  direction="horizontal"
+                  gap="x4"
+                  height="2rem"
+                >
+                  <Icon
+                    color="red-3"
+                    name="CloseSmall"
+                    size="1.5rem"
+                  />
+                  <Text
+                    color="red-3"
+                    size="x3"
+                  >
+                    An error occured.
+                  </Text>
+                </Flex>
+              </Base>
+            </Base>
+            <a
+              href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
             >
-              An error occured.
-            </Text>
+              <Button
+                level="secondary"
+                size="small"
+              >
+                <Icon
+                  color="grape-4"
+                  name="Download"
+                  size="1.5rem"
+                />
+                Download Build Log
+              </Button>
+            </a>
           </Flex>
-        </TableCell>
-        <TableCell
-          shrink={true}
-        >
-          <a
-            href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
-          >
-            <Button
-              level="secondary"
-              size="small"
-            >
-              <Icon
-                color="grape-4"
-                name="Download"
-                size="1.5rem"
-              />
-              Download Build Log
-            </Button>
-          </a>
         </TableCell>
       </TableRow>
     </TableBody>
