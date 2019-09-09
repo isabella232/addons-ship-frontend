@@ -13,13 +13,13 @@ describe('PageTitle', () => {
   });
 
   it('renders without errors', () => {
-    const tree = shallowToJson(shallow(<PageTitle title="Some title" projectType="whatever" />));
+    const tree = shallowToJson(shallow(<PageTitle title="Some title" type="whatever" />));
 
     expect(tree).toMatchSnapshot();
   });
 
   it('renders without errors in smaller', () => {
-    const tree = shallowToJson(shallow(<PageTitle title="Some title" projectType="whatever" smaller />));
+    const tree = shallowToJson(shallow(<PageTitle title="Some title" type="whatever" smaller />));
 
     expect(tree).toMatchSnapshot();
   });
@@ -27,7 +27,7 @@ describe('PageTitle', () => {
   it('renders without errors on mobile', () => {
     (mediaQuery as jest.Mock).mockReturnValueOnce([false]);
 
-    const tree = shallowToJson(shallow(<PageTitle title="Some title" projectType="whatever" />));
+    const tree = shallowToJson(shallow(<PageTitle title="Some title" type="whatever" />));
 
     expect(tree).toMatchSnapshot();
   });
@@ -36,7 +36,7 @@ describe('PageTitle', () => {
 
   projectTypes.forEach(type =>
     test(`with ${type} project type`, () => {
-      const tree = shallowToJson(shallow(<PageTitle title="Some title" projectType={type} />));
+      const tree = shallowToJson(shallow(<PageTitle title="Some title" type={type} />));
 
       expect(tree).toMatchSnapshot();
     })
