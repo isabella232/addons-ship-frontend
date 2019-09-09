@@ -7,8 +7,11 @@ export default ({ startColor, endColor }: Props) => (
   <svg
     viewBox="0 0 862 80"
     style={{
-      background: `linear-gradient(90deg, ${startColor}, ${endColor})`
+      background: `linear-gradient(90deg, ${startColor}, ${endColor})`,
+      width: "100%",
+      height: "100%"
     }}
+    preserveAspectRatio="none"
   >
     <defs>
       <linearGradient x1="96.609239%" y1="49.6431115%" x2="14.0733222%" y2="50.6271256%" id="linearGradient-1">

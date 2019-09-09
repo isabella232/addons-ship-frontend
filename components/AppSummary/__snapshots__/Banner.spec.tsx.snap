@@ -6,9 +6,12 @@ exports[`Banner renders without errors 1`] = `
   startColor="red"
 >
   <svg
+    preserveAspectRatio="none"
     style={
       Object {
         "background": "linear-gradient(90deg, red, blue)",
+        "height": "100%",
+        "width": "100%",
       }
     }
     viewBox="0 0 862 80"
