@@ -6,75 +6,80 @@ exports[`Banner renders without errors 1`] = `
   startColor="red"
 >
   <svg
-    height="100%"
-    preserveAspectRatio="none"
-    viewBox="0 0 1660 152"
-    width="100%"
+    style={
+      Object {
+        "background": "linear-gradient(90deg, red, blue)",
+      }
+    }
+    viewBox="0 0 862 80"
   >
     <defs>
-      <rect
-        height="152"
-        id="header-rect"
-        width="1660"
-        x="0"
-        y="0"
-      />
       <linearGradient
-        id="header-bg-main"
-        x1="100%"
-        x2="0%"
-        y1="50%"
-        y2="50%"
-      >
-        <stop
-          id="main-color-2"
-          offset="0%"
-          stopColor="blue"
-        />
-        <stop
-          id="main-color-1"
-          offset="100%"
-          stopColor="red"
-        />
-      </linearGradient>
-      <linearGradient
-        id="header-bg-bottom"
-        x1="96.609%"
-        x2="14.073%"
-        y1="48.146%"
-        y2="53.257%"
+        id="linearGradient-1"
+        x1="96.609239%"
+        x2="14.0733222%"
+        y1="49.6431115%"
+        y2="50.6271256%"
       >
         <stop
           offset="0%"
-          stopColor="#fff"
-          stopOpacity=".2155"
+          stopColor="#FFFFFF"
+          stopOpacity="0"
         />
         <stop
-          offset="64.655%"
-          stopColor="#fff"
-          stopOpacity=".2155"
+          offset="64.6547264%"
+          stopColor="#FFFFFF"
+          stopOpacity=".5"
         />
         <stop
           offset="100%"
-          stopColor="#fff"
+          stopColor="#D0FEFF"
           stopOpacity="0"
         />
       </linearGradient>
       <linearGradient
-        id="header-bg-right"
-        x1="114.011%"
-        x2="-19.114%"
-        y1="49.716%"
-        y2="49.864%"
+        id="linearGradient-2"
+        x1="96.609239%"
+        x2="-22.6276744%"
+        y1="49.381157%"
+        y2="52.5123108%"
       >
         <stop
           offset="0%"
-          stopColor="#fff"
-          stopOpacity=".577"
+          stopColor="#FFFFFF"
+          stopOpacity="0"
+        />
+        <stop
+          offset="47.0001462%"
+          stopColor="#FFFFFF"
+          stopOpacity=".8"
         />
         <stop
           offset="100%"
-          stopColor="#fff"
+          stopColor="#D0FEFF"
+          stopOpacity="0"
+        />
+      </linearGradient>
+      <linearGradient
+        id="linearGradient-3"
+        x1="88.6366729%"
+        x2="14.0733222%"
+        y1="49.8847704%"
+        y2="50.3332489%"
+      >
+        <stop
+          offset="0%"
+          stopColor="#FFFFFF"
+          stopOpacity="0"
+        />
+        <stop
+          offset="52.3083683%"
+          stopColor="#FFFFFF"
+          stopOpacity=".2"
+        />
+        <stop
+          offset="100%"
+          stopColor="#FFFFFF"
           stopOpacity="0"
         />
       </linearGradient>
@@ -82,34 +87,47 @@ exports[`Banner renders without errors 1`] = `
     <g
       fill="none"
       fillRule="evenodd"
+      id="1st-Iteration---Without-Testing,-QA,-Dashboard"
+      stroke="none"
+      strokeWidth="1"
     >
-      <mask
-        fill="#fff"
-        id="header-bg-c"
-      >
-        <use
-          href="#header-rect"
-        />
-      </mask>
-      <use
-        fill="url(#header-bg-main)"
-        fillRule="nonzero"
-        href="#header-rect"
-      />
       <g
-        mask="url(#header-bg-c)"
+        id="Latest-App-Copy-2"
+        transform="translate(-91.000000, 0.000000)"
       >
         <g
-          transform="translate(-225 -96.95)"
+          id="Group-3"
         >
-          <path
-            d="M2417.48361,195.218014 C2173.66491,166.180431 1953.57607,233.055396 1757.21708,395.84291 C1462.67859,640.02418 834.622877,893.158575 399.684163,856.184243 C-35.254551,819.209912 -162.467724,455.166157 259.525874,268.523521 C681.519472,81.8808861 1990.02351,270.695872 2146.32478,248.423471 C2302.62605,226.151069 2372.30208,168.747556 2417.48361,195.218014 Z"
-            fill="url(#header-bg-bottom)"
-          />
-          <path
-            d="M2447.71513,51.0612958 C2806.19527,107.307307 2359.00522,174.248701 2178.75829,244.655549 C1998.51136,315.062396 1845.18427,466.03868 1788.68752,489.57742 C1173.74469,745.786464 648.822877,716.793505 213.922068,402.598543 C786.897586,149.897328 1171.19581,17.0321354 1366.81675,4.0029639 C1833.1853,-27.0591286 2024.35932,137.836158 2447.71513,51.0612958 Z"
-            fill="url(#header-bg-right)"
-          />
+          <g
+            id="Group-8"
+          >
+            <g
+              id="Group-6"
+              transform="translate(-15.999624, -6.999236)"
+            >
+              <path
+                d="M881.735481,86.9990641 L210.156384,86.9978664 C218.71153,52.9875994 258.306013,22.8146204 333.594585,9.30207949 C448.470008,-11.3153767 695.406951,42.43158 881.735481,86.9990641 Z"
+                fill="url(#linearGradient-1)"
+                fill-opacity="0.5"
+                id="Combined-Shape"
+                opacity="0.430636"
+                transform="translate(545.945975, 45.880259) scale(-1, 1) translate(-545.945975, -45.880259) "
+              />
+              <path
+                d="M975.999624,7.00298921 L975.999624,86.9972046 L479.881688,87.0001375 C522.81394,59.2648802 567.029696,31.8415792 610.365803,7.00153703 L975.999624,7.00298921 Z"
+                fill="url(#linearGradient-2)"
+                fill-opacity="0.5"
+                id="Combined-Shape"
+                opacity="0.430636"
+              />
+              <path
+                d="M871.7687,87.0029988 L0.532462766,86.9976624 C26.9483975,25.2137692 111.220589,-23.3393292 246.79476,14.1075744 C423.760964,62.9873598 649.806848,31.4599363 798.08942,7.20277579 L963.958206,7.20043089 C965.226263,31.2899681 937.377576,70.049062 871.7687,87.0029988 Z"
+                fill="url(#linearGradient-3)"
+                id="Combined-Shape"
+                transform="translate(482.265999, 44.001117) scale(-1, 1) translate(-482.265999, -44.001117) "
+              />
+            </g>
+          </g>
         </g>
       </g>
     </g>
