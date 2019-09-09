@@ -120,6 +120,7 @@ Array [
 exports[`Ship API service getSettings fetches settings for an app 1`] = `
 Object {
   "androidSettings": Object {
+    "module": "",
     "selectedServiceAccount": "service_account_file-2",
   },
   "certificates": Array [
@@ -254,6 +255,7 @@ Object {
 exports[`Ship API service updateSettings updates settings for an app 1`] = `
 Object {
   "androidSettings": Object {
+    "module": "",
     "selectedKeystoreFile": "keystore-filename",
     "selectedServiceAccount": "service-account-filename",
     "track": "Release",

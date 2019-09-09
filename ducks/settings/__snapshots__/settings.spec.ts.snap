@@ -134,6 +134,7 @@ Object {
   "savingAppContacts": 0,
   "settings": Object {
     "androidSettings": Object {
+      "module": "app",
       "selectedKeystoreFile": "keystore-1",
       "selectedServiceAccount": "service-accoun-2",
       "track": "Release",
@@ -201,6 +202,7 @@ Object {
   "savingAppContacts": 0,
   "settings": Object {
     "androidSettings": Object {
+      "module": "app",
       "selectedKeystoreFile": "keystore-1",
       "selectedServiceAccount": "service-accoun-2",
       "track": "Release",

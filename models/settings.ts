@@ -16,6 +16,7 @@ export type IosSettings = {
 
 export type AndroidSettings = {
   track: string;
+  module: string;
   selectedKeystoreFile: string;
   selectedServiceAccount: string;
 };

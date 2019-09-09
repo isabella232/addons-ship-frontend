@@ -3,6 +3,7 @@
 exports[`General configureSettingsFromProps sets the state correctly for android 1`] = `
 Object {
   "androidSettings": Object {
+    "module": "app",
     "selectedKeystoreFile": "keystore-1",
     "selectedServiceAccount": "service-accoun-2",
     "track": "Release",
@@ -27,6 +28,7 @@ Object {
 exports[`General configureSettingsFromProps sets the state correctly for ios 1`] = `
 Object {
   "androidSettings": Object {
+    "module": "app",
     "selectedKeystoreFile": "keystore-1",
     "selectedServiceAccount": "service-accoun-2",
     "track": "Release",
@@ -51,6 +53,7 @@ Object {
 exports[`General configureSettingsFromProps sets the state correctly for other project types 1`] = `
 Object {
   "androidSettings": Object {
+    "module": "app",
     "selectedKeystoreFile": "keystore-1",
     "selectedServiceAccount": "service-accoun-2",
     "track": "Release",
@@ -75,6 +78,7 @@ Object {
 exports[`General onSettingsPropertyChange 1`] = `
 Object {
   "androidSettings": Object {
+    "module": "app",
     "selectedKeystoreFile": "keystore-1",
     "selectedServiceAccount": "service-accoun-2",
     "track": "Release",
@@ -100,6 +104,7 @@ exports[`General renders correctly 1`] = `
 <_default
   androidSettings={
     Object {
+      "module": "app",
       "selectedKeystoreFile": "keystore-1",
       "selectedServiceAccount": "service-accoun-2",
       "track": "Release",
@@ -693,6 +698,22 @@ exports[`GeneralView when the settings are being saved 1`] = `
                   name="track"
                   onChange={[Function]}
                   value="Release"
+                />
+              </InputContent>
+            </InputContainer>
+          </Flex>
+          <Flex>
+            <InputLabel
+              margin="x1"
+            >
+              Module
+            </InputLabel>
+            <InputContainer>
+              <InputContent>
+                <Input
+                  name="module"
+                  onChange={[Function]}
+                  value="app"
                 />
               </InputContent>
             </InputContainer>
@@ -1642,6 +1663,22 @@ exports[`GeneralView when there are no files renders no files section 1`] = `
               </InputContent>
             </InputContainer>
           </Flex>
+          <Flex>
+            <InputLabel
+              margin="x1"
+            >
+              Module
+            </InputLabel>
+            <InputContainer>
+              <InputContent>
+                <Input
+                  name="module"
+                  onChange={[Function]}
+                  value="app"
+                />
+              </InputContent>
+            </InputContainer>
+          </Flex>
         </Grid>
       </Base>
     </Base>
@@ -1826,6 +1863,22 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
                   name="track"
                   onChange={[Function]}
                   value="Release"
+                />
+              </InputContent>
+            </InputContainer>
+          </Flex>
+          <Flex>
+            <InputLabel
+              margin="x1"
+            >
+              Module
+            </InputLabel>
+            <InputContainer>
+              <InputContent>
+                <Input
+                  name="module"
+                  onChange={[Function]}
+                  value="app"
                 />
               </InputContent>
             </InputContainer>
@@ -2535,6 +2588,22 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
               </InputContent>
             </InputContainer>
           </Flex>
+          <Flex>
+            <InputLabel
+              margin="x1"
+            >
+              Module
+            </InputLabel>
+            <InputContainer>
+              <InputContent>
+                <Input
+                  name="module"
+                  onChange={[Function]}
+                  value="app"
+                />
+              </InputContent>
+            </InputContainer>
+          </Flex>
         </Grid>
       </Base>
     </Base>
@@ -3225,6 +3294,22 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
                   name="track"
                   onChange={[Function]}
                   value="Release"
+                />
+              </InputContent>
+            </InputContainer>
+          </Flex>
+          <Flex>
+            <InputLabel
+              margin="x1"
+            >
+              Module
+            </InputLabel>
+            <InputContainer>
+              <InputContent>
+                <Input
+                  name="module"
+                  onChange={[Function]}
+                  value="app"
                 />
               </InputContent>
             </InputContainer>
