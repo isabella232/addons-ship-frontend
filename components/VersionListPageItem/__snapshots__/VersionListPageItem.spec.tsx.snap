@@ -1,66 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`VersionListPageItem renders correctly 1`] = `
-<div
+<Base
   className="versionListPageItem"
 >
-  <div
+  <Base
+    backgroundColor="white"
     className="versionListPageItemInner"
   >
     <Link
       as="/v1-1-0/details"
       href="/v1-1-0/details"
     >
-      <a
-        className="topWrapper"
-      >
-        <Base
-          className="platformIconWrapper"
-        >
-          <Icon
-            color="grape-4"
-            name="PlatformsApple"
-            size="1.5rem"
-          />
-        </Base>
+      <Link>
         <Flex
-          alignChildrenVertical="middle"
-          direction="horizontal"
-          gap="x3"
-          grow={true}
+          className="topWrapper"
+          padding="x4"
         >
-          <Text
-            className="title"
-            color="grape-5"
-            config="5"
+          <Base
+            className="platformIconWrapper"
           >
-            My app v1.1.0 (28)
+            <Icon
+              color="grape-4"
+              name="PlatformsApple"
+              size="1.5rem"
+            />
+          </Base>
+          <Flex
+            alignChildrenVertical="middle"
+            direction="horizontal"
+            gap="x3"
+            grow={true}
+          >
+            <Text
+              className="title"
+              color="grape-5"
+              config="5"
+            >
+              My app v1.1.0 (28)
+            </Text>
+          </Flex>
+          <Text
+            className="note"
+            color="gray-6"
+          >
+            Updated on January 1, 2008
           </Text>
         </Flex>
-        <div
-          className="note"
-        >
-          Updated on January 1, 2008
-        </div>
-      </a>
+      </Link>
     </Link>
     <button
       className="descriptionWrapper"
       onClick={[Function]}
     >
-      <div
+      <Text
         className="description"
       >
         This is a short description about my 1. app. It is a good app. End of description.
-      </div>
-      <div
+      </Text>
+      <Base
         className="showMore"
       >
-        <div
+        <Base
           className="text"
         >
           Show more
-        </div>
+        </Base>
         <ReactSVG
           afterInjection={[Function]}
           beforeInjection={[Function]}
@@ -72,78 +77,83 @@ exports[`VersionListPageItem renders correctly 1`] = `
           src="/static/arrow-down.svg"
           wrapper="div"
         />
-      </div>
+      </Base>
     </button>
-  </div>
-</div>
+  </Base>
+</Base>
 `;
 
 exports[`VersionListPageItem renders correctly for android 1`] = `
-<div
+<Base
   className="versionListPageItem"
 >
-  <div
+  <Base
+    backgroundColor="white"
     className="versionListPageItemInner"
   >
     <Link
       as="/v1-1-0/details"
       href="/v1-1-0/details"
     >
-      <a
-        className="topWrapper"
-      >
-        <Base
-          className="platformIconWrapper"
-        >
-          <Icon
-            color="grape-4"
-            name="PlatformsAndroid"
-            size="1.5rem"
-          />
-        </Base>
+      <Link>
         <Flex
-          alignChildrenVertical="middle"
-          direction="horizontal"
-          gap="x3"
-          grow={true}
+          className="topWrapper"
+          padding="x4"
         >
+          <Base
+            className="platformIconWrapper"
+          >
+            <Icon
+              color="grape-4"
+              name="PlatformsAndroid"
+              size="1.5rem"
+            />
+          </Base>
+          <Flex
+            alignChildrenVertical="middle"
+            direction="horizontal"
+            gap="x3"
+            grow={true}
+          >
+            <Text
+              className="title"
+              color="grape-5"
+              config="5"
+            >
+              My app v1.1.0 (28)
+            </Text>
+            <_default
+              selected={true}
+            >
+              banana
+            </_default>
+          </Flex>
           <Text
-            className="title"
-            color="grape-5"
-            config="5"
+            className="note"
+            color="gray-6"
           >
-            My app v1.1.0 (28)
+            Updated on January 1, 2008
           </Text>
-          <_default
-            selected={true}
-          >
-            banana
-          </_default>
         </Flex>
-        <div
-          className="note"
-        >
-          Updated on January 1, 2008
-        </div>
-      </a>
+      </Link>
     </Link>
     <button
       className="descriptionWrapper"
       onClick={[Function]}
     >
-      <div
+      <Text
         className="description"
       >
         This is a short description about my 1. app. It is a good app. End of description.
-      </div>
-      <div
+      </Text>
+      <Base
         className="showMore"
       >
-        <div
+        <Base
           className="text"
         >
           Show more
-        </div>
+        </Base>
         <ReactSVG
           afterInjection={[Function]}
           beforeInjection={[Function]}
@@ -155,73 +165,78 @@ exports[`VersionListPageItem renders correctly for android 1`] = `
           src="/static/arrow-down.svg"
           wrapper="div"
         />
-      </div>
+      </Base>
     </button>
-  </div>
-</div>
+  </Base>
+</Base>
 `;
 
 exports[`VersionListPageItem shows more description 1`] = `
-<div
+<Base
   className="versionListPageItem"
 >
-  <div
+  <Base
+    backgroundColor="white"
     className="versionListPageItemInner"
   >
     <Link
       as="/v1-1-0/details"
       href="/v1-1-0/details"
     >
-      <a
-        className="topWrapper"
-      >
-        <Base
-          className="platformIconWrapper"
-        >
-          <Icon
-            color="grape-4"
-            name="PlatformsApple"
-            size="1.5rem"
-          />
-        </Base>
+      <Link>
         <Flex
-          alignChildrenVertical="middle"
-          direction="horizontal"
-          gap="x3"
-          grow={true}
+          className="topWrapper"
+          padding="x4"
         >
-          <Text
-            className="title"
-            color="grape-5"
-            config="5"
+          <Base
+            className="platformIconWrapper"
           >
-            My app v1.1.0 (28)
+            <Icon
+              color="grape-4"
+              name="PlatformsApple"
+              size="1.5rem"
+            />
+          </Base>
+          <Flex
+            alignChildrenVertical="middle"
+            direction="horizontal"
+            gap="x3"
+            grow={true}
+          >
+            <Text
+              className="title"
+              color="grape-5"
+              config="5"
+            >
+              My app v1.1.0 (28)
+            </Text>
+          </Flex>
+          <Text
+            className="note"
+            color="gray-6"
+          >
+            Updated on January 1, 2008
           </Text>
         </Flex>
-        <div
-          className="note"
-        >
-          Updated on January 1, 2008
-        </div>
-      </a>
+      </Link>
     </Link>
     <button
       className="descriptionWrapper isOpen"
       onClick={[Function]}
     >
-      <div
+      <Text
         className="description"
       >
         This is a short description about my 1. app. It is a good app. End of description.
-      </div>
-      <div
+      </Text>
+      <Base
         className="showLess"
       >
-        <div
+        <Base
           className="text"
         >
           Show less
-        </div>
+        </Base>
         <ReactSVG
           afterInjection={[Function]}
           beforeInjection={[Function]}
@@ -233,8 +248,8 @@ exports[`VersionListPageItem shows more description 1`] = `
           src="/static/arrow-down.svg"
           wrapper="div"
         />
-      </div>
+      </Base>
     </button>
-  </div>
-</div>
+  </Base>
+</Base>
 `;
