@@ -1257,12 +1257,13 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -1275,15 +1276,15 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -1396,21 +1397,16 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -1422,14 +1418,43 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -1455,7 +1480,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -5280,12 +5305,13 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -5298,15 +5324,15 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -5419,21 +5445,16 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -5445,14 +5466,77 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                      <Badge
+                                        backgroundColor="grape-3"
+                                        color="white"
+                                      >
+                                        <Text
+                                          backgroundColor="grape-3"
+                                          className="Badge"
+                                          color="white"
+                                          config="9"
+                                        >
+                                          <Base
+                                            Component="div"
+                                            backgroundColor="grape-3"
+                                            className="Badge Text Text--config-9"
+                                            color="white"
+                                          >
+                                            <div
+                                              className="Base Base--background-color-grape-3 Base--color-white Badge Text Text--config-9"
+                                              style={
+                                                Object {
+                                                  "height": undefined,
+                                                  "maxHeight": undefined,
+                                                  "maxWidth": undefined,
+                                                  "minHeight": undefined,
+                                                  "minWidth": undefined,
+                                                  "width": undefined,
+                                                }
+                                              }
+                                            >
+                                              Fennek
+                                            </div>
+                                          </Base>
+                                        </Text>
+                                      </Badge>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -5478,7 +5562,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -9095,12 +9179,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -9113,15 +9198,15 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -9234,21 +9319,16 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -9260,14 +9340,43 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -9293,7 +9402,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -13118,12 +13227,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -13136,15 +13246,15 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -13257,21 +13367,16 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -13283,14 +13388,43 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -13316,7 +13450,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -17087,12 +17221,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -17105,15 +17240,15 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -17226,21 +17361,16 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -17252,14 +17382,43 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -17285,7 +17444,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -21110,12 +21269,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -21128,15 +21288,15 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -21249,21 +21409,16 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -21275,14 +21430,43 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -21308,7 +21492,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -25079,12 +25263,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -25097,15 +25282,15 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -25218,21 +25403,16 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -25244,14 +25424,43 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -25277,7 +25486,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -29142,12 +29351,13 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -29160,15 +29370,15 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -29281,21 +29491,16 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -29307,14 +29512,43 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -29340,7 +29574,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -33165,12 +33399,13 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -33183,15 +33418,15 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -33304,21 +33539,16 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -33330,14 +33560,43 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -33363,7 +33622,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -36553,9 +36812,10 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
           <Flex
             alignChildrenVertical="middle"
             direction="vertical"
+            gap="x2"
           >
             <Flex
-              alignChildren="middle"
+              alignChildrenVertical="middle"
               direction="horizontal"
               gap="x1"
             >
@@ -36577,19 +36837,25 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
                 Standup Timer
               </Text>
             </Flex>
-            <Text
-              color="grape-4"
-              letterSpacing="x2"
-              margin="x2"
-              size="x5"
-              weight="bold"
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x2"
             >
-              v
-              1.0.3
-               (
-              32
-              )
-            </Text>
+              <Text
+                color="grape-4"
+                letterSpacing="x2"
+                margin="x2"
+                size="x5"
+                weight="bold"
+              >
+                v
+                1.0.3
+                 (
+                32
+                )
+              </Text>
+            </Flex>
             <Text
               color="gray-6"
               letterSpacing="x1"
@@ -36597,7 +36863,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
               weight="medium"
             >
               Updated on 
-              September 22, 2018
+              September 22, 2018, 12:42
             </Text>
           </Flex>
         </Flex>
@@ -36752,9 +37018,10 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
           <Flex
             alignChildrenVertical="middle"
             direction="vertical"
+            gap="x2"
           >
             <Flex
-              alignChildren="middle"
+              alignChildrenVertical="middle"
               direction="horizontal"
               gap="x1"
             >
@@ -36776,19 +37043,25 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
                 Standup Timer
               </Text>
             </Flex>
-            <Text
-              color="grape-4"
-              letterSpacing="x2"
-              margin="x2"
-              size="x5"
-              weight="bold"
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x2"
             >
-              v
-              1.0.3
-               (
-              32
-              )
-            </Text>
+              <Text
+                color="grape-4"
+                letterSpacing="x2"
+                margin="x2"
+                size="x5"
+                weight="bold"
+              >
+                v
+                1.0.3
+                 (
+                32
+                )
+              </Text>
+            </Flex>
             <Text
               color="gray-6"
               letterSpacing="x1"
@@ -36796,7 +37069,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
               weight="medium"
             >
               Updated on 
-              September 22, 2018
+              September 22, 2018, 12:42
             </Text>
           </Flex>
         </Flex>
@@ -37321,12 +37594,13 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -37339,15 +37613,15 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -37460,21 +37734,16 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -37486,14 +37755,43 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -37519,7 +37817,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -41336,12 +41634,13 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -41354,15 +41653,15 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -41475,21 +41774,16 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -41501,14 +41795,43 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -41534,7 +41857,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -45351,12 +45674,13 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -45369,15 +45693,15 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -45490,21 +45814,16 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -45516,14 +45835,43 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -45549,7 +45897,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>
@@ -48736,12 +49084,13 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                           <Flex
                             alignChildrenVertical="middle"
                             direction="vertical"
+                            gap="x2"
                           >
                             <Base
-                              className="Flex Flex--align-vert-middle Flex--vertical"
+                              className="Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                             >
                               <div
-                                className="Base Flex Flex--align-vert-middle Flex--vertical"
+                                className="Base Flex Flex--align-vert-middle Flex--vertical Flex--gapped Flex--gap-x2"
                                 style={
                                   Object {
                                     "height": undefined,
@@ -48754,15 +49103,15 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                 }
                               >
                                 <Flex
-                                  alignChildren="middle"
+                                  alignChildrenVertical="middle"
                                   direction="horizontal"
                                   gap="x1"
                                 >
                                   <Base
-                                    className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                   >
                                     <div
-                                      className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -48875,21 +49224,16 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                     </div>
                                   </Base>
                                 </Flex>
-                                <Text
-                                  color="grape-4"
-                                  letterSpacing="x2"
-                                  margin="x2"
-                                  size="x5"
-                                  weight="bold"
+                                <Flex
+                                  alignChildrenVertical="middle"
+                                  direction="horizontal"
+                                  gap="x2"
                                 >
                                   <Base
-                                    Component="h4"
-                                    className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
-                                    color="grape-4"
-                                    margin="x2"
+                                    className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                   >
-                                    <h4
-                                      className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                    <div
+                                      className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2"
                                       style={
                                         Object {
                                           "height": undefined,
@@ -48901,14 +49245,43 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                         }
                                       }
                                     >
-                                      v
-                                      1.0.3
-                                       (
-                                      32
-                                      )
-                                    </h4>
+                                      <Text
+                                        color="grape-4"
+                                        letterSpacing="x2"
+                                        margin="x2"
+                                        size="x5"
+                                        weight="bold"
+                                      >
+                                        <Base
+                                          Component="h4"
+                                          className="Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                          color="grape-4"
+                                          margin="x2"
+                                        >
+                                          <h4
+                                            className="Base Base--color-grape-4 Base--margin-x2 Text Text--letter-spacing-x2 Text--size-x5 Text--weight-bold"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "maxHeight": undefined,
+                                                "maxWidth": undefined,
+                                                "minHeight": undefined,
+                                                "minWidth": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            v
+                                            1.0.3
+                                             (
+                                            32
+                                            )
+                                          </h4>
+                                        </Base>
+                                      </Text>
+                                    </div>
                                   </Base>
-                                </Text>
+                                </Flex>
                                 <Text
                                   color="gray-6"
                                   letterSpacing="x1"
@@ -48934,7 +49307,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                       }
                                     >
                                       Updated on 
-                                      September 22, 2018
+                                      September 22, 2018, 12:42
                                     </h5>
                                   </Base>
                                 </Text>

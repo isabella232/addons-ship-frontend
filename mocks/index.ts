@@ -234,6 +234,7 @@ export const mockSettings: Settings = {
   },
   androidSettings: {
     track: 'Release',
+    module: 'app',
     selectedKeystoreFile: keystoreFiles[0].slug,
     selectedServiceAccount: serviceAccountJsonFiles[1].slug
   },

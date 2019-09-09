@@ -40,9 +40,9 @@ exports[`Header on desktop renders correctly 1`] = `
     }
   >
     <_default
-      projectType="other"
       smaller={false}
       title="Awesome app"
+      type="other"
     />
   </Flex>
   <Flex
@@ -286,9 +286,9 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
     }
   >
     <_default
-      projectType="other"
       smaller={false}
       title="Awesome app"
+      type="other"
     />
   </Flex>
   <Flex
@@ -435,9 +435,9 @@ exports[`Header routes /app for desktop 1`] = `
     }
   >
     <_default
-      projectType="other"
       smaller={false}
       title="Awesome app"
+      type="other"
     />
   </Flex>
   <Flex
@@ -549,9 +549,9 @@ exports[`Header routes /app for mobile 1`] = `
     }
   >
     <_default
-      projectType="other"
       smaller={false}
       title="Awesome app"
+      type="other"
     />
   </Flex>
   <Flex
@@ -682,9 +682,9 @@ exports[`Header routes /settings for desktop 1`] = `
       </Link>
     </Flex>
     <_default
-      projectType="settings"
       smaller={true}
       title="Settings"
+      type="settings"
     />
   </Flex>
   <Flex
@@ -815,9 +815,9 @@ exports[`Header routes /settings for mobile 1`] = `
       </Link>
     </Flex>
     <_default
-      projectType="settings"
       smaller={true}
       title="Settings"
+      type="settings"
     />
   </Flex>
   <Flex
@@ -948,9 +948,9 @@ exports[`Header routes /version for desktop 1`] = `
       </Link>
     </Flex>
     <_default
-      projectType="other"
       smaller={true}
       title="Awesome app v1.0.3 (32)"
+      type="other"
     />
   </Flex>
   <Flex
@@ -1081,9 +1081,9 @@ exports[`Header routes /version for mobile 1`] = `
       </Link>
     </Flex>
     <_default
-      projectType="other"
       smaller={true}
       title="Awesome app v1.0.3 (32)"
+      type="other"
     />
   </Flex>
   <Flex
@@ -1195,9 +1195,9 @@ exports[`Header when settings onboarding should be shown shows the notification 
     }
   >
     <_default
-      projectType="other"
       smaller={false}
       title="Awesome app"
+      type="other"
     />
   </Flex>
   <Flex

@@ -44,6 +44,7 @@
       }
 
       .note {
+        text-align: right;
         color: $gray-6;
         transition: color $medium-hovertime;
         // TODO: replace with element from UI library
