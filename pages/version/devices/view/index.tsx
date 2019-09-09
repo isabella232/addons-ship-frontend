@@ -10,7 +10,8 @@ import {
   Notification,
   Skeleton,
   SkeletonBox,
-  Divider
+  Divider,
+  Link
 } from '@bitrise/bitkit';
 
 import { TestDevice } from '@/models/test-device';
@@ -28,7 +29,11 @@ export default ({ projectType, devices, isLoading }: Props) => (
   <Base paddingVertical="x6">
     <Base className={css.expandedTableWrapper}>
       <Notification type="inform" icon="Lightbulb">
-        You can register your devices on your Account Settings page on Bitrise.
+        You can register your devices on your{' '}
+        <Link href="https://app.bitrise.io/me/profile#/test_devices" target="_blank" underline>
+          Account Settings
+        </Link>{' '}
+        page on Bitrise.
       </Notification>
       {isLoading ? (
         <Base margin="x8">
