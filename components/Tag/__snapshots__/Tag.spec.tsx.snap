@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`MagicTag simple 1`] = `
+<_default
+  color="blue-3"
+  textColor="white"
+>
+  magic ✨
+</_default>
+`;
+
 exports[`Tag large 1`] = `
 <Base
   borderRadius="x1"

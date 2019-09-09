@@ -2,6 +2,7 @@ import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
 import Tag from '.';
+import MagicTag, { getStringSum } from './MagicTag';
 
 describe('Tag', () => {
   test('simple', () => {
@@ -34,6 +35,19 @@ describe('Tag', () => {
         </Tag>
       )
     );
+    expect(tree).toMatchSnapshot();
+  });
+});
+
+describe('MagicTag', () => {
+  test('getStringSum', () => {
+    expect(getStringSum('whatever')).toBe(870);
+    expect(getStringSum('WhAtEvEr')).toBe(870);
+    expect(getStringSum('sure thing')).toBe(1017);
+  });
+
+  test('simple', () => {
+    const tree = shallowToJson(shallow(<MagicTag>magic ✨</MagicTag>));
     expect(tree).toMatchSnapshot();
   });
 });
