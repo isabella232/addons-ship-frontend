@@ -5,22 +5,37 @@ exports[`AppSummary renders correctly on desktop 1`] = `
   as="/details"
   href="/details"
 >
-  <a
+  <Link
+    backgroundColor="white"
+    borderColor="gray-2"
+    borderWidth="x1"
     className="appSummary"
+    elevation="x2"
+    overflow="hidden"
   >
     <Base
-      className="colorBar"
+      height="5rem"
     >
       <_default
         endColor="#0dd3c5"
         startColor="#0d83cd"
       />
     </Base>
-    <div
-      className="body"
+    <Flex
+      direction="vertical"
+      gap="x4"
+      padding="x8"
     >
-      <div
-        className="iconWrapper"
+      <Flex
+        alignChildrenHorizontal="start"
+        alignChildrenVertical="end"
+        direction="horizontal"
+        gap="x4"
+        style={
+          Object {
+            "marginTop": "-5rem",
+          }
+        }
       >
         <_default
           borderRadius="x2"
@@ -29,7 +44,6 @@ exports[`AppSummary renders correctly on desktop 1`] = `
           width="96px"
         />
         <Base
-          paddingHorizontal="x4"
           paddingVertical="x2"
         >
           <Text
@@ -41,38 +55,40 @@ exports[`AppSummary renders correctly on desktop 1`] = `
             Updated on January 29, 2008
           </Text>
         </Base>
-        <div
-          className="note"
-        />
-      </div>
-      <div
-        className="titleWrapper"
+      </Flex>
+      <Flex
+        direction="vertical"
+        gap="x2"
       >
-        <Base
-          className="platformIconWrapper"
+        <Flex
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x1"
         >
           <Icon
             color="grape-4"
             name="PlatformsApple"
             size="1.5rem"
           />
-        </Base>
+          <Text
+            breakOn="word"
+            color="grape-4"
+            letterSpacing="x1"
+            size="x5"
+            weight="bold"
+          >
+            My app v1.1.0 (28)
+          </Text>
+        </Flex>
         <Text
-          color="grape-4"
-          letterSpacing="x1"
-          size="x5"
-          weight="bold"
+          breakOn="word"
+          color="grape-5"
         >
-          My app v1.1.0 (28)
+          This is a short description about my app. It is a good app. End of description.
         </Text>
-      </div>
-      <div
-        className="description"
-      >
-        This is a short description about my app. It is a good app. End of description.
-      </div>
-    </div>
-  </a>
+      </Flex>
+    </Flex>
+  </Link>
 </Link>
 `;
 
@@ -81,22 +97,37 @@ exports[`AppSummary renders correctly on mobile 1`] = `
   as="/details"
   href="/details"
 >
-  <a
+  <Link
+    backgroundColor="white"
+    borderColor="gray-2"
+    borderWidth="x1"
     className="appSummary"
+    elevation="x2"
+    overflow="hidden"
   >
     <Base
-      className="colorBar"
+      height="5rem"
     >
       <_default
         endColor="#0dd3c5"
         startColor="#0d83cd"
       />
     </Base>
-    <div
-      className="body"
+    <Flex
+      direction="vertical"
+      gap="x0"
+      padding="x8"
     >
-      <div
-        className="iconWrapper"
+      <Flex
+        alignChildrenHorizontal="middle"
+        alignChildrenVertical="middle"
+        direction="vertical"
+        gap="x4"
+        style={
+          Object {
+            "marginTop": "-5rem",
+          }
+        }
       >
         <_default
           borderRadius="x2"
@@ -105,83 +136,6 @@ exports[`AppSummary renders correctly on mobile 1`] = `
           width="96px"
         />
         <Base
-          paddingHorizontal="x4"
-          paddingVertical="x4"
-        >
-          <Text
-            color="gray-6"
-            letterSpacing="x1"
-            size="x2"
-            weight="medium"
-          >
-            Updated on January 29, 2008
-          </Text>
-        </Base>
-        <div
-          className="note"
-        />
-      </div>
-      <div
-        className="titleWrapper"
-      >
-        <Base
-          className="platformIconWrapper"
-        >
-          <Icon
-            color="grape-4"
-            name="PlatformsApple"
-            size="1.5rem"
-          />
-        </Base>
-        <Text
-          color="grape-4"
-          letterSpacing="x1"
-          size="x4"
-          weight="bold"
-        >
-          My app v1.1.0 (28)
-        </Text>
-      </div>
-      <div
-        className="description"
-      >
-        This is a short description about my app. It is a good app. End of description.
-      </div>
-    </div>
-  </a>
-</Link>
-`;
-
-exports[`AppSummary renders correctly on tablet 1`] = `
-<Link
-  as="/details"
-  href="/details"
->
-  <a
-    className="appSummary"
-  >
-    <Base
-      className="colorBar"
-    >
-      <_default
-        endColor="#0dd3c5"
-        startColor="#0d83cd"
-      />
-    </Base>
-    <div
-      className="body"
-    >
-      <div
-        className="iconWrapper"
-      >
-        <_default
-          borderRadius="x2"
-          margin="x0"
-          src="/static/icon-flutter.svg"
-          width="96px"
-        />
-        <Base
-          paddingHorizontal="x4"
           paddingVertical="x2"
         >
           <Text
@@ -193,37 +147,131 @@ exports[`AppSummary renders correctly on tablet 1`] = `
             Updated on January 29, 2008
           </Text>
         </Base>
-        <div
-          className="note"
-        />
-      </div>
-      <div
-        className="titleWrapper"
+      </Flex>
+      <Flex
+        direction="vertical"
+        gap="x2"
       >
-        <Base
-          className="platformIconWrapper"
+        <Flex
+          alignChildrenVertical="middle"
+          direction="vertical"
+          gap="x1"
         >
           <Icon
             color="grape-4"
             name="PlatformsApple"
             size="1.5rem"
           />
-        </Base>
+          <Text
+            breakOn="all"
+            color="grape-4"
+            letterSpacing="x1"
+            size="x5"
+            weight="bold"
+          >
+            My app v1.1.0 (28)
+          </Text>
+        </Flex>
         <Text
-          color="grape-4"
-          letterSpacing="x1"
-          size="x4"
-          weight="bold"
+          breakOn="all"
+          color="grape-5"
         >
-          My app v1.1.0 (28)
+          This is a short description about my app. It is a good app. End of description.
         </Text>
-      </div>
-      <div
-        className="description"
+      </Flex>
+    </Flex>
+  </Link>
+</Link>
+`;
+
+exports[`AppSummary renders correctly on tablet 1`] = `
+<Link
+  as="/details"
+  href="/details"
+>
+  <Link
+    backgroundColor="white"
+    borderColor="gray-2"
+    borderWidth="x1"
+    className="appSummary"
+    elevation="x2"
+    overflow="hidden"
+  >
+    <Base
+      height="5rem"
+    >
+      <_default
+        endColor="#0dd3c5"
+        startColor="#0d83cd"
+      />
+    </Base>
+    <Flex
+      direction="vertical"
+      gap="x4"
+      padding="x8"
+    >
+      <Flex
+        alignChildrenHorizontal="start"
+        alignChildrenVertical="end"
+        direction="horizontal"
+        gap="x4"
+        style={
+          Object {
+            "marginTop": "-5rem",
+          }
+        }
       >
-        This is a short description about my app. It is a good app. End of description.
-      </div>
-    </div>
-  </a>
+        <_default
+          borderRadius="x2"
+          margin="x0"
+          src="/static/icon-flutter.svg"
+          width="96px"
+        />
+        <Base
+          paddingVertical="x2"
+        >
+          <Text
+            color="gray-6"
+            letterSpacing="x1"
+            size="x3"
+            weight="medium"
+          >
+            Updated on January 29, 2008
+          </Text>
+        </Base>
+      </Flex>
+      <Flex
+        direction="vertical"
+        gap="x2"
+      >
+        <Flex
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x1"
+        >
+          <Icon
+            color="grape-4"
+            name="PlatformsApple"
+            size="1.5rem"
+          />
+          <Text
+            breakOn="all"
+            color="grape-4"
+            letterSpacing="x1"
+            size="x5"
+            weight="bold"
+          >
+            My app v1.1.0 (28)
+          </Text>
+        </Flex>
+        <Text
+          breakOn="all"
+          color="grape-5"
+        >
+          This is a short description about my app. It is a good app. End of description.
+        </Text>
+      </Flex>
+    </Flex>
+  </Link>
 </Link>
 `;

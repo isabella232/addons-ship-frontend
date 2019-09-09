@@ -1211,6 +1211,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -1225,6 +1226,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -1235,14 +1237,14 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -5259,6 +5261,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -5273,6 +5276,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -5283,14 +5287,14 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -9161,6 +9165,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -9175,6 +9180,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -9185,14 +9191,14 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -13209,6 +13215,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -13223,6 +13230,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -13233,14 +13241,14 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -17203,6 +17211,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -17217,6 +17226,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -17227,14 +17237,14 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -21251,6 +21261,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -21265,6 +21276,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -21275,14 +21287,14 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -25245,6 +25257,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -25259,6 +25272,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -25269,14 +25283,14 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -29333,6 +29347,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -29347,6 +29362,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -29357,14 +29373,14 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -33381,6 +33397,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -33395,6 +33412,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -33405,14 +33423,14 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -37576,6 +37594,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -37590,6 +37609,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -37600,14 +37620,14 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -41616,6 +41636,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -41630,6 +41651,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -41640,14 +41662,14 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -45656,6 +45678,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -45670,6 +45693,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -45680,14 +45704,14 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",
@@ -49066,6 +49090,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                               <Image
                                 borderRadius="x2"
                                 margin="x0"
+                                maxWidth="none"
                                 src="http://placekitten.com/160/160"
                                 style={
                                   Object {
@@ -49080,6 +49105,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                   borderRadius="x2"
                                   className="Image"
                                   margin="x0"
+                                  maxWidth="none"
                                   src="http://placekitten.com/160/160"
                                   style={
                                     Object {
@@ -49090,14 +49116,14 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                   width="160px"
                                 >
                                   <img
-                                    className="Base Base--border-radius-x2 Base--margin-x0 Image"
+                                    className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
                                     src="http://placekitten.com/160/160"
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
                                         "height": undefined,
                                         "maxHeight": undefined,
-                                        "maxWidth": undefined,
+                                        "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
                                         "objectFit": "covver",

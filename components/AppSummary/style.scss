@@ -3,86 +3,11 @@
 @import '~@/assets/style/colors';
 
 .appSummary {
-  $hover-border-width: 1px;
-
   display: block;
-  border: $hover-border-width solid $gray-2;
   border-radius: 4 * $grid;
-  overflow: hidden;
-  background-color: $white;
-  text-decoration: none;
-  // TODO: replace with element from UI library
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
 
   &:hover,
   &:focus {
     border-color: $grape-3;
-  }
-
-  .colorBar {
-    height: 20 * $grid - $hover-border-width;
-    overflow: hidden;
-  }
-
-  .body {
-    padding: 8 * $grid 8 * $grid - $hover-border-width;
-
-    .iconWrapper {
-      display: flex;
-      align-items: flex-end;
-      margin-top: -20 * $grid;
-
-      .note {
-        margin-left: 4 * $grid;
-        margin-bottom: 2 * $grid;
-        color: $gray-6;
-        // TODO: replace with element from UI library
-        line-height: 1.5;
-        letter-spacing: normal;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        font-size: 16px;
-      }
-    }
-
-    .titleWrapper {
-      display: flex;
-      align-items: center;
-      margin-top: 4 * $grid;
-
-      .platformIconWrapper {
-        margin-right: $grid;
-        margin-bottom: 4px;
-
-        svg {
-          color: $grape-5;
-        }
-      }
-
-      .title {
-        margin-left: 2 * $grid;
-        color: $grape-5;
-        // TODO: replace with element from UI library
-        line-height: 1.5;
-        letter-spacing: normal;
-        font-style: normal;
-        font-stretch: normal;
-        font-size: 25px;
-        font-weight: 700;
-      }
-    }
-
-    .description {
-      margin-top: 2 * $grid;
-      color: $grape-5;
-      // TODO: replace with element from UI library
-      line-height: 1.5;
-      letter-spacing: normal;
-      font-weight: 500;
-      font-style: normal;
-      font-stretch: normal;
-      font-size: 16px;
-    }
   }
 }
