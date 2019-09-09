@@ -111,7 +111,7 @@ export default ({
                       platform={appVersion.platform}
                       title={`${appVersion.appName} (${appVersion.buildNumber})`}
                       description={appVersion.commitMessage}
-                      note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY')}`}
+                      note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY, HH:mm')}`}
                     />
                   ))}
                 </Fragment>
