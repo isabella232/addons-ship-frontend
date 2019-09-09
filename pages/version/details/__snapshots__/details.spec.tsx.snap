@@ -272,6 +272,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
   onSave={[Function]}
   onScreenshotAdded={[Function]}
   publishTarget="Google Play Console"
+  publishTargetURL="https://play.google.com/apps/publish/"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -351,6 +352,7 @@ exports[`AppVersionDetails disables install button when device is from different
   onSave={[Function]}
   onScreenshotAdded={[Function]}
   publishTarget="Google Play Console"
+  publishTargetURL="https://play.google.com/apps/publish/"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -430,6 +432,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
   onSave={[Function]}
   onScreenshotAdded={[Function]}
   publishTarget="Google Play Console"
+  publishTargetURL="https://play.google.com/apps/publish/"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -544,6 +547,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
   onSave={[Function]}
   onScreenshotAdded={[Function]}
   publishTarget="App Store Connect"
+  publishTargetURL="https://appstoreconnect.apple.com/"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -623,6 +627,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   onSave={[Function]}
   onScreenshotAdded={[Function]}
   publishTarget="Google Play Console"
+  publishTargetURL="https://play.google.com/apps/publish/"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -702,6 +707,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   onSave={[Function]}
   onScreenshotAdded={[Function]}
   publishTarget="Google Play Console"
+  publishTargetURL="https://play.google.com/apps/publish/"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -816,6 +822,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
   onSave={[Function]}
   onScreenshotAdded={[Function]}
   publishTarget="App Store Connect"
+  publishTargetURL="https://appstoreconnect.apple.com/"
   readyForPublish={true}
   removeFeatureGraphic={[Function]}
   removeScreenshot={[Function]}
@@ -12586,7 +12593,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                             }
                                           }
                                         >
-                                          The app was signed with a Development Provisioning Profile which means that it
+                                          The app was built for the iOS App Store,
                                            
                                           <Text
                                             inline={true}
@@ -12609,65 +12616,11 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                                   }
                                                 }
                                               >
-                                                can only be installed on devices which are included in the Provisioning Profile
+                                                you can't install it on any device
                                               </strong>
                                             </Base>
                                           </Text>
-                                        </div>
-                                      </Base>
-                                    </Text>
-                                    <Text>
-                                      <Base
-                                        Component="div"
-                                        className="Text"
-                                      >
-                                        <div
-                                          className="Base Text"
-                                          style={
-                                            Object {
-                                              "height": undefined,
-                                              "maxHeight": undefined,
-                                              "maxWidth": undefined,
-                                              "minHeight": undefined,
-                                              "minWidth": undefined,
-                                              "width": undefined,
-                                            }
-                                          }
-                                        >
-                                          You can find registered devices on the Devices tab, or register your devices at your
-                                           
-                                          <Link
-                                            href="https://app.bitrise.io/me/profile#/test_devices"
-                                            target="_blank"
-                                            underline={true}
-                                          >
-                                            <Base
-                                              Component="a"
-                                              className="Link Link--color-undefined Link--clickable Link--underline"
-                                              href="https://app.bitrise.io/me/profile#/test_devices"
-                                              target="_blank"
-                                            >
-                                              <a
-                                                className="Base Link Link--color-undefined Link--clickable Link--underline"
-                                                href="https://app.bitrise.io/me/profile#/test_devices"
-                                                style={
-                                                  Object {
-                                                    "height": undefined,
-                                                    "maxHeight": undefined,
-                                                    "maxWidth": undefined,
-                                                    "minHeight": undefined,
-                                                    "minWidth": undefined,
-                                                    "width": undefined,
-                                                  }
-                                                }
-                                                target="_blank"
-                                              >
-                                                Account Settings
-                                              </a>
-                                            </Base>
-                                          </Link>
-                                           
-                                          page on Bitrise.
+                                          , but you can download the App's .ipa and upload it into the App Store.
                                         </div>
                                       </Base>
                                     </Text>
@@ -16608,7 +16561,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                             }
                                           }
                                         >
-                                          The app was built for the iOS App Store,
+                                          The app was signed with a Development Provisioning Profile which means that it
                                            
                                           <Text
                                             inline={true}
@@ -16631,11 +16584,65 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                                   }
                                                 }
                                               >
-                                                you can't install it on any device
+                                                can only be installed on devices which are included in the Provisioning Profile
                                               </strong>
                                             </Base>
                                           </Text>
-                                          , but you can download the App's .ipa and upload it into the App Store.
+                                        </div>
+                                      </Base>
+                                    </Text>
+                                    <Text>
+                                      <Base
+                                        Component="div"
+                                        className="Text"
+                                      >
+                                        <div
+                                          className="Base Text"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          You can find registered devices on the Devices tab, or register your devices at your
+                                           
+                                          <Link
+                                            href="https://app.bitrise.io/me/profile#/test_devices"
+                                            target="_blank"
+                                            underline={true}
+                                          >
+                                            <Base
+                                              Component="a"
+                                              className="Link Link--color-undefined Link--clickable Link--underline"
+                                              href="https://app.bitrise.io/me/profile#/test_devices"
+                                              target="_blank"
+                                            >
+                                              <a
+                                                className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                                href="https://app.bitrise.io/me/profile#/test_devices"
+                                                style={
+                                                  Object {
+                                                    "height": undefined,
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": undefined,
+                                                  }
+                                                }
+                                                target="_blank"
+                                              >
+                                                Account Settings
+                                              </a>
+                                            </Base>
+                                          </Link>
+                                           
+                                          page on Bitrise.
                                         </div>
                                       </Base>
                                     </Text>
@@ -24544,7 +24551,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                             }
                                           }
                                         >
-                                          The app was built for the iOS App Store,
+                                          The app was signed with a Development Provisioning Profile which means that it
                                            
                                           <Text
                                             inline={true}
@@ -24567,11 +24574,65 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                                   }
                                                 }
                                               >
-                                                you can't install it on any device
+                                                can only be installed on devices which are included in the Provisioning Profile
                                               </strong>
                                             </Base>
                                           </Text>
-                                          , but you can download the App's .ipa and upload it into the App Store.
+                                        </div>
+                                      </Base>
+                                    </Text>
+                                    <Text>
+                                      <Base
+                                        Component="div"
+                                        className="Text"
+                                      >
+                                        <div
+                                          className="Base Text"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          You can find registered devices on the Devices tab, or register your devices at your
+                                           
+                                          <Link
+                                            href="https://app.bitrise.io/me/profile#/test_devices"
+                                            target="_blank"
+                                            underline={true}
+                                          >
+                                            <Base
+                                              Component="a"
+                                              className="Link Link--color-undefined Link--clickable Link--underline"
+                                              href="https://app.bitrise.io/me/profile#/test_devices"
+                                              target="_blank"
+                                            >
+                                              <a
+                                                className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                                href="https://app.bitrise.io/me/profile#/test_devices"
+                                                style={
+                                                  Object {
+                                                    "height": undefined,
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": undefined,
+                                                  }
+                                                }
+                                                target="_blank"
+                                              >
+                                                Account Settings
+                                              </a>
+                                            </Base>
+                                          </Link>
+                                           
+                                          page on Bitrise.
                                         </div>
                                       </Base>
                                     </Text>
@@ -32292,7 +32353,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                             }
                                           }
                                         >
-                                          The app was built for the iOS App Store,
+                                          The app was signed with a Development Provisioning Profile which means that it
                                            
                                           <Text
                                             inline={true}
@@ -32315,11 +32376,65 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                                   }
                                                 }
                                               >
-                                                you can't install it on any device
+                                                can only be installed on devices which are included in the Provisioning Profile
                                               </strong>
                                             </Base>
                                           </Text>
-                                          , but you can download the App's .ipa and upload it into the App Store.
+                                        </div>
+                                      </Base>
+                                    </Text>
+                                    <Text>
+                                      <Base
+                                        Component="div"
+                                        className="Text"
+                                      >
+                                        <div
+                                          className="Base Text"
+                                          style={
+                                            Object {
+                                              "height": undefined,
+                                              "maxHeight": undefined,
+                                              "maxWidth": undefined,
+                                              "minHeight": undefined,
+                                              "minWidth": undefined,
+                                              "width": undefined,
+                                            }
+                                          }
+                                        >
+                                          You can find registered devices on the Devices tab, or register your devices at your
+                                           
+                                          <Link
+                                            href="https://app.bitrise.io/me/profile#/test_devices"
+                                            target="_blank"
+                                            underline={true}
+                                          >
+                                            <Base
+                                              Component="a"
+                                              className="Link Link--color-undefined Link--clickable Link--underline"
+                                              href="https://app.bitrise.io/me/profile#/test_devices"
+                                              target="_blank"
+                                            >
+                                              <a
+                                                className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                                href="https://app.bitrise.io/me/profile#/test_devices"
+                                                style={
+                                                  Object {
+                                                    "height": undefined,
+                                                    "maxHeight": undefined,
+                                                    "maxWidth": undefined,
+                                                    "minHeight": undefined,
+                                                    "minWidth": undefined,
+                                                    "width": undefined,
+                                                  }
+                                                }
+                                                target="_blank"
+                                              >
+                                                Account Settings
+                                              </a>
+                                            </Base>
+                                          </Link>
+                                           
+                                          page on Bitrise.
                                         </div>
                                       </Base>
                                     </Text>
@@ -32567,7 +32682,8 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
         margin="x2"
         type="success"
       >
-        Your app has been successfully published to 
+        Your app has been successfully published to
+         
         App Store Connect
         .
       </Notification>
