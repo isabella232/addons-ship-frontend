@@ -4,6 +4,8 @@ export type App = {
   title: string;
   avatarUrl: string;
   projectType: string;
+  androidErrors: string[];
+  iosErrors: string[];
   colors?: {
     start?: string;
     end?: string;
