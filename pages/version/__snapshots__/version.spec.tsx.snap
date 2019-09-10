@@ -21,108 +21,33 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
-      <Tabs
-        gap="x12"
-      >
-        <Link
-          as="/apps/some-app/versions/a-version-id/details"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
-        >
-          <a>
-            <Tab
-              active={true}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Details
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/devices"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Devices
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/qa"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Qa
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/activity"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <Dot
-                  backgroundColor="red-3"
-                  size=".5rem"
-                />
-                <span
-                  className="tabAnchor"
-                >
-                  Activity
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-      </Tabs>
+      <_default
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
+        selectedTab="details"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
+      />
     </Base>
     <Divider
       color="gray-2"
@@ -132,20 +57,18 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
+      paddingHorizontal="x4"
     >
       <Connect(AppVersionDetails)
         appSlug="some-app"
         versionId="a-version-id"
       />
+      <AddonFooter
+        addonName="Ship"
+        paddingVertical="x16"
+      />
     </Flex>
-  </Flex>
-  <Flex
-    paddingVertical="x16"
-  >
-    <AddonFooter
-      addonName="Ship"
-    />
   </Flex>
 </Fragment>
 `;
@@ -160,104 +83,33 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
-      <Tabs
-        gap="x12"
-      >
-        <Link
-          as="/apps/some-app/versions/a-version-id/details"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Details
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/devices"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Devices
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/qa"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Qa
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/activity"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
-        >
-          <a>
-            <Tab
-              active={true}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Activity
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-      </Tabs>
+      <_default
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
+        selectedTab="activity"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
+      />
     </Base>
     <Divider
       color="gray-2"
@@ -267,20 +119,18 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
+      paddingHorizontal="x4"
     >
       <Connect(Activity)
         appSlug="some-app"
         versionId="a-version-id"
       />
+      <AddonFooter
+        addonName="Ship"
+        paddingVertical="x16"
+      />
     </Flex>
-  </Flex>
-  <Flex
-    paddingVertical="x16"
-  >
-    <AddonFooter
-      addonName="Ship"
-    />
   </Flex>
 </Fragment>
 `;
@@ -295,104 +145,33 @@ exports[`AppVersion renders the details tab correctly 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
-      <Tabs
-        gap="x12"
-      >
-        <Link
-          as="/apps/some-app/versions/a-version-id/details"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
-        >
-          <a>
-            <Tab
-              active={true}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Details
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/devices"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Devices
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/qa"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Qa
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/activity"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Activity
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-      </Tabs>
+      <_default
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
+        selectedTab="details"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
+      />
     </Base>
     <Divider
       color="gray-2"
@@ -402,20 +181,18 @@ exports[`AppVersion renders the details tab correctly 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
+      paddingHorizontal="x4"
     >
       <Connect(AppVersionDetails)
         appSlug="some-app"
         versionId="a-version-id"
       />
+      <AddonFooter
+        addonName="Ship"
+        paddingVertical="x16"
+      />
     </Flex>
-  </Flex>
-  <Flex
-    paddingVertical="x16"
-  >
-    <AddonFooter
-      addonName="Ship"
-    />
   </Flex>
 </Fragment>
 `;
@@ -430,104 +207,33 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
-      <Tabs
-        gap="x12"
-      >
-        <Link
-          as="/apps/some-app/versions/a-version-id/details"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Details
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/devices"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
-        >
-          <a>
-            <Tab
-              active={true}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Devices
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/qa"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Qa
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/activity"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Activity
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-      </Tabs>
+      <_default
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
+        selectedTab="devices"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
+      />
     </Base>
     <Divider
       color="gray-2"
@@ -537,17 +243,15 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
+      paddingHorizontal="x4"
     >
       <Connect(AppVersionDevices) />
+      <AddonFooter
+        addonName="Ship"
+        paddingVertical="x16"
+      />
     </Flex>
-  </Flex>
-  <Flex
-    paddingVertical="x16"
-  >
-    <AddonFooter
-      addonName="Ship"
-    />
   </Flex>
 </Fragment>
 `;
@@ -562,104 +266,33 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
-      <Tabs
-        gap="x12"
-      >
-        <Link
-          as="/apps/some-app/versions/a-version-id/details"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Details
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/devices"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Devices
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/qa"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Qa
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/activity"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Activity
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-      </Tabs>
+      <_default
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
+        selectedTab="whateever"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
+      />
     </Base>
     <Divider
       color="gray-2"
@@ -669,19 +302,17 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
+      paddingHorizontal="x4"
     >
       <h1>
         whateever
       </h1>
+      <AddonFooter
+        addonName="Ship"
+        paddingVertical="x16"
+      />
     </Flex>
-  </Flex>
-  <Flex
-    paddingVertical="x16"
-  >
-    <AddonFooter
-      addonName="Ship"
-    />
   </Flex>
 </Fragment>
 `;
@@ -696,104 +327,33 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
     grow={true}
   >
     <Base
-      maxWidth={960}
+      maxWidth={992}
     >
-      <Tabs
-        gap="x12"
-      >
-        <Link
-          as="/apps/some-app/versions/a-version-id/details"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=details"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Details
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/devices"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=devices"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Devices
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/qa"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=qa"
-        >
-          <a>
-            <Tab
-              active={true}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Qa
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-        <Link
-          as="/apps/some-app/versions/a-version-id/activity"
-          href="/version?appSlug=some-app&versionId=a-version-id&selectedTab=activity"
-        >
-          <a>
-            <Tab
-              active={false}
-              paddingHorizontal="x2"
-            >
-              <Flex
-                alignChildren="middle"
-                direction="horizontal"
-                gap="x1"
-              >
-                <span
-                  className="tabAnchor"
-                >
-                  Activity
-                </span>
-              </Flex>
-            </Tab>
-          </a>
-        </Link>
-      </Tabs>
+      <_default
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
+        selectedTab="qa"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
+      />
     </Base>
     <Divider
       color="gray-2"
@@ -803,17 +363,15 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
     <Flex
       direction="vertical"
       grow={true}
-      maxWidth={960}
+      maxWidth={992}
+      paddingHorizontal="x4"
     >
       <_default />
+      <AddonFooter
+        addonName="Ship"
+        paddingVertical="x16"
+      />
     </Flex>
-  </Flex>
-  <Flex
-    paddingVertical="x16"
-  >
-    <AddonFooter
-      addonName="Ship"
-    />
   </Flex>
 </Fragment>
 `;

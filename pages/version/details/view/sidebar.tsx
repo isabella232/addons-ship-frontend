@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Base, Text, Icon, Button, ProgressSpinner } from '@bitrise/bitkit';
+import { Base, Text, Icon, Button, ProgressSpinner, Flex } from '@bitrise/bitkit';
 
 import { IPAExportMethod } from '@/models';
 
@@ -54,21 +54,8 @@ export default ({
     );
   }
 
-  const prettyIPAExportMethod = (ipaExportMethod: IPAExportMethod) => {
-    switch (ipaExportMethod) {
-      case 'app-store':
-        return 'App Store';
-      case 'development':
-        return 'Development';
-      case 'enterprise':
-        return 'Enterprise';
-      case 'ad-hoc':
-        return 'Ad-hoc';
-    }
-  };
-
   return (
-    <Base maxWidth="16rem" className={css.sidebar}>
+    <Flex direction="vertical" gap="x6" className={css.sidebar}>
       <Base>
         <Button level="primary" fullWidth margin="x4" disabled={isSaving} onClick={onSave}>
           {isSaving ? (
@@ -98,6 +85,6 @@ export default ({
         ipaExportMethod={ipaExportMethod}
         hasMounted={hasMounted}
       ></Share>
-    </Base>
+    </Flex>
   );
 };

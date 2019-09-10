@@ -22,8 +22,7 @@ import {
 } from '@bitrise/bitkit';
 import { TypeIconName } from '@bitrise/bitkit';
 import { AppVersionEvent } from '@/models';
-
-import css from './style.scss';
+import { mediaQuery } from '@/utils/media';
 
 type Props = {
   appVersionEvents: AppVersionEvent[];
@@ -51,9 +50,11 @@ const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
   );
 };
 
-export default ({ appVersionEvents, isLoading }: Props) => (
-  <Base paddingVertical="x8">
-    <Base className={css.expandedTableWrapper}>
+export default ({ appVersionEvents, isLoading }: Props) => {
+  const [isTablet] = mediaQuery('30rem');
+
+  return (
+    <Base paddingVertical="x8">
       {isLoading ? (
         <Base margin="x8">
           <Skeleton active>
@@ -69,34 +70,62 @@ export default ({ appVersionEvents, isLoading }: Props) => (
         </Base>
       ) : (
         <Table type="flat">
-          <TableHeader>
-            <TableHeaderRow>
-              <TableHeaderCell>Date</TableHeaderCell>
-              <TableHeaderCell colSpan="2">Activity</TableHeaderCell>
-            </TableHeaderRow>
-          </TableHeader>
+          {isTablet && (
+            <TableHeader>
+              <TableHeaderRow>
+                <TableHeaderCell>Date</TableHeaderCell>
+                <TableHeaderCell colSpan="2">Activity</TableHeaderCell>
+              </TableHeaderRow>
+            </TableHeader>
+          )}
           <TableBody>
-            {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) => (
-              <TableRow key={index}>
-                <TableCell shrink title={formatDate(appVersionEvent.createdAt, 'YYYY-MM-DD HH:mm:ss')}>
-                  {dayInWords(appVersionEvent.createdAt)} at {formatDate(appVersionEvent.createdAt, 'HH:mm:ss')}
-                </TableCell>
-                <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
-                <TableCell shrink>
-                  {appVersionEvent.status === 'failed' && (
-                    <a href={appVersionEvent.logDownloadUrl}>
-                      <Button level="secondary" size="small">
-                        <Icon name="Download" color="grape-4" />
-                        Download Build Log
-                      </Button>
-                    </a>
-                  )}
-                </TableCell>
-              </TableRow>
-            ))}
+            {appVersionEvents.map((appVersionEvent: AppVersionEvent, index: number) =>
+              isTablet ? (
+                <TableRow key={index}>
+                  <TableCell title={formatDate(appVersionEvent.createdAt, 'YYYY-MM-DD HH:mm:ss')}>
+                    {dayInWords(appVersionEvent.createdAt)} at {formatDate(appVersionEvent.createdAt, 'HH:mm:ss')}
+                  </TableCell>
+                  <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
+                  <TableCell shrink>
+                    {appVersionEvent.status === 'failed' && (
+                      <a href={appVersionEvent.logDownloadUrl}>
+                        <Button level="secondary" size="small">
+                          <Icon name="Download" color="grape-4" />
+                          Download Build Log
+                        </Button>
+                      </a>
+                    )}
+                  </TableCell>
+                </TableRow>
+              ) : (
+                <TableRow key={index} style={{ display: 'block' }}>
+                  <TableCell
+                    title={formatDate(appVersionEvent.createdAt, 'YYYY-MM-DD HH:mm:ss')}
+                    style={{ display: 'block' }}
+                  >
+                    <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="end" wrap>
+                      <Base>
+                        <Base>
+                          {dayInWords(appVersionEvent.createdAt)} at {formatDate(appVersionEvent.createdAt, 'HH:mm:ss')}
+                        </Base>
+                        <Base>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</Base>
+                      </Base>
+                      {appVersionEvent.status === 'failed' && (
+                        <a href={appVersionEvent.logDownloadUrl}>
+                          <Button level="secondary" size="small">
+                            <Icon name="Download" color="grape-4" />
+                            Download Build Log
+                          </Button>
+                        </a>
+                      )}
+                    </Flex>
+                  </TableCell>
+                </TableRow>
+              )
+            )}
           </TableBody>
         </Table>
       )}
     </Base>
-  </Base>
-);
+  );
+};

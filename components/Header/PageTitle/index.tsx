@@ -9,7 +9,7 @@ export type Props = {
 };
 
 export default ({ type, title, smaller = false }: Props) => {
-  const [isDesktop] = mediaQuery('60rem');
+  const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
 
   let iconName: TypeIconName;
   switch (type) {
@@ -60,7 +60,7 @@ export default ({ type, title, smaller = false }: Props) => {
       color="white"
     >
       <Icon name={iconName} size="2rem" />
-      <Text size={fontSize} weight="bold">
+      <Text size={fontSize} weight="bold" breakOn={isTablet ? 'all' : 'word'}>
         {title}
       </Text>
     </Flex>

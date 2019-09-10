@@ -43,6 +43,7 @@ exports[`NotificationSettings View has an enabled save button 1`] = `
   >
     <Button
       disabled={false}
+      grow={true}
       level="secondary"
       onClick={[MockFunction]}
       size="medium"
@@ -52,6 +53,7 @@ exports[`NotificationSettings View has an enabled save button 1`] = `
     </Button>
     <Button
       disabled={false}
+      grow={true}
       level="primary"
       onClick={[MockFunction]}
       size="medium"
@@ -106,6 +108,7 @@ exports[`NotificationSettings View renders correctly 1`] = `
   >
     <Button
       disabled={false}
+      grow={true}
       level="secondary"
       onClick={[MockFunction]}
       size="medium"
@@ -115,6 +118,7 @@ exports[`NotificationSettings View renders correctly 1`] = `
     </Button>
     <Button
       disabled={true}
+      grow={true}
       level="primary"
       size="medium"
       width="8rem"
@@ -282,6 +286,7 @@ exports[`NotificationSettings View renders correctly while saving 1`] = `
   >
     <Button
       disabled={true}
+      grow={true}
       level="secondary"
       onClick={[MockFunction]}
       size="medium"
@@ -291,6 +296,7 @@ exports[`NotificationSettings View renders correctly while saving 1`] = `
     </Button>
     <Button
       disabled={true}
+      grow={true}
       level="primary"
       size="medium"
       width="8rem"
@@ -353,6 +359,7 @@ exports[`NotificationSettings View renders correctly with error message 1`] = `
   >
     <Button
       disabled={false}
+      grow={true}
       level="secondary"
       onClick={[MockFunction]}
       size="medium"
@@ -362,6 +369,7 @@ exports[`NotificationSettings View renders correctly with error message 1`] = `
     </Button>
     <Button
       disabled={true}
+      grow={true}
       level="primary"
       size="medium"
       width="8rem"

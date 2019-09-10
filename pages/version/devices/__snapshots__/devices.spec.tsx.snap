@@ -30,85 +30,275 @@ exports[`AppVersion renders the details tab correctly with UDID 1`] = `
 <Base
   paddingVertical="x6"
 >
-  <Base
-    className="expandedTableWrapper"
+  <Notification
+    icon="Lightbulb"
+    type="inform"
   >
-    <Notification
-      icon="Lightbulb"
-      type="inform"
+    You can register your devices on your
+     
+    <Link
+      href="https://app.bitrise.io/me/profile#/test_devices"
+      target="_blank"
+      underline={true}
     >
-      You can register your devices on your
-       
-      <Link
-        href="https://app.bitrise.io/me/profile#/test_devices"
-        target="_blank"
-        underline={true}
+      Account Settings
+    </Link>
+     
+    page on Bitrise.
+  </Notification>
+  <Table
+    paddingVertical="x6"
+    type="flat"
+  >
+    <TableBody>
+      <TableRow
+        key="test-user-1-some-device-id-01"
       >
-        Account Settings
-      </Link>
-       
-      page on Bitrise.
-    </Notification>
-    <Table
-      paddingVertical="x6"
-      type="flat"
-    >
-      <TableHeader>
-        <TableHeaderRow>
-          <TableHeaderCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
             User
-          </TableHeaderCell>
-          <TableHeaderCell>
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-1
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
             Device
-          </TableHeaderCell>
-          <TableHeaderCell>
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            ios
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
             UDID
-          </TableHeaderCell>
-        </TableHeaderRow>
-      </TableHeader>
-      <TableBody>
-        <TableRow
-          key="test-user-1-some-device-id-01"
-        >
-          <TableCell>
-            test-user-1
-          </TableCell>
-          <TableCell>
-            ios
-          </TableCell>
-          <TableCell>
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             some-device-id-01
-          </TableCell>
-        </TableRow>
-        <TableRow
-          key="test-user-1-some-device-id-02"
+          </Text>
+        </TableCell>
+      </TableRow>
+      <TableRow
+        key="test-user-1-some-device-id-02"
+      >
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
         >
-          <TableCell>
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             test-user-1
-          </TableCell>
-          <TableCell>
-            android
-          </TableCell>
-          <TableCell>
-            some-device-id-02
-          </TableCell>
-        </TableRow>
-        <TableRow
-          key="test-user-2-some-device-id-03"
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
         >
-          <TableCell>
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            android
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            UDID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-02
+          </Text>
+        </TableCell>
+      </TableRow>
+      <TableRow
+        key="test-user-2-some-device-id-03"
+      >
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             test-user-2
-          </TableCell>
-          <TableCell>
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             ios
-          </TableCell>
-          <TableCell>
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            UDID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             some-device-id-03
-          </TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
-  </Base>
+          </Text>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
 </Base>
 `;
 
@@ -116,85 +306,275 @@ exports[`AppVersion renders the details tab correctly with UUID 1`] = `
 <Base
   paddingVertical="x6"
 >
-  <Base
-    className="expandedTableWrapper"
+  <Notification
+    icon="Lightbulb"
+    type="inform"
   >
-    <Notification
-      icon="Lightbulb"
-      type="inform"
+    You can register your devices on your
+     
+    <Link
+      href="https://app.bitrise.io/me/profile#/test_devices"
+      target="_blank"
+      underline={true}
     >
-      You can register your devices on your
-       
-      <Link
-        href="https://app.bitrise.io/me/profile#/test_devices"
-        target="_blank"
-        underline={true}
+      Account Settings
+    </Link>
+     
+    page on Bitrise.
+  </Notification>
+  <Table
+    paddingVertical="x6"
+    type="flat"
+  >
+    <TableBody>
+      <TableRow
+        key="test-user-1-some-device-id-01"
       >
-        Account Settings
-      </Link>
-       
-      page on Bitrise.
-    </Notification>
-    <Table
-      paddingVertical="x6"
-      type="flat"
-    >
-      <TableHeader>
-        <TableHeaderRow>
-          <TableHeaderCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
             User
-          </TableHeaderCell>
-          <TableHeaderCell>
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-1
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
             Device
-          </TableHeaderCell>
-          <TableHeaderCell>
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            ios
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
             UUID
-          </TableHeaderCell>
-        </TableHeaderRow>
-      </TableHeader>
-      <TableBody>
-        <TableRow
-          key="test-user-1-some-device-id-01"
-        >
-          <TableCell>
-            test-user-1
-          </TableCell>
-          <TableCell>
-            ios
-          </TableCell>
-          <TableCell>
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             some-device-id-01
-          </TableCell>
-        </TableRow>
-        <TableRow
-          key="test-user-1-some-device-id-02"
+          </Text>
+        </TableCell>
+      </TableRow>
+      <TableRow
+        key="test-user-1-some-device-id-02"
+      >
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
         >
-          <TableCell>
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             test-user-1
-          </TableCell>
-          <TableCell>
-            android
-          </TableCell>
-          <TableCell>
-            some-device-id-02
-          </TableCell>
-        </TableRow>
-        <TableRow
-          key="test-user-2-some-device-id-03"
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
         >
-          <TableCell>
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            android
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            UUID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-02
+          </Text>
+        </TableCell>
+      </TableRow>
+      <TableRow
+        key="test-user-2-some-device-id-03"
+      >
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             test-user-2
-          </TableCell>
-          <TableCell>
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             ios
-          </TableCell>
-          <TableCell>
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            UUID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             some-device-id-03
-          </TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
-  </Base>
+          </Text>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
 </Base>
 `;
 
@@ -202,85 +582,275 @@ exports[`AppVersion renders the details tab correctly with device ID 1`] = `
 <Base
   paddingVertical="x6"
 >
-  <Base
-    className="expandedTableWrapper"
+  <Notification
+    icon="Lightbulb"
+    type="inform"
   >
-    <Notification
-      icon="Lightbulb"
-      type="inform"
+    You can register your devices on your
+     
+    <Link
+      href="https://app.bitrise.io/me/profile#/test_devices"
+      target="_blank"
+      underline={true}
     >
-      You can register your devices on your
-       
-      <Link
-        href="https://app.bitrise.io/me/profile#/test_devices"
-        target="_blank"
-        underline={true}
+      Account Settings
+    </Link>
+     
+    page on Bitrise.
+  </Notification>
+  <Table
+    paddingVertical="x6"
+    type="flat"
+  >
+    <TableBody>
+      <TableRow
+        key="test-user-1-some-device-id-01"
       >
-        Account Settings
-      </Link>
-       
-      page on Bitrise.
-    </Notification>
-    <Table
-      paddingVertical="x6"
-      type="flat"
-    >
-      <TableHeader>
-        <TableHeaderRow>
-          <TableHeaderCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
             User
-          </TableHeaderCell>
-          <TableHeaderCell>
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            test-user-1
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
             Device
-          </TableHeaderCell>
-          <TableHeaderCell>
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            ios
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
             Device ID
-          </TableHeaderCell>
-        </TableHeaderRow>
-      </TableHeader>
-      <TableBody>
-        <TableRow
-          key="test-user-1-some-device-id-01"
-        >
-          <TableCell>
-            test-user-1
-          </TableCell>
-          <TableCell>
-            ios
-          </TableCell>
-          <TableCell>
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             some-device-id-01
-          </TableCell>
-        </TableRow>
-        <TableRow
-          key="test-user-1-some-device-id-02"
+          </Text>
+        </TableCell>
+      </TableRow>
+      <TableRow
+        key="test-user-1-some-device-id-02"
+      >
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
         >
-          <TableCell>
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             test-user-1
-          </TableCell>
-          <TableCell>
-            android
-          </TableCell>
-          <TableCell>
-            some-device-id-02
-          </TableCell>
-        </TableRow>
-        <TableRow
-          key="test-user-2-some-device-id-03"
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
         >
-          <TableCell>
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            android
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device ID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
+            some-device-id-02
+          </Text>
+        </TableCell>
+      </TableRow>
+      <TableRow
+        key="test-user-2-some-device-id-03"
+      >
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            User
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             test-user-2
-          </TableCell>
-          <TableCell>
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": "none",
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             ios
-          </TableCell>
-          <TableCell>
+          </Text>
+        </TableCell>
+        <TableCell
+          style={
+            Object {
+              "borderBottom": undefined,
+              "display": "block",
+              "paddingBottom": "0.25rem",
+              "paddingTop": "0.25rem",
+            }
+          }
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Device ID
+            :
+          </Text>
+           
+          <Text
+            breakOn="all"
+            inline={true}
+          >
             some-device-id-03
-          </TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
-  </Base>
+          </Text>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
 </Base>
 `;
 
@@ -288,109 +858,105 @@ exports[`AppVersion renders the loading skeleton when loading 1`] = `
 <Base
   paddingVertical="x6"
 >
-  <Base
-    className="expandedTableWrapper"
+  <Notification
+    icon="Lightbulb"
+    type="inform"
   >
-    <Notification
-      icon="Lightbulb"
-      type="inform"
+    You can register your devices on your
+     
+    <Link
+      href="https://app.bitrise.io/me/profile#/test_devices"
+      target="_blank"
+      underline={true}
     >
-      You can register your devices on your
-       
-      <Link
-        href="https://app.bitrise.io/me/profile#/test_devices"
-        target="_blank"
-        underline={true}
-      >
-        Account Settings
-      </Link>
-       
-      page on Bitrise.
-    </Notification>
-    <Base
-      margin="x8"
+      Account Settings
+    </Link>
+     
+    page on Bitrise.
+  </Notification>
+  <Base
+    margin="x8"
+  >
+    <Skeleton
+      active={true}
+      color="white"
     >
-      <Skeleton
-        active={true}
-        color="white"
+      <Base
+        paddingHorizontal="x4"
+        paddingVertical="x3"
       >
-        <Base
-          paddingHorizontal="x4"
-          paddingVertical="x3"
-        >
-          <SkeletonBox
-            backgroundColor="gray-2"
-            height="1.5rem"
-            margin="x2"
-          />
-        </Base>
-        <Divider
-          color="gray-2"
-          direction="horizontal"
-          width="1px"
+        <SkeletonBox
+          backgroundColor="gray-2"
+          height="1.5rem"
+          margin="x2"
         />
-        <Base
-          paddingHorizontal="x4"
-          paddingVertical="x3"
-        >
-          <SkeletonBox
-            backgroundColor="gray-2"
-            height="1.5rem"
-            margin="x2"
-          />
-        </Base>
-        <Divider
-          color="gray-2"
-          direction="horizontal"
-          width="1px"
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="1px"
+      />
+      <Base
+        paddingHorizontal="x4"
+        paddingVertical="x3"
+      >
+        <SkeletonBox
+          backgroundColor="gray-2"
+          height="1.5rem"
+          margin="x2"
         />
-        <Base
-          paddingHorizontal="x4"
-          paddingVertical="x3"
-        >
-          <SkeletonBox
-            backgroundColor="gray-2"
-            height="1.5rem"
-            margin="x2"
-          />
-        </Base>
-        <Divider
-          color="gray-2"
-          direction="horizontal"
-          width="1px"
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="1px"
+      />
+      <Base
+        paddingHorizontal="x4"
+        paddingVertical="x3"
+      >
+        <SkeletonBox
+          backgroundColor="gray-2"
+          height="1.5rem"
+          margin="x2"
         />
-        <Base
-          paddingHorizontal="x4"
-          paddingVertical="x3"
-        >
-          <SkeletonBox
-            backgroundColor="gray-2"
-            height="1.5rem"
-            margin="x2"
-          />
-        </Base>
-        <Divider
-          color="gray-2"
-          direction="horizontal"
-          width="1px"
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="1px"
+      />
+      <Base
+        paddingHorizontal="x4"
+        paddingVertical="x3"
+      >
+        <SkeletonBox
+          backgroundColor="gray-2"
+          height="1.5rem"
+          margin="x2"
         />
-        <Base
-          paddingHorizontal="x4"
-          paddingVertical="x3"
-        >
-          <SkeletonBox
-            backgroundColor="gray-2"
-            height="1.5rem"
-            margin="x2"
-          />
-        </Base>
-        <Divider
-          color="gray-2"
-          direction="horizontal"
-          width="1px"
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="1px"
+      />
+      <Base
+        paddingHorizontal="x4"
+        paddingVertical="x3"
+      >
+        <SkeletonBox
+          backgroundColor="gray-2"
+          height="1.5rem"
+          margin="x2"
         />
-      </Skeleton>
-    </Base>
+      </Base>
+      <Divider
+        color="gray-2"
+        direction="horizontal"
+        width="1px"
+      />
+    </Skeleton>
   </Base>
 </Base>
 `;

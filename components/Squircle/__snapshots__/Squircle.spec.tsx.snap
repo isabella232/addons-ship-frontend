@@ -28,6 +28,7 @@ exports[`Squircle renders without issues 1`] = `
     </defs>
   </svg>
   <Image
+    maxWidth="none"
     src="img.url"
     style={
       Object {

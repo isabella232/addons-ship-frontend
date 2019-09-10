@@ -8,16 +8,21 @@ exports[`NotificationSettings View AddNew renders correctly 1`] = `
   <InputLabel>
     Add New
   </InputLabel>
-  <InputContainer>
-    <InputContent>
-      <Input
-        disabled={false}
-        onChange={[Function]}
-        placeholder="Email address"
-        type="email"
-        value="old@email.value"
-      />
-    </InputContent>
+  <Flex
+    direction="vertical"
+    gap="x4"
+  >
+    <InputContainer>
+      <InputContent>
+        <Input
+          disabled={false}
+          onChange={[Function]}
+          placeholder="Email address"
+          type="email"
+          value="old@email.value"
+        />
+      </InputContent>
+    </InputContainer>
     <Button
       disabled={false}
       level="secondary"
@@ -25,7 +30,7 @@ exports[`NotificationSettings View AddNew renders correctly 1`] = `
     >
       Add
     </Button>
-  </InputContainer>
+  </Flex>
 </form>
 `;
 
@@ -37,16 +42,21 @@ exports[`NotificationSettings View AddNew shows adding in progress 1`] = `
   <InputLabel>
     Add New
   </InputLabel>
-  <InputContainer>
-    <InputContent>
-      <Input
-        disabled={true}
-        onChange={[Function]}
-        placeholder="Email address"
-        type="email"
-        value="old@email.value"
-      />
-    </InputContent>
+  <Flex
+    direction="vertical"
+    gap="x4"
+  >
+    <InputContainer>
+      <InputContent>
+        <Input
+          disabled={true}
+          onChange={[Function]}
+          placeholder="Email address"
+          type="email"
+          value="old@email.value"
+        />
+      </InputContent>
+    </InputContainer>
     <Button
       disabled={true}
       level="secondary"
@@ -57,6 +67,6 @@ exports[`NotificationSettings View AddNew shows adding in progress 1`] = `
       />
          Adding...
     </Button>
-  </InputContainer>
+  </Flex>
 </form>
 `;

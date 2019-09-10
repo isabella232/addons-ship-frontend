@@ -27,7 +27,7 @@ export default ({ objectFit = 'covver', fatness = 0.02, ...props }: Props) => {
         </defs>
       </svg>
 
-      <Image {...props} style={{ clipPath: `url(#${id})`, objectFit }} />
+      <Image {...props} style={{ clipPath: `url(#${id})`, objectFit }} maxWidth="none" />
     </div>
   );
 };

@@ -1,8 +1,0 @@
-@import '~@/assets/style/mixins';
-@import '~@/assets/style/dimensions';
-
-.expandedTableWrapper {
-  $expand-width: 2 * $grid;
-  $width: calc(100% + 2 * $expand-width);
-  @include margin-x(-$expand-width);
-}

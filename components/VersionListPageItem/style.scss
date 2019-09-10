@@ -9,15 +9,12 @@
 
   .versionListPageItemInner {
     border-radius: 2 * $grid;
-    background-color: white;
     transition: background-color $medium-hovertime;
 
     .topWrapper {
       display: flex;
       align-items: center;
-      padding-top: 4 * $grid;
       padding-bottom: 2 * $grid;
-      @include padding-x(4 * $grid);
       text-decoration: none;
 
       .platformIconWrapper {
@@ -36,15 +33,16 @@
 
       .note {
         text-align: right;
-        color: $gray-6;
         transition: color $medium-hovertime;
-        // TODO: replace with element from UI library
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: normal;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
+      }
+
+      @include width-max-screen-small {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .note {
+          margin-top: $grid;
+        }
       }
     }
 
@@ -65,13 +63,6 @@
         flex-grow: 1;
         color: $grape-5;
         transition: color $medium-hovertime;
-        // TODO: replace with element from UI library
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: normal;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
       }
 
       &:not(.isOpen) {

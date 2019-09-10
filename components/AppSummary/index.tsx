@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { Base, Text, TypeIconName, Icon } from '@bitrise/bitkit';
+import NextLink from 'next/link';
+import { Base, Text, TypeIconName, Icon, Flex, Link } from '@bitrise/bitkit';
 
 import Squircle from '@/components/Squircle';
 import { mediaQuery } from '@/utils/media';
@@ -40,33 +40,60 @@ export default ({
   }
 
   return (
-    <Link href={detailsPagePathHref} as={detailsPagePath}>
-      <a className={css.appSummary}>
-        <Base className={css.colorBar}>
+    <NextLink href={detailsPagePathHref} as={detailsPagePath}>
+      <Link
+        borderColor="gray-2"
+        borderWidth="x1"
+        overflow="hidden"
+        backgroundColor="white"
+        className={css.appSummary}
+        elevation="x2"
+      >
+        <Base height="5rem">
           <Banner startColor={startColor} endColor={endColor} />
         </Base>
-        <div className={css.body}>
-          <div className={css.iconWrapper}>
+        <Flex direction="vertical" padding="x8" gap={isTablet ? 'x4' : 'x0'}>
+          <Flex
+            direction={isTablet ? 'horizontal' : 'vertical'}
+            alignChildrenHorizontal={isTablet ? 'start' : 'middle'}
+            alignChildrenVertical={isTablet ? 'end' : 'middle'}
+            gap="x4"
+            style={{ marginTop: '-5rem' }}
+          >
             <Squircle src={iconUrl} borderRadius="x2" width="96px" margin="x0" />
-
-            <Base paddingHorizontal="x4" paddingVertical={isTablet ? 'x2' : 'x4'}>
-              <Text size={isTablet ? 'x3' : 'x2'} color="gray-6" letterSpacing="x1" weight="medium">
+            <Base paddingVertical="x2">
+              <Text size="x3" color="gray-6" letterSpacing="x1" weight="medium">
                 {note}
               </Text>
             </Base>
-            <div className={css.note} />
-          </div>
-          <div className={css.titleWrapper}>
-            <Base className={css.platformIconWrapper}>
+          </Flex>
+          <Flex direction="vertical" gap="x2">
+            <Flex
+              direction={isTablet ? 'horizontal' : 'vertical'}
+              alignChildrenVertical="middle"
+              alignChildrenHorizontal={isTablet ? 'start' : 'middle'}
+              gap="x1"
+            >
               <Icon color="grape-4" name={iconName} size="1.5rem" />
-            </Base>
-            <Text size={isDesktop ? 'x5' : 'x4'} color="grape-4" weight="bold" letterSpacing="x1">
-              {title}
-            </Text>
-          </div>
-          {description && <div className={css.description}>{description}</div>}
-        </div>
-      </a>
-    </Link>
+              <Text
+                size="x5"
+                color="grape-4"
+                weight="bold"
+                letterSpacing="x1"
+                breakOn={isDesktop ? 'word' : 'all'}
+                align={isTablet ? 'start' : 'middle'}
+              >
+                {title}
+              </Text>
+            </Flex>
+            {description && (
+              <Text color="grape-5" breakOn={isDesktop ? 'word' : 'all'}>
+                {description}
+              </Text>
+            )}
+          </Flex>
+        </Flex>
+      </Link>
+    </NextLink>
   );
 };

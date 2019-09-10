@@ -40,9 +40,9 @@ export default ({ buildSlug, publicInstallPageURL, ipaExportMethod, hasMounted }
   };
 
   return (
-    <Fragment>
+    <Flex direction="vertical" gap="x6">
       {publicInstallPageURL ? (
-        <Base paddingVertical="x6">
+        <Base>
           <Flex
             direction="horizontal"
             alignChildrenHorizontal="between"
@@ -76,7 +76,7 @@ export default ({ buildSlug, publicInstallPageURL, ipaExportMethod, hasMounted }
             <Text
               Component="a"
               href={publicInstallPageURL}
-              breakOn="word"
+              breakOn="all"
               color="grape-3"
               weight="medium"
               className={css['public-instal-page-link']}
@@ -194,6 +194,6 @@ export default ({ buildSlug, publicInstallPageURL, ipaExportMethod, hasMounted }
           </Text>
         </Base>
       )}
-    </Fragment>
+    </Flex>
   );
 };
