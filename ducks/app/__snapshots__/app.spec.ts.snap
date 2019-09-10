@@ -35,8 +35,10 @@ exports[`app fetchApp fetches app version events 2`] = `Object {}`;
 exports[`app reducer loads an app 1`] = `
 Object {
   "app": Object {
+    "androidErrors": Array [],
     "appSlug": "test-app-slug-1",
     "avatarUrl": "https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png",
+    "iosErrors": Array [],
     "plan": "gold",
     "projectType": "other",
     "title": "Awesome app",

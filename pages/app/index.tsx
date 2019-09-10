@@ -117,6 +117,12 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
         selectedProductFlavour = productFlavours[0];
       }
 
+      let warnings: string[] = [];
+
+      if (app) {
+        warnings = latestAppVersion.platform === 'ios' ? app.iosErrors : app.androidErrors;
+      }
+
       const viewProps = {
         isCrossPlatform,
         latestAppVersion,
@@ -132,7 +138,8 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
         endColor,
         productFlavours: showProductFlavours ? productFlavours : [],
         selectedProductFlavour,
-        selectProductFalvour: this.selectProductFlavour
+        selectProductFalvour: this.selectProductFlavour,
+        warnings
       };
       content = <View {...viewProps} />;
     }
