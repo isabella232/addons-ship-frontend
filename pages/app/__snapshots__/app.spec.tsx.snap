@@ -1,5 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AppPage A prodcutFlavour is selected 1`] = `
+Object {
+  "endColor": undefined,
+  "groupedAppVersionList": Array [
+    Object {
+      "appVersions": Array [
+        Object {
+          "id": "v4",
+          "platform": "android",
+          "productFlavour": "f2",
+        },
+        Object {
+          "id": "v5",
+          "platform": "android",
+          "productFlavour": "f2",
+        },
+        Object {
+          "id": "v6",
+          "platform": "android",
+          "productFlavour": "f2",
+        },
+      ],
+      "groupName": "undefined",
+    },
+  ],
+  "isCrossPlatform": false,
+  "latestAppVersion": Object {
+    "id": "v4",
+    "platform": "android",
+    "productFlavour": "f2",
+  },
+  "onSelectPlatform": [MockFunction],
+  "productFlavours": Array [],
+  "selectProductFalvour": [Function],
+  "selectedPlatform": undefined,
+  "selectedProductFlavour": "f2",
+  "selectedVersionSortingOption": Object {
+    "text": "Latest Build",
+    "value": "latest-build",
+  },
+  "startColor": undefined,
+  "versionSortOptionWithValueSelected": [Function],
+  "versionSortingOptions": Array [
+    Object {
+      "text": "Latest Build",
+      "value": "latest-build",
+    },
+    Object {
+      "text": "Latest version",
+      "value": "latest-version",
+    },
+  ],
+  "warnings": undefined,
+}
+`;
+
 exports[`AppPage renders empty page 1`] = `
 <Fragment>
   <Connect(ShipHead)>
@@ -735,7 +791,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
 </Fragment>
 `;
 
-exports[`AppPageView when page has apps renders page with apps 1`] = `
+exports[`AppPageView when page has apps product flavours desktop 1`] = `
 <Flex
   className="wrapper"
   direction="vertical"
@@ -749,6 +805,37 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
       maxWidth={960}
       width="100%"
     >
+      <Flex
+        direction="horizontal"
+        gap="x2"
+        paddingHorizontal="x1"
+        paddingVertical="x4"
+        shrink={true}
+        wrap={true}
+      >
+        <Flex
+          key="0"
+        >
+          <_default
+            large={true}
+            onClick={[Function]}
+            selected={false}
+          >
+            first
+          </_default>
+        </Flex>
+        <Flex
+          key="1"
+        >
+          <_default
+            large={true}
+            onClick={[Function]}
+            selected={false}
+          >
+            second
+          </_default>
+        </Flex>
+      </Flex>
       <_default
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"
@@ -855,7 +942,309 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
 </Flex>
 `;
 
-exports[`AppPageView when page has apps renders the product flavour tags 1`] = `
+exports[`AppPageView when page has apps product flavours mobile 1`] = `
+<Flex
+  className="wrapper"
+  direction="vertical"
+>
+  <Flex
+    alignChildrenHorizontal="middle"
+    direction="vertical"
+    padding="x4"
+  >
+    <Base
+      maxWidth={960}
+      width="100%"
+    >
+      <Flex
+        direction="vertical"
+        gap="x2"
+        paddingHorizontal="x1"
+        paddingVertical="x4"
+        shrink={true}
+        wrap={true}
+      >
+        <Flex
+          key="0"
+        >
+          <_default
+            large={true}
+            onClick={[Function]}
+            selected={false}
+          >
+            first
+          </_default>
+        </Flex>
+        <Flex
+          key="1"
+        >
+          <_default
+            large={true}
+            onClick={[Function]}
+            selected={false}
+          >
+            second
+          </_default>
+        </Flex>
+      </Flex>
+      <_default
+        detailsPagePath="/apps/undefined/versions/123/details"
+        detailsPagePathHref="/version?appSlug=undefined&versionId=123"
+        iconUrl="http://placekitten.com/160/160"
+        note="Updated on September 22, 2018"
+        title="Standup Timer v1.0.3 (32)"
+      />
+      <Base
+        className="sectionHeadingWrapper"
+      >
+        <Flex
+          alignChildrenVertical="end"
+          direction="horizontal"
+          gap="x2"
+        >
+          <Flex
+            grow={true}
+            shrink={true}
+          >
+            <Text
+              letterSpacing="x1"
+              size="x5"
+              weight="bold"
+            >
+              Version History
+            </Text>
+            <Divider
+              color="gray-2"
+              direction="horizontal"
+              margin="x2"
+              width="0.125rem"
+            />
+          </Flex>
+          <Dropdown
+            elevation="x1"
+            fullWidth={false}
+            onChange={[Function]}
+            options={
+              Array [
+                Object {
+                  "text": "Option 1",
+                  "value": "option-1",
+                },
+                Object {
+                  "text": "Option 2",
+                  "value": "option-2",
+                },
+              ]
+            }
+            selected="option-1"
+            width={168}
+          >
+            Option 1
+          </Dropdown>
+        </Flex>
+        <VersionListPageItem
+          detailsPagePath="/apps/app-slug-123/versions/123/details"
+          detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
+          key="0-0"
+          note="Updated on September 22, 2018, 12:42"
+          platform="ios"
+          title="Standup Timer (32)"
+        />
+        <VersionListPageItem
+          detailsPagePath="/apps/app-slug-456/versions/456/details"
+          detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
+          key="0-1"
+          note="Updated on September 22, 2018, 12:42"
+          platform="ios"
+          title="Standup Timer (31)"
+        />
+        <VersionListPageItem
+          detailsPagePath="/apps/app-slug-789/versions/789/details"
+          detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
+          key="0-2"
+          note="Updated on September 22, 2018, 12:42"
+          platform="ios"
+          title="Standup Timer (30)"
+        />
+        <VersionListPageItem
+          detailsPagePath="/apps/app-slug-135/versions/135/details"
+          detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
+          key="0-3"
+          note="Updated on September 22, 2018, 12:42"
+          platform="ios"
+          title="Standup Timer (29)"
+        />
+        <VersionListPageItem
+          detailsPagePath="/apps/app-slug-246/versions/246/details"
+          detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
+          key="0-4"
+          note="Updated on September 22, 2018, 12:42"
+          platform="ios"
+          title="Standup Timer (28)"
+        />
+      </Base>
+    </Base>
+  </Flex>
+  <Base
+    paddingVertical="x6"
+  >
+    <_default />
+  </Base>
+</Flex>
+`;
+
+exports[`AppPageView when page has apps product flavours tablet 1`] = `
+<Flex
+  className="wrapper"
+  direction="vertical"
+>
+  <Flex
+    alignChildrenHorizontal="middle"
+    direction="vertical"
+    padding="x4"
+  >
+    <Base
+      maxWidth={960}
+      width="100%"
+    >
+      <Flex
+        direction="horizontal"
+        gap="x2"
+        paddingHorizontal="x1"
+        paddingVertical="x4"
+        shrink={true}
+        wrap={true}
+      >
+        <Flex
+          key="0"
+        >
+          <_default
+            large={true}
+            onClick={[Function]}
+            selected={false}
+          >
+            first
+          </_default>
+        </Flex>
+        <Flex
+          key="1"
+        >
+          <_default
+            large={true}
+            onClick={[Function]}
+            selected={false}
+          >
+            second
+          </_default>
+        </Flex>
+      </Flex>
+      <_default
+        detailsPagePath="/apps/undefined/versions/123/details"
+        detailsPagePathHref="/version?appSlug=undefined&versionId=123"
+        iconUrl="http://placekitten.com/160/160"
+        note="Updated on September 22, 2018"
+        title="Standup Timer v1.0.3 (32)"
+      />
+      <Base
+        className="sectionHeadingWrapper"
+      >
+        <Flex
+          alignChildrenVertical="end"
+          direction="horizontal"
+          gap="x2"
+        >
+          <Flex
+            grow={true}
+            shrink={true}
+          >
+            <Text
+              letterSpacing="x1"
+              size="x5"
+              weight="bold"
+            >
+              Version History
+            </Text>
+            <Divider
+              color="gray-2"
+              direction="horizontal"
+              margin="x2"
+              width="0.125rem"
+            />
+          </Flex>
+          <Dropdown
+            elevation="x1"
+            fullWidth={false}
+            onChange={[Function]}
+            options={
+              Array [
+                Object {
+                  "text": "Option 1",
+                  "value": "option-1",
+                },
+                Object {
+                  "text": "Option 2",
+                  "value": "option-2",
+                },
+              ]
+            }
+            selected="option-1"
+            width={168}
+          >
+            Option 1
+          </Dropdown>
+        </Flex>
+        <VersionListPageItem
+          detailsPagePath="/apps/app-slug-123/versions/123/details"
+          detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
+          key="0-0"
+          note="Updated on September 22, 2018, 12:42"
+          platform="ios"
+          title="Standup Timer (32)"
+        />
+        <VersionListPageItem
+          detailsPagePath="/apps/app-slug-456/versions/456/details"
+          detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
+          key="0-1"
+          note="Updated on September 22, 2018, 12:42"
+          platform="ios"
+          title="Standup Timer (31)"
+        />
+        <VersionListPageItem
+          detailsPagePath="/apps/app-slug-789/versions/789/details"
+          detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
+          key="0-2"
+          note="Updated on September 22, 2018, 12:42"
+          platform="ios"
+          title="Standup Timer (30)"
+        />
+        <VersionListPageItem
+          detailsPagePath="/apps/app-slug-135/versions/135/details"
+          detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
+          key="0-3"
+          note="Updated on September 22, 2018, 12:42"
+          platform="ios"
+          title="Standup Timer (29)"
+        />
+        <VersionListPageItem
+          detailsPagePath="/apps/app-slug-246/versions/246/details"
+          detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
+          key="0-4"
+          note="Updated on September 22, 2018, 12:42"
+          platform="ios"
+          title="Standup Timer (28)"
+        />
+      </Base>
+    </Base>
+  </Flex>
+  <Base
+    paddingVertical="x6"
+  >
+    <_default />
+  </Base>
+</Flex>
+`;
+
+exports[`AppPageView when page has apps renders page with apps 1`] = `
 <Flex
   className="wrapper"
   direction="vertical"
@@ -869,29 +1258,6 @@ exports[`AppPageView when page has apps renders the product flavour tags 1`] = `
       maxWidth={960}
       width="100%"
     >
-      <Flex
-        direction="horizontal"
-        gap="x2"
-        paddingHorizontal="x1"
-        paddingVertical="x4"
-      >
-        <_default
-          key="0"
-          large={true}
-          onClick={[Function]}
-          selected={false}
-        >
-          first
-        </_default>
-        <_default
-          key="1"
-          large={true}
-          onClick={[Function]}
-          selected={false}
-        >
-          second
-        </_default>
-      </Flex>
       <_default
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"

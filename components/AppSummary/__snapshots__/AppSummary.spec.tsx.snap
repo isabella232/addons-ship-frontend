@@ -71,16 +71,22 @@ exports[`AppSummary renders correctly on desktop 1`] = `
             name="PlatformsApple"
             size="1.5rem"
           />
-          <Text
-            align="start"
-            breakOn="word"
-            color="grape-4"
-            letterSpacing="x1"
-            size="x5"
-            weight="bold"
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x2"
           >
-            My app v1.1.0 (28)
-          </Text>
+            <Text
+              align="start"
+              breakOn="word"
+              color="grape-4"
+              letterSpacing="x1"
+              size="x5"
+              weight="bold"
+            >
+              My app v1.1.0 (28)
+            </Text>
+          </Flex>
         </Flex>
         <Text
           breakOn="word"
@@ -165,16 +171,22 @@ exports[`AppSummary renders correctly on mobile 1`] = `
             name="PlatformsApple"
             size="1.5rem"
           />
-          <Text
-            align="middle"
-            breakOn="all"
-            color="grape-4"
-            letterSpacing="x1"
-            size="x5"
-            weight="bold"
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x2"
           >
-            My app v1.1.0 (28)
-          </Text>
+            <Text
+              align="middle"
+              breakOn="all"
+              color="grape-4"
+              letterSpacing="x1"
+              size="x5"
+              weight="bold"
+            >
+              My app v1.1.0 (28)
+            </Text>
+          </Flex>
         </Flex>
         <Text
           breakOn="all"
@@ -259,16 +271,22 @@ exports[`AppSummary renders correctly on tablet 1`] = `
             name="PlatformsApple"
             size="1.5rem"
           />
-          <Text
-            align="start"
-            breakOn="all"
-            color="grape-4"
-            letterSpacing="x1"
-            size="x5"
-            weight="bold"
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x2"
           >
-            My app v1.1.0 (28)
-          </Text>
+            <Text
+              align="start"
+              breakOn="all"
+              color="grape-4"
+              letterSpacing="x1"
+              size="x5"
+              weight="bold"
+            >
+              My app v1.1.0 (28)
+            </Text>
+          </Flex>
         </Flex>
         <Text
           breakOn="all"

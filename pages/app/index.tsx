@@ -40,7 +40,7 @@ export interface AppPageProps extends AppPageQuery {
 }
 
 type AppPageState = {
-  selectedVersionSortingOptionValue: string | null;
+  selectedVersionSortingOptionValue: 'latest-build' | 'latest-version';
   selectedProductFlavour?: string;
 };
 
@@ -68,7 +68,7 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
     fetchAppVersionList(appSlug);
   }
 
-  versionSortOptionWithValueSelected = (value: string) => {
+  versionSortOptionWithValueSelected = (value: AppPageState['selectedVersionSortingOptionValue']) => {
     this.setState({
       selectedVersionSortingOptionValue: value
     });
@@ -91,10 +91,8 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
     } = this.props;
     const { selectedVersionSortingOptionValue } = this.state;
 
-    const groupedAppVersionList =
-      selectedVersionSortingOptionValue && selectedVersionSortingOptionValue === 'latest-version'
-        ? appVersionsByVersion
-        : appVersionsByBuildNumber;
+    let groupedAppVersionList =
+      selectedVersionSortingOptionValue === 'latest-version' ? appVersionsByVersion : appVersionsByBuildNumber;
 
     let content;
     if (isLoading) {
@@ -112,9 +110,26 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
       }
 
       const showProductFlavours = latestAppVersion.platform === 'android';
-      let selectedProductFlavour = this.state.selectedProductFlavour;
-      if (!selectedProductFlavour && productFlavours.length > 0) {
-        selectedProductFlavour = productFlavours[0];
+      let selectedProductFlavour: string | undefined;
+
+      if (showProductFlavours) {
+        selectedProductFlavour = this.state.selectedProductFlavour;
+        if (!selectedProductFlavour && productFlavours.length > 0) {
+          selectedProductFlavour = productFlavours[0];
+        }
+      }
+
+      if (selectedProductFlavour) {
+        groupedAppVersionList = groupedAppVersionList
+          .map(({ appVersions, groupName }) => ({
+            groupName,
+            appVersions: appVersions.filter(({ productFlavour }) => productFlavour === selectedProductFlavour)
+          }))
+          .filter(({ appVersions }) => appVersions.length);
+
+        ({
+          appVersions: [latestAppVersion]
+        } = groupedAppVersionList[0]);
       }
 
       let warnings: string[] = [];

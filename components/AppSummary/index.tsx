@@ -2,6 +2,7 @@ import NextLink from 'next/link';
 import { Base, Text, TypeIconName, Icon, Flex, Link } from '@bitrise/bitkit';
 
 import Squircle from '@/components/Squircle';
+import MagicTag from '@/components/Tag/MagicTag';
 import { mediaQuery } from '@/utils/media';
 
 import Banner from './Banner';
@@ -17,6 +18,7 @@ interface AppSummaryProps {
   iconUrl: string;
   startColor?: string;
   endColor?: string;
+  productFlavour?: string;
 }
 
 export default ({
@@ -28,7 +30,8 @@ export default ({
   note,
   iconUrl,
   startColor,
-  endColor
+  endColor,
+  productFlavour
 }: AppSummaryProps) => {
   const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
 
@@ -75,17 +78,25 @@ export default ({
               gap="x1"
             >
               <Icon color="grape-4" name={iconName} size="1.5rem" />
-              <Text
-                size="x5"
-                color="grape-4"
-                weight="bold"
-                letterSpacing="x1"
-                breakOn={isDesktop ? 'word' : 'all'}
-                align={isTablet ? 'start' : 'middle'}
-              >
-                {title}
-              </Text>
+              <Flex direction="horizontal" alignChildren="middle" gap="x2">
+                <Text
+                  size="x5"
+                  color="grape-4"
+                  weight="bold"
+                  letterSpacing="x1"
+                  breakOn={isDesktop ? 'word' : 'all'}
+                  align={isTablet ? 'start' : 'middle'}
+                >
+                  {title}
+                </Text>
+                {productFlavour && isDesktop && <MagicTag selected>{productFlavour}</MagicTag>}
+              </Flex>
             </Flex>
+            {productFlavour && !isDesktop && (
+              <Flex>
+                <MagicTag selected>{productFlavour}</MagicTag>
+              </Flex>
+            )}
             {description && (
               <Text color="grape-5" breakOn={isDesktop ? 'word' : 'all'}>
                 {description}
