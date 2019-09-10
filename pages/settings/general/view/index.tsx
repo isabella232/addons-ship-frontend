@@ -70,7 +70,7 @@ export default ({
   hasIosSettings,
   hasAndroidSettings
 }: Props) => {
-  const [isDesktop] = mediaQuery('60rem');
+  const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
 
   if (!hasLoaded)
     return (
@@ -80,25 +80,134 @@ export default ({
     );
 
   return (
-    <Base paddingVertical="x8" maxWidth={isDesktop ? '100%' : 660} className={css.container}>
-      <Base paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
-        {hasIosSettings && iosSettings && (
-          <Fragment>
-            <Base margin="x12">
-              <Text size="x5" weight="bold">
-                iOS Settings
-              </Text>
-              <Divider color="gray-2" direction="horizontal" margin="x4" />
+    <Base className={css.container} paddingVertical="x8">
+      {hasIosSettings && iosSettings && (
+        <Fragment>
+          <Base margin="x12">
+            <Text size="x5" weight="bold">
+              iOS Settings
+            </Text>
+            <Divider color="gray-2" direction="horizontal" margin="x4" />
+            <Base margin="x6">
+              <Grid
+                columnCount={isDesktop ? '2' : '1'}
+                columnWidth="1fr"
+                direction={isDesktop ? 'horizontal' : 'vertical'}
+                grow
+                gap="x6"
+                alignChildrenVertical="end"
+              >
+                <Flex>
+                  <Flex
+                    direction="horizontal"
+                    alignChildrenHorizontal="start"
+                    alignChildrenVertical="middle"
+                    gap="x1"
+                    margin="x1"
+                  >
+                    <InputLabel>Expose Artifacts From the Selected Workflow to Ship</InputLabel>
+                    {hasMounted && (
+                      <Tooltip title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy">
+                        {({ ref, ...rest }) => (
+                          <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                        )}
+                      </Tooltip>
+                    )}
+                  </Flex>
+                  <InputContainer>
+                    <InputContent>
+                      <Input
+                        name="iosWorkflow"
+                        onChange={(event: any) => onWorkflowChange('ios', event.target.value)}
+                        value={iosWorkflow}
+                        placeholder="All"
+                      />
+                    </InputContent>
+                  </InputContainer>
+                </Flex>
+                <Flex>
+                  <InputLabel margin="x1">App SKU</InputLabel>
+                  <InputContainer>
+                    <InputContent>
+                      <Input
+                        name="appSku"
+                        onChange={(event: any) => onSettingsPropertyChange('iosSettings', 'appSku', event.target.value)}
+                        value={iosSettings.appSku}
+                      />
+                    </InputContent>
+                  </InputContainer>
+                </Flex>
+              </Grid>
+            </Base>
+            <Base margin="x6">
+              <Grid
+                columnCount={isDesktop ? '2' : '1'}
+                columnWidth="1fr"
+                direction={isDesktop ? 'horizontal' : 'vertical'}
+                grow
+                gap="x6"
+                alignChildrenVertical="end"
+              >
+                <Flex>
+                  <InputLabel margin="x1">Apple Developer Account Email</InputLabel>
+                  <InputContainer>
+                    <InputContent>
+                      <Input
+                        name="appleDeveloperAccountEmail"
+                        onChange={(event: any) =>
+                          onSettingsPropertyChange('iosSettings', 'appleDeveloperAccountEmail', event.target.value)
+                        }
+                        value={iosSettings.appleDeveloperAccountEmail}
+                      />
+                    </InputContent>
+                  </InputContainer>
+                </Flex>
+                <Flex>
+                  <InputLabel margin="x1">App Specific Password</InputLabel>
+                  <InputContainer>
+                    <InputContent>
+                      <Input
+                        name="appSpecificPassword"
+                        onChange={(event: any) =>
+                          onSettingsPropertyChange('iosSettings', 'appSpecificPassword', event.target.value)
+                        }
+                        value={iosSettings.appSpecificPassword}
+                      />
+                    </InputContent>
+                  </InputContainer>
+                </Flex>
+              </Grid>
+            </Base>
+            <Base>
+              <Checkbox
+                name="includeBitCode"
+                checked={iosSettings.includeBitCode}
+                onChange={(event: any) =>
+                  onSettingsPropertyChange('iosSettings', 'includeBitCode', event.target.checked)
+                }
+              >
+                Include bitcode
+              </Checkbox>
+            </Base>
+          </Base>
+
+          <Base margin="x12">
+            {
               <Base margin="x6">
-                <Grid
-                  columnCount={isDesktop ? '2' : '1'}
-                  columnWidth="1fr"
+                <Flex
                   direction={isDesktop ? 'horizontal' : 'vertical'}
-                  grow
-                  gap="x6"
-                  alignChildrenVertical="end"
+                  alignChildrenHorizontal="between"
+                  gap="x1"
+                  margin="x1"
                 >
-                  <Flex>
+                  <Text size="x3" weight="bold">
+                    App Store Provisioning Profile
+                  </Text>
+                  <Link
+                    href={`https://app.bitrise.io/app/${appSlug}/workflow_editor#!/code_signing`}
+                    target="_blank"
+                    color="grape-3"
+                  >
                     <Flex
                       direction="horizontal"
                       alignChildrenHorizontal="start"
@@ -106,129 +215,224 @@ export default ({
                       gap="x1"
                       margin="x1"
                     >
-                      <InputLabel>Expose Artifacts From the Selected Workflow to Ship</InputLabel>
-                      {hasMounted && (
-                        <Tooltip title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy">
-                          {({ ref, ...rest }) => (
-                            <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
-                          )}
-                        </Tooltip>
-                      )}
+                      <Text size="x3">Edit Profiles and Certificates on Bitrise</Text>
+                      <Icon name="OpenInBrowser" size="1.5rem" />
                     </Flex>
-                    <InputContainer>
-                      <InputContent>
-                        <Input
-                          name="iosWorkflow"
-                          onChange={(event: any) => onWorkflowChange('ios', event.target.value)}
-                          value={iosWorkflow}
-                          placeholder="All"
-                        />
-                      </InputContent>
-                    </InputContainer>
-                  </Flex>
-                  <Flex>
-                    <InputLabel margin="x1">App SKU</InputLabel>
-                    <InputContainer>
-                      <InputContent>
-                        <Input
-                          name="appSku"
-                          onChange={(event: any) =>
-                            onSettingsPropertyChange('iosSettings', 'appSku', event.target.value)
-                          }
-                          value={iosSettings.appSku}
-                        />
-                      </InputContent>
-                    </InputContainer>
-                  </Flex>
-                </Grid>
-              </Base>
-              <Base margin="x6">
-                <Grid
-                  columnCount={isDesktop ? '2' : '1'}
-                  columnWidth="1fr"
-                  direction={isDesktop ? 'horizontal' : 'vertical'}
-                  grow
-                  gap="x6"
-                  alignChildrenVertical="end"
-                >
-                  <Flex>
-                    <InputLabel margin="x1">Apple Developer Account Email</InputLabel>
-                    <InputContainer>
-                      <InputContent>
-                        <Input
-                          name="appleDeveloperAccountEmail"
-                          onChange={(event: any) =>
-                            onSettingsPropertyChange('iosSettings', 'appleDeveloperAccountEmail', event.target.value)
-                          }
-                          value={iosSettings.appleDeveloperAccountEmail}
-                        />
-                      </InputContent>
-                    </InputContainer>
-                  </Flex>
-                  <Flex>
-                    <InputLabel margin="x1">App Specific Password</InputLabel>
-                    <InputContainer>
-                      <InputContent>
-                        <Input
-                          name="appSpecificPassword"
-                          onChange={(event: any) =>
-                            onSettingsPropertyChange('iosSettings', 'appSpecificPassword', event.target.value)
-                          }
-                          value={iosSettings.appSpecificPassword}
-                        />
-                      </InputContent>
-                    </InputContainer>
-                  </Flex>
-                </Grid>
-              </Base>
-              <Base>
-                <Checkbox
-                  name="includeBitCode"
-                  checked={iosSettings.includeBitCode}
-                  onChange={(event: any) =>
-                    onSettingsPropertyChange('iosSettings', 'includeBitCode', event.target.checked)
-                  }
-                >
-                  Include bitcode
-                </Checkbox>
-              </Base>
-            </Base>
-
-            <Base margin="x12">
-              {
-                <Base margin="x6">
-                  <Flex
-                    direction={isDesktop ? 'horizontal' : 'vertical'}
-                    alignChildrenHorizontal="between"
-                    gap="x1"
-                    margin="x1"
-                  >
-                    <Text size="x3" weight="bold">
-                      App Store Provisioning Profile
-                    </Text>
-                    <Link
-                      href={`https://app.bitrise.io/app/${appSlug}/workflow_editor#!/code_signing`}
-                      target="_blank"
-                      color="grape-3"
+                  </Link>
+                </Flex>
+                <Divider color="gray-2" direction="horizontal" margin="x2" />
+                {(provProfiles as ProvProfile[]).map((provProfile: ProvProfile, index) => (
+                  <Base key={index}>
+                    <RadioButton
+                      checked={provProfile.slug === iosSettings.selectedAppStoreProvisioningProfile}
+                      onChange={() => onSelectedFileChange('ProvProfile', provProfile)}
                     >
                       <Flex
                         direction="horizontal"
-                        alignChildrenHorizontal="start"
+                        alignChildrenHorizontal="between"
                         alignChildrenVertical="middle"
-                        gap="x1"
-                        margin="x1"
+                        gap="x3"
+                        paddingHorizontal="x1"
+                        paddingVertical="x3"
                       >
-                        <Text size="x3">Edit Profiles and Certificates on Bitrise</Text>
-                        <Icon name="OpenInBrowser" size="1.5rem" />
+                        <SVG src="/static/sheet-cog.svg" className={css.sheet} />
+                        <Text size="x3">{provProfile.name}</Text>
                       </Flex>
-                    </Link>
+                    </RadioButton>
+                    <Divider color="gray-1" direction="horizontal" margin="x2" />
+                  </Base>
+                ))}
+                {(provProfiles as ProvProfile[]).length === 0 && (
+                  <Text size="x3" color="gray-7">
+                    No Provisioning Profiles
+                  </Text>
+                )}
+              </Base>
+            }
+
+            {
+              <Base margin="x6">
+                <Text size="x3" weight="bold" margin="x1">
+                  Code Signing Identity ({(certificates as Certificate[]).length}/{maximumNumberOfCertificates})
+                </Text>
+                <Divider color="gray-2" direction="horizontal" margin="x2" />
+                {(certificates as Certificate[]).map((certificate: Certificate, index) => (
+                  <Base key={index}>
+                    <RadioButton
+                      checked={certificate.slug === iosSettings.selectedCodeSigningIdentity}
+                      onChange={() => onSelectedFileChange('Certificate', certificate)}
+                    >
+                      <Flex
+                        direction="horizontal"
+                        alignChildrenHorizontal="between"
+                        alignChildrenVertical="middle"
+                        gap="x3"
+                        paddingHorizontal="x1"
+                        paddingVertical="x3"
+                      >
+                        <SVG src="/static/sheet-badge.svg" className={css.sheet} />
+                        <Text size="x3">{certificate.name}</Text>
+                      </Flex>
+                    </RadioButton>
+                    <Divider color="gray-1" direction="horizontal" margin="x2" />
+                  </Base>
+                ))}
+                {(certificates as Certificate[]).length === 0 && (
+                  <Text size="x3" color="gray-7">
+                    No Code Signing Identities
+                  </Text>
+                )}
+              </Base>
+            }
+          </Base>
+        </Fragment>
+      )}
+
+      {androidSettings && hasAndroidSettings && (
+        <Fragment>
+          <Base margin="x12">
+            <Text size="x5" weight="bold">
+              Android Settings
+            </Text>
+            <Divider color="gray-2" direction="horizontal" margin="x4" />
+            <Base margin="x6">
+              <Grid
+                columnCount={isDesktop ? '2' : '1'}
+                columnWidth="1fr"
+                direction={isDesktop ? 'horizontal' : 'vertical'}
+                grow
+                gap="x6"
+                alignChildrenVertical="end"
+              >
+                <Flex>
+                  <Flex
+                    direction="horizontal"
+                    alignChildrenHorizontal="start"
+                    alignChildrenVertical="middle"
+                    gap="x1"
+                    margin="x1"
+                  >
+                    <InputLabel>Expose Artifacts From the Selected Workflow to Ship</InputLabel>
+                    {hasMounted && (
+                      <Tooltip title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy">
+                        {() => <Icon color="grape-3" name="Support" size="1.5rem" />}
+                      </Tooltip>
+                    )}
                   </Flex>
-                  <Divider color="gray-2" direction="horizontal" margin="x2" />
-                  {(provProfiles as ProvProfile[]).map((provProfile: ProvProfile, index) => (
+                  <InputContainer>
+                    <InputContent>
+                      <Input
+                        name="androidWorkflow"
+                        onChange={(event: any) => onWorkflowChange('android', event.target.value)}
+                        value={androidWorkflow}
+                        placeholder="All"
+                      />
+                    </InputContent>
+                  </InputContainer>
+                </Flex>
+                <Flex>
+                  <InputLabel margin="x1">Track</InputLabel>
+                  <InputContainer>
+                    <InputContent>
+                      <Input
+                        name="track"
+                        onChange={(event: any) =>
+                          onSettingsPropertyChange('androidSettings', 'track', event.target.value)
+                        }
+                        value={androidSettings.track}
+                      />
+                    </InputContent>
+                  </InputContainer>
+                </Flex>
+                <Flex>
+                  <InputLabel margin="x1">Module</InputLabel>
+                  <InputContainer>
+                    <InputContent>
+                      <Input
+                        name="module"
+                        onChange={(event: any) =>
+                          onSettingsPropertyChange('androidSettings', 'module', event.target.value)
+                        }
+                        value={androidSettings.module}
+                      />
+                    </InputContent>
+                  </InputContainer>
+                </Flex>
+              </Grid>
+            </Base>
+          </Base>
+
+          <Base margin="x12">
+            {
+              <Base margin="x6">
+                <Flex
+                  direction={isDesktop ? 'horizontal' : 'vertical'}
+                  alignChildrenHorizontal="between"
+                  gap="x1"
+                  margin="x1"
+                >
+                  <Text size="x3" weight="bold">
+                    Android Keystore Files
+                  </Text>
+                  <Link
+                    href={`https://app.bitrise.io/app/${appSlug}/workflow_editor#!/code_signing`}
+                    target="_blank"
+                    color="grape-3"
+                  >
+                    <Flex
+                      direction="horizontal"
+                      alignChildrenHorizontal="start"
+                      alignChildrenVertical="middle"
+                      gap="x1"
+                      margin="x1"
+                    >
+                      <Text size="x3">Edit Keystore and JSON files on Bitrise</Text>
+                      <Icon name="OpenInBrowser" size="1.5rem" />
+                    </Flex>
+                  </Link>
+                </Flex>
+                <Divider color="gray-2" direction="horizontal" margin="x2" />
+                {(keystoreFiles as KeystoreFile[]).map((keystoreFile: KeystoreFile, index) => (
+                  <Base key={index}>
+                    <RadioButton
+                      checked={keystoreFile.slug === androidSettings.selectedKeystoreFile}
+                      onChange={() => onSelectedFileChange('KeystoreFile', keystoreFile)}
+                    >
+                      <Flex
+                        direction="horizontal"
+                        alignChildrenHorizontal="between"
+                        alignChildrenVertical="middle"
+                        gap="x3"
+                        paddingHorizontal="x1"
+                        paddingVertical="x3"
+                      >
+                        <SVG src="/static/sheet-key.svg" className={css.sheet} />
+                        <Text size="x3">{keystoreFile.name}</Text>
+                      </Flex>
+                    </RadioButton>
+                    <Divider color="gray-1" direction="horizontal" margin="x2" />
+                  </Base>
+                ))}
+                {(keystoreFiles as KeystoreFile[]).length === 0 && (
+                  <Text size="x3" color="gray-7">
+                    No Android Keystore Files
+                  </Text>
+                )}
+              </Base>
+            }
+
+            {
+              <Base margin="x6">
+                <Text size="x3" weight="bold" margin="x1">
+                  Android Service Account JSON File
+                </Text>
+                <Divider color="gray-2" direction="horizontal" margin="x2" />
+                {(serviceAccountJsonFiles as ServiceAccountJsonFile[]).map(
+                  (serviceAccountJsonFile: ServiceAccountJsonFile, index) => (
                     <Base key={index}>
                       <RadioButton
-                        checked={provProfile.slug === iosSettings.selectedAppStoreProvisioningProfile}
-                        onChange={() => onSelectedFileChange('ProvProfile', provProfile)}
+                        checked={serviceAccountJsonFile.slug === androidSettings.selectedServiceAccount}
+                        onChange={() => onSelectedFileChange('ServiceAccountJsonFile', serviceAccountJsonFile)}
                       >
                         <Flex
                           direction="horizontal"
@@ -239,246 +443,38 @@ export default ({
                           paddingVertical="x3"
                         >
                           <SVG src="/static/sheet-cog.svg" className={css.sheet} />
-                          <Text size="x3">{provProfile.name}</Text>
+                          <Text size="x3">{serviceAccountJsonFile.name}</Text>
                         </Flex>
                       </RadioButton>
                       <Divider color="gray-1" direction="horizontal" margin="x2" />
                     </Base>
-                  ))}
-                  {(provProfiles as ProvProfile[]).length === 0 && (
-                    <Text size="x3" color="gray-7">
-                      No Provisioning Profiles
-                    </Text>
-                  )}
-                </Base>
-              }
-
-              {
-                <Base margin="x6">
-                  <Text size="x3" weight="bold" margin="x1">
-                    Code Signing Identity ({(certificates as Certificate[]).length}/{maximumNumberOfCertificates})
+                  )
+                )}
+                {(serviceAccountJsonFiles as ServiceAccountJsonFile[]).length === 0 && (
+                  <Text size="x3" color="gray-7">
+                    No Android Service Account JSON File
                   </Text>
-                  <Divider color="gray-2" direction="horizontal" margin="x2" />
-                  {(certificates as Certificate[]).map((certificate: Certificate, index) => (
-                    <Base key={index}>
-                      <RadioButton
-                        checked={certificate.slug === iosSettings.selectedCodeSigningIdentity}
-                        onChange={() => onSelectedFileChange('Certificate', certificate)}
-                      >
-                        <Flex
-                          direction="horizontal"
-                          alignChildrenHorizontal="between"
-                          alignChildrenVertical="middle"
-                          gap="x3"
-                          paddingHorizontal="x1"
-                          paddingVertical="x3"
-                        >
-                          <SVG src="/static/sheet-badge.svg" className={css.sheet} />
-                          <Text size="x3">{certificate.name}</Text>
-                        </Flex>
-                      </RadioButton>
-                      <Divider color="gray-1" direction="horizontal" margin="x2" />
-                    </Base>
-                  ))}
-                  {(certificates as Certificate[]).length === 0 && (
-                    <Text size="x3" color="gray-7">
-                      No Code Signing Identities
-                    </Text>
-                  )}
-                </Base>
-              }
-            </Base>
-          </Fragment>
-        )}
-
-        {androidSettings && hasAndroidSettings && (
-          <Fragment>
-            <Base margin="x12">
-              <Text size="x5" weight="bold">
-                Android Settings
-              </Text>
-              <Divider color="gray-2" direction="horizontal" margin="x4" />
-              <Base margin="x6">
-                <Grid
-                  columnCount={isDesktop ? '2' : '1'}
-                  columnWidth="1fr"
-                  direction={isDesktop ? 'horizontal' : 'vertical'}
-                  grow
-                  gap="x6"
-                  alignChildrenVertical="end"
-                >
-                  <Flex>
-                    <Flex
-                      direction="horizontal"
-                      alignChildrenHorizontal="start"
-                      alignChildrenVertical="middle"
-                      gap="x1"
-                      margin="x1"
-                    >
-                      <InputLabel>Expose Artifacts From the Selected Workflow to Ship</InputLabel>
-                      {hasMounted && (
-                        <Tooltip title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy">
-                          {() => <Icon color="grape-3" name="Support" size="1.5rem" />}
-                        </Tooltip>
-                      )}
-                    </Flex>
-                    <InputContainer>
-                      <InputContent>
-                        <Input
-                          name="androidWorkflow"
-                          onChange={(event: any) => onWorkflowChange('android', event.target.value)}
-                          value={androidWorkflow}
-                          placeholder="All"
-                        />
-                      </InputContent>
-                    </InputContainer>
-                  </Flex>
-                  <Flex>
-                    <InputLabel margin="x1">Track</InputLabel>
-                    <InputContainer>
-                      <InputContent>
-                        <Input
-                          name="track"
-                          onChange={(event: any) =>
-                            onSettingsPropertyChange('androidSettings', 'track', event.target.value)
-                          }
-                          value={androidSettings.track}
-                        />
-                      </InputContent>
-                    </InputContainer>
-                  </Flex>
-                  <Flex>
-                    <InputLabel margin="x1">Module</InputLabel>
-                    <InputContainer>
-                      <InputContent>
-                        <Input
-                          name="module"
-                          onChange={(event: any) =>
-                            onSettingsPropertyChange('androidSettings', 'module', event.target.value)
-                          }
-                          value={androidSettings.module}
-                        />
-                      </InputContent>
-                    </InputContainer>
-                  </Flex>
-                </Grid>
+                )}
               </Base>
-            </Base>
+            }
+          </Base>
+        </Fragment>
+      )}
 
-            <Base margin="x12">
-              {
-                <Base margin="x6">
-                  <Flex
-                    direction={isDesktop ? 'horizontal' : 'vertical'}
-                    alignChildrenHorizontal="between"
-                    gap="x1"
-                    margin="x1"
-                  >
-                    <Text size="x3" weight="bold">
-                      Android Keystore Files
-                    </Text>
-                    <Link
-                      href={`https://app.bitrise.io/app/${appSlug}/workflow_editor#!/code_signing`}
-                      target="_blank"
-                      color="grape-3"
-                    >
-                      <Flex
-                        direction="horizontal"
-                        alignChildrenHorizontal="start"
-                        alignChildrenVertical="middle"
-                        gap="x1"
-                        margin="x1"
-                      >
-                        <Text size="x3">Edit Keystore and JSON files on Bitrise</Text>
-                        <Icon name="OpenInBrowser" size="1.5rem" />
-                      </Flex>
-                    </Link>
-                  </Flex>
-                  <Divider color="gray-2" direction="horizontal" margin="x2" />
-                  {(keystoreFiles as KeystoreFile[]).map((keystoreFile: KeystoreFile, index) => (
-                    <Base key={index}>
-                      <RadioButton
-                        checked={keystoreFile.slug === androidSettings.selectedKeystoreFile}
-                        onChange={() => onSelectedFileChange('KeystoreFile', keystoreFile)}
-                      >
-                        <Flex
-                          direction="horizontal"
-                          alignChildrenHorizontal="between"
-                          alignChildrenVertical="middle"
-                          gap="x3"
-                          paddingHorizontal="x1"
-                          paddingVertical="x3"
-                        >
-                          <SVG src="/static/sheet-key.svg" className={css.sheet} />
-                          <Text size="x3">{keystoreFile.name}</Text>
-                        </Flex>
-                      </RadioButton>
-                      <Divider color="gray-1" direction="horizontal" margin="x2" />
-                    </Base>
-                  ))}
-                  {(keystoreFiles as KeystoreFile[]).length === 0 && (
-                    <Text size="x3" color="gray-7">
-                      No Android Keystore Files
-                    </Text>
-                  )}
-                </Base>
-              }
-
-              {
-                <Base margin="x6">
-                  <Text size="x3" weight="bold" margin="x1">
-                    Android Service Account JSON File
-                  </Text>
-                  <Divider color="gray-2" direction="horizontal" margin="x2" />
-                  {(serviceAccountJsonFiles as ServiceAccountJsonFile[]).map(
-                    (serviceAccountJsonFile: ServiceAccountJsonFile, index) => (
-                      <Base key={index}>
-                        <RadioButton
-                          checked={serviceAccountJsonFile.slug === androidSettings.selectedServiceAccount}
-                          onChange={() => onSelectedFileChange('ServiceAccountJsonFile', serviceAccountJsonFile)}
-                        >
-                          <Flex
-                            direction="horizontal"
-                            alignChildrenHorizontal="between"
-                            alignChildrenVertical="middle"
-                            gap="x3"
-                            paddingHorizontal="x1"
-                            paddingVertical="x3"
-                          >
-                            <SVG src="/static/sheet-cog.svg" className={css.sheet} />
-                            <Text size="x3">{serviceAccountJsonFile.name}</Text>
-                          </Flex>
-                        </RadioButton>
-                        <Divider color="gray-1" direction="horizontal" margin="x2" />
-                      </Base>
-                    )
-                  )}
-                  {(serviceAccountJsonFiles as ServiceAccountJsonFile[]).length === 0 && (
-                    <Text size="x3" color="gray-7">
-                      No Android Service Account JSON File
-                    </Text>
-                  )}
-                </Base>
-              }
-            </Base>
-          </Fragment>
-        )}
-
-        <Flex margin="x12" direction="horizontal" alignChildrenHorizontal="end" gap="x4">
-          <Button disabled={!onCancel || isSaving} level="secondary" width="8rem" onClick={onCancel}>
-            Cancel
-          </Button>
-          <Button disabled={!onSave || isSaving} level="primary" width="8rem" onClick={onSave}>
-            {isSaving ? (
-              <Fragment>
-                <ProgressSpinner /> &nbsp; Saving...
-              </Fragment>
-            ) : (
-              'Save'
-            )}
-          </Button>
-        </Flex>
-      </Base>
+      <Flex margin="x12" direction="horizontal" alignChildrenHorizontal="end" gap="x4">
+        <Button disabled={!onCancel || isSaving} level="secondary" width="8rem" grow={!isTablet} onClick={onCancel}>
+          Cancel
+        </Button>
+        <Button disabled={!onSave || isSaving} level="primary" width="8rem" grow={!isTablet} onClick={onSave}>
+          {isSaving ? (
+            <Fragment>
+              <ProgressSpinner /> &nbsp; Saving...
+            </Fragment>
+          ) : (
+            'Save'
+          )}
+        </Button>
+      </Flex>
     </Base>
   );
 };
