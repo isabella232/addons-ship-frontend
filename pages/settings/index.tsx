@@ -1,7 +1,5 @@
 import { Component, Fragment } from 'react';
-import Link from 'next/link';
-import { Base, Tabs, Tab, Divider, AddonFooter, Flex } from '@bitrise/bitkit';
-import startCase from 'lodash/startCase';
+import { Base, Divider, AddonFooter, Flex } from '@bitrise/bitkit';
 
 import { PageContext } from '@/models';
 import { AppSettingsPageQuery, AppSettingsPageTabs } from '@/models/settings';
@@ -9,6 +7,7 @@ import ShipHead from '@/components/ShipHead';
 
 import General from './general';
 import Notifications from './notifications';
+import Tabmenu from '../version/tabmenu';
 
 export class SettingsPage extends Component<AppSettingsPageQuery> {
   static displayName = 'SettingsPage';
@@ -44,31 +43,25 @@ export class SettingsPage extends Component<AppSettingsPageQuery> {
   render() {
     const { appSlug, selectedTab } = this.props;
 
-    const tab = (key: string) => (
-      <Link as={`/apps/${appSlug}/settings/${key}`} href={`/settings?appSlug=${appSlug}&selectedTab=${key}`}>
-        <Tab active={selectedTab === key}>
-          <a>{startCase(key)}</a>
-        </Tab>
-      </Link>
-    );
-
     return (
       <Fragment>
         <ShipHead>{selectedTab === 'general' ? 'Settings' : 'Notifications'}</ShipHead>
         <Base>
           <Base>
-            <Base maxWidth={960}>
-              <Tabs gap="x10">
-                {tab('general')}
-                {tab('notifications')}
-              </Tabs>
+            <Base maxWidth={992}>
+              <Tabmenu
+                tabs={[{ label: 'general' }, { label: 'notifications' }]}
+                selectedTab={selectedTab}
+                linkAsPrefix={`/apps/${appSlug}/settings/`}
+                linkHrefPrefix={`/settings?appSlug=${appSlug}&selectedTab=`}
+              ></Tabmenu>
             </Base>
-            <Divider color="gray-2" direction="horizontal" />
-            <Base maxWidth={960}>{this.tabContent()}</Base>
+            <Divider color="gray-2" direction="horizontal" width="1px" />
+            <Flex padding="x4" direction="vertical" maxWidth={992} grow>
+              {this.tabContent()}
+              <AddonFooter addonName="Ship" paddingVertical="x16" />
+            </Flex>
           </Base>
-          <Flex paddingVertical="x16">
-            <AddonFooter addonName="Ship" />
-          </Flex>
         </Base>
       </Fragment>
     );

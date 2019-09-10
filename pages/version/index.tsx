@@ -115,10 +115,15 @@ export class VersionPage extends Component<VersionPageProps> {
         <Flex direction="vertical" grow>
           <Base maxWidth={992}>
             <Tabmenu
-              appSlug={appSlug}
-              versionId={versionId}
+              tabs={[
+                { label: 'details', showBadge: false },
+                { label: 'devices', showBadge: false },
+                { label: 'qa', showBadge: false },
+                { label: 'activity', showBadge: true }
+              ]}
               selectedTab={selectedTab}
-              showActivityBadge={showActivityBadge}
+              linkAsPrefix={`/apps/${appSlug}/versions/${versionId}/`}
+              linkHrefPrefix={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=`}
             ></Tabmenu>
           </Base>
           <Divider color="gray-2" direction="horizontal" width="1px" />

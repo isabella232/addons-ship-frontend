@@ -8,57 +8,45 @@ exports[`Settings renders tabs correctly general 1`] = `
   <Base>
     <Base>
       <Base
-        maxWidth={960}
+        maxWidth={992}
       >
-        <Tabs
-          gap="x10"
-        >
-          <Link
-            as="/apps/some-app/settings/general"
-            href="/settings?appSlug=some-app&selectedTab=general"
-          >
-            <Tab
-              active={true}
-            >
-              <a>
-                General
-              </a>
-            </Tab>
-          </Link>
-          <Link
-            as="/apps/some-app/settings/notifications"
-            href="/settings?appSlug=some-app&selectedTab=notifications"
-          >
-            <Tab
-              active={false}
-            >
-              <a>
-                Notifications
-              </a>
-            </Tab>
-          </Link>
-        </Tabs>
+        <_default
+          linkAsPrefix="/apps/some-app/settings/"
+          linkHrefPrefix="/settings?appSlug=some-app&selectedTab="
+          selectedTab="general"
+          tabs={
+            Array [
+              Object {
+                "label": "general",
+              },
+              Object {
+                "label": "notifications",
+              },
+            ]
+          }
+        />
       </Base>
       <Divider
         color="gray-2"
         direction="horizontal"
-        width="0.125rem"
+        width="1px"
       />
-      <Base
-        maxWidth={960}
+      <Flex
+        direction="vertical"
+        grow={true}
+        maxWidth={992}
+        paddingHorizontal="x4"
+        paddingVertical="x4"
       >
         <Connect(GeneralSettings)
           appSlug="some-app"
         />
-      </Base>
+        <AddonFooter
+          addonName="Ship"
+          paddingVertical="x16"
+        />
+      </Flex>
     </Base>
-    <Flex
-      paddingVertical="x16"
-    >
-      <AddonFooter
-        addonName="Ship"
-      />
-    </Flex>
   </Base>
 </Fragment>
 `;
@@ -71,57 +59,45 @@ exports[`Settings renders tabs correctly notifications 1`] = `
   <Base>
     <Base>
       <Base
-        maxWidth={960}
+        maxWidth={992}
       >
-        <Tabs
-          gap="x10"
-        >
-          <Link
-            as="/apps/some-app/settings/general"
-            href="/settings?appSlug=some-app&selectedTab=general"
-          >
-            <Tab
-              active={false}
-            >
-              <a>
-                General
-              </a>
-            </Tab>
-          </Link>
-          <Link
-            as="/apps/some-app/settings/notifications"
-            href="/settings?appSlug=some-app&selectedTab=notifications"
-          >
-            <Tab
-              active={true}
-            >
-              <a>
-                Notifications
-              </a>
-            </Tab>
-          </Link>
-        </Tabs>
+        <_default
+          linkAsPrefix="/apps/some-app/settings/"
+          linkHrefPrefix="/settings?appSlug=some-app&selectedTab="
+          selectedTab="notifications"
+          tabs={
+            Array [
+              Object {
+                "label": "general",
+              },
+              Object {
+                "label": "notifications",
+              },
+            ]
+          }
+        />
       </Base>
       <Divider
         color="gray-2"
         direction="horizontal"
-        width="0.125rem"
+        width="1px"
       />
-      <Base
-        maxWidth={960}
+      <Flex
+        direction="vertical"
+        grow={true}
+        maxWidth={992}
+        paddingHorizontal="x4"
+        paddingVertical="x4"
       >
         <Connect(NotificationSettings)
           appSlug="some-app"
         />
-      </Base>
+        <AddonFooter
+          addonName="Ship"
+          paddingVertical="x16"
+        />
+      </Flex>
     </Base>
-    <Flex
-      paddingVertical="x16"
-    >
-      <AddonFooter
-        addonName="Ship"
-      />
-    </Flex>
   </Base>
 </Fragment>
 `;
@@ -134,57 +110,45 @@ exports[`Settings renders tabs correctly other 1`] = `
   <Base>
     <Base>
       <Base
-        maxWidth={960}
+        maxWidth={992}
       >
-        <Tabs
-          gap="x10"
-        >
-          <Link
-            as="/apps/some-app/settings/general"
-            href="/settings?appSlug=some-app&selectedTab=general"
-          >
-            <Tab
-              active={false}
-            >
-              <a>
-                General
-              </a>
-            </Tab>
-          </Link>
-          <Link
-            as="/apps/some-app/settings/notifications"
-            href="/settings?appSlug=some-app&selectedTab=notifications"
-          >
-            <Tab
-              active={false}
-            >
-              <a>
-                Notifications
-              </a>
-            </Tab>
-          </Link>
-        </Tabs>
+        <_default
+          linkAsPrefix="/apps/some-app/settings/"
+          linkHrefPrefix="/settings?appSlug=some-app&selectedTab="
+          selectedTab="other"
+          tabs={
+            Array [
+              Object {
+                "label": "general",
+              },
+              Object {
+                "label": "notifications",
+              },
+            ]
+          }
+        />
       </Base>
       <Divider
         color="gray-2"
         direction="horizontal"
-        width="0.125rem"
+        width="1px"
       />
-      <Base
-        maxWidth={960}
+      <Flex
+        direction="vertical"
+        grow={true}
+        maxWidth={992}
+        paddingHorizontal="x4"
+        paddingVertical="x4"
       >
         <h1>
           other
         </h1>
-      </Base>
+        <AddonFooter
+          addonName="Ship"
+          paddingVertical="x16"
+        />
+      </Flex>
     </Base>
-    <Flex
-      paddingVertical="x16"
-    >
-      <AddonFooter
-        addonName="Ship"
-      />
-    </Flex>
   </Base>
 </Fragment>
 `;

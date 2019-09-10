@@ -24,10 +24,29 @@ exports[`AppVersion displays a new activity marker badge 1`] = `
       maxWidth={992}
     >
       <_default
-        appSlug="some-app"
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
         selectedTab="details"
-        showActivityBadge={true}
-        versionId="a-version-id"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
       />
     </Base>
     <Divider
@@ -67,10 +86,29 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
       maxWidth={992}
     >
       <_default
-        appSlug="some-app"
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
         selectedTab="activity"
-        showActivityBadge={false}
-        versionId="a-version-id"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
       />
     </Base>
     <Divider
@@ -110,10 +148,29 @@ exports[`AppVersion renders the details tab correctly 1`] = `
       maxWidth={992}
     >
       <_default
-        appSlug="some-app"
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
         selectedTab="details"
-        showActivityBadge={false}
-        versionId="a-version-id"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
       />
     </Base>
     <Divider
@@ -153,10 +210,29 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
       maxWidth={992}
     >
       <_default
-        appSlug="some-app"
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
         selectedTab="devices"
-        showActivityBadge={false}
-        versionId="a-version-id"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
       />
     </Base>
     <Divider
@@ -193,10 +269,29 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
       maxWidth={992}
     >
       <_default
-        appSlug="some-app"
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
         selectedTab="whateever"
-        showActivityBadge={false}
-        versionId="a-version-id"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
       />
     </Base>
     <Divider
@@ -235,10 +330,29 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
       maxWidth={992}
     >
       <_default
-        appSlug="some-app"
+        linkAsPrefix="/apps/some-app/versions/a-version-id/"
+        linkHrefPrefix="/version?appSlug=some-app&versionId=a-version-id&selectedTab="
         selectedTab="qa"
-        showActivityBadge={false}
-        versionId="a-version-id"
+        tabs={
+          Array [
+            Object {
+              "label": "details",
+              "showBadge": false,
+            },
+            Object {
+              "label": "devices",
+              "showBadge": false,
+            },
+            Object {
+              "label": "qa",
+              "showBadge": false,
+            },
+            Object {
+              "label": "activity",
+              "showBadge": true,
+            },
+          ]
+        }
       />
     </Base>
     <Divider
