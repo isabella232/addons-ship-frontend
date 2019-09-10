@@ -1392,15 +1392,16 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                         }
                                       >
                                         <Flex
+                                          alignChildrenHorizontal="start"
                                           alignChildrenVertical="middle"
                                           direction="horizontal"
                                           gap="x1"
                                         >
                                           <Base
-                                            className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                            className="Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                           >
                                             <div
-                                              className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                              className="Base Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                               style={
                                                 Object {
                                                   "height": undefined,
@@ -1465,6 +1466,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                                 </Base>
                                               </Icon>
                                               <Text
+                                                align="start"
                                                 breakOn="all"
                                                 color="grape-4"
                                                 letterSpacing="x1"
@@ -1473,11 +1475,11 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                                               >
                                                 <Base
                                                   Component="h4"
-                                                  className="Text Text--break-all Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
+                                                  className="Text Text--align-start Text--break-all Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
                                                   color="grape-4"
                                                 >
                                                   <h4
-                                                    className="Base Base--color-grape-4 Text Text--break-all Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
+                                                    className="Base Base--color-grape-4 Text Text--align-start Text--break-all Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
                                                     style={
                                                       Object {
                                                         "height": undefined,
@@ -4102,15 +4104,16 @@ exports[`AppPageView when page has apps renders the product flavour tags 1`] = `
                                         }
                                       >
                                         <Flex
+                                          alignChildrenHorizontal="start"
                                           alignChildrenVertical="middle"
                                           direction="horizontal"
                                           gap="x1"
                                         >
                                           <Base
-                                            className="Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                            className="Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                           >
                                             <div
-                                              className="Base Flex Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
+                                              className="Base Flex Flex--align-horz-start Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x1"
                                               style={
                                                 Object {
                                                   "height": undefined,
@@ -4175,6 +4178,7 @@ exports[`AppPageView when page has apps renders the product flavour tags 1`] = `
                                                 </Base>
                                               </Icon>
                                               <Text
+                                                align="start"
                                                 breakOn="all"
                                                 color="grape-4"
                                                 letterSpacing="x1"
@@ -4183,11 +4187,11 @@ exports[`AppPageView when page has apps renders the product flavour tags 1`] = `
                                               >
                                                 <Base
                                                   Component="h4"
-                                                  className="Text Text--break-all Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
+                                                  className="Text Text--align-start Text--break-all Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
                                                   color="grape-4"
                                                 >
                                                   <h4
-                                                    className="Base Base--color-grape-4 Text Text--break-all Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
+                                                    className="Base Base--color-grape-4 Text Text--align-start Text--break-all Text--letter-spacing-x1 Text--size-x5 Text--weight-bold"
                                                     style={
                                                       Object {
                                                         "height": undefined,

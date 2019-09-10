@@ -61,6 +61,7 @@ exports[`AppSummary renders correctly on desktop 1`] = `
         gap="x2"
       >
         <Flex
+          alignChildrenHorizontal="start"
           alignChildrenVertical="middle"
           direction="horizontal"
           gap="x1"
@@ -71,6 +72,7 @@ exports[`AppSummary renders correctly on desktop 1`] = `
             size="1.5rem"
           />
           <Text
+            align="start"
             breakOn="word"
             color="grape-4"
             letterSpacing="x1"
@@ -153,6 +155,7 @@ exports[`AppSummary renders correctly on mobile 1`] = `
         gap="x2"
       >
         <Flex
+          alignChildrenHorizontal="middle"
           alignChildrenVertical="middle"
           direction="vertical"
           gap="x1"
@@ -163,6 +166,7 @@ exports[`AppSummary renders correctly on mobile 1`] = `
             size="1.5rem"
           />
           <Text
+            align="middle"
             breakOn="all"
             color="grape-4"
             letterSpacing="x1"
@@ -245,6 +249,7 @@ exports[`AppSummary renders correctly on tablet 1`] = `
         gap="x2"
       >
         <Flex
+          alignChildrenHorizontal="start"
           alignChildrenVertical="middle"
           direction="horizontal"
           gap="x1"
@@ -255,6 +260,7 @@ exports[`AppSummary renders correctly on tablet 1`] = `
             size="1.5rem"
           />
           <Text
+            align="start"
             breakOn="all"
             color="grape-4"
             letterSpacing="x1"

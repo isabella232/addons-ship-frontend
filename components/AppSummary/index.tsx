@@ -68,9 +68,21 @@ export default ({
             </Base>
           </Flex>
           <Flex direction="vertical" gap="x2">
-            <Flex direction={isTablet ? 'horizontal' : 'vertical'} alignChildrenVertical="middle" gap="x1">
+            <Flex
+              direction={isTablet ? 'horizontal' : 'vertical'}
+              alignChildrenVertical="middle"
+              alignChildrenHorizontal={isTablet ? 'start' : 'middle'}
+              gap="x1"
+            >
               <Icon color="grape-4" name={iconName} size="1.5rem" />
-              <Text size="x5" color="grape-4" weight="bold" letterSpacing="x1" breakOn={isDesktop ? 'word' : 'all'}>
+              <Text
+                size="x5"
+                color="grape-4"
+                weight="bold"
+                letterSpacing="x1"
+                breakOn={isDesktop ? 'word' : 'all'}
+                align={isTablet ? 'start' : 'middle'}
+              >
                 {title}
               </Text>
             </Flex>
