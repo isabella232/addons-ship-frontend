@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import formatDate from 'date-fns/format';
-import { Flex, Base, Text, Divider, Dropdown, Notification } from '@bitrise/bitkit';
+import { Flex, Base, Text, Divider, Dropdown, Notification, Grid } from '@bitrise/bitkit';
 
 import AppSummary from '@/components/AppSummary';
 import VersionListPageItem from '@/components/VersionListPageItem';
@@ -54,7 +54,7 @@ export default ({
   selectProductFalvour,
   warnings
 }: Props) => {
-  const [isDesktop] = mediaQuery('60rem');
+  const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
 
   return (
     <Flex direction="vertical" className={css.wrapper}>
@@ -80,16 +80,20 @@ export default ({
             </Base>
           )}
           {productFlavours.length > 0 && (
-            <Flex direction="horizontal" gap="x2" paddingVertical="x4" paddingHorizontal="x1">
+            <Flex
+              wrap
+              direction={isTablet ? 'horizontal' : 'vertical'}
+              shrink
+              gap="x2"
+              paddingVertical="x4"
+              paddingHorizontal="x1"
+            >
               {productFlavours.map((f, idx) => (
-                <MagicTag
-                  large
-                  key={idx}
-                  selected={f === selectedProductFlavour}
-                  onClick={() => selectProductFalvour(f)}
-                >
-                  {f}
-                </MagicTag>
+                <Flex key={idx}>
+                  <MagicTag large selected={f === selectedProductFlavour} onClick={() => selectProductFalvour(f)}>
+                    {f}
+                  </MagicTag>
+                </Flex>
               ))}
             </Flex>
           )}
@@ -103,6 +107,7 @@ export default ({
             platform={latestAppVersion.platform}
             startColor={startColor}
             endColor={endColor}
+            productFlavour={latestAppVersion.productFlavour}
           />
           <Base className={css.sectionHeadingWrapper}>
             <Flex direction="horizontal" alignChildrenVertical="end" gap="x2">

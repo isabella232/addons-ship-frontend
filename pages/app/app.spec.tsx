@@ -9,9 +9,10 @@ import AppView, { Props as ViewProps } from './view';
 import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
 import { AppVersion } from '@/models';
 import { mediaQuery } from '@/utils/media';
+import { RootState } from '@/store';
 
 describe('AppPageView', () => {
-  (mediaQuery as jest.Mock).mockReturnValue([true]);
+  (mediaQuery as jest.Mock).mockReturnValue([true, true]);
 
   describe('when page has apps', () => {
     const defaultProps: ViewProps = {
@@ -57,9 +58,25 @@ describe('AppPageView', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('renders the product flavour tags', () => {
-      const tree = shallowToJson(shallow(<AppView {...defaultProps} productFlavours={['first', 'second']} />));
-      expect(tree).toMatchSnapshot();
+    describe('product flavours', () => {
+      const comp = <AppView {...defaultProps} productFlavours={['first', 'second']} />;
+
+      test('desktop', () => {
+        const tree = shallowToJson(shallow(comp));
+        expect(tree).toMatchSnapshot();
+      });
+
+      test('tablet', () => {
+        (mediaQuery as jest.Mock).mockReturnValueOnce([true, false]);
+        const tree = shallowToJson(shallow(comp));
+        expect(tree).toMatchSnapshot();
+      });
+
+      test('mobile', () => {
+        (mediaQuery as jest.Mock).mockReturnValueOnce([false, false]);
+        const tree = shallowToJson(shallow(comp));
+        expect(tree).toMatchSnapshot();
+      });
     });
 
     it('shows a warning', () => {
@@ -120,7 +137,7 @@ describe('AppPage', () => {
   it('sets state when versionSortOptionWithValueSelected was called', () => {
     const wrapper = shallow(<AppPage {...defaultProps} />);
 
-    const sortingOption = 'whatever';
+    const sortingOption = 'latest-build';
     (wrapper.instance() as AppPage).versionSortOptionWithValueSelected(sortingOption);
     expect(wrapper.state('selectedVersionSortingOptionValue')).toEqual(sortingOption);
   });
@@ -163,5 +180,23 @@ describe('AppPage', () => {
     const flavour = 'whatever';
     (wrapper.instance() as AppPage).selectProductFlavour(flavour);
     expect(wrapper.state('selectedProductFlavour')).toEqual(flavour);
+  });
+
+  test('A prodcutFlavour is selected', () => {
+    const appVersionsByBuildNumber = getAppVersionsByBuildNumber({
+      appVersionList: [
+        { id: 'v1', productFlavour: 'f1', platform: 'android' },
+        { id: 'v2', productFlavour: 'f1', platform: 'android' },
+        { id: 'v3', productFlavour: 'f1', platform: 'android' },
+        { id: 'v4', productFlavour: 'f2', platform: 'android' },
+        { id: 'v5', productFlavour: 'f2', platform: 'android' },
+        { id: 'v6', productFlavour: 'f2', platform: 'android' }
+      ]
+    } as RootState) as AppPageProps['appVersionsByBuildNumber'];
+    const wrapper = shallow(<AppPage {...defaultProps} appVersionsByBuildNumber={appVersionsByBuildNumber} />);
+    wrapper.setState({ selectedProductFlavour: 'f2' });
+
+    const view = wrapper.find(AppView);
+    expect(view.props()).toMatchSnapshot();
   });
 });

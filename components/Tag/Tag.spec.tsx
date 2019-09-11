@@ -37,6 +37,17 @@ describe('Tag', () => {
     );
     expect(tree).toMatchSnapshot();
   });
+
+  test('onClick', () => {
+    const tree = shallowToJson(
+      shallow(
+        <Tag color="blue-3" textColor="white" onClick={jest.fn()}>
+          Some text
+        </Tag>
+      )
+    );
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('MagicTag', () => {

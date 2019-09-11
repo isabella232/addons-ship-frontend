@@ -1,8 +1,11 @@
 .Tag {
   display: inline-block;
-  cursor: pointer;
 
-  &:hover {
-    opacity: 0.8;
+  &.clickable {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
