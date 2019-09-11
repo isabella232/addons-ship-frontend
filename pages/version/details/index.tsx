@@ -278,7 +278,11 @@ export class AppVersionDetails extends Component<Props, State> {
 
     /* istanbul ignore next */
     if (window.analytics) {
-      window.analytics.track('AppVersionDetails Save', { addonId: 'addons-ship', appSlug, appVersionId: id });
+      window.analytics.track('Ship Add-On AppVersionDetails Save', {
+        addonId: 'addons-ship',
+        appSlug,
+        appVersionId: id
+      });
     }
 
     if (screenshotIdsToDelete.length > 0) {
@@ -311,7 +315,11 @@ export class AppVersionDetails extends Component<Props, State> {
 
     /* istanbul ignore next */
     if (window.analytics) {
-      window.analytics.track('AppVersionDetails Publish', { addonId: 'addons-ship', appSlug, appVersionId: id });
+      window.analytics.track('Ship Add-On AppVersionDetails Publish', {
+        addonId: 'addons-ship',
+        appSlug,
+        appVersionId: id
+      });
     }
 
     await publishAppVersion(appVersion);
@@ -331,7 +339,7 @@ export class AppVersionDetails extends Component<Props, State> {
 
     /* istanbul ignore next */
     if (window.analytics) {
-      window.analytics.track('AppVersionDetails Added Screenshot', {
+      window.analytics.track('Ship Add-On AppVersionDetails Added Screenshot', {
         addonId: 'addons-ship',
         appSlug,
         appVersionId: id,
