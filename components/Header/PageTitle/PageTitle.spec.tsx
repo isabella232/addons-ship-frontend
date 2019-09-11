@@ -18,12 +18,6 @@ describe('PageTitle', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders without errors in smaller', () => {
-    const tree = shallowToJson(shallow(<PageTitle title="Some title" type="whatever" smaller />));
-
-    expect(tree).toMatchSnapshot();
-  });
-
   it('renders without errors on mobile', () => {
     (mediaQuery as jest.Mock).mockReturnValueOnce([false]);
 

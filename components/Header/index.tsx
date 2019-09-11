@@ -4,6 +4,7 @@ import Router, { useRouter } from 'next/router';
 import { connect } from 'react-redux';
 import {
   Base,
+  Button,
   AddonBeam,
   AddonBeamLink,
   Flex,
@@ -36,7 +37,7 @@ export type Props = {
 };
 
 export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBreadcrumbs = false }: Props) => {
-  const [isDesktop] = mediaQuery('60rem');
+  const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
   const [isHamburgerIconActive, setHamburgerIconActive] = useState(false);
   const [isSettingsOnboardingNotificationVisible, setSettingsOnboardingNotificationVisible] = useState(
     shouldShowSettingsOnboarding
@@ -87,8 +88,8 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
   const appLink = `https://app.bitrise.io/app/${appSlug}`,
     pageType = route.replace(/^\//, '');
 
-  let pageTitle,
-    breadcrumbs = null;
+  let pageTitle = null;
+  let isRootPage = true;
   switch (pageType) {
     case 'settings':
       projectType = 'settings';
@@ -106,17 +107,7 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
   }
 
   if (['settings', 'version'].includes(pageType)) {
-    breadcrumbs = (
-      <Flex direction="horizontal" paddingHorizontal={isDesktop ? 'x0' : 'x4'}>
-        <Link href={`/app?appSlug=${appSlug}`} as={`/apps/${appSlug}`}>
-          <a>
-            <Text size={isDesktop ? 'x4' : 'x3'} className={css.breadcrumbs}>
-              « {title}
-            </Text>
-          </a>
-        </Link>
-      </Flex>
-    );
+    isRootPage = false;
   }
 
   return (
@@ -175,18 +166,27 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
       </PlacementManager>
 
       {!hideBreadcrumbs && (
-        <Flex
+        <Base
           className={css.header}
-          direction="vertical"
-          paddingVertical={breadcrumbs ? 'x5' : 'x8'}
-          gap="x2"
+          paddingVertical="x8"
+          paddingHorizontal={isTablet ? 'x16' : 'x4'}
           style={{
             backgroundImage: `url('/static/header-bg.svg'), linear-gradient(90deg, ${primaryColor}, ${secondaryColor})`
           }}
         >
-          {breadcrumbs}
-          <PageTitle type={projectType} title={`${pageTitle}`} smaller={!!breadcrumbs} />
-        </Flex>
+          {isRootPage ? (
+            <PageTitle type={projectType} title={`${pageTitle}`} />
+          ) : (
+            <Link href={`/app?appSlug=${appSlug}`} as={`/apps/${appSlug}`}>
+              <a>
+                <Button level="expand">
+                  <Icon name="ArrowBack"></Icon>
+                  <Text>All versions</Text>
+                </Button>
+              </a>
+            </Link>
+          )}
+        </Base>
       )}
       <Flex
         direction="vertical"

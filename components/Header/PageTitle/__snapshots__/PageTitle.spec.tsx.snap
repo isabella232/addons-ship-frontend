@@ -22,28 +22,6 @@ exports[`PageTitle renders without errors 1`] = `
 </Flex>
 `;
 
-exports[`PageTitle renders without errors in smaller 1`] = `
-<Flex
-  alignChildrenVertical="middle"
-  color="white"
-  direction="horizontal"
-  gap="x2"
-  paddingHorizontal="x4"
->
-  <Icon
-    name="Bitbot"
-    size="2rem"
-  />
-  <Text
-    breakOn="all"
-    size="x4"
-    weight="bold"
-  >
-    Some title
-  </Text>
-</Flex>
-`;
-
 exports[`PageTitle renders without errors on mobile 1`] = `
 <Flex
   alignChildrenVertical="middle"
