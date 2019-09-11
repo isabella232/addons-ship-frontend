@@ -32,6 +32,30 @@ exports[`Tag large 1`] = `
 </Base>
 `;
 
+exports[`Tag onClick 1`] = `
+<Base
+  borderRadius="x1"
+  borderWidth="x1"
+  className="Tag clickable"
+  onClick={[MockFunction]}
+  paddingHorizontal="x2"
+  paddingVertical="x1"
+  style={
+    Object {
+      "borderColor": "#0D83CD",
+    }
+  }
+>
+  <Text
+    color="blue-3"
+    config="9"
+    uppercase={true}
+  >
+    Some text
+  </Text>
+</Base>
+`;
+
 exports[`Tag selected 1`] = `
 <Base
   backgroundColor="blue-3"

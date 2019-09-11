@@ -16,16 +16,16 @@ import {
 
 import { AppVersion, AppVersionEvent, Screenshot, AppVersionEventStatus } from '@/models';
 import { mediaQuery } from '@/utils/media';
+import Squircle from '@/components/Squircle';
+import MagicTag from '@/components/Tag/MagicTag';
 
 import Sidebar from './sidebar';
 import FormIos from './form-ios';
 import FormAndroid from './form-android';
 import NextLink from 'next/link';
-import Squircle from '@/components/Squircle';
 
 import Share from './share';
 import css from './style.scss';
-import MagicTag from '@/components/Tag/MagicTag';
 
 type DeviceInfo = {
   key: string;
@@ -222,7 +222,7 @@ export default ({
                   <Text letterSpacing="x2" size="x5" weight="bold" color="grape-4" margin="x2">
                     v{appVersion.version} ({appVersion.buildNumber})
                   </Text>
-                  {appVersion.productFlavour && <MagicTag>{appVersion.productFlavour}</MagicTag>}
+                  {appVersion.productFlavour && <MagicTag selected>{appVersion.productFlavour}</MagicTag>}
                 </Flex>
                 <Text letterSpacing="x1" size={isTablet ? 'x4' : 'x3'} weight="medium" color="gray-6">
                   Updated on {formatDate(appVersion.lastUpdate, 'MMMM D, YYYY, HH:mm')}

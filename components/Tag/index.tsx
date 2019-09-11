@@ -1,3 +1,4 @@
+import cx from 'classnames';
 import { TypeColors, Base, Text, variables } from '@bitrise/bitkit';
 
 import css from './style.scss';
@@ -14,7 +15,7 @@ export type Props = {
 export default ({ color, textColor, children, selected, large, onClick }: Props) => (
   <Base
     backgroundColor={selected ? color : undefined}
-    className={css.Tag}
+    className={cx(css.Tag, { [css.clickable]: onClick })}
     paddingHorizontal={large ? 'x3' : 'x2'}
     paddingVertical={large ? 'x2' : 'x1'}
     borderRadius="x1"

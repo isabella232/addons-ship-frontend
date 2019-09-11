@@ -4994,28 +4994,25 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                           </h4>
                                         </Base>
                                       </Text>
-                                      <_default>
+                                      <_default
+                                        selected={true}
+                                      >
                                         <_default
                                           color="yellow-4"
+                                          selected={true}
                                           textColor="white"
                                         >
                                           <Base
+                                            backgroundColor="yellow-4"
                                             borderRadius="x1"
-                                            borderWidth="x1"
                                             className="Tag"
                                             paddingHorizontal="x2"
                                             paddingVertical="x1"
-                                            style={
-                                              Object {
-                                                "borderColor": "#ECB600",
-                                              }
-                                            }
                                           >
                                             <div
-                                              className="Base Base--border-radius-x1 Base--border-width-x1 Base--padding-horizontal-x2 Base--padding-vertical-x1 Tag"
+                                              className="Base Base--background-color-yellow-4 Base--border-radius-x1 Base--padding-horizontal-x2 Base--padding-vertical-x1 Tag"
                                               style={
                                                 Object {
-                                                  "borderColor": "#ECB600",
                                                   "height": undefined,
                                                   "maxHeight": undefined,
                                                   "maxWidth": undefined,
@@ -5026,17 +5023,17 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                               }
                                             >
                                               <Text
-                                                color="yellow-4"
+                                                color="white"
                                                 config="9"
                                                 uppercase={true}
                                               >
                                                 <Base
                                                   Component="div"
                                                   className="Text Text--uppercase Text--config-9"
-                                                  color="yellow-4"
+                                                  color="white"
                                                 >
                                                   <div
-                                                    className="Base Base--color-yellow-4 Text Text--uppercase Text--config-9"
+                                                    className="Base Base--color-white Text Text--uppercase Text--config-9"
                                                     style={
                                                       Object {
                                                         "height": undefined,

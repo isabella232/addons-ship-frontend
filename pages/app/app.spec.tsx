@@ -1,73 +1,86 @@
 jest.mock('@/utils/media');
 
-import { shallow, mount, ReactWrapper } from 'enzyme';
-import toJSON, { shallowToJson, mountToJson } from 'enzyme-to-json';
+import { shallow } from 'enzyme';
+import toJSON, { shallowToJson } from 'enzyme-to-json';
 
 import { mockAppVersions, mockAppVersion, mockApp } from '@/mocks';
 import { AppPage, AppPageProps } from './';
-import AppView from './view';
+import AppView, { Props as ViewProps } from './view';
 import { getAppVersionsByVersion, getAppVersionsByBuildNumber } from '@/ducks/selectors';
 import { AppVersion } from '@/models';
 import { mediaQuery } from '@/utils/media';
+import { RootState } from '@/store';
 
 describe('AppPageView', () => {
-  (mediaQuery as jest.Mock).mockReturnValue([true]);
+  (mediaQuery as jest.Mock).mockReturnValue([true, true]);
 
   describe('when page has apps', () => {
-    let appViewComponent: ReactWrapper;
-
-    beforeAll(() => {
-      appViewComponent = mount(
-        <AppView
-          latestAppVersion={
-            {
-              id: mockAppVersion.id,
-              appName: mockAppVersion.appName,
-              version: mockAppVersion.version,
-              buildNumber: mockAppVersion.buildNumber,
-              description: mockAppVersion.description,
-              lastUpdate: mockAppVersion.lastUpdate,
-              iconUrl: mockAppVersion.iconUrl
-            } as AppVersion
-          }
-          versionSortingOptions={[
-            {
-              text: 'Option 1',
-              value: 'option-1'
-            },
-            {
-              text: 'Option 2',
-              value: 'option-2'
-            }
-          ]}
-          versionSortOptionWithValueSelected={() => {}}
-          selectedVersionSortingOption={{
-            text: 'Option 1',
-            value: 'option-1'
-          }}
-          groupedAppVersionList={[
-            {
-              groupName: 'group 1',
-              appVersions: mockAppVersions
-            }
-          ]}
-          isCrossPlatform={false}
-          onSelectPlatform={jest.fn()}
-          productFlavours={[]}
-          selectProductFalvour={jest.fn()}
-        />
-      );
-    });
+    const defaultProps: ViewProps = {
+      latestAppVersion: {
+        id: mockAppVersion.id,
+        appName: mockAppVersion.appName,
+        version: mockAppVersion.version,
+        buildNumber: mockAppVersion.buildNumber,
+        description: mockAppVersion.description,
+        lastUpdate: mockAppVersion.lastUpdate,
+        iconUrl: mockAppVersion.iconUrl
+      } as AppVersion,
+      versionSortingOptions: [
+        {
+          text: 'Option 1',
+          value: 'option-1'
+        },
+        {
+          text: 'Option 2',
+          value: 'option-2'
+        }
+      ],
+      versionSortOptionWithValueSelected: () => {},
+      selectedVersionSortingOption: {
+        text: 'Option 1',
+        value: 'option-1'
+      },
+      groupedAppVersionList: [
+        {
+          groupName: 'group 1',
+          appVersions: mockAppVersions
+        }
+      ],
+      isCrossPlatform: false,
+      onSelectPlatform: jest.fn(),
+      productFlavours: [],
+      selectProductFalvour: jest.fn(),
+      warnings: []
+    };
 
     it('renders page with apps', () => {
-      const tree = toJSON(appViewComponent);
+      const tree = shallowToJson(shallow(<AppView {...defaultProps} />));
       expect(tree).toMatchSnapshot();
     });
 
-    it('renders the product flavour tags', () => {
-      appViewComponent.setProps({ productFlavours: ['first', 'second'] });
+    describe('product flavours', () => {
+      const comp = <AppView {...defaultProps} productFlavours={['first', 'second']} />;
 
-      const tree = mountToJson(appViewComponent);
+      test('desktop', () => {
+        const tree = shallowToJson(shallow(comp));
+        expect(tree).toMatchSnapshot();
+      });
+
+      test('tablet', () => {
+        (mediaQuery as jest.Mock).mockReturnValueOnce([true, false]);
+        const tree = shallowToJson(shallow(comp));
+        expect(tree).toMatchSnapshot();
+      });
+
+      test('mobile', () => {
+        (mediaQuery as jest.Mock).mockReturnValueOnce([false, false]);
+        const tree = shallowToJson(shallow(comp));
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    it('shows a warning', () => {
+      const tree = shallowToJson(shallow(<AppView {...defaultProps} warnings={['Whoops, something went wrong..']} />));
       expect(tree).toMatchSnapshot();
     });
   });
@@ -124,7 +137,7 @@ describe('AppPage', () => {
   it('sets state when versionSortOptionWithValueSelected was called', () => {
     const wrapper = shallow(<AppPage {...defaultProps} />);
 
-    const sortingOption = 'whatever';
+    const sortingOption = 'latest-build';
     (wrapper.instance() as AppPage).versionSortOptionWithValueSelected(sortingOption);
     expect(wrapper.state('selectedVersionSortingOptionValue')).toEqual(sortingOption);
   });
@@ -167,5 +180,23 @@ describe('AppPage', () => {
     const flavour = 'whatever';
     (wrapper.instance() as AppPage).selectProductFlavour(flavour);
     expect(wrapper.state('selectedProductFlavour')).toEqual(flavour);
+  });
+
+  test('A prodcutFlavour is selected', () => {
+    const appVersionsByBuildNumber = getAppVersionsByBuildNumber({
+      appVersionList: [
+        { id: 'v1', productFlavour: 'f1', platform: 'android' },
+        { id: 'v2', productFlavour: 'f1', platform: 'android' },
+        { id: 'v3', productFlavour: 'f1', platform: 'android' },
+        { id: 'v4', productFlavour: 'f2', platform: 'android' },
+        { id: 'v5', productFlavour: 'f2', platform: 'android' },
+        { id: 'v6', productFlavour: 'f2', platform: 'android' }
+      ]
+    } as RootState) as AppPageProps['appVersionsByBuildNumber'];
+    const wrapper = shallow(<AppPage {...defaultProps} appVersionsByBuildNumber={appVersionsByBuildNumber} />);
+    wrapper.setState({ selectedProductFlavour: 'f2' });
+
+    const view = wrapper.find(AppView);
+    expect(view.props()).toMatchSnapshot();
   });
 });

@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import formatDate from 'date-fns/format';
-import { Flex, Base, Text, Divider, Dropdown } from '@bitrise/bitkit';
+import { Flex, Base, Text, Divider, Dropdown, Notification, Grid } from '@bitrise/bitkit';
 
 import AppSummary from '@/components/AppSummary';
 import VersionListPageItem from '@/components/VersionListPageItem';
@@ -12,8 +12,8 @@ import PlatformSelector from '@/components/PlatformSelector';
 import css from '../style.scss';
 import MagicTag from '@/components/Tag/MagicTag';
 
-type Props = {
-  latestAppVersion: AppVersion | null;
+export type Props = {
+  latestAppVersion: AppVersion;
   versionSortingOptions: Array<{
     text: string;
     value: string;
@@ -35,6 +35,7 @@ type Props = {
   productFlavours: string[];
   selectedProductFlavour?: string;
   selectProductFalvour: (flavour: string) => void;
+  warnings: string[];
 };
 
 export default ({
@@ -50,9 +51,10 @@ export default ({
   endColor,
   productFlavours,
   selectedProductFlavour,
-  selectProductFalvour
+  selectProductFalvour,
+  warnings
 }: Props) => {
-  const [isDesktop] = mediaQuery('60rem');
+  const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
 
   return (
     <Flex direction="vertical" className={css.wrapper}>
@@ -68,33 +70,45 @@ export default ({
         padding={isDesktop && !isCrossPlatform ? 'x16' : 'x4'}
       >
         <Base width="100%" maxWidth={960}>
+          {warnings.length > 0 && (
+            <Base margin="x4">
+              {warnings.map((warning, idx) => (
+                <Notification type="warning" key={idx}>
+                  {warning}
+                </Notification>
+              ))}
+            </Base>
+          )}
           {productFlavours.length > 0 && (
-            <Flex direction="horizontal" gap="x2" paddingVertical="x4" paddingHorizontal="x1">
+            <Flex
+              wrap
+              direction={isTablet ? 'horizontal' : 'vertical'}
+              shrink
+              gap="x2"
+              paddingVertical="x4"
+              paddingHorizontal="x1"
+            >
               {productFlavours.map((f, idx) => (
-                <MagicTag
-                  large
-                  key={idx}
-                  selected={f === selectedProductFlavour}
-                  onClick={() => selectProductFalvour(f)}
-                >
-                  {f}
-                </MagicTag>
+                <Flex key={idx}>
+                  <MagicTag large selected={f === selectedProductFlavour} onClick={() => selectProductFalvour(f)}>
+                    {f}
+                  </MagicTag>
+                </Flex>
               ))}
             </Flex>
           )}
-          {latestAppVersion && (
-            <AppSummary
-              detailsPagePath={`/apps/${latestAppVersion.appSlug}/versions/${latestAppVersion.id}/details`}
-              detailsPagePathHref={`/version?appSlug=${latestAppVersion.appSlug}&versionId=${latestAppVersion.id}`}
-              title={`${latestAppVersion.appName} v${latestAppVersion.version} (${latestAppVersion.buildNumber})`}
-              description={latestAppVersion.commitMessage}
-              note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
-              iconUrl={latestAppVersion.iconUrl}
-              platform={latestAppVersion.platform}
-              startColor={startColor}
-              endColor={endColor}
-            />
-          )}
+          <AppSummary
+            detailsPagePath={`/apps/${latestAppVersion.appSlug}/versions/${latestAppVersion.id}/details`}
+            detailsPagePathHref={`/version?appSlug=${latestAppVersion.appSlug}&versionId=${latestAppVersion.id}`}
+            title={`${latestAppVersion.appName} v${latestAppVersion.version} (${latestAppVersion.buildNumber})`}
+            description={latestAppVersion.commitMessage}
+            note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
+            iconUrl={latestAppVersion.iconUrl}
+            platform={latestAppVersion.platform}
+            startColor={startColor}
+            endColor={endColor}
+            productFlavour={latestAppVersion.productFlavour}
+          />
           <Base className={css.sectionHeadingWrapper}>
             <Flex direction="horizontal" alignChildrenVertical="end" gap="x2">
               <Flex grow shrink>
