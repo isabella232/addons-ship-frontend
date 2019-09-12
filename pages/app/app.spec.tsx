@@ -1,4 +1,5 @@
 jest.mock('@/utils/media');
+jest.mock('@/utils/s', () => ([m]: any) => m);
 
 import { shallow } from 'enzyme';
 import toJSON, { shallowToJson } from 'enzyme-to-json';

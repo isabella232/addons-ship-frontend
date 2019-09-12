@@ -34,7 +34,7 @@ exports[`VersionListPageItem renders correctly 1`] = `
           >
             <Text
               className="title"
-              color="grape-5"
+              color="grape-4"
               config="5"
             >
               My app v1.1.0 (28)
@@ -55,6 +55,8 @@ exports[`VersionListPageItem renders correctly 1`] = `
     >
       <Text
         className="description"
+        color="black"
+        config="7"
       >
         This is a short description about my 1. app. It is a good app. End of description.
       </Text>
@@ -117,7 +119,7 @@ exports[`VersionListPageItem renders correctly for android 1`] = `
           >
             <Text
               className="title"
-              color="grape-5"
+              color="grape-4"
               config="5"
             >
               My app v1.1.0 (28)
@@ -143,6 +145,8 @@ exports[`VersionListPageItem renders correctly for android 1`] = `
     >
       <Text
         className="description"
+        color="black"
+        config="7"
       >
         This is a short description about my 1. app. It is a good app. End of description.
       </Text>
@@ -205,7 +209,7 @@ exports[`VersionListPageItem shows more description 1`] = `
           >
             <Text
               className="title"
-              color="grape-5"
+              color="grape-4"
               config="5"
             >
               My app v1.1.0 (28)
@@ -226,6 +230,8 @@ exports[`VersionListPageItem shows more description 1`] = `
     >
       <Text
         className="description"
+        color="black"
+        config="7"
       >
         This is a short description about my 1. app. It is a good app. End of description.
       </Text>
