@@ -105,7 +105,7 @@ exports[`AppVersion renders the activity tab correctly 1`] = `
             },
             Object {
               "label": "activity",
-              "showBadge": true,
+              "showBadge": false,
             },
           ]
         }
@@ -167,7 +167,7 @@ exports[`AppVersion renders the details tab correctly 1`] = `
             },
             Object {
               "label": "activity",
-              "showBadge": true,
+              "showBadge": false,
             },
           ]
         }
@@ -229,7 +229,7 @@ exports[`AppVersion renders the devices tab correctly 1`] = `
             },
             Object {
               "label": "activity",
-              "showBadge": true,
+              "showBadge": false,
             },
           ]
         }
@@ -288,7 +288,7 @@ exports[`AppVersion renders the other tabs correctly 1`] = `
             },
             Object {
               "label": "activity",
-              "showBadge": true,
+              "showBadge": false,
             },
           ]
         }
@@ -349,7 +349,7 @@ exports[`AppVersion renders the qa tab correctly 1`] = `
             },
             Object {
               "label": "activity",
-              "showBadge": true,
+              "showBadge": false,
             },
           ]
         }

@@ -119,7 +119,7 @@ export class VersionPage extends Component<VersionPageProps> {
                 { label: 'details', showBadge: false },
                 { label: 'devices', showBadge: false },
                 { label: 'qa', showBadge: false },
-                { label: 'activity', showBadge: true }
+                { label: 'activity', showBadge: showActivityBadge }
               ]}
               selectedTab={selectedTab}
               linkAsPrefix={`/apps/${appSlug}/versions/${versionId}/`}
