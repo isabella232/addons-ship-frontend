@@ -20,7 +20,8 @@ import {
   deleteFeatureGraphic,
   publishAppVersion,
   pollPublishStatus,
-  fetchAppVersionEvents
+  fetchAppVersionEvents,
+  fetchAppVersion
 } from '@/ducks/appVersion';
 import { fetchSettings } from '@/ducks/settings';
 import { orderedAppVersionEvents } from '@/ducks/selectors';
@@ -46,6 +47,7 @@ export type Props = {
   startPollPublishStatus: typeof pollPublishStatus.start;
   cancelPollPublishStatus: typeof pollPublishStatus.cancel;
   fetchSettings: typeof fetchSettings;
+  fetchAppVersion: typeof fetchAppVersion;
 };
 
 export type State = {
@@ -132,28 +134,31 @@ const iosDevices = {
     }
   };
 
+const initialState: State = {
+  hasMounted: false,
+  updatedAppVersion: null,
+  screenshotList: {},
+  featureGraphic: undefined,
+  selectedDeviceIdForScreenshots: null,
+  latestEvent: null,
+  isPublishInProgress: false,
+  screenshotIdsToDelete: [],
+  isFeatureGraphicMarkedForDelete: false
+};
+
 export class AppVersionDetails extends Component<Props, State> {
-  state: State = {
-    hasMounted: false,
-    updatedAppVersion: null,
-    screenshotList: {},
-    featureGraphic: undefined,
-    selectedDeviceIdForScreenshots: null,
-    latestEvent: null,
-    isPublishInProgress: false,
-    screenshotIdsToDelete: [],
-    isFeatureGraphicMarkedForDelete: false
-  };
+  state = initialState;
 
   componentDidMount() {
-    const { appSlug, fetchSettings } = this.props;
+    const { appSlug, versionId, fetchAppVersion, fetchSettings } = this.props;
 
+    fetchAppVersion(appSlug, versionId);
     fetchSettings(appSlug);
     this.init();
   }
 
   componentDidUpdate({ appVersionEvents: prevEvents, appVersion: prevAppVersion }: Props) {
-    const { appVersionEvents: events, cancelPollPublishStatus, appVersion } = this.props;
+    const { appVersionEvents: events, cancelPollPublishStatus, versionId } = this.props;
 
     if (events.length && !isEqual(events, prevEvents)) {
       const latestEvent = events[0];
@@ -169,7 +174,7 @@ export class AppVersionDetails extends Component<Props, State> {
       }
     }
 
-    if (prevAppVersion === null && appVersion) {
+    if ((prevAppVersion || ({} as any)).id !== versionId) {
       this.init();
     }
   }
@@ -182,7 +187,7 @@ export class AppVersionDetails extends Component<Props, State> {
 
   init = () => {
     const { appSlug, versionId, appVersion, startPollPublishStatus, fetchAppVersionEvents } = this.props;
-    if (appVersion) {
+    if (appVersion && appVersion.id === versionId) {
       fetchAppVersionEvents(appSlug, versionId);
       const newScreenshotList = appVersion.platform === 'ios' ? { ...iosDevices } : { ...androidDevices };
 
@@ -501,7 +506,8 @@ const mapDispatchToProps = {
   publishAppVersion,
   startPollPublishStatus: pollPublishStatus.start,
   cancelPollPublishStatus: pollPublishStatus.cancel,
-  fetchSettings
+  fetchSettings,
+  fetchAppVersion
 };
 
 export default connect(

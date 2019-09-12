@@ -179,7 +179,7 @@ export class ShipAPIService {
       );
 
     const { data } = await put(url, this.token, body).then(res => res.json());
-    // return await camelizeKeys(data);
+
     return this.mapAppVersionResponse(appSlug, data)!;
   }
 

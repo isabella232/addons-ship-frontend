@@ -196,6 +196,7 @@ describe('AppVersionDetails', () => {
     startPollPublishStatus: jest.fn() as any,
     cancelPollPublishStatus: jest.fn() as any,
     fetchAppVersionEvents: jest.fn() as any,
+    fetchAppVersion: jest.fn() as any,
     appVersionEvents: [],
     isSaving: false
   };
