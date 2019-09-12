@@ -9,13 +9,13 @@ import { IPAExportMethod } from '@/models';
 import css from './style.scss';
 
 type Props = {
-  buildSlug: string;
+  appSlug: string;
   publicInstallPageURL?: string;
   ipaExportMethod?: IPAExportMethod;
   hasMounted: boolean;
 };
 
-export default ({ buildSlug, publicInstallPageURL, ipaExportMethod, hasMounted }: Props) => {
+export default ({ appSlug, publicInstallPageURL, ipaExportMethod, hasMounted }: Props) => {
   const [isPublicInstallPageURLCopiedTooltipVisible, setIsPublicInstallPageURLCopiedTooltipVisible] = useState(false);
 
   const onPublisInstallPageURLCopySuccess = () => {
@@ -112,18 +112,18 @@ export default ({ buildSlug, publicInstallPageURL, ipaExportMethod, hasMounted }
           className={css.shareDisabled}
         >
           <Icon name="Chain" size="2rem" />
-          <Text weight="bold" size="x4">
-            Share disabled
+          <Text align="middle" weight="bold" size="x4">
+            You can't share this app
           </Text>
           <Text align="middle" weight="medium" size="x3" color="gray-7">
-            You can enable sharing via Public Install Page at the build’s{' '}
+            If you want to share it, you have to enable the app's Public Install Page in the{' '}
             <Base
               Component="a"
               color="grape-3"
-              href={`https://app.bitrise.io/build/${buildSlug}#?tab=artifacts`}
+              href={`https://app.bitrise.io/app/${appSlug}/workflow_editor`}
               target="_blank"
             >
-              Apps & Artifacts tab
+              Deploy to Bitrise.io step
             </Base>
             .
           </Text>

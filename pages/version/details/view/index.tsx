@@ -298,7 +298,7 @@ export default ({
               isPublishInProgress={isPublishInProgress}
               onSave={onSave}
               onPublish={onPublish}
-              buildSlug={appVersion.buildSlug}
+              appSlug={appVersion.appSlug}
               ipaExportMethod={appVersion.ipaExportMethod}
               hasMounted={hasMounted}
               isSaving={isSaving}
@@ -309,7 +309,7 @@ export default ({
       <Modal onClose={handleCloseShareModal} visible={isShareModalVisible} width="22rem" backgroundColor="white">
         <ModalTitle>Share this page</ModalTitle>
         <Share
-          buildSlug={appVersion.buildSlug}
+          appSlug={appVersion.appSlug}
           publicInstallPageURL={appVersion.publicInstallPageURL}
           ipaExportMethod={appVersion.ipaExportMethod}
           hasMounted={hasMounted}
