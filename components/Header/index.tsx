@@ -184,7 +184,7 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
               <a>
                 <Button level="light">
                   <Icon name="ArrowBack"></Icon>
-                  <Text>All versions</Text>
+                  <Text>{pageType === 'settings' ? title : 'All versions'}</Text>
                 </Button>
               </a>
             </Link>
