@@ -11108,7 +11108,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                   }
                 >
                   <_default
-                    buildSlug="13245ads"
+                    appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
                     isPublishInProgress={false}
@@ -11367,7 +11367,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                             </div>
                           </Base>
                           <_default
-                            buildSlug="13245ads"
+                            appSlug="app-slug-123"
                             hasMounted={true}
                             ipaExportMethod="ad-hoc"
                             publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -15249,7 +15249,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                   }
                 >
                   <_default
-                    buildSlug="13245ads"
+                    appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="app-store"
                     isPublishInProgress={false}
@@ -15508,7 +15508,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                             </div>
                           </Base>
                           <_default
-                            buildSlug="13245ads"
+                            appSlug="app-slug-123"
                             hasMounted={true}
                             ipaExportMethod="app-store"
                             publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -19336,7 +19336,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                   }
                 >
                   <_default
-                    buildSlug="13245ads"
+                    appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
                     isPublishInProgress={false}
@@ -19595,7 +19595,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                             </div>
                           </Base>
                           <_default
-                            buildSlug="13245ads"
+                            appSlug="app-slug-123"
                             hasMounted={true}
                             ipaExportMethod="development"
                             publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -23477,7 +23477,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                   }
                 >
                   <_default
-                    buildSlug="13245ads"
+                    appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="enterprise"
                     isPublishInProgress={false}
@@ -23736,7 +23736,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                             </div>
                           </Base>
                           <_default
-                            buildSlug="13245ads"
+                            appSlug="app-slug-123"
                             hasMounted={true}
                             ipaExportMethod="enterprise"
                             publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -27564,7 +27564,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                   }
                 >
                   <_default
-                    buildSlug="13245ads"
+                    appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
                     isPublishInProgress={false}
@@ -27823,7 +27823,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                             </div>
                           </Base>
                           <_default
-                            buildSlug="13245ads"
+                            appSlug="app-slug-123"
                             hasMounted={true}
                             ipaExportMethod="development"
                             publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -31745,7 +31745,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                   }
                 >
                   <_default
-                    buildSlug="13245ads"
+                    appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
                     isPublishInProgress={false}
@@ -32004,7 +32004,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                             </div>
                           </Base>
                           <_default
-                            buildSlug="13245ads"
+                            appSlug="app-slug-123"
                             hasMounted={true}
                             ipaExportMethod="ad-hoc"
                             publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -35886,7 +35886,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                   }
                 >
                   <_default
-                    buildSlug="13245ads"
+                    appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
                     isPublishInProgress={false}
@@ -36144,7 +36144,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                             </div>
                           </Base>
                           <_default
-                            buildSlug="13245ads"
+                            appSlug="app-slug-123"
                             hasMounted={true}
                             ipaExportMethod="development"
                           >
@@ -36253,15 +36253,16 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                           </Base>
                                         </Icon>
                                         <Text
+                                          align="middle"
                                           size="x4"
                                           weight="bold"
                                         >
                                           <Base
                                             Component="h5"
-                                            className="Text Text--size-x4 Text--weight-bold"
+                                            className="Text Text--align-middle Text--size-x4 Text--weight-bold"
                                           >
                                             <h5
-                                              className="Base Text Text--size-x4 Text--weight-bold"
+                                              className="Base Text Text--align-middle Text--size-x4 Text--weight-bold"
                                               style={
                                                 Object {
                                                   "height": undefined,
@@ -36273,7 +36274,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                                 }
                                               }
                                             >
-                                              Share disabled
+                                              You can't share this app
                                             </h5>
                                           </Base>
                                         </Text>
@@ -36301,17 +36302,17 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                                 }
                                               }
                                             >
-                                              You can enable sharing via Public Install Page at the build’s
+                                              If you want to share it, you have to enable the app's Public Install Page in the
                                                
                                               <Base
                                                 Component="a"
                                                 color="grape-3"
-                                                href="https://app.bitrise.io/build/13245ads#?tab=artifacts"
+                                                href="https://app.bitrise.io/app/app-slug-123/workflow_editor"
                                                 target="_blank"
                                               >
                                                 <a
                                                   className="Base Base--color-grape-3"
-                                                  href="https://app.bitrise.io/build/13245ads#?tab=artifacts"
+                                                  href="https://app.bitrise.io/app/app-slug-123/workflow_editor"
                                                   style={
                                                     Object {
                                                       "height": undefined,
@@ -36324,7 +36325,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                                   }
                                                   target="_blank"
                                                 >
-                                                  Apps & Artifacts tab
+                                                  Deploy to Bitrise.io step
                                                 </a>
                                               </Base>
                                               .
@@ -36757,7 +36758,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
       shrink={true}
     >
       <_default
-        buildSlug="13245ads"
+        appSlug="app-slug-123"
         hasMounted={true}
         ipaExportMethod="ad-hoc"
         isPublishInProgress={false}
@@ -36778,7 +36779,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
       Share this page
     </ModalTitle>
     <_default
-      buildSlug="13245ads"
+      appSlug="app-slug-123"
       hasMounted={true}
       ipaExportMethod="ad-hoc"
       publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -36972,7 +36973,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
       shrink={true}
     >
       <_default
-        buildSlug="13245ads"
+        appSlug="app-slug-123"
         hasMounted={true}
         ipaExportMethod="ad-hoc"
         isPublishInProgress={false}
@@ -36993,7 +36994,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
       Share this page
     </ModalTitle>
     <_default
-      buildSlug="13245ads"
+      appSlug="app-slug-123"
       hasMounted={true}
       ipaExportMethod="ad-hoc"
       publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -40194,7 +40195,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                   }
                 >
                   <_default
-                    buildSlug="13245ads"
+                    appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
                     isPublishInProgress={true}
@@ -40445,7 +40446,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                             </div>
                           </Base>
                           <_default
-                            buildSlug="13245ads"
+                            appSlug="app-slug-123"
                             hasMounted={true}
                             ipaExportMethod="ad-hoc"
                             publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -44327,7 +44328,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                   }
                 >
                   <_default
-                    buildSlug="13245ads"
+                    appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
                     isPublishInProgress={false}
@@ -44578,7 +44579,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                             </div>
                           </Base>
                           <_default
-                            buildSlug="13245ads"
+                            appSlug="app-slug-123"
                             hasMounted={true}
                             ipaExportMethod="ad-hoc"
                             publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"

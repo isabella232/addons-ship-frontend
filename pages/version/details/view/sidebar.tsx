@@ -11,7 +11,7 @@ type Props = {
   shouldEnablePublish: boolean;
   onSave?: () => void;
   onPublish?: () => void;
-  buildSlug: string;
+  appSlug: string;
   ipaExportMethod?: IPAExportMethod;
   hasMounted: boolean;
   isSaving: boolean;
@@ -25,7 +25,7 @@ export default ({
   onSave,
   onPublish,
   ipaExportMethod,
-  buildSlug,
+  appSlug,
   hasMounted,
   isSaving,
   isPublishInProgress,
@@ -80,7 +80,7 @@ export default ({
         </Button>
       </Base>
       <Share
-        buildSlug={buildSlug}
+        appSlug={appSlug}
         publicInstallPageURL={publicInstallPageURL}
         ipaExportMethod={ipaExportMethod}
         hasMounted={hasMounted}
