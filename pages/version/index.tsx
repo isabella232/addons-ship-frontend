@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Base, Divider, Flex, AddonFooter } from '@bitrise/bitkit';
 import nookies from 'nookies';
 
-import { AppVersionPageQuery, PageContext, AppVersion, AppVersionPageTabs } from '@/models';
+import { AppVersionPageQuery, PageContext, AppVersion, AppVersionPageTabs, AppVersionEventStatus } from '@/models';
 import { RootState } from '@/store';
 import { fetchAppVersion } from '@/ducks/appVersion';
 import { orderedAppVersionEvents } from '@/ducks/selectors';
@@ -139,7 +139,14 @@ export class VersionPage extends Component<VersionPageProps> {
 
 const mapStateToProps = ({ appVersion: { appVersion, events } }: RootState) => ({
   appVersion,
-  lastEventTimestamp: events.length > 0 ? new Date(orderedAppVersionEvents(events)[0].createdAt).getTime() : -1
+  lastEventTimestamp:
+    events.filter(appVersionEvent => appVersionEvent.status === AppVersionEventStatus.Failed).length > 0
+      ? new Date(
+          orderedAppVersionEvents(events).filter(
+            appVersionEvent => appVersionEvent.status === AppVersionEventStatus.Failed
+          )[0].createdAt
+        ).getTime()
+      : -1
 });
 
 const mapDispatchToProps = {
