@@ -14,7 +14,7 @@ exports[`Header on desktop renders correctly 1`] = `
       backgroundColor="grape-4"
       color="white"
       isHamburgerIconActive={false}
-      isInResponsiveView={false}
+      isInResponsiveView={true}
       onHamburgerIconClick={[Function]}
     >
       <PlacementReference>
@@ -29,9 +29,11 @@ exports[`Header on desktop renders correctly 1`] = `
     </AddonBeam>
   </PlacementManager>
   <Flex
+    alignChildrenVertical="middle"
     className="header"
     direction="vertical"
-    gap="x2"
+    height="7rem"
+    paddingHorizontal="x16"
     paddingVertical="x8"
     style={
       Object {
@@ -40,7 +42,6 @@ exports[`Header on desktop renders correctly 1`] = `
     }
   >
     <_default
-      smaller={false}
       title="Awesome app"
       type="other"
     />
@@ -117,7 +118,7 @@ exports[`Header on desktop renders correctly 1`] = `
 exports[`Header on desktop renders correctly when no app is defined 1`] = `
 <Flex
   absolute={true}
-  alignChildrenHorizontal="start"
+  alignChildrenHorizontal="middle"
   alignChildrenVertical="middle"
   backgroundColor="grape-4"
   className="simpleHeader"
@@ -163,7 +164,7 @@ exports[`Header on desktop renders without breadcrumbs 1`] = `
       backgroundColor="grape-4"
       color="white"
       isHamburgerIconActive={false}
-      isInResponsiveView={false}
+      isInResponsiveView={true}
       onHamburgerIconClick={[Function]}
     >
       <PlacementReference>
@@ -275,9 +276,11 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
     </AddonBeam>
   </PlacementManager>
   <Flex
+    alignChildrenVertical="middle"
     className="header"
     direction="vertical"
-    gap="x2"
+    height="7rem"
+    paddingHorizontal="x4"
     paddingVertical="x8"
     style={
       Object {
@@ -286,7 +289,6 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
     }
   >
     <_default
-      smaller={false}
       title="Awesome app"
       type="other"
     />
@@ -409,7 +411,7 @@ exports[`Header routes /app for desktop 1`] = `
       backgroundColor="grape-4"
       color="white"
       isHamburgerIconActive={false}
-      isInResponsiveView={false}
+      isInResponsiveView={true}
       onHamburgerIconClick={[Function]}
     >
       <PlacementReference>
@@ -424,9 +426,11 @@ exports[`Header routes /app for desktop 1`] = `
     </AddonBeam>
   </PlacementManager>
   <Flex
+    alignChildrenVertical="middle"
     className="header"
     direction="vertical"
-    gap="x2"
+    height="7rem"
+    paddingHorizontal="x16"
     paddingVertical="x8"
     style={
       Object {
@@ -435,7 +439,6 @@ exports[`Header routes /app for desktop 1`] = `
     }
   >
     <_default
-      smaller={false}
       title="Awesome app"
       type="other"
     />
@@ -538,9 +541,11 @@ exports[`Header routes /app for mobile 1`] = `
     </AddonBeam>
   </PlacementManager>
   <Flex
+    alignChildrenVertical="middle"
     className="header"
     direction="vertical"
-    gap="x2"
+    height="7rem"
+    paddingHorizontal="x4"
     paddingVertical="x8"
     style={
       Object {
@@ -549,7 +554,6 @@ exports[`Header routes /app for mobile 1`] = `
     }
   >
     <_default
-      smaller={false}
       title="Awesome app"
       type="other"
     />
@@ -637,7 +641,7 @@ exports[`Header routes /settings for desktop 1`] = `
       backgroundColor="grape-4"
       color="white"
       isHamburgerIconActive={false}
-      isInResponsiveView={false}
+      isInResponsiveView={true}
       onHamburgerIconClick={[Function]}
     >
       <PlacementReference>
@@ -652,40 +656,37 @@ exports[`Header routes /settings for desktop 1`] = `
     </AddonBeam>
   </PlacementManager>
   <Flex
+    alignChildrenVertical="middle"
     className="header"
     direction="vertical"
-    gap="x2"
-    paddingVertical="x5"
+    height="7rem"
+    paddingHorizontal="x16"
+    paddingVertical="x8"
     style={
       Object {
         "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
       }
     }
   >
-    <Flex
-      direction="horizontal"
-      paddingHorizontal="x0"
+    <Link
+      as="/apps/test-app-slug-1"
+      href="/app?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1"
-        href="/app?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            className="breadcrumbs"
-            size="x4"
-          >
-            « 
-            Awesome app
+      <a>
+        <Button
+          level="light"
+          size="medium"
+        >
+          <Icon
+            name="ArrowBack"
+            size="1.5rem"
+          />
+          <Text>
+            All versions
           </Text>
-        </a>
-      </Link>
-    </Flex>
-    <_default
-      smaller={true}
-      title="Settings"
-      type="settings"
-    />
+        </Button>
+      </a>
+    </Link>
   </Flex>
   <Flex
     alignChildrenVertical="end"
@@ -785,40 +786,37 @@ exports[`Header routes /settings for mobile 1`] = `
     </AddonBeam>
   </PlacementManager>
   <Flex
+    alignChildrenVertical="middle"
     className="header"
     direction="vertical"
-    gap="x2"
-    paddingVertical="x5"
+    height="7rem"
+    paddingHorizontal="x4"
+    paddingVertical="x8"
     style={
       Object {
         "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
       }
     }
   >
-    <Flex
-      direction="horizontal"
-      paddingHorizontal="x4"
+    <Link
+      as="/apps/test-app-slug-1"
+      href="/app?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1"
-        href="/app?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            className="breadcrumbs"
-            size="x3"
-          >
-            « 
-            Awesome app
+      <a>
+        <Button
+          level="light"
+          size="medium"
+        >
+          <Icon
+            name="ArrowBack"
+            size="1.5rem"
+          />
+          <Text>
+            All versions
           </Text>
-        </a>
-      </Link>
-    </Flex>
-    <_default
-      smaller={true}
-      title="Settings"
-      type="settings"
-    />
+        </Button>
+      </a>
+    </Link>
   </Flex>
   <Flex
     alignChildrenVertical="end"
@@ -903,7 +901,7 @@ exports[`Header routes /version for desktop 1`] = `
       backgroundColor="grape-4"
       color="white"
       isHamburgerIconActive={false}
-      isInResponsiveView={false}
+      isInResponsiveView={true}
       onHamburgerIconClick={[Function]}
     >
       <PlacementReference>
@@ -918,40 +916,37 @@ exports[`Header routes /version for desktop 1`] = `
     </AddonBeam>
   </PlacementManager>
   <Flex
+    alignChildrenVertical="middle"
     className="header"
     direction="vertical"
-    gap="x2"
-    paddingVertical="x5"
+    height="7rem"
+    paddingHorizontal="x16"
+    paddingVertical="x8"
     style={
       Object {
         "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
       }
     }
   >
-    <Flex
-      direction="horizontal"
-      paddingHorizontal="x0"
+    <Link
+      as="/apps/test-app-slug-1"
+      href="/app?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1"
-        href="/app?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            className="breadcrumbs"
-            size="x4"
-          >
-            « 
-            Awesome app
+      <a>
+        <Button
+          level="light"
+          size="medium"
+        >
+          <Icon
+            name="ArrowBack"
+            size="1.5rem"
+          />
+          <Text>
+            All versions
           </Text>
-        </a>
-      </Link>
-    </Flex>
-    <_default
-      smaller={true}
-      title="Awesome app v1.0.3 (32)"
-      type="other"
-    />
+        </Button>
+      </a>
+    </Link>
   </Flex>
   <Flex
     alignChildrenVertical="end"
@@ -1051,40 +1046,37 @@ exports[`Header routes /version for mobile 1`] = `
     </AddonBeam>
   </PlacementManager>
   <Flex
+    alignChildrenVertical="middle"
     className="header"
     direction="vertical"
-    gap="x2"
-    paddingVertical="x5"
+    height="7rem"
+    paddingHorizontal="x4"
+    paddingVertical="x8"
     style={
       Object {
         "backgroundImage": "url('/static/header-bg.svg'), linear-gradient(90deg, #0D83CD, #0DD3C5)",
       }
     }
   >
-    <Flex
-      direction="horizontal"
-      paddingHorizontal="x4"
+    <Link
+      as="/apps/test-app-slug-1"
+      href="/app?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1"
-        href="/app?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            className="breadcrumbs"
-            size="x3"
-          >
-            « 
-            Awesome app
+      <a>
+        <Button
+          level="light"
+          size="medium"
+        >
+          <Icon
+            name="ArrowBack"
+            size="1.5rem"
+          />
+          <Text>
+            All versions
           </Text>
-        </a>
-      </Link>
-    </Flex>
-    <_default
-      smaller={true}
-      title="Awesome app v1.0.3 (32)"
-      type="other"
-    />
+        </Button>
+      </a>
+    </Link>
   </Flex>
   <Flex
     alignChildrenVertical="end"
@@ -1169,7 +1161,7 @@ exports[`Header when settings onboarding should be shown shows the notification 
       backgroundColor="grape-4"
       color="white"
       isHamburgerIconActive={false}
-      isInResponsiveView={false}
+      isInResponsiveView={true}
       onHamburgerIconClick={[Function]}
     >
       <PlacementReference>
@@ -1184,9 +1176,11 @@ exports[`Header when settings onboarding should be shown shows the notification 
     </AddonBeam>
   </PlacementManager>
   <Flex
+    alignChildrenVertical="middle"
     className="header"
     direction="vertical"
-    gap="x2"
+    height="7rem"
+    paddingHorizontal="x16"
     paddingVertical="x8"
     style={
       Object {
@@ -1195,7 +1189,6 @@ exports[`Header when settings onboarding should be shown shows the notification 
     }
   >
     <_default
-      smaller={false}
       title="Awesome app"
       type="other"
     />

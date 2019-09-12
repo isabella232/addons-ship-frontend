@@ -1,4 +1,4 @@
-import { Flex, Icon, Text, TypeIconName, TypeTextSize } from '@bitrise/bitkit';
+import { Flex, Icon, Text, TypeIconName } from '@bitrise/bitkit';
 
 import { mediaQuery } from '@/utils/media';
 
@@ -8,7 +8,7 @@ export type Props = {
   smaller?: boolean;
 };
 
-export default ({ type, title, smaller = false }: Props) => {
+export default ({ type, title }: Props) => {
   const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
 
   let iconName: TypeIconName;
@@ -48,9 +48,6 @@ export default ({ type, title, smaller = false }: Props) => {
       break;
   }
 
-  // I'm sorry... https://gph.is/22Wx2jP
-  const fontSize = `x${6 - +!isDesktop - +smaller}` as TypeTextSize;
-
   return (
     <Flex
       direction="horizontal"
@@ -60,7 +57,7 @@ export default ({ type, title, smaller = false }: Props) => {
       color="white"
     >
       <Icon name={iconName} size="2rem" />
-      <Text size={fontSize} weight="bold" breakOn={isTablet ? 'all' : 'word'}>
+      <Text size={isDesktop ? "x6" : "x5"} weight="bold" breakOn={isTablet ? 'all' : 'word'}>
         {title}
       </Text>
     </Flex>
