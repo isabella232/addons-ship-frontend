@@ -68,7 +68,16 @@ describe('Ship API service', () => {
     it('updates a version for an app', async () => {
       (put as jest.Mock).mockResolvedValueOnce({
         json: () => ({
-          data: { id: 123, app_slug: appSlug, build_number: '456' }
+          data: {
+            id: 123,
+            app_slug: appSlug,
+            build_number: '456',
+            app_store_info: {
+              full_description: 'A description',
+              short_description: 'A short description',
+              whats_new: 'Something new'
+            }
+          }
         })
       });
 

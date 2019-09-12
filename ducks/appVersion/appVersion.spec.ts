@@ -88,7 +88,7 @@ describe('appVersion', () => {
       ['uploadFeatureGraphic.error', uploadFeatureGraphic.error]
     ].map(([key, fn]) => {
       test(`cosuming ${key}`, () => {
-        const { isSaving } = reducer({ isSaving: 1 } as any, (fn as Function)() as any);
+        const { isSaving } = reducer({ isSaving: 1 } as any, (fn as Function)({}) as any);
         expect(isSaving).toBe(0);
       });
     });
