@@ -166,10 +166,13 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
       </PlacementManager>
 
       {!hideBreadcrumbs && (
-        <Base
+        <Flex
           className={css.header}
+          height="7rem"
           paddingVertical="x8"
           paddingHorizontal={isTablet ? 'x16' : 'x4'}
+          direction="vertical"
+          alignChildrenVertical="middle"
           style={{
             backgroundImage: `url('/static/header-bg.svg'), linear-gradient(90deg, ${primaryColor}, ${secondaryColor})`
           }}
@@ -179,14 +182,14 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
           ) : (
             <Link href={`/app?appSlug=${appSlug}`} as={`/apps/${appSlug}`}>
               <a>
-                <Button level="expand">
+                <Button level="light">
                   <Icon name="ArrowBack"></Icon>
                   <Text>All versions</Text>
                 </Button>
               </a>
             </Link>
           )}
-        </Base>
+        </Flex>
       )}
       <Flex
         direction="vertical"
