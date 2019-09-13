@@ -8,6 +8,8 @@ import css from './style.scss';
 
 type Props = {
   publicInstallPageURL?: string;
+  isSplitAPK?: boolean,
+  hasUniversalAPK?: boolean,
   shouldEnablePublish: boolean;
   onSave?: () => void;
   onPublish?: () => void;
@@ -21,6 +23,8 @@ type Props = {
 
 export default ({
   publicInstallPageURL,
+  isSplitAPK,
+  hasUniversalAPK,
   shouldEnablePublish,
   onSave,
   onPublish,
@@ -82,6 +86,8 @@ export default ({
       <Share
         appSlug={appSlug}
         publicInstallPageURL={publicInstallPageURL}
+        isSplitAPK={isSplitAPK}
+        hasUniversalAPK={hasUniversalAPK}
         ipaExportMethod={ipaExportMethod}
         hasMounted={hasMounted}
       ></Share>

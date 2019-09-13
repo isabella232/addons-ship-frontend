@@ -213,8 +213,10 @@ exports[`AppVersionDetails disables install button when device is from a lower v
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
       "description": "Some semi-long description",
+      "hasUniversalAPK": true,
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "isSplitAPK": true,
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -293,8 +295,10 @@ exports[`AppVersionDetails disables install button when device is from different
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
       "description": "Some semi-long description",
+      "hasUniversalAPK": true,
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "isSplitAPK": true,
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -373,8 +377,10 @@ exports[`AppVersionDetails disables install button when device is not supported 
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
       "description": "Some semi-long description",
+      "hasUniversalAPK": true,
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "isSplitAPK": true,
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -568,8 +574,10 @@ exports[`AppVersionDetails enables install button when there is public install p
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
       "description": "Some semi-long description",
+      "hasUniversalAPK": true,
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "isSplitAPK": true,
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -648,8 +656,10 @@ exports[`AppVersionDetails enables install button when there is public install p
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
       "description": "Some semi-long description",
+      "hasUniversalAPK": true,
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "isSplitAPK": true,
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -4392,8 +4402,10 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
       "description": "Some semi-long description",
+      "hasUniversalAPK": true,
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
+      "isSplitAPK": true,
       "lastUpdate": 2018-09-22T12:42:31.000Z,
       "marketingUrl": "https://bitrise.io/marketing",
       "minimumSdk": "26",
@@ -5461,8 +5473,10 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                           "buildSlug": "13245ads",
                           "buildType": "Celeste-config",
                           "description": "Some semi-long description",
+                          "hasUniversalAPK": true,
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
+                          "isSplitAPK": true,
                           "lastUpdate": 2018-09-22T12:42:31.000Z,
                           "marketingUrl": "https://bitrise.io/marketing",
                           "minimumSdk": "26",
@@ -36304,30 +36318,37 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                             >
                                               If you want to share it, you have to enable the app's Public Install Page in the
                                                
-                                              <Base
+                                              <Link
                                                 Component="a"
                                                 color="grape-3"
                                                 href="https://app.bitrise.io/app/app-slug-123/workflow_editor"
                                                 target="_blank"
                                               >
-                                                <a
-                                                  className="Base Base--color-grape-3"
+                                                <Base
+                                                  Component="a"
+                                                  className="Link Link--color-grape-3 Link--clickable"
                                                   href="https://app.bitrise.io/app/app-slug-123/workflow_editor"
-                                                  style={
-                                                    Object {
-                                                      "height": undefined,
-                                                      "maxHeight": undefined,
-                                                      "maxWidth": undefined,
-                                                      "minHeight": undefined,
-                                                      "minWidth": undefined,
-                                                      "width": undefined,
-                                                    }
-                                                  }
                                                   target="_blank"
                                                 >
-                                                  Deploy to Bitrise.io step
-                                                </a>
-                                              </Base>
+                                                  <a
+                                                    className="Base Link Link--color-grape-3 Link--clickable"
+                                                    href="https://app.bitrise.io/app/app-slug-123/workflow_editor"
+                                                    style={
+                                                      Object {
+                                                        "height": undefined,
+                                                        "maxHeight": undefined,
+                                                        "maxWidth": undefined,
+                                                        "minHeight": undefined,
+                                                        "minWidth": undefined,
+                                                        "width": undefined,
+                                                      }
+                                                    }
+                                                    target="_blank"
+                                                  >
+                                                    Deploy to Bitrise.io step
+                                                  </a>
+                                                </Base>
+                                              </Link>
                                               .
                                             </div>
                                           </Base>
