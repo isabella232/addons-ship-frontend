@@ -72,16 +72,16 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
             </Link>
           </NextLink>
           <button className={descriptionWrapperClasses.join(' ')} onClick={this.toggle}>
-            {description && (
+            {(description || descriptionPlaceholder) && (
               <Text config="7" color="black" className={css.description}>
-                {description}
+                {description ? (
+                  <Base color="black">{description}</Base>
+                ) : (
+                  <Base color="gray-5">{descriptionPlaceholder}</Base>
+                )}
               </Text>
             )}
-            {!description && descriptionPlaceholder && (
-              <Text config="7" color="gray-5" className={css.description}>
-                {descriptionPlaceholder}
-              </Text>
-            )}
+
             {description &&
               (isOpen ? (
                 <Base className={css.showLess}>

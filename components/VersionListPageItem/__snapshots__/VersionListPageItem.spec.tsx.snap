@@ -58,7 +58,11 @@ exports[`VersionListPageItem renders correctly 1`] = `
         color="black"
         config="7"
       >
-        This is a short description about my 1. app. It is a good app. End of description.
+        <Base
+          color="black"
+        >
+          This is a short description about my 1. app. It is a good app. End of description.
+        </Base>
       </Text>
       <Base
         className="showMore"
@@ -148,7 +152,11 @@ exports[`VersionListPageItem renders correctly for android 1`] = `
         color="black"
         config="7"
       >
-        This is a short description about my 1. app. It is a good app. End of description.
+        <Base
+          color="black"
+        >
+          This is a short description about my 1. app. It is a good app. End of description.
+        </Base>
       </Text>
       <Base
         className="showMore"
@@ -233,7 +241,11 @@ exports[`VersionListPageItem shows more description 1`] = `
         color="black"
         config="7"
       >
-        This is a short description about my 1. app. It is a good app. End of description.
+        <Base
+          color="black"
+        >
+          This is a short description about my 1. app. It is a good app. End of description.
+        </Base>
       </Text>
       <Base
         className="showLess"
