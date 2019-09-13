@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import { AppVersion, Platform } from '@/models';
 import { mediaQuery } from '@/utils/media';
 import PlatformSelector from '@/components/PlatformSelector';
+import s from '@/utils/s';
 
 import css from '../style.scss';
 import MagicTag from '@/components/Tag/MagicTag';
@@ -147,6 +148,7 @@ export default ({
                       platform={appVersion.platform}
                       title={`${appVersion.appName} (${appVersion.buildNumber})`}
                       description={appVersion.commitMessage}
+                      descriptionPlaceholder={s`No commit message`}
                       note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY, HH:mm')}`}
                       productFlavour={appVersion.productFlavour}
                     />

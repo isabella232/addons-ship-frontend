@@ -61,7 +61,6 @@
 
       .description {
         flex-grow: 1;
-        color: $grape-5;
         transition: color $medium-hovertime;
       }
 
@@ -119,20 +118,12 @@
           }
         }
 
-        .title {
-          color: $grape-3;
-        }
-
         .note {
           color: $grape-3;
         }
       }
 
       .descriptionWrapper {
-        .description {
-          color: $grape-3;
-        }
-
         &:not(.isOpen) .showMore {
           flex-shrink: 0;
           display: flex;

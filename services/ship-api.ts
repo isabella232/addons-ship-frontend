@@ -81,6 +81,39 @@ export class ShipAPIService {
     };
   }
 
+  mapAppVersionResponse(appSlug: string, data: any): AppVersion | null {
+    if (!data) return null;
+
+    const publicInstallPageURL = data.public_install_page_url;
+    data.public_install_page_url = undefined;
+
+    let {
+      appStoreInfo: { fullDescription: description, ...appStoreInfo },
+      appInfo,
+      ...appVersionData
+    } = camelizeKeysDeep(data);
+
+    appStoreInfo = { ...appStoreInfo, description };
+
+    appVersionData = {
+      ...appVersionData,
+      ...appStoreInfo,
+      appSlug,
+      publicInstallPageURL
+    };
+
+    if (appInfo) {
+      appVersionData.appName = appInfo.title;
+      appVersionData.iconUrl = appInfo.appIconUrl;
+    }
+
+    if (!appVersionData.supportedDeviceTypes) {
+      appVersionData.supportedDeviceTypes = [];
+    }
+
+    return appVersionData as AppVersion;
+  }
+
   // GET /apps/{app-slug}/versions
   async getAppVersionList(appSlug: string): Promise<AppVersion[]> {
     this.checkToken();
@@ -108,28 +141,7 @@ export class ShipAPIService {
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}`;
     const { data } = await get(url, this.token).then(res => res.json());
 
-    const publicInstallPageURL = data.public_install_page_url;
-    data.public_install_page_url = undefined;
-
-    let {
-      appStoreInfo: { fullDescription: description, ...appStoreInfo },
-      appInfo,
-      ...appVersionData
-    } = camelizeKeysDeep(data);
-    appStoreInfo = { ...appStoreInfo, description };
-    appVersionData = {
-      ...appVersionData,
-      ...appStoreInfo,
-      appName: appInfo.title,
-      iconUrl: appInfo.appIconUrl,
-      appSlug,
-      publicInstallPageURL
-    };
-    if (!appVersionData.supportedDeviceTypes) {
-      appVersionData.supportedDeviceTypes = [];
-    }
-
-    return appVersionData as AppVersion;
+    return this.mapAppVersionResponse(appSlug, data)!;
   }
 
   // PUT /apps/{app-slug}/versions/{version-id}
@@ -167,7 +179,8 @@ export class ShipAPIService {
       );
 
     const { data } = await put(url, this.token, body).then(res => res.json());
-    return await camelizeKeys(data);
+
+    return this.mapAppVersionResponse(appSlug, data)!;
   }
 
   // GET /apps/{app-slug}/versions/{version-id}/events

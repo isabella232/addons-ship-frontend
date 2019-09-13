@@ -5,7 +5,7 @@ import nookies from 'nookies';
 
 import { AppVersionPageQuery, PageContext, AppVersion, AppVersionPageTabs, AppVersionEventStatus } from '@/models';
 import { RootState } from '@/store';
-import { fetchAppVersion } from '@/ducks/appVersion';
+
 import { orderedAppVersionEvents } from '@/ducks/selectors';
 
 import Tabmenu from './tabmenu';
@@ -21,7 +21,6 @@ export interface VersionPageProps extends AppVersionPageQuery {
   pagePath: string;
   activityLastSeen: number;
   lastEventTimestamp: number;
-  fetchAppVersion: typeof fetchAppVersion;
 }
 
 export class VersionPage extends Component<VersionPageProps> {
@@ -64,11 +63,6 @@ export class VersionPage extends Component<VersionPageProps> {
     }
 
     return { appSlug, versionId, isPublic, selectedTab, pagePath, activityLastSeen };
-  }
-
-  componentDidMount() {
-    const { appSlug, versionId, fetchAppVersion } = this.props;
-    fetchAppVersion(appSlug, versionId);
   }
 
   tabContent = () => {
@@ -149,14 +143,7 @@ const mapStateToProps = ({ appVersion: { appVersion, events } }: RootState) => (
       : -1
 });
 
-const mapDispatchToProps = {
-  fetchAppVersion
-};
-
-const Connected = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(VersionPage as any);
+const Connected = connect(mapStateToProps)(VersionPage as any);
 Connected.displayName = 'AppVersionPage';
 
 export default Connected;

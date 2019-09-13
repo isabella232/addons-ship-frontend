@@ -8,8 +8,8 @@ export default ({ startColor, endColor }: Props) => (
     viewBox="0 0 862 80"
     style={{
       background: `linear-gradient(90deg, ${startColor}, ${endColor})`,
-      width: "100%",
-      height: "100%"
+      width: '100%',
+      height: '100%'
     }}
     preserveAspectRatio="none"
   >
@@ -25,9 +25,9 @@ export default ({ startColor, endColor }: Props) => (
         <stop stopColor="#D0FEFF" stopOpacity="0" offset="100%"></stop>
       </linearGradient>
       <linearGradient x1="88.6366729%" y1="49.8847704%" x2="14.0733222%" y2="50.3332489%" id="linearGradient-3">
-        <stop stopColor="#FFFFFF" stopOpacity="0" offset="0%"></stop>
-        <stop stopColor="#FFFFFF" stopOpacity=".2" offset="52.3083683%"></stop>
-        <stop stopColor="#FFFFFF" stopOpacity="0" offset="100%"></stop>
+        <stop stopColor="#FFFFFF" stopOpacity=".3" offset="0%"></stop>
+        <stop stopColor="#FFFFFF" stopOpacity=".1" offset="52.3083683%"></stop>
+        <stop stopColor="#FFFFFF" stopOpacity="0.0" offset="100%"></stop>
       </linearGradient>
     </defs>
     <g id="1st-Iteration---Without-Testing,-QA,-Dashboard" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

@@ -1,5 +1,7 @@
 import { createReducer } from 'deox';
+import { DeepImmutableObject } from 'deox/dist/types';
 
+import { placeholderAppIcon } from '@/config';
 import { AppVersion, AppVersionEvent } from '@/models';
 
 import fetchAppVersion from './fetchAppVersion';
@@ -11,7 +13,6 @@ import deleteFeatureGraphic from './deleteFeatureGraphic';
 import publishAppVersion from './publishAppVersion';
 import pollPublishStatus, { pollPublishStatusEpic } from './pollPublishStatus';
 import fetchAppVersionEvents from './fetchAppVersionEvents';
-import { placeholderAppIcon } from '@/config';
 
 export type AppVersionState = {
   appVersion: AppVersion | null;
@@ -41,14 +42,20 @@ export {
   pollPublishStatusEpic,
   fetchAppVersionEvents
 };
+
+const reduceAppVersion = ({ appVersion, ...state }: DeepImmutableObject<AppVersionState>, payload: AppVersion) => ({
+  ...state,
+  appVersion: {
+    ...appVersion,
+    ...payload,
+    iconUrl: (appVersion && appVersion.iconUrl) || payload.iconUrl || placeholderAppIcon
+  }
+});
 export default createReducer(defaultState, handleAction => [
-  handleAction([fetchAppVersion.complete, updateAppVersion.complete], ({ appVersion, ...state }, { payload }) => ({
-    ...state,
-    appVersion: {
-      ...appVersion,
-      ...payload,
-      iconUrl: (appVersion && appVersion.iconUrl) || payload.iconUrl || placeholderAppIcon
-    }
+  handleAction(fetchAppVersion.complete, (state, { payload, type }) => reduceAppVersion(state, payload)),
+  handleAction(updateAppVersion.complete, (state, { payload }) => ({
+    ...reduceAppVersion(state, payload),
+    isSaving: state.isSaving - 1
   })),
   handleAction(publishAppVersion.next, state => ({ ...state, appVersion: null, isPublishInProgress: true })),
   handleAction([publishAppVersion.complete, publishAppVersion.error], state => ({
@@ -80,7 +87,6 @@ export default createReducer(defaultState, handleAction => [
   ),
   handleAction(
     [
-      updateAppVersion.complete,
       uploadScreenshots.complete,
       uploadFeatureGraphic.complete,
       updateAppVersion.error,

@@ -12,6 +12,7 @@ interface VersionListPageItemProps {
   detailsPagePathHref: string;
   title: string;
   description: string;
+  descriptionPlaceholder?: string;
   note: string;
   productFlavour?: string;
 }
@@ -31,7 +32,16 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
   };
 
   render() {
-    const { platform, detailsPagePath, detailsPagePathHref, title, description, note, productFlavour } = this.props;
+    const {
+      platform,
+      detailsPagePath,
+      detailsPagePathHref,
+      title,
+      description,
+      descriptionPlaceholder,
+      note,
+      productFlavour
+    } = this.props;
     const { isOpen } = this.state;
     const iconName: TypeIconName = platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
 
@@ -50,7 +60,7 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
                   <Icon color="grape-4" name={iconName} size="1.5rem" />
                 </Base>
                 <Flex direction="horizontal" grow alignChildrenVertical="middle" gap="x3">
-                  <Text config="5" color="grape-5" className={css.title}>
+                  <Text config="5" color="grape-4" className={css.title}>
                     {title}
                   </Text>
                   {productFlavour && <MagicTag selected>{productFlavour}</MagicTag>}
@@ -62,7 +72,16 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
             </Link>
           </NextLink>
           <button className={descriptionWrapperClasses.join(' ')} onClick={this.toggle}>
-            <Text className={css.description}>{description}</Text>
+            {(description || descriptionPlaceholder) && (
+              <Text config="7" color="black" className={css.description}>
+                {description ? (
+                  <Base color="black">{description}</Base>
+                ) : (
+                  <Base color="gray-5">{descriptionPlaceholder}</Base>
+                )}
+              </Text>
+            )}
+
             {description &&
               (isOpen ? (
                 <Base className={css.showLess}>

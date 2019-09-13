@@ -80,6 +80,7 @@ export class ShipApp extends App<ShipAppProps> {
     const { appSlug, Component } = this.props;
     const pageName = Component.displayName;
 
+    /* istanbul ignore next */
     if (window.analytics) {
       window.analytics.page({ addonId: 'addons-ship', appSlug, pageName });
     }
