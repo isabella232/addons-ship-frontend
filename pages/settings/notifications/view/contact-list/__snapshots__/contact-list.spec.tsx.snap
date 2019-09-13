@@ -152,3 +152,196 @@ exports[`NotificationSettings View ContactList renders correctly 1`] = `
   </TableBody>
 </Table>
 `;
+
+exports[`NotificationSettings View ContactList renders correctly on mobile 1`] = `
+<Table
+  type="flat"
+>
+  <TableBody>
+    <TableRow
+      key="bit.bot@bitrise.io"
+    >
+      <TableCell>
+        <Base
+          paddingVertical="x1"
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Email:
+          </Text>
+           
+          bit.bot@bitrise.io
+        </Base>
+        <Base
+          paddingVertical="x1"
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Status:
+          </Text>
+           
+          Confirmed
+        </Base>
+        <Flex
+          alignChildrenHorizontal="between"
+          direction="horizontal"
+          gap="x2"
+          paddingVertical="x1"
+        >
+          <Text
+            color="grape-5"
+            weight="bold"
+            width="9rem"
+          >
+            New Version:
+          </Text>
+           
+          <Toggle
+            alignChildren="middle"
+            checked={true}
+            onChange={[Function]}
+          />
+        </Flex>
+        <Flex
+          alignChildrenHorizontal="between"
+          direction="horizontal"
+          gap="x2"
+          paddingVertical="x1"
+        >
+          <Text
+            color="grape-5"
+            weight="bold"
+            width="9rem"
+          >
+            Successful Publish:
+          </Text>
+           
+          <Toggle
+            alignChildren="middle"
+            checked={true}
+            onChange={[Function]}
+          />
+        </Flex>
+        <Flex
+          alignChildrenHorizontal="between"
+          direction="horizontal"
+          gap="x2"
+          paddingVertical="x1"
+        >
+          <Text
+            color="grape-5"
+            weight="bold"
+            width="9rem"
+          >
+            Failed Publish:
+          </Text>
+           
+          <Toggle
+            alignChildren="middle"
+            checked={true}
+            onChange={[Function]}
+          />
+        </Flex>
+      </TableCell>
+    </TableRow>
+    <TableRow
+      key="purr.request@bitrise.io"
+    >
+      <TableCell>
+        <Base
+          paddingVertical="x1"
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Email:
+          </Text>
+           
+          purr.request@bitrise.io
+        </Base>
+        <Base
+          paddingVertical="x1"
+        >
+          <Text
+            color="grape-5"
+            inline={true}
+            weight="bold"
+          >
+            Status:
+          </Text>
+           
+          Pending
+        </Base>
+        <Flex
+          alignChildrenHorizontal="between"
+          direction="horizontal"
+          gap="x2"
+          paddingVertical="x1"
+        >
+          <Text
+            color="grape-5"
+            weight="bold"
+            width="9rem"
+          >
+            New Version:
+          </Text>
+           
+          <Toggle
+            alignChildren="middle"
+            checked={false}
+            onChange={[Function]}
+          />
+        </Flex>
+        <Flex
+          alignChildrenHorizontal="between"
+          direction="horizontal"
+          gap="x2"
+          paddingVertical="x1"
+        >
+          <Text
+            color="grape-5"
+            weight="bold"
+            width="9rem"
+          >
+            Successful Publish:
+          </Text>
+           
+          <Toggle
+            alignChildren="middle"
+            checked={false}
+            onChange={[Function]}
+          />
+        </Flex>
+        <Flex
+          alignChildrenHorizontal="between"
+          direction="horizontal"
+          gap="x2"
+          paddingVertical="x1"
+        >
+          <Text
+            color="grape-5"
+            weight="bold"
+            width="9rem"
+          >
+            Failed Publish:
+          </Text>
+           
+          <Toggle
+            alignChildren="middle"
+            checked={true}
+            onChange={[Function]}
+          />
+        </Flex>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+`;

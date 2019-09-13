@@ -56,6 +56,13 @@ describe('NotificationSettings View ContactList', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('renders correctly on mobile', () => {
+    (mediaQuery as jest.Mock).mockReturnValueOnce([false]);
+    const tree = shallowToJson(shallow(<ContactList {...defaultProps} />));
+
+    expect(tree).toMatchSnapshot();
+  });
+
   describe('onNotificationPreferenceChanged', () => {
     const preferenceKeys = ['newVersion', 'successfulPublish', 'failedPublish'];
     let wrapper: ShallowWrapper;
