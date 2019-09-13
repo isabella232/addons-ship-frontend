@@ -1,5 +1,4 @@
-import { Base, Flex, Icon, TypeColors } from '@bitrise/bitkit';
-import cx from 'classnames';
+import { Base, Icon, Buttons, Button } from '@bitrise/bitkit';
 
 import { Platform } from '@/models';
 
@@ -12,31 +11,20 @@ interface PlatformSelectorProps {
 
 export default ({ platform = 'ios', onClick }: PlatformSelectorProps) => {
   return (
-    <Flex alignChildren="middle" direction="horizontal" className={css.container}>
-      <Flex
-        direction="horizontal"
-        className={css.platform}
-        alignChildren="middle"
-        backgroundColor="white"
-        borderRadius="x2"
-      >
-        <Base
-          className={cx(css.Base, { [css.selected]: platform === 'ios' })}
-          paddingHorizontal="x6"
-          paddingVertical="x3"
-          onClick={() => onClick('ios')}
-        >
-          <Icon name="PlatformsApple" />
-        </Base>
-        <Base
-          className={cx(css.Base, { [css.selected]: platform === 'android' })}
-          paddingHorizontal="x6"
-          paddingVertical="x3"
-          onClick={() => onClick('android')}
-        >
-          <Icon name="PlatformsAndroid" />
-        </Base>
-      </Flex>
-    </Flex>
+    <Base className={css.PlatformSelector} paddingVertical="x5">
+      <Buttons joined>
+        <Button onClick={() => onClick('ios')} level={platform === 'ios' ? 'light' : 'secondary'}>
+          <Base paddingHorizontal="x2">
+            <Icon name="PlatformsApple" />
+          </Base>
+        </Button>
+
+        <Button onClick={() => onClick('android')} level={platform === 'android' ? 'light' : 'secondary'}>
+          <Base paddingHorizontal="x2">
+            <Icon name="PlatformsAndroid" />
+          </Base>
+        </Button>
+      </Buttons>
+    </Base>
   );
 };

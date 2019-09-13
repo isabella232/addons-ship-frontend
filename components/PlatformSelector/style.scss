@@ -2,41 +2,14 @@
 @import '~@/assets/style/colors';
 @import '~@/assets/style/dimensions';
 
-.container {
-  padding-top: 10 * $grid;
-
-  .platform {
-    border: 1px solid $eggplant;
-
-    .Base {
-      cursor: pointer;
-
-      &:first-child {
-        @include border-left-radius(6px);
-      }
-      &:last-child {
-        @include border-right-radius(6px);
-      }
-      &:not(.selected) {
-        &:hover {
-          background-color: $grape-1;
-
-          svg {
-            color: $grape-3;
-          }
-        }
-
-        svg {
-          color: $eggplant;
-        }
-      }
-
-      &.selected {
-        background-color: $grape-3;
-
-        svg {
-          color: $white;
-        }
+.PlatformSelector {
+  :global(.Button) {
+    border-radius: $grid * 2;
+    &--level-light {
+      &,
+      &:hover {
+        background-color: $grape-5;
+        border-color: $grape-5;
       }
     }
   }
