@@ -53,15 +53,15 @@ exports[`Header on desktop renders correctly 1`] = `
     color="white"
     direction="vertical"
   >
-    <Flex
-      padding="x4"
+    <a
+      href="https://app.bitrise.io/app/test-app-slug-1"
+      target="_blank"
     >
-      <a
-        href="https://app.bitrise.io/app/test-app-slug-1"
-        target="_blank"
+      <Flex
+        padding="x4"
       >
         <Flex
-          alignChildrenVertical="middle"
+          alignChildren="middle"
           direction="horizontal"
           gap="x2"
         >
@@ -72,7 +72,7 @@ exports[`Header on desktop renders correctly 1`] = `
             width="1.5rem"
           />
           <Flex
-            alignChildrenVertical="middle"
+            alignChildren="middle"
             direction="horizontal"
             gap="x1"
           >
@@ -87,30 +87,45 @@ exports[`Header on desktop renders correctly 1`] = `
             />
           </Flex>
         </Flex>
-      </a>
-    </Flex>
+      </Flex>
+    </a>
     <Divider
       color="grape-4"
       direction="horizontal"
       width="0.125rem"
     />
-    <Flex
-      padding="x4"
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1/settings"
-        href="/settings?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            color="gray-1"
-            size="x3"
+      <a>
+        <Flex
+          alignChildren="middle"
+          direction="horizontal"
+          padding="x4"
+        >
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x1"
           >
-            Settings
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+            <Icon
+              name="Settings"
+              size="1.5rem"
+            />
+            <Text
+              color="gray-1"
+              size="x3"
+            >
+              Settings
+            </Text>
+          </Flex>
+        </Flex>
+      </a>
+    </Link>
+    <Base
+      paddingVertical="x12"
+    />
   </Flex>
 </Base>
 `;
@@ -185,15 +200,15 @@ exports[`Header on desktop renders without breadcrumbs 1`] = `
     color="white"
     direction="vertical"
   >
-    <Flex
-      padding="x4"
+    <a
+      href="https://app.bitrise.io/app/test-app-slug-1"
+      target="_blank"
     >
-      <a
-        href="https://app.bitrise.io/app/test-app-slug-1"
-        target="_blank"
+      <Flex
+        padding="x4"
       >
         <Flex
-          alignChildrenVertical="middle"
+          alignChildren="middle"
           direction="horizontal"
           gap="x2"
         >
@@ -204,7 +219,7 @@ exports[`Header on desktop renders without breadcrumbs 1`] = `
             width="1.5rem"
           />
           <Flex
-            alignChildrenVertical="middle"
+            alignChildren="middle"
             direction="horizontal"
             gap="x1"
           >
@@ -219,30 +234,45 @@ exports[`Header on desktop renders without breadcrumbs 1`] = `
             />
           </Flex>
         </Flex>
-      </a>
-    </Flex>
+      </Flex>
+    </a>
     <Divider
       color="grape-4"
       direction="horizontal"
       width="0.125rem"
     />
-    <Flex
-      padding="x4"
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1/settings"
-        href="/settings?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            color="gray-1"
-            size="x3"
+      <a>
+        <Flex
+          alignChildren="middle"
+          direction="horizontal"
+          padding="x4"
+        >
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x1"
           >
-            Settings
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+            <Icon
+              name="Settings"
+              size="1.5rem"
+            />
+            <Text
+              color="gray-1"
+              size="x3"
+            >
+              Settings
+            </Text>
+          </Flex>
+        </Flex>
+      </a>
+    </Link>
+    <Base
+      paddingVertical="x12"
+    />
   </Flex>
 </Base>
 `;
@@ -300,15 +330,15 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
     color="white"
     direction="vertical"
   >
-    <Flex
-      padding="x4"
+    <a
+      href="https://app.bitrise.io/app/test-app-slug-1"
+      target="_blank"
     >
-      <a
-        href="https://app.bitrise.io/app/test-app-slug-1"
-        target="_blank"
+      <Flex
+        padding="x4"
       >
         <Flex
-          alignChildrenVertical="middle"
+          alignChildren="middle"
           direction="horizontal"
           gap="x2"
         >
@@ -319,7 +349,7 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
             width="1.5rem"
           />
           <Flex
-            alignChildrenVertical="middle"
+            alignChildren="middle"
             direction="horizontal"
             gap="x1"
           >
@@ -334,30 +364,45 @@ exports[`Header on mobile renders correctly on mobile 1`] = `
             />
           </Flex>
         </Flex>
-      </a>
-    </Flex>
+      </Flex>
+    </a>
     <Divider
       color="grape-4"
       direction="horizontal"
       width="0.125rem"
     />
-    <Flex
-      padding="x4"
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1/settings"
-        href="/settings?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            color="gray-1"
-            size="x3"
+      <a>
+        <Flex
+          alignChildren="middle"
+          direction="horizontal"
+          padding="x4"
+        >
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x1"
           >
-            Settings
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+            <Icon
+              name="Settings"
+              size="1.5rem"
+            />
+            <Text
+              color="gray-1"
+              size="x3"
+            >
+              Settings
+            </Text>
+          </Flex>
+        </Flex>
+      </a>
+    </Link>
+    <Base
+      paddingVertical="x12"
+    />
   </Flex>
 </Base>
 `;
@@ -450,15 +495,15 @@ exports[`Header routes /app for desktop 1`] = `
     color="white"
     direction="vertical"
   >
-    <Flex
-      padding="x4"
+    <a
+      href="https://app.bitrise.io/app/test-app-slug-1"
+      target="_blank"
     >
-      <a
-        href="https://app.bitrise.io/app/test-app-slug-1"
-        target="_blank"
+      <Flex
+        padding="x4"
       >
         <Flex
-          alignChildrenVertical="middle"
+          alignChildren="middle"
           direction="horizontal"
           gap="x2"
         >
@@ -469,7 +514,7 @@ exports[`Header routes /app for desktop 1`] = `
             width="1.5rem"
           />
           <Flex
-            alignChildrenVertical="middle"
+            alignChildren="middle"
             direction="horizontal"
             gap="x1"
           >
@@ -484,30 +529,45 @@ exports[`Header routes /app for desktop 1`] = `
             />
           </Flex>
         </Flex>
-      </a>
-    </Flex>
+      </Flex>
+    </a>
     <Divider
       color="grape-4"
       direction="horizontal"
       width="0.125rem"
     />
-    <Flex
-      padding="x4"
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1/settings"
-        href="/settings?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            color="gray-1"
-            size="x3"
+      <a>
+        <Flex
+          alignChildren="middle"
+          direction="horizontal"
+          padding="x4"
+        >
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x1"
           >
-            Settings
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+            <Icon
+              name="Settings"
+              size="1.5rem"
+            />
+            <Text
+              color="gray-1"
+              size="x3"
+            >
+              Settings
+            </Text>
+          </Flex>
+        </Flex>
+      </a>
+    </Link>
+    <Base
+      paddingVertical="x12"
+    />
   </Flex>
 </Base>
 `;
@@ -565,15 +625,15 @@ exports[`Header routes /app for mobile 1`] = `
     color="white"
     direction="vertical"
   >
-    <Flex
-      padding="x4"
+    <a
+      href="https://app.bitrise.io/app/test-app-slug-1"
+      target="_blank"
     >
-      <a
-        href="https://app.bitrise.io/app/test-app-slug-1"
-        target="_blank"
+      <Flex
+        padding="x4"
       >
         <Flex
-          alignChildrenVertical="middle"
+          alignChildren="middle"
           direction="horizontal"
           gap="x2"
         >
@@ -584,7 +644,7 @@ exports[`Header routes /app for mobile 1`] = `
             width="1.5rem"
           />
           <Flex
-            alignChildrenVertical="middle"
+            alignChildren="middle"
             direction="horizontal"
             gap="x1"
           >
@@ -599,30 +659,45 @@ exports[`Header routes /app for mobile 1`] = `
             />
           </Flex>
         </Flex>
-      </a>
-    </Flex>
+      </Flex>
+    </a>
     <Divider
       color="grape-4"
       direction="horizontal"
       width="0.125rem"
     />
-    <Flex
-      padding="x4"
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1/settings"
-        href="/settings?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            color="gray-1"
-            size="x3"
+      <a>
+        <Flex
+          alignChildren="middle"
+          direction="horizontal"
+          padding="x4"
+        >
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x1"
           >
-            Settings
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+            <Icon
+              name="Settings"
+              size="1.5rem"
+            />
+            <Text
+              color="gray-1"
+              size="x3"
+            >
+              Settings
+            </Text>
+          </Flex>
+        </Flex>
+      </a>
+    </Link>
+    <Base
+      paddingVertical="x12"
+    />
   </Flex>
 </Base>
 `;
@@ -695,15 +770,15 @@ exports[`Header routes /settings for desktop 1`] = `
     color="white"
     direction="vertical"
   >
-    <Flex
-      padding="x4"
+    <a
+      href="https://app.bitrise.io/app/test-app-slug-1"
+      target="_blank"
     >
-      <a
-        href="https://app.bitrise.io/app/test-app-slug-1"
-        target="_blank"
+      <Flex
+        padding="x4"
       >
         <Flex
-          alignChildrenVertical="middle"
+          alignChildren="middle"
           direction="horizontal"
           gap="x2"
         >
@@ -714,7 +789,7 @@ exports[`Header routes /settings for desktop 1`] = `
             width="1.5rem"
           />
           <Flex
-            alignChildrenVertical="middle"
+            alignChildren="middle"
             direction="horizontal"
             gap="x1"
           >
@@ -729,30 +804,45 @@ exports[`Header routes /settings for desktop 1`] = `
             />
           </Flex>
         </Flex>
-      </a>
-    </Flex>
+      </Flex>
+    </a>
     <Divider
       color="grape-4"
       direction="horizontal"
       width="0.125rem"
     />
-    <Flex
-      padding="x4"
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1/settings"
-        href="/settings?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            color="gray-1"
-            size="x3"
+      <a>
+        <Flex
+          alignChildren="middle"
+          direction="horizontal"
+          padding="x4"
+        >
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x1"
           >
-            Settings
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+            <Icon
+              name="Settings"
+              size="1.5rem"
+            />
+            <Text
+              color="gray-1"
+              size="x3"
+            >
+              Settings
+            </Text>
+          </Flex>
+        </Flex>
+      </a>
+    </Link>
+    <Base
+      paddingVertical="x12"
+    />
   </Flex>
 </Base>
 `;
@@ -825,15 +915,15 @@ exports[`Header routes /settings for mobile 1`] = `
     color="white"
     direction="vertical"
   >
-    <Flex
-      padding="x4"
+    <a
+      href="https://app.bitrise.io/app/test-app-slug-1"
+      target="_blank"
     >
-      <a
-        href="https://app.bitrise.io/app/test-app-slug-1"
-        target="_blank"
+      <Flex
+        padding="x4"
       >
         <Flex
-          alignChildrenVertical="middle"
+          alignChildren="middle"
           direction="horizontal"
           gap="x2"
         >
@@ -844,7 +934,7 @@ exports[`Header routes /settings for mobile 1`] = `
             width="1.5rem"
           />
           <Flex
-            alignChildrenVertical="middle"
+            alignChildren="middle"
             direction="horizontal"
             gap="x1"
           >
@@ -859,30 +949,45 @@ exports[`Header routes /settings for mobile 1`] = `
             />
           </Flex>
         </Flex>
-      </a>
-    </Flex>
+      </Flex>
+    </a>
     <Divider
       color="grape-4"
       direction="horizontal"
       width="0.125rem"
     />
-    <Flex
-      padding="x4"
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1/settings"
-        href="/settings?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            color="gray-1"
-            size="x3"
+      <a>
+        <Flex
+          alignChildren="middle"
+          direction="horizontal"
+          padding="x4"
+        >
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x1"
           >
-            Settings
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+            <Icon
+              name="Settings"
+              size="1.5rem"
+            />
+            <Text
+              color="gray-1"
+              size="x3"
+            >
+              Settings
+            </Text>
+          </Flex>
+        </Flex>
+      </a>
+    </Link>
+    <Base
+      paddingVertical="x12"
+    />
   </Flex>
 </Base>
 `;
@@ -955,15 +1060,15 @@ exports[`Header routes /version for desktop 1`] = `
     color="white"
     direction="vertical"
   >
-    <Flex
-      padding="x4"
+    <a
+      href="https://app.bitrise.io/app/test-app-slug-1"
+      target="_blank"
     >
-      <a
-        href="https://app.bitrise.io/app/test-app-slug-1"
-        target="_blank"
+      <Flex
+        padding="x4"
       >
         <Flex
-          alignChildrenVertical="middle"
+          alignChildren="middle"
           direction="horizontal"
           gap="x2"
         >
@@ -974,7 +1079,7 @@ exports[`Header routes /version for desktop 1`] = `
             width="1.5rem"
           />
           <Flex
-            alignChildrenVertical="middle"
+            alignChildren="middle"
             direction="horizontal"
             gap="x1"
           >
@@ -989,30 +1094,45 @@ exports[`Header routes /version for desktop 1`] = `
             />
           </Flex>
         </Flex>
-      </a>
-    </Flex>
+      </Flex>
+    </a>
     <Divider
       color="grape-4"
       direction="horizontal"
       width="0.125rem"
     />
-    <Flex
-      padding="x4"
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1/settings"
-        href="/settings?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            color="gray-1"
-            size="x3"
+      <a>
+        <Flex
+          alignChildren="middle"
+          direction="horizontal"
+          padding="x4"
+        >
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x1"
           >
-            Settings
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+            <Icon
+              name="Settings"
+              size="1.5rem"
+            />
+            <Text
+              color="gray-1"
+              size="x3"
+            >
+              Settings
+            </Text>
+          </Flex>
+        </Flex>
+      </a>
+    </Link>
+    <Base
+      paddingVertical="x12"
+    />
   </Flex>
 </Base>
 `;
@@ -1085,15 +1205,15 @@ exports[`Header routes /version for mobile 1`] = `
     color="white"
     direction="vertical"
   >
-    <Flex
-      padding="x4"
+    <a
+      href="https://app.bitrise.io/app/test-app-slug-1"
+      target="_blank"
     >
-      <a
-        href="https://app.bitrise.io/app/test-app-slug-1"
-        target="_blank"
+      <Flex
+        padding="x4"
       >
         <Flex
-          alignChildrenVertical="middle"
+          alignChildren="middle"
           direction="horizontal"
           gap="x2"
         >
@@ -1104,7 +1224,7 @@ exports[`Header routes /version for mobile 1`] = `
             width="1.5rem"
           />
           <Flex
-            alignChildrenVertical="middle"
+            alignChildren="middle"
             direction="horizontal"
             gap="x1"
           >
@@ -1119,30 +1239,45 @@ exports[`Header routes /version for mobile 1`] = `
             />
           </Flex>
         </Flex>
-      </a>
-    </Flex>
+      </Flex>
+    </a>
     <Divider
       color="grape-4"
       direction="horizontal"
       width="0.125rem"
     />
-    <Flex
-      padding="x4"
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1/settings"
-        href="/settings?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            color="gray-1"
-            size="x3"
+      <a>
+        <Flex
+          alignChildren="middle"
+          direction="horizontal"
+          padding="x4"
+        >
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x1"
           >
-            Settings
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+            <Icon
+              name="Settings"
+              size="1.5rem"
+            />
+            <Text
+              color="gray-1"
+              size="x3"
+            >
+              Settings
+            </Text>
+          </Flex>
+        </Flex>
+      </a>
+    </Link>
+    <Base
+      paddingVertical="x12"
+    />
   </Flex>
 </Base>
 `;
@@ -1200,15 +1335,15 @@ exports[`Header when settings onboarding should be shown shows the notification 
     color="white"
     direction="vertical"
   >
-    <Flex
-      padding="x4"
+    <a
+      href="https://app.bitrise.io/app/test-app-slug-1"
+      target="_blank"
     >
-      <a
-        href="https://app.bitrise.io/app/test-app-slug-1"
-        target="_blank"
+      <Flex
+        padding="x4"
       >
         <Flex
-          alignChildrenVertical="middle"
+          alignChildren="middle"
           direction="horizontal"
           gap="x2"
         >
@@ -1219,7 +1354,7 @@ exports[`Header when settings onboarding should be shown shows the notification 
             width="1.5rem"
           />
           <Flex
-            alignChildrenVertical="middle"
+            alignChildren="middle"
             direction="horizontal"
             gap="x1"
           >
@@ -1234,30 +1369,45 @@ exports[`Header when settings onboarding should be shown shows the notification 
             />
           </Flex>
         </Flex>
-      </a>
-    </Flex>
+      </Flex>
+    </a>
     <Divider
       color="grape-4"
       direction="horizontal"
       width="0.125rem"
     />
-    <Flex
-      padding="x4"
+    <Link
+      as="/apps/test-app-slug-1/settings"
+      href="/settings?appSlug=test-app-slug-1"
     >
-      <Link
-        as="/apps/test-app-slug-1/settings"
-        href="/settings?appSlug=test-app-slug-1"
-      >
-        <a>
-          <Text
-            color="gray-1"
-            size="x3"
+      <a>
+        <Flex
+          alignChildren="middle"
+          direction="horizontal"
+          padding="x4"
+        >
+          <Flex
+            alignChildren="middle"
+            direction="horizontal"
+            gap="x1"
           >
-            Settings
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+            <Icon
+              name="Settings"
+              size="1.5rem"
+            />
+            <Text
+              color="gray-1"
+              size="x3"
+            >
+              Settings
+            </Text>
+          </Flex>
+        </Flex>
+      </a>
+    </Link>
+    <Base
+      paddingVertical="x12"
+    />
   </Flex>
 </Base>
 `;

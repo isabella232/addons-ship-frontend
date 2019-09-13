@@ -198,28 +198,32 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
         backgroundColor="grape-5"
         color="white"
       >
-        <Flex padding="x4">
-          <a href={appLink} target="_blank">
-            <Flex alignChildrenVertical="middle" direction="horizontal" gap="x2">
+        <a href={appLink} target="_blank">
+          <Flex padding="x4">
+            <Flex alignChildren="middle" direction="horizontal" gap="x2">
               <Image borderRadius="x1" height="1.5rem" src={avatarUrl} width="1.5rem" />
 
-              <Flex alignChildrenVertical="middle" direction="horizontal" gap="x1">
+              <Flex alignChildren="middle" direction="horizontal" gap="x1">
                 <Text size="x3">{title}</Text>
                 <Icon name="OpenInBrowser" />
               </Flex>
             </Flex>
-          </a>
-        </Flex>
+          </Flex>
+        </a>
         <Divider color="grape-4" />
-        <Flex padding="x4">
-          <Link href={`/settings?appSlug=${appSlug}`} as={`/apps/${appSlug}/settings`}>
-            <a>
-              <Text size="x3" color="gray-1">
-                Settings
-              </Text>
-            </a>
-          </Link>
-        </Flex>
+        <Link href={`/settings?appSlug=${appSlug}`} as={`/apps/${appSlug}/settings`}>
+          <a>
+            <Flex direction="horizontal" alignChildren="middle" padding="x4">
+              <Flex direction="horizontal" alignChildren="middle" gap="x1">
+                <Icon name="Settings" />
+                <Text size="x3" color="gray-1">
+                  Settings
+                </Text>
+              </Flex>
+            </Flex>
+          </a>
+        </Link>
+        <Base paddingVertical="x12" />
       </Flex>
     </Base>
   );
