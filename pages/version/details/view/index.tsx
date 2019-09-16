@@ -293,8 +293,8 @@ export default ({
           <Flex shrink>
             <Sidebar
               publicInstallPageURL={appVersion.publicInstallPageURL}
-              isSplitAPK={appVersion.isSplitAPK}
-              hasUniversalAPK={appVersion.hasUniversalAPK}
+              isSplitAPK={appVersion.split}
+              hasUniversalAPK={appVersion.universalAvailable}
               shouldEnablePublish={readyForPublish && !isPublishInProgress}
               isPublished={latestEventStatus === AppVersionEventStatus.Success}
               isPublishInProgress={isPublishInProgress}
