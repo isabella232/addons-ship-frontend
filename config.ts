@@ -17,3 +17,5 @@ export const analyticsConfig = {
 
 export const placeholderAppIcon =
   'https://bitrise-addons-ship-backend.s3-us-west-2.amazonaws.com/assets/icons/placeholder-512.jpg';
+
+export const emailMaxLength = 254;
