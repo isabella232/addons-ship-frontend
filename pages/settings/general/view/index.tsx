@@ -107,7 +107,7 @@ export default ({
                   >
                     <InputLabel>Expose Artifacts From the Selected Workflow to Ship</InputLabel>
                     {hasMounted && (
-                      <Tooltip title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy">
+                      <Tooltip title="You can add multiple workflows divided with a comma. Eg.: primary, deploy">
                         {({ ref, ...rest }) => (
                           <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
                         )}
@@ -310,8 +310,10 @@ export default ({
                   >
                     <InputLabel>Expose Artifacts From the Selected Workflow to Ship</InputLabel>
                     {hasMounted && (
-                      <Tooltip title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy">
-                        {() => <Icon color="grape-3" name="Support" size="1.5rem" />}
+                      <Tooltip title="You can add multiple workflows divided with a comma. Eg.: primary, deploy">
+                        {({ ref, ...rest }) => (
+                          <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                        )}
                       </Tooltip>
                     )}
                   </Flex>

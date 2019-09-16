@@ -308,7 +308,7 @@ exports[`GeneralView when the settings are being saved 1`] = `
               Expose Artifacts From the Selected Workflow to Ship
             </InputLabel>
             <Tooltip
-              title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              title="You can add multiple workflows divided with a comma. Eg.: primary, deploy"
             >
               <Component />
             </Tooltip>
@@ -666,7 +666,7 @@ exports[`GeneralView when the settings are being saved 1`] = `
               Expose Artifacts From the Selected Workflow to Ship
             </InputLabel>
             <Tooltip
-              title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              title="You can add multiple workflows divided with a comma. Eg.: primary, deploy"
             >
               <Component />
             </Tooltip>
@@ -1020,7 +1020,7 @@ exports[`GeneralView when there are no Android settings does not render Android 
               Expose Artifacts From the Selected Workflow to Ship
             </InputLabel>
             <Tooltip
-              title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              title="You can add multiple workflows divided with a comma. Eg.: primary, deploy"
             >
               <Component />
             </Tooltip>
@@ -1411,7 +1411,7 @@ exports[`GeneralView when there are no files renders no files section 1`] = `
               Expose Artifacts From the Selected Workflow to Ship
             </InputLabel>
             <Tooltip
-              title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              title="You can add multiple workflows divided with a comma. Eg.: primary, deploy"
             >
               <Component />
             </Tooltip>
@@ -1621,7 +1621,7 @@ exports[`GeneralView when there are no files renders no files section 1`] = `
               Expose Artifacts From the Selected Workflow to Ship
             </InputLabel>
             <Tooltip
-              title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              title="You can add multiple workflows divided with a comma. Eg.: primary, deploy"
             >
               <Component />
             </Tooltip>
@@ -1822,7 +1822,7 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
               Expose Artifacts From the Selected Workflow to Ship
             </InputLabel>
             <Tooltip
-              title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              title="You can add multiple workflows divided with a comma. Eg.: primary, deploy"
             >
               <Component />
             </Tooltip>
@@ -2182,7 +2182,7 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
               Expose Artifacts From the Selected Workflow to Ship
             </InputLabel>
             <Tooltip
-              title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              title="You can add multiple workflows divided with a comma. Eg.: primary, deploy"
             >
               <Component />
             </Tooltip>
@@ -2540,7 +2540,7 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
               Expose Artifacts From the Selected Workflow to Ship
             </InputLabel>
             <Tooltip
-              title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              title="You can add multiple workflows divided with a comma. Eg.: primary, deploy"
             >
               <Component />
             </Tooltip>
@@ -2889,7 +2889,7 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
               Expose Artifacts From the Selected Workflow to Ship
             </InputLabel>
             <Tooltip
-              title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              title="You can add multiple workflows divided with a comma. Eg.: primary, deploy"
             >
               <Component />
             </Tooltip>
@@ -3247,7 +3247,7 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
               Expose Artifacts From the Selected Workflow to Ship
             </InputLabel>
             <Tooltip
-              title="You can add multiple workflows divided with a comma. Eg.: Primary, Deploy"
+              title="You can add multiple workflows divided with a comma. Eg.: primary, deploy"
             >
               <Component />
             </Tooltip>
