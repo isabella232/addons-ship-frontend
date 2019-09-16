@@ -417,11 +417,18 @@ export class ShipAPIService {
     const appPromise = this.getResource<any>(`apps/${appSlug}`),
       shipAppPromise = get(`${this.config.url}/apps/${appSlug}`, this.token).then(res => res.json());
 
-    const [appData, { data: shipAppData }] = await Promise.all([appPromise, shipAppPromise]);
+    const [
+      appData,
+      {
+        data: { header_color_1, header_color_2, android_errors, ios_errors }
+      }
+    ] = await Promise.all([appPromise, shipAppPromise]);
 
     return camelizeKeysDeep({
       ...appData,
-      colors: { start: shipAppData.header_color_1, end: shipAppData.header_color_2 },
+      colors: { start: header_color_1, end: header_color_2 },
+      android_errors,
+      ios_errors,
       appSlug
     });
   }

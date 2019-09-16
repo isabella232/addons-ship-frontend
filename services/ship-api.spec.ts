@@ -725,7 +725,7 @@ describe('Ship API service', () => {
         })
         .mockResolvedValueOnce({
           json: () => ({
-            data: { header_color_1: 'red', header_color_2: 'blue' }
+            data: { header_color_1: 'red', header_color_2: 'blue', android_erros: ['whoopsie'], ios_errors: [] }
           })
         });
 
