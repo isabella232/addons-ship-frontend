@@ -2,20 +2,12 @@ jest.mock('nookies', () => ({
   get: () => ({}),
   set: () => ({})
 }));
-jest.mock('@/ducks/appVersion');
-jest.mock('@/ducks/settings');
-jest.mock('@/ducks/testDevices');
-jest.mock('@/ducks/appVersion/fetchAppVersionEvents');
 
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
 import { mockAppVersion } from '@/mocks';
-import { fetchAppVersion } from '@/ducks/appVersion';
-import { fetchSettings } from '@/ducks/settings';
-import { fetchTestDevices } from '@/ducks/testDevices';
 import { VersionPage, VersionPageProps } from '.';
-import fetchAppVersionEvents from '@/ducks/appVersion/fetchAppVersionEvents';
 
 describe('AppVersion', () => {
   const defaultProps: VersionPageProps = {
@@ -24,8 +16,7 @@ describe('AppVersion', () => {
     versionId: 'a-version-id',
     pagePath: 'some/path',
     activityLastSeen: 0,
-    lastEventTimestamp: 0,
-    fetchAppVersion: jest.fn() as any
+    lastEventTimestamp: 0
   };
   it('renders the details tab correctly', () => {
     const tree = toJSON(shallow(<VersionPage {...defaultProps} />));

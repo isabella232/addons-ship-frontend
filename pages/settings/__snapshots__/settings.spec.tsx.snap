@@ -5,48 +5,49 @@ exports[`Settings renders tabs correctly general 1`] = `
   <Connect(ShipHead)>
     Settings
   </Connect(ShipHead)>
-  <Base>
-    <Base>
-      <Base
-        maxWidth={992}
-      >
-        <_default
-          linkAsPrefix="/apps/some-app/settings/"
-          linkHrefPrefix="/settings?appSlug=some-app&selectedTab="
-          selectedTab="general"
-          tabs={
-            Array [
-              Object {
-                "label": "general",
-              },
-              Object {
-                "label": "notifications",
-              },
-            ]
-          }
-        />
-      </Base>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="1px"
+  <Flex
+    direction="vertical"
+    grow={true}
+  >
+    <Base
+      maxWidth={992}
+    >
+      <_default
+        linkAsPrefix="/apps/some-app/settings/"
+        linkHrefPrefix="/settings?appSlug=some-app&selectedTab="
+        selectedTab="general"
+        tabs={
+          Array [
+            Object {
+              "label": "general",
+            },
+            Object {
+              "label": "notifications",
+            },
+          ]
+        }
       />
-      <Flex
-        direction="vertical"
-        grow={true}
-        maxWidth={992}
-        padding="x4"
-      >
-        <Connect(GeneralSettings)
-          appSlug="some-app"
-        />
-        <AddonFooter
-          addonName="Ship"
-          paddingVertical="x16"
-        />
-      </Flex>
     </Base>
-  </Base>
+    <Divider
+      color="gray-2"
+      direction="horizontal"
+      width="1px"
+    />
+    <Flex
+      direction="vertical"
+      grow={true}
+      maxWidth={992}
+      padding="x4"
+    >
+      <Connect(GeneralSettings)
+        appSlug="some-app"
+      />
+      <AddonFooter
+        addonName="Ship"
+        paddingVertical="x16"
+      />
+    </Flex>
+  </Flex>
 </Fragment>
 `;
 
@@ -55,48 +56,49 @@ exports[`Settings renders tabs correctly notifications 1`] = `
   <Connect(ShipHead)>
     Notifications
   </Connect(ShipHead)>
-  <Base>
-    <Base>
-      <Base
-        maxWidth={992}
-      >
-        <_default
-          linkAsPrefix="/apps/some-app/settings/"
-          linkHrefPrefix="/settings?appSlug=some-app&selectedTab="
-          selectedTab="notifications"
-          tabs={
-            Array [
-              Object {
-                "label": "general",
-              },
-              Object {
-                "label": "notifications",
-              },
-            ]
-          }
-        />
-      </Base>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="1px"
+  <Flex
+    direction="vertical"
+    grow={true}
+  >
+    <Base
+      maxWidth={992}
+    >
+      <_default
+        linkAsPrefix="/apps/some-app/settings/"
+        linkHrefPrefix="/settings?appSlug=some-app&selectedTab="
+        selectedTab="notifications"
+        tabs={
+          Array [
+            Object {
+              "label": "general",
+            },
+            Object {
+              "label": "notifications",
+            },
+          ]
+        }
       />
-      <Flex
-        direction="vertical"
-        grow={true}
-        maxWidth={992}
-        padding="x4"
-      >
-        <Connect(NotificationSettings)
-          appSlug="some-app"
-        />
-        <AddonFooter
-          addonName="Ship"
-          paddingVertical="x16"
-        />
-      </Flex>
     </Base>
-  </Base>
+    <Divider
+      color="gray-2"
+      direction="horizontal"
+      width="1px"
+    />
+    <Flex
+      direction="vertical"
+      grow={true}
+      maxWidth={992}
+      padding="x4"
+    >
+      <Connect(NotificationSettings)
+        appSlug="some-app"
+      />
+      <AddonFooter
+        addonName="Ship"
+        paddingVertical="x16"
+      />
+    </Flex>
+  </Flex>
 </Fragment>
 `;
 
@@ -105,47 +107,48 @@ exports[`Settings renders tabs correctly other 1`] = `
   <Connect(ShipHead)>
     Notifications
   </Connect(ShipHead)>
-  <Base>
-    <Base>
-      <Base
-        maxWidth={992}
-      >
-        <_default
-          linkAsPrefix="/apps/some-app/settings/"
-          linkHrefPrefix="/settings?appSlug=some-app&selectedTab="
-          selectedTab="other"
-          tabs={
-            Array [
-              Object {
-                "label": "general",
-              },
-              Object {
-                "label": "notifications",
-              },
-            ]
-          }
-        />
-      </Base>
-      <Divider
-        color="gray-2"
-        direction="horizontal"
-        width="1px"
+  <Flex
+    direction="vertical"
+    grow={true}
+  >
+    <Base
+      maxWidth={992}
+    >
+      <_default
+        linkAsPrefix="/apps/some-app/settings/"
+        linkHrefPrefix="/settings?appSlug=some-app&selectedTab="
+        selectedTab="other"
+        tabs={
+          Array [
+            Object {
+              "label": "general",
+            },
+            Object {
+              "label": "notifications",
+            },
+          ]
+        }
       />
-      <Flex
-        direction="vertical"
-        grow={true}
-        maxWidth={992}
-        padding="x4"
-      >
-        <h1>
-          other
-        </h1>
-        <AddonFooter
-          addonName="Ship"
-          paddingVertical="x16"
-        />
-      </Flex>
     </Base>
-  </Base>
+    <Divider
+      color="gray-2"
+      direction="horizontal"
+      width="1px"
+    />
+    <Flex
+      direction="vertical"
+      grow={true}
+      maxWidth={992}
+      padding="x4"
+    >
+      <h1>
+        other
+      </h1>
+      <AddonFooter
+        addonName="Ship"
+        paddingVertical="x16"
+      />
+    </Flex>
+  </Flex>
 </Fragment>
 `;

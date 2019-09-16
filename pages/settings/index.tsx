@@ -7,7 +7,7 @@ import ShipHead from '@/components/ShipHead';
 
 import General from './general';
 import Notifications from './notifications';
-import Tabmenu from '../version/tabmenu';
+import TabMenu from '../version/TabMenu';
 
 export class SettingsPage extends Component<AppSettingsPageQuery> {
   static displayName = 'SettingsPage';
@@ -46,23 +46,22 @@ export class SettingsPage extends Component<AppSettingsPageQuery> {
     return (
       <Fragment>
         <ShipHead>{selectedTab === 'general' ? 'Settings' : 'Notifications'}</ShipHead>
-        <Base>
-          <Base>
-            <Base maxWidth={992}>
-              <Tabmenu
-                tabs={[{ label: 'general' }, { label: 'notifications' }]}
-                selectedTab={selectedTab}
-                linkAsPrefix={`/apps/${appSlug}/settings/`}
-                linkHrefPrefix={`/settings?appSlug=${appSlug}&selectedTab=`}
-              ></Tabmenu>
-            </Base>
-            <Divider color="gray-2" direction="horizontal" width="1px" />
-            <Flex padding="x4" direction="vertical" maxWidth={992} grow>
-              {this.tabContent()}
-              <AddonFooter addonName="Ship" paddingVertical="x16" />
-            </Flex>
+
+        <Flex direction="vertical" grow>
+          <Base maxWidth={992}>
+            <TabMenu
+              tabs={[{ label: 'general' }, { label: 'notifications' }]}
+              selectedTab={selectedTab}
+              linkAsPrefix={`/apps/${appSlug}/settings/`}
+              linkHrefPrefix={`/settings?appSlug=${appSlug}&selectedTab=`}
+            ></TabMenu>
           </Base>
-        </Base>
+          <Divider color="gray-2" direction="horizontal" width="1px" />
+          <Flex padding="x4" direction="vertical" maxWidth={992} grow>
+            {this.tabContent()}
+            <AddonFooter addonName="Ship" paddingVertical="x16" />
+          </Flex>
+        </Flex>
       </Fragment>
     );
   }
