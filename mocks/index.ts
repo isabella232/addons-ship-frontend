@@ -193,6 +193,8 @@ export const mockAndroidAppVersion: AppVersion = {
   module: 'Celeste-config',
   productFlavour: 'Fennek',
   buildType: 'Celeste-config',
+  split: true,
+  universalAvailable: true,
   publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
   screenshotDatas: []
 };

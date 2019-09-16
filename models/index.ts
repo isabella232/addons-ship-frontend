@@ -52,6 +52,8 @@ export type AppVersion = {
   module?: string;
   productFlavour?: string;
   buildType?: string;
+  split?: boolean;
+  universalAvailable?: boolean;
   publicInstallPageURL?: string;
   screenshotDatas: ScreenshotResponse[];
   featureGraphicData?: UploadableResponse;

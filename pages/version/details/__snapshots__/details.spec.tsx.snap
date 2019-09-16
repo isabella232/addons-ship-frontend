@@ -225,6 +225,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
+      "split": true,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
         "phone",
@@ -232,6 +233,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
         "android-tv",
         "wear-os",
       ],
+      "universalAvailable": true,
       "version": "1.0.3",
       "versionCode": "165161631",
       "whatsNew": "Some longer whats-new",
@@ -305,6 +307,7 @@ exports[`AppVersionDetails disables install button when device is from different
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
+      "split": true,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
         "phone",
@@ -312,6 +315,7 @@ exports[`AppVersionDetails disables install button when device is from different
         "android-tv",
         "wear-os",
       ],
+      "universalAvailable": true,
       "version": "1.0.3",
       "versionCode": "165161631",
       "whatsNew": "Some longer whats-new",
@@ -385,6 +389,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
+      "split": true,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
         "phone",
@@ -392,6 +397,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
         "android-tv",
         "wear-os",
       ],
+      "universalAvailable": true,
       "version": "1.0.3",
       "versionCode": "165161631",
       "whatsNew": "Some longer whats-new",
@@ -580,6 +586,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
+      "split": true,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
         "phone",
@@ -587,6 +594,7 @@ exports[`AppVersionDetails enables install button when there is public install p
         "android-tv",
         "wear-os",
       ],
+      "universalAvailable": true,
       "version": "1.0.3",
       "versionCode": "165161631",
       "whatsNew": "Some longer whats-new",
@@ -660,6 +668,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
+      "split": true,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
         "phone",
@@ -667,6 +676,7 @@ exports[`AppVersionDetails enables install button when there is public install p
         "android-tv",
         "wear-os",
       ],
+      "universalAvailable": true,
       "version": "1.0.3",
       "versionCode": "165161631",
       "whatsNew": "Some longer whats-new",
@@ -4404,6 +4414,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
+      "split": true,
       "supportUrl": "https://bitrise.io/support",
       "supportedDeviceTypes": Array [
         "phone",
@@ -4411,6 +4422,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
         "android-tv",
         "wear-os",
       ],
+      "universalAvailable": true,
       "version": "1.0.3",
       "versionCode": "165161631",
       "whatsNew": "Some longer whats-new",
@@ -5473,6 +5485,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                           "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
                           "screenshotDatas": Array [],
                           "shortDescription": "Some short description",
+                          "split": true,
                           "supportUrl": "https://bitrise.io/support",
                           "supportedDeviceTypes": Array [
                             "phone",
@@ -5480,6 +5493,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                             "android-tv",
                             "wear-os",
                           ],
+                          "universalAvailable": true,
                           "version": "1.0.3",
                           "versionCode": "165161631",
                           "whatsNew": "Some longer whats-new",
@@ -36304,30 +36318,36 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                             >
                                               If you want to share it, you have to enable the app's Public Install Page in the
                                                
-                                              <Base
-                                                Component="a"
+                                              <Link
                                                 color="grape-3"
                                                 href="https://app.bitrise.io/app/app-slug-123/workflow_editor"
                                                 target="_blank"
                                               >
-                                                <a
-                                                  className="Base Base--color-grape-3"
+                                                <Base
+                                                  Component="a"
+                                                  className="Link Link--color-grape-3 Link--clickable"
                                                   href="https://app.bitrise.io/app/app-slug-123/workflow_editor"
-                                                  style={
-                                                    Object {
-                                                      "height": undefined,
-                                                      "maxHeight": undefined,
-                                                      "maxWidth": undefined,
-                                                      "minHeight": undefined,
-                                                      "minWidth": undefined,
-                                                      "width": undefined,
-                                                    }
-                                                  }
                                                   target="_blank"
                                                 >
-                                                  Deploy to Bitrise.io step
-                                                </a>
-                                              </Base>
+                                                  <a
+                                                    className="Base Link Link--color-grape-3 Link--clickable"
+                                                    href="https://app.bitrise.io/app/app-slug-123/workflow_editor"
+                                                    style={
+                                                      Object {
+                                                        "height": undefined,
+                                                        "maxHeight": undefined,
+                                                        "maxWidth": undefined,
+                                                        "minHeight": undefined,
+                                                        "minWidth": undefined,
+                                                        "width": undefined,
+                                                      }
+                                                    }
+                                                    target="_blank"
+                                                  >
+                                                    Deploy to Bitrise.io step
+                                                  </a>
+                                                </Base>
+                                              </Link>
                                               .
                                             </div>
                                           </Base>

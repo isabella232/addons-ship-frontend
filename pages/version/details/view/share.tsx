@@ -11,11 +11,13 @@ import css from './style.scss';
 type Props = {
   appSlug: string;
   publicInstallPageURL?: string;
+  isSplitAPK?: boolean;
+  hasUniversalAPK?: boolean;
   ipaExportMethod?: IPAExportMethod;
   hasMounted: boolean;
 };
 
-export default ({ appSlug, publicInstallPageURL, ipaExportMethod, hasMounted }: Props) => {
+export default ({ appSlug, publicInstallPageURL, isSplitAPK, hasUniversalAPK, ipaExportMethod, hasMounted }: Props) => {
   const [isPublicInstallPageURLCopiedTooltipVisible, setIsPublicInstallPageURLCopiedTooltipVisible] = useState(false);
 
   const onPublisInstallPageURLCopySuccess = () => {
@@ -116,16 +118,27 @@ export default ({ appSlug, publicInstallPageURL, ipaExportMethod, hasMounted }: 
             You can't share this app
           </Text>
           <Text align="middle" weight="medium" size="x3" color="gray-7">
-            If you want to share it, you have to enable the app's Public Install Page in the{' '}
-            <Base
-              Component="a"
-              color="grape-3"
-              href={`https://app.bitrise.io/app/${appSlug}/workflow_editor`}
-              target="_blank"
-            >
-              Deploy to Bitrise.io step
-            </Base>
-            .
+            {!isSplitAPK || hasUniversalAPK ? (
+              <Fragment>
+                If you want to share it, you have to enable the app's Public Install Page in the{' '}
+                <Link color="grape-3" href={`https://app.bitrise.io/app/${appSlug}/workflow_editor`} target="_blank">
+                  Deploy to Bitrise.io step
+                </Link>
+                .
+              </Fragment>
+            ) : (
+              <Fragment>
+                Oh, oh! You haven't created a universal APK yet that you could share.{' '}
+                <Link
+                  color="grape-3"
+                  href={`https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split`}
+                  target="_blank"
+                >
+                  Create one now
+                </Link>{' '}
+                .
+              </Fragment>
+            )}
           </Text>
           <SVG src={'/static/purr-request-head.svg'} />
         </Flex>
