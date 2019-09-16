@@ -130,7 +130,30 @@ describe('ShipApp', () => {
       expect(nookies.set).not.toHaveBeenCalled();
     });
 
-    test('when token is not included in query, included in cookie', async () => {
+    test('when token is not included in query, included in API token cookie', async () => {
+      nookies.get = jest.fn().mockImplementation(() => ({
+        'api-token': 'a-token-from-cookie'
+      }));
+      nookies.set = jest.fn().mockImplementation(() => {});
+      nookies.destroy = jest.fn().mockImplementation(() => {});
+
+      const contextWithoutTokenFromQuery = { ...ctx, query: { appSlug: 'an-app-slug' } };
+
+      const result = await ShipApp.getInitialProps({
+        Component,
+        ctx: contextWithoutTokenFromQuery,
+        router: {} as RouterProps
+      });
+
+      expect(result).toMatchSnapshot();
+      expect(nookies.set).toHaveBeenCalledWith(contextWithoutTokenFromQuery, 'token-an-app-slug', 'a-token-from-cookie', {
+        maxAge: 1000 * 24 * 60 * 60,
+        path: '/'
+      });
+      expect(nookies.destroy).toHaveBeenCalledWith(contextWithoutTokenFromQuery, 'api-token', {});
+    });
+
+    test('when token is not included in query, included in app-specific cookie', async () => {
       nookies.get = jest.fn().mockImplementation(() => ({
         'token-an-app-slug': 'a-token-from-cookie'
       }));
@@ -146,7 +169,7 @@ describe('ShipApp', () => {
       expect(nookies.set).not.toHaveBeenCalled();
     });
 
-    test('when token is not included in query, nor included in cookie', async () => {
+    test('when token is not included in query, nor included in app-specific cookie', async () => {
       nookies.set = jest.fn().mockImplementation(() => {});
 
       const result = await ShipApp.getInitialProps({
