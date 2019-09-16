@@ -7,7 +7,7 @@ import ShipHead from '@/components/ShipHead';
 
 import General from './general';
 import Notifications from './notifications';
-import Tabmenu from '../version/tabmenu';
+import TabMenu from '../version/TabMenu';
 
 export class SettingsPage extends Component<AppSettingsPageQuery> {
   static displayName = 'SettingsPage';
@@ -49,12 +49,12 @@ export class SettingsPage extends Component<AppSettingsPageQuery> {
         <Base>
           <Base>
             <Base maxWidth={992}>
-              <Tabmenu
+              <TabMenu
                 tabs={[{ label: 'general' }, { label: 'notifications' }]}
                 selectedTab={selectedTab}
                 linkAsPrefix={`/apps/${appSlug}/settings/`}
                 linkHrefPrefix={`/settings?appSlug=${appSlug}&selectedTab=`}
-              ></Tabmenu>
+              ></TabMenu>
             </Base>
             <Divider color="gray-2" direction="horizontal" width="1px" />
             <Flex padding="x4" direction="vertical" maxWidth={992} grow>

@@ -192,98 +192,94 @@ export default ({
           </Base>
 
           <Base margin="x12">
-            {
-              <Base margin="x6">
-                <Flex
-                  direction={isDesktop ? 'horizontal' : 'vertical'}
-                  alignChildrenHorizontal="between"
-                  gap="x1"
-                  margin="x1"
+            <Base margin="x6">
+              <Flex
+                direction={isDesktop ? 'horizontal' : 'vertical'}
+                alignChildrenHorizontal="between"
+                gap="x1"
+                margin="x1"
+              >
+                <Text size="x3" weight="bold">
+                  App Store Provisioning Profile
+                </Text>
+                <Link
+                  href={`https://app.bitrise.io/app/${appSlug}/workflow_editor#!/code_signing`}
+                  target="_blank"
+                  color="grape-3"
                 >
-                  <Text size="x3" weight="bold">
-                    App Store Provisioning Profile
-                  </Text>
-                  <Link
-                    href={`https://app.bitrise.io/app/${appSlug}/workflow_editor#!/code_signing`}
-                    target="_blank"
-                    color="grape-3"
+                  <Flex
+                    direction="horizontal"
+                    alignChildrenHorizontal="start"
+                    alignChildrenVertical="middle"
+                    gap="x1"
+                    margin="x1"
+                  >
+                    <Text size="x3">Edit Profiles and Certificates on Bitrise</Text>
+                    <Icon name="OpenInBrowser" size="1.5rem" />
+                  </Flex>
+                </Link>
+              </Flex>
+              <Divider color="gray-2" direction="horizontal" margin="x2" />
+              {(provProfiles as ProvProfile[]).map((provProfile: ProvProfile, index) => (
+                <Base key={index}>
+                  <RadioButton
+                    checked={provProfile.slug === iosSettings.selectedAppStoreProvisioningProfile}
+                    onChange={() => onSelectedFileChange('ProvProfile', provProfile)}
                   >
                     <Flex
                       direction="horizontal"
-                      alignChildrenHorizontal="start"
+                      alignChildrenHorizontal="between"
                       alignChildrenVertical="middle"
-                      gap="x1"
-                      margin="x1"
+                      gap="x3"
+                      paddingHorizontal="x1"
+                      paddingVertical="x3"
                     >
-                      <Text size="x3">Edit Profiles and Certificates on Bitrise</Text>
-                      <Icon name="OpenInBrowser" size="1.5rem" />
+                      <SVG src="/static/sheet-cog.svg" className={css.sheet} />
+                      <Text size="x3">{provProfile.name}</Text>
                     </Flex>
-                  </Link>
-                </Flex>
-                <Divider color="gray-2" direction="horizontal" margin="x2" />
-                {(provProfiles as ProvProfile[]).map((provProfile: ProvProfile, index) => (
-                  <Base key={index}>
-                    <RadioButton
-                      checked={provProfile.slug === iosSettings.selectedAppStoreProvisioningProfile}
-                      onChange={() => onSelectedFileChange('ProvProfile', provProfile)}
-                    >
-                      <Flex
-                        direction="horizontal"
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        gap="x3"
-                        paddingHorizontal="x1"
-                        paddingVertical="x3"
-                      >
-                        <SVG src="/static/sheet-cog.svg" className={css.sheet} />
-                        <Text size="x3">{provProfile.name}</Text>
-                      </Flex>
-                    </RadioButton>
-                    <Divider color="gray-1" direction="horizontal" margin="x2" />
-                  </Base>
-                ))}
-                {(provProfiles as ProvProfile[]).length === 0 && (
-                  <Text size="x3" color="gray-7">
-                    No Provisioning Profiles
-                  </Text>
-                )}
-              </Base>
-            }
-
-            {
-              <Base margin="x6">
-                <Text size="x3" weight="bold" margin="x1">
-                  Code Signing Identity ({(certificates as Certificate[]).length}/{maximumNumberOfCertificates})
+                  </RadioButton>
+                  <Divider color="gray-1" direction="horizontal" margin="x2" />
+                </Base>
+              ))}
+              {(provProfiles as ProvProfile[]).length === 0 && (
+                <Text size="x3" color="gray-7">
+                  No Provisioning Profiles
                 </Text>
-                <Divider color="gray-2" direction="horizontal" margin="x2" />
-                {(certificates as Certificate[]).map((certificate: Certificate, index) => (
-                  <Base key={index}>
-                    <RadioButton
-                      checked={certificate.slug === iosSettings.selectedCodeSigningIdentity}
-                      onChange={() => onSelectedFileChange('Certificate', certificate)}
+              )}
+            </Base>
+
+            <Base margin="x6">
+              <Text size="x3" weight="bold" margin="x1">
+                Code Signing Identity ({(certificates as Certificate[]).length}/{maximumNumberOfCertificates})
+              </Text>
+              <Divider color="gray-2" direction="horizontal" margin="x2" />
+              {(certificates as Certificate[]).map((certificate: Certificate, index) => (
+                <Base key={index}>
+                  <RadioButton
+                    checked={certificate.slug === iosSettings.selectedCodeSigningIdentity}
+                    onChange={() => onSelectedFileChange('Certificate', certificate)}
+                  >
+                    <Flex
+                      direction="horizontal"
+                      alignChildrenHorizontal="between"
+                      alignChildrenVertical="middle"
+                      gap="x3"
+                      paddingHorizontal="x1"
+                      paddingVertical="x3"
                     >
-                      <Flex
-                        direction="horizontal"
-                        alignChildrenHorizontal="between"
-                        alignChildrenVertical="middle"
-                        gap="x3"
-                        paddingHorizontal="x1"
-                        paddingVertical="x3"
-                      >
-                        <SVG src="/static/sheet-badge.svg" className={css.sheet} />
-                        <Text size="x3">{certificate.name}</Text>
-                      </Flex>
-                    </RadioButton>
-                    <Divider color="gray-1" direction="horizontal" margin="x2" />
-                  </Base>
-                ))}
-                {(certificates as Certificate[]).length === 0 && (
-                  <Text size="x3" color="gray-7">
-                    No Code Signing Identities
-                  </Text>
-                )}
-              </Base>
-            }
+                      <SVG src="/static/sheet-badge.svg" className={css.sheet} />
+                      <Text size="x3">{certificate.name}</Text>
+                    </Flex>
+                  </RadioButton>
+                  <Divider color="gray-1" direction="horizontal" margin="x2" />
+                </Base>
+              ))}
+              {(certificates as Certificate[]).length === 0 && (
+                <Text size="x3" color="gray-7">
+                  No Code Signing Identities
+                </Text>
+              )}
+            </Base>
           </Base>
         </Fragment>
       )}
