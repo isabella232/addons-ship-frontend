@@ -55,38 +55,49 @@ export default ({
         <Base height="5rem">
           <Banner startColor={startColor} endColor={endColor} />
         </Base>
-        <Flex direction="vertical" padding="x8" gap={isTablet ? 'x4' : 'x0'}>
+        <Flex direction="vertical" padding={isTablet ? 'x8' : 'x4'} gap={isTablet ? 'x4' : 'x0'}>
           <Flex
-            direction={isTablet ? 'horizontal' : 'vertical'}
-            alignChildrenHorizontal={isTablet ? 'start' : 'middle'}
+            direction="horizontal"
+            alignChildrenHorizontal="start"
             alignChildrenVertical={isTablet ? 'end' : 'middle'}
             gap="x4"
-            style={{ marginTop: '-5rem' }}
+            style={{ marginTop: '-5rem', alignItems: isTablet ? 'flex-end' : 'stretch' }}
           >
             <Squircle src={iconUrl} borderRadius="x2" width="96px" margin="x0" />
-            <Base paddingVertical="x2">
-              <Text size="x3" color="gray-6" letterSpacing="x1" weight="medium">
+            <Flex
+              grow
+              paddingVertical={isTablet ? 'x2' : 'x0'}
+              direction="vertical"
+              alignChildrenVertical={isTablet ? 'middle' : 'end'}
+            >
+              <Text size="x3" color="gray-6" letterSpacing="x1" weight="medium" align="end">
                 {note}
               </Text>
-            </Base>
+            </Flex>
           </Flex>
           <Flex direction="vertical" gap="x2">
             <Flex
-              direction={isTablet ? 'horizontal' : 'vertical'}
+              direction="horizontal"
               alignChildrenVertical="middle"
               alignChildrenHorizontal={isTablet ? 'start' : 'middle'}
               gap="x1"
+              wrap
             >
-              <Icon color="grape-4" name={iconName} size="1.5rem" />
-              <Flex direction="horizontal" alignChildren="middle" gap="x2">
-                <Text
-                  size="x5"
+              <Flex
+                direction="horizontal"
+                alignChildren="middle"
+                alignChildrenHorizontal={isTablet ? 'start' : 'middle'}
+                gap="x2"
+                maxWidth="100%"
+                paddingVertical={isTablet ? 'x0' : 'x4'}
+              >
+                <Icon
                   color="grape-4"
-                  weight="bold"
-                  letterSpacing="x1"
-                  breakOn={isDesktop ? 'word' : 'all'}
-                  align={isTablet ? 'start' : 'middle'}
-                >
+                  name={iconName}
+                  size={isTablet ? '2rem' : '1.5rem'}
+                  style={{ display: 'inline-block', _marginBottom: '-4px' }}
+                />
+                <Text config="4" color="grape-4" ellipsis align={isTablet ? 'start' : 'middle'}>
                   {title}
                 </Text>
                 {productFlavour && isDesktop && <MagicTag selected>{productFlavour}</MagicTag>}

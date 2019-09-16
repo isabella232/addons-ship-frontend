@@ -12,8 +12,6 @@
     transition: background-color $medium-hovertime;
 
     .topWrapper {
-      display: flex;
-      align-items: center;
       padding-bottom: 2 * $grid;
       text-decoration: none;
 
@@ -53,7 +51,6 @@
       border: none;
       padding-top: 2 * $grid;
       padding-bottom: 4 * $grid;
-      @include padding-x(4 * $grid);
       text-align: left;
       font-family: inherit;
       background-color: transparent;
@@ -62,6 +59,17 @@
       .description {
         flex-grow: 1;
         transition: color $medium-hovertime;
+      }
+
+      .showMore,
+      .showLess {
+        &:hover,
+        &:focus {
+          color: $grape-3;
+          svg {
+            fill: $grape-3;
+          }
+        }
       }
 
       &:not(.isOpen) {
@@ -82,17 +90,6 @@
           align-items: center;
           margin-top: 2 * $grid;
 
-          .text {
-            color: $grape-5;
-            // TODO: replace with element from UI library
-            font-size: 13px;
-            line-height: 4 * $grid;
-            letter-spacing: normal;
-            font-weight: 500;
-            font-style: normal;
-            font-stretch: normal;
-          }
-
           .arrow {
             flex-shrink: 0;
 
@@ -100,7 +97,6 @@
               display: block;
               @include size(4 * $grid);
               transform: rotate(180deg);
-              fill: $grape-5;
             }
           }
         }
@@ -111,18 +107,6 @@
     &:focus {
       background-color: $gray-1;
 
-      .topWrapper {
-        .platformIconWrapper {
-          svg {
-            color: $grape-3;
-          }
-        }
-
-        .note {
-          color: $grape-3;
-        }
-      }
-
       .descriptionWrapper {
         &:not(.isOpen) .showMore {
           flex-shrink: 0;
@@ -130,38 +114,12 @@
           align-items: center;
           margin-left: 2 * $grid;
 
-          .text {
-            color: $grape-3;
-            // TODO: replace with element from UI library
-            font-size: 13px;
-            line-height: 4 * $grid;
-            letter-spacing: normal;
-            font-weight: 500;
-            font-style: normal;
-            font-stretch: normal;
-          }
-
           .arrow {
             flex-shrink: 0;
 
             svg {
               display: block;
               @include size(4 * $grid);
-              fill: $grape-3;
-            }
-          }
-        }
-
-        &.isOpen {
-          .showLess {
-            .text {
-              color: $grape-3;
-            }
-
-            .arrow {
-              svg {
-                fill: $grape-3;
-              }
             }
           }
         }

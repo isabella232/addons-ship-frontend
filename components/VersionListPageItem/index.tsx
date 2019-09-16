@@ -1,12 +1,14 @@
-import { Component } from 'react';
-import css from './style.scss';
-import SVG from 'react-svg';
+import { useState } from 'react';
 import NextLink from 'next/link';
+import SVG from 'react-svg';
 import { Icon, TypeIconName, Base, Flex, Text, Link } from '@bitrise/bitkit';
 
+import { mediaQuery } from '@/utils/media';
 import MagicTag from '@/components/Tag/MagicTag';
 
-interface VersionListPageItemProps {
+import css from './style.scss';
+
+interface Props {
   platform: string;
   detailsPagePath: string;
   detailsPagePathHref: string;
@@ -17,45 +19,37 @@ interface VersionListPageItemProps {
   productFlavour?: string;
 }
 
-type VersionListPageItemState = {
-  isOpen: boolean;
-};
+export default ({
+  platform,
+  detailsPagePath,
+  detailsPagePathHref,
+  title,
+  description,
+  descriptionPlaceholder,
+  note,
+  productFlavour
+}: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const iconName: TypeIconName = platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
+  const [isDesktop] = mediaQuery('30rem');
 
-export default class VersionListPageItem extends Component<VersionListPageItemProps, VersionListPageItemState> {
-  state: VersionListPageItemState = {
-    isOpen: false
-  };
+  const descriptionWrapperClasses = [css.descriptionWrapper];
+  if (isOpen) {
+    descriptionWrapperClasses.push(css.isOpen);
+  }
 
-  toggle = () => {
-    const { isOpen } = this.state;
-    this.setState({ isOpen: !isOpen });
-  };
-
-  render() {
-    const {
-      platform,
-      detailsPagePath,
-      detailsPagePathHref,
-      title,
-      description,
-      descriptionPlaceholder,
-      note,
-      productFlavour
-    } = this.props;
-    const { isOpen } = this.state;
-    const iconName: TypeIconName = platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
-
-    const descriptionWrapperClasses = [css.descriptionWrapper];
-    if (isOpen) {
-      descriptionWrapperClasses.push(css.isOpen);
-    }
-
-    return (
-      <Base className={css.versionListPageItem}>
-        <Base backgroundColor="white" className={css.versionListPageItemInner}>
-          <NextLink href={detailsPagePathHref} as={detailsPagePath}>
-            <Link>
-              <Flex className={css.topWrapper} padding="x4">
+  return (
+    <Base className={css.versionListPageItem}>
+      <Base backgroundColor="white" className={css.versionListPageItemInner}>
+        <NextLink href={detailsPagePathHref} as={detailsPagePath}>
+          <Link>
+            <Flex
+              direction="horizontal"
+              className={css.topWrapper}
+              paddingVertical="x4"
+              padding={isDesktop ? 'x4' : 'x0'}
+            >
+              <Flex direction="horizontal" alignChildrenVertical="middle" grow>
                 <Base className={css.platformIconWrapper}>
                   <Icon color="grape-4" name={iconName} size="1.5rem" />
                 </Base>
@@ -63,40 +57,50 @@ export default class VersionListPageItem extends Component<VersionListPageItemPr
                   <Text config="5" color="grape-4" className={css.title}>
                     {title}
                   </Text>
-                  {productFlavour && <MagicTag selected>{productFlavour}</MagicTag>}
+                  {productFlavour && isDesktop && <MagicTag selected>{productFlavour}</MagicTag>}
                 </Flex>
-                <Text color="gray-6" className={css.note}>
-                  {note}
-                </Text>
               </Flex>
-            </Link>
-          </NextLink>
-          <button className={descriptionWrapperClasses.join(' ')} onClick={this.toggle}>
-            {(description || descriptionPlaceholder) && (
-              <Text config="7" color="black" className={css.description}>
-                {description ? (
-                  <Base color="black">{description}</Base>
-                ) : (
-                  <Base color="gray-5">{descriptionPlaceholder}</Base>
-                )}
+              <Text color="gray-6" className={css.note}>
+                {note}
               </Text>
-            )}
-
-            {description &&
-              (isOpen ? (
-                <Base className={css.showLess}>
-                  <Base className={css.text}>Show less</Base>
-                  <SVG src="/static/arrow-down.svg" className={css.arrow} />
+              {productFlavour && !isDesktop && (
+                <Base margin="x2">
+                  <MagicTag selected>{productFlavour}</MagicTag>
                 </Base>
+              )}
+            </Flex>
+          </Link>
+        </NextLink>
+        <Base
+          Component="button"
+          className={descriptionWrapperClasses.join(' ')}
+          onClick={() => setIsOpen(!isOpen)}
+          paddingHorizontal={isDesktop ? 'x4' : 'x0'}
+        >
+          {(description || descriptionPlaceholder) && (
+            <Text config="7" color="black" className={css.description}>
+              {description ? (
+                <Base color="black">{description}</Base>
               ) : (
-                <Base className={css.showMore}>
-                  <Base className={css.text}>Show more</Base>
-                  <SVG src="/static/arrow-down.svg" className={css.arrow} />
-                </Base>
-              ))}
-          </button>
+                <Base color="gray-5">{descriptionPlaceholder}</Base>
+              )}
+            </Text>
+          )}
+
+          {description &&
+            (isOpen ? (
+              <Base className={css.showLess}>
+                <Text config="8">Show less</Text>
+                <SVG src="/static/arrow-down.svg" className={css.arrow} />
+              </Base>
+            ) : (
+              <Base className={css.showMore}>
+                <Text config="8">Show more</Text>
+                <SVG src="/static/arrow-down.svg" className={css.arrow} />
+              </Base>
+            ))}
         </Base>
       </Base>
-    );
-  }
-}
+    </Base>
+  );
+};

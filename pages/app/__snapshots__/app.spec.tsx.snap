@@ -799,7 +799,8 @@ exports[`AppPageView when page has apps product flavours desktop 1`] = `
   <Flex
     alignChildrenHorizontal="middle"
     direction="vertical"
-    padding="x16"
+    paddingHorizontal="x16"
+    paddingVertical="x16"
   >
     <Base
       maxWidth={960}
@@ -808,8 +809,8 @@ exports[`AppPageView when page has apps product flavours desktop 1`] = `
       <Flex
         direction="horizontal"
         gap="x2"
+        margin="x4"
         paddingHorizontal="x1"
-        paddingVertical="x4"
         shrink={true}
         wrap={true}
       >
@@ -840,8 +841,8 @@ exports[`AppPageView when page has apps product flavours desktop 1`] = `
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"
         iconUrl="http://placekitten.com/160/160"
-        note="Updated on September 22, 2018"
-        title="Standup Timer v1.0.3 (32)"
+        note="Updated on September 22, 12:42"
+        title="(32) v1.0.3 Standup Timer"
       />
       <Base
         className="sectionHeadingWrapper"
@@ -891,50 +892,50 @@ exports[`AppPageView when page has apps product flavours desktop 1`] = `
             Option 1
           </Dropdown>
         </Flex>
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-123/versions/123/details"
           detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
           key="0-0"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (32)"
+          title="(32) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-456/versions/456/details"
           detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
           key="0-1"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (31)"
+          title="(31) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-789/versions/789/details"
           detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
           key="0-2"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (30)"
+          title="(30) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-135/versions/135/details"
           detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
           key="0-3"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (29)"
+          title="(29) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-246/versions/246/details"
           detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
           key="0-4"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (28)"
+          title="(28) Standup Timer"
         />
       </Base>
     </Base>
@@ -955,7 +956,8 @@ exports[`AppPageView when page has apps product flavours mobile 1`] = `
   <Flex
     alignChildrenHorizontal="middle"
     direction="vertical"
-    padding="x4"
+    paddingHorizontal="x4"
+    paddingVertical="x0"
   >
     <Base
       maxWidth={960}
@@ -964,8 +966,8 @@ exports[`AppPageView when page has apps product flavours mobile 1`] = `
       <Flex
         direction="vertical"
         gap="x2"
+        margin="x4"
         paddingHorizontal="x1"
-        paddingVertical="x4"
         shrink={true}
         wrap={true}
       >
@@ -996,8 +998,8 @@ exports[`AppPageView when page has apps product flavours mobile 1`] = `
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"
         iconUrl="http://placekitten.com/160/160"
-        note="Updated on September 22, 2018"
-        title="Standup Timer v1.0.3 (32)"
+        note="Sep 22, 12:42"
+        title="(32) v1.0.3 Standup Timer"
       />
       <Base
         className="sectionHeadingWrapper"
@@ -1047,50 +1049,50 @@ exports[`AppPageView when page has apps product flavours mobile 1`] = `
             Option 1
           </Dropdown>
         </Flex>
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-123/versions/123/details"
           detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
           key="0-0"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (32)"
+          title="(32) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-456/versions/456/details"
           detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
           key="0-1"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (31)"
+          title="(31) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-789/versions/789/details"
           detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
           key="0-2"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (30)"
+          title="(30) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-135/versions/135/details"
           detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
           key="0-3"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (29)"
+          title="(29) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-246/versions/246/details"
           detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
           key="0-4"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (28)"
+          title="(28) Standup Timer"
         />
       </Base>
     </Base>
@@ -1111,7 +1113,8 @@ exports[`AppPageView when page has apps product flavours tablet 1`] = `
   <Flex
     alignChildrenHorizontal="middle"
     direction="vertical"
-    padding="x4"
+    paddingHorizontal="x4"
+    paddingVertical="x0"
   >
     <Base
       maxWidth={960}
@@ -1120,8 +1123,8 @@ exports[`AppPageView when page has apps product flavours tablet 1`] = `
       <Flex
         direction="horizontal"
         gap="x2"
+        margin="x4"
         paddingHorizontal="x1"
-        paddingVertical="x4"
         shrink={true}
         wrap={true}
       >
@@ -1152,8 +1155,8 @@ exports[`AppPageView when page has apps product flavours tablet 1`] = `
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"
         iconUrl="http://placekitten.com/160/160"
-        note="Updated on September 22, 2018"
-        title="Standup Timer v1.0.3 (32)"
+        note="Updated on September 22, 12:42"
+        title="(32) v1.0.3 Standup Timer"
       />
       <Base
         className="sectionHeadingWrapper"
@@ -1203,50 +1206,50 @@ exports[`AppPageView when page has apps product flavours tablet 1`] = `
             Option 1
           </Dropdown>
         </Flex>
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-123/versions/123/details"
           detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
           key="0-0"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (32)"
+          title="(32) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-456/versions/456/details"
           detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
           key="0-1"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (31)"
+          title="(31) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-789/versions/789/details"
           detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
           key="0-2"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (30)"
+          title="(30) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-135/versions/135/details"
           detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
           key="0-3"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (29)"
+          title="(29) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-246/versions/246/details"
           detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
           key="0-4"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (28)"
+          title="(28) Standup Timer"
         />
       </Base>
     </Base>
@@ -1267,7 +1270,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
   <Flex
     alignChildrenHorizontal="middle"
     direction="vertical"
-    padding="x16"
+    paddingHorizontal="x16"
+    paddingVertical="x16"
   >
     <Base
       maxWidth={960}
@@ -1277,8 +1281,8 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"
         iconUrl="http://placekitten.com/160/160"
-        note="Updated on September 22, 2018"
-        title="Standup Timer v1.0.3 (32)"
+        note="Updated on September 22, 12:42"
+        title="(32) v1.0.3 Standup Timer"
       />
       <Base
         className="sectionHeadingWrapper"
@@ -1328,50 +1332,50 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
             Option 1
           </Dropdown>
         </Flex>
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-123/versions/123/details"
           detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
           key="0-0"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (32)"
+          title="(32) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-456/versions/456/details"
           detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
           key="0-1"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (31)"
+          title="(31) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-789/versions/789/details"
           detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
           key="0-2"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (30)"
+          title="(30) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-135/versions/135/details"
           detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
           key="0-3"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (29)"
+          title="(29) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-246/versions/246/details"
           detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
           key="0-4"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (28)"
+          title="(28) Standup Timer"
         />
       </Base>
     </Base>
@@ -1392,7 +1396,8 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
   <Flex
     alignChildrenHorizontal="middle"
     direction="vertical"
-    padding="x16"
+    paddingHorizontal="x16"
+    paddingVertical="x16"
   >
     <Base
       maxWidth={960}
@@ -1412,8 +1417,8 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"
         iconUrl="http://placekitten.com/160/160"
-        note="Updated on September 22, 2018"
-        title="Standup Timer v1.0.3 (32)"
+        note="Updated on September 22, 12:42"
+        title="(32) v1.0.3 Standup Timer"
       />
       <Base
         className="sectionHeadingWrapper"
@@ -1463,50 +1468,50 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
             Option 1
           </Dropdown>
         </Flex>
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-123/versions/123/details"
           detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
           key="0-0"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (32)"
+          title="(32) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-456/versions/456/details"
           detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
           key="0-1"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (31)"
+          title="(31) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-789/versions/789/details"
           detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
           key="0-2"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (30)"
+          title="(30) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-135/versions/135/details"
           detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
           key="0-3"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (29)"
+          title="(29) Standup Timer"
         />
-        <VersionListPageItem
+        <_default
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-246/versions/246/details"
           detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
           key="0-4"
-          note="Updated on September 22, 2018, 12:42"
+          note="Updated on September 22, 12:42"
           platform="ios"
-          title="Standup Timer (28)"
+          title="(28) Standup Timer"
         />
       </Base>
     </Base>
