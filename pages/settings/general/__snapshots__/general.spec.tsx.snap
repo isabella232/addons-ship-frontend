@@ -187,6 +187,7 @@ exports[`General renders correctly when loading 1`] = `
 <_default
   androidSettings={
     Object {
+      "module": "",
       "selectedKeystoreFile": "",
       "selectedServiceAccount": "",
       "track": "",
@@ -2129,14 +2130,16 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
 `;
 
 exports[`GeneralView when viewed on desktop renders the loading state 1`] = `
-<Base
-  absolute="center"
+<Flex
+  alignChildren="middle"
+  direction="vertical"
+  grow={true}
 >
   <ProgressBitbot
     color="grape-3"
     size="64px"
   />
-</Base>
+</Flex>
 `;
 
 exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `

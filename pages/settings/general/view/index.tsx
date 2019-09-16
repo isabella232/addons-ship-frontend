@@ -72,12 +72,13 @@ export default ({
 }: Props) => {
   const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
 
-  if (!hasLoaded)
+  if (!hasLoaded) {
     return (
-      <Base absolute="center">
+      <Flex direction="vertical" alignChildren="middle" grow>
         <ProgressBitbot color="grape-3" />
-      </Base>
+      </Flex>
     );
+  }
 
   return (
     <Base className={css.container} paddingVertical="x8">
