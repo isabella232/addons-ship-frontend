@@ -133,16 +133,16 @@ export default ({ appSlug, publicInstallPageURL, isSplitAPK, hasUniversalAPK, ip
               </Fragment>
             ) : (
               <Fragment>
-                If you want to share it, you have to{' '}
+                Oh, oh! You haven't created a universal APK yet that you could share.{' '}
                 <Link
                   Component="a"
                   color="grape-3"
                   href={`https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split`}
                   target="_blank"
                 >
-                  enable universal APK
+                  Create one now
                 </Link>{' '}
-                generation.
+                .
               </Fragment>
             )}
           </Text>
