@@ -16,8 +16,8 @@ export default ({ tabs, selectedTab, linkAsPrefix, linkHrefPrefix }: Props) => {
 
   return (
     <Tabs gap={isTablet ? 'x4' : 'x0'} paddingHorizontal={isTablet ? 'x4' : 'x0'}>
-      {tabs.map(({ label, showBadge = false }) => (
-        <Link as={`${linkAsPrefix}${label}`} href={`${linkHrefPrefix}${label}`}>
+      {tabs.map(({ label, showBadge = false }, idx) => (
+        <Link as={`${linkAsPrefix}${label}`} href={`${linkHrefPrefix}${label}`} key={idx}>
           <a>
             <Tab active={selectedTab === label} paddingHorizontal={isTablet ? 'x4' : 'x3'}>
               <Flex direction="horizontal" alignChildren="middle" gap="x1">
