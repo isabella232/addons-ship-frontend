@@ -36319,7 +36319,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                               If you want to share it, you have to enable the app's Public Install Page in the
                                                
                                               <Link
-                                                Component="a"
                                                 color="grape-3"
                                                 href="https://app.bitrise.io/app/app-slug-123/workflow_editor"
                                                 target="_blank"

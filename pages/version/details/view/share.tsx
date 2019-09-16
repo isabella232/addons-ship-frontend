@@ -121,12 +121,7 @@ export default ({ appSlug, publicInstallPageURL, isSplitAPK, hasUniversalAPK, ip
             {!isSplitAPK || hasUniversalAPK ? (
               <Fragment>
                 If you want to share it, you have to enable the app's Public Install Page in the{' '}
-                <Link
-                  Component="a"
-                  color="grape-3"
-                  href={`https://app.bitrise.io/app/${appSlug}/workflow_editor`}
-                  target="_blank"
-                >
+                <Link color="grape-3" href={`https://app.bitrise.io/app/${appSlug}/workflow_editor`} target="_blank">
                   Deploy to Bitrise.io step
                 </Link>
                 .
@@ -135,7 +130,6 @@ export default ({ appSlug, publicInstallPageURL, isSplitAPK, hasUniversalAPK, ip
               <Fragment>
                 Oh, oh! You haven't created a universal APK yet that you could share.{' '}
                 <Link
-                  Component="a"
                   color="grape-3"
                   href={`https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split`}
                   target="_blank"
