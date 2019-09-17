@@ -38,17 +38,7 @@ export class ShipApp extends App<ShipAppProps> {
     const cookies = nookies.get(ctx);
 
     let { appSlug, token } = ctx.query;
-    if (!token) {
-      token = cookies['api-token'];
-    }
     const tokenKey = `token-${appSlug}`;
-    if (token && Component.displayName !== ConfirmEmail.displayName) {
-      nookies.set(ctx, tokenKey, token as string, {
-        maxAge: 1000 * 24 * 60 * 60,
-        path: '/'
-      });
-      nookies.destroy(ctx, 'api-token', {});
-    }
     token = token || cookies[tokenKey];
 
     let { 'settings-onboarding-seen': settingsOnboardingSeen } = cookies;
