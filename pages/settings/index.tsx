@@ -7,7 +7,7 @@ import ShipHead from '@/components/ShipHead';
 
 import General from './general';
 import Notifications from './notifications';
-import TabMenu from '../version/TabMenu';
+import TabMenu from '../version/tabmenu';
 
 export class SettingsPage extends Component<AppSettingsPageQuery> {
   static displayName = 'SettingsPage';
