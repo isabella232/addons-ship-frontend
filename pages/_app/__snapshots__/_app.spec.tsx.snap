@@ -21,7 +21,7 @@ Object {
     "page": "props",
   },
   "settingsOnboardingSeen": false,
-  "token": "a-token-from-query",
+  "token": undefined,
 }
 `;
 
@@ -32,7 +32,7 @@ Object {
     "page": "props",
   },
   "settingsOnboardingSeen": false,
-  "token": "a-token-from-query",
+  "token": undefined,
 }
 `;
 
@@ -54,7 +54,7 @@ Object {
     "page": "props",
   },
   "settingsOnboardingSeen": true,
-  "token": "a-token-from-query",
+  "token": undefined,
 }
 `;
 
@@ -63,7 +63,7 @@ Object {
   "appSlug": "an-app-slug",
   "pageProps": Object {},
   "settingsOnboardingSeen": false,
-  "token": "a-token-from-query",
+  "token": undefined,
 }
 `;
 
@@ -78,7 +78,7 @@ Object {
 }
 `;
 
-exports[`ShipApp getInitialProps when token is not included in query, nor included in app-specific cookie 1`] = `
+exports[`ShipApp getInitialProps when token is not included in app-specific cookie 1`] = `
 Object {
   "appSlug": "an-app-slug",
   "pageProps": Object {

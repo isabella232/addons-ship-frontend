@@ -104,16 +104,6 @@ describe('ShipApp', () => {
       expect(result).toMatchSnapshot();
     });
 
-    test('when token is included in query, on the confirm email page', async () => {
-      await ShipApp.getInitialProps({
-        Component: ConfirmEmail as any,
-        ctx,
-        router: {} as RouterProps
-      });
-
-      expect(nookies.set).not.toHaveBeenCalled();
-    });
-
     test('when token is included in app-specific cookie', async () => {
       nookies.get = jest.fn().mockImplementation(() => ({
         'token-an-app-slug': 'a-token-from-cookie'
@@ -128,7 +118,7 @@ describe('ShipApp', () => {
       expect(result).toMatchSnapshot();
     });
 
-    test('when token is not included in query, nor included in app-specific cookie', async () => {
+    test('when token is not included in app-specific cookie', async () => {
       nookies.set = jest.fn().mockImplementation(() => {});
 
       const result = await ShipApp.getInitialProps({
