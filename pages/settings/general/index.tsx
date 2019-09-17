@@ -58,7 +58,8 @@ export class General extends Component<Props> {
     androidSettings: {
       track: '',
       selectedKeystoreFile: '',
-      selectedServiceAccount: ''
+      selectedServiceAccount: '',
+      module: ''
     }
   };
 

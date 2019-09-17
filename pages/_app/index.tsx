@@ -16,7 +16,6 @@ import { initializeSegment } from '@/utils/analytics';
 import '@/assets/style/index.scss';
 import makeStore, { RootState } from '../../store';
 import AppContent from './content';
-import ConfirmEmail from '../confirm';
 
 export interface ShipAppProps extends DefaultAppIProps {
   store: Store;
@@ -37,15 +36,9 @@ export class ShipApp extends App<ShipAppProps> {
   static async getInitialProps({ Component, ctx }: AppContext) {
     const cookies = nookies.get(ctx);
 
-    let { appSlug, token } = ctx.query;
+    let { appSlug } = ctx.query;
     const tokenKey = `token-${appSlug}`;
-    if (token && Component.displayName !== ConfirmEmail.displayName) {
-      nookies.set(ctx, tokenKey, token as string, {
-        maxAge: 1000 * 24 * 60 * 60,
-        path: '/'
-      });
-    }
-    token = token || cookies[tokenKey];
+    const token = cookies[tokenKey];
 
     let { 'settings-onboarding-seen': settingsOnboardingSeen } = cookies;
     settingsOnboardingSeen = settingsOnboardingSeen || 'false';

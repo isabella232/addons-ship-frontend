@@ -8,7 +8,7 @@ import { RootState } from '@/store';
 
 import { orderedAppVersionEvents } from '@/ducks/selectors';
 
-import Tabmenu from './tabmenu';
+import TabMenu from './tabmenu';
 import Details from './details';
 import Devices from './devices';
 import Activity from './activity';
@@ -108,7 +108,7 @@ export class VersionPage extends Component<VersionPageProps> {
         <ShipHead>{title}</ShipHead>
         <Flex direction="vertical" grow>
           <Base maxWidth={992}>
-            <Tabmenu
+            <TabMenu
               tabs={[
                 { label: 'details', showBadge: false },
                 { label: 'devices', showBadge: false },
@@ -118,7 +118,7 @@ export class VersionPage extends Component<VersionPageProps> {
               selectedTab={selectedTab}
               linkAsPrefix={`/apps/${appSlug}/versions/${versionId}/`}
               linkHrefPrefix={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=`}
-            ></Tabmenu>
+            ></TabMenu>
           </Base>
           <Divider color="gray-2" direction="horizontal" width="1px" />
           <Flex paddingHorizontal="x4" direction="vertical" maxWidth={992} grow>
