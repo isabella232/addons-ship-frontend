@@ -327,7 +327,7 @@ export class AppVersionDetails extends Component<Props, State> {
       });
     }
 
-    await publishAppVersion(appVersion);
+    publishAppVersion(appVersion);
     this.setState({ isPublishInProgress: true });
 
     startPollPublishStatus(appVersion);
