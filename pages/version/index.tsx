@@ -5,16 +5,14 @@ import nookies from 'nookies';
 
 import { AppVersionPageQuery, PageContext, AppVersion, AppVersionPageTabs, AppVersionEventStatus } from '@/models';
 import { RootState } from '@/store';
-
 import { orderedAppVersionEvents } from '@/ducks/selectors';
+import TabMenu from '@/components/TabMenu';
+import ShipHead from '@/components/ShipHead';
 
-import TabMenu from './tabmenu';
 import Details from './details';
 import Devices from './devices';
 import Activity from './activity';
 import QA from './qa';
-
-import ShipHead from '@/components/ShipHead';
 
 export interface VersionPageProps extends AppVersionPageQuery {
   appVersion: AppVersion | null;
