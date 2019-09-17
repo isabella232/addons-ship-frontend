@@ -8,7 +8,7 @@ import { RootState } from '@/store';
 
 import { orderedAppVersionEvents } from '@/ducks/selectors';
 
-import TabMenu from './TabMenu';
+import TabMenu from './tabmenu';
 import Details from './details';
 import Devices from './devices';
 import Activity from './activity';
