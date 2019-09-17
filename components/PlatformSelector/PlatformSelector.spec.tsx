@@ -14,7 +14,7 @@ describe('PlatformSelector', () => {
       const mockCallback = jest.fn();
       const tree = shallow(<PlatformSelector platform="android" onClick={mockCallback} />);
       tree
-        .find('Base')
+        .find('Button')
         .first()
         .simulate('click');
       expect(mockCallback).toHaveBeenCalledWith('ios');
@@ -26,7 +26,7 @@ describe('PlatformSelector', () => {
       const mockCallback = jest.fn();
       const tree = shallow(<PlatformSelector platform="ios" onClick={mockCallback} />);
       tree
-        .find('Base')
+        .find('Button')
         .last()
         .simulate('click');
       expect(mockCallback).toHaveBeenCalledWith('android');

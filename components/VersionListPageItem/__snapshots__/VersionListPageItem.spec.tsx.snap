@@ -15,30 +15,38 @@ exports[`VersionListPageItem renders correctly 1`] = `
       <Link>
         <Flex
           className="topWrapper"
-          padding="x4"
+          direction="horizontal"
+          padding="x0"
+          paddingVertical="x4"
         >
-          <Base
-            className="platformIconWrapper"
-          >
-            <Icon
-              color="grape-4"
-              name="PlatformsApple"
-              size="1.5rem"
-            />
-          </Base>
           <Flex
             alignChildrenVertical="middle"
             direction="horizontal"
-            gap="x3"
             grow={true}
           >
-            <Text
-              className="title"
-              color="grape-4"
-              config="5"
+            <Base
+              className="platformIconWrapper"
             >
-              My app v1.1.0 (28)
-            </Text>
+              <Icon
+                color="grape-4"
+                name="PlatformsApple"
+                size="1.5rem"
+              />
+            </Base>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x3"
+              grow={true}
+            >
+              <Text
+                className="title"
+                color="grape-4"
+                config="5"
+              >
+                My app v1.1.0 (28)
+              </Text>
+            </Flex>
           </Flex>
           <Text
             className="note"
@@ -49,9 +57,11 @@ exports[`VersionListPageItem renders correctly 1`] = `
         </Flex>
       </Link>
     </Link>
-    <button
+    <Base
+      Component="button"
       className="descriptionWrapper"
       onClick={[Function]}
+      paddingHorizontal="x0"
     >
       <Text
         className="description"
@@ -67,11 +77,11 @@ exports[`VersionListPageItem renders correctly 1`] = `
       <Base
         className="showMore"
       >
-        <Base
-          className="text"
+        <Text
+          config="8"
         >
           Show more
-        </Base>
+        </Text>
         <ReactSVG
           afterInjection={[Function]}
           beforeInjection={[Function]}
@@ -84,7 +94,7 @@ exports[`VersionListPageItem renders correctly 1`] = `
           wrapper="div"
         />
       </Base>
-    </button>
+    </Base>
   </Base>
 </Base>
 `;
@@ -104,35 +114,38 @@ exports[`VersionListPageItem renders correctly for android 1`] = `
       <Link>
         <Flex
           className="topWrapper"
-          padding="x4"
+          direction="horizontal"
+          padding="x0"
+          paddingVertical="x4"
         >
-          <Base
-            className="platformIconWrapper"
-          >
-            <Icon
-              color="grape-4"
-              name="PlatformsAndroid"
-              size="1.5rem"
-            />
-          </Base>
           <Flex
             alignChildrenVertical="middle"
             direction="horizontal"
-            gap="x3"
             grow={true}
           >
-            <Text
-              className="title"
-              color="grape-4"
-              config="5"
+            <Base
+              className="platformIconWrapper"
             >
-              My app v1.1.0 (28)
-            </Text>
-            <_default
-              selected={true}
+              <Icon
+                color="grape-4"
+                name="PlatformsAndroid"
+                size="1.5rem"
+              />
+            </Base>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x3"
+              grow={true}
             >
-              banana
-            </_default>
+              <Text
+                className="title"
+                color="grape-4"
+                config="5"
+              >
+                My app v1.1.0 (28)
+              </Text>
+            </Flex>
           </Flex>
           <Text
             className="note"
@@ -140,12 +153,23 @@ exports[`VersionListPageItem renders correctly for android 1`] = `
           >
             Updated on January 1, 2008
           </Text>
+          <Base
+            margin="x2"
+          >
+            <_default
+              selected={true}
+            >
+              banana
+            </_default>
+          </Base>
         </Flex>
       </Link>
     </Link>
-    <button
+    <Base
+      Component="button"
       className="descriptionWrapper"
       onClick={[Function]}
+      paddingHorizontal="x0"
     >
       <Text
         className="description"
@@ -161,11 +185,11 @@ exports[`VersionListPageItem renders correctly for android 1`] = `
       <Base
         className="showMore"
       >
-        <Base
-          className="text"
+        <Text
+          config="8"
         >
           Show more
-        </Base>
+        </Text>
         <ReactSVG
           afterInjection={[Function]}
           beforeInjection={[Function]}
@@ -178,7 +202,7 @@ exports[`VersionListPageItem renders correctly for android 1`] = `
           wrapper="div"
         />
       </Base>
-    </button>
+    </Base>
   </Base>
 </Base>
 `;
@@ -198,30 +222,38 @@ exports[`VersionListPageItem shows more description 1`] = `
       <Link>
         <Flex
           className="topWrapper"
-          padding="x4"
+          direction="horizontal"
+          padding="x0"
+          paddingVertical="x4"
         >
-          <Base
-            className="platformIconWrapper"
-          >
-            <Icon
-              color="grape-4"
-              name="PlatformsApple"
-              size="1.5rem"
-            />
-          </Base>
           <Flex
             alignChildrenVertical="middle"
             direction="horizontal"
-            gap="x3"
             grow={true}
           >
-            <Text
-              className="title"
-              color="grape-4"
-              config="5"
+            <Base
+              className="platformIconWrapper"
             >
-              My app v1.1.0 (28)
-            </Text>
+              <Icon
+                color="grape-4"
+                name="PlatformsApple"
+                size="1.5rem"
+              />
+            </Base>
+            <Flex
+              alignChildrenVertical="middle"
+              direction="horizontal"
+              gap="x3"
+              grow={true}
+            >
+              <Text
+                className="title"
+                color="grape-4"
+                config="5"
+              >
+                My app v1.1.0 (28)
+              </Text>
+            </Flex>
           </Flex>
           <Text
             className="note"
@@ -232,9 +264,11 @@ exports[`VersionListPageItem shows more description 1`] = `
         </Flex>
       </Link>
     </Link>
-    <button
+    <Base
+      Component="button"
       className="descriptionWrapper isOpen"
       onClick={[Function]}
+      paddingHorizontal="x0"
     >
       <Text
         className="description"
@@ -250,11 +284,11 @@ exports[`VersionListPageItem shows more description 1`] = `
       <Base
         className="showLess"
       >
-        <Base
-          className="text"
+        <Text
+          config="8"
         >
           Show less
-        </Base>
+        </Text>
         <ReactSVG
           afterInjection={[Function]}
           beforeInjection={[Function]}
@@ -267,7 +301,7 @@ exports[`VersionListPageItem shows more description 1`] = `
           wrapper="div"
         />
       </Base>
-    </button>
+    </Base>
   </Base>
 </Base>
 `;

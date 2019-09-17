@@ -103,19 +103,19 @@ export default ({ appContacts, onNotificationPreferenceChanged, onDeleteContact 
                       </Text>{' '}
                       {isConfirmed ? 'Confirmed' : 'Pending'}
                     </Base>
-                    <Flex direction="horizontal" gap="x2" paddingVertical="x1">
+                    <Flex direction="horizontal" gap="x2" paddingVertical="x1" alignChildrenHorizontal="between">
                       <Text weight="bold" color="grape-5" width="9rem">
                         New Version:
                       </Text>{' '}
                       {toggle(email, 'newVersion', newVersion)}
                     </Flex>
-                    <Flex direction="horizontal" gap="x2" paddingVertical="x1">
+                    <Flex direction="horizontal" gap="x2" paddingVertical="x1" alignChildrenHorizontal="between">
                       <Text weight="bold" color="grape-5" width="9rem">
                         Successful Publish:
                       </Text>{' '}
                       {toggle(email, 'successfulPublish', successfulPublish)}
                     </Flex>
-                    <Flex direction="horizontal" gap="x2" paddingVertical="x1">
+                    <Flex direction="horizontal" gap="x2" paddingVertical="x1" alignChildrenHorizontal="between">
                       <Text weight="bold" color="grape-5" width="9rem">
                         Failed Publish:
                       </Text>{' '}

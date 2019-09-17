@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import formatDate from 'date-fns/format';
-import { Flex, Base, Text, Divider, Dropdown, Notification, Grid } from '@bitrise/bitkit';
+import { Flex, Base, Text, Divider, Dropdown, Notification } from '@bitrise/bitkit';
 
 import AppSummary from '@/components/AppSummary';
 import VersionListPageItem from '@/components/VersionListPageItem';
@@ -8,10 +8,10 @@ import Footer from '@/components/Footer';
 import { AppVersion, Platform } from '@/models';
 import { mediaQuery } from '@/utils/media';
 import PlatformSelector from '@/components/PlatformSelector';
+import MagicTag from '@/components/Tag/MagicTag';
 import s from '@/utils/s';
 
 import css from '../style.scss';
-import MagicTag from '@/components/Tag/MagicTag';
 
 export type Props = {
   latestAppVersion: AppVersion;
@@ -60,7 +60,7 @@ export default ({
   return (
     <Flex direction="vertical" className={css.wrapper}>
       {isCrossPlatform && (
-        <Flex direction="horizontal" padding="x4" alignChildren="middle">
+        <Flex direction="horizontal" padding={isTablet ? 'x4' : 'x0'} alignChildren="middle">
           <PlatformSelector platform={selectedPlatform} onClick={onSelectPlatform} />
         </Flex>
       )}
@@ -68,7 +68,8 @@ export default ({
       <Flex
         direction="vertical"
         alignChildrenHorizontal="middle"
-        padding={isDesktop && !isCrossPlatform ? 'x16' : 'x4'}
+        paddingHorizontal={isDesktop ? 'x16' : 'x4'}
+        paddingVertical={isDesktop && !isCrossPlatform ? 'x16' : 'x0'}
       >
         <Base width="100%" maxWidth={960}>
           {warnings.length > 0 && (
@@ -86,7 +87,7 @@ export default ({
               direction={isTablet ? 'horizontal' : 'vertical'}
               shrink
               gap="x2"
-              paddingVertical="x4"
+              margin="x4"
               paddingHorizontal="x1"
             >
               {productFlavours.map((f, idx) => (
@@ -101,9 +102,13 @@ export default ({
           <AppSummary
             detailsPagePath={`/apps/${latestAppVersion.appSlug}/versions/${latestAppVersion.id}/details`}
             detailsPagePathHref={`/version?appSlug=${latestAppVersion.appSlug}&versionId=${latestAppVersion.id}`}
-            title={`${latestAppVersion.appName} v${latestAppVersion.version} (${latestAppVersion.buildNumber})`}
+            title={`(${latestAppVersion.buildNumber}) v${latestAppVersion.version} ${latestAppVersion.appName}`}
             description={latestAppVersion.commitMessage}
-            note={`Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, YYYY')}`}
+            note={
+              isTablet
+                ? `Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, HH:mm')}`
+                : formatDate(latestAppVersion.lastUpdate, 'MMM D, HH:mm')
+            }
             iconUrl={latestAppVersion.iconUrl}
             platform={latestAppVersion.platform}
             startColor={startColor}
@@ -146,10 +151,10 @@ export default ({
                       detailsPagePath={`/apps/${appVersion.appSlug}/versions/${appVersion.id}/details`}
                       detailsPagePathHref={`/version?appSlug=${appVersion.appSlug}&versionId=${appVersion.id}`}
                       platform={appVersion.platform}
-                      title={`${appVersion.appName} (${appVersion.buildNumber})`}
+                      title={`(${appVersion.buildNumber}) ${appVersion.appName}`}
                       description={appVersion.commitMessage}
                       descriptionPlaceholder={s`No commit message`}
-                      note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, YYYY, HH:mm')}`}
+                      note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, HH:mm')}`}
                       productFlavour={appVersion.productFlavour}
                     />
                   ))}
