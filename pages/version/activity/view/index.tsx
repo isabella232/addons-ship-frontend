@@ -110,13 +110,18 @@ export default ({ appVersionEvents, isLoading }: Props) => {
                         </Base>
                         <Base>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</Base>
                       </Base>
-                      {appVersionEvent.status === 'failed' && (
+                      {appVersionEvent.status === 'failed' && appVersionEvent.isLogAvailable ? (
                         <a href={appVersionEvent.logDownloadUrl}>
                           <Button level="secondary" size="small">
                             <Icon name="Download" color="grape-4" />
                             Download Build Log
                           </Button>
                         </a>
+                      ) : (
+                        <Button level="secondary" size="small" disabled>
+                          <Icon name="Download" color="grape-4" />
+                          Download Build Log
+                        </Button>
                       )}
                     </Flex>
                   </TableCell>

@@ -50,9 +50,18 @@ describe('ActivityView', () => {
   });
 
   describe('when a test failed', () => {
-    it('renders entry with download log button', () => {
-      const tree = toJSON(shallow(<ActivityView isLoading={false} appVersionEvents={[mockFailedAppVersionEvent]} />));
-      expect(tree).toMatchSnapshot();
+    describe('with logs not available yet', () => {
+      it('renders entry with disabled download log button', () => {
+        const tree = toJSON(shallow(<ActivityView isLoading={false} appVersionEvents={[{...mockFailedAppVersionEvent, isLogAvailable: false}]} />));
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe('with logs available', () => {
+      it('renders entry with download log button', () => {
+        const tree = toJSON(shallow(<ActivityView isLoading={false} appVersionEvents={[mockFailedAppVersionEvent]} />));
+        expect(tree).toMatchSnapshot();
+      });
     });
   });
 

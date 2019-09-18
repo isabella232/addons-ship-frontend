@@ -276,6 +276,7 @@ export const mockFailedAppVersionEvent: AppVersionEvent = {
   createdAt: new Date('2018-09-26T12:42:31Z'),
   updatedAtTimestamp: new Date('2018-09-27T12:42:31Z').getTime(),
   updatedAt: new Date('2018-09-27T12:42:31Z'),
+  isLogAvailable: true,
   logDownloadUrl: 'https://www.bitrise.io/assets/svg/logo-bitrise.svg'
 };
 
