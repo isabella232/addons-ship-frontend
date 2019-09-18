@@ -504,7 +504,8 @@ describe('Ship API service', () => {
               event_text: 'some-string',
               created_at: '2019-10-10',
               updated_at: '2019-10-11',
-              log_download_url: 'http://log.url'
+              log_download_url: 'http://log.url',
+              is_log_available: true
             }
           ]
         })

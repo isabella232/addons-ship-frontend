@@ -67,6 +67,7 @@ Array [
   Object {
     "createdAtTimestamp": 1570665600000,
     "id": "an-id",
+    "isLogAvailable": true,
     "logDownloadUrl": "http://log.url",
     "status": "in_progress",
     "text": "some-string",
