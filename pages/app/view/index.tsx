@@ -153,7 +153,7 @@ export default ({
                       detailsPagePath={`/apps/${appVersion.appSlug}/versions/${appVersion.id}/details`}
                       detailsPagePathHref={`/version?appSlug=${appVersion.appSlug}&versionId=${appVersion.id}`}
                       platform={appVersion.platform}
-                      title={`(${appVersion.buildNumber}) ${appVersion.appName}`}
+                      title={`(${appVersion.buildNumber}) v${latestAppVersion.version} ${appVersion.appName}`}
                       description={appVersion.commitMessage}
                       descriptionPlaceholder={s`No commit message`}
                       note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, HH:mm')}`}
