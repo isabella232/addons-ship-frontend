@@ -50,6 +50,19 @@ const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
   );
 };
 
+const downloadBuildLogButton = (
+  appVersionEventIsLogAvailable: boolean = false,
+  appVersionEventLogDownloadUrl: string
+) => {
+  const button = (isEnabled: boolean) => (
+    <Button level="secondary" size="small" disabled={!isEnabled}>
+      <Icon name="Download" color="grape-4" />
+      Download Build Log
+    </Button>
+  );
+  return appVersionEventIsLogAvailable ? <a href={appVersionEventLogDownloadUrl}>{button(true)}</a> : button(false);
+};
+
 export default ({ appVersionEvents, isLoading }: Props) => {
   const [isTablet] = mediaQuery('30rem');
 
@@ -87,14 +100,8 @@ export default ({ appVersionEvents, isLoading }: Props) => {
                   </TableCell>
                   <TableCell>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</TableCell>
                   <TableCell shrink>
-                    {appVersionEvent.status === 'failed' && (
-                      <a href={appVersionEvent.logDownloadUrl}>
-                        <Button level="secondary" size="small">
-                          <Icon name="Download" color="grape-4" />
-                          Download Build Log
-                        </Button>
-                      </a>
-                    )}
+                    {appVersionEvent.status === 'failed' &&
+                      downloadBuildLogButton(appVersionEvent.isLogAvailable, appVersionEvent.logDownloadUrl)}
                   </TableCell>
                 </TableRow>
               ) : (
@@ -110,19 +117,8 @@ export default ({ appVersionEvents, isLoading }: Props) => {
                         </Base>
                         <Base>{textWithIcon(appVersionEvent.status, appVersionEvent.text)}</Base>
                       </Base>
-                      {appVersionEvent.status === 'failed' && appVersionEvent.isLogAvailable ? (
-                        <a href={appVersionEvent.logDownloadUrl}>
-                          <Button level="secondary" size="small">
-                            <Icon name="Download" color="grape-4" />
-                            Download Build Log
-                          </Button>
-                        </a>
-                      ) : (
-                        <Button level="secondary" size="small" disabled>
-                          <Icon name="Download" color="grape-4" />
-                          Download Build Log
-                        </Button>
-                      )}
+                      {appVersionEvent.status === 'failed' &&
+                        downloadBuildLogButton(appVersionEvent.isLogAvailable, appVersionEvent.logDownloadUrl)}
                     </Flex>
                   </TableCell>
                 </TableRow>

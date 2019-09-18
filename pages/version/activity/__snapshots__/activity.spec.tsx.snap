@@ -143,6 +143,7 @@ exports[`ActivityView when a test failed with logs available renders entry with 
               href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
             >
               <Button
+                disabled={false}
                 level="secondary"
                 size="small"
               >
@@ -296,18 +297,6 @@ exports[`ActivityView when a test is in progress renders entry without download 
                 </Flex>
               </Base>
             </Base>
-            <Button
-              disabled={true}
-              level="secondary"
-              size="small"
-            >
-              <Icon
-                color="grape-4"
-                name="Download"
-                size="1.5rem"
-              />
-              Download Build Log
-            </Button>
           </Flex>
         </TableCell>
       </TableRow>
@@ -373,18 +362,6 @@ exports[`ActivityView when a test is successful renders entry without download l
                 </Flex>
               </Base>
             </Base>
-            <Button
-              disabled={true}
-              level="secondary"
-              size="small"
-            >
-              <Icon
-                color="grape-4"
-                name="Download"
-                size="1.5rem"
-              />
-              Download Build Log
-            </Button>
           </Flex>
         </TableCell>
       </TableRow>
@@ -518,6 +495,7 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
             href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
           >
             <Button
+              disabled={false}
               level="secondary"
               size="small"
             >
@@ -661,6 +639,7 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
             href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
           >
             <Button
+              disabled={false}
               level="secondary"
               size="small"
             >
@@ -736,18 +715,6 @@ exports[`ActivityView when viewed on mobile renders the activity view correctly 
                 </Flex>
               </Base>
             </Base>
-            <Button
-              disabled={true}
-              level="secondary"
-              size="small"
-            >
-              <Icon
-                color="grape-4"
-                name="Download"
-                size="1.5rem"
-              />
-              Download Build Log
-            </Button>
           </Flex>
         </TableCell>
       </TableRow>
@@ -800,18 +767,6 @@ exports[`ActivityView when viewed on mobile renders the activity view correctly 
                 </Flex>
               </Base>
             </Base>
-            <Button
-              disabled={true}
-              level="secondary"
-              size="small"
-            >
-              <Icon
-                color="grape-4"
-                name="Download"
-                size="1.5rem"
-              />
-              Download Build Log
-            </Button>
           </Flex>
         </TableCell>
       </TableRow>
@@ -868,6 +823,7 @@ exports[`ActivityView when viewed on mobile renders the activity view correctly 
               href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
             >
               <Button
+                disabled={false}
                 level="secondary"
                 size="small"
               >
