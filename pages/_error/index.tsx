@@ -12,6 +12,7 @@ interface ErrorContext extends Omit<NextContext, 'err'> {
 
 export type Props = {
   statusCode: number | null;
+  appSlug: string;
 };
 
 export default class Error extends React.Component<Props> {
@@ -27,13 +28,13 @@ export default class Error extends React.Component<Props> {
   }
 
   render() {
-    const { statusCode } = this.props;
+    const { statusCode, appSlug } = this.props;
 
     return (
       <Flex direction="vertical" alignChildrenVertical="middle" grow backgroundColor="grape-5" color="aqua-1">
-        {[401, 404].includes(statusCode as number) && <Error404 />}
+        {[401, 404].includes(statusCode as number) && <Error404 appSlug={appSlug} />}
         {statusCode === 500 && <Error500 />}
-        {(!statusCode || ![404, 500].includes(statusCode)) && (
+        {(!statusCode || ![401, 404, 500].includes(statusCode)) && (
           <Flex direction="vertical" grow alignChildrenVertical="middle">
             <Text align="middle" config="5" margin="x8">
               An unexpected error occured
