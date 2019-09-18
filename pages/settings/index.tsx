@@ -4,10 +4,10 @@ import { Base, Divider, AddonFooter, Flex } from '@bitrise/bitkit';
 import { PageContext } from '@/models';
 import { AppSettingsPageQuery, AppSettingsPageTabs } from '@/models/settings';
 import ShipHead from '@/components/ShipHead';
+import TabMenu from '@/components/TabMenu';
 
 import General from './general';
 import Notifications from './notifications';
-import TabMenu from '../version/tabmenu';
 
 export class SettingsPage extends Component<AppSettingsPageQuery> {
   static displayName = 'SettingsPage';

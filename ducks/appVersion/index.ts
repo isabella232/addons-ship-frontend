@@ -52,12 +52,12 @@ const reduceAppVersion = ({ appVersion, ...state }: DeepImmutableObject<AppVersi
   }
 });
 export default createReducer(defaultState, handleAction => [
-  handleAction(fetchAppVersion.complete, (state, { payload, type }) => reduceAppVersion(state, payload)),
+  handleAction(fetchAppVersion.complete, (state, { payload }) => reduceAppVersion(state, payload)),
   handleAction(updateAppVersion.complete, (state, { payload }) => ({
     ...reduceAppVersion(state, payload),
     isSaving: state.isSaving - 1
   })),
-  handleAction(publishAppVersion.next, state => ({ ...state, appVersion: null, isPublishInProgress: true })),
+  handleAction(publishAppVersion.next, state => ({ ...state, isPublishInProgress: true })),
   handleAction([publishAppVersion.complete, publishAppVersion.error], state => ({
     ...state,
     isPublishInProgress: false
