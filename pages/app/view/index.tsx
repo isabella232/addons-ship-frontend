@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import formatDate from 'date-fns/format';
-import { Flex, Base, Text, Divider, Dropdown, Notification } from '@bitrise/bitkit';
+import { Flex, Base, Text, Divider, Dropdown, Notification, variables } from '@bitrise/bitkit';
 
 import AppSummary from '@/components/AppSummary';
 import VersionListPageItem from '@/components/VersionListPageItem';
@@ -8,10 +8,11 @@ import Footer from '@/components/Footer';
 import { AppVersion, Platform } from '@/models';
 import { mediaQuery } from '@/utils/media';
 import PlatformSelector from '@/components/PlatformSelector';
-import MagicTag from '@/components/Tag/MagicTag';
 import s from '@/utils/s';
 
 import css from '../style.scss';
+
+const { sizeX2 } = variables;
 
 export type Props = {
   latestAppVersion: AppVersion;
@@ -56,11 +57,13 @@ export default ({
   warnings
 }: Props) => {
   const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
+  const hasProductFlavours = productFlavours.length > 0;
+  const useMobileFilters = !isTablet && hasProductFlavours;
 
   return (
-    <Flex direction="vertical" className={css.wrapper}>
+    <Flex direction="vertical" grow margin="x2">
       {isCrossPlatform && (
-        <Flex direction="horizontal" padding={isTablet ? 'x4' : 'x0'} alignChildren="middle">
+        <Flex direction="horizontal" padding={isTablet ? 'x3' : 'x0'} alignChildren="middle">
           <PlatformSelector platform={selectedPlatform} onClick={onSelectPlatform} />
         </Flex>
       )}
@@ -70,6 +73,7 @@ export default ({
         alignChildrenHorizontal="middle"
         paddingHorizontal={isDesktop ? 'x16' : 'x4'}
         paddingVertical={isDesktop && !isCrossPlatform ? 'x16' : 'x0'}
+        grow
       >
         <Base width="100%" maxWidth={960}>
           {warnings.length > 0 && (
@@ -80,24 +84,6 @@ export default ({
                 </Notification>
               ))}
             </Base>
-          )}
-          {productFlavours.length > 0 && (
-            <Flex
-              wrap
-              direction={isTablet ? 'horizontal' : 'vertical'}
-              shrink
-              gap="x2"
-              margin="x4"
-              paddingHorizontal="x1"
-            >
-              {productFlavours.map((f, idx) => (
-                <Flex key={idx}>
-                  <MagicTag large selected={f === selectedProductFlavour} onClick={() => selectProductFalvour(f)}>
-                    {f}
-                  </MagicTag>
-                </Flex>
-              ))}
-            </Flex>
           )}
           <AppSummary
             detailsPagePath={`/apps/${latestAppVersion.appSlug}/versions/${latestAppVersion.id}/details`}
@@ -116,25 +102,41 @@ export default ({
             productFlavour={latestAppVersion.productFlavour}
           />
           <Base className={css.sectionHeadingWrapper}>
-            <Flex direction="horizontal" alignChildrenVertical="end" gap="x2">
+            <Flex direction={useMobileFilters ? 'vertical' : 'horizontal'} alignChildrenVertical="end" gap="x4">
               <Flex grow shrink>
                 <Text letterSpacing="x1" size="x5" weight="bold">
-                  Version History
+                  Version History {hasProductFlavours && 'by Flavor'}
                 </Text>
-                <Divider color="gray-2" direction="horizontal" margin="x2" />
+                {!useMobileFilters && <Divider color="gray-2" direction="horizontal" margin="x2" />}
               </Flex>
-              {selectedVersionSortingOption && (
-                <Dropdown
-                  width={168}
-                  elevation="x1"
-                  fullWidth={false}
-                  onChange={versionSortingOptionValue => versionSortOptionWithValueSelected(versionSortingOptionValue)}
-                  options={versionSortingOptions}
-                  selected={selectedVersionSortingOption.value}
-                >
-                  {selectedVersionSortingOption.text}
-                </Dropdown>
-              )}
+
+              <Flex direction="horizontal" gap="x4">
+                {hasProductFlavours && (
+                  <Dropdown
+                    width={useMobileFilters ? `calc(50% - ${sizeX2}px)` : 168}
+                    elevation="x1"
+                    onChange={value => selectProductFalvour(value)}
+                    options={productFlavours.map(value => ({ text: value, value }))}
+                    selected={selectedProductFlavour}
+                  >
+                    {selectedProductFlavour}
+                  </Dropdown>
+                )}
+                {selectedVersionSortingOption && (
+                  <Dropdown
+                    width={useMobileFilters ? `calc(50% - ${sizeX2}px)` : 168}
+                    elevation="x1"
+                    onChange={versionSortingOptionValue =>
+                      versionSortOptionWithValueSelected(versionSortingOptionValue)
+                    }
+                    options={versionSortingOptions}
+                    selected={selectedVersionSortingOption.value}
+                  >
+                    {selectedVersionSortingOption.text}
+                  </Dropdown>
+                )}
+              </Flex>
+              {useMobileFilters && <Divider color="gray-2" direction="horizontal" margin="x2" />}
             </Flex>
 
             {groupedAppVersionList &&
@@ -151,7 +153,7 @@ export default ({
                       detailsPagePath={`/apps/${appVersion.appSlug}/versions/${appVersion.id}/details`}
                       detailsPagePathHref={`/version?appSlug=${appVersion.appSlug}&versionId=${appVersion.id}`}
                       platform={appVersion.platform}
-                      title={`(${appVersion.buildNumber}) ${appVersion.appName}`}
+                      title={`(${appVersion.buildNumber}) v${latestAppVersion.version} ${appVersion.appName}`}
                       description={appVersion.commitMessage}
                       descriptionPlaceholder={s`No commit message`}
                       note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, HH:mm')}`}
