@@ -117,19 +117,6 @@ Object {
     "iOS-4-in": Object {
       "deviceId": "iOS-4-in",
       "deviceName": "iPhone 4\\"",
-      "screenshots": Array [
-        Screenshot {
-          "deviceType": "iPhone 4\\"",
-          "file": File {
-            "path": "file.png",
-            "type": "image/png",
-          },
-          "id": "",
-          "name": "file.png",
-          "size": 0,
-          "src": undefined,
-        },
-      ],
     },
     "iOS-5-5-in": Object {
       "deviceId": "iOS-5-5-in",
