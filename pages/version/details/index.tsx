@@ -5,6 +5,7 @@ import get from 'lodash/get';
 import update from 'lodash/update';
 import filter from 'lodash/filter';
 import isEqual from 'lodash/isEqual';
+import cloneDeep from 'lodash/cloneDeep';
 import { Flex, ProgressBitbot } from '@bitrise/bitkit';
 
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
@@ -189,7 +190,7 @@ export class AppVersionDetails extends Component<Props, State> {
     const { appSlug, versionId, appVersion, startPollPublishStatus, fetchAppVersionEvents } = this.props;
     if (appVersion && appVersion.id === versionId) {
       fetchAppVersionEvents(appSlug, versionId);
-      const newScreenshotList = appVersion.platform === 'ios' ? { ...iosDevices } : { ...androidDevices };
+      const newScreenshotList = cloneDeep(appVersion.platform === 'ios' ? iosDevices : androidDevices);
 
       this.setState({
         hasMounted: true,
