@@ -73,11 +73,9 @@ const publishNotification = (
     return (
       <Notification margin="x2" type="alert" icon="Warning">
         You need to setup publishing at the{' '}
-        <Link underline>
-          <NextLink as={settingsPath} href={`/settings?appSlug=${appSlug}`}>
-            <a>Settings page</a>
-          </NextLink>
-        </Link>
+        <NextLink as={settingsPath} href={`/settings?appSlug=${appSlug}`}>
+          <Link underline>Settings page</Link>
+        </NextLink>
         .
       </Notification>
     );
@@ -108,14 +106,9 @@ const publishNotification = (
       return (
         <Notification margin="x2" type="alert">
           Publish has failed. See the error log at the{' '}
-          <Link underline>
-            <NextLink
-              as={activityPath}
-              href={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=activity`}
-            >
-              <a>Activity tab</a>
-            </NextLink>
-          </Link>
+          <NextLink as={activityPath} href={`/version?appSlug=${appSlug}&versionId=${versionId}&selectedTab=activity`}>
+            <Link underline>Activity tab</Link>
+          </NextLink>
           .
         </Notification>
       );
