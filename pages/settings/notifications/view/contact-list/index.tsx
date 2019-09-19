@@ -50,12 +50,12 @@ export default ({ appContacts, onNotificationPreferenceChanged, onDeleteContact 
             <TableHeaderCell align="middle">
               Successful
               <br />
-              Publish
+              Publication
             </TableHeaderCell>
             <TableHeaderCell align="middle">
               Failed
               <br />
-              Publish
+              Publication
             </TableHeaderCell>
             <TableHeaderCell />
           </TableHeaderRow>

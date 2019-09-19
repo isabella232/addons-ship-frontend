@@ -18,7 +18,7 @@ exports[`NotificationSettings View AddNew renders correctly 1`] = `
           disabled={false}
           maxLength={254}
           onChange={[Function]}
-          placeholder="Email address"
+          placeholder="E-mail address"
           type="email"
           value="old@email.value"
         />
@@ -53,7 +53,7 @@ exports[`NotificationSettings View AddNew shows adding in progress 1`] = `
           disabled={true}
           maxLength={254}
           onChange={[Function]}
-          placeholder="Email address"
+          placeholder="E-mail address"
           type="email"
           value="old@email.value"
         />

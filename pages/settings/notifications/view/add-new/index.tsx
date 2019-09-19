@@ -40,7 +40,7 @@ export default ({ email, onEmailChange, onAddEmail, isAddingEmail }: Props) => {
         <InputContainer>
           <InputContent>
             <Input
-              placeholder="Email address"
+              placeholder="E-mail address"
               value={email}
               onChange={(event: any) => onEmailChange(event.target.value)}
               type="email"
