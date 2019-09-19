@@ -1627,29 +1627,34 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                             </Flex>
                           </Button>
                           <Button
+                            Component="a"
                             disabled={false}
+                            href="https://bitrise.io/app/8b334705d8e78276"
                             level="secondary"
                             size="medium"
                             width="auto"
                           >
                             <Flex
-                              Component="button"
+                              Component="a"
                               alignChildren="middle"
                               className="Button Button--level-secondary Button--size-medium"
                               direction="horizontal"
                               disabled={false}
                               gap="x2"
+                              href="https://bitrise.io/app/8b334705d8e78276"
                               width="auto"
                             >
                               <Base
-                                Component="button"
+                                Component="a"
                                 className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                 disabled={false}
+                                href="https://bitrise.io/app/8b334705d8e78276"
                                 width="auto"
                               >
-                                <button
+                                <a
                                   className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                   disabled={false}
+                                  href="https://bitrise.io/app/8b334705d8e78276"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -1733,7 +1738,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                       </div>
                                     </Base>
                                   </Text>
-                                </button>
+                                </a>
                               </Base>
                             </Flex>
                           </Button>
@@ -5223,29 +5228,34 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                             </Flex>
                           </Button>
                           <Button
+                            Component="a"
                             disabled={false}
+                            href="https://bitrise.io/app/8b334705d8e78276"
                             level="secondary"
                             size="medium"
                             width="auto"
                           >
                             <Flex
-                              Component="button"
+                              Component="a"
                               alignChildren="middle"
                               className="Button Button--level-secondary Button--size-medium"
                               direction="horizontal"
                               disabled={false}
                               gap="x2"
+                              href="https://bitrise.io/app/8b334705d8e78276"
                               width="auto"
                             >
                               <Base
-                                Component="button"
+                                Component="a"
                                 className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                 disabled={false}
+                                href="https://bitrise.io/app/8b334705d8e78276"
                                 width="auto"
                               >
-                                <button
+                                <a
                                   className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                   disabled={false}
+                                  href="https://bitrise.io/app/8b334705d8e78276"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -5329,7 +5339,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                       </div>
                                     </Base>
                                   </Text>
-                                </button>
+                                </a>
                               </Base>
                             </Flex>
                           </Button>
@@ -28781,38 +28791,36 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 You need to setup publishing at the
                                  
                                 <Link
-                                  underline={true}
+                                  as="/path"
+                                  href="/settings?appSlug=app-slug-123"
                                 >
-                                  <Base
-                                    Component="a"
-                                    className="Link Link--color-undefined Link--underline"
+                                  <Link
+                                    onClick={[Function]}
+                                    underline={true}
                                   >
-                                    <a
-                                      className="Base Link Link--color-undefined Link--underline"
-                                      style={
-                                        Object {
-                                          "height": undefined,
-                                          "maxHeight": undefined,
-                                          "maxWidth": undefined,
-                                          "minHeight": undefined,
-                                          "minWidth": undefined,
-                                          "width": undefined,
-                                        }
-                                      }
+                                    <Base
+                                      Component="a"
+                                      className="Link Link--color-undefined Link--clickable Link--underline"
+                                      onClick={[Function]}
                                     >
-                                      <Link
-                                        as="/path"
-                                        href="/settings?appSlug=app-slug-123"
+                                      <a
+                                        className="Base Link Link--color-undefined Link--clickable Link--underline"
+                                        onClick={[Function]}
+                                        style={
+                                          Object {
+                                            "height": undefined,
+                                            "maxHeight": undefined,
+                                            "maxWidth": undefined,
+                                            "minHeight": undefined,
+                                            "minWidth": undefined,
+                                            "width": undefined,
+                                          }
+                                        }
                                       >
-                                        <a
-                                          href="/path"
-                                          onClick={[Function]}
-                                        >
-                                          Settings page
-                                        </a>
-                                      </Link>
-                                    </a>
-                                  </Base>
+                                        Settings page
+                                      </a>
+                                    </Base>
+                                  </Link>
                                 </Link>
                                 .
                               </div>
@@ -36592,15 +36600,13 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
         Publish has failed. See the error log at the
          
         <Link
-          underline={true}
+          as="/path"
+          href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
         >
           <Link
-            as="/path"
-            href="/version?appSlug=app-slug-123&versionId=123&selectedTab=activity"
+            underline={true}
           >
-            <a>
-              Activity tab
-            </a>
+            Activity tab
           </Link>
         </Link>
         .
@@ -46072,29 +46078,34 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                             </Flex>
                           </Button>
                           <Button
+                            Component="a"
                             disabled={false}
+                            href="https://bitrise.io/app/8b334705d8e78276"
                             level="secondary"
                             size="medium"
                             width="100%"
                           >
                             <Flex
-                              Component="button"
+                              Component="a"
                               alignChildren="middle"
                               className="Button Button--level-secondary Button--size-medium"
                               direction="horizontal"
                               disabled={false}
                               gap="x2"
+                              href="https://bitrise.io/app/8b334705d8e78276"
                               width="100%"
                             >
                               <Base
-                                Component="button"
+                                Component="a"
                                 className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                 disabled={false}
+                                href="https://bitrise.io/app/8b334705d8e78276"
                                 width="100%"
                               >
-                                <button
+                                <a
                                   className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                   disabled={false}
+                                  href="https://bitrise.io/app/8b334705d8e78276"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -46178,7 +46189,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                       </div>
                                     </Base>
                                   </Text>
-                                </button>
+                                </a>
                               </Base>
                             </Flex>
                           </Button>
@@ -49599,29 +49610,34 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                             </Flex>
                           </Button>
                           <Button
+                            Component="a"
                             disabled={false}
+                            href="https://bitrise.io/app/8b334705d8e78276"
                             level="secondary"
                             size="medium"
                             width="100%"
                           >
                             <Flex
-                              Component="button"
+                              Component="a"
                               alignChildren="middle"
                               className="Button Button--level-secondary Button--size-medium"
                               direction="horizontal"
                               disabled={false}
                               gap="x2"
+                              href="https://bitrise.io/app/8b334705d8e78276"
                               width="100%"
                             >
                               <Base
-                                Component="button"
+                                Component="a"
                                 className="Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                 disabled={false}
+                                href="https://bitrise.io/app/8b334705d8e78276"
                                 width="100%"
                               >
-                                <button
+                                <a
                                   className="Base Flex Flex--align-horz-middle Flex--align-vert-middle Flex--horizontal Flex--gapped Flex--gap-x2 Button Button--level-secondary Button--size-medium"
                                   disabled={false}
+                                  href="https://bitrise.io/app/8b334705d8e78276"
                                   style={
                                     Object {
                                       "height": undefined,
@@ -49705,7 +49721,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                       </div>
                                     </Base>
                                   </Text>
-                                </button>
+                                </a>
                               </Base>
                             </Flex>
                           </Button>
