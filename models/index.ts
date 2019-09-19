@@ -110,6 +110,7 @@ export type AppVersionEvent = {
   createdAt: Date;
   updatedAtTimestamp: number | null;
   updatedAt: Date | null;
+  isLogAvailable?: boolean;
   logDownloadUrl: string;
 };
 
