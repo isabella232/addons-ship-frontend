@@ -700,11 +700,22 @@ exports[`GeneralView when the settings are being saved 1`] = `
           </InputContainer>
         </Flex>
         <Flex>
-          <InputLabel
+          <Flex
+            direction="horizontal"
+            gap="x1"
             margin="x1"
           >
-            Module
-          </InputLabel>
+            <InputLabel
+              margin="x1"
+            >
+              Module
+            </InputLabel>
+            <Tooltip
+              title="Add module name if your Android app contains multiple modules."
+            >
+              <Component />
+            </Tooltip>
+          </Flex>
           <InputContainer>
             <InputContent>
               <Input
@@ -1655,11 +1666,22 @@ exports[`GeneralView when there are no files renders no files section 1`] = `
           </InputContainer>
         </Flex>
         <Flex>
-          <InputLabel
+          <Flex
+            direction="horizontal"
+            gap="x1"
             margin="x1"
           >
-            Module
-          </InputLabel>
+            <InputLabel
+              margin="x1"
+            >
+              Module
+            </InputLabel>
+            <Tooltip
+              title="Add module name if your Android app contains multiple modules."
+            >
+              <Component />
+            </Tooltip>
+          </Flex>
           <InputContainer>
             <InputContent>
               <Input
@@ -1856,11 +1878,22 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
           </InputContainer>
         </Flex>
         <Flex>
-          <InputLabel
+          <Flex
+            direction="horizontal"
+            gap="x1"
             margin="x1"
           >
-            Module
-          </InputLabel>
+            <InputLabel
+              margin="x1"
+            >
+              Module
+            </InputLabel>
+            <Tooltip
+              title="Add module name if your Android app contains multiple modules."
+            >
+              <Component />
+            </Tooltip>
+          </Flex>
           <InputContainer>
             <InputContent>
               <Input
@@ -2576,11 +2609,22 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
           </InputContainer>
         </Flex>
         <Flex>
-          <InputLabel
+          <Flex
+            direction="horizontal"
+            gap="x1"
             margin="x1"
           >
-            Module
-          </InputLabel>
+            <InputLabel
+              margin="x1"
+            >
+              Module
+            </InputLabel>
+            <Tooltip
+              title="Add module name if your Android app contains multiple modules."
+            >
+              <Component />
+            </Tooltip>
+          </Flex>
           <InputContainer>
             <InputContent>
               <Input
@@ -3283,11 +3327,22 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
           </InputContainer>
         </Flex>
         <Flex>
-          <InputLabel
+          <Flex
+            direction="horizontal"
+            gap="x1"
             margin="x1"
           >
-            Module
-          </InputLabel>
+            <InputLabel
+              margin="x1"
+            >
+              Module
+            </InputLabel>
+            <Tooltip
+              title="Add module name if your Android app contains multiple modules."
+            >
+              <Component />
+            </Tooltip>
+          </Flex>
           <InputContainer>
             <InputContent>
               <Input
