@@ -251,7 +251,13 @@ export default ({
                     </Fragment>
                   )}
                 </Button>
-                <Button level="secondary" disabled={!shouldEnableInstall} width={isTablet ? 'auto' : '100%'}>
+                <Button
+                  Component={shouldEnableInstall ? 'a' : 'button'}
+                  level="secondary"
+                  disabled={!shouldEnableInstall}
+                  href={appVersion.publicInstallPageURL}
+                  width={isTablet ? 'auto' : '100%'}
+                >
                   <Icon name="Download" />
                   <Text>Install</Text>
                 </Button>

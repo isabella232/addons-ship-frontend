@@ -395,6 +395,7 @@ export class AppVersionDetails extends Component<Props, State> {
 
   shouldEnableInstall = () => {
     const { appVersion } = this.props;
+
     if (!appVersion) {
       return false;
     }
@@ -407,7 +408,7 @@ export class AppVersionDetails extends Component<Props, State> {
       return false;
     }
 
-    if (compareVersions(appVersion.version, osVersion()) < 0) {
+    if (appVersion.minimumOs && compareVersions(osVersion(), appVersion.minimumOs) < 0) {
       return false;
     }
 
