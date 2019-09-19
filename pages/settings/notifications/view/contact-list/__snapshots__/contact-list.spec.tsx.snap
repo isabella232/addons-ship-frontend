@@ -22,14 +22,14 @@ exports[`NotificationSettings View ContactList renders correctly 1`] = `
       >
         Successful
         <br />
-        Publish
+        Publication
       </TableHeaderCell>
       <TableHeaderCell
         align="middle"
       >
         Failed
         <br />
-        Publish
+        Publication
       </TableHeaderCell>
       <TableHeaderCell />
     </TableHeaderRow>
