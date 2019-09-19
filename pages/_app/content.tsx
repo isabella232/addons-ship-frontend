@@ -9,15 +9,16 @@ import ErrorPage from '../_error';
 
 type Props = {
   error?: Error | RequestError | null;
+  appSlug: string;
   children: ReactNode;
 };
 
-export const AppContent = ({ error, children }: Props) => {
+export const AppContent = ({ error, appSlug, children }: Props) => {
   if (error) {
     return (
       <Fragment>
         <Header hideBreadcrumbs />
-        <ErrorPage statusCode={(error as RequestError).status || 500} />
+        <ErrorPage appSlug={appSlug} statusCode={(error as RequestError).status || 500} />
       </Fragment>
     );
   }

@@ -4,8 +4,8 @@ exports[`Error404 renders ok on desktop 1`] = `
 <Flex
   alignChildrenVertical="middle"
   direction="vertical"
-  gap="x10"
   grow={true}
+  paddingVertical="x10"
 >
   <Status404 />
   <Text
@@ -24,24 +24,24 @@ exports[`Error404 renders ok on desktop 1`] = `
     <Button
       Component="a"
       href="https://app.bitrise.io/dashboard/apps"
-      level="splash"
-      size="large"
+      level="light"
+      size="small"
     >
-      Dashboard
+      Bitrise Dashboard
     </Button>
     <Button
       Component="a"
       href="https://devcenter.bitrise.io/tips-and-tricks/tips-and-tricks-index/"
-      level="splash"
-      size="large"
+      level="light"
+      size="small"
     >
       Learn Bitrise Tricks
     </Button>
     <Button
       Component="a"
       href="https://careers.bitrise.io/"
-      level="splash"
-      size="large"
+      level="light"
+      size="small"
     >
       Check Open Positions
     </Button>
@@ -53,8 +53,8 @@ exports[`Error404 renders ok on mobile 1`] = `
 <Flex
   alignChildrenVertical="middle"
   direction="vertical"
-  gap="x10"
   grow={true}
+  paddingVertical="x10"
 >
   <Status404 />
   <Text
@@ -72,24 +72,98 @@ exports[`Error404 renders ok on mobile 1`] = `
     <Button
       Component="a"
       href="https://app.bitrise.io/dashboard/apps"
-      level="splash"
-      size="large"
+      level="light"
+      size="small"
     >
-      Dashboard
+      Bitrise Dashboard
     </Button>
     <Button
       Component="a"
       href="https://devcenter.bitrise.io/tips-and-tricks/tips-and-tricks-index/"
-      level="splash"
-      size="large"
+      level="light"
+      size="small"
     >
       Learn Bitrise Tricks
     </Button>
     <Button
       Component="a"
       href="https://careers.bitrise.io/"
+      level="light"
+      size="small"
+    >
+      Check Open Positions
+    </Button>
+  </Buttons>
+</Flex>
+`;
+
+exports[`Error404 with app slug 1`] = `
+<Flex
+  alignChildrenVertical="middle"
+  direction="vertical"
+  grow={true}
+  paddingVertical="x10"
+>
+  <Status404 />
+  <Flex
+    alignChildren="middle"
+    direction="horizontal"
+    style={
+      Object {
+        "marginTop": -100,
+      }
+    }
+  >
+    <Button
+      Component="a"
+      gap="x2"
+      href="https://app.bitrise.io/app/an-app-slug/addon/addons-ship/login_page"
       level="splash"
       size="large"
+    >
+      <Icon
+        name="Ship"
+        size="1.5rem"
+      />
+      <Text>
+        Reauthenticate
+      </Text>
+    </Button>
+  </Flex>
+  <Text
+    align="middle"
+    config="5"
+    margin="x8"
+  >
+    Do you prefer the deep unkown, or looking for something else?
+  </Text>
+  <Buttons
+    alignChildren="middle"
+    fullWidth={false}
+    gap="x6"
+    paddingHorizontal="x10"
+  >
+    <Button
+      Component="a"
+      href="https://app.bitrise.io/dashboard/apps"
+      level="light"
+      size="small"
+    >
+      Bitrise Dashboard
+    </Button>
+    <Button
+      Component="a"
+      href="https://devcenter.bitrise.io/tips-and-tricks/tips-and-tricks-index/"
+      level="light"
+      size="small"
+    >
+      Learn Bitrise Tricks
+    </Button>
+    <Button
+      Component="a"
+      href="https://careers.bitrise.io/"
+      level="light"
+      size="small"
     >
       Check Open Positions
     </Button>
