@@ -10,6 +10,11 @@ import reducer, { fetchApp, selectPlatform } from '.';
 
 describe('app', () => {
   let mockStore: MockStoreCreator;
+
+  beforeAll(() => {
+    global.Math.random = () => 0.5;
+  });
+
   beforeEach(() => {
     mockStore = configureMockStore([thunk.withExtraArgument({ shipApi })]);
   });
