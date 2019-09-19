@@ -106,7 +106,7 @@ export class ShipApp extends App<ShipAppProps> {
   }
 
   render() {
-    const { Component, pageProps, store, settingsOnboardingSeen } = this.props;
+    const { Component, pageProps, store, settingsOnboardingSeen, appSlug } = this.props;
     const { ready } = this.state;
 
     if (!ready) {
@@ -120,7 +120,7 @@ export class ShipApp extends App<ShipAppProps> {
     return (
       <Container>
         <Provider store={store}>
-          <AppContent>
+          <AppContent appSlug={appSlug}>
             <Header shouldShowSettingsOnboarding={!settingsOnboardingSeen} />
             <Component {...pageProps} />
           </AppContent>
