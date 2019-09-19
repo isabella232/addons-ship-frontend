@@ -344,7 +344,16 @@ export default ({
                   </InputContainer>
                 </Flex>
                 <Flex>
-                  <InputLabel margin="x1">Module</InputLabel>
+                  <Flex direction="horizontal" gap="x1" margin="x1">
+                    <InputLabel margin="x1">Module</InputLabel>
+                    {hasMounted && (
+                      <Tooltip title="Add module name if your Android app contains multiple modules.">
+                        {({ ref, ...rest }) => (
+                          <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                        )}
+                      </Tooltip>
+                    )}
+                  </Flex>
                   <InputContainer>
                     <InputContent>
                       <Input
