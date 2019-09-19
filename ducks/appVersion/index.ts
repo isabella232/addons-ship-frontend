@@ -48,7 +48,7 @@ const reduceAppVersion = ({ appVersion, ...state }: DeepImmutableObject<AppVersi
   appVersion: {
     ...appVersion,
     ...payload,
-    iconUrl: (appVersion && appVersion.iconUrl) || payload.iconUrl || placeholderAppIcon
+    iconUrl: `${(appVersion && appVersion.iconUrl) || payload.iconUrl || placeholderAppIcon}?${Math.random()}`
   }
 });
 export default createReducer(defaultState, handleAction => [

@@ -40,7 +40,8 @@ export type AppState = { app: App | null; selectedPlatform?: Platform };
 export default createReducer(defaultState, handleAction => [
   handleAction(fetchApp.complete, (state, { payload }) => {
     if (payload) {
-      const avatarUrl = payload.avatarUrl || placeholderAppIcon;
+      const avatarUrl = `${payload.avatarUrl || placeholderAppIcon}?${Math.random()}`;
+
       const { androidErrors, iosErrors } = payload;
       return {
         ...state,

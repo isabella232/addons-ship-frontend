@@ -26,6 +26,11 @@ import reducer, {
 
 describe('appVersion', () => {
   let mockStore: MockStoreCreator, store: MockStoreEnhanced;
+
+  beforeAll(() => {
+    global.Math.random = () => 0.5;
+  });
+
   beforeEach(() => {
     mockStore = configureMockStore([thunk.withExtraArgument({ shipApi: api })]);
     store = mockStore();
