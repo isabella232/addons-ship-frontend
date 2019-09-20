@@ -3,7 +3,7 @@ export type App = {
   plan: string;
   title: string;
   avatarUrl: string;
-  projectType: string;
+  projectType: ProjectType;
   androidErrors: string[];
   iosErrors: string[];
   colors?: {
@@ -11,3 +11,15 @@ export type App = {
     end?: string;
   };
 };
+
+export type ProjectType =
+  | 'xamarin'
+  | 'ios'
+  | 'osx'
+  | 'macos'
+  | 'android'
+  | 'cordova'
+  | 'ionic'
+  | 'react-native'
+  | 'flutter'
+  | 'other';

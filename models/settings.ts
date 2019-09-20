@@ -1,3 +1,5 @@
+import { ProjectType } from './app';
+
 export const AppSettingsPageTabs = ['general', 'notifications'];
 
 export type AppSettingsPageQuery = {
@@ -36,17 +38,7 @@ export type Settings = {
   certificates?: Certificate[];
   keystoreFiles?: KeystoreFile[];
   serviceAccountJsonFiles?: ServiceAccountJsonFile[];
-  projectType?:
-    | 'xamarin'
-    | 'ios'
-    | 'osx'
-    | 'macos'
-    | 'android'
-    | 'cordova'
-    | 'ionic'
-    | 'react-native'
-    | 'flutter'
-    | 'other';
+  projectType?: ProjectType;
 };
 
 export type AppContact = {
