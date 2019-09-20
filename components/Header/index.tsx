@@ -28,6 +28,7 @@ import { mediaQuery } from '@/utils/media';
 
 import css from './style.scss';
 import PageTitle from './PageTitle';
+import BetaBadge from './BetaBadge';
 
 export type Props = {
   app?: App;
@@ -71,13 +72,14 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
         <Flex>
           <Icon name="Ship" />
         </Flex>
-        <Flex>
+        <Flex direction="horizontal" alignChildrenVertical="middle" gap="x1">
           <Text size="x3">
             <Text inline weight="bold">
               Ship
             </Text>{' '}
             by Bitrise
           </Text>
+          <BetaBadge />
         </Flex>
       </Flex>
     );
@@ -111,7 +113,7 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
   }
 
   return (
-    <Base className={css.navbar}>
+    <Base className={css.navbar} container>
       <PlacementManager>
         <AddonBeam
           addonIcon="Ship"
@@ -124,6 +126,7 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
           isInResponsiveView={!isDesktop}
           onHamburgerIconClick={() => setHamburgerIconActive(!isHamburgerIconActive)}
           isHamburgerIconActive={isHamburgerIconActive}
+          container
         >
           <PlacementReference>
             {({ ref }) => (
@@ -162,6 +165,9 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
               </PlacementArea>
             )}
           </Placement>
+          <Flex direction="horizontal" className={css.betaBadgeContainer}>
+            <BetaBadge />
+          </Flex>
         </AddonBeam>
       </PlacementManager>
 
@@ -225,6 +231,11 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
         </Link>
         <Base paddingVertical="x12" />
       </Flex>
+      {!isDesktop && (
+        <Flex className={css.mobileBetaBadgeContainer} direction="vertical" alignChildren="middle">
+          <BetaBadge style={{ marginRight: -190 }} />
+        </Flex>
+      )}
     </Base>
   );
 };
