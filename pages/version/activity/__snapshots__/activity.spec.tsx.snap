@@ -139,22 +139,20 @@ exports[`ActivityView when a test failed with logs available renders entry with 
                 </Flex>
               </Base>
             </Base>
-            <a
+            <Button
+              Component="a"
+              disabled={false}
               href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+              level="secondary"
+              size="small"
             >
-              <Button
-                disabled={false}
-                level="secondary"
-                size="small"
-              >
-                <Icon
-                  color="grape-4"
-                  name="Download"
-                  size="1.5rem"
-                />
-                Download Build Log
-              </Button>
-            </a>
+              <Icon
+                color="grape-4"
+                name="Download"
+                size="1.5rem"
+              />
+              Download Build Log
+            </Button>
           </Flex>
         </TableCell>
       </TableRow>
@@ -221,6 +219,7 @@ exports[`ActivityView when a test failed with logs not available yet renders ent
               </Base>
             </Base>
             <Button
+              Component="button"
               disabled={true}
               level="secondary"
               size="small"
@@ -491,22 +490,20 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
         <TableCell
           shrink={true}
         >
-          <a
+          <Button
+            Component="a"
+            disabled={false}
             href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+            level="secondary"
+            size="small"
           >
-            <Button
-              disabled={false}
-              level="secondary"
-              size="small"
-            >
-              <Icon
-                color="grape-4"
-                name="Download"
-                size="1.5rem"
-              />
-              Download Build Log
-            </Button>
-          </a>
+            <Icon
+              color="grape-4"
+              name="Download"
+              size="1.5rem"
+            />
+            Download Build Log
+          </Button>
         </TableCell>
       </TableRow>
     </TableBody>
@@ -635,22 +632,20 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
         <TableCell
           shrink={true}
         >
-          <a
+          <Button
+            Component="a"
+            disabled={false}
             href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+            level="secondary"
+            size="small"
           >
-            <Button
-              disabled={false}
-              level="secondary"
-              size="small"
-            >
-              <Icon
-                color="grape-4"
-                name="Download"
-                size="1.5rem"
-              />
-              Download Build Log
-            </Button>
-          </a>
+            <Icon
+              color="grape-4"
+              name="Download"
+              size="1.5rem"
+            />
+            Download Build Log
+          </Button>
         </TableCell>
       </TableRow>
     </TableBody>
@@ -819,22 +814,20 @@ exports[`ActivityView when viewed on mobile renders the activity view correctly 
                 </Flex>
               </Base>
             </Base>
-            <a
+            <Button
+              Component="a"
+              disabled={false}
               href="https://www.bitrise.io/assets/svg/logo-bitrise.svg"
+              level="secondary"
+              size="small"
             >
-              <Button
-                disabled={false}
-                level="secondary"
-                size="small"
-              >
-                <Icon
-                  color="grape-4"
-                  name="Download"
-                  size="1.5rem"
-                />
-                Download Build Log
-              </Button>
-            </a>
+              <Icon
+                color="grape-4"
+                name="Download"
+                size="1.5rem"
+              />
+              Download Build Log
+            </Button>
           </Flex>
         </TableCell>
       </TableRow>

@@ -53,15 +53,18 @@ const textWithIcon = (status: AppVersionEvent['status'], message: string) => {
 const DownloadBuildLogButton = (
   appVersionEventIsLogAvailable: boolean = false,
   appVersionEventLogDownloadUrl: string
-) => {
-  const DownloadButton = (isEnabled: boolean) => (
-    <Button level="secondary" size="small" disabled={!isEnabled}>
-      <Icon name="Download" color="grape-4" />
-      Download Build Log
-    </Button>
-  );
-  return appVersionEventIsLogAvailable ? <a href={appVersionEventLogDownloadUrl}>{DownloadButton(true)}</a> : DownloadButton(false);
-};
+) => (
+  <Button
+    Component={appVersionEventIsLogAvailable ? 'a' : 'button'}
+    href={appVersionEventIsLogAvailable ? appVersionEventLogDownloadUrl : undefined}
+    level="secondary"
+    size="small"
+    disabled={!appVersionEventIsLogAvailable}
+  >
+    <Icon name="Download" color="grape-4" />
+    Download Build Log
+  </Button>
+);
 
 export default ({ appVersionEvents, isLoading }: Props) => {
   const [isTablet] = mediaQuery('30rem');
