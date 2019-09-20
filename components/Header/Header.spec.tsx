@@ -35,6 +35,7 @@ import { mediaQuery } from '@/utils/media';
 import { mockApp, mockAppVersion } from '@/mocks';
 
 import { Header, Props } from '.';
+import BetaBadge from './BetaBadge';
 
 describe('Header', () => {
   const defaultProps: Props = { app: mockApp, appVersion: mockAppVersion, shouldShowSettingsOnboarding: false };
@@ -154,5 +155,10 @@ describe('Header', () => {
 
       expect(setSettingsOnboardingNotificationVisible).toHaveBeenCalledWith(false);
     });
+  });
+
+  test('BetaBadge', () => {
+    const tree = shallowToJson(shallow(<BetaBadge />));
+    expect(tree).toMatchSnapshot();
   });
 });

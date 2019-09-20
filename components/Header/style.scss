@@ -42,3 +42,17 @@
 .settingsOnboardingNotification {
   width: 150 * $grid;
 }
+
+.betaBadgeContainer {
+  position: absolute;
+  left: 37 * $grid;
+}
+.mobileBetaBadgeContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $beam-height;
+  z-index: 100;
+  pointer-events: none;
+}
