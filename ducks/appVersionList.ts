@@ -4,7 +4,6 @@ import { createAction, createReducer } from 'deox';
 import { actionTypeCreator } from '@/utils';
 import { AppVersion } from '@/models';
 import { ShipAPIService } from '@/services/ship-api';
-import { placeholderAppIcon } from '@/config';
 
 const $ = actionTypeCreator('APP_VERSION_LIST');
 
@@ -35,7 +34,5 @@ const defaultState = null as AppVersionListState;
 
 export type AppVersionListState = null | AppVersion[];
 export const appVersionList = createReducer(defaultState, handleAction => [
-  handleAction(fetchAppVersionList.complete, (_, { payload }) =>
-    payload.map(({ iconUrl, ...v }) => ({ ...v, iconUrl: iconUrl || placeholderAppIcon }))
-  )
+  handleAction(fetchAppVersionList.complete, (_, { payload }) => payload)
 ]);

@@ -36,6 +36,7 @@ export type Props = {
   isSaving: boolean;
   appVersion: AppVersion | null;
   settings: Settings;
+  iconUrl: string;
   appVersionEvents: AppVersionEvent[];
   updateAppVersion: typeof updateAppVersion;
   uploadScreenshots: typeof uploadScreenshots;
@@ -440,7 +441,7 @@ export class AppVersionDetails extends Component<Props, State> {
       featureGraphic,
       isPublishInProgress
     } = this.state;
-    const { versionId, appVersion, isSaving, appVersionEvents } = this.props;
+    const { versionId, appVersion, isSaving, appVersionEvents, iconUrl } = this.props;
 
     if (!appVersion || versionId !== appVersion.id || !hasMounted) {
       return (
@@ -453,6 +454,7 @@ export class AppVersionDetails extends Component<Props, State> {
     const latestEventStatus = appVersionEvents.length > 0 ? appVersionEvents[0].status : null;
 
     const viewProps = {
+      iconUrl,
       appVersion,
       hasMounted,
       isSaving,
@@ -492,8 +494,13 @@ export class AppVersionDetails extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ appVersion: { appVersion, events, isSaving }, settings: { settings } }: RootState) => ({
+const mapStateToProps = ({
+  app: { app },
+  appVersion: { appVersion, events, isSaving },
+  settings: { settings }
+}: RootState) => ({
   appVersion,
+  iconUrl: app!.avatarUrl,
   settings,
   appVersionEvents: orderedAppVersionEvents(events),
   isSaving: isSaving > 0

@@ -15,7 +15,20 @@ export const analyticsConfig = {
   segmentWriteKey: SEGMENT_WRITE_KEY
 };
 
-export const placeholderAppIcon =
-  'https://bitrise-addons-ship-backend.s3-us-west-2.amazonaws.com/assets/icons/placeholder-512.jpg';
+const placeholderIconBaseUrl = 'https://bitrise-public-content-production.s3.amazonaws.com/addons/default-app-icon';
+export const placeholderIcons = {
+  ios: `${placeholderIconBaseUrl}-ios.png`,
+  android: `${placeholderIconBaseUrl}-android.png`,
+  cordova: `${placeholderIconBaseUrl}-cordova.png`,
+  fastlane: `${placeholderIconBaseUrl}-fastlane.png`,
+  flutter: `${placeholderIconBaseUrl}-flutter.png`,
+  go: `${placeholderIconBaseUrl}-go.png`,
+  ionic: `${placeholderIconBaseUrl}-ionic.png`,
+  macos: `${placeholderIconBaseUrl}-macos.png`,
+  nodejs: `${placeholderIconBaseUrl}-nodejs.png`,
+  react: `${placeholderIconBaseUrl}-react.png`,
+  xamarin: `${placeholderIconBaseUrl}-xamarin.png`,
+  other: 'https://bitrise-public-content-production.s3.amazonaws.com/addons-ship/default-app-icon-other.png'
+};
 
 export const emailMaxLength = 254;

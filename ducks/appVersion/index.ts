@@ -1,7 +1,6 @@
 import { createReducer } from 'deox';
 import { DeepImmutableObject } from 'deox/dist/types';
 
-import { placeholderAppIcon } from '@/config';
 import { AppVersion, AppVersionEvent } from '@/models';
 
 import fetchAppVersion from './fetchAppVersion';
@@ -47,8 +46,7 @@ const reduceAppVersion = ({ appVersion, ...state }: DeepImmutableObject<AppVersi
   ...state,
   appVersion: {
     ...appVersion,
-    ...payload,
-    iconUrl: `${(appVersion && appVersion.iconUrl) || payload.iconUrl || placeholderAppIcon}?${Math.random()}`
+    ...payload
   }
 });
 export default createReducer(defaultState, handleAction => [

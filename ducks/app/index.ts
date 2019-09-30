@@ -3,11 +3,11 @@ import { createAction, createReducer } from 'deox';
 
 import { ShipAPIService } from '@/services/ship-api';
 import { App } from '@/models/app';
-import { placeholderAppIcon } from '@/config';
 import { Platform } from '@/models';
 
 import { $ } from './common';
 import { selectPlatform } from './selectPlatform';
+import { getIcon } from '@/utils/placeholder-icon';
 
 const _fetchApp = (appSlug: string) => async (
   dispatch: Dispatch,
@@ -40,7 +40,7 @@ export type AppState = { app: App | null; selectedPlatform?: Platform };
 export default createReducer(defaultState, handleAction => [
   handleAction(fetchApp.complete, (state, { payload }) => {
     if (payload) {
-      const avatarUrl = `${payload.avatarUrl || placeholderAppIcon}?${Math.random()}`;
+      const avatarUrl = getIcon(payload.avatarUrl, payload.projectType);
 
       const { androidErrors, iosErrors } = payload;
       return {

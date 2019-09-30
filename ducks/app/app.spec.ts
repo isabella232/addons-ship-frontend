@@ -1,4 +1,7 @@
 jest.mock('@/services/ship-api');
+jest.mock('@/utils/placeholder-icon', () => ({
+  getIcon: () => 'icon.url'
+}));
 
 import configureMockStore, { MockStoreCreator, MockStoreEnhanced } from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -10,10 +13,6 @@ import reducer, { fetchApp, selectPlatform } from '.';
 
 describe('app', () => {
   let mockStore: MockStoreCreator;
-
-  beforeAll(() => {
-    global.Math.random = () => 0.5;
-  });
 
   beforeEach(() => {
     mockStore = configureMockStore([thunk.withExtraArgument({ shipApi })]);

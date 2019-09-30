@@ -125,7 +125,7 @@ Object {
     "buildSlug": "13245ads",
     "bundleId": "bundle-id",
     "description": "Some semi-long description",
-    "iconUrl": "http://placekitten.com/160/160?0.5",
+    "iconUrl": "http://placekitten.com/160/160",
     "id": "123",
     "ipaExportMethod": "development",
     "keywords": "Keywords",
