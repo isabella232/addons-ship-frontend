@@ -139,6 +139,7 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
       }
 
       const viewProps = {
+        iconUrl: app!.avatarUrl,
         isCrossPlatform,
         latestAppVersion,
         versionSortingOptions: this.versionSortingOptions,

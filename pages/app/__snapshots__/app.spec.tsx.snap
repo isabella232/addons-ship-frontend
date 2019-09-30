@@ -25,6 +25,7 @@ Object {
       "groupName": "undefined",
     },
   ],
+  "iconUrl": "https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png",
   "isCrossPlatform": false,
   "latestAppVersion": Object {
     "id": "v4",
@@ -250,6 +251,7 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
         },
       ]
     }
+    iconUrl="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
     isCrossPlatform={false}
     latestAppVersion={
       Object {
@@ -503,6 +505,7 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
         },
       ]
     }
+    iconUrl="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
     isCrossPlatform={false}
     latestAppVersion={
       Object {
@@ -732,6 +735,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
         },
       ]
     }
+    iconUrl="https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png"
     isCrossPlatform={false}
     latestAppVersion={
       Object {
@@ -811,7 +815,7 @@ exports[`AppPageView when page has apps product flavours desktop 1`] = `
       <_default
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"
-        iconUrl="http://placekitten.com/160/160"
+        iconUrl="some-icon.url"
         note="Updated on September 22, 12:42"
         title="(32) v1.0.3 Standup Timer"
       />
@@ -961,7 +965,7 @@ exports[`AppPageView when page has apps product flavours mobile 1`] = `
       <_default
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"
-        iconUrl="http://placekitten.com/160/160"
+        iconUrl="some-icon.url"
         note="Sep 22, 12:42"
         title="(32) v1.0.3 Standup Timer"
       />
@@ -1111,7 +1115,7 @@ exports[`AppPageView when page has apps product flavours tablet 1`] = `
       <_default
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"
-        iconUrl="http://placekitten.com/160/160"
+        iconUrl="some-icon.url"
         note="Updated on September 22, 12:42"
         title="(32) v1.0.3 Standup Timer"
       />
@@ -1261,7 +1265,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
       <_default
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"
-        iconUrl="http://placekitten.com/160/160"
+        iconUrl="some-icon.url"
         note="Updated on September 22, 12:42"
         title="(32) v1.0.3 Standup Timer"
       />
@@ -1403,7 +1407,7 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
       <_default
         detailsPagePath="/apps/undefined/versions/123/details"
         detailsPagePathHref="/version?appSlug=undefined&versionId=123"
-        iconUrl="http://placekitten.com/160/160"
+        iconUrl="some-icon.url"
         note="Updated on September 22, 12:42"
         title="(32) v1.0.3 Standup Timer"
       />

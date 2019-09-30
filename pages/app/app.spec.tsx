@@ -17,6 +17,7 @@ describe('AppPageView', () => {
 
   describe('when page has apps', () => {
     const defaultProps: ViewProps = {
+      iconUrl: 'some-icon.url',
       latestAppVersion: {
         id: mockAppVersion.id,
         appName: mockAppVersion.appName,

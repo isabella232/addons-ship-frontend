@@ -34,6 +34,7 @@ type DeviceInfo = {
 };
 
 export type Props = {
+  iconUrl: string;
   appVersion: AppVersion;
   hasMounted: boolean;
   selectedDeviceIdForScreenshots: string;
@@ -122,6 +123,7 @@ const publishNotification = (
 };
 
 export default ({
+  iconUrl,
   appVersion,
   hasMounted,
   selectedDeviceIdForScreenshots: deviceId,
@@ -183,7 +185,7 @@ export default ({
               gap="x6"
               alignChildrenHorizontal={isTablet ? 'start' : 'middle'}
             >
-              <Squircle src={appVersion.iconUrl} borderRadius="x2" width="160px" margin="x0" />
+              <Squircle src={iconUrl} borderRadius="x2" width="160px" margin="x0" />
 
               <Flex
                 direction="vertical"

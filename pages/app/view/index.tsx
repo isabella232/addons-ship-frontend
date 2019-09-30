@@ -16,6 +16,7 @@ const { sizeX2 } = variables;
 
 export type Props = {
   latestAppVersion: AppVersion;
+  iconUrl: string;
   versionSortingOptions: Array<{
     text: string;
     value: string;
@@ -41,6 +42,7 @@ export type Props = {
 };
 
 export default ({
+  iconUrl,
   latestAppVersion,
   versionSortingOptions,
   versionSortOptionWithValueSelected,
@@ -95,7 +97,7 @@ export default ({
                 ? `Updated on ${formatDate(latestAppVersion.lastUpdate, 'MMMM D, HH:mm')}`
                 : formatDate(latestAppVersion.lastUpdate, 'MMM D, HH:mm')
             }
-            iconUrl={latestAppVersion.iconUrl}
+            iconUrl={iconUrl}
             platform={latestAppVersion.platform}
             startColor={startColor}
             endColor={endColor}
