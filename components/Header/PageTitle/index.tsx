@@ -49,15 +49,9 @@ export default ({ type, title }: Props) => {
   }
 
   return (
-    <Flex
-      direction="horizontal"
-      alignChildrenVertical="middle"
-      paddingHorizontal={isDesktop ? 'x0' : 'x4'}
-      gap="x2"
-      color="white"
-    >
+    <Flex direction="horizontal" alignChildrenVertical="middle" gap="x2" color="white">
       <Icon name={iconName} size="2rem" />
-      <Text size={isDesktop ? "x6" : "x5"} weight="bold" breakOn={isTablet ? 'all' : 'word'}>
+      <Text size={isDesktop ? 'x6' : 'x5'} weight="bold" breakOn={isTablet ? 'all' : 'word'} ellipsis>
         {title}
       </Text>
     </Flex>
