@@ -15,7 +15,7 @@ export default ({ tabs, selectedTab, linkAsPrefix, linkHrefPrefix }: Props) => {
   const [isTablet] = mediaQuery('30rem');
 
   return (
-    <Tabs gap={isTablet ? 'x4' : 'x0'} paddingHorizontal={isTablet ? 'x4' : 'x0'}>
+    <Tabs gap={isTablet ? 'x4' : 'x0'} paddingHorizontal="x4">
       {tabs.map(({ label, showBadge = false }, idx) => (
         <Link as={`${linkAsPrefix}${label}`} href={`${linkHrefPrefix}${label}`} key={idx}>
           <a>
