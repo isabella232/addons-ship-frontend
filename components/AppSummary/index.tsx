@@ -87,7 +87,7 @@ export default ({
                 direction="horizontal"
                 alignChildren="middle"
                 alignChildrenHorizontal={isTablet ? 'start' : 'middle'}
-                gap="x2"
+                gap={isTablet ? 'x2' : 'x0'}
                 maxWidth="100%"
                 paddingVertical={isTablet ? 'x0' : 'x4'}
               >
