@@ -56,7 +56,7 @@ export default createReducer(defaultState, handleAction => [
     isSaving: state.isSaving - 1
   })),
   handleAction(publishAppVersion.next, state => ({ ...state, isPublishInProgress: true })),
-  handleAction([publishAppVersion.complete, publishAppVersion.error], state => ({
+  handleAction([publishAppVersion.error], state => ({
     ...state,
     isPublishInProgress: false
   })),
