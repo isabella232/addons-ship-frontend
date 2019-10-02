@@ -23,6 +23,7 @@ exports[`VersionListPageItem renders correctly 1`] = `
             alignChildrenVertical="middle"
             direction="horizontal"
             grow={true}
+            maxWidth="100%"
           >
             <Base
               className="platformIconWrapper"
@@ -38,11 +39,13 @@ exports[`VersionListPageItem renders correctly 1`] = `
               direction="horizontal"
               gap="x3"
               grow={true}
+              maxWidth="calc(100% - 1.5rem)"
             >
               <Text
                 className="title"
                 color="grape-4"
                 config="5"
+                ellipsis={true}
               >
                 My app v1.1.0 (28)
               </Text>
@@ -122,6 +125,7 @@ exports[`VersionListPageItem renders correctly for android 1`] = `
             alignChildrenVertical="middle"
             direction="horizontal"
             grow={true}
+            maxWidth="100%"
           >
             <Base
               className="platformIconWrapper"
@@ -137,11 +141,13 @@ exports[`VersionListPageItem renders correctly for android 1`] = `
               direction="horizontal"
               gap="x3"
               grow={true}
+              maxWidth="calc(100% - 1.5rem)"
             >
               <Text
                 className="title"
                 color="grape-4"
                 config="5"
+                ellipsis={true}
               >
                 My app v1.1.0 (28)
               </Text>
@@ -230,6 +236,7 @@ exports[`VersionListPageItem shows more description 1`] = `
             alignChildrenVertical="middle"
             direction="horizontal"
             grow={true}
+            maxWidth="100%"
           >
             <Base
               className="platformIconWrapper"
@@ -245,11 +252,13 @@ exports[`VersionListPageItem shows more description 1`] = `
               direction="horizontal"
               gap="x3"
               grow={true}
+              maxWidth="calc(100% - 1.5rem)"
             >
               <Text
                 className="title"
                 color="grape-4"
                 config="5"
+                ellipsis={true}
               >
                 My app v1.1.0 (28)
               </Text>
