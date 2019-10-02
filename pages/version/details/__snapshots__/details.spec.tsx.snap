@@ -1207,12 +1207,13 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -1221,12 +1222,13 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -1241,7 +1243,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -4745,12 +4747,13 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -4759,12 +4762,13 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -4779,7 +4783,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -8295,12 +8299,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -8309,12 +8314,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -8329,7 +8335,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -12432,12 +12438,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -12446,12 +12453,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -12466,7 +12474,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -16515,12 +16523,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -16529,12 +16538,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -16549,7 +16559,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -20652,12 +20662,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -20666,12 +20677,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -20686,7 +20698,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -24735,12 +24747,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -24749,12 +24762,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -24769,7 +24783,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -28910,12 +28924,13 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -28924,12 +28939,13 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -28944,7 +28960,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -33047,12 +33063,13 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -33061,12 +33078,13 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -33081,7 +33099,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -37354,12 +37372,13 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -37368,12 +37387,13 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -37388,7 +37408,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -41483,12 +41503,13 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -41497,12 +41518,13 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -41517,7 +41539,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -45612,12 +45634,13 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -45626,12 +45649,13 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -45646,7 +45670,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -49148,12 +49172,13 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -49162,12 +49187,13 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -49182,7 +49208,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }

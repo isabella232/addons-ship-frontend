@@ -28,12 +28,13 @@ exports[`Squircle renders without issues 1`] = `
     </defs>
   </svg>
   <Image
+    innerRef={[Function]}
     maxWidth="none"
     src="img.url"
     style={
       Object {
         "clipPath": "url(#squircle-0.02)",
-        "objectFit": "covver",
+        "objectFit": "cover",
       }
     }
   />
