@@ -32,3 +32,12 @@
 .platformIcon {
   padding-bottom: 2px;
 }
+
+:global(.Modal) {
+  z-index: 1000;
+  padding: $grid * 4;
+
+  :global(.Modal__content) {
+    padding: $grid * 4;
+  }
+}
