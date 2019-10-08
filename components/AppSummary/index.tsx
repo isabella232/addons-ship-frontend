@@ -18,7 +18,7 @@ interface AppSummaryProps {
   iconUrl: string;
   startColor?: string;
   endColor?: string;
-  productFlavour?: string;
+  productFlavor?: string;
 }
 
 export default ({
@@ -31,7 +31,7 @@ export default ({
   iconUrl,
   startColor,
   endColor,
-  productFlavour
+  productFlavor
 }: AppSummaryProps) => {
   const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
 
@@ -100,12 +100,12 @@ export default ({
                 <Text config="4" color="grape-4" ellipsis align={isTablet ? 'start' : 'middle'}>
                   {title}
                 </Text>
-                {productFlavour && isDesktop && <MagicTag selected>{productFlavour}</MagicTag>}
+                {productFlavor && isDesktop && <MagicTag selected>{productFlavor}</MagicTag>}
               </Flex>
             </Flex>
-            {productFlavour && !isDesktop && (
+            {productFlavor && !isDesktop && (
               <Flex>
-                <MagicTag selected>{productFlavour}</MagicTag>
+                <MagicTag selected>{productFlavor}</MagicTag>
               </Flex>
             )}
             {description && (

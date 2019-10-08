@@ -30,7 +30,8 @@ export const mockAppVersions: AppVersion[] = [
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
-    screenshotDatas: []
+    screenshotDatas: [],
+    commitMessage: ''
   },
   {
     id: '456',
@@ -57,7 +58,8 @@ export const mockAppVersions: AppVersion[] = [
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
-    screenshotDatas: []
+    screenshotDatas: [],
+    commitMessage: ''
   },
   {
     id: '789',
@@ -84,7 +86,8 @@ export const mockAppVersions: AppVersion[] = [
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
-    screenshotDatas: []
+    screenshotDatas: [],
+    commitMessage: ''
   },
   {
     id: '135',
@@ -111,7 +114,8 @@ export const mockAppVersions: AppVersion[] = [
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
-    screenshotDatas: []
+    screenshotDatas: [],
+    commitMessage: ''
   },
   {
     id: '246',
@@ -138,7 +142,8 @@ export const mockAppVersions: AppVersion[] = [
     marketingUrl: 'https://bitrise.io/marketing',
     scheme: 'piramid',
     publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
-    screenshotDatas: []
+    screenshotDatas: [],
+    commitMessage: ''
   }
 ];
 
@@ -168,7 +173,8 @@ export const mockAppVersionWithoutPublicPage: AppVersion = {
   marketingUrl: 'https://bitrise.io/marketing',
   scheme: 'piramid',
   publicInstallPageURL: undefined,
-  screenshotDatas: []
+  screenshotDatas: [],
+  commitMessage: ''
 };
 
 export const mockAndroidAppVersion: AppVersion = {
@@ -191,12 +197,13 @@ export const mockAndroidAppVersion: AppVersion = {
   supportUrl: 'https://bitrise.io/support',
   marketingUrl: 'https://bitrise.io/marketing',
   module: 'Celeste-config',
-  productFlavour: 'Fennek',
+  productFlavor: 'Fennek',
   buildType: 'Celeste-config',
   split: true,
   universalAvailable: true,
   publicInstallPageURL: 'https://bitrise.io/app/8b334705d8e78276',
-  screenshotDatas: []
+  screenshotDatas: [],
+  commitMessage: ''
 };
 
 export const mockTestDevices: TestDevice[] = [
@@ -292,7 +299,9 @@ export const mockApp: App = {
   avatarUrl:
     'https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png',
   plan: 'gold',
-  projectType: 'other'
+  projectType: 'other',
+  androidErrors: [],
+  iosErrors: []
 };
 
 export const mockUploadedScreenshotResponse: ScreenshotResponse = {

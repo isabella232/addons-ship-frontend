@@ -12,7 +12,7 @@ import {
   isCrossPlatform,
   getPlatformAppVersionsByVersion,
   getPlatformAppVersionsByBuildNumber,
-  getVersionFlavours
+  getVersionFlavors
 } from '@/ducks/selectors';
 import EmptyPage from '@/components/EmptyPage';
 import ShipHead from '@/components/ShipHead';
@@ -36,12 +36,12 @@ export interface AppPageProps extends AppPageQuery {
   isCrossPlatform: boolean;
   selectedPlatform?: Platform;
   selectPlatform: typeof selectPlatform;
-  productFlavours: string[];
+  productFlavors: string[];
 }
 
 type AppPageState = {
   selectedVersionSortingOptionValue: 'latest-build' | 'latest-version';
-  selectedProductFlavour?: string;
+  selectedProductFlavor?: string;
 };
 
 export class AppPage extends Component<AppPageProps, AppPageState> {
@@ -74,8 +74,8 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
     });
   };
 
-  selectProductFlavour = (flavour: string) => {
-    this.setState({ selectedProductFlavour: flavour });
+  selectProductFlavor = (flavor: string) => {
+    this.setState({ selectedProductFlavor: flavor });
   };
 
   render() {
@@ -87,7 +87,7 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
       selectedPlatform,
       isCrossPlatform,
       selectPlatform,
-      productFlavours
+      productFlavors
     } = this.props;
     const { selectedVersionSortingOptionValue } = this.state;
 
@@ -109,21 +109,21 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
         ({ start: startColor, end: endColor } = app.colors);
       }
 
-      const showProductFlavours = latestAppVersion.platform === 'android';
-      let selectedProductFlavour: string | undefined;
+      const showProductFlavors = latestAppVersion.platform === 'android';
+      let selectedProductFlavor: string | undefined;
 
-      if (showProductFlavours) {
-        selectedProductFlavour = this.state.selectedProductFlavour;
-        if (!selectedProductFlavour && productFlavours.length > 0) {
-          selectedProductFlavour = productFlavours[0];
+      if (showProductFlavors) {
+        selectedProductFlavor = this.state.selectedProductFlavor;
+        if (!selectedProductFlavor && productFlavors.length > 0) {
+          selectedProductFlavor = productFlavors[0];
         }
       }
 
-      if (selectedProductFlavour) {
+      if (selectedProductFlavor) {
         groupedAppVersionList = groupedAppVersionList
           .map(({ appVersions, groupName }) => ({
             groupName,
-            appVersions: appVersions.filter(({ productFlavour }) => productFlavour === selectedProductFlavour)
+            appVersions: appVersions.filter(({ productFlavor }) => productFlavor === selectedProductFlavor)
           }))
           .filter(({ appVersions }) => appVersions.length);
 
@@ -152,9 +152,9 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
         onSelectPlatform: selectPlatform,
         startColor,
         endColor,
-        productFlavours: showProductFlavours ? productFlavours : [],
-        selectedProductFlavour,
-        selectProductFalvour: this.selectProductFlavour,
+        productFlavors: showProductFlavors ? productFlavors : [],
+        selectedProductFlavor,
+        selectProductFalvour: this.selectProductFlavor,
         warnings
       };
       content = <View {...viewProps} />;
@@ -183,7 +183,7 @@ const mapStateToProps = (rootState: RootState) => {
       : getAppVersionsByBuildNumber(rootState),
     isCrossPlatform: _isCrossPlatform,
     selectedPlatform: rootState.app.selectedPlatform,
-    productFlavours: getVersionFlavours(rootState)
+    productFlavors: getVersionFlavors(rootState)
   };
 };
 
