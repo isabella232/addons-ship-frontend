@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppPage A prodcutFlavour is selected 1`] = `
+exports[`AppPage A prodcutFlavor is selected 1`] = `
 Object {
   "endColor": undefined,
   "groupedAppVersionList": Array [
@@ -9,17 +9,17 @@ Object {
         Object {
           "id": "v4",
           "platform": "android",
-          "productFlavour": "f2",
+          "productFlavor": "f2",
         },
         Object {
           "id": "v5",
           "platform": "android",
-          "productFlavour": "f2",
+          "productFlavor": "f2",
         },
         Object {
           "id": "v6",
           "platform": "android",
-          "productFlavour": "f2",
+          "productFlavor": "f2",
         },
       ],
       "groupName": "undefined",
@@ -30,13 +30,13 @@ Object {
   "latestAppVersion": Object {
     "id": "v4",
     "platform": "android",
-    "productFlavour": "f2",
+    "productFlavor": "f2",
   },
   "onSelectPlatform": [MockFunction],
-  "productFlavours": Array [],
+  "productFlavors": Array [],
   "selectProductFalvour": [Function],
   "selectedPlatform": undefined,
-  "selectedProductFlavour": "f2",
+  "selectedProductFlavor": "f2",
   "selectedVersionSortingOption": Object {
     "text": "Latest Build",
     "value": "latest-build",
@@ -53,7 +53,7 @@ Object {
       "value": "latest-version",
     },
   ],
-  "warnings": undefined,
+  "warnings": Array [],
 }
 `;
 
@@ -82,6 +82,7 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
               "buildNumber": 32,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "123",
@@ -117,6 +118,7 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
               "buildNumber": 31,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "456",
@@ -152,6 +154,7 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
               "buildNumber": 30,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "789",
@@ -187,6 +190,7 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
               "buildNumber": 29,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "135",
@@ -222,6 +226,7 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
               "buildNumber": 28,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "246",
@@ -260,6 +265,7 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
         "buildNumber": 32,
         "buildSlug": "13245ads",
         "bundleId": "bundle-id",
+        "commitMessage": "",
         "description": "Some semi-long description",
         "iconUrl": "http://placekitten.com/160/160",
         "id": "123",
@@ -286,7 +292,7 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
       }
     }
     onSelectPlatform={[MockFunction]}
-    productFlavours={Array []}
+    productFlavors={Array []}
     selectProductFalvour={[Function]}
     selectedVersionSortingOption={
       Object {
@@ -307,6 +313,7 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
         },
       ]
     }
+    warnings={Array []}
   />
 </Fragment>
 `;
@@ -336,6 +343,7 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
               "buildNumber": 32,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "123",
@@ -371,6 +379,7 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
               "buildNumber": 31,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "456",
@@ -406,6 +415,7 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
               "buildNumber": 30,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "789",
@@ -441,6 +451,7 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
               "buildNumber": 29,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "135",
@@ -476,6 +487,7 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
               "buildNumber": 28,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "246",
@@ -514,6 +526,7 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
         "buildNumber": 32,
         "buildSlug": "13245ads",
         "bundleId": "bundle-id",
+        "commitMessage": "",
         "description": "Some semi-long description",
         "iconUrl": "http://placekitten.com/160/160",
         "id": "123",
@@ -540,7 +553,7 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
       }
     }
     onSelectPlatform={[MockFunction]}
-    productFlavours={Array []}
+    productFlavors={Array []}
     selectProductFalvour={[Function]}
     selectedVersionSortingOption={
       Object {
@@ -561,6 +574,7 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
         },
       ]
     }
+    warnings={Array []}
   />
 </Fragment>
 `;
@@ -581,6 +595,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
               "buildNumber": 32,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "123",
@@ -611,6 +626,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
               "buildNumber": 31,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "456",
@@ -641,6 +657,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
               "buildNumber": 30,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "789",
@@ -676,6 +693,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
               "buildNumber": 29,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "135",
@@ -706,6 +724,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
               "buildNumber": 28,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "246",
@@ -744,6 +763,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
         "buildNumber": 32,
         "buildSlug": "13245ads",
         "bundleId": "bundle-id",
+        "commitMessage": "",
         "description": "Some semi-long description",
         "iconUrl": "http://placekitten.com/160/160",
         "id": "123",
@@ -770,7 +790,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
       }
     }
     onSelectPlatform={[MockFunction]}
-    productFlavours={Array []}
+    productFlavors={Array []}
     selectProductFalvour={[Function]}
     selectedVersionSortingOption={
       Object {
@@ -791,11 +811,12 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
         },
       ]
     }
+    warnings={Array []}
   />
 </Fragment>
 `;
 
-exports[`AppPageView when page has apps product flavours desktop 1`] = `
+exports[`AppPageView when page has apps product flavors desktop 1`] = `
 <Flex
   direction="vertical"
   grow={true}
@@ -890,6 +911,7 @@ exports[`AppPageView when page has apps product flavours desktop 1`] = `
           </Flex>
         </Flex>
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-123/versions/123/details"
           detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
@@ -899,6 +921,7 @@ exports[`AppPageView when page has apps product flavours desktop 1`] = `
           title="(32) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-456/versions/456/details"
           detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
@@ -908,6 +931,7 @@ exports[`AppPageView when page has apps product flavours desktop 1`] = `
           title="(31) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-789/versions/789/details"
           detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
@@ -917,6 +941,7 @@ exports[`AppPageView when page has apps product flavours desktop 1`] = `
           title="(30) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-135/versions/135/details"
           detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
@@ -926,6 +951,7 @@ exports[`AppPageView when page has apps product flavours desktop 1`] = `
           title="(29) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-246/versions/246/details"
           detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
@@ -945,7 +971,7 @@ exports[`AppPageView when page has apps product flavours desktop 1`] = `
 </Flex>
 `;
 
-exports[`AppPageView when page has apps product flavours mobile 1`] = `
+exports[`AppPageView when page has apps product flavors mobile 1`] = `
 <Flex
   direction="vertical"
   grow={true}
@@ -1040,6 +1066,7 @@ exports[`AppPageView when page has apps product flavours mobile 1`] = `
           />
         </Flex>
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-123/versions/123/details"
           detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
@@ -1049,6 +1076,7 @@ exports[`AppPageView when page has apps product flavours mobile 1`] = `
           title="(32) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-456/versions/456/details"
           detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
@@ -1058,6 +1086,7 @@ exports[`AppPageView when page has apps product flavours mobile 1`] = `
           title="(31) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-789/versions/789/details"
           detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
@@ -1067,6 +1096,7 @@ exports[`AppPageView when page has apps product flavours mobile 1`] = `
           title="(30) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-135/versions/135/details"
           detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
@@ -1076,6 +1106,7 @@ exports[`AppPageView when page has apps product flavours mobile 1`] = `
           title="(29) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-246/versions/246/details"
           detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
@@ -1095,7 +1126,7 @@ exports[`AppPageView when page has apps product flavours mobile 1`] = `
 </Flex>
 `;
 
-exports[`AppPageView when page has apps product flavours tablet 1`] = `
+exports[`AppPageView when page has apps product flavors tablet 1`] = `
 <Flex
   direction="vertical"
   grow={true}
@@ -1190,6 +1221,7 @@ exports[`AppPageView when page has apps product flavours tablet 1`] = `
           </Flex>
         </Flex>
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-123/versions/123/details"
           detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
@@ -1199,6 +1231,7 @@ exports[`AppPageView when page has apps product flavours tablet 1`] = `
           title="(32) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-456/versions/456/details"
           detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
@@ -1208,6 +1241,7 @@ exports[`AppPageView when page has apps product flavours tablet 1`] = `
           title="(31) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-789/versions/789/details"
           detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
@@ -1217,6 +1251,7 @@ exports[`AppPageView when page has apps product flavours tablet 1`] = `
           title="(30) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-135/versions/135/details"
           detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
@@ -1226,6 +1261,7 @@ exports[`AppPageView when page has apps product flavours tablet 1`] = `
           title="(29) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-246/versions/246/details"
           detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
@@ -1322,6 +1358,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
           </Flex>
         </Flex>
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-123/versions/123/details"
           detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
@@ -1331,6 +1368,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
           title="(32) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-456/versions/456/details"
           detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
@@ -1340,6 +1378,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
           title="(31) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-789/versions/789/details"
           detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
@@ -1349,6 +1388,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
           title="(30) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-135/versions/135/details"
           detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
@@ -1358,6 +1398,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
           title="(29) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-246/versions/246/details"
           detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"
@@ -1464,6 +1505,7 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
           </Flex>
         </Flex>
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-123/versions/123/details"
           detailsPagePathHref="/version?appSlug=app-slug-123&versionId=123"
@@ -1473,6 +1515,7 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
           title="(32) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-456/versions/456/details"
           detailsPagePathHref="/version?appSlug=app-slug-456&versionId=456"
@@ -1482,6 +1525,7 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
           title="(31) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-789/versions/789/details"
           detailsPagePathHref="/version?appSlug=app-slug-789&versionId=789"
@@ -1491,6 +1535,7 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
           title="(30) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-135/versions/135/details"
           detailsPagePathHref="/version?appSlug=app-slug-135&versionId=135"
@@ -1500,6 +1545,7 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
           title="(29) v1.0.3 Standup Timer"
         />
         <_default
+          description=""
           descriptionPlaceholder="No commit message"
           detailsPagePath="/apps/app-slug-246/versions/246/details"
           detailsPagePathHref="/version?appSlug=app-slug-246&versionId=246"

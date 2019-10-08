@@ -19,8 +19,10 @@ Array [
   },
   Object {
     "payload": Object {
+      "androidErrors": Array [],
       "appSlug": "test-app-slug-1",
       "avatarUrl": "https://concrete-userfiles-production.s3.us-west-2.amazonaws.com/repositories/0dbc45647ce84cb9/avatar/avatar.png",
+      "iosErrors": Array [],
       "plan": "gold",
       "projectType": "other",
       "title": "Awesome app",
