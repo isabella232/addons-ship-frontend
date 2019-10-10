@@ -5,7 +5,7 @@ import {
   isCrossPlatform,
   getPlatformAppVersionsByVersion,
   getPlatformAppVersionsByBuildNumber,
-  getVersionFlavours
+  getVersionFlavors
 } from './selectors';
 import { RootState } from '@/store';
 import { mockAppVersions } from '@/mocks';
@@ -209,31 +209,31 @@ describe('isCrossPlatform', () => {
   });
 });
 
-describe('getVersionFlavours', () => {
+describe('getVersionFlavors', () => {
   it('returns an empty array', () => {
-    expect(getVersionFlavours({ appVersionList: null } as RootState)).toEqual([]);
+    expect(getVersionFlavors({ appVersionList: null } as RootState)).toEqual([]);
   });
 
-  it('calculates version flavours', () => {
+  it('calculates version flavors', () => {
     const appVersionList = [
       {
         id: 'version-1',
-        productFlavour: 'strawberry'
+        productFlavor: 'strawberry'
       },
       {
         id: 'version-2',
-        productFlavour: 'vanilla'
+        productFlavor: 'vanilla'
       },
       {
         id: 'flvaourless-version-3'
       },
       {
         id: 'duplicated-version-4',
-        productFlavour: 'vanilla'
+        productFlavor: 'vanilla'
       }
     ] as AppVersion[];
 
-    const flvaours = getVersionFlavours({ appVersionList } as RootState);
+    const flvaours = getVersionFlavors({ appVersionList } as RootState);
 
     expect(flvaours).toEqual(['strawberry', 'vanilla']);
   });

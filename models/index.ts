@@ -50,7 +50,7 @@ export type AppVersion = {
   marketingUrl?: string;
   scheme?: string;
   module?: string;
-  productFlavour?: string;
+  productFlavor?: string;
   buildType?: string;
   split?: boolean;
   universalAvailable?: boolean;

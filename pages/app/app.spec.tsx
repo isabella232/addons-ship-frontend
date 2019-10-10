@@ -50,7 +50,7 @@ describe('AppPageView', () => {
       ],
       isCrossPlatform: false,
       onSelectPlatform: jest.fn(),
-      productFlavours: [],
+      productFlavors: [],
       selectProductFalvour: jest.fn(),
       warnings: []
     };
@@ -60,8 +60,8 @@ describe('AppPageView', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    describe('product flavours', () => {
-      const comp = <AppView {...defaultProps} productFlavours={['first', 'second']} />;
+    describe('product flavors', () => {
+      const comp = <AppView {...defaultProps} productFlavors={['first', 'second']} />;
 
       test('desktop', () => {
         const tree = shallowToJson(shallow(comp));
@@ -98,7 +98,7 @@ describe('AppPage', () => {
     appVersionsByBuildNumber: null as any,
     isCrossPlatform: false,
     selectPlatform: jest.fn() as any,
-    productFlavours: []
+    productFlavors: []
   };
 
   let appVersionsByVersion: AppPageProps['appVersionsByVersion'];
@@ -176,27 +176,27 @@ describe('AppPage', () => {
     });
   });
 
-  test('selectProductFlavour', () => {
+  test('selectProductFlavor', () => {
     const wrapper = shallow(<AppPage {...defaultProps} />);
 
-    const flavour = 'whatever';
-    (wrapper.instance() as AppPage).selectProductFlavour(flavour);
-    expect(wrapper.state('selectedProductFlavour')).toEqual(flavour);
+    const flavor = 'whatever';
+    (wrapper.instance() as AppPage).selectProductFlavor(flavor);
+    expect(wrapper.state('selectedProductFlavor')).toEqual(flavor);
   });
 
-  test('A prodcutFlavour is selected', () => {
+  test('A prodcutFlavor is selected', () => {
     const appVersionsByBuildNumber = getAppVersionsByBuildNumber({
       appVersionList: [
-        { id: 'v1', productFlavour: 'f1', platform: 'android' },
-        { id: 'v2', productFlavour: 'f1', platform: 'android' },
-        { id: 'v3', productFlavour: 'f1', platform: 'android' },
-        { id: 'v4', productFlavour: 'f2', platform: 'android' },
-        { id: 'v5', productFlavour: 'f2', platform: 'android' },
-        { id: 'v6', productFlavour: 'f2', platform: 'android' }
+        { id: 'v1', productFlavor: 'f1', platform: 'android' },
+        { id: 'v2', productFlavor: 'f1', platform: 'android' },
+        { id: 'v3', productFlavor: 'f1', platform: 'android' },
+        { id: 'v4', productFlavor: 'f2', platform: 'android' },
+        { id: 'v5', productFlavor: 'f2', platform: 'android' },
+        { id: 'v6', productFlavor: 'f2', platform: 'android' }
       ]
     } as RootState) as AppPageProps['appVersionsByBuildNumber'];
     const wrapper = shallow(<AppPage {...defaultProps} appVersionsByBuildNumber={appVersionsByBuildNumber} />);
-    wrapper.setState({ selectedProductFlavour: 'f2' });
+    wrapper.setState({ selectedProductFlavor: 'f2' });
 
     const view = wrapper.find(AppView);
     expect(view.props()).toMatchSnapshot();

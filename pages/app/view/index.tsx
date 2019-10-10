@@ -35,9 +35,9 @@ export type Props = {
   onSelectPlatform: (platform: Platform) => void;
   startColor?: string;
   endColor?: string;
-  productFlavours: string[];
-  selectedProductFlavour?: string;
-  selectProductFalvour: (flavour: string) => void;
+  productFlavors: string[];
+  selectedProductFlavor?: string;
+  selectProductFalvour: (flavor: string) => void;
   warnings: string[];
 };
 
@@ -53,14 +53,14 @@ export default ({
   onSelectPlatform,
   startColor,
   endColor,
-  productFlavours,
-  selectedProductFlavour,
+  productFlavors,
+  selectedProductFlavor,
   selectProductFalvour,
   warnings
 }: Props) => {
   const [isTablet, isDesktop] = mediaQuery('30rem', '60rem');
-  const hasProductFlavours = productFlavours.length > 0;
-  const useMobileFilters = !isTablet && hasProductFlavours;
+  const hasProductFlavors = productFlavors.length > 0;
+  const useMobileFilters = !isTablet && hasProductFlavors;
 
   return (
     <Flex direction="vertical" grow margin="x2">
@@ -101,27 +101,27 @@ export default ({
             platform={latestAppVersion.platform}
             startColor={startColor}
             endColor={endColor}
-            productFlavour={latestAppVersion.productFlavour}
+            productFlavor={latestAppVersion.productFlavor}
           />
           <Base className={css.sectionHeadingWrapper}>
             <Flex direction={useMobileFilters ? 'vertical' : 'horizontal'} alignChildrenVertical="end" gap="x4">
               <Flex grow shrink>
                 <Text letterSpacing="x1" size="x5" weight="bold">
-                  Version History {hasProductFlavours && 'by Flavor'}
+                  Version History {hasProductFlavors && 'by Flavor'}
                 </Text>
                 {!useMobileFilters && <Divider color="gray-2" direction="horizontal" margin="x2" />}
               </Flex>
 
               <Flex direction="horizontal" gap="x4">
-                {hasProductFlavours && (
+                {hasProductFlavors && (
                   <Dropdown
                     width={useMobileFilters ? `calc(50% - ${sizeX2}px)` : 168}
                     elevation="x1"
                     onChange={value => selectProductFalvour(value)}
-                    options={productFlavours.map(value => ({ text: value, value }))}
-                    selected={selectedProductFlavour}
+                    options={productFlavors.map(value => ({ text: value, value }))}
+                    selected={selectedProductFlavor}
                   >
-                    {selectedProductFlavour}
+                    {selectedProductFlavor}
                   </Dropdown>
                 )}
                 {selectedVersionSortingOption && (
@@ -159,7 +159,7 @@ export default ({
                       description={appVersion.commitMessage}
                       descriptionPlaceholder={s`No commit message`}
                       note={`Updated on ${formatDate(appVersion.lastUpdate, 'MMMM D, HH:mm')}`}
-                      productFlavour={appVersion.productFlavour}
+                      productFlavor={appVersion.productFlavor}
                     />
                   ))}
                 </Fragment>

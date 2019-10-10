@@ -62,14 +62,14 @@ export const isCrossPlatform = ({ appVersionList }: RootState): boolean => {
   return hasAndroid && hasIOS;
 };
 
-export const getVersionFlavours = ({ appVersionList }: RootState): string[] => {
+export const getVersionFlavors = ({ appVersionList }: RootState): string[] => {
   if (!appVersionList) {
     return [];
   }
 
   return uniq(
     appVersionList.reduce(
-      (flavours: string[], { productFlavour }) => (productFlavour ? [...flavours, productFlavour] : flavours),
+      (flavors: string[], { productFlavor }) => (productFlavor ? [...flavors, productFlavor] : flavors),
       []
     )
   );

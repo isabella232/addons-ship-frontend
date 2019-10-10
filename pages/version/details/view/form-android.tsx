@@ -99,7 +99,7 @@ export default ({
       </Base>
 
       <Base paddingVertical="x4">
-        <Flex direction={isTablet ? "horizontal" : "vertical"} grow gap="x6">
+        <Flex direction={isTablet ? 'horizontal' : 'vertical'} grow gap="x6">
           <Flex width={isTablet ? 'calc(50% - 0.75rem)' : 'auto'}>
             <InputLabel>App Title</InputLabel>
             <Text size="x3">{appVersion.appName}</Text>
@@ -116,8 +116,8 @@ export default ({
 
             <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-            <InputLabel>Product Flavour</InputLabel>
-            <Text size="x3">{appVersion.productFlavour}</Text>
+            <InputLabel>Product Flavor</InputLabel>
+            <Text size="x3">{appVersion.productFlavor}</Text>
 
             <Divider color="gray-2" direction="horizontal" margin="x4" />
           </Flex>
