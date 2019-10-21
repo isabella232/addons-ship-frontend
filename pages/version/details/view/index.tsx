@@ -51,6 +51,7 @@ export type Props = {
   onChange?: (key: string, newValue: string) => void;
   shouldEnableInstall: boolean;
   readyForPublish: boolean;
+  isStartingPublish: boolean;
   isPublishInProgress: boolean;
   publishTarget: string;
   publishTargetURL: string | null;
@@ -132,6 +133,7 @@ export default ({
   onChange,
   shouldEnableInstall,
   readyForPublish,
+  isStartingPublish,
   isPublishInProgress,
   publishTarget,
   publishTargetURL,
@@ -296,9 +298,9 @@ export default ({
               publicInstallPageURL={appVersion.publicInstallPageURL}
               isSplitAPK={appVersion.split}
               hasUniversalAPK={appVersion.universalAvailable}
-              shouldEnablePublish={readyForPublish && !isPublishInProgress}
+              shouldEnablePublish={readyForPublish && !(isPublishInProgress || isStartingPublish)}
               isPublished={latestEventStatus === AppVersionEventStatus.Success}
-              isPublishInProgress={isPublishInProgress}
+              isPublishInProgress={isPublishInProgress || isStartingPublish}
               onSave={onSave}
               onPublish={onPublish}
               appSlug={appVersion.appSlug}

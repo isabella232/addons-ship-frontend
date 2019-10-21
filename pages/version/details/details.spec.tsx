@@ -562,18 +562,6 @@ describe('AppVersionDetails', () => {
       expect(state).toMatchSnapshot();
       expect(cancelPollPublishStatus).not.toHaveBeenCalled();
     });
-
-    it('stops polling', () => {
-      const cancelPollPublishStatus = jest.fn() as any;
-      const wrapper = shallow(
-        <AppVersionDetails {...defaultProps} appVersionEvents={[]} cancelPollPublishStatus={cancelPollPublishStatus} />
-      );
-
-      const event = { status: AppVersionEventStatus.Success } as AppVersionEvent;
-
-      wrapper.setProps({ appVersionEvents: [event] });
-      expect(cancelPollPublishStatus).toHaveBeenCalled();
-    });
   });
 
   describe('componentWillUnmount', () => {

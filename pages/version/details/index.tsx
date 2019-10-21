@@ -60,6 +60,7 @@ export type State = {
   selectedDeviceIdForScreenshots: string | null;
   readyForPublish?: boolean;
   latestEvent: AppVersionEvent | null;
+  isStartingPublish: boolean;
   isPublishInProgress: boolean;
   screenshotIdsToDelete: string[];
   isFeatureGraphicMarkedForDelete: boolean;
@@ -143,6 +144,7 @@ const initialState: State = {
   featureGraphic: undefined,
   selectedDeviceIdForScreenshots: null,
   latestEvent: null,
+  isStartingPublish: false,
   isPublishInProgress: false,
   screenshotIdsToDelete: [],
   isFeatureGraphicMarkedForDelete: false
@@ -160,7 +162,7 @@ export class AppVersionDetails extends Component<Props, State> {
   }
 
   componentDidUpdate({ appVersionEvents: prevEvents, appVersion: prevAppVersion }: Props) {
-    const { appVersionEvents: events, cancelPollPublishStatus, versionId } = this.props;
+    const { appVersionEvents: events, versionId } = this.props;
 
     if (events.length && !isEqual(events, prevEvents)) {
       const latestEvent = events[0];
@@ -169,10 +171,6 @@ export class AppVersionDetails extends Component<Props, State> {
         const isPublishInProgress = latestEvent.status === AppVersionEventStatus.InProgress;
 
         this.setState({ latestEvent, isPublishInProgress });
-
-        if (!isPublishInProgress) {
-          cancelPollPublishStatus();
-        }
       }
     }
 
@@ -330,7 +328,12 @@ export class AppVersionDetails extends Component<Props, State> {
     }
 
     publishAppVersion(appVersion);
-    this.setState({ isPublishInProgress: true });
+    this.setState({ isStartingPublish: true });
+
+    // This is a state hack, sue me
+    setTimeout(() => {
+      this.setState({ isStartingPublish: false });
+    }, 6000);
 
     startPollPublishStatus(appVersion);
   };
@@ -439,6 +442,7 @@ export class AppVersionDetails extends Component<Props, State> {
       selectedDeviceIdForScreenshots,
       screenshotList,
       featureGraphic,
+      isStartingPublish,
       isPublishInProgress
     } = this.state;
     const { versionId, appVersion, isSaving, appVersionEvents, iconUrl } = this.props;
@@ -476,6 +480,7 @@ export class AppVersionDetails extends Component<Props, State> {
       onDeviceSelected: this.onDeviceSelected,
       shouldEnableInstall: this.shouldEnableInstall(),
       readyForPublish: this.readyForPublish(),
+      isStartingPublish,
       isPublishInProgress: isPublishInProgress || latestEventStatus === AppVersionEventStatus.InProgress,
       publishTarget:
         (appVersion.platform === 'ios' && 'App Store Connect') ||
