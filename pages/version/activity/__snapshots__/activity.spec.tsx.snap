@@ -151,7 +151,7 @@ exports[`ActivityView when a test failed with logs available renders entry with 
                 name="Download"
                 size="1.5rem"
               />
-              Download Build Log
+              Download Deploy Log
             </Button>
           </Flex>
         </TableCell>
@@ -229,7 +229,7 @@ exports[`ActivityView when a test failed with logs not available yet renders ent
                 name="Download"
                 size="1.5rem"
               />
-              Download Build Log
+              Download Deploy Log
             </Button>
           </Flex>
         </TableCell>
@@ -502,7 +502,7 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
               name="Download"
               size="1.5rem"
             />
-            Download Build Log
+            Download Deploy Log
           </Button>
         </TableCell>
       </TableRow>
@@ -644,7 +644,7 @@ exports[`ActivityView when viewed on desktop renders the activity view correctly
               name="Download"
               size="1.5rem"
             />
-            Download Build Log
+            Download Deploy Log
           </Button>
         </TableCell>
       </TableRow>
@@ -826,7 +826,7 @@ exports[`ActivityView when viewed on mobile renders the activity view correctly 
                 name="Download"
                 size="1.5rem"
               />
-              Download Build Log
+              Download Deploy Log
             </Button>
           </Flex>
         </TableCell>

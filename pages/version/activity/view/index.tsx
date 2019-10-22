@@ -62,7 +62,7 @@ const DownloadBuildLogButton = (
     disabled={!appVersionEventIsLogAvailable}
   >
     <Icon name="Download" color="grape-4" />
-    Download Build Log
+    Download Deploy Log
   </Button>
 );
 
