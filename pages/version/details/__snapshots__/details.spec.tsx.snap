@@ -104,6 +104,7 @@ Object {
   "hasMounted": true,
   "isFeatureGraphicMarkedForDelete": false,
   "isPublishInProgress": true,
+  "isStartingPublish": false,
   "latestEvent": Object {
     "id": "some-id",
     "status": "in_progress",
@@ -255,6 +256,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -338,6 +340,7 @@ exports[`AppVersionDetails disables install button when device is from different
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -421,6 +424,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -537,6 +541,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -620,6 +625,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -703,6 +709,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -819,6 +826,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -11124,7 +11132,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -15263,7 +15270,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="app-store"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -19348,7 +19354,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -23487,7 +23492,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="enterprise"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -27572,7 +27576,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -31749,7 +31752,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -35888,7 +35890,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     shouldEnablePublish={true}
@@ -36764,7 +36765,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
         appSlug="app-slug-123"
         hasMounted={true}
         ipaExportMethod="ad-hoc"
-        isPublishInProgress={false}
         isPublished={false}
         isSaving={false}
         publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -36979,7 +36979,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
         appSlug="app-slug-123"
         hasMounted={true}
         ipaExportMethod="ad-hoc"
-        isPublishInProgress={false}
         isPublished={true}
         isSaving={false}
         publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -44330,7 +44329,6 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={true}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
