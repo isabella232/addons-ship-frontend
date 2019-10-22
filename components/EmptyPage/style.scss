@@ -1,8 +1,18 @@
+@import '~@/assets/style/dimensions';
+@import '~@/assets/style/mixins';
+
 .emptyPage {
   width: 100vw;
+  margin-top: 6 * $grid;
+  padding-top: 24 * $grid;
+  background: url('/static/project-empty.svg') no-repeat top;
 
-  .textContainer {
-    background: url(/static/project-empty.svg) no-repeat center;
-    height: 192px;
+  @include width-above-screen-small {
+    margin-top: 24 * $grid;
+  }
+
+  :global(.Icon) {
+    display: inline-block;
+    margin-bottom: -6px;
   }
 }

@@ -4,7 +4,6 @@ exports[`EmptyPage renders correctly 1`] = `
 <Flex
   className="emptyPage"
   grow={true}
-  paddingVertical="x16"
 >
   <Flex
     alignChildrenVertical="middle"
@@ -18,6 +17,92 @@ exports[`EmptyPage renders correctly 1`] = `
     >
       First, you need to build an IPA/APK
     </Text>
+    <Base
+      container={true}
+    >
+      <Flex
+        direction="vertical"
+        maxWidth="700px"
+        paddingHorizontal="x0"
+        paddingVertical="x16"
+      >
+        <Text
+          color="grape-5"
+          config="7"
+          weight="bold"
+        >
+          Setup Instructions
+        </Text>
+        <Divider
+          color="gray-2"
+          direction="horizontal"
+          margin="x3"
+          width="0.125rem"
+        />
+        <List
+          margin="x2"
+        >
+          <ListItem
+            margin="x1"
+          >
+            In order to use Ship, you need to place a
+             
+            <Text
+              inline={true}
+              weight="bold"
+            >
+              build artifact generator step
+            </Text>
+             
+            (like Xcode Archive, Android Build) into your workflow to have an IPA/APK.
+          </ListItem>
+          <ListItem
+            margin="x1"
+          >
+            The
+             
+            <Text
+              inline={true}
+              weight="bold"
+            >
+              latest version of Deploy to Bitrise.io step
+            </Text>
+             
+            required after the build artifact generator steps.
+          </ListItem>
+          <ListItem
+            margin="x1"
+          >
+            Ship works only with the
+             
+            <Text
+              inline={true}
+              weight="bold"
+            >
+              latest Xcode Archive step
+            </Text>
+            .
+          </ListItem>
+        </List>
+        <Flex
+          alignChildrenHorizontal="middle"
+          direction="horizontal"
+          margin="x16"
+        >
+          <Link
+            color="grape-3"
+            href="https://mpxzvqn7ysfysw.preview.forestry.io/reviews/ship-add-on-beta-version/"
+            target="blank"
+          >
+            Read the documentation 
+            <Icon
+              name="OpenInBrowser"
+              size="1.5rem"
+            />
+          </Link>
+        </Flex>
+      </Flex>
+    </Base>
   </Flex>
 </Flex>
 `;
@@ -26,7 +111,6 @@ exports[`EmptyPage renders correctly on mobile 1`] = `
 <Flex
   className="emptyPage"
   grow={true}
-  paddingVertical="x16"
 >
   <Flex
     alignChildrenVertical="middle"
@@ -40,6 +124,92 @@ exports[`EmptyPage renders correctly on mobile 1`] = `
     >
       First, you need to build an IPA/APK
     </Text>
+    <Base
+      container={true}
+    >
+      <Flex
+        direction="vertical"
+        maxWidth="700px"
+        paddingHorizontal="x4"
+        paddingVertical="x16"
+      >
+        <Text
+          color="grape-5"
+          config="7"
+          weight="bold"
+        >
+          Setup Instructions
+        </Text>
+        <Divider
+          color="gray-2"
+          direction="horizontal"
+          margin="x3"
+          width="0.125rem"
+        />
+        <List
+          margin="x2"
+        >
+          <ListItem
+            margin="x1"
+          >
+            In order to use Ship, you need to place a
+             
+            <Text
+              inline={true}
+              weight="bold"
+            >
+              build artifact generator step
+            </Text>
+             
+            (like Xcode Archive, Android Build) into your workflow to have an IPA/APK.
+          </ListItem>
+          <ListItem
+            margin="x1"
+          >
+            The
+             
+            <Text
+              inline={true}
+              weight="bold"
+            >
+              latest version of Deploy to Bitrise.io step
+            </Text>
+             
+            required after the build artifact generator steps.
+          </ListItem>
+          <ListItem
+            margin="x1"
+          >
+            Ship works only with the
+             
+            <Text
+              inline={true}
+              weight="bold"
+            >
+              latest Xcode Archive step
+            </Text>
+            .
+          </ListItem>
+        </List>
+        <Flex
+          alignChildrenHorizontal="middle"
+          direction="horizontal"
+          margin="x16"
+        >
+          <Link
+            color="grape-3"
+            href="https://mpxzvqn7ysfysw.preview.forestry.io/reviews/ship-add-on-beta-version/"
+            target="blank"
+          >
+            Read the documentation 
+            <Icon
+              name="OpenInBrowser"
+              size="1.5rem"
+            />
+          </Link>
+        </Flex>
+      </Flex>
+    </Base>
   </Flex>
 </Flex>
 `;
