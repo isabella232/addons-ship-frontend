@@ -893,7 +893,7 @@ exports[`Header routes /settings for desktop 1`] = `
             size="1.5rem"
           />
           <Text>
-            Awesome app
+            All versions
           </Text>
         </Button>
       </a>
@@ -1059,7 +1059,7 @@ exports[`Header routes /settings for mobile 1`] = `
             size="1.5rem"
           />
           <Text>
-            Awesome app
+            All versions
           </Text>
         </Button>
       </a>
