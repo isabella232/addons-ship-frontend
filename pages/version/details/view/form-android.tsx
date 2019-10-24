@@ -79,12 +79,7 @@ export default ({
 
       <Base paddingVertical="x4">
         <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-          <InputLabel>
-            <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-              Feature Graphic
-              <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
-            </Flex>
-          </InputLabel>
+          <InputLabel>Feature Graphic</InputLabel>
           <Text size="x2" weight="medium" color="gray-7" align="end">
             1024 x 500px
           </Text>
