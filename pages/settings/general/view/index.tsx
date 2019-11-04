@@ -112,7 +112,7 @@ export default ({
                     {hasMounted && (
                       <Tooltip title="You can add multiple workflows divided with a comma. Eg.: primary, deploy">
                         {({ ref, ...rest }) => (
-                          <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                          <Icon {...rest} innerRef={ref} color="gray-5" name="Support" size="1.5rem" />
                         )}
                       </Tooltip>
                     )}
@@ -213,7 +213,7 @@ export default ({
                   {hasMounted && (
                     <Tooltip title="Select profiles for every signable target (e.g: extensions)">
                       {({ ref, ...rest }) => (
-                        <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                        <Icon {...rest} innerRef={ref} color="gray-5" name="Support" size="1.5rem" />
                       )}
                     </Tooltip>
                   )}
@@ -330,7 +330,7 @@ export default ({
                     {hasMounted && (
                       <Tooltip title="You can add multiple workflows divided with a comma. Eg.: primary, deploy">
                         {({ ref, ...rest }) => (
-                          <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                          <Icon {...rest} innerRef={ref} color="gray-5" name="Support" size="1.5rem" />
                         )}
                       </Tooltip>
                     )}
@@ -366,7 +366,7 @@ export default ({
                     {hasMounted && (
                       <Tooltip title="Add module name if your Android app contains multiple modules.">
                         {({ ref, ...rest }) => (
-                          <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                          <Icon {...rest} innerRef={ref} color="gray-5" name="Support" size="1.5rem" />
                         )}
                       </Tooltip>
                     )}
