@@ -40,9 +40,10 @@ interface Props extends Settings {
   ) => void;
   onWorkflowChange: (platform: Platform, workflow: string) => void;
   onSelectedFileChange: (
-    type: 'ProvProfile' | 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
-    file: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
+    type: 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
+    file: Certificate | KeystoreFile | ServiceAccountJsonFile
   ) => void;
+  toggleProvProfile: (slug: string) => void;
   onCancel?: () => void;
   onSave?: () => void;
   isSaving?: boolean;
@@ -64,6 +65,7 @@ export default ({
   onSettingsPropertyChange,
   onWorkflowChange,
   onSelectedFileChange,
+  toggleProvProfile,
   onCancel,
   onSave,
   isSaving,
@@ -197,12 +199,25 @@ export default ({
               <Flex
                 direction={isDesktop ? 'horizontal' : 'vertical'}
                 alignChildrenHorizontal="between"
-                gap="x1"
+                gap={isDesktop ? 'x1' : 'x2'}
                 margin="x1"
               >
-                <Text size="x3" weight="bold">
-                  App Store Provisioning Profile
-                </Text>
+                <Flex
+                  direction="horizontal"
+                  alignChildrenHorizontal={isDesktop ? 'start' : 'between'}
+                  alignChildrenVertical="middle"
+                  gap="x1"
+                  margin="x1"
+                >
+                  <InputLabel>App Store Provisioning Profiles</InputLabel>
+                  {hasMounted && (
+                    <Tooltip title="Select profiles for every signable target (e.g: extensions)">
+                      {({ ref, ...rest }) => (
+                        <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                      )}
+                    </Tooltip>
+                  )}
+                </Flex>
                 <Link
                   href={`https://app.bitrise.io/app/${appSlug}/workflow_editor#!/code_signing`}
                   target="_blank"
@@ -222,10 +237,10 @@ export default ({
               </Flex>
               <Divider color="gray-2" direction="horizontal" margin="x2" />
               {(provProfiles as ProvProfile[]).map((provProfile: ProvProfile, index) => (
-                <Base key={index}>
-                  <RadioButton
-                    checked={provProfile.slug === iosSettings.selectedAppStoreProvisioningProfile}
-                    onChange={() => onSelectedFileChange('ProvProfile', provProfile)}
+                <Flex key={index} direction="horizontal" className={css.provProfileContainer}>
+                  <Checkbox
+                    checked={iosSettings.selectedAppStoreProvisioningProfiles.includes(provProfile.slug)}
+                    onChange={() => toggleProvProfile(provProfile.slug)}
                   >
                     <Flex
                       direction="horizontal"
@@ -236,11 +251,13 @@ export default ({
                       paddingVertical="x3"
                     >
                       <SVG src="/static/sheet-cog.svg" className={css.sheet} />
-                      <Text size="x3">{provProfile.name}</Text>
+                      <Text size="x3" breakOn="all">
+                        {provProfile.name}
+                      </Text>
                     </Flex>
-                  </RadioButton>
+                  </Checkbox>
                   <Divider color="gray-1" direction="horizontal" margin="x2" />
-                </Base>
+                </Flex>
               ))}
               {(provProfiles as ProvProfile[]).length === 0 && (
                 <Text size="x3" color="gray-7">

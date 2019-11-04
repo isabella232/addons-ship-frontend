@@ -155,7 +155,9 @@ Object {
       "appSpecificPassword": "Fill",
       "appleDeveloperAccountEmail": "Fill",
       "includeBitCode": true,
-      "selectedAppStoreProvisioningProfile": "prov-profile-1",
+      "selectedAppStoreProvisioningProfiles": Array [
+        "prov-profile-1",
+      ],
       "selectedCodeSigningIdentity": "cert-2",
     },
     "iosWorkflow": "All",
@@ -223,7 +225,9 @@ Object {
       "appSpecificPassword": "Fill",
       "appleDeveloperAccountEmail": "Fill",
       "includeBitCode": true,
-      "selectedAppStoreProvisioningProfile": "prov-profile-1",
+      "selectedAppStoreProvisioningProfiles": Array [
+        "prov-profile-1",
+      ],
       "selectedCodeSigningIdentity": "cert-2",
     },
     "iosWorkflow": "All",

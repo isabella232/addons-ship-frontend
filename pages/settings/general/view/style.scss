@@ -11,3 +11,11 @@
     fill: $grape-4;
   }
 }
+
+.provProfileContainer :global(.Checkbox) {
+  width: 100%;
+
+  & > :global(.Flex):last-child {
+    flex-shrink: 1;
+  }
+}

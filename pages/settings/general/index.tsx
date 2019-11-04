@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { RootState } from '@/store';
 import { MaximumNumberOfCertificates, Platform } from '@/models';
 import {
-  ProvProfile,
   Certificate,
   KeystoreFile,
   ServiceAccountJsonFile,
@@ -51,7 +50,7 @@ export class General extends Component<Props> {
       appleDeveloperAccountEmail: '',
       appSku: '',
       appSpecificPassword: '',
-      selectedAppStoreProvisioningProfile: '',
+      selectedAppStoreProvisioningProfiles: [],
       selectedCodeSigningIdentity: '',
       includeBitCode: true
     },
@@ -158,14 +157,10 @@ export class General extends Component<Props> {
   };
 
   onSelectedFileChange = (
-    type: 'ProvProfile' | 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
-    { slug }: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
+    type: 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
+    { slug }: Certificate | KeystoreFile | ServiceAccountJsonFile
   ) => {
     switch (type) {
-      case 'ProvProfile': {
-        this.setState({ iosSettings: { ...this.state.iosSettings, selectedAppStoreProvisioningProfile: slug } });
-        break;
-      }
       case 'Certificate': {
         this.setState({ iosSettings: { ...this.state.iosSettings, selectedCodeSigningIdentity: slug } });
         break;
@@ -179,6 +174,22 @@ export class General extends Component<Props> {
         break;
       }
     }
+  };
+
+  toggleProvProfile = (slug: string) => {
+    const {
+      iosSettings: { selectedAppStoreProvisioningProfiles: prevProvProfiles }
+    } = this.state;
+
+    let selectedAppStoreProvisioningProfiles;
+
+    if (prevProvProfiles.includes(slug)) {
+      selectedAppStoreProvisioningProfiles = prevProvProfiles.filter(_slug => _slug !== slug);
+    } else {
+      selectedAppStoreProvisioningProfiles = prevProvProfiles.concat(slug);
+    }
+
+    this.setState({ iosSettings: { ...this.state.iosSettings, selectedAppStoreProvisioningProfiles } });
   };
 
   onCancel = () => {
@@ -218,6 +229,7 @@ export class General extends Component<Props> {
       onWorkflowChange: this.onWorkflowChange,
       onCancel: hasModifications ? this.onCancel : undefined,
       onSave: hasModifications ? this.onSave : undefined,
+      toggleProvProfile: this.toggleProvProfile,
       isSaving
     };
 

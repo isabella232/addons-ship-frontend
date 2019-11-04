@@ -18,7 +18,9 @@ Object {
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
     "includeBitCode": true,
-    "selectedAppStoreProvisioningProfile": "prov-profile-1",
+    "selectedAppStoreProvisioningProfiles": Array [
+      "prov-profile-1",
+    ],
     "selectedCodeSigningIdentity": "cert-2",
   },
   "iosWorkflow": "All",
@@ -43,7 +45,9 @@ Object {
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
     "includeBitCode": true,
-    "selectedAppStoreProvisioningProfile": "prov-profile-1",
+    "selectedAppStoreProvisioningProfiles": Array [
+      "prov-profile-1",
+    ],
     "selectedCodeSigningIdentity": "cert-2",
   },
   "iosWorkflow": "All",
@@ -68,7 +72,9 @@ Object {
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
     "includeBitCode": true,
-    "selectedAppStoreProvisioningProfile": "prov-profile-1",
+    "selectedAppStoreProvisioningProfiles": Array [
+      "prov-profile-1",
+    ],
     "selectedCodeSigningIdentity": "cert-2",
   },
   "iosWorkflow": "All",
@@ -93,7 +99,9 @@ Object {
     "appSpecificPassword": "Fill",
     "appleDeveloperAccountEmail": "Fill",
     "includeBitCode": true,
-    "selectedAppStoreProvisioningProfile": "prov-profile-1",
+    "selectedAppStoreProvisioningProfiles": Array [
+      "prov-profile-1",
+    ],
     "selectedCodeSigningIdentity": "cert-2",
   },
   "iosWorkflow": "All",
@@ -135,7 +143,9 @@ exports[`General renders correctly 1`] = `
       "appSpecificPassword": "Fill",
       "appleDeveloperAccountEmail": "Fill",
       "includeBitCode": true,
-      "selectedAppStoreProvisioningProfile": "prov-profile-1",
+      "selectedAppStoreProvisioningProfiles": Array [
+        "prov-profile-1",
+      ],
       "selectedCodeSigningIdentity": "cert-2",
     }
   }
@@ -180,6 +190,7 @@ exports[`General renders correctly 1`] = `
       },
     ]
   }
+  toggleProvProfile={[Function]}
 />
 `;
 
@@ -218,7 +229,7 @@ exports[`General renders correctly when loading 1`] = `
       "appSpecificPassword": "",
       "appleDeveloperAccountEmail": "",
       "includeBitCode": true,
-      "selectedAppStoreProvisioningProfile": "",
+      "selectedAppStoreProvisioningProfiles": Array [],
       "selectedCodeSigningIdentity": "",
     }
   }
@@ -263,6 +274,7 @@ exports[`General renders correctly when loading 1`] = `
       },
     ]
   }
+  toggleProvProfile={[Function]}
 />
 `;
 
@@ -407,15 +419,25 @@ exports[`GeneralView when the settings are being saved 1`] = `
       <Flex
         alignChildrenHorizontal="between"
         direction="vertical"
-        gap="x1"
+        gap="x2"
         margin="x1"
       >
-        <Text
-          size="x3"
-          weight="bold"
+        <Flex
+          alignChildrenHorizontal="between"
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x1"
+          margin="x1"
         >
-          App Store Provisioning Profile
-        </Text>
+          <InputLabel>
+            App Store Provisioning Profiles
+          </InputLabel>
+          <Tooltip
+            title="Select profiles for every signable target (e.g: extensions)"
+          >
+            <Component />
+          </Tooltip>
+        </Flex>
         <Link
           color="grape-3"
           href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
@@ -446,10 +468,12 @@ exports[`GeneralView when the settings are being saved 1`] = `
         margin="x2"
         width="0.125rem"
       />
-      <Base
+      <Flex
+        className="provProfileContainer"
+        direction="horizontal"
         key="0"
       >
-        <RadioButton
+        <Checkbox
           checked={true}
           onChange={[Function]}
         >
@@ -473,23 +497,26 @@ exports[`GeneralView when the settings are being saved 1`] = `
               wrapper="div"
             />
             <Text
+              breakOn="all"
               size="x3"
             >
               abcdefghijkl1234567
             </Text>
           </Flex>
-        </RadioButton>
+        </Checkbox>
         <Divider
           color="gray-1"
           direction="horizontal"
           margin="x2"
           width="0.125rem"
         />
-      </Base>
-      <Base
+      </Flex>
+      <Flex
+        className="provProfileContainer"
+        direction="horizontal"
         key="1"
       >
-        <RadioButton
+        <Checkbox
           checked={false}
           onChange={[Function]}
         >
@@ -513,19 +540,20 @@ exports[`GeneralView when the settings are being saved 1`] = `
               wrapper="div"
             />
             <Text
+              breakOn="all"
               size="x3"
             >
               abcdefghijkl12345671566
             </Text>
           </Flex>
-        </RadioButton>
+        </Checkbox>
         <Divider
           color="gray-1"
           direction="horizontal"
           margin="x2"
           width="0.125rem"
         />
-      </Base>
+      </Flex>
     </Base>
     <Base
       margin="x6"
@@ -1130,15 +1158,25 @@ exports[`GeneralView when there are no Android settings does not render Android 
       <Flex
         alignChildrenHorizontal="between"
         direction="vertical"
-        gap="x1"
+        gap="x2"
         margin="x1"
       >
-        <Text
-          size="x3"
-          weight="bold"
+        <Flex
+          alignChildrenHorizontal="between"
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x1"
+          margin="x1"
         >
-          App Store Provisioning Profile
-        </Text>
+          <InputLabel>
+            App Store Provisioning Profiles
+          </InputLabel>
+          <Tooltip
+            title="Select profiles for every signable target (e.g: extensions)"
+          >
+            <Component />
+          </Tooltip>
+        </Flex>
         <Link
           color="grape-3"
           href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
@@ -1169,10 +1207,12 @@ exports[`GeneralView when there are no Android settings does not render Android 
         margin="x2"
         width="0.125rem"
       />
-      <Base
+      <Flex
+        className="provProfileContainer"
+        direction="horizontal"
         key="0"
       >
-        <RadioButton
+        <Checkbox
           checked={true}
           onChange={[Function]}
         >
@@ -1196,23 +1236,26 @@ exports[`GeneralView when there are no Android settings does not render Android 
               wrapper="div"
             />
             <Text
+              breakOn="all"
               size="x3"
             >
               abcdefghijkl1234567
             </Text>
           </Flex>
-        </RadioButton>
+        </Checkbox>
         <Divider
           color="gray-1"
           direction="horizontal"
           margin="x2"
           width="0.125rem"
         />
-      </Base>
-      <Base
+      </Flex>
+      <Flex
+        className="provProfileContainer"
+        direction="horizontal"
         key="1"
       >
-        <RadioButton
+        <Checkbox
           checked={false}
           onChange={[Function]}
         >
@@ -1236,19 +1279,20 @@ exports[`GeneralView when there are no Android settings does not render Android 
               wrapper="div"
             />
             <Text
+              breakOn="all"
               size="x3"
             >
               abcdefghijkl12345671566
             </Text>
           </Flex>
-        </RadioButton>
+        </Checkbox>
         <Divider
           color="gray-1"
           direction="horizontal"
           margin="x2"
           width="0.125rem"
         />
-      </Base>
+      </Flex>
     </Base>
     <Base
       margin="x6"
@@ -1521,15 +1565,25 @@ exports[`GeneralView when there are no files renders no files section 1`] = `
       <Flex
         alignChildrenHorizontal="between"
         direction="vertical"
-        gap="x1"
+        gap="x2"
         margin="x1"
       >
-        <Text
-          size="x3"
-          weight="bold"
+        <Flex
+          alignChildrenHorizontal="between"
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x1"
+          margin="x1"
         >
-          App Store Provisioning Profile
-        </Text>
+          <InputLabel>
+            App Store Provisioning Profiles
+          </InputLabel>
+          <Tooltip
+            title="Select profiles for every signable target (e.g: extensions)"
+          >
+            <Component />
+          </Tooltip>
+        </Flex>
         <Link
           color="grape-3"
           href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
@@ -2316,15 +2370,25 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
       <Flex
         alignChildrenHorizontal="between"
         direction="vertical"
-        gap="x1"
+        gap="x2"
         margin="x1"
       >
-        <Text
-          size="x3"
-          weight="bold"
+        <Flex
+          alignChildrenHorizontal="between"
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x1"
+          margin="x1"
         >
-          App Store Provisioning Profile
-        </Text>
+          <InputLabel>
+            App Store Provisioning Profiles
+          </InputLabel>
+          <Tooltip
+            title="Select profiles for every signable target (e.g: extensions)"
+          >
+            <Component />
+          </Tooltip>
+        </Flex>
         <Link
           color="grape-3"
           href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
@@ -2355,10 +2419,12 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
         margin="x2"
         width="0.125rem"
       />
-      <Base
+      <Flex
+        className="provProfileContainer"
+        direction="horizontal"
         key="0"
       >
-        <RadioButton
+        <Checkbox
           checked={true}
           onChange={[Function]}
         >
@@ -2382,23 +2448,26 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
               wrapper="div"
             />
             <Text
+              breakOn="all"
               size="x3"
             >
               abcdefghijkl1234567
             </Text>
           </Flex>
-        </RadioButton>
+        </Checkbox>
         <Divider
           color="gray-1"
           direction="horizontal"
           margin="x2"
           width="0.125rem"
         />
-      </Base>
-      <Base
+      </Flex>
+      <Flex
+        className="provProfileContainer"
+        direction="horizontal"
         key="1"
       >
-        <RadioButton
+        <Checkbox
           checked={false}
           onChange={[Function]}
         >
@@ -2422,19 +2491,20 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
               wrapper="div"
             />
             <Text
+              breakOn="all"
               size="x3"
             >
               abcdefghijkl12345671566
             </Text>
           </Flex>
-        </RadioButton>
+        </Checkbox>
         <Divider
           color="gray-1"
           direction="horizontal"
           margin="x2"
           width="0.125rem"
         />
-      </Base>
+      </Flex>
     </Base>
     <Base
       margin="x6"
@@ -3034,15 +3104,25 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
       <Flex
         alignChildrenHorizontal="between"
         direction="vertical"
-        gap="x1"
+        gap="x2"
         margin="x1"
       >
-        <Text
-          size="x3"
-          weight="bold"
+        <Flex
+          alignChildrenHorizontal="between"
+          alignChildrenVertical="middle"
+          direction="horizontal"
+          gap="x1"
+          margin="x1"
         >
-          App Store Provisioning Profile
-        </Text>
+          <InputLabel>
+            App Store Provisioning Profiles
+          </InputLabel>
+          <Tooltip
+            title="Select profiles for every signable target (e.g: extensions)"
+          >
+            <Component />
+          </Tooltip>
+        </Flex>
         <Link
           color="grape-3"
           href="https://app.bitrise.io/app/app-slug-123/workflow_editor#!/code_signing"
@@ -3073,10 +3153,12 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
         margin="x2"
         width="0.125rem"
       />
-      <Base
+      <Flex
+        className="provProfileContainer"
+        direction="horizontal"
         key="0"
       >
-        <RadioButton
+        <Checkbox
           checked={true}
           onChange={[Function]}
         >
@@ -3100,23 +3182,26 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
               wrapper="div"
             />
             <Text
+              breakOn="all"
               size="x3"
             >
               abcdefghijkl1234567
             </Text>
           </Flex>
-        </RadioButton>
+        </Checkbox>
         <Divider
           color="gray-1"
           direction="horizontal"
           margin="x2"
           width="0.125rem"
         />
-      </Base>
-      <Base
+      </Flex>
+      <Flex
+        className="provProfileContainer"
+        direction="horizontal"
         key="1"
       >
-        <RadioButton
+        <Checkbox
           checked={false}
           onChange={[Function]}
         >
@@ -3140,19 +3225,20 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
               wrapper="div"
             />
             <Text
+              breakOn="all"
               size="x3"
             >
               abcdefghijkl12345671566
             </Text>
           </Flex>
-        </RadioButton>
+        </Checkbox>
         <Divider
           color="gray-1"
           direction="horizontal"
           margin="x2"
           width="0.125rem"
         />
-      </Base>
+      </Flex>
     </Base>
     <Base
       margin="x6"
