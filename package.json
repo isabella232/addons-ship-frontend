@@ -7,7 +7,7 @@
     "start": "NODE_ENV=production node dist/server.js",
     "dev": "yarn build:server && node dist/server.js",
     "dev:watch": "nodemon",
-    "test": "jest",
+    "test": "jest --silent",
     "test:watch": "jest --watch --coverage",
     "test:coverage": "jest --coverage",
     "heroku-postbuild": "yarn run build",
