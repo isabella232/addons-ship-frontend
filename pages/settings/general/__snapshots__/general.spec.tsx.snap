@@ -451,14 +451,15 @@ exports[`GeneralView when the settings are being saved 1`] = `
             margin="x1"
           >
             <Text
+              className="externalLink"
               size="x3"
             >
-              Edit Profiles and Certificates on Bitrise
+              Edit Profiles and Certificates on Bitrise 
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
             </Text>
-            <Icon
-              name="OpenInBrowser"
-              size="1.5rem"
-            />
           </Flex>
         </Link>
       </Flex>
@@ -788,14 +789,15 @@ exports[`GeneralView when the settings are being saved 1`] = `
             margin="x1"
           >
             <Text
+              className="externalLink"
               size="x3"
             >
-              Edit Keystore and JSON files on Bitrise
+              Edit Keystore and JSON files on Bitrise 
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
             </Text>
-            <Icon
-              name="OpenInBrowser"
-              size="1.5rem"
-            />
           </Flex>
         </Link>
       </Flex>
@@ -1190,14 +1192,15 @@ exports[`GeneralView when there are no Android settings does not render Android 
             margin="x1"
           >
             <Text
+              className="externalLink"
               size="x3"
             >
-              Edit Profiles and Certificates on Bitrise
+              Edit Profiles and Certificates on Bitrise 
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
             </Text>
-            <Icon
-              name="OpenInBrowser"
-              size="1.5rem"
-            />
           </Flex>
         </Link>
       </Flex>
@@ -1597,14 +1600,15 @@ exports[`GeneralView when there are no files renders no files section 1`] = `
             margin="x1"
           >
             <Text
+              className="externalLink"
               size="x3"
             >
-              Edit Profiles and Certificates on Bitrise
+              Edit Profiles and Certificates on Bitrise 
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
             </Text>
-            <Icon
-              name="OpenInBrowser"
-              size="1.5rem"
-            />
           </Flex>
         </Link>
       </Flex>
@@ -1780,14 +1784,15 @@ exports[`GeneralView when there are no files renders no files section 1`] = `
             margin="x1"
           >
             <Text
+              className="externalLink"
               size="x3"
             >
-              Edit Keystore and JSON files on Bitrise
+              Edit Keystore and JSON files on Bitrise 
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
             </Text>
-            <Icon
-              name="OpenInBrowser"
-              size="1.5rem"
-            />
           </Flex>
         </Link>
       </Flex>
@@ -1992,14 +1997,15 @@ exports[`GeneralView when there are no iOS settings does not render iOS settings
             margin="x1"
           >
             <Text
+              className="externalLink"
               size="x3"
             >
-              Edit Keystore and JSON files on Bitrise
+              Edit Keystore and JSON files on Bitrise 
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
             </Text>
-            <Icon
-              name="OpenInBrowser"
-              size="1.5rem"
-            />
           </Flex>
         </Link>
       </Flex>
@@ -2402,14 +2408,15 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
             margin="x1"
           >
             <Text
+              className="externalLink"
               size="x3"
             >
-              Edit Profiles and Certificates on Bitrise
+              Edit Profiles and Certificates on Bitrise 
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
             </Text>
-            <Icon
-              name="OpenInBrowser"
-              size="1.5rem"
-            />
           </Flex>
         </Link>
       </Flex>
@@ -2739,14 +2746,15 @@ exports[`GeneralView when viewed on desktop renders the view correctly 1`] = `
             margin="x1"
           >
             <Text
+              className="externalLink"
               size="x3"
             >
-              Edit Keystore and JSON files on Bitrise
+              Edit Keystore and JSON files on Bitrise 
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
             </Text>
-            <Icon
-              name="OpenInBrowser"
-              size="1.5rem"
-            />
           </Flex>
         </Link>
       </Flex>
@@ -3136,14 +3144,15 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
             margin="x1"
           >
             <Text
+              className="externalLink"
               size="x3"
             >
-              Edit Profiles and Certificates on Bitrise
+              Edit Profiles and Certificates on Bitrise 
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
             </Text>
-            <Icon
-              name="OpenInBrowser"
-              size="1.5rem"
-            />
           </Flex>
         </Link>
       </Flex>
@@ -3473,14 +3482,15 @@ exports[`GeneralView when viewed on mobile renders the view correctly 1`] = `
             margin="x1"
           >
             <Text
+              className="externalLink"
               size="x3"
             >
-              Edit Keystore and JSON files on Bitrise
+              Edit Keystore and JSON files on Bitrise 
+              <Icon
+                name="OpenInBrowser"
+                size="1.5rem"
+              />
             </Text>
-            <Icon
-              name="OpenInBrowser"
-              size="1.5rem"
-            />
           </Flex>
         </Link>
       </Flex>

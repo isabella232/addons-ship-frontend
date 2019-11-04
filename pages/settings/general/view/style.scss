@@ -1,4 +1,5 @@
 @import '~@/assets/style/colors';
+@import '~@/assets/style/dimensions';
 
 .container :global(.Checkbox__input:checked + .Checkbox__indicator) {
   border-color: $eggplant;
@@ -18,4 +19,9 @@
   & > :global(.Flex):last-child {
     flex-shrink: 1;
   }
+}
+
+.externalLink :global(.Icon) {
+  display: inline-block;
+  margin-bottom: -1.5 * $grid;
 }

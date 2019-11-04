@@ -230,8 +230,9 @@ export default ({
                     gap="x1"
                     margin="x1"
                   >
-                    <Text size="x3">Edit Profiles and Certificates on Bitrise</Text>
-                    <Icon name="OpenInBrowser" size="1.5rem" />
+                    <Text size="x3" className={css.externalLink}>
+                      Edit Profiles and Certificates on Bitrise <Icon name="OpenInBrowser" size="1.5rem" />
+                    </Text>
                   </Flex>
                 </Link>
               </Flex>
@@ -411,8 +412,9 @@ export default ({
                       gap="x1"
                       margin="x1"
                     >
-                      <Text size="x3">Edit Keystore and JSON files on Bitrise</Text>
-                      <Icon name="OpenInBrowser" size="1.5rem" />
+                      <Text size="x3" className={css.externalLink}>
+                        Edit Keystore and JSON files on Bitrise <Icon name="OpenInBrowser" size="1.5rem" />
+                      </Text>
                     </Flex>
                   </Link>
                 </Flex>
