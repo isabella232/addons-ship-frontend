@@ -312,11 +312,12 @@ describe('General', () => {
     const selectedProvProfile = (mockSettings.provProfiles as ProvProfile[])[1];
 
     const tree = shallow(<General {...defaultProps} />);
-    (tree.instance() as General).onSelectedFileChange('ProvProfile', selectedProvProfile);
+    (tree.instance() as General).toggleProvProfile(selectedProvProfile.slug);
 
-    expect((tree.state('iosSettings') as IosSettings).selectedAppStoreProvisioningProfile).toEqual(
+    expect((tree.state('iosSettings') as IosSettings).selectedAppStoreProvisioningProfiles).toEqual([
+      ...defaultProps.settings.iosSettings!.selectedAppStoreProvisioningProfiles,
       selectedProvProfile.slug
-    );
+    ]);
     expect(tree.state('hasModifications')).toBe(true);
   });
 

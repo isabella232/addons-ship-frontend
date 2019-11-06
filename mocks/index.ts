@@ -237,7 +237,7 @@ export const mockSettings: Settings = {
     appleDeveloperAccountEmail: 'Fill',
     appSku: 'Fill',
     appSpecificPassword: 'Fill',
-    selectedAppStoreProvisioningProfile: provProfiles[0].slug,
+    selectedAppStoreProvisioningProfiles: [provProfiles[0].slug],
     selectedCodeSigningIdentity: certificates[1].slug,
     includeBitCode: true
   },
