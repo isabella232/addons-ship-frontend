@@ -138,9 +138,6 @@ Object {
   ],
   "iosSettings": Object {
     "selectedAppStoreProvisioningProfile": "provisioning_profile-1",
-    "selectedAppStoreProvisioningProfiles": Array [
-      "provisioning_profile-1",
-    ],
     "selectedCodeSigningIdentity": "code_signing_identity-2",
   },
   "keystoreFiles": Array [
@@ -280,9 +277,6 @@ Object {
     "appleDeveloperAccountEmail": "some.email@addr.ess",
     "includeBitCode": true,
     "selectedAppStoreProvisioningProfile": "prov-profile-id",
-    "selectedAppStoreProvisioningProfiles": Array [
-      "prov-profile-id",
-    ],
     "selectedCodeSigningIdentity": "code-signing-identity-id",
   },
   "iosWorkflow": "All",
