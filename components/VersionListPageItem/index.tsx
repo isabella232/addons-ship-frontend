@@ -49,12 +49,18 @@ export default ({
               paddingVertical="x4"
               padding={isDesktop ? 'x4' : 'x0'}
             >
-              <Flex direction="horizontal" alignChildrenVertical="middle" grow>
+              <Flex direction="horizontal" alignChildrenVertical="middle" grow maxWidth="100%">
                 <Base className={css.platformIconWrapper}>
                   <Icon color="grape-4" name={iconName} size="1.5rem" />
                 </Base>
-                <Flex direction="horizontal" grow alignChildrenVertical="middle" gap="x3">
-                  <Text config="5" color="grape-4" className={css.title}>
+                <Flex
+                  direction="horizontal"
+                  grow
+                  alignChildrenVertical="middle"
+                  gap="x3"
+                  maxWidth="calc(100% - 1.5rem)"
+                >
+                  <Text config="5" color="grape-4" className={css.title} ellipsis>
                     {title}
                   </Text>
                   {productFlavor && isDesktop && <MagicTag selected>{productFlavor}</MagicTag>}

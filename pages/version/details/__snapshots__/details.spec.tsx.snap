@@ -1224,12 +1224,13 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -1238,12 +1239,13 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -1258,7 +1260,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -4388,6 +4390,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -4764,12 +4767,13 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -4778,12 +4782,13 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -4798,7 +4803,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -7864,6 +7869,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -8238,12 +8244,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -8252,12 +8259,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -8272,7 +8280,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -12002,6 +12010,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -12376,12 +12385,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -12390,12 +12400,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -12410,7 +12421,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -16086,6 +16097,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -16460,12 +16472,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -16474,12 +16487,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -16494,7 +16508,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -20224,6 +20238,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -20598,12 +20613,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -20612,12 +20628,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -20632,7 +20649,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -24308,6 +24325,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -24682,12 +24700,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -24696,12 +24715,13 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -24716,7 +24736,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -28446,6 +28466,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -28858,12 +28879,13 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -28872,12 +28894,13 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -28892,7 +28915,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -32622,6 +32645,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -32996,12 +33020,13 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -33010,12 +33035,13 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -33030,7 +33056,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -36487,6 +36513,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -36696,13 +36723,28 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
   </Flex>
   <Modal
     backgroundColor="white"
+    fullHeight={true}
     onClose={[Function]}
     visible={false}
     width="22rem"
   >
-    <ModalTitle>
-      Share this page
-    </ModalTitle>
+    <Flex
+      alignChildrenHorizontal="between"
+      alignChildrenVertical="middle"
+      direction="horizontal"
+      margin="x4"
+    >
+      <Text
+        config="4"
+      >
+        Share this page
+      </Text>
+      <Icon
+        name="CloseSmall"
+        onClick={[Function]}
+        size="2rem"
+      />
+    </Flex>
     <_default
       appSlug="app-slug-123"
       hasMounted={true}
@@ -36910,13 +36952,28 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
   </Flex>
   <Modal
     backgroundColor="white"
+    fullHeight={true}
     onClose={[Function]}
     visible={false}
     width="22rem"
   >
-    <ModalTitle>
-      Share this page
-    </ModalTitle>
+    <Flex
+      alignChildrenHorizontal="between"
+      alignChildrenVertical="middle"
+      direction="horizontal"
+      margin="x4"
+    >
+      <Text
+        config="4"
+      >
+        Share this page
+      </Text>
+      <Icon
+        name="CloseSmall"
+        onClick={[Function]}
+        size="2rem"
+      />
+    </Flex>
     <_default
       appSlug="app-slug-123"
       hasMounted={true}
@@ -37304,12 +37361,13 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -37318,12 +37376,13 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -37338,7 +37397,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -41061,6 +41120,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -41435,12 +41495,13 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -41449,12 +41510,13 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -41469,7 +41531,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -45191,6 +45253,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -45565,12 +45628,13 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -45579,12 +45643,13 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -45599,7 +45664,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -48729,6 +48794,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"
@@ -49103,12 +49169,13 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                               </svg>
                               <Image
                                 borderRadius="x2"
+                                innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
-                                    "objectFit": "covver",
+                                    "objectFit": "cover",
                                   }
                                 }
                                 width="160px"
@@ -49117,12 +49184,13 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                   Component="img"
                                   borderRadius="x2"
                                   className="Image"
+                                  innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
-                                      "objectFit": "covver",
+                                      "objectFit": "cover",
                                     }
                                   }
                                   width="160px"
@@ -49137,7 +49205,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                         "maxWidth": "none",
                                         "minHeight": undefined,
                                         "minWidth": undefined,
-                                        "objectFit": "covver",
+                                        "objectFit": "cover",
                                         "width": "160px",
                                       }
                                     }
@@ -52259,6 +52327,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
       </Flex>
       <Modal
         backgroundColor="white"
+        fullHeight={true}
         onClose={[Function]}
         visible={false}
         width="22rem"

@@ -10,8 +10,7 @@ import {
   TypeIconName,
   Link,
   ProgressSpinner,
-  Modal,
-  ModalTitle
+  Modal
 } from '@bitrise/bitkit';
 
 import { AppVersion, AppVersionEvent, Screenshot, AppVersionEventStatus } from '@/models';
@@ -311,8 +310,17 @@ export default ({
           </Flex>
         )}
       </Flex>
-      <Modal onClose={handleCloseShareModal} visible={isShareModalVisible} width="22rem" backgroundColor="white">
-        <ModalTitle>Share this page</ModalTitle>
+      <Modal
+        onClose={handleCloseShareModal}
+        visible={isShareModalVisible}
+        width="22rem"
+        backgroundColor="white"
+        fullHeight
+      >
+        <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle" margin="x4">
+          <Text config="4">Share this page</Text>
+          <Icon name="CloseSmall" size="2rem" onClick={handleCloseShareModal} />
+        </Flex>
         <Share
           appSlug={appVersion.appSlug}
           publicInstallPageURL={appVersion.publicInstallPageURL}

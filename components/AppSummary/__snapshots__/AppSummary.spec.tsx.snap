@@ -189,7 +189,7 @@ exports[`AppSummary renders correctly on mobile 1`] = `
             alignChildren="middle"
             alignChildrenHorizontal="middle"
             direction="horizontal"
-            gap="x2"
+            gap="x0"
             maxWidth="100%"
             paddingVertical="x4"
           >
