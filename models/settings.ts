@@ -11,7 +11,7 @@ export type IosSettings = {
   appleDeveloperAccountEmail: string;
   appSku: string;
   appSpecificPassword: string;
-  selectedAppStoreProvisioningProfile: string;
+  selectedAppStoreProvisioningProfiles: string[];
   selectedCodeSigningIdentity: string;
   includeBitCode: boolean;
 };

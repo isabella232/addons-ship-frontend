@@ -4,6 +4,7 @@ import { mockAppVersion, mockSettings, mockAndroidAppVersion } from '@/mocks';
 import { IosSettings, AndroidSettings } from '@/models/settings';
 
 import settingsService from './settings';
+import { Platform } from '@/models';
 
 describe('SettingsService', () => {
   describe('isComplete', () => {
@@ -22,7 +23,7 @@ describe('SettingsService', () => {
       'appleDeveloperAccountEmail',
       'appSku',
       'appSpecificPassword',
-      'selectedAppStoreProvisioningProfile',
+      'selectedAppStoreProvisioningProfiles',
       'selectedCodeSigningIdentity'
     ].forEach(setting => {
       describe(`when iOS setting ${setting} is missing`, () => {
@@ -84,7 +85,7 @@ describe('SettingsService', () => {
   describe('when app has unknown platform', () => {
     it('returns true', () => {
       expect(
-        settingsService.isComplete({ ...mockAppVersion, platform: 'unknown' }, mockSettings as {
+        settingsService.isComplete({ ...mockAppVersion, platform: 'unknown' as Platform }, mockSettings as {
           iosSettings: IosSettings;
           androidSettings: AndroidSettings;
         })

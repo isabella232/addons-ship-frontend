@@ -79,12 +79,7 @@ export default ({
 
       <Base paddingVertical="x4">
         <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-          <InputLabel>
-            <Flex direction="horizontal" alignChildrenHorizontal="between" alignChildrenVertical="middle">
-              Feature Graphic
-              <Icon name="Support" color="grape-3" paddingHorizontal="x1" size="2rem" />
-            </Flex>
-          </InputLabel>
+          <InputLabel>Feature Graphic</InputLabel>
           <Text size="x2" weight="medium" color="gray-7" align="end">
             1024 x 500px
           </Text>
@@ -99,7 +94,7 @@ export default ({
       </Base>
 
       <Base paddingVertical="x4">
-        <Flex direction={isTablet ? "horizontal" : "vertical"} grow gap="x6">
+        <Flex direction={isTablet ? 'horizontal' : 'vertical'} grow gap="x6">
           <Flex width={isTablet ? 'calc(50% - 0.75rem)' : 'auto'}>
             <InputLabel>App Title</InputLabel>
             <Text size="x3">{appVersion.appName}</Text>
@@ -116,8 +111,8 @@ export default ({
 
             <Divider color="gray-2" direction="horizontal" margin="x4" />
 
-            <InputLabel>Product Flavour</InputLabel>
-            <Text size="x3">{appVersion.productFlavour}</Text>
+            <InputLabel>Product Flavor</InputLabel>
+            <Text size="x3">{appVersion.productFlavor}</Text>
 
             <Divider color="gray-2" direction="horizontal" margin="x4" />
           </Flex>

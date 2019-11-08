@@ -16,7 +16,7 @@ interface Props {
   description: string;
   descriptionPlaceholder?: string;
   note: string;
-  productFlavour?: string;
+  productFlavor?: string;
 }
 
 export default ({
@@ -27,7 +27,7 @@ export default ({
   description,
   descriptionPlaceholder,
   note,
-  productFlavour
+  productFlavor
 }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const iconName: TypeIconName = platform === 'ios' ? 'PlatformsApple' : 'PlatformsAndroid';
@@ -63,15 +63,15 @@ export default ({
                   <Text config="5" color="grape-4" className={css.title} ellipsis>
                     {title}
                   </Text>
-                  {productFlavour && isDesktop && <MagicTag selected>{productFlavour}</MagicTag>}
+                  {productFlavor && isDesktop && <MagicTag selected>{productFlavor}</MagicTag>}
                 </Flex>
               </Flex>
               <Text color="gray-6" className={css.note}>
                 {note}
               </Text>
-              {productFlavour && !isDesktop && (
+              {productFlavor && !isDesktop && (
                 <Base margin="x2">
-                  <MagicTag selected>{productFlavour}</MagicTag>
+                  <MagicTag selected>{productFlavor}</MagicTag>
                 </Base>
               )}
             </Flex>

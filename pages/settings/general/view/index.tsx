@@ -40,9 +40,10 @@ interface Props extends Settings {
   ) => void;
   onWorkflowChange: (platform: Platform, workflow: string) => void;
   onSelectedFileChange: (
-    type: 'ProvProfile' | 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
-    file: ProvProfile | Certificate | KeystoreFile | ServiceAccountJsonFile
+    type: 'Certificate' | 'KeystoreFile' | 'ServiceAccountJsonFile',
+    file: Certificate | KeystoreFile | ServiceAccountJsonFile
   ) => void;
+  toggleProvProfile: (slug: string) => void;
   onCancel?: () => void;
   onSave?: () => void;
   isSaving?: boolean;
@@ -64,6 +65,7 @@ export default ({
   onSettingsPropertyChange,
   onWorkflowChange,
   onSelectedFileChange,
+  toggleProvProfile,
   onCancel,
   onSave,
   isSaving,
@@ -110,7 +112,7 @@ export default ({
                     {hasMounted && (
                       <Tooltip title="You can add multiple workflows divided with a comma. Eg.: primary, deploy">
                         {({ ref, ...rest }) => (
-                          <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                          <Icon {...rest} innerRef={ref} color="gray-5" name="Support" size="1.5rem" />
                         )}
                       </Tooltip>
                     )}
@@ -197,12 +199,25 @@ export default ({
               <Flex
                 direction={isDesktop ? 'horizontal' : 'vertical'}
                 alignChildrenHorizontal="between"
-                gap="x1"
+                gap={isDesktop ? 'x1' : 'x2'}
                 margin="x1"
               >
-                <Text size="x3" weight="bold">
-                  App Store Provisioning Profile
-                </Text>
+                <Flex
+                  direction="horizontal"
+                  alignChildrenHorizontal={isDesktop ? 'start' : 'between'}
+                  alignChildrenVertical="middle"
+                  gap="x1"
+                  margin="x1"
+                >
+                  <InputLabel>App Store Provisioning Profiles</InputLabel>
+                  {hasMounted && (
+                    <Tooltip title="Select profiles for every signable target (e.g: extensions)">
+                      {({ ref, ...rest }) => (
+                        <Icon {...rest} innerRef={ref} color="gray-5" name="Support" size="1.5rem" />
+                      )}
+                    </Tooltip>
+                  )}
+                </Flex>
                 <Link
                   href={`https://app.bitrise.io/app/${appSlug}/workflow_editor#!/code_signing`}
                   target="_blank"
@@ -215,17 +230,18 @@ export default ({
                     gap="x1"
                     margin="x1"
                   >
-                    <Text size="x3">Edit Profiles and Certificates on Bitrise</Text>
-                    <Icon name="OpenInBrowser" size="1.5rem" />
+                    <Text size="x3" className={css.externalLink}>
+                      Edit Profiles and Certificates on Bitrise <Icon name="OpenInBrowser" size="1.5rem" />
+                    </Text>
                   </Flex>
                 </Link>
               </Flex>
               <Divider color="gray-2" direction="horizontal" margin="x2" />
               {(provProfiles as ProvProfile[]).map((provProfile: ProvProfile, index) => (
-                <Base key={index}>
-                  <RadioButton
-                    checked={provProfile.slug === iosSettings.selectedAppStoreProvisioningProfile}
-                    onChange={() => onSelectedFileChange('ProvProfile', provProfile)}
+                <Flex key={index} direction="horizontal" className={css.provProfileContainer}>
+                  <Checkbox
+                    checked={iosSettings.selectedAppStoreProvisioningProfiles.includes(provProfile.slug)}
+                    onChange={() => toggleProvProfile(provProfile.slug)}
                   >
                     <Flex
                       direction="horizontal"
@@ -236,11 +252,13 @@ export default ({
                       paddingVertical="x3"
                     >
                       <SVG src="/static/sheet-cog.svg" className={css.sheet} />
-                      <Text size="x3">{provProfile.name}</Text>
+                      <Text size="x3" breakOn="all">
+                        {provProfile.name}
+                      </Text>
                     </Flex>
-                  </RadioButton>
+                  </Checkbox>
                   <Divider color="gray-1" direction="horizontal" margin="x2" />
-                </Base>
+                </Flex>
               ))}
               {(provProfiles as ProvProfile[]).length === 0 && (
                 <Text size="x3" color="gray-7">
@@ -313,7 +331,7 @@ export default ({
                     {hasMounted && (
                       <Tooltip title="You can add multiple workflows divided with a comma. Eg.: primary, deploy">
                         {({ ref, ...rest }) => (
-                          <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                          <Icon {...rest} innerRef={ref} color="gray-5" name="Support" size="1.5rem" />
                         )}
                       </Tooltip>
                     )}
@@ -349,7 +367,7 @@ export default ({
                     {hasMounted && (
                       <Tooltip title="Add module name if your Android app contains multiple modules.">
                         {({ ref, ...rest }) => (
-                          <Icon {...rest} innerRef={ref} color="grape-3" name="Support" size="1.5rem" />
+                          <Icon {...rest} innerRef={ref} color="gray-5" name="Support" size="1.5rem" />
                         )}
                       </Tooltip>
                     )}
@@ -394,8 +412,9 @@ export default ({
                       gap="x1"
                       margin="x1"
                     >
-                      <Text size="x3">Edit Keystore and JSON files on Bitrise</Text>
-                      <Icon name="OpenInBrowser" size="1.5rem" />
+                      <Text size="x3" className={css.externalLink}>
+                        Edit Keystore and JSON files on Bitrise <Icon name="OpenInBrowser" size="1.5rem" />
+                      </Text>
                     </Flex>
                   </Link>
                 </Flex>

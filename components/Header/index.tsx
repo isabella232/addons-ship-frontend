@@ -94,6 +94,7 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
   let isRootPage = true;
   switch (pageType) {
     case 'settings':
+      // @ts-ignore
       projectType = 'settings';
       pageTitle = 'Settings';
       break;
@@ -190,7 +191,7 @@ export const Header = ({ app, appVersion, shouldShowSettingsOnboarding, hideBrea
               <a>
                 <Button level="light">
                   <Icon name="ArrowBack"></Icon>
-                  <Text>{pageType === 'settings' ? title : 'All versions'}</Text>
+                  <Text>All versions</Text>
                 </Button>
               </a>
             </Link>

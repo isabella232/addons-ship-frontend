@@ -1,6 +1,6 @@
 import { createAction, ActionType, ofType } from 'deox';
 import { Observable, timer } from 'rxjs';
-import { exhaustMap, map, takeUntil, mergeMap } from 'rxjs/operators';
+import { exhaustMap, map, takeUntil, switchMap } from 'rxjs/operators';
 import getConfig from 'next/config';
 
 import { RootState } from '@/store';
@@ -38,7 +38,7 @@ export const pollPublishStatusEpic = (
     exhaustMap(({ payload }) =>
       timer(0, pollInterval).pipe(
         // Should try this with `backoff-rxjs/intervalBackoff`
-        mergeMap(() => shipApi.getAppVersionEvents(payload.appSlug, payload.id as string)),
+        switchMap(() => shipApi.getAppVersionEvents(payload.appSlug, payload.id as string)),
         map(events => pollPublishStatus.complete(events)),
         takeUntil(action$.pipe(ofType(pollPublishStatus.cancel)))
       )

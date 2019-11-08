@@ -50,6 +50,7 @@ export type Props = {
   onChange?: (key: string, newValue: string) => void;
   shouldEnableInstall: boolean;
   readyForPublish: boolean;
+  isStartingPublish: boolean;
   isPublishInProgress: boolean;
   publishTarget: string;
   publishTargetURL: string | null;
@@ -131,6 +132,7 @@ export default ({
   onChange,
   shouldEnableInstall,
   readyForPublish,
+  isStartingPublish,
   isPublishInProgress,
   publishTarget,
   publishTargetURL,
@@ -216,7 +218,7 @@ export default ({
                   <Text letterSpacing="x2" size="x5" weight="bold" color="grape-4" margin="x2">
                     v{appVersion.version} ({appVersion.buildNumber})
                   </Text>
-                  {appVersion.productFlavour && <MagicTag selected>{appVersion.productFlavour}</MagicTag>}
+                  {appVersion.productFlavor && <MagicTag selected>{appVersion.productFlavor}</MagicTag>}
                 </Flex>
                 <Text letterSpacing="x1" size={isTablet ? 'x4' : 'x3'} weight="medium" color="gray-6">
                   Updated on {formatDate(appVersion.lastUpdate, 'MMMM D, YYYY, HH:mm')}
@@ -295,9 +297,9 @@ export default ({
               publicInstallPageURL={appVersion.publicInstallPageURL}
               isSplitAPK={appVersion.split}
               hasUniversalAPK={appVersion.universalAvailable}
-              shouldEnablePublish={readyForPublish && !isPublishInProgress}
+              shouldEnablePublish={readyForPublish && !(isPublishInProgress || isStartingPublish)}
               isPublished={latestEventStatus === AppVersionEventStatus.Success}
-              isPublishInProgress={isPublishInProgress}
+              isPublishInProgress={isPublishInProgress || isStartingPublish}
               onSave={onSave}
               onPublish={onPublish}
               appSlug={appVersion.appSlug}

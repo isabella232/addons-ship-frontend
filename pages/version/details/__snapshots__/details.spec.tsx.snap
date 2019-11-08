@@ -104,6 +104,7 @@ Object {
   "hasMounted": true,
   "isFeatureGraphicMarkedForDelete": false,
   "isPublishInProgress": true,
+  "isStartingPublish": false,
   "latestEvent": Object {
     "id": "some-id",
     "status": "in_progress",
@@ -162,6 +163,7 @@ Object {
     "buildNumber": 32,
     "buildSlug": "13245ads",
     "bundleId": "bundle-id",
+    "commitMessage": "",
     "description": "Some semi-long description",
     "iconUrl": "http://placekitten.com/160/160",
     "id": "123",
@@ -199,6 +201,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -208,7 +211,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
       "module": "Celeste-config",
       "packageName": "com.package.name",
       "platform": "android",
-      "productFlavour": "Fennek",
+      "productFlavor": "Fennek",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
@@ -253,6 +256,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -281,6 +285,7 @@ exports[`AppVersionDetails disables install button when device is from different
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -290,7 +295,7 @@ exports[`AppVersionDetails disables install button when device is from different
       "module": "Celeste-config",
       "packageName": "com.package.name",
       "platform": "android",
-      "productFlavour": "Fennek",
+      "productFlavor": "Fennek",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
@@ -335,6 +340,7 @@ exports[`AppVersionDetails disables install button when device is from different
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -363,6 +369,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -372,7 +379,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
       "module": "Celeste-config",
       "packageName": "com.package.name",
       "platform": "android",
-      "productFlavour": "Fennek",
+      "productFlavor": "Fennek",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
@@ -417,6 +424,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -445,6 +453,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -532,6 +541,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -560,6 +570,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -569,7 +580,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       "module": "Celeste-config",
       "packageName": "com.package.name",
       "platform": "android",
-      "productFlavour": "Fennek",
+      "productFlavor": "Fennek",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
@@ -614,6 +625,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -642,6 +654,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -651,7 +664,7 @@ exports[`AppVersionDetails enables install button when there is public install p
       "module": "Celeste-config",
       "packageName": "com.package.name",
       "platform": "android",
-      "productFlavour": "Fennek",
+      "productFlavor": "Fennek",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
@@ -696,6 +709,7 @@ exports[`AppVersionDetails enables install button when there is public install p
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -724,6 +738,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -811,6 +826,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
   hasMounted={true}
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onChange={[Function]}
   onDeviceSelected={[Function]}
@@ -853,6 +869,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -1866,6 +1883,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -4392,6 +4410,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "buildType": "Celeste-config",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -4401,7 +4420,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
       "module": "Celeste-config",
       "packageName": "com.package.name",
       "platform": "android",
-      "productFlavour": "Fennek",
+      "productFlavor": "Fennek",
       "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
       "screenshotDatas": Array [],
       "shortDescription": "Some short description",
@@ -5466,6 +5485,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "buildType": "Celeste-config",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -5475,7 +5495,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                           "module": "Celeste-config",
                           "packageName": "com.package.name",
                           "platform": "android",
-                          "productFlavour": "Fennek",
+                          "productFlavor": "Fennek",
                           "publicInstallPageURL": "https://bitrise.io/app/8b334705d8e78276",
                           "screenshotDatas": Array [],
                           "shortDescription": "Some short description",
@@ -6748,85 +6768,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                           }
                                         }
                                       >
-                                        <Flex
-                                          alignChildrenHorizontal="between"
-                                          alignChildrenVertical="middle"
-                                          direction="horizontal"
-                                        >
-                                          <Base
-                                            className="Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                                          >
-                                            <div
-                                              className="Base Flex Flex--align-horz-between Flex--align-vert-middle Flex--horizontal"
-                                              style={
-                                                Object {
-                                                  "height": undefined,
-                                                  "maxHeight": undefined,
-                                                  "maxWidth": undefined,
-                                                  "minHeight": undefined,
-                                                  "minWidth": undefined,
-                                                  "width": undefined,
-                                                }
-                                              }
-                                            >
-                                              Feature Graphic
-                                              <Icon
-                                                color="grape-3"
-                                                name="Support"
-                                                paddingHorizontal="x1"
-                                                size="2rem"
-                                              >
-                                                <Base
-                                                  Component="svg"
-                                                  className="Icon"
-                                                  color="grape-3"
-                                                  height="2rem"
-                                                  paddingHorizontal="x1"
-                                                  viewBox="0 0 24 24"
-                                                  width="2rem"
-                                                >
-                                                  <svg
-                                                    className="Base Base--color-grape-3 Base--padding-horizontal-x1 Icon"
-                                                    style={
-                                                      Object {
-                                                        "height": "2rem",
-                                                        "maxHeight": undefined,
-                                                        "maxWidth": undefined,
-                                                        "minHeight": undefined,
-                                                        "minWidth": undefined,
-                                                        "width": "2rem",
-                                                      }
-                                                    }
-                                                    viewBox="0 0 24 24"
-                                                  >
-                                                    <Component
-                                                      height="100%"
-                                                      width="100%"
-                                                    >
-                                                      <svg
-                                                        height="100%"
-                                                        viewBox="0 0 24 24"
-                                                        width="100%"
-                                                      >
-                                                        <defs>
-                                                          <path
-                                                            d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 2C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm-1.2-8.5c0-2 2.3-2 2.3-3.4 0-.6-.5-1-1.2-1-1.3-.1-1.7 1-1.7 1l-1.7-.8S9.2 7 11.9 7c2 0 3.3 1.3 3.3 2.8 0 2.6-2.5 2.6-2.5 4.3h-1.8s-.1-.3-.1-.6zm-.2 2.5c0-.6.5-1 1.1-1 .6 0 1.1.5 1.1 1 0 .6-.5 1-1.1 1-.6 0-1.1-.5-1.1-1z"
-                                                            id="icons-support_svg__a"
-                                                          />
-                                                        </defs>
-                                                        <use
-                                                          fill="currentColor"
-                                                          fillRule="evenodd"
-                                                          xlinkHref="#icons-support_svg__a"
-                                                        />
-                                                      </svg>
-                                                    </Component>
-                                                  </svg>
-                                                </Base>
-                                              </Icon>
-                                            </div>
-                                          </Base>
-                                        </Flex>
+                                        Feature Graphic
                                       </div>
                                     </Base>
                                   </Text>
@@ -7473,7 +7415,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                                 }
                                               }
                                             >
-                                              Product Flavour
+                                              Product Flavor
                                             </div>
                                           </Base>
                                         </Text>
@@ -7947,6 +7889,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -8594,6 +8537,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -11118,7 +11062,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -12087,6 +12030,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -12734,6 +12678,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -15258,7 +15203,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="app-store"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -16173,6 +16117,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -16820,6 +16765,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -19344,7 +19290,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -20313,6 +20258,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -20960,6 +20906,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -23484,7 +23431,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="enterprise"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -24399,6 +24345,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -25046,6 +24993,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -27570,7 +27518,6 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -28539,6 +28486,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -29224,6 +29172,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -31748,7 +31697,6 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -32717,6 +32665,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -33364,6 +33313,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -35888,7 +35838,6 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     shouldEnablePublish={true}
@@ -36697,6 +36646,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
               "buildNumber": 32,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "123",
@@ -36764,7 +36714,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
         appSlug="app-slug-123"
         hasMounted={true}
         ipaExportMethod="ad-hoc"
-        isPublishInProgress={false}
         isPublished={false}
         isSaving={false}
         publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -36926,6 +36875,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
               "buildNumber": 32,
               "buildSlug": "13245ads",
               "bundleId": "bundle-id",
+              "commitMessage": "",
               "description": "Some semi-long description",
               "iconUrl": "http://placekitten.com/160/160",
               "id": "123",
@@ -36993,7 +36943,6 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
         appSlug="app-slug-123"
         hasMounted={true}
         ipaExportMethod="ad-hoc"
-        isPublishInProgress={false}
         isPublished={true}
         isSaving={false}
         publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -37045,6 +36994,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -37704,6 +37654,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -41189,6 +41140,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -41836,6 +41788,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -44360,7 +44313,6 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
-                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={true}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -45321,6 +45273,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -46334,6 +46287,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
@@ -48860,6 +48814,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
       "buildNumber": 32,
       "buildSlug": "13245ads",
       "bundleId": "bundle-id",
+      "commitMessage": "",
       "description": "Some semi-long description",
       "iconUrl": "http://placekitten.com/160/160",
       "id": "123",
@@ -49865,6 +49820,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                           "buildNumber": 32,
                           "buildSlug": "13245ads",
                           "bundleId": "bundle-id",
+                          "commitMessage": "",
                           "description": "Some semi-long description",
                           "iconUrl": "http://placekitten.com/160/160",
                           "id": "123",
