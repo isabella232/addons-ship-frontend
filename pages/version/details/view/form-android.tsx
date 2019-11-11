@@ -43,16 +43,20 @@ export default ({
 
   return (
     <Fragment>
-      <InputLabel>What's new</InputLabel>
-      <Textarea name="whatsNew" defaultValue={appVersion.whatsNew} />
-
-      <Base paddingVertical="x4">
-        <InputLabel>Short Description</InputLabel>
-        <Textarea name="shortDescription" defaultValue={appVersion.shortDescription} />
+      <Base margin="x6">
+        <InputLabel>What's new</InputLabel>
+        <Textarea name="whatsNew" defaultValue={appVersion.whatsNew} rows={5} />
       </Base>
 
-      <InputLabel>Full Description</InputLabel>
-      <Textarea name="description" defaultValue={appVersion.description} />
+      <Base margin="x6">
+        <InputLabel>Short Description</InputLabel>
+        <Textarea name="shortDescription" defaultValue={appVersion.shortDescription} rows={3} />
+      </Base>
+
+      <Base margin="x6">
+        <InputLabel>Full Description</InputLabel>
+        <Textarea name="description" defaultValue={appVersion.description} rows={5} />
+      </Base>
 
       <Base paddingVertical="x4">
         <InputLabel>Screenshots</InputLabel>
