@@ -19,6 +19,7 @@ import {
   ProgressSpinner
 } from '@bitrise/bitkit';
 import SVG from 'react-svg';
+import cx from 'classnames';
 
 import { Certificate, KeystoreFile, ProvProfile, ServiceAccountJsonFile, Settings } from '@/models/settings';
 import { mediaQuery } from '@/utils/media';
@@ -237,29 +238,38 @@ export default ({
                 </Link>
               </Flex>
               <Divider color="gray-2" direction="horizontal" margin="x2" />
-              {(provProfiles as ProvProfile[]).map((provProfile: ProvProfile, index) => (
-                <Flex key={index} direction="horizontal" className={css.provProfileContainer}>
-                  <Checkbox
-                    checked={iosSettings.selectedAppStoreProvisioningProfiles.includes(provProfile.slug)}
-                    onChange={() => toggleProvProfile(provProfile.slug)}
+              {(provProfiles as ProvProfile[]).map((provProfile: ProvProfile, index) => {
+                const isChecked = iosSettings.selectedAppStoreProvisioningProfiles.includes(provProfile.slug);
+                const isDisabled = isChecked && iosSettings.selectedAppStoreProvisioningProfiles.length === 1;
+                return (
+                  <Flex
+                    key={index}
+                    direction="horizontal"
+                    className={cx(css.provProfileContainer, { [css.provProfileContainerDisabled]: isDisabled })}
                   >
-                    <Flex
-                      direction="horizontal"
-                      alignChildrenHorizontal="between"
-                      alignChildrenVertical="middle"
-                      gap="x3"
-                      paddingHorizontal="x1"
-                      paddingVertical="x3"
+                    <Checkbox
+                      checked={isChecked}
+                      onChange={() => toggleProvProfile(provProfile.slug)}
+                      disabled={isDisabled}
                     >
-                      <SVG src="/static/sheet-cog.svg" className={css.sheet} />
-                      <Text size="x3" breakOn="all">
-                        {provProfile.name}
-                      </Text>
-                    </Flex>
-                  </Checkbox>
-                  <Divider color="gray-1" direction="horizontal" margin="x2" />
-                </Flex>
-              ))}
+                      <Flex
+                        direction="horizontal"
+                        alignChildrenHorizontal="between"
+                        alignChildrenVertical="middle"
+                        gap="x3"
+                        paddingHorizontal="x1"
+                        paddingVertical="x3"
+                      >
+                        <SVG src="/static/sheet-cog.svg" className={css.sheet} />
+                        <Text size="x3" breakOn="all">
+                          {provProfile.name}
+                        </Text>
+                      </Flex>
+                    </Checkbox>
+                    <Divider color="gray-1" direction="horizontal" margin="x2" />
+                  </Flex>
+                );
+              })}
               {(provProfiles as ProvProfile[]).length === 0 && (
                 <Text size="x3" color="gray-7">
                   No Provisioning Profiles
