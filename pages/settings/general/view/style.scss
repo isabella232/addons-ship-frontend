@@ -21,6 +21,10 @@
   }
 }
 
+.provProfileContainerDisabled :global(.Checkbox) {
+  opacity: 0.5;
+}
+
 .externalLink :global(.Icon) {
   display: inline-block;
   margin-bottom: -1.5 * $grid;
