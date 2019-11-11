@@ -55,7 +55,7 @@ export class AppPage extends Component<AppPageProps, AppPageState> {
       value: 'latest-build'
     },
     {
-      text: 'Latest version',
+      text: 'Latest Version',
       value: 'latest-version'
     }
   ];

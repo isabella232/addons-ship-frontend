@@ -126,7 +126,7 @@ export default ({
                 )}
                 {selectedVersionSortingOption && (
                   <Dropdown
-                    width={useMobileFilters ? `calc(50% - ${sizeX2}px)` : 168}
+                    width={useMobileFilters ? `calc(50% - ${sizeX2}px)` : 180}
                     elevation="x1"
                     onChange={versionSortingOptionValue =>
                       versionSortOptionWithValueSelected(versionSortingOptionValue)

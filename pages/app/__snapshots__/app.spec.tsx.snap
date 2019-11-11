@@ -49,7 +49,7 @@ Object {
       "value": "latest-build",
     },
     Object {
-      "text": "Latest version",
+      "text": "Latest Version",
       "value": "latest-version",
     },
   ],
@@ -308,7 +308,7 @@ exports[`AppPage renders the list of app versions correctly 1`] = `
           "value": "latest-build",
         },
         Object {
-          "text": "Latest version",
+          "text": "Latest Version",
           "value": "latest-version",
         },
       ]
@@ -569,7 +569,7 @@ exports[`AppPage when user selects sort by build numbers renders the list of app
           "value": "latest-build",
         },
         Object {
-          "text": "Latest version",
+          "text": "Latest Version",
           "value": "latest-version",
         },
       ]
@@ -794,7 +794,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
     selectProductFalvour={[Function]}
     selectedVersionSortingOption={
       Object {
-        "text": "Latest version",
+        "text": "Latest Version",
         "value": "latest-version",
       }
     }
@@ -806,7 +806,7 @@ exports[`AppPage when user selects sort by versions renders the list of app vers
           "value": "latest-build",
         },
         Object {
-          "text": "Latest version",
+          "text": "Latest Version",
           "value": "latest-version",
         },
       ]
@@ -904,7 +904,7 @@ exports[`AppPageView when page has apps product flavors desktop 1`] = `
                 ]
               }
               selected="option-1"
-              width={168}
+              width={180}
             >
               Option 1
             </Dropdown>
@@ -1214,7 +1214,7 @@ exports[`AppPageView when page has apps product flavors tablet 1`] = `
                 ]
               }
               selected="option-1"
-              width={168}
+              width={180}
             >
               Option 1
             </Dropdown>
@@ -1351,7 +1351,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
                 ]
               }
               selected="option-1"
-              width={168}
+              width={180}
             >
               Option 1
             </Dropdown>
@@ -1498,7 +1498,7 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
                 ]
               }
               selected="option-1"
-              width={168}
+              width={180}
             >
               Option 1
             </Dropdown>

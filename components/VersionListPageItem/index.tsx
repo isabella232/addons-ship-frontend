@@ -49,7 +49,7 @@ export default ({
               paddingVertical="x4"
               padding={isDesktop ? 'x4' : 'x0'}
             >
-              <Flex direction="horizontal" alignChildrenVertical="middle" grow maxWidth="100%">
+              <Flex direction="horizontal" alignChildrenVertical="middle" grow>
                 <Base className={css.platformIconWrapper}>
                   <Icon color="grape-4" name={iconName} size="1.5rem" />
                 </Base>
