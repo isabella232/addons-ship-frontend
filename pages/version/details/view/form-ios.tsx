@@ -50,7 +50,7 @@ export default ({
   return (
     <Fragment>
       <InputLabel>Description</InputLabel>
-      <Textarea name="description" defaultValue={appVersion.description} />
+      <Textarea name="description" defaultValue={appVersion.description} rows={5} />
 
       <Base paddingVertical="x4">
         <InputLabel>Screenshots</InputLabel>
@@ -71,25 +71,25 @@ export default ({
         />
       </Base>
 
-      <InputLabel>What's new</InputLabel>
-      <Textarea name="whatsNew" defaultValue={appVersion.whatsNew} />
+      <Base margin="x6">
+        <InputLabel>What's new</InputLabel>
+        <Textarea name="whatsNew" defaultValue={appVersion.whatsNew} rows={5} />
+      </Base>
 
-      <Divider color="gray-2" direction="horizontal" margin="x4" />
+      <Base margin="x6">
+        <InputLabel>Promotional Text</InputLabel>
+        <Textarea name="promotionalText" defaultValue={appVersion.promotionalText} rows={3} />
+      </Base>
 
-      <InputLabel>Promotional Text</InputLabel>
-      <Textarea name="promotionalText" defaultValue={appVersion.promotionalText} />
+      <Base margin="x6">
+        <InputLabel>Keywords</InputLabel>
+        <Textarea name="keywords" defaultValue={appVersion.keywords} rows={3} />
+      </Base>
 
-      <Divider color="gray-2" direction="horizontal" margin="x4" />
-
-      <InputLabel>Keywords</InputLabel>
-      <Textarea name="keywords" defaultValue={appVersion.keywords} />
-
-      <Divider color="gray-2" direction="horizontal" margin="x4" />
-
-      <InputLabel>Review Notes</InputLabel>
-      <Textarea name="reviewNotes" defaultValue={appVersion.reviewNotes} />
-
-      <Divider color="gray-2" direction="horizontal" margin="x4" />
+      <Base margin="x6">
+        <InputLabel>Review Notes</InputLabel>
+        <Textarea name="reviewNotes" defaultValue={appVersion.reviewNotes} rows={5} />
+      </Base>
 
       <Flex direction={isTablet ? 'horizontal' : 'vertical'} grow gap="x6">
         <Flex width={isTablet ? 'calc(50% - 0.75rem)' : 'auto'}>

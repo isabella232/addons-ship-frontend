@@ -23,7 +23,6 @@ exports[`VersionListPageItem renders correctly 1`] = `
             alignChildrenVertical="middle"
             direction="horizontal"
             grow={true}
-            maxWidth="100%"
           >
             <Base
               className="platformIconWrapper"
@@ -125,7 +124,6 @@ exports[`VersionListPageItem renders correctly for android 1`] = `
             alignChildrenVertical="middle"
             direction="horizontal"
             grow={true}
-            maxWidth="100%"
           >
             <Base
               className="platformIconWrapper"
@@ -236,7 +234,6 @@ exports[`VersionListPageItem shows more description 1`] = `
             alignChildrenVertical="middle"
             direction="horizontal"
             grow={true}
-            maxWidth="100%"
           >
             <Base
               className="platformIconWrapper"
