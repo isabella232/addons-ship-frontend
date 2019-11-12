@@ -7,12 +7,12 @@ export class SettingsService {
   isComplete = (
     appVersion: AppVersion,
     { iosSettings, androidSettings }: { iosSettings: IosSettings; androidSettings: AndroidSettings }
-  ) => {
+  ): boolean => {
     switch (appVersion.platform) {
       case 'ios': {
         if (!iosSettings) return false;
         return (
-          iosSettings.selectedAppStoreProvisioningProfiles.length &&
+          !!iosSettings.selectedAppStoreProvisioningProfiles.length &&
           !['appleDeveloperAccountEmail', 'appSku', 'appSpecificPassword', 'selectedCodeSigningIdentity'].find(
             key => !iosSettings[key]
           )
