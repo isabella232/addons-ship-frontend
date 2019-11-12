@@ -1,27 +1,42 @@
 import * as ReactDeviceDetect from 'react-device-detect';
 
-import { isAndroid, isIOS, osVersion, mobileModel } from './device';
+import { isAndroid, isIOS, osVersion, mobileModel, deviceInfo } from './device';
 
-describe('isAndroid', () => {
-  it('returns same as ReactDeviceDetect', () => {
+describe('device utils', () => {
+  test('isAndroid returns same as ReactDeviceDetect', () => {
     expect(isAndroid()).toEqual(ReactDeviceDetect.isAndroid);
   });
-});
 
-describe('isIOS', () => {
-  it('returns same as ReactDeviceDetect', () => {
+  test('isIOS returns same as ReactDeviceDetect', () => {
     expect(isIOS()).toEqual(ReactDeviceDetect.isIOS);
   });
-});
 
-describe('osVersion', () => {
-  it('returns same as ReactDeviceDetect', () => {
+  test('osVersion returns same as ReactDeviceDetect', () => {
     expect(osVersion()).toEqual(ReactDeviceDetect.osVersion);
   });
-});
 
-describe('mobileModel', () => {
-  it('returns same as ReactDeviceDetect', () => {
+  test('mobileModel returns same as ReactDeviceDetect', () => {
     expect(mobileModel()).toEqual(ReactDeviceDetect.mobileModel);
+  });
+
+  test('deviceInfo', () => {
+    const expectToHaveProperties = (obj: object, ...props: string[]) =>
+      props.forEach(prop => expect(obj).toHaveProperty(prop));
+
+    const info = deviceInfo();
+
+    expectToHaveProperties(
+      info,
+      'deviceType',
+      'osName',
+      'osVersion',
+      'mobileVendor',
+      'mobileModel',
+      'browserName',
+      'browserVersion',
+      'isAndroid',
+      'isIOS',
+      'isBrowser'
+    );
   });
 });
