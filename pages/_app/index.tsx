@@ -12,6 +12,7 @@ import { PageContext } from '@/models';
 import { fetchApp } from '@/ducks/app';
 import { analyticsConfig } from '@/config';
 import { initializeSegment } from '@/utils/analytics';
+import { deviceInfo } from '@/utils/device';
 
 import '@/assets/style/index.scss';
 import makeStore, { RootState } from '../../store';
@@ -75,7 +76,7 @@ export class ShipApp extends App<ShipAppProps> {
 
     /* istanbul ignore next */
     if (window.analytics) {
-      window.analytics.page({ addonId: 'addons-ship', appSlug, pageName });
+      window.analytics.page({ addonId: 'addons-ship', appSlug, pageName, device: deviceInfo() });
     }
   };
 
