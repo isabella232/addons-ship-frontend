@@ -2,6 +2,7 @@ jest.mock('nookies');
 jest.mock('@/ducks/auth');
 jest.mock('@/ducks/app');
 jest.mock('@/utils/analytics');
+jest.mock('@/utils/device');
 
 import { AppProps } from 'next/app';
 import { RouterProps } from 'next/router';
@@ -14,10 +15,10 @@ import nookies from 'nookies';
 import { setToken } from '@/ducks/auth';
 import { fetchApp } from '@/ducks/app';
 import { initializeSegment } from '@/utils/analytics';
+import { deviceInfo } from '@/utils/device';
 
 import { ShipApp, ShipAppProps } from '.';
 import { PageContext } from '@/models';
-import ConfirmEmail from '../confirm';
 
 describe('ShipApp', () => {
   let store: MockStoreEnhanced, defaultProps: ShipAppProps & AppProps;
@@ -170,6 +171,12 @@ describe('ShipApp', () => {
     });
 
     it('track pageviews on route change', () => {
+      const mockDevice: any = {
+        it: 'does',
+        not: 'matter'
+      };
+      (deviceInfo as jest.Mock).mockReturnValueOnce(mockDevice);
+
       const pageEvt = jest.fn(),
         appSlug = 'some-app-slug',
         Component = () => <h1>Hello</h1>;
@@ -179,7 +186,12 @@ describe('ShipApp', () => {
       const wrapper = shallow(<ShipApp {...defaultProps} appSlug={appSlug} Component={Component as any} />);
 
       (wrapper.instance() as ShipApp).handleRouteChange('some-url');
-      expect(pageEvt).toHaveBeenCalledWith({ addonId: 'addons-ship', appSlug, pageName: Component.displayName });
+      expect(pageEvt).toHaveBeenCalledWith({
+        addonId: 'addons-ship',
+        appSlug,
+        pageName: Component.displayName,
+        device: mockDevice
+      });
     });
   });
 });

@@ -8,7 +8,7 @@ import isEqual from 'lodash/isEqual';
 import cloneDeep from 'lodash/cloneDeep';
 import { Flex, ProgressBitbot } from '@bitrise/bitkit';
 
-import { isAndroid, isIOS, osVersion, mobileModel, compareVersions } from '@/utils/device';
+import { isAndroid, isIOS, osVersion, mobileModel, compareVersions, deviceInfo } from '@/utils/device';
 import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot, AppVersionEventStatus } from '@/models';
 import { Settings, IosSettings, AndroidSettings } from '@/models/settings';
 import { Uploadable, ScreenshotResponse } from '@/models/uploadable';
@@ -286,7 +286,8 @@ export class AppVersionDetails extends Component<Props, State> {
       window.analytics.track('Ship Add-On AppVersionDetails Save', {
         addonId: 'addons-ship',
         appSlug,
-        appVersionId: id
+        appVersionId: id,
+        device: deviceInfo()
       });
     }
 
@@ -323,7 +324,8 @@ export class AppVersionDetails extends Component<Props, State> {
       window.analytics.track('Ship Add-On AppVersionDetails Publish', {
         addonId: 'addons-ship',
         appSlug,
-        appVersionId: id
+        appVersionId: id,
+        device: deviceInfo()
       });
     }
 
@@ -353,7 +355,8 @@ export class AppVersionDetails extends Component<Props, State> {
         addonId: 'addons-ship',
         appSlug,
         appVersionId: id,
-        deviceId
+        deviceId,
+        device: deviceInfo()
       });
     }
 
