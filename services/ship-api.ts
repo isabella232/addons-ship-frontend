@@ -59,6 +59,9 @@ export class ShipAPIService {
     if (settings.iosSettings) {
       delete settings.iosSettings['availableProvisioningProfiles'];
       delete settings.iosSettings['availableCodeSigningIdentities'];
+      if (!settings.iosSettings.selectedAppStoreProvisioningProfiles) {
+        settings.iosSettings.selectedAppStoreProvisioningProfiles = [];
+      }
     }
     if (settings.androidSettings) {
       delete settings.androidSettings['availableKeystoreFiles'];
