@@ -11,6 +11,7 @@ export type UploadableResponse = {
   updatedAt: Date;
   id: string;
   downloadUrl: string;
+  uploadUrl?: string;
   filename: string;
   filesize: number;
   uploaded: boolean;

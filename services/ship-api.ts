@@ -282,12 +282,13 @@ export class ShipAPIService {
   }
 
   // PATCH /apps/{app-slug}/versions/{version-id}/feature-graphic/uploaded
-  async uploadedFeatureGraphic(appSlug: string, versionId: string) {
+  async uploadedFeatureGraphic(appSlug: string, versionId: string): Promise<UploadableResponse> {
     this.checkToken();
 
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/feature-graphic/uploaded`;
 
-    return await patch(url, this.token);
+    const { data } = await patch(url, this.token).then(res => res.json());
+    return camelizeKeysDeep(data);
   }
 
   // DELETE /apps/{app-slug}/versions/{version-id}/feature-graphic

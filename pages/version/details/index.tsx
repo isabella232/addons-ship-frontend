@@ -11,7 +11,7 @@ import { Flex, ProgressBitbot } from '@bitrise/bitkit';
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions, deviceInfo } from '@/utils/device';
 import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot, AppVersionEventStatus } from '@/models';
 import { Settings, IosSettings, AndroidSettings } from '@/models/settings';
-import { Uploadable, ScreenshotResponse } from '@/models/uploadable';
+import { Uploadable, ScreenshotResponse, UploadableResponse } from '@/models/uploadable';
 import { RootState } from '@/store';
 import {
   updateAppVersion,
@@ -162,7 +162,7 @@ export class AppVersionDetails extends Component<Props, State> {
   }
 
   componentDidUpdate({ appVersionEvents: prevEvents, appVersion: prevAppVersion }: Props) {
-    const { appVersionEvents: events, versionId } = this.props;
+    const { appVersion, appVersionEvents: events, versionId } = this.props;
 
     if (events.length && !isEqual(events, prevEvents)) {
       const latestEvent = events[0];
@@ -175,7 +175,11 @@ export class AppVersionDetails extends Component<Props, State> {
     }
 
     if ((prevAppVersion || ({} as any)).id !== versionId) {
-      this.init();
+      return this.init();
+    }
+
+    if (appVersion?.featureGraphicData?.id !== prevAppVersion?.featureGraphicData?.id) {
+      this.setFeatureGraphic(appVersion.featureGraphicData);
     }
   }
 
@@ -224,11 +228,19 @@ export class AppVersionDetails extends Component<Props, State> {
         selectedDeviceIdForScreenshots: Object.keys(newScreenshotList)[0]
       });
 
-      if (appVersion.featureGraphicData) {
-        const { id, filename, downloadUrl } = appVersion.featureGraphicData;
-        this.setState({ featureGraphic: new FeatureGraphic(id, filename, downloadUrl) });
-      }
+      this.setFeatureGraphic(appVersion.featureGraphicData);
     }
+  };
+
+  setFeatureGraphic = (featureGraphicData?: UploadableResponse) => {
+    if (!featureGraphicData) {
+      return;
+    }
+
+    const { id, filename, downloadUrl } = featureGraphicData;
+    const featureGraphic = new FeatureGraphic(id, filename, downloadUrl);
+
+    this.setState({ featureGraphic });
   };
 
   onChange = (key: string, newValue: string) => {
@@ -264,7 +276,7 @@ export class AppVersionDetails extends Component<Props, State> {
     return [uploadables, files];
   };
 
-  onSave = () => {
+  onSave = async () => {
     const {
       appVersion,
       updateAppVersion,
@@ -303,10 +315,13 @@ export class AppVersionDetails extends Component<Props, State> {
       uploadScreenshots(appSlug, id.toString(), uploadables, files);
     }
 
+    if (isFeatureGraphicMarkedForDelete) {
+      await deleteFeatureGraphic(appSlug, id.toString());
+      this.setState({ isFeatureGraphicMarkedForDelete: false });
+    }
+
     if (featureGraphic && featureGraphic.type() === 'pending') {
       uploadFeatureGraphic(appSlug, id.toString(), featureGraphic);
-    } else if (isFeatureGraphicMarkedForDelete) {
-      deleteFeatureGraphic(appSlug, id.toString());
     }
   };
 
@@ -433,10 +448,13 @@ export class AppVersionDetails extends Component<Props, State> {
       return false;
     }
 
-    return settingService.isComplete(appVersion, settings as {
-      iosSettings: IosSettings;
-      androidSettings: AndroidSettings;
-    });
+    return settingService.isComplete(
+      appVersion,
+      settings as {
+        iosSettings: IosSettings;
+        androidSettings: AndroidSettings;
+      }
+    );
   };
 
   render() {

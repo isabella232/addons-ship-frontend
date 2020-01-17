@@ -507,6 +507,29 @@ describe('AppVersionDetails', () => {
 
         expect(updateAppVersion).not.toHaveBeenCalled();
       });
+
+      it.only('does not upload image resources twice', () => {
+        const { uploadScreenshots, uploadFeatureGraphic } = defaultProps;
+
+        (wrap.instance() as AppVersionDetails).onScreenshotAdded(deviceId, [new File([], 'whatever.jpg')]);
+        (wrap.instance() as AppVersionDetails).onFeatureGraphicAdded(new File([], 'feat-whatever.jpg'));
+        (wrap.instance() as AppVersionDetails).onSave();
+        wrap.setProps({
+          appVersion: {
+            ...mockAppVersion,
+            featureGraphicData: {
+              id: 'some-id',
+              filename: 'a-filename',
+              downloadUrl: 'maybe.an.s3.url'
+            }
+          }
+        });
+
+        (wrap.instance() as AppVersionDetails).onSave();
+
+        expect(uploadScreenshots).toHaveBeenCalledTimes(1);
+        expect(uploadFeatureGraphic).toHaveBeenCalledTimes(1);
+      });
     });
 
     test('shouldEnableInstall', () => {
