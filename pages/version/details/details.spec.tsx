@@ -47,7 +47,9 @@ describe('AppVersionDetailsView', () => {
     settingsPath: '/path',
     activityPath: '/path',
     latestEventStatus: null,
-    isSaving: false
+    isSaving: false,
+    iconUrl: '',
+    isStartingPublish: false
   };
 
   beforeAll(() => {
@@ -198,7 +200,8 @@ describe('AppVersionDetails', () => {
     fetchAppVersionEvents: jest.fn() as any,
     fetchAppVersion: jest.fn() as any,
     appVersionEvents: [],
-    isSaving: false
+    isSaving: false,
+    iconUrl: ''
   };
 
   beforeEach(() => {
