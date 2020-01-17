@@ -305,6 +305,7 @@ export class AppVersionDetails extends Component<Props, State> {
 
     if (screenshotIdsToDelete.length > 0) {
       screenshotIdsToDelete.forEach(screenshotId => deleteScreenshot(appSlug, id.toString(), screenshotId));
+      this.setState({ screenshotIdsToDelete: [] });
     }
 
     updateAppVersion(updatedAppVersion as AppVersion);
