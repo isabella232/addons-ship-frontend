@@ -2,7 +2,7 @@ import { Dispatch } from 'redux';
 import { createAction } from 'deox';
 
 import { ShipAPIService } from '@/services/ship-api';
-import { Uploadable } from '@/models/uploadable';
+import { Uploadable, ScreenshotResponse } from '@/models/uploadable';
 import { RootState } from '@/store';
 import { uploadFileToS3 } from '@/utils/file';
 
@@ -28,8 +28,8 @@ const _uploadScreenshots = (appSlug: string, versionId: string, screenshots: Upl
     );
 
     // Mark screenshots as uploaded
-    await shipApi.uploadedScreenshots(appSlug, versionId);
-    dispatch(uploadScreenshots.complete());
+    const screenshotdDataList = await shipApi.uploadedScreenshots(appSlug, versionId);
+    dispatch(uploadScreenshots.complete(screenshotdDataList));
   } catch (error) {
     console.error('uploadScreenshots', error);
     dispatch(uploadScreenshots.error(error));
@@ -38,7 +38,9 @@ const _uploadScreenshots = (appSlug: string, versionId: string, screenshots: Upl
 
 const uploadScreenshots = Object.assign(_uploadScreenshots, {
   next: createAction($`UPLOAD_SCREENSHOTS_NEXT`),
-  complete: createAction($`UPLOAD_SCREENSHOTS_COMPLETE`),
+  complete: createAction($`UPLOAD_SCREENSHOTS_COMPLETE`, resolve => (screenshotdDataList: ScreenshotResponse[]) =>
+    resolve(screenshotdDataList)
+  ),
   error: createAction($`UPLOAD_SCREENSHOTS_ERROR`, resolve => (error: Error) => resolve(error))
 });
 

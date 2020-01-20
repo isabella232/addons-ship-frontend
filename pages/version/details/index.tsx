@@ -6,10 +6,11 @@ import update from 'lodash/update';
 import filter from 'lodash/filter';
 import isEqual from 'lodash/isEqual';
 import cloneDeep from 'lodash/cloneDeep';
+import sortBy from 'lodash/sortBy';
 import { Flex, ProgressBitbot } from '@bitrise/bitkit';
 
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions, deviceInfo } from '@/utils/device';
-import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot, AppVersionEventStatus } from '@/models';
+import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot, AppVersionEventStatus, Platform } from '@/models';
 import { Settings, IosSettings, AndroidSettings } from '@/models/settings';
 import { Uploadable, ScreenshotResponse, UploadableResponse } from '@/models/uploadable';
 import { RootState } from '@/store';
@@ -180,6 +181,10 @@ export class AppVersionDetails extends Component<Props, State> {
 
     if (appVersion?.featureGraphicData?.id !== prevAppVersion?.featureGraphicData?.id) {
       this.setFeatureGraphic(appVersion.featureGraphicData);
+    }
+
+    if (appVersion && !isEqual(sortBy(appVersion.screenshotDatas), sortBy(prevAppVersion?.screenshotDatas))) {
+      this.setScreenshots(appVersion?.screenshotDatas, appVersion.platform);
     }
   }
 

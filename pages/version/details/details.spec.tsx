@@ -508,7 +508,7 @@ describe('AppVersionDetails', () => {
         expect(updateAppVersion).not.toHaveBeenCalled();
       });
 
-      it.only('does not upload image resources twice', () => {
+      it('does not upload image resources twice', () => {
         const { uploadScreenshots, uploadFeatureGraphic } = defaultProps;
 
         (wrap.instance() as AppVersionDetails).onScreenshotAdded(deviceId, [new File([], 'whatever.jpg')]);
@@ -521,7 +521,8 @@ describe('AppVersionDetails', () => {
               id: 'some-id',
               filename: 'a-filename',
               downloadUrl: 'maybe.an.s3.url'
-            }
+            },
+            screenshotDatas: [{ downloadUrl: 'does.not.matter' }]
           }
         });
 
@@ -529,6 +530,18 @@ describe('AppVersionDetails', () => {
 
         expect(uploadScreenshots).toHaveBeenCalledTimes(1);
         expect(uploadFeatureGraphic).toHaveBeenCalledTimes(1);
+      });
+
+      it('does not try to delete image resources twice', async () => {
+        const { deleteScreenshot, deleteFeatureGraphic } = defaultProps,
+          screenshotId = 'screenshot-to-delete';
+
+        wrap.setState({ screenshotIdsToDelete: [screenshotId], isFeatureGraphicMarkedForDelete: true });
+        await (wrap.instance() as AppVersionDetails).onSave();
+        await (wrap.instance() as AppVersionDetails).onSave();
+
+        expect(deleteScreenshot).toHaveBeenCalledTimes(1);
+        expect(deleteFeatureGraphic).toHaveBeenCalledTimes(1);
       });
     });
 
