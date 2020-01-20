@@ -193,7 +193,6 @@ export class AppVersionDetails extends Component<Props, State> {
     const { appSlug, versionId, appVersion, startPollPublishStatus, fetchAppVersionEvents } = this.props;
     if (appVersion && appVersion.id === versionId) {
       fetchAppVersionEvents(appSlug, versionId);
-      const newScreenshotList = cloneDeep(appVersion.platform === 'ios' ? iosDevices : androidDevices);
 
       this.setState({
         hasMounted: true,
@@ -201,35 +200,40 @@ export class AppVersionDetails extends Component<Props, State> {
       });
       startPollPublishStatus(appVersion);
 
-      appVersion.screenshotDatas.forEach(({ id, filename, downloadUrl, filesize, deviceType }: ScreenshotResponse) => {
-        const screenshot = new Screenshot(id, filename, downloadUrl, filesize, deviceType);
-
-        let deviceId = Object.keys(newScreenshotList).find(
-          key => newScreenshotList[key].deviceName === screenshot.deviceType
-        ) as string; // TODO this is breaking probably
-        if (!deviceId) {
-          deviceId = screenshot.deviceType as string;
-        }
-
-        if (!newScreenshotList[deviceId]) {
-          newScreenshotList[deviceId] = {
-            deviceName: deviceId
-          };
-        }
-        if (!newScreenshotList[deviceId].screenshots) {
-          newScreenshotList[deviceId].screenshots = [];
-        }
-
-        (newScreenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
-      });
-
-      this.setState({
-        screenshotList: newScreenshotList,
-        selectedDeviceIdForScreenshots: Object.keys(newScreenshotList)[0]
-      });
-
+      this.setScreenshots(appVersion.screenshotDatas, appVersion.platform);
       this.setFeatureGraphic(appVersion.featureGraphicData);
     }
+  };
+
+  setScreenshots = (screenshotDataList: ScreenshotResponse[], platform: Platform) => {
+    const newScreenshotList = cloneDeep(platform === 'ios' ? iosDevices : androidDevices);
+
+    screenshotDataList.forEach(({ id, filename, downloadUrl, filesize, deviceType }: ScreenshotResponse) => {
+      const screenshot = new Screenshot(id, filename, downloadUrl, filesize, deviceType);
+
+      let deviceId = Object.keys(newScreenshotList).find(
+        key => newScreenshotList[key].deviceName === screenshot.deviceType
+      ) as string; // TODO this is breaking probably
+      if (!deviceId) {
+        deviceId = screenshot.deviceType as string;
+      }
+
+      if (!newScreenshotList[deviceId]) {
+        newScreenshotList[deviceId] = {
+          deviceName: deviceId
+        };
+      }
+      if (!newScreenshotList[deviceId].screenshots) {
+        newScreenshotList[deviceId].screenshots = [];
+      }
+
+      (newScreenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
+    });
+
+    this.setState({
+      screenshotList: newScreenshotList,
+      selectedDeviceIdForScreenshots: Object.keys(newScreenshotList)[0]
+    });
   };
 
   setFeatureGraphic = (featureGraphicData?: UploadableResponse) => {
