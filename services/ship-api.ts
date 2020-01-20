@@ -117,6 +117,17 @@ export class ShipAPIService {
     return appVersionData as AppVersion;
   }
 
+  mapScreenshotsResponse(data: any): ScreenshotResponse[] {
+    return data.map(camelizeKeys).map(
+      ({ createdAt, updatedAt, ...screenshotData }: any) =>
+        ({
+          ...screenshotData,
+          createdAt: new Date(createdAt),
+          updatedAt: new Date(updatedAt)
+        } as ScreenshotResponse)
+    );
+  }
+
   // GET /apps/{app-slug}/versions
   async getAppVersionList(appSlug: string): Promise<AppVersion[]> {
     this.checkToken();
@@ -212,14 +223,7 @@ export class ShipAPIService {
 
     const { data } = await get(url, this.token).then(res => res.json());
 
-    return data.map(camelizeKeys).map(
-      ({ createdAt, updatedAt, ...screenshotData }: any) =>
-        ({
-          ...screenshotData,
-          createdAt: new Date(createdAt),
-          updatedAt: new Date(updatedAt)
-        } as ScreenshotResponse)
-    );
+    return this.mapScreenshotsResponse(data);
   }
 
   // POST /apps/{app-slug}/versions/{version-id}/screenshots
@@ -251,7 +255,9 @@ export class ShipAPIService {
 
     const url = `${this.config.url}/apps/${appSlug}/versions/${versionId}/screenshots/uploaded`;
 
-    return await patch(url, this.token);
+    const { data } = await patch(url, this.token).then(res => res.json());
+
+    return this.mapScreenshotsResponse(data);
   }
 
   // GET /apps/{app-slug}/versions/{version-id}/feature-graphic
