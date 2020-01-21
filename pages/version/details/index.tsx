@@ -6,12 +6,13 @@ import update from 'lodash/update';
 import filter from 'lodash/filter';
 import isEqual from 'lodash/isEqual';
 import cloneDeep from 'lodash/cloneDeep';
+import sortBy from 'lodash/sortBy';
 import { Flex, ProgressBitbot } from '@bitrise/bitkit';
 
 import { isAndroid, isIOS, osVersion, mobileModel, compareVersions, deviceInfo } from '@/utils/device';
-import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot, AppVersionEventStatus } from '@/models';
+import { AppVersion, AppVersionEvent, FeatureGraphic, Screenshot, AppVersionEventStatus, Platform } from '@/models';
 import { Settings, IosSettings, AndroidSettings } from '@/models/settings';
-import { Uploadable, ScreenshotResponse } from '@/models/uploadable';
+import { Uploadable, ScreenshotResponse, UploadableResponse } from '@/models/uploadable';
 import { RootState } from '@/store';
 import {
   updateAppVersion,
@@ -162,7 +163,7 @@ export class AppVersionDetails extends Component<Props, State> {
   }
 
   componentDidUpdate({ appVersionEvents: prevEvents, appVersion: prevAppVersion }: Props) {
-    const { appVersionEvents: events, versionId } = this.props;
+    const { appVersion, appVersionEvents: events, versionId } = this.props;
 
     if (events.length && !isEqual(events, prevEvents)) {
       const latestEvent = events[0];
@@ -175,7 +176,15 @@ export class AppVersionDetails extends Component<Props, State> {
     }
 
     if ((prevAppVersion || ({} as any)).id !== versionId) {
-      this.init();
+      return this.init();
+    }
+
+    if (appVersion?.featureGraphicData?.id !== prevAppVersion?.featureGraphicData?.id) {
+      this.setFeatureGraphic(appVersion.featureGraphicData);
+    }
+
+    if (appVersion && !isEqual(sortBy(appVersion.screenshotDatas), sortBy(prevAppVersion?.screenshotDatas))) {
+      this.setScreenshots(appVersion?.screenshotDatas, appVersion.platform);
     }
   }
 
@@ -189,7 +198,6 @@ export class AppVersionDetails extends Component<Props, State> {
     const { appSlug, versionId, appVersion, startPollPublishStatus, fetchAppVersionEvents } = this.props;
     if (appVersion && appVersion.id === versionId) {
       fetchAppVersionEvents(appSlug, versionId);
-      const newScreenshotList = cloneDeep(appVersion.platform === 'ios' ? iosDevices : androidDevices);
 
       this.setState({
         hasMounted: true,
@@ -197,38 +205,51 @@ export class AppVersionDetails extends Component<Props, State> {
       });
       startPollPublishStatus(appVersion);
 
-      appVersion.screenshotDatas.forEach(({ id, filename, downloadUrl, filesize, deviceType }: ScreenshotResponse) => {
-        const screenshot = new Screenshot(id, filename, downloadUrl, filesize, deviceType);
-
-        let deviceId = Object.keys(newScreenshotList).find(
-          key => newScreenshotList[key].deviceName === screenshot.deviceType
-        ) as string; // TODO this is breaking probably
-        if (!deviceId) {
-          deviceId = screenshot.deviceType as string;
-        }
-
-        if (!newScreenshotList[deviceId]) {
-          newScreenshotList[deviceId] = {
-            deviceName: deviceId
-          };
-        }
-        if (!newScreenshotList[deviceId].screenshots) {
-          newScreenshotList[deviceId].screenshots = [];
-        }
-
-        (newScreenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
-      });
-
-      this.setState({
-        screenshotList: newScreenshotList,
-        selectedDeviceIdForScreenshots: Object.keys(newScreenshotList)[0]
-      });
-
-      if (appVersion.featureGraphicData) {
-        const { id, filename, downloadUrl } = appVersion.featureGraphicData;
-        this.setState({ featureGraphic: new FeatureGraphic(id, filename, downloadUrl) });
-      }
+      this.setScreenshots(appVersion.screenshotDatas, appVersion.platform);
+      this.setFeatureGraphic(appVersion.featureGraphicData);
     }
+  };
+
+  setScreenshots = (screenshotDataList: ScreenshotResponse[], platform: Platform) => {
+    const newScreenshotList = cloneDeep(platform === 'ios' ? iosDevices : androidDevices);
+
+    screenshotDataList.forEach(({ id, filename, downloadUrl, filesize, deviceType }: ScreenshotResponse) => {
+      const screenshot = new Screenshot(id, filename, downloadUrl, filesize, deviceType);
+
+      let deviceId = Object.keys(newScreenshotList).find(
+        key => newScreenshotList[key].deviceName === screenshot.deviceType
+      ) as string; // TODO this is breaking probably
+      if (!deviceId) {
+        deviceId = screenshot.deviceType as string;
+      }
+
+      if (!newScreenshotList[deviceId]) {
+        newScreenshotList[deviceId] = {
+          deviceName: deviceId
+        };
+      }
+      if (!newScreenshotList[deviceId].screenshots) {
+        newScreenshotList[deviceId].screenshots = [];
+      }
+
+      (newScreenshotList[deviceId].screenshots as Screenshot[]).push(screenshot);
+    });
+
+    this.setState({
+      screenshotList: newScreenshotList,
+      selectedDeviceIdForScreenshots: Object.keys(newScreenshotList)[0]
+    });
+  };
+
+  setFeatureGraphic = (featureGraphicData?: UploadableResponse) => {
+    if (!featureGraphicData) {
+      return;
+    }
+
+    const { id, filename, downloadUrl } = featureGraphicData;
+    const featureGraphic = new FeatureGraphic(id, filename, downloadUrl);
+
+    this.setState({ featureGraphic });
   };
 
   onChange = (key: string, newValue: string) => {
@@ -264,7 +285,7 @@ export class AppVersionDetails extends Component<Props, State> {
     return [uploadables, files];
   };
 
-  onSave = () => {
+  onSave = async () => {
     const {
       appVersion,
       updateAppVersion,
@@ -293,6 +314,7 @@ export class AppVersionDetails extends Component<Props, State> {
 
     if (screenshotIdsToDelete.length > 0) {
       screenshotIdsToDelete.forEach(screenshotId => deleteScreenshot(appSlug, id.toString(), screenshotId));
+      this.setState({ screenshotIdsToDelete: [] });
     }
 
     updateAppVersion(updatedAppVersion as AppVersion);
@@ -303,10 +325,13 @@ export class AppVersionDetails extends Component<Props, State> {
       uploadScreenshots(appSlug, id.toString(), uploadables, files);
     }
 
+    if (isFeatureGraphicMarkedForDelete) {
+      await deleteFeatureGraphic(appSlug, id.toString());
+      this.setState({ isFeatureGraphicMarkedForDelete: false });
+    }
+
     if (featureGraphic && featureGraphic.type() === 'pending') {
       uploadFeatureGraphic(appSlug, id.toString(), featureGraphic);
-    } else if (isFeatureGraphicMarkedForDelete) {
-      deleteFeatureGraphic(appSlug, id.toString());
     }
   };
 
@@ -433,10 +458,13 @@ export class AppVersionDetails extends Component<Props, State> {
       return false;
     }
 
-    return settingService.isComplete(appVersion, settings as {
-      iosSettings: IosSettings;
-      androidSettings: AndroidSettings;
-    });
+    return settingService.isComplete(
+      appVersion,
+      settings as {
+        iosSettings: IosSettings;
+        androidSettings: AndroidSettings;
+      }
+    );
   };
 
   render() {

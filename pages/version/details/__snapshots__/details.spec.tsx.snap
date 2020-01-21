@@ -254,6 +254,7 @@ exports[`AppVersionDetails disables install button when device is from a lower v
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
   isStartingPublish={false}
@@ -338,6 +339,7 @@ exports[`AppVersionDetails disables install button when device is from different
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
   isStartingPublish={false}
@@ -422,6 +424,7 @@ exports[`AppVersionDetails disables install button when device is not supported 
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
   isStartingPublish={false}
@@ -539,6 +542,7 @@ exports[`AppVersionDetails disables install button when there is no public insta
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
   isStartingPublish={false}
@@ -623,6 +627,7 @@ exports[`AppVersionDetails enables install button when there is public install p
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
   isStartingPublish={false}
@@ -707,6 +712,7 @@ exports[`AppVersionDetails enables install button when there is public install p
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
   isStartingPublish={false}
@@ -824,6 +830,7 @@ exports[`AppVersionDetails renders correctly 1`] = `
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
   isStartingPublish={false}
@@ -920,8 +927,10 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -1194,6 +1203,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -1227,6 +1237,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -1242,6 +1253,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -1252,6 +1264,7 @@ exports[`AppVersionDetailsView when a publish target without URL is used renders
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -4423,8 +4436,10 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -4697,6 +4712,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -4730,6 +4746,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -4745,6 +4762,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -4755,6 +4773,7 @@ exports[`AppVersionDetailsView when an Android app version is viewed renders wit
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -7948,8 +7967,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -8222,6 +8243,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -8255,6 +8277,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -8270,6 +8293,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -8280,6 +8304,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -11030,6 +11055,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders ad-hoc distributio
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
+                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -12049,8 +12075,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -12323,6 +12351,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -12356,6 +12385,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -12371,6 +12401,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -12381,6 +12412,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -15131,6 +15163,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders app-store distribu
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="app-store"
+                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -16096,8 +16129,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -16370,6 +16405,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -16403,6 +16439,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -16418,6 +16455,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -16428,6 +16466,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -19178,6 +19217,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders development distri
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
+                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -20197,8 +20237,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -20471,6 +20513,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -20504,6 +20547,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -20519,6 +20563,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -20529,6 +20574,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -23279,6 +23325,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders enterprise distrib
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="enterprise"
+                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -24244,8 +24291,10 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -24518,6 +24567,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -24551,6 +24601,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -24566,6 +24617,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -24576,6 +24628,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -27326,6 +27379,7 @@ exports[`AppVersionDetailsView when viewed on desktop renders the details view c
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
+                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -28345,8 +28399,10 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -28657,6 +28713,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -28690,6 +28747,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -28705,6 +28763,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -28715,6 +28774,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -31465,6 +31525,7 @@ exports[`AppVersionDetailsView when viewed on desktop when not ready for publish
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
+                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -32484,8 +32545,10 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -32758,6 +32821,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -32791,6 +32855,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -32806,6 +32871,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -32816,6 +32882,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -35566,6 +35633,7 @@ exports[`AppVersionDetailsView when viewed on desktop when public install page i
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="development"
+                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={false}
                     shouldEnablePublish={true}
@@ -36302,6 +36370,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
           <_default
             borderRadius="x2"
             margin="x0"
+            src=""
             width="160px"
           />
           <Flex
@@ -36442,6 +36511,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has failed 1`
         appSlug="app-slug-123"
         hasMounted={true}
         ipaExportMethod="ad-hoc"
+        isPublishInProgress={false}
         isPublished={false}
         isSaving={false}
         publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -36531,6 +36601,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
           <_default
             borderRadius="x2"
             margin="x0"
+            src=""
             width="160px"
           />
           <Flex
@@ -36671,6 +36742,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish has finished 
         appSlug="app-slug-123"
         hasMounted={true}
         ipaExportMethod="ad-hoc"
+        isPublishInProgress={false}
         isPublished={true}
         isSaving={false}
         publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -36773,8 +36845,10 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={true}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus="in_progress"
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -37059,6 +37133,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -37092,6 +37167,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -37107,6 +37183,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -37117,6 +37194,7 @@ exports[`AppVersionDetailsView when viewed on desktop when publish is in progres
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -40879,8 +40957,10 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={true}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -41153,6 +41233,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -41186,6 +41267,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -41201,6 +41283,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -41211,6 +41294,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -43961,6 +44045,7 @@ exports[`AppVersionDetailsView when viewed on desktop while saving 1`] = `
                     appSlug="app-slug-123"
                     hasMounted={true}
                     ipaExportMethod="ad-hoc"
+                    isPublishInProgress={false}
                     isPublished={false}
                     isSaving={true}
                     publicInstallPageURL="https://bitrise.io/app/8b334705d8e78276"
@@ -44972,8 +45057,10 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={false}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -45246,6 +45333,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -45279,6 +45367,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -45294,6 +45383,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -45304,6 +45394,7 @@ exports[`AppVersionDetailsView when viewed on mobile renders the details view co
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",
@@ -48473,8 +48564,10 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
     ]
   }
   hasMounted={true}
+  iconUrl=""
   isPublishInProgress={false}
   isSaving={true}
+  isStartingPublish={false}
   latestEventStatus={null}
   onDeviceSelected={[MockFunction]}
   onFeatureGraphicAdded={[MockFunction]}
@@ -48747,6 +48840,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                           <_default
                             borderRadius="x2"
                             margin="x0"
+                            src=""
                             width="160px"
                           >
                             <div>
@@ -48780,6 +48874,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                 innerRef={[Function]}
                                 margin="x0"
                                 maxWidth="none"
+                                src=""
                                 style={
                                   Object {
                                     "clipPath": "url(#squircle-0.02)",
@@ -48795,6 +48890,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                   innerRef={[Function]}
                                   margin="x0"
                                   maxWidth="none"
+                                  src=""
                                   style={
                                     Object {
                                       "clipPath": "url(#squircle-0.02)",
@@ -48805,6 +48901,7 @@ exports[`AppVersionDetailsView when viewed on mobile while saving 1`] = `
                                 >
                                   <img
                                     className="Base Base--border-radius-x2 Base--margin-x0 Base--max-width Image"
+                                    src=""
                                     style={
                                       Object {
                                         "clipPath": "url(#squircle-0.02)",

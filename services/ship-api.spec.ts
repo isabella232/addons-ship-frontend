@@ -231,6 +231,10 @@ describe('Ship API service', () => {
     testTokenNotSet(async () => await api.uploadedScreenshots('slug', 'version'));
 
     it('calls the api', async () => {
+      (patch as jest.Mock).mockResolvedValueOnce({
+        json: () => ({ data: [] })
+      });
+
       const appSlug = 'an-app-slug',
         versionId = 'a-version-id',
         token = 'some-token';
@@ -308,6 +312,10 @@ describe('Ship API service', () => {
     testTokenNotSet(async () => await api.uploadedFeatureGraphic('slug', 'version'));
 
     it('calls the api', async () => {
+      (patch as jest.Mock).mockResolvedValueOnce({
+        json: () => ({ data: [] })
+      });
+
       const appSlug = 'an-app-slug',
         versionId = 'a-version-id',
         token = 'some-token';

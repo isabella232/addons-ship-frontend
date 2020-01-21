@@ -85,14 +85,24 @@ export default createReducer(defaultState, handleAction => [
       isSaving: isSaving + 1
     })
   ),
+  handleAction(uploadFeatureGraphic.complete, ({ isSaving, appVersion, ...state }, { payload }) => ({
+    ...state,
+    appVersion: {
+      ...appVersion!,
+      featureGraphicData: payload
+    },
+    isSaving: isSaving - 1
+  })),
+  handleAction(uploadScreenshots.complete, ({ isSaving, appVersion, ...state }, { payload }) => ({
+    ...state,
+    appVersion: {
+      ...appVersion!,
+      screenshotDatas: payload
+    },
+    isSaving: isSaving - 1
+  })),
   handleAction(
-    [
-      uploadScreenshots.complete,
-      uploadFeatureGraphic.complete,
-      updateAppVersion.error,
-      uploadScreenshots.error,
-      uploadFeatureGraphic.error
-    ],
+    [updateAppVersion.error, uploadScreenshots.error, uploadFeatureGraphic.error],
     ({ isSaving, ...state }) => ({
       ...state,
       isSaving: isSaving - 1

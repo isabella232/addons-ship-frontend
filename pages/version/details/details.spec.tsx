@@ -47,7 +47,9 @@ describe('AppVersionDetailsView', () => {
     settingsPath: '/path',
     activityPath: '/path',
     latestEventStatus: null,
-    isSaving: false
+    isSaving: false,
+    iconUrl: '',
+    isStartingPublish: false
   };
 
   beforeAll(() => {
@@ -198,7 +200,8 @@ describe('AppVersionDetails', () => {
     fetchAppVersionEvents: jest.fn() as any,
     fetchAppVersion: jest.fn() as any,
     appVersionEvents: [],
-    isSaving: false
+    isSaving: false,
+    iconUrl: ''
   };
 
   beforeEach(() => {
@@ -503,6 +506,42 @@ describe('AppVersionDetails', () => {
         (wrap.instance() as AppVersionDetails).onSave();
 
         expect(updateAppVersion).not.toHaveBeenCalled();
+      });
+
+      it('does not upload image resources twice', () => {
+        const { uploadScreenshots, uploadFeatureGraphic } = defaultProps;
+
+        (wrap.instance() as AppVersionDetails).onScreenshotAdded(deviceId, [new File([], 'whatever.jpg')]);
+        (wrap.instance() as AppVersionDetails).onFeatureGraphicAdded(new File([], 'feat-whatever.jpg'));
+        (wrap.instance() as AppVersionDetails).onSave();
+        wrap.setProps({
+          appVersion: {
+            ...mockAppVersion,
+            featureGraphicData: {
+              id: 'some-id',
+              filename: 'a-filename',
+              downloadUrl: 'maybe.an.s3.url'
+            },
+            screenshotDatas: [{ downloadUrl: 'does.not.matter' }]
+          }
+        });
+
+        (wrap.instance() as AppVersionDetails).onSave();
+
+        expect(uploadScreenshots).toHaveBeenCalledTimes(1);
+        expect(uploadFeatureGraphic).toHaveBeenCalledTimes(1);
+      });
+
+      it('does not try to delete image resources twice', async () => {
+        const { deleteScreenshot, deleteFeatureGraphic } = defaultProps,
+          screenshotId = 'screenshot-to-delete';
+
+        wrap.setState({ screenshotIdsToDelete: [screenshotId], isFeatureGraphicMarkedForDelete: true });
+        await (wrap.instance() as AppVersionDetails).onSave();
+        await (wrap.instance() as AppVersionDetails).onSave();
+
+        expect(deleteScreenshot).toHaveBeenCalledTimes(1);
+        expect(deleteFeatureGraphic).toHaveBeenCalledTimes(1);
       });
     });
 
