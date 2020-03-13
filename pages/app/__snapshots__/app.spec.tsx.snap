@@ -948,7 +948,7 @@ exports[`AppPageView when page has apps product flavors desktop 1`] = `
           key="0-3"
           note="Updated on September 22, 12:42"
           platform="ios"
-          title="(29) v1.0.3 Standup Timer"
+          title="(29) v1.0.2 Standup Timer"
         />
         <_default
           description=""
@@ -958,7 +958,7 @@ exports[`AppPageView when page has apps product flavors desktop 1`] = `
           key="0-4"
           note="Updated on September 22, 12:42"
           platform="ios"
-          title="(28) v1.0.3 Standup Timer"
+          title="(28) v1.0.2 Standup Timer"
         />
       </Base>
     </Base>
@@ -1103,7 +1103,7 @@ exports[`AppPageView when page has apps product flavors mobile 1`] = `
           key="0-3"
           note="Updated on September 22, 12:42"
           platform="ios"
-          title="(29) v1.0.3 Standup Timer"
+          title="(29) v1.0.2 Standup Timer"
         />
         <_default
           description=""
@@ -1113,7 +1113,7 @@ exports[`AppPageView when page has apps product flavors mobile 1`] = `
           key="0-4"
           note="Updated on September 22, 12:42"
           platform="ios"
-          title="(28) v1.0.3 Standup Timer"
+          title="(28) v1.0.2 Standup Timer"
         />
       </Base>
     </Base>
@@ -1258,7 +1258,7 @@ exports[`AppPageView when page has apps product flavors tablet 1`] = `
           key="0-3"
           note="Updated on September 22, 12:42"
           platform="ios"
-          title="(29) v1.0.3 Standup Timer"
+          title="(29) v1.0.2 Standup Timer"
         />
         <_default
           description=""
@@ -1268,7 +1268,7 @@ exports[`AppPageView when page has apps product flavors tablet 1`] = `
           key="0-4"
           note="Updated on September 22, 12:42"
           platform="ios"
-          title="(28) v1.0.3 Standup Timer"
+          title="(28) v1.0.2 Standup Timer"
         />
       </Base>
     </Base>
@@ -1395,7 +1395,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
           key="0-3"
           note="Updated on September 22, 12:42"
           platform="ios"
-          title="(29) v1.0.3 Standup Timer"
+          title="(29) v1.0.2 Standup Timer"
         />
         <_default
           description=""
@@ -1405,7 +1405,7 @@ exports[`AppPageView when page has apps renders page with apps 1`] = `
           key="0-4"
           note="Updated on September 22, 12:42"
           platform="ios"
-          title="(28) v1.0.3 Standup Timer"
+          title="(28) v1.0.2 Standup Timer"
         />
       </Base>
     </Base>
@@ -1542,7 +1542,7 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
           key="0-3"
           note="Updated on September 22, 12:42"
           platform="ios"
-          title="(29) v1.0.3 Standup Timer"
+          title="(29) v1.0.2 Standup Timer"
         />
         <_default
           description=""
@@ -1552,7 +1552,7 @@ exports[`AppPageView when page has apps shows a warning 1`] = `
           key="0-4"
           note="Updated on September 22, 12:42"
           platform="ios"
-          title="(28) v1.0.3 Standup Timer"
+          title="(28) v1.0.2 Standup Timer"
         />
       </Base>
     </Base>
