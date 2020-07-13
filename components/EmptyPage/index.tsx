@@ -44,7 +44,7 @@ export default () => {
 
             <Flex alignChildrenHorizontal="middle" direction="horizontal" margin="x16">
               <Link
-                href="https://mpxzvqn7ysfysw.preview.forestry.io/reviews/ship-add-on-beta-version/"
+                href="https://devcenter.bitrise.io/deploy/ship/"
                 target="blank"
                 color="grape-3"
               >

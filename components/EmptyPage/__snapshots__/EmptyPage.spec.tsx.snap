@@ -91,7 +91,7 @@ exports[`EmptyPage renders correctly 1`] = `
         >
           <Link
             color="grape-3"
-            href="https://mpxzvqn7ysfysw.preview.forestry.io/reviews/ship-add-on-beta-version/"
+            href="https://devcenter.bitrise.io/deploy/ship/"
             target="blank"
           >
             Read the documentation 
@@ -198,7 +198,7 @@ exports[`EmptyPage renders correctly on mobile 1`] = `
         >
           <Link
             color="grape-3"
-            href="https://mpxzvqn7ysfysw.preview.forestry.io/reviews/ship-add-on-beta-version/"
+            href="https://devcenter.bitrise.io/deploy/ship/"
             target="blank"
           >
             Read the documentation 
